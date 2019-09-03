@@ -21,7 +21,7 @@ for i in range(1950,2020):
 
 sql = "insert into '2017'(Title,ISSN,Category,JCR,IF,Collection) values (?,?,?,?,?,?)"
 for rows in range(nrows-6):    
-    cur.execute(sql, (data[rows][1].lower(),data[rows][2].lower(),data[rows][3].lower(),data[rows][4],data[rows][5],data[rows][6].lower()))
+    cur.execute(sql, (data[rows][1].upper(),data[rows][2].upper(),data[rows][3].upper(),data[rows][4],data[rows][5],data[rows][6].upper()))
     con.commit()
 cur.execute("select * from '2017'")
 rows = cur.fetchall()
