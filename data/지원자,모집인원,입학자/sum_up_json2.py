@@ -54,6 +54,7 @@ for name in range(2010, 2020):
                 D[5] += d['man_admitted_within_admission']+d['woman_admitted_within_admission']    
 
         B = [ 1 if x == 0 else x for x in B]
+        
         out = [
             {
                 'category' : 'total',
@@ -112,8 +113,67 @@ for name in range(2010, 2020):
                 'competition_rate': round(C[5] / B[5],2)
             },
         ]
-
+        
+        out2 = [
+            {
+                'category' : '전체',
+                'applied:' : int(sum(applied)),
+                'recruitment': int(sum(recruitment)),
+                'admitted' : int(sum(admitted)),
+                'recruitment_rate': round(sum(D) / sum(B) * 100,2),
+                'competition_rate': round(sum(C) / sum(B),2)
+            },
+            {
+                'category' : '자연과학',
+                'applied:' : int(applied[0]),
+                'recruitment': int(recruitment[0]),
+                'admitted' : int(admitted[0]),
+                'recruitment_rate': round(D[0] / B[0] * 100,2),
+                'competition_rate': round(C[0] / B[0],2)
+            },
+            {
+                'category' : '예체능',
+                'applied:' : int(applied[1]),
+                'recruitment': int(recruitment[1]),
+                'admitted' : int(admitted[1]),
+                'recruitment_rate': round(D[1] / B[1] * 100,2),
+                'competition_rate': round(C[1] / B[1],2)
+            },
+            {
+                'category' : '공학',
+                'applied:' : int(applied[2]),
+                'recruitment': int(recruitment[2]),
+                'admitted' : int(admitted[2]),
+                'recruitment_rate': round(D[2] / B[2] * 100,2),
+                'competition_rate': round(C[2] / B[2],2)
+            },
+            {
+                'category' : '의학',
+                'applied:' : int(applied[3]),
+                'recruitment': int(recruitment[3]),
+                'admitted' : int(admitted[3]),
+                'recruitment_rate': round(D[3] / B[3] * 100,2),
+                'competition_rate': round(C[3] / B[3],2)
+            },
+            {
+                'category' : '인문사회',
+                'applied:' : int(applied[4]),
+                'recruitment': int(recruitment[4]),
+                'admitted' : int(admitted[4]),
+                'recruitment_rate': round(D[4] / B[4] * 100,2),
+                'competition_rate': round(C[4] / B[4],2)
+            },
+            {
+                'category' : '기타',
+                'applied:' : int(applied[5]),
+                'recruitment': int(recruitment[5]),
+                'admitted' : int(admitted[5]),
+                'recruitment_rate': round(D[5] / B[5] * 100,2),
+                'competition_rate': round(C[5] / B[5],2)
+            },
+        ]
 
         with open(r'C:\Users\taeyo\IRcenter\data\지원자,모집인원,입학자\\'+str(name)+'_summed'+'.json','w',encoding='UTF-8-sig') as outfile:
             outfile.write(json.dumps(out,ensure_ascii=False))
-        
+        with open(r'C:\Users\taeyo\IRcenter\data\지원자,모집인원,입학자\\'+str(name)+'_summed_KOR'+'.json','w',encoding='UTF-8-sig') as outfile:
+            outfile.write(json.dumps(out2,ensure_ascii=False))
