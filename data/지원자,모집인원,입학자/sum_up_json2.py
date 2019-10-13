@@ -20,8 +20,7 @@ for name in range(2010, 2020):
             '모집':
             '입학':
             '경쟁률':
-            '충원율':
-        
+            '충원율':        
         })
         
         with open(name+'_sumed'+'.json','w',encoding='UTF-8-sig') as outfile:
