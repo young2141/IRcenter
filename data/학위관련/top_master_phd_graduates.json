@@ -1,0 +1,42 @@
+[
+    {
+        "major": "전 자 공 학 부",
+        "master_or_phd": 92
+    },
+    {
+        "major": "컴퓨터학부",
+        "master_or_phd": 51
+    },
+    {
+        "major": "의학과",
+        "master_or_phd": 39
+    },
+    {
+        "major": "생명과학부",
+        "master_or_phd": 38
+    },
+    {
+        "major": "교육학과",
+        "master_or_phd": 35
+    },
+    {
+        "major": "의과학과",
+        "master_or_phd": 35
+    },
+    {
+        "major": "경 영 학 부",
+        "master_or_phd": 34
+    },
+    {
+        "major": "기계공학부",
+        "master_or_phd": 32
+    },
+    {
+        "major": "건설환경에너지공학부 환경에너지공학전공",
+        "master_or_phd": 28
+    },
+    {
+        "major": "치의학과",
+        "master_or_phd": 24
+    }
+]
