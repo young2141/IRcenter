@@ -1,0 +1,92 @@
+[
+    {   
+        "city" : "대구",
+        "apply" : 22451,
+        "admission" : 2469
+    },
+    {   
+        "city" : "경북",
+        "apply" : 8013,
+        "admission" : 930
+    },
+    {   
+        "city" : "경남",
+        "apply" : 6071,
+        "admission" : 555
+    },
+    {   
+        "city" : "부산",
+        "apply" : 4633,
+        "admission" : 413
+    },
+    {   
+        "city" : "울산",
+        "apply" : 2218,
+        "admission" : 213
+    },
+    {   
+        "city" : "서울",
+        "apply" : 1606,
+        "admission" : 134
+    },
+    {   
+        "city" : "강원",
+        "apply" : 532,
+        "admission" : 43
+    },
+    {   
+        "city" : "경기",
+        "apply" : 1789,
+        "admission" : 163
+    },
+    {   
+        "city" : "충북",
+        "apply" : 848,
+        "admission" : 91
+    },
+    {   
+        "city" : "제주",
+        "apply" : 264,
+        "admission" : 18
+    },
+    {   
+        "city" : "광주",
+        "apply" : 206,
+        "admission" : 17 
+    },
+    {   
+        "city" : "인천",
+        "apply" : 285,
+        "admission" : 38
+    },
+    {   
+        "city" : "충남",
+        "apply" : 460,
+        "admission" : 44 
+    },
+    {   
+        "city" : "전남",
+        "apply" : 300,
+        "admission" : 22
+    },
+    {   
+        "city" : "전북",
+        "apply" : 303,
+        "admission" : 20
+    },
+    {   
+        "city" : "대전",
+        "apply" : 639,
+        "admission" : 45
+    },
+    {   
+        "city" : "기타",
+        "apply" : 44,
+        "admission" : 4
+    },
+    {   
+        "city" : "계",
+        "apply" : 50662,
+        "admission" : 5219
+    }
+]
