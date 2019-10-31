@@ -1,0 +1,308 @@
+﻿[
+    {
+        "category": "문 학",
+        "bachelor": 737,
+        "master": 81,
+        "doctor": 18
+    },
+    {
+        "category": "철 학",
+        "bachelor": 0,
+        "master": 0,
+        "doctor": 3
+    },
+    {
+        "category": "도서관학",
+        "bachelor": 0,
+        "master": 0,
+        "doctor": 0
+    },
+    {
+        "category": "교육학",
+        "bachelor": 10,
+        "master": 213,
+        "doctor": 18
+    },
+    {
+        "category": "이학",
+        "bachelor": 727,
+        "master": 140,
+        "doctor": 57
+    },
+    {
+        "category": "사회학",
+        "bachelor": 0,
+        "master": 6,
+        "doctor": 0
+    },
+    {
+        "category": "지리학",
+        "bachelor": 0,
+        "master": 2,
+        "doctor": 1
+    },
+    {
+        "category": "언론학",
+        "bachelor": 0,
+        "master": 2,
+        "doctor": 0
+    },
+    {
+        "category": "문헌정보학",
+        "bachelor": 36,
+        "master": 5,
+        "doctor": 3
+    },
+    {
+        "category": "체육학",
+        "bachelor": 86,
+        "master": 9,
+        "doctor": 0
+    },
+    {
+        "category": "경제학",
+        "bachelor": 276,
+        "master": 28,
+        "doctor": 3
+    },
+    {
+        "category": "경영학",
+        "bachelor": 284,
+        "master": 131,
+        "doctor": 5
+    },
+    {
+        "category": "공학",
+        "bachelor": 1798,
+        "master": 358,
+        "doctor": 84
+    },
+    {
+        "category": "농학",
+        "bachelor": 518,
+        "master": 146,
+        "doctor": 22
+    },
+    {
+        "category": "수의학",
+        "bachelor": 64,
+        "master": 16,
+        "doctor": 5
+    },
+    {
+        "category": "법학",
+        "bachelor": 14,
+        "master": 7,
+        "doctor": 3
+    },
+    {
+        "category": "행정학",
+        "bachelor": 107,
+        "master": 52,
+        "doctor": 3
+    },
+    {
+        "category": "정치학",
+        "bachelor": 54,
+        "master": 12,
+        "doctor": 2
+    },
+    {
+        "category": "보건학",
+        "bachelor": 0,
+        "master": 39,
+        "doctor": 2
+    },
+    {
+        "category": "의학",
+        "bachelor": 0,
+        "master": 16,
+        "doctor": 23
+    },
+    {
+        "category": "간호학",
+        "bachelor": 93,
+        "master": 12,
+        "doctor": 11
+    },
+    {
+        "category": "가정학",
+        "bachelor": 18,
+        "master": 0,
+        "doctor": 0
+    },
+    {
+        "category": "음악학",
+        "bachelor": 91,
+        "master": 15,
+        "doctor": 2
+    },
+    {
+        "category": "미술학",
+        "bachelor": 43,
+        "master": 3,
+        "doctor": 0
+    },
+    {
+        "category": "디자인학",
+        "bachelor": 72,
+        "master": 4,
+        "doctor": 0
+    },
+    {
+        "category": "예술공학",
+        "bachelor": 0,
+        "master": 0,
+        "doctor": 1
+    },
+    {
+        "category": "수산학",
+        "bachelor": 0,
+        "master": 0,
+        "doctor": 0
+    },
+    {
+        "category": "약학",
+        "bachelor": 26,
+        "master": 15,
+        "doctor": 2
+    },
+    {
+        "category": "치의학",
+        "bachelor": 0,
+        "master": 9,
+        "doctor": 15
+    },
+    {
+        "category": "조경학",
+        "bachelor": 0,
+        "master": 2,
+        "doctor": 2
+    },
+    {
+        "category": "문학치료학",
+        "bachelor": 0,
+        "master": 1,
+        "doctor": 11
+    },
+    {
+        "category": "의료정보학",
+        "bachelor": 0,
+        "master": 0,
+        "doctor": 0
+    },
+    {
+        "category": "국제학",
+        "bachelor": 0,
+        "master": 22,
+        "doctor": 0
+    },
+    {
+        "category": "상학",
+        "bachelor": 0,
+        "master": 0,
+        "doctor": 0
+    },
+    {
+        "category": "정책정보학",
+        "bachelor": 0,
+        "master": 4,
+        "doctor": 0
+    },
+    {
+        "category": "사회복지학",
+        "bachelor": 0,
+        "master": 14,
+        "doctor": 0
+    },
+    {
+        "category": "언론홍보학",
+        "bachelor": 0,
+        "master": 8,
+        "doctor": 0
+    },
+    {
+        "category": "심리학",
+        "bachelor": 0,
+        "master": 12,
+        "doctor": 0
+    },
+    {
+        "category": "수사과학",
+        "bachelor": 0,
+        "master": 25,
+        "doctor": 0
+    },
+    {
+        "category": "기록학",
+        "bachelor": 0,
+        "master": 8,
+        "doctor": 0
+    },
+    {
+        "category": "금융공학",
+        "bachelor": 0,
+        "master": 0,
+        "doctor": 0
+    },
+    {
+        "category": "법 무",
+        "bachelor": 0,
+        "master": 108,
+        "doctor": 0
+    },
+    {
+        "category": "의무",
+        "bachelor": 0,
+        "master": 112,
+        "doctor": 0
+    },
+    {
+        "category": "치 무",
+        "bachelor": 0,
+        "master": 48,
+        "doctor": 0
+    },
+    {
+        "category": "건축학",
+        "bachelor": 54,
+        "master": 0,
+        "doctor": 0
+    },
+    {
+        "category": "신문방송학",
+        "bachelor": 44,
+        "master": 0,
+        "doctor": 0
+    },
+    {
+        "category": "관광학",
+        "bachelor": 35,
+        "master": 0,
+        "doctor": 0
+    },
+    {
+        "category": "영양식품학",
+        "bachelor": 0,
+        "master": 0,
+        "doctor": 0
+    },
+    {
+        "category": "소프트웨어공학",
+        "bachelor": 0,
+        "master": 1,
+        "doctor": 0
+    },
+    {
+        "category": "치위생학",
+        "bachelor": 19,
+        "master": 0,
+        "doctor": 0
+    },
+    {
+        "category": "합 계",
+        "bachelor": 5206,
+        "master": 1686,
+        "doctor": 296
+    }
+]

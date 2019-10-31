@@ -1,0 +1,47 @@
+﻿[
+    {
+        "city": "대구",
+        "apply": 17532,
+        "admission": 2884
+    },
+    {
+        "city": "경북",
+        "apply": 6086,
+        "admission": 854
+    },
+    {
+        "city": "경남",
+        "apply": 3652,
+        "admission": 457
+    },
+    {
+        "city": "부산",
+        "apply": 1954,
+        "admission": 260
+    },
+    {
+        "city": "울산",
+        "apply": 1830,
+        "admission": 198
+    },
+    {
+        "city": "서울",
+        "apply": 747,
+        "admission": 104
+    },
+    {
+        "city": "경기",
+        "apply": 789,
+        "admission": 111
+    },
+    {
+        "city": "충북",
+        "apply": 851,
+        "admission": 144
+    },
+    {
+        "city": "기타",
+        "apply": 1752,
+        "admission": 201
+    }
+]
