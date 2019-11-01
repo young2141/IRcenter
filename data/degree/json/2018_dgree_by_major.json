@@ -298,11 +298,5 @@
         "bachelor": 19,
         "master": 0,
         "doctor": 0
-    },
-    {
-        "category": "합 계",
-        "bachelor": 5206,
-        "master": 1686,
-        "doctor": 296
     }
 ]

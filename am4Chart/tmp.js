@@ -9,6 +9,7 @@ function parse(callback, year){
     })
 }
 
+
 function check(){
     var val = document.getElementsByName("chk_type");
     var type = [0,0,0]
@@ -16,7 +17,7 @@ function check(){
     for(var i=0; i<val.length; i++){
         if(val[i].checked){
         console.log(val[i].value + "체크")
-        type[i] = val[i].value
+        type[i] = Number(val[i].value)
         }
         else console.log(val[i].value + "안체크")
     }
@@ -33,80 +34,116 @@ function check(){
 
 function callAm4core(type, year){
     am4core.ready(function () {
-        
+        console.log(type)
         // Themes begin
         am4core.useTheme(am4themes_animated);
-        // Themes end
-    
+        // Themes end    
         var chart = am4core.create("chartdiv", am4plugins_forceDirected.ForceDirectedTree);
-        var networkSeries = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries())
-        data = []
-            
+        var networkSeries = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries())        
+
+        bachelor = []
+        master = []
+        doctor = []
         parse((json)=> {
             for(key in json){
                 line = json[key]
 
                 if(type[0] == 1){
-                    var str = line["category"] + " 학사";
+                    var str = line["category"];
                     var val = line["bachelor"];
+                    if(val == 0) continue
                     tmp = {}
                     tmp['name'] = str
-                    tmp['value'] = val
-                    data.push(tmp);
+                    tmp['value'] = val                    
+                    bachelor.push(tmp);                    
                 }
                 if(type[1] == 2){
-                    var str = line["category"] + " 석사";
+                    var str = line["category"];
                     var val = line["master"];
+                    if(val == 0) continue
                     tmp = {}
                     tmp['name'] = str
                     tmp['value'] = val
-                    data.push(tmp);
+                    master.push(tmp);
                 }
                 if(type[2] == 3){
-                    var str = line["category"] + " 박사";
+                    var str = line["category"];
                     var val = line["doctor"];
+                    if(val == 0) continue
+                    tmp={}
                     tmp['name'] = str
                     tmp['value'] = val
-                    data.push(tmp);
+                    doctor.push(tmp);
                 }                    
             }
-
-        tmp = {}
-        tmp['name'] = "2019"
-        tmp['children'] = data
+            
+        networkSeries.data = [{
+            name: year
+        }]
         
-        networkSeries.data = [];
-        networkSeries.data.push(tmp)
+        if(type[0] == 1){
+            tmp = {}
+            tmp['name'] = "학사"
+            tmp['children'] = bachelor
+            networkSeries.data.push(tmp)
+        }
+        if(type[1] == 2){
+            tmp = {}
+            tmp['name'] = "석사"
+            tmp['children'] = master
+            networkSeries.data.push(tmp)
+        }
+        if(type[2] == 3){
+            tmp = {}
+            tmp['name'] = "박사"
+            tmp['children'] = doctor
+            networkSeries.data.push(tmp)
+        }
         console.log(networkSeries.data)
         
-        // networkSeries.data = [{
-        //     name: '2019',
-        //         children: [{
-        //         name : 't1', value : 1
-        //         },{
-        //         name : 't2', value : 3
-        //         }
-        //       ]
-        // }]
-    
-    
+        networkSeries.dataFields.linkWith = "linkWith";
+        networkSeries.dataFields.name = "name";
+        networkSeries.dataFields.id = "name";
+        networkSeries.dataFields.value = "value";
+        networkSeries.dataFields.children = "children";
+        networkSeries.links.template.distance = 0;
+        networkSeries.links.template.strength = 1;
+        networkSeries.nodes.template.tooltipText = "{name} : {value}";
+        networkSeries.nodes.template.fillOpacity = 1;
+        networkSeries.nodes.template.outerCircle.strokeOpacity = 0;
+        networkSeries.nodes.template.outerCircle.fillOpacity = 0;
+        networkSeries.nodes.template.label.text = "{name}"
+        networkSeries.fontSize = 8;
+        networkSeries.minRadius = 15;
+        networkSeries.nodes.template.label.hideOversized = true;
+        networkSeries.nodes.template.label.truncate = true;
+        networkSeries.centerStrength = 1;
+        networkSeries.manyBodyStrength = -2.5;
+        networkSeries.links.template.strokeOpacity = 0;
+    /*
         networkSeries.dataFields.linkWith = "linkWith";
         networkSeries.dataFields.name = "name";
         networkSeries.dataFields.id = "name";
         networkSeries.dataFields.value = "value";
         networkSeries.dataFields.children = "children";
         networkSeries.links.template.distance = 1;
-        networkSeries.nodes.template.tooltipText = "{name}";
-        networkSeries.nodes.template.fillOpacity = 1;
-        networkSeries.nodes.template.outerCircle.scale = 1;
+        networkSeries.nodes.template.tooltipText = "[#000 font-size: 15px]{value}"; 
+        
+        var bullet = P1Cseries.bullets.push(new am4charts.Bullet());
+            bullet.fill = am4core.color("#fff"); // tooltips grab fill from parent by default
+            bullet.tooltipText = "[#000 font-size: 15px]{categoryX}학년도 " + value_kr + "계열의 경쟁률은 {valueY}% 입니다."
+
+        networkSeries.nodes.template.fillOpacity = 10;
+        networkSeries.nodes.template.outerCircle.scale = 0;
     
         networkSeries.nodes.template.label.text = "{name}"
         networkSeries.fontSize = 8;
-        networkSeries.nodes.template.label.hideOversized = true;
-        networkSeries.nodes.template.label.truncate = true;
-        networkSeries.minRadius = am4core.percent(2);
+        networkSeries.nodes.template.label.hideOversized = false;
+        networkSeries.nodes.template.label.truncate = false;
+        networkSeries.minRadius = am4core.percent(3);
         networkSeries.manyBodyStrength = -5;
         networkSeries.links.template.strokeOpacity = 0;
+        */
         }, year)
         
         
