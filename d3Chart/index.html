@@ -8,25 +8,12 @@
     <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 
     <style type="text/css">
-        /*
+        
         .node:hover {
             fill-opacity: 29;
-            stroke: whitesmoke;
+            stroke: white;
             stroke-width: 1px;
-            }
-        */
-        /* div.tooltip-bubble {
-            position: absolute;
-            text-align: center;
-            width: 110px;
-            height: 30px;
-            padding: 2px;
-            font: 12px sans-serif;
-            background: whitesmoke;
-            border: 0px;
-            border-radius: 8px;
-            pointer-events: none;
-        } */
+        }
 
         div.tooltip-bubble {
             position: absolute;
@@ -149,7 +136,7 @@
                     .on("mouseover", function (d, i) {
                         d3.select(this).transition()
                             .duration('50')
-                            .attr("opacity", '.85')
+                            .attr("opacity", '.65')
                         div.transition()
                             .duration(50)
                             .style("opacity", 1)
