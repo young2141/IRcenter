@@ -1,7 +1,9 @@
 [
     {
         "major": "전 자 공 학 부",
-        "master_or_phd": 92
+        "master_or_phd": 92,
+        "master_or_phd_male" : 60,
+        "master_or_phd_female" : 32
     },
     {
         "major": "컴퓨터학부",
