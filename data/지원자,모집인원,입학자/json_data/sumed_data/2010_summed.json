@@ -1,58 +1,58 @@
 ﻿[
     {
-        "category": "total",
-        "applied:": 30888,
+        "category": "전체",
+        "applied": 30888,
         "recruitment": 4214,
         "admitted": 4245,
-        "recruitment_rate": 99.28,
+        "recruitment_rate": 99.25,
         "competition_rate": 7.76
     },
     {
-        "category": "Natural_science",
-        "applied:": 6400,
-        "recruitment": 1055,
-        "admitted": 1073,
-        "recruitment_rate": 99.89,
-        "competition_rate": 6.62
+        "category": "자연과학",
+        "applied": 9256,
+        "recruitment": 1424,
+        "admitted": 1420,
+        "recruitment_rate": 98.45,
+        "competition_rate": 6.97
     },
     {
-        "category": "Engineering",
-        "applied:": 6988,
+        "category": "예체능",
+        "applied": 6988,
         "recruitment": 1129,
         "admitted": 1116,
         "recruitment_rate": 99.9,
         "competition_rate": 6.53
     },
     {
-        "category": "Entertain",
-        "applied:": 1129,
+        "category": "공학",
+        "applied": 1129,
         "recruitment": 179,
         "admitted": 178,
         "recruitment_rate": 98.32,
         "competition_rate": 6.31
     },
     {
-        "category": "medicine",
-        "applied:": 0,
+        "category": "의학",
+        "applied": 0,
         "recruitment": 0,
         "admitted": 0,
         "recruitment_rate": 0.0,
         "competition_rate": 0.0
     },
     {
-        "category": "humanities_and_social",
-        "applied:": 10807,
-        "recruitment": 1250,
-        "admitted": 1298,
-        "recruitment_rate": 99.74,
-        "competition_rate": 9.13
+        "category": "인문사회",
+        "applied": 13515,
+        "recruitment": 1482,
+        "admitted": 1531,
+        "recruitment_rate": 99.79,
+        "competition_rate": 9.58
     },
     {
-        "category": "etc",
-        "applied:": 5564,
-        "recruitment": 601,
-        "admitted": 580,
-        "recruitment_rate": 96.78,
-        "competition_rate": 9.43
+        "category": "기타",
+        "applied": 0,
+        "recruitment": 0,
+        "admitted": 0,
+        "recruitment_rate": 0.0,
+        "competition_rate": 0.0
     }
 ]
