@@ -1,0 +1,52 @@
+﻿{
+    "전체": {
+        "applied": 1982,
+        "recruitment": 520,
+        "admitted": 419,
+        "recruitment_rate": 80.58,
+        "competition_rate": 3.81
+    },
+    "자연과학": {
+        "applied": 506,
+        "recruitment": 155,
+        "admitted": 120,
+        "recruitment_rate": 77.42,
+        "competition_rate": 3.26
+    },
+    "예체능": {
+        "applied": 813,
+        "recruitment": 216,
+        "admitted": 175,
+        "recruitment_rate": 81.02,
+        "competition_rate": 3.76
+    },
+    "공학": {
+        "applied": 58,
+        "recruitment": 19,
+        "admitted": 10,
+        "recruitment_rate": 52.63,
+        "competition_rate": 3.05
+    },
+    "의학": {
+        "applied": 0,
+        "recruitment": 0,
+        "admitted": 0,
+        "recruitment_rate": 0,
+        "competition_rate": 0
+    },
+    "인문사회": {
+        "applied": 605,
+        "recruitment": 130,
+        "admitted": 114,
+        "recruitment_rate": 87.69,
+        "competition_rate": 4.65
+    },
+    "기타": {
+        "category": "기타",
+        "applied": 0,
+        "recruitment": 0,
+        "admitted": 0,
+        "recruitment_rate": 0,
+        "competition_rate": 0
+    }
+}

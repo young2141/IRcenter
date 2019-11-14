@@ -1,0 +1,252 @@
+
+		#gotop {
+			position: absolute;
+		}
+
+		.headline {
+			font-size: 30pt;
+			font-family: "고딕";
+			font-weight: bold
+		}	
+
+		.normalText {
+			font-size: 14pt;
+			width: 700px;
+		}
+		
+		body {
+			font-family: 'Nanum Gothic', sans-serif;
+			/*background-repeat: no-repeat;*/
+			background-size: 100% 50%;
+			margin : 0;
+		}
+		
+		.bodyBox{
+			margin-left : 50px;
+			margin-right : 50px;
+			margin-top : 30px;
+			line-height : 35px;
+		}
+		
+		#TOP{
+			margin-left : 50px;
+			margin-right : 50px;
+			margin-top : 30px;
+			line-height : 35px;
+		}
+
+		.chartdiv {
+			width: 1000px;
+			height: 500px;
+			display: inline-block;
+			border-style: none;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			padding: 10px;
+		}
+
+		div.legend {
+        width: 300px;
+        height: 300px;
+        left: 82%;
+        top: 100px;
+        padding: 10px;
+        line-height: 30px;
+        margin: 10px;
+		}
+
+        div.legend a:visited {
+            color: black;
+        }
+
+        div.legend a:link {
+            color: black;
+        }
+
+
+		div.box1 {
+			height: 70px;
+			background-color: #1E3269;
+			color: white;
+			border-width: 5px;
+			/*border-color:black;*/
+			/*margin : 100px;*/
+			font-size: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		div.loginBox {
+			float: right;
+		}
+
+		div.titleNameBox {
+			margin: 20px;
+			width: 500px;
+
+			text-shadow:
+				-1px -1px 0 #000,
+				1px -1px 0 #000,
+				-1px 1px 0 #000,
+				1px 1px 0 #000;
+		}
+
+		div.titleBox {}
+
+		#box2 {
+			height: 40px;
+
+			border-style: solid;
+			border-width: 2px;
+			border-color: #d2d2d2;
+
+			font-size: 20px;
+			line-height: 40px;
+			background-color: white;
+
+			padding-left: 250px;
+			padding-right: 250px;
+			margin: 20px;
+
+			text-align: center;
+			list-style: none;
+
+		}
+
+		#box2 li {
+			float: left;
+			width: 150px;
+			position: relative;
+			text-align: center;
+		}
+
+		#box2 ul {
+			list-style: none;
+			display: none;
+			/*보이지 않도록 하는 속성*/
+			text-align: center;
+			font-size: 15px;
+		}
+
+		#box2 li:hover ul {
+			display: block;
+			text-align: center;
+		}
+
+		#box2 a:visited {
+			color: black;
+		}
+
+		#box2 a:link {
+			color: black;
+		}
+
+		#box2 ul li {
+			background-color: white;
+			text-align: center;
+		}
+
+		
+		div.bottomframe {
+			height: 210px;
+			background-color: #1E3269;
+			;
+			background-position: center right;
+			/* 박스 중간에 이미지 출력 */
+			position: top:50%;
+			padding: 10px;
+		}
+
+		div.inbottomframe {
+			/*주소적힌 공간*/
+			height: 70px;
+			float: bottom;
+			font-size: 15px;
+		}
+
+		.red {
+			color: #B90000;
+		}
+
+		.right {
+			text-align: right;
+			color: white;
+			font-size: 20;
+		}
+
+		.white {
+			color: white;
+		}
+		
+		a:link {
+			text-decoration: none;
+			color: white;
+		}
+
+		/*방문한적 없는 링크*/
+		a:visited {
+			text-decoration: none;
+			color: white;
+		}
+
+		a:active {
+			text-decoration: none;
+			color: white;
+		}
+
+		/*클릭하려는 순간*/
+		a:hover {
+			text-decoration: none;
+			color: white;
+		}
+		
+		#tableBox {
+			display: inline-block;
+			margin: 10px;
+			padding: 10px;
+			line-height: 10px;
+			font-size : 20px;
+			color: black;
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+
+		table td {
+			border: 2px solid black;
+			padding: 15px;
+			text-align: center;
+			width: 200px;
+			height: 50px;
+		}
+		#black
+		{
+			color: black;
+		}
+		
+		
+		#summaryBox
+		{
+			background-color: none;
+			padding: 3px;
+			font-size: 20px;
+			width : 1000px;
+			text-align : justify;
+		}
+		
+		#titleFont
+		{
+			font-size : 40px;
+		}
+		
+		#blue
+		{
+			font-weight: bold;
+			color: #0d46a0;
+		}
+		
+		#titleBox
+		{
+			background-color: none; padding: 3px; margin-left: 10px; font-size: 20px;
+		}

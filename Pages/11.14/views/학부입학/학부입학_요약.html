@@ -1,0 +1,452 @@
+<!DOCUTYPE html>
+	<html>
+
+	<head>
+		<meta charset="ANSI">
+		<title>경북대학교 IR센터</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+		<script src="https://www.amcharts.com/lib/4/core.js"></script>
+		<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+		<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+		<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.js"
+			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+			
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+		
+
+		<script src="../../js/doParsing.js"></script>
+		<script src="../../js/page1_Curved.js"></script>
+		<script src="../../js/page1_graph.js"></script>
+	</head>
+
+	<style type="text/css">
+	
+		 #gotop {
+			position: absolute;
+		}
+
+		.headline {
+			font-size: 30pt;
+			font-family: "고딕";
+			font-weight: bold
+		}
+
+		.normalText {
+			font-size: 14pt;
+			width: 700px;
+		}
+	
+		.link {
+			color: #B90000;
+		}
+
+		body {
+			font-family: 'Nanum Gothic', sans-serif;
+			/*background-repeat: no-repeat;*/
+			background-size: 100% 50%;
+			margin : 0;
+		}
+		
+		.bodyBox{
+			margin-left : 50px;
+			margin-right : 50px;
+			margin-top : 30px;
+			line-height : 35px;
+		}
+		
+		#TOP{
+			margin-left : 50px;
+			margin-right : 50px;
+			margin-top : 30px;
+			line-height : 35px;
+		}
+
+		.chartdiv {
+			width: 1000px;
+			height: 500px;
+			display: inline-block;
+			border-style: none;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			padding: 10px;
+		}
+
+		div.legend {
+        width: 200px;
+        height: 300px;
+        left: 82%;
+        top: 100px;
+        padding: 10px;
+        line-height: 30px;
+        margin: 10px;
+		}
+
+        div.legend a:visited {
+            color: black;
+        }
+
+        div.legend a:link {
+            color: black;
+        }
+
+
+		div.box1 {
+			height: 70px;
+			background-color: #1E3269;
+			color: white;
+			border-width: 5px;
+			/*border-color:black;*/
+			/*margin : 100px;*/
+			font-size: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		div.loginBox {
+			float: right;
+		}
+
+		div.titleNameBox {
+			margin: 20px;
+			width: 500px;
+
+			text-shadow:
+				-1px -1px 0 #000,
+				1px -1px 0 #000,
+				-1px 1px 0 #000,
+				1px 1px 0 #000;
+		}
+
+		div.titleBox {}
+
+		#box2 {
+			height: 40px;
+
+			border-style: solid;
+			border-width: 2px;
+			border-color: #d2d2d2;
+
+			font-size: 20px;
+			line-height: 40px;
+			background-color: white;
+
+			padding-left: 250px;
+			padding-right: 250px;
+			margin: 20px;
+
+			text-align: center;
+			list-style: none;
+
+		}
+
+		#box2 li {
+			float: left;
+			width: 150px;
+			position: relative;
+			text-align: center;
+		}
+
+		#box2 ul {
+			list-style: none;
+			display: none;
+			/*보이지 않도록 하는 속성*/
+			text-align: center;
+			font-size: 15px;
+		}
+
+		#box2 li:hover ul {
+			display: block;
+			text-align: center;
+		}
+
+		#box2 a:visited {
+			color: black;
+		}
+
+		#box2 a:link {
+			color: black;
+		}
+
+		#box2 ul li {
+			background-color: white;
+			text-align: center;
+		}
+
+		
+		div.bottomframe {
+			height: 210px;
+			background-color: #1E3269;
+			;
+			background-position: center right;
+			/* 박스 중간에 이미지 출력 */
+			position: top:50%;
+			padding: 10px;
+		}
+
+		div.inbottomframe {
+			/*주소적힌 공간*/
+			height: 70px;
+			float: bottom;
+			font-size: 15px;
+		}
+
+		.red {
+			color: #B90000;
+		}
+
+		.right {
+			text-align: right;
+			color: white;
+			font-size: 20;
+		}
+
+		.white {
+			color: white;
+		}
+		
+		a:link {
+			text-decoration: none;
+			color: white;
+		}
+
+		/*방문한적 없는 링크*/
+		a:visited {
+			text-decoration: none;
+			color: white;
+		}
+
+		a:active {
+			text-decoration: none;
+			color: white;
+		}
+
+		/*클릭하려는 순간*/
+		a:hover {
+			text-decoration: none;
+			color: white;
+		}
+		
+		#tableBox {
+			display: inline-block;
+			margin: 10px;
+			padding: 10px;
+			line-height: 10px;
+			font-size : 20px;
+			color: black;
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+
+		table td {
+			border: 2px solid black;
+			padding: 15px;
+			text-align: center;
+			width: 200px;
+			height: 50px;
+		}
+		#black
+		{
+			color: black;
+		}
+		
+		
+		#summaryBox
+		{
+			background-color: none;
+			padding: 3px;
+			font-size: 20px;
+			width : 1000px;
+			text-align : justify;
+		}
+		
+		#titleFont
+		{
+			font-size : 40px;
+		}
+		
+		#blue
+		{
+			font-weight: bold;
+			color: #0d46a0;
+		}
+		
+		#titleBox
+		{
+			background-color: none; padding: 3px; margin-left: 10px; font-size: 20px;
+		}
+		
+	</style>
+	
+	<body>
+		<div class="box1" id="wrapper">
+			<form class>
+				<br>
+				<a href="https://www.knu.ac.kr" target="_blank"><b>경북대학교 홈페이지</b>
+					<a href="../첫화면.html"><b>| 경북대학교 IR센터</a></b>
+					<!--<a href = "로그인 화면.html">*/-->
+					<div class="loginBox">
+						<a href="첫화면.html">로그인　|　</a>
+						<input type="text" value="" placeholder="Search this site">
+						<input type="button" value="검색">
+					</div>
+			</form>
+		</div>
+		
+		<div class = "bodyBox">
+
+		<div id = "titleBox">
+			<span id = "titleFont"><b>학부입학</b></span>
+			<br><br>
+			추가적인 정보를 보기 위해서 각 대시보드 페이지 위에 나타나는 메뉴박스들을 클릭하세요.<br>
+		</div>
+		
+		<div id = "tableBox">
+			<table cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr>
+					<td style = "border-style: none; font-size : 30px">
+						<a href = "대학현황_5.html">
+						<span id = "black">◀</span>
+						</a>
+					</td>
+					<td style = "background-color : #eeeeee">
+						<a href = "#"><span id = "black"><b>요약</b></span></a>
+					</td>
+					<td>
+						<a href = "대학현황_1.html"><span id = "black">지원, 모집, 입학</span></a>
+					</td>
+					<td>
+						<a href = "대학현황_2.html"><span id = "black">입학전형 유형별</span></a>
+					</td>
+					<td>
+						<a href = "대학현황_3.html"><span id = "black">신입생 출신<br>고등학교 유형별</span></a>
+					</td>
+					<td>
+						<a href = "대학현황_4.html"><span id = "black">지역별 입학</span></a>
+					</td>
+					<td>
+						<a href = "대학현황_5.html"><span id = "black">Explore this data</span></a>
+					</td>
+					<td style = "border-style: none; font-size : 30px">
+					<a href = "대학현황_1.html">
+					<span style = "color: black">▶</span>
+					</a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		</div><!--BodyBox의 끝-->
+		
+		
+		<div class="legend" id="gotop" style = "left:65%; top :43%">
+
+
+        <!--<a href = "대학현황.html">이전 페이지로</a><br>-->
+        <span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
+        <span style="color:#E8A343; font-size: 20px;">■</span> 인문사회<br>
+        <span style="color:#FCFF57; font-size: 20px;">■</span> 자연과학<br>
+        <span style="color:#43E884; font-size: 20px;">■</span> 공학<br>
+        <span style="color:#52A1FF; font-size: 20px;">■</span> 예체능<br>
+        <br><br>
+
+		</div>
+		
+		<script>
+			var currentPosition = parseInt($("#gotop").css("top"));
+			$(window).scroll(function () {
+		            	var position = $(window).scrollTop();
+	
+            		if (position > 750) 
+		                $("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
+			else if(position < 300)
+			$("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
+		            else
+		                $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
+        });
+	
+		</script>
+		
+		
+		<div id = "TOP">
+		<hr style = "border-color: black">
+		<br>
+		<div id = "summaryBox">
+			경북대학교의 학부 입학 과정은 신입생 지원서에 대한 종합적인 평가를 통하여 이루어집니다.
+			입학전형 유형별, 전공별로 학교생활기록부, 자기소개서, 면접, 수능성적 등
+			다양한 방식으로 평가되어집니다.
+			이는 지원자들의 학업역량, 발전가능성, 전공적합성, 인성 등을 종합적으로 평가하기 위함입니다.
+			
+			<br><br>
+			<h2>정원 내 신입생 경쟁률</h2>
+			<span id = "blue">
+			2019학년도 정원내 신입생 경쟁률은 11.1:1로 2010학년도 대비 42.6% 증가합니다. 
+			</span>
+			지난 10년동안 자연과학계열 경쟁률은 88.7%로 가장 많이 증가하였고, 예체능계열(44.9%), 공학계열(36.6%), 
+			인문사회(15.3%) 순으로 증가합니다.
+			
+			
+		</div>
+		
+		<div id="divchart1" class="chartdiv"> 그래프 1-1</div>
+		<br>
+		
+		<div id = "summaryBox">
+			
+			<br>
+			<h2>정원 내 신입생 충원율</h2>
+			<span id = "blue">지난 10년동안 경북대학교의 정원내 신입생 충원율은 98% ~ 100% 범위 안에 있습니다.</span>
+			
+			
+		</div>
+		
+		<div id="divchart2" class="chartdiv"> 그래프 1-2</div>
+		<br>
+
+		<!--
+		<div id="chartdiv3-1" class="chartdiv"> 그래프 3-1</div>
+		<br>
+		<div id="chartdiv3-2" class="chartdiv"> 그래프 3-2</div>
+		<br>
+		<div id="chartdiv3-3" class="chartdiv"> 그래프 3-3</div>
+		<br>
+		<div id="chartdiv3-4" class="chartdiv"> 그래프 3-4</div>
+		<br>
+		<div id="chartdiv3-5" class="chartdiv"> 그래프 3-5</div>
+		<br>
+		<div id="chartdiv3-6" class="chartdiv"> 그래프 3-6</div>
+		<br>
+		<div id="chartdiv3-7" class="chartdiv"> 그래프 3-7</div>
+		<br>
+		<div id="chartdiv3-8" class="chartdiv"> 그래프 3-8</div>
+		<br>
+		<div id="chartdiv3-9" class="chartdiv"> 그래프 3-9</div>
+		<br>
+		<div id="chartdiv3-10" class="chartdiv"> 그래프 3-10</div>
+		<br>
+-->
+	</div>
+
+
+		<div class="bottomframe">
+			<div class="inbottomframe"></div>
+			<div class="inbottomframe"></div>
+			<div class="inbottomframe">
+				<a href="#">개인정보처리방침</a>
+				<a href="#">　이메일 무단수집거부</a>
+				<br><br>
+				<span class="white">대구광역시 북구 대학로 80 경북대학교 | 053-950-2963</span>
+				<br>
+				<span class="white">Copyright(c) Kyungpook National University. All rights reserved.</span>
+
+			</div>
+		</div>
+
+	</body>
+
+	</html>

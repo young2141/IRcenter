@@ -1,0 +1,62 @@
+﻿[
+  {
+    "year": "2010",
+    "bachelor": 5252,
+    "master": 1736,
+    "PhD": 327
+  },
+  {
+    "year": "2011",
+    "bachelor": 5158,
+    "master": 1807,
+    "PhD": 290
+  },
+  {
+    "year": "2012",
+    "bachelor": 4385,
+    "master": 1813,
+    "PhD": 329
+  },
+  {
+    "year": "2013",
+    "bachelor": 5270,
+    "master": 1800,
+    "PhD": 358
+  },
+  {
+    "year": "2014",
+    "bachelor": 6095,
+    "master": 1680,
+    "PhD": 311
+  },
+  {
+    "year": "2015",
+    "bachelor": 5180,
+    "master": 1769,
+    "PhD": 284
+  },
+  {
+    "year": "2016",
+    "bachelor": 5276,
+    "master": 1800,
+    "PhD": 230
+  },
+  {
+    "year": "2017",
+    "bachelor": 5321,
+    "master": 1887,
+    "PhD": 340
+  },
+  {
+    "year": "2018",
+    "bachelor": 5182,
+    "master": 1686,
+    "PhD": 296
+  },
+  {
+    "year": "2019",
+    "bachelor": 5198,
+    "master": 1692,
+    "PhD": 301
+  }
+]

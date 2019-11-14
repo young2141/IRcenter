@@ -1,0 +1,14 @@
+﻿{
+    "within": {
+        "within_recruitment_rate": 99.34,
+        "within_competition_rate": 8.0
+    },
+    "over": {
+        "over_recruitment_rate": 92.46,
+        "over_competition_rate": 6.57
+    },
+    "total": {
+        "total_recruitment_rate": 98.76,
+        "total_competition_rate": 7.88
+    }
+}

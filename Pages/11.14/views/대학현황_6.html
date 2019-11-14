@@ -1,0 +1,422 @@
+<!DOCUTYPE html>
+	<html>
+
+	<head>
+		<meta charset="ANSI">
+		<title>경북대학교 IR센터</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+		<script src="https://www.amcharts.com/lib/4/core.js"></script>
+		<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+		<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+		<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.js"
+			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+		<script src="../js/10월_1주차_1.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+	</head>
+
+	<style type="text/css">
+		.link {
+			color: #B90000;
+		}
+
+		body {
+			font-family: 'Nanum Gothic', sans-serif;
+			/*background-repeat: no-repeat;*/
+			background-size: 100% 50%;
+		}
+
+		.chartdiv {
+			width: 700px;
+			height: 400px;
+			display: inline-block;
+			border-style: solid;
+			margin: 10px;
+			padding: 10px;
+		}
+
+		div.legend {
+			width: 300px;
+			height: 400px;
+			float: right;
+			margin: 10px;
+			margin-right: 400px;
+			padding: 10px;
+			line-height: 30px;
+
+		}
+
+		div.legend a:visited {
+			color: black;
+		}
+
+		div.legend a:link {
+			color: black;
+		}
+
+
+		div.box1 {
+			height: 70px;
+			background-color: #1E3269;
+			color: white;
+			border-width: 5px;
+			/*border-color:black;*/
+			/*margin : 100px;*/
+			font-size: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		div.loginBox {
+			float: right;
+		}
+
+		div.titleNameBox {
+			margin: 20px;
+			width: 500px;
+
+			text-shadow:
+				-1px -1px 0 #000,
+				1px -1px 0 #000,
+				-1px 1px 0 #000,
+				1px 1px 0 #000;
+		}
+
+		div.titleBox {}
+
+		#box2 {
+			height: 40px;
+
+			border-style: solid;
+			border-width: 2px;
+			border-color: #d2d2d2;
+
+			font-size: 20px;
+			line-height: 40px;
+			background-color: white;
+
+			padding-left: 250px;
+			padding-right: 250px;
+			margin: 20px;
+
+			text-align: center;
+			list-style: none;
+
+		}
+
+		#box2 li {
+			float: left;
+			width: 150px;
+			position: relative;
+			text-align: center;
+		}
+
+		#box2 ul {
+			list-style: none;
+			display: none;
+			/*보이지 않도록 하는 속성*/
+			text-align: center;
+			font-size: 15px;
+		}
+
+		#box2 li:hover ul {
+			display: block;
+			text-align: center;
+		}
+
+		#box2 a:visited {
+			color: black;
+		}
+
+		#box2 a:link {
+			color: black;
+		}
+
+		#box2 ul li {
+			background-color: white;
+			text-align: center;
+		}
+
+		div.box3 {
+			height: 50px;
+			width: 200px;
+			background-color: #1E3269;
+			;
+		}
+
+		div.boxframe {
+			height: 70px;
+			background-color: #d2d2d2;
+			background-position: center right;
+			/* 박스 중간에 이미지 출력 */
+			position: top:50%;
+			margin: 30px;
+		}
+
+		div.menuBox {
+			height: 100px;
+			width: 1053px;
+			background-color: darkgrey;
+			opacity: 0.8;
+			padding: 10px;
+			margin: 10px;
+		}
+
+		div.menuBox2 {
+			height: 100px;
+			width: 700px;
+			background-color: white;
+			opacity: 0.95;
+			padding: 15px;
+			margin: 10px;
+			color: black;
+			line-height: 20px;
+		}
+
+		div.inmenuBox {
+			height: 40px;
+			width: 200px;
+			background-color: black;
+			float: left;
+			margin: 5px;
+			line-height: 38px;
+			font-size: 18px;
+		}
+
+		div.searchBox {
+			height: 70px;
+			width: 500px;
+			color: black;
+			font-size: 30px;
+			line-height: 70px;
+
+			background-color: black;
+			margin: 5px;
+			padding: 10px;
+			padding-bottom: 15px;
+			background-color: rgba(255, 255, 255, 0.8);
+		}
+
+		div.newsBox {
+
+			height: 300px;
+			width: 450px;
+			background-color: black;
+			float: left;
+			margin: 13px;
+			margin-left: 19px;
+			font-size: 20px;
+			margin-top: 40px;
+			color: white;
+			padding: 20px;
+		}
+
+		.newsNameBox {
+			width: 450px;
+			float: left;
+			color: white;
+			font-size: 35px;
+			margin-left: 10px;
+			margin-right: 10px;
+			text-align: left;
+			margin-bottom: 10px;
+		}
+
+		.newsMenuBox {
+			float: bottom;
+			color: white;
+			font-size: 20px;
+			text-align: left;
+		}
+
+
+		div.bottomframe {
+			height: 210px;
+			background-color: #1E3269;
+			;
+			background-position: center right;
+			/* 박스 중간에 이미지 출력 */
+			position: top:50%;
+			padding: 10px;
+		}
+
+		div.inbottomframe {
+			/*주소적힌 공간*/
+			height: 70px;
+			float: bottom;
+			font-size: 15px;
+		}
+
+		div.mainBoard {
+			height: 500px;
+			margin: 20px;
+			background-color: darkgrey;
+			opacity: 0.5;
+			float: bottom;
+		}
+
+		div.middleBox {
+			height: 300px;
+			width: 300px;
+		}
+
+		select {
+			width: 500px;
+			background-color: white;
+			padding: .8em .5em;
+			border: 1px solid;
+			border-radius: 0px;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			text-align: middle;
+		}
+
+		select::-ms-expand {
+			display: none;
+		}
+
+
+
+		.red {
+			color: #B90000;
+		}
+
+		.right {
+			text-align: right;
+			color: white;
+			font-size: 20;
+		}
+
+		.2em {
+			text-indent: 2em;
+		}
+
+		.warning {
+			color: black;
+			font-size: 20;
+		}
+
+		.white {
+			color: white;
+		}
+
+
+		a:link {
+			text-decoration: none;
+			color: white;
+		}
+
+		/*방문한적 없는 링크*/
+		a:visited {
+			text-decoration: none;
+			color: white;
+		}
+
+		a:active {
+			text-decoration: none;
+			color: white;
+		}
+
+		/*클릭하려는 순간*/
+		a:hover {
+			text-decoration: none;
+			color: white;
+		}
+	</style>
+
+	<body>
+		<div class="box1" id="wrapper">
+			<form class>
+				<br>
+				<a href="https://www.knu.ac.kr" target="_blank"><b>경북대학교 홈페이지</b>
+					<a href="첫화면.html"><b>| 경북대학교 IR센터</a></b>
+					<!--<a href = "로그인 화면.html">*/-->
+					<div class="loginBox">
+						<a href="첫화면.html">로그인　|　</a>
+						<input type="text" value="" placeholder="Search this site">
+						<input type="button" value="검색">
+					</div>
+			</form>
+		</div>
+
+
+		<center></center>
+
+		<div style="background-color: none; padding: 3px; margin: 10px">
+			<h1>학위수여</h1>
+		</div>
+
+
+		<div id="chartdiv1" class="chartdiv"> 그래프 6-1</div>
+		<div class="legend">
+
+			<!--<a href = "대학현황.html">이전 페이지로</a><br>-->
+			<span style="color:#2E64FE; font-size: 20px;">■</span> 지원<br>
+			<span style="color:yellow; font-size: 20px;">■</span> 모집<br>
+			<span style="color:red; font-size: 20px;">■</span> 입학<br>
+			<br><br>
+			<form>
+
+				<input type="checkbox" name="성별" value="전체" checked="checked" />전체<br>
+				<input type="checkbox" name="성별" value="남자"/>남자<br>
+				<input type="checkbox" name="성별" value="여자"/>여자<br>
+
+				<br><br>
+
+			</form>
+
+		</div>
+		<br>
+		
+		<div style="background-color: none;margin: 10px">
+			<h3>2018년도에 학위수여가 가장 많았던 10개 전공</h3>
+		</div>
+		
+		<div id="chartdiv2-1" class="chartdiv"> 그래프 6-2</div>
+		<br>
+		<!--
+		<div id="chartdiv3-1" class="chartdiv"> 그래프 3-1</div>
+		<br>
+		<div id="chartdiv3-2" class="chartdiv"> 그래프 3-2</div>
+		<br>
+		<div id="chartdiv3-3" class="chartdiv"> 그래프 3-3</div>
+		<br>
+		<div id="chartdiv3-4" class="chartdiv"> 그래프 3-4</div>
+		<br>
+		<div id="chartdiv3-5" class="chartdiv"> 그래프 3-5</div>
+		<br>
+		<div id="chartdiv3-6" class="chartdiv"> 그래프 3-6</div>
+		<br>
+		<div id="chartdiv3-7" class="chartdiv"> 그래프 3-7</div>
+		<br>
+		<div id="chartdiv3-8" class="chartdiv"> 그래프 3-8</div>
+		<br>
+		<div id="chartdiv3-9" class="chartdiv"> 그래프 3-9</div>
+		<br>
+		<div id="chartdiv3-10" class="chartdiv"> 그래프 3-10</div>
+		<br>
+-->
+
+
+		<div class="bottomframe">
+			<div class="inbottomframe"></div>
+			<div class="inbottomframe"></div>
+			<div class="inbottomframe">
+				<a href="첫화면.html">개인정보처리방침</a>
+				<a href="첫화면.html">　이메일 무단수집거부</a>
+				<br><br>
+				<span class="white">대구광역시 북구 대학로 80 경북대학교 | 053-950-2963</span>
+				<br>
+				<span class="white">Copyright(c) Kyungpook National University. All rights reserved.</span>
+
+			</div>
+		</div>
+
+
+
+	</body>
+
+	</html>

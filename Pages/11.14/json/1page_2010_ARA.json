@@ -1,0 +1,17 @@
+﻿{
+    "within": {
+        "recruitment_within_admission": 3876,
+        "applied_within_admission": 30101,
+        "admitted_within_admission": 3849
+    },
+    "over": {
+        "recruitment_over_admission": 338,
+        "applied_over_admission": 787,
+        "admitted_over_admission": 396
+    },
+    "total": {
+        "recruitment_total_admission": 4214,
+        "applied_total_admission": 30888,
+        "admitted_total_admission": 4245
+    }
+}
