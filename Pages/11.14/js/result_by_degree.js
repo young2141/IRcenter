@@ -84,16 +84,17 @@ function calld3(type, year,picked) {
             .attr("class", "tooltip-bubble")
             .style("opacity", 0)
 
-        var node = svg.selectAll(".node")
+        var node = svg.selectAll(".node")            
             .data(bubble(nodes).descendants())
             .enter()
             .filter(function (d) { return !d.children })
             .append("g")
             .attr("class", "node")
             .attr("opacity",'.4')
+            .attr("id",function(d){return d.data.Name})
             .attr("transform", function (d) {
                 return "translate(" + d.x + "," + d.y + ")";
-            })
+            })            
             .on("mouseover", function (d, i) {
                 d3.select(this).transition()
                     .duration('50')
@@ -123,10 +124,8 @@ function calld3(type, year,picked) {
 
         node.append("text")
             .attr("dy", ".2em")
-            .style("text-anchor", "middle")
-            .text(function (d) {
-                return d.data.Name.substring(0, d.r / 3);
-            })
+            .style("text-anchor", "middle")            
+            .text(function(d){return d.data.Name})
             .attr("font-family", "sans-serif")
             .attr("font-size", function (d) { return d.r / 5 })
             .attr("fill", "white");
@@ -145,6 +144,19 @@ function calld3(type, year,picked) {
 
         d3.select(self.frameElement)
             .style("height", diameter + "px");
+        
+        if(picked != "전체"){
+            d3.select("#"+picked+" 학사")
+                .enter()
+                .style("opacity",'1')
+                .attr("fill","white")
+            d3.select("#"+picked+" 석사")
+                .style("opacity",'1')
+                .attr("fill","white")
+            d3.select("#"+picked+" 박사")
+                .style("opacity",'1')
+                .attr("fill","white")
+        }
 
     }, year)
 };

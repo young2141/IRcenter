@@ -5,19 +5,19 @@ function P6drawBoxGraph_width(_data, _divName, _cnt, _categoryX, _valueY, _value
         var bwchart = am4core.create(_divName, am4charts.XYChart);
         bwchart.data = _data;
 
-        if(_divName=="chartdiv5"){
-            var title = bwchart.titles.create();
-            title.text = "(단위 : 명)";
-            title.fontSize = 15;            
-            title.dx = 180;
-            title.dy = -35;
-        }
+        // if(_divName=="chartdiv5"){
+        //     var title = bwchart.titles.create();
+        //     title.text = "(단위 : 명)";
+        //     title.fontSize = 15;            
+        //     title.dx = 180;
+        //     title.dy = -35;
+        // }
         
         var scaleTitle = bwchart.titles.create();
         scaleTitle.text = _title;
         scaleTitle.fontSize = 20;
         scaleTitle.dy = -5;
-        scaleTitle.dx = 50;
+        scaleTitle.dx = 70;
 
         // Create axes :
         var categoryAxis = bwchart.yAxes.push(new am4charts.CategoryAxis());
@@ -27,6 +27,7 @@ function P6drawBoxGraph_width(_data, _divName, _cnt, _categoryX, _valueY, _value
         // ������
         var valueAxis = bwchart.xAxes.push(new am4charts.ValueAxis());
         valueAxis.renderer.ticks.template.strokeOpacity = 0.5;
+
         //wvalueAxis.title.text = _title;
 
         valueAxis.renderer.baseGrid.disabled = true;

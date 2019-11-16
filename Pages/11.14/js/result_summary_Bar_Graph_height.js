@@ -12,8 +12,8 @@ function P6drawBoxGraph_height(_data, _divName, _categoryX, _valueY, _valueY_ko,
             var title = bhchart.titles.create();
             title.text = "(단위 : 명)";
             title.fontSize = 15;            
-            title.dx = 400;
-            title.dy = -30;
+            title.dx = 490;
+            title.dy = -15;
         }
 
 
@@ -29,8 +29,9 @@ function P6drawBoxGraph_height(_data, _divName, _categoryX, _valueY, _valueY_ko,
         bwvalueAxis.max = 7000;
         bwvalueAxis.title.text = _title
         bwvalueAxis.title.fontSize = 18;
-        bwvalueAxis.title.fontWeight = "bold";
-        bwvalueAxis.title.pointerOrientation = "vertical";
+        bwvalueAxis.title.rotation = 0;
+        bwvalueAxis.title.fontWeight = 400;
+
         
         // var scaleTitle = bhchart.titles.create();
         // scaleTitle.text = _title;
