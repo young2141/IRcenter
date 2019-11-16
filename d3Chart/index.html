@@ -47,6 +47,10 @@
         <input type="radio" name="chk_year" value="2011" onclick="check()">2011
         <input type="radio" name="chk_year" value="2010" onclick="check()">2010
     </div>
+    <!-- <div>
+        <input type="radio" name="chk_one" value="2019" checked="checked" onclick="check()">default
+        <input type="radio" name="chk_one" value="2019" onclick="check()">pick one
+    </div> -->
 
     <script type="text/javascript">
         function parse(callback, year) {
@@ -82,26 +86,42 @@
 
         function calld3(type, year) {
             parse(json => {
+                //console.log(json)
                 var dataset = new Object();
                 var children_array = new Array();
                 for (var i = 0; i < json.length; ++i) {
-                    tmp = new Object();
-                    tmp["Name"] = json[i]["category"]
-                    var ppl = 0
                     if (type[0] == 1) {
-                        ppl += json[i]["bachelor"]
+                        tmp = new Object();
+                        tmp["Name"] = json[i]["category"] + " 학사";
+                        tmp["Count"] =  json[i]["bachelor"]
+                        if(tmp["Count"])
+                            children_array.push(tmp)
                     }
                     if (type[1] == 2) {
-                        ppl += json[i]["master"]
+                        tmp = new Object();
+                        tmp["Name"] = json[i]["category"] + " 석사";
+                        tmp["Count"] =  json[i]["master"];
+                        if(tmp["Count"])
+                            children_array.push(tmp)
                     }
                     if (type[2] == 3) {
-                        ppl += json[i]["doctor"]
+                        tmp = new Object();
+                        tmp["Name"] = json[i]["category"] + " 박사";
+                        tmp["Count"] =  json[i]["doctor"];
+                        if(tmp["Count"])
+                            children_array.push(tmp)
                     }
-                    tmp["Count"] = ppl
-                    if (ppl)
-                        children_array.push(tmp)
                 }
-                dataset["children"] = children_array;
+                
+                children_array.sort((a,b)=>(a.Count > b.Count) ? -1 : ((b.Count > a.Count ? 1 : 0)))
+                etc = {"Name" : "그 외", "Count" : 0};
+                for(var i=30;i<children_array.length;++i){
+                    etc["Count"] += children_array[i]["Count"];
+                }
+                children_array = children_array.slice(0,30);
+                children_array.push(etc)
+                
+                dataset["children"] = children_array
                 console.log(dataset)
                 d3.select("svg").remove();
                 var diameter = 600;
@@ -130,13 +150,14 @@
                     .filter(function (d) { return !d.children })
                     .append("g")
                     .attr("class", "node")
+                    .attr("opacity",'.4')
                     .attr("transform", function (d) {
                         return "translate(" + d.x + "," + d.y + ")";
                     })
                     .on("mouseover", function (d, i) {
                         d3.select(this).transition()
                             .duration('50')
-                            .attr("opacity", '.65')
+                            .attr("opacity", '1')
                         div.transition()
                             .duration(50)
                             .style("opacity", 1)
@@ -147,7 +168,7 @@
                     .on("mouseout", function (d, i) {
                         d3.select(this).transition()
                             .duration('50')
-                            .attr('opacity', '1')
+                            .attr('opacity', '.4')
                         div.transition()
                             .duration('50')
                             .style("opacity", 0)

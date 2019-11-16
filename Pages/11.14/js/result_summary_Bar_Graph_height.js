@@ -5,22 +5,38 @@ function P6drawBoxGraph_height(_data, _divName, _categoryX, _valueY, _valueY_ko,
         am4core.useTheme(am4themes_animated);
         var bhchart = am4core.create(_divName, am4charts.XYChart);
         bhchart.data = _data;
+        console.log(_title)
+        
+        if(_divName=="chartdiv1"){
+            console.log("hi")
+            var title = bhchart.titles.create();
+            title.text = "(ë‹¨ìœ„ : ëª…)";
+            title.fontSize = 15;            
+            title.dx = 400;
+            title.dy = -30;
+        }
 
-        var scaleTitle = bhchart.titles.create();
-        scaleTitle.text = _title;
-        scaleTitle.fontSize = 20;
-        scaleTitle.dy = -10;
 
-        // Create axes : °¡·ÎÃà
+        // Create axes : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         var bhcategoryAxis = bhchart.xAxes.push(new am4charts.CategoryAxis());
         bhcategoryAxis.dataFields.category = "year";
         bhcategoryAxis.renderer.grid.template.location = 0;
         bhcategoryAxis.renderer.minGridDistance = 30;
 
-        // ¼¼·ÎÃà
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         var bwvalueAxis = bhchart.yAxes.push(new am4charts.ValueAxis());
         bwvalueAxis.min = 0;
         bwvalueAxis.max = 7000;
+        bwvalueAxis.title.text = _title
+        bwvalueAxis.title.fontSize = 18;
+        bwvalueAxis.title.fontWeight = "bold";
+        bwvalueAxis.title.pointerOrientation = "vertical";
+        
+        // var scaleTitle = bhchart.titles.create();
+        // scaleTitle.text = _title;
+        // scaleTitle.fontSize = 20;
+        // scaleTitle.dx = -385;
+        // scaleTitle.dy = -100;
         //bwvalueAxis.strictMinMax = true;
 
         P6bhcreateSeries(bhchart, _categoryX, _valueY, _valueY_ko, 0, _valueY_RGB)
@@ -32,8 +48,8 @@ function P6bhcreateSeries(bhchart, _categoryX, _valueY, _valueY_ko, _percent, _v
     bhseries.dataFields.valueY = _valueY;
     bhseries.dataFields.categoryX = "year";
     bhseries.columns.template.strokeWidth = 0
-    bhseries.columns.template.stroke = am4core.color(_valueY_RGB); //»ö»ó
-    bhseries.columns.template.fill = am4core.color(_valueY_RGB); // »ö»ó
+    bhseries.columns.template.stroke = am4core.color(_valueY_RGB); //ï¿½ï¿½ï¿½ï¿½
+    bhseries.columns.template.fill = am4core.color(_valueY_RGB); // ï¿½ï¿½ï¿½ï¿½
 
     var bhserieslabel = bhseries.bullets.push(new am4charts.LabelBullet());
     bhserieslabel.label.text = "{valueY}";

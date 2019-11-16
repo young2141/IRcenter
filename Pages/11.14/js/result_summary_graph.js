@@ -108,15 +108,15 @@ function chart1(type, clr) {
     var valueY_RGB = clr;
     $.getJSON("../../json/result_summary_num_by_graduate_" + conditions + ".json", (result) => {
         if (type == "bachelor") {
-            var title = "학사과정";
+            var title = "학사";
             var divName = "chartdiv1";
         }
         else if (type == "master") {
-            var title = "석사과정";
+            var title = "석사";
             var divName = "chartdiv2";
         }
         else {
-            var title = "박사과정";
+            var title = "박사";
             var divName = "chartdiv3";
         }
         var categoryX = "year";
@@ -137,11 +137,11 @@ function chart2(filename) {
         result = jsonData;
         result = result.reverse();
         if (filename == "top_bachelor_graduates.json") {
-            var title = "학사과정";
+            var title = "학사";
             var divName = "chartdiv4";
         }
         else {
-            var title = "석박사과정";
+            var title = "석사 및 박사";
             var divName = "chartdiv5";
 
         }

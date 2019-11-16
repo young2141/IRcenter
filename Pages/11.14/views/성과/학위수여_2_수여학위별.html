@@ -10,15 +10,11 @@
 		<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 		<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 		<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.4.1.js"
 			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-		
-		<script src="../../js/page1_graph.js"></script>
-		<script src="../../js/doParsing.js"></script>
-		<script src="../../js/page1_Curved.js"></script>
-		<script src="../../js/1_layered.js"></script>
-		<script src="../../js/1_line.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">		
+		<script src="../../js/result_by_degree.js"></script>
 		
 
 		
@@ -27,6 +23,23 @@
 
 	<style type="text/css">
 	@import url('../../css/output_default.css');
+	.node:hover {
+            fill-opacity: 29;
+            stroke: white;
+            stroke-width: 1px;
+        }
+
+	divv.tooltip-bubble {
+		position: absolute;
+		text-align: center;
+		padding: .5rem;
+		background: whitesmoke;
+		color: #313639;
+		border: 0px;
+		border-radius: 8px;
+		pointer-events: none;
+		font-size: 1.0rem;
+	}
 	</style>
 
 	<body>
@@ -93,11 +106,6 @@
 		
 		<div id = "TOP">
 		
-		<script>
-			parse(json=>{document.write(json[0]["year"]});
-		</script>
-		
-		
 		
 		<div id = "summaryBox">
 			<h2>수여학위별 현황</h2>
@@ -106,7 +114,7 @@
 		</div>
 		
 
-		<div id="chartdiv1" class="chartdiv"> 그래프 2-1</div>
+		<div id="myGraph",class="chartdiv"></div>
 		<div class="legend" id="gotop" style = "left:80%; top :40%">
 		
 		<br><br>
@@ -115,9 +123,9 @@
 				<span style="font-size: 20px"><b>학위수준별 검색</b></span>
 				<br>
 				
-				<input type="checkbox" id="T2" name="학위" value="within" checked="checked" onclick="years1(); years2(); Change();"/>학사<br>
-				<input type="checkbox" id="T1" name="학위" value="total" checked="checked" onclick="years1(); years2(); Change();"/>석사<br>
-				<input type="checkbox" id="T3" name="학위" value="over" checked="checked" onclick="years1(); years2(); Change();"/>박사<br><br>
+				<input type="checkbox" name="chk_type" value=1 checked="checked" onclick="check()">학사 </br>
+				<input type="checkbox" name="chk_type" value=2 checked="checked" onclick="check()">석사 </br>
+				<input type="checkbox" name="chk_type" value=3 checked="checked" onclick="check()">박사 </br></br>
 				
 				<span style="font-size: 20px"><b>년도별 검색</b></span>
 				<br>
@@ -130,7 +138,7 @@
 				<script>
 				   function valuechange(value) {
 					  document.getElementById('span1').innerHTML = (value);
-					  parsing1();
+					  check();
 				   }
 				   function decrease() {
 					  current_value = document.getElementById('years').value
@@ -139,9 +147,9 @@
 					  valuechange(document.getElementById('years').value)
 				   }
 				   function increase() {
-					  document.getElementById('years').value += 1;
-					  current_value = document.getElementById('years').value
+					current_value = document.getElementById('years').value
 					  console.log(current_value);
+					  document.getElementById('years').value += 1
 					  valuechange(document.getElementById('years').value)
 				   }
 				</script>
@@ -149,58 +157,58 @@
 				<br><br>
 				
 				<span style="font-size: 20px"><b>학위 종 찾기</b></span><br>
-				<select name="menu" onchange="location.href=this.value" style = "width : 200px; height: 30px">
-				<option>항목을 선택하세요.</option>
-				<option>가정학</option>
-				<option>간호학</option>
-				<option>건축학</option>
-				<option>경영학</option>
-				<option>경제학</option>
-				<option>공학</option>
-				<option>관광학</option>
-				<option>교육학</option>
-				<option>국제학</option>
-				<option>금융공학</option>
-				<option>기록학</option>
-				<option>농학</option>
-				<option>도서관학</option>
-				<option>디자인학</option>
-				<option>문 학</option>
-				<option>문학치료학</option>
-				<option>문헌정보학</option>
-				<option>미술학</option>
-				<option>법 무</option>
-				<option>법학</option>
-				<option>보건학</option>
-				<option>사회복지학</option>
-				<option>사회학</option>
-				<option>상학</option>
-				<option>소프트웨어공학</option>
-				<option>수사과학</option>
-				<option>수산학</option>
-				<option>수의학</option>
-				<option>신문방송학</option>
-				<option>심리학</option>
-				<option>약학</option>
-				<option>언론학</option>
-				<option>언론홍보학</option>
-				<option>영양식품학</option>
-				<option>예술공학</option>
-				<option>음악학</option>
-				<option>의료정보학</option>
-				<option>의무</option>
-				<option>의학</option>
-				<option>이학</option>
-				<option>정책정보학</option>
-				<option>정치학</option>
-				<option>조경학</option>
-				<option>지리학</option>
-				<option>철 학</option>
-				<option>체육학</option>
-				<option>치 무</option>
-				<option>치위생학</option>
-				<option>치의학</option>
-				<option>행정학</option>
+				<select name="menu" onchange="check()" style = "width : 200px; height: 30px">
+				<option value="전체">전체</option>
+				<option value="가정학">가정학</option>
+				<option value = "간호학">간호학</option>
+				<option value = "건축학">건축학</option>
+				<option value = "경영학">경영학</option>
+				<option value = "경제학">경제학</option>
+				<option value = "공학">공학</option>
+				<option value = "관광학">관광학</option>
+				<option value = "교육학">교육학</option>
+				<option value = "국제학">국제학</option>
+				<option value = "금융공학">금융공학</option>
+				<option value = "기록학">기록학</option>
+				<option value = "농학">농학</option>
+				<option value = "도서관학">도서관학</option>
+				<option value = "디자인학">디자인학</option>
+				<option value = "문학">문학</option>
+				<option value = "문학치료학">문학치료학</option>
+				<option value = "문헌정보학">문헌정보학</option>
+				<option value = "미술학">미술학</option>
+				<option value = "법무">법무</option>
+				<option value = "법학">법학</option>
+				<option value = "보건학">보건학</option>
+				<option value = "사회복지학">사회복지학</option>
+				<option value = "사회학">사회학</option>
+				<option value = "상학">상학</option>
+				<option value = "소프트웨어공학">소프트웨어공학</option>
+				<option value = "수사과학">수사과학</option>
+				<option value = "수산학">수산학</option>
+				<option value = "수의학">수의학</option>
+				<option value = "신문방송학">신문방송학</option>
+				<option value = "심리학">심리학</option>
+				<option value = "약학">약학</option>
+				<option value = "언론학">언론학</option>
+				<option value = "언론홍보학">언론홍보학</option>
+				<option value = "영양식품학">영양식품학</option>
+				<option value = "예술공학">예술공학</option>
+				<option value = "음악학">음악학</option>
+				<option value = "의료정보학">의료정보학</option>
+				<option value = "의무">의무</option>
+				<option value = "의학">의학</option>
+				<option value = "이학">이학</option>
+				<option value = "정책정보학">정책정보학</option>
+				<option value = "정치학">정치학</option>
+				<option value = "조경학">조경학</option>
+				<option value = "지리학">지리학</option>
+				<option value = "철학">철학</option>
+				<option value = "체육학">체육학</option>
+				<option value = "치무">치무</option>
+				<option value = "치위생학">치위생학</option>
+				<option value = "치의학">치의학</option>
+				<option value = "행정학">행정학</option>
 				</select>
 				
 		</form>
@@ -221,7 +229,9 @@
 			
 		</script>
 		<br>
-		
+		<script>
+			check();
+		</script>
 	
 		<div id = "summaryBox" style = "font-size: 15px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
@@ -252,36 +262,6 @@
 			</div>
 		</div>
 		
-		<script>
-		years1(); 
-		years2();
-		function Change()
-		{
-			var temp = document.getElementById("T1")
-			var Target1 = document.getElementById("P1")
-			var Target2 = document.getElementById("P2")
-			if (temp.checked == true)
-			{
-				Target1.innerHTML = "전체"
-				Target2.innerHTML = "전체"
-			}
-			temp = document.getElementById("T2")
-			if (temp.checked == true)
-			{
-				Target1.innerHTML = "정원내"
-				Target2.innerHTML = "정원내"
-			}
-
-			temp = document.getElementById("T3")
-			if (temp.checked == true)
-			{
-				Target1.innerHTML = "정원외"
-				Target2.innerHTML = "정원외"	
-			}
-
-		}
-		</script>
-
 
 
 	</body>

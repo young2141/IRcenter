@@ -4,10 +4,12 @@ import re
 
 for name in range(2010, 2020):
     print(name)
+    match = open('match_colleague.txt','w',encoding='UTF-8-sig')
     dirr = r'C:\Users\\taeyo\IRcenter\data\지원자,모집인원,입학자\json_data\fund\\'
     with open(dirr + str(name)+'.json','r',encoding='UTF-8-sig') as jf:
         data = json.load(jf)
         colleague_type = {'자연과학계열':0, '공학계열':1,'예체능계열':2,'의학계열':3,'인문사회계열':4}
+        kk = ['자연과학계열', '공학계열','예체능계열','의학계열','인문사회계열']
         colleague = [[] for _ in range(5)]
         exception_checker = {
             '금속공학과': '공학계열',
@@ -56,7 +58,9 @@ for name in range(2010, 2020):
                 code = re.compile(r'\d+')
                 code_value = code.search(d['major'])
                 if code_value:                
-                    if str(code_value.group()) in c:                        
+                    if str(code_value.group()) in c:
+                        num = colleague_type[code_value.group()]
+                        match.write(d['major']+':'+kk[num])
                         applied[num] += d['total_applied']
                         recruitment[num] += d['total_recruitment']
                         admitted[num] += d['total_admitted']
@@ -65,6 +69,8 @@ for name in range(2010, 2020):
                         D[num] += d['man_admitted_within_admission']+d['woman_admitted_within_admission']
                         break
                     elif d['major'].split()[0] in c:
+                        num = colleague_type[code_value.group()]
+                        match.write(d['major']+':'+kk[num])
                         applied[num] += d['total_applied']
                         recruitment[num] += d['total_recruitment']
                         admitted[num] += d['total_admitted']
@@ -73,6 +79,7 @@ for name in range(2010, 2020):
                         D[num] += d['man_admitted_within_admission']+d['woman_admitted_within_admission']
                         break
                     elif d['major'] in exception_checker.keys():
+                        match.write(d['major']+':'+exception_checker[d['major']])    
                         num = colleague_type[exception_checker[d['major']]]
                         applied[num] += d['total_applied']
                         recruitment[num] += d['total_recruitment']
@@ -83,6 +90,8 @@ for name in range(2010, 2020):
                         break
                 else:                    
                     if d['major'] in c:
+                        num = colleague_type[d['major']]
+                        match.write(d['major']+':'+kk[num])
                         applied[num] += d['total_applied']
                         recruitment[num] += d['total_recruitment']
                         admitted[num] += d['total_admitted']
@@ -91,6 +100,8 @@ for name in range(2010, 2020):
                         D[num] += d['man_admitted_within_admission']+d['woman_admitted_within_admission']
                         break
                     elif d['major'].split()[0] in c:
+                        num = colleague_type[code_value.group()]
+                        match.write(d['major']+':'+kk[num])
                         applied[num] += d['total_applied']
                         recruitment[num] += d['total_recruitment']
                         admitted[num] += d['total_admitted']
@@ -99,6 +110,7 @@ for name in range(2010, 2020):
                         D[num] += d['man_admitted_within_admission']+d['woman_admitted_within_admission']
                         break
                     elif d['major'] in exception_checker.keys():
+                        match.write(d['major']+':'+exception_checker[d['major']])
                         num = colleague_type[exception_checker[d['major']]]
                         applied[num] += d['total_applied']
                         recruitment[num] += d['total_recruitment']

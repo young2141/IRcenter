@@ -5,20 +5,29 @@ function P6drawBoxGraph_width(_data, _divName, _cnt, _categoryX, _valueY, _value
         var bwchart = am4core.create(_divName, am4charts.XYChart);
         bwchart.data = _data;
 
+        if(_divName=="chartdiv5"){
+            var title = bwchart.titles.create();
+            title.text = "(ë‹¨ìœ„ : ëª…)";
+            title.fontSize = 15;            
+            title.dx = 180;
+            title.dy = -35;
+        }
+        
         var scaleTitle = bwchart.titles.create();
         scaleTitle.text = _title;
         scaleTitle.fontSize = 20;
-        scaleTitle.dy = -10;
+        scaleTitle.dy = -5;
+        scaleTitle.dx = 50;
 
         // Create axes :
         var categoryAxis = bwchart.yAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = _valueY;
         categoryAxis.renderer.grid.template.opacity = 0;
 
-        // ¼¼·ÎÃà
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         var valueAxis = bwchart.xAxes.push(new am4charts.ValueAxis());
         valueAxis.renderer.ticks.template.strokeOpacity = 0.5;
-        valueAxis.title.text = _title;
+        //wvalueAxis.title.text = _title;
 
         valueAxis.renderer.baseGrid.disabled = true;
         valueAxis.renderer.minGridDistance = 40;
@@ -28,12 +37,9 @@ function P6drawBoxGraph_width(_data, _divName, _cnt, _categoryX, _valueY, _value
 
 function P6bwcreateSeries(bwchart, _categoryX, _valueY, _valueY_ko, _percent, _valueY_RGB) {
     var bwseries = bwchart.series.push(new am4charts.ColumnSeries());
-    bwseries.dataFields.valueX = _valueY; // ÃÑ Áö¿øÀÚ ¼ö
+    bwseries.dataFields.valueX = _valueY; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
     bwseries.dataFields.categoryY = _categoryX;
     bwseries.stroke = "#a16973";
     bwseries.fill = "#a16973";
-
-    bwseries.rows.template.stroke = am4core.color(_valueY_RGB); //»ö»ó
-    bwseries.rows.template.fill = am4core.color(_valueY_RGB);
 
 }
