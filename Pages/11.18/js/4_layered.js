@@ -32,7 +32,7 @@ function drawLayeredChart(_data,type) {
 
         var chart = am4core.create("chartdiv1", am4charts.XYChart);
         chart.data = _data;
-        chart.numberFormatter.numberFormat = "#,###";
+        chart.numberFormatter.numberFormat = "####";
 
         chart.cursor = new am4charts.XYCursor();
         chart.cursor.lineY.disabled = true;
