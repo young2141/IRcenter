@@ -12,7 +12,7 @@
 
 function parsing1(_year, _condition1, _condition2, _data) {
     var filename = "4page_" + String(_year) + "_colleage_" + _condition1 + ".json";
-    var temp = { "year": _year };
+    var temp = { "year": String(_year) };
     $.getJSON("../../json/" + filename, (jsonData) => {
         temp["recruitment"] = jsonData[_condition2]["recruitment"];
         temp["applied"] = jsonData[_condition2]["applied"];
@@ -32,7 +32,7 @@ function drawLayeredChart(_data,type) {
 
         var chart = am4core.create("chartdiv1", am4charts.XYChart);
         chart.data = _data;
-        chart.numberFormatter.numberFormat = "####";
+        chart.numberFormatter.numberFormat = "#,###";
 
         chart.cursor = new am4charts.XYCursor();
         chart.cursor.lineY.disabled = true;
