@@ -1,7 +1,7 @@
 function parse(callback, year) {
     if (year <= 2018) year = 2018
     $.getJSON("../../json/" + String(year) + "_dgree_by_major.json", (json) => {
-        console.log(json)
+        //console.log(json)
         callback(json)
     })
 }
@@ -62,7 +62,7 @@ function calld3(type, year,picked) {
         children_array.push(etc)
         
         dataset["children"] = children_array
-        console.log(dataset)
+        //console.log(dataset)
         d3.select("svg").remove();
         var diameter = 600;
         var color = d3.scaleOrdinal(d3.schemeCategory20);
@@ -90,8 +90,17 @@ function calld3(type, year,picked) {
             .filter(function (d) { return !d.children })
             .append("g")
             .attr("class", "node")
-            .attr("opacity",'.4')
-            .attr("id",function(d){return d.data.Name})
+            .attr("opacity",'.3')
+            .attr("id",function(d){
+            var s = d.data.Name
+            var ne = "";
+            for(var i =0;i<s.length;++i){
+             if(s[i] != " ")
+                ne += s[i];
+            }
+            //return d.data.Name
+            return ne;
+            })
             .attr("transform", function (d) {
                 return "translate(" + d.x + "," + d.y + ")";
             })            
@@ -117,10 +126,12 @@ function calld3(type, year,picked) {
 
         // node.append("title")
         //     .text(function (d) {return d.Name + ": " + d.Count});
-
+        console.log(picked);
+        
         node.append("circle")
             .attr("r", function (d) { return d.r })
-            .style("fill", function (d, i) { return color(i) });
+            .style("fill", function (d, i) { return color(i) });      
+
 
         node.append("text")
             .attr("dy", ".2em")
@@ -146,16 +157,34 @@ function calld3(type, year,picked) {
             .style("height", diameter + "px");
         
         if(picked != "전체"){
-            d3.select("#"+picked+" 학사")
-                .enter()
-                .style("opacity",'1')
-                .attr("fill","white")
-            d3.select("#"+picked+" 석사")
-                .style("opacity",'1')
-                .attr("fill","white")
-            d3.select("#"+picked+" 박사")
-                .style("opacity",'1')
-                .attr("fill","white")
+            var found = false;
+            
+            d3.select("#"+picked+"학사").attr("opacity","1")
+                .select("circle")
+                .style("stroke","red").style("stroke-width","3")
+                
+            if(!d3.select("#"+picked+"학사").attr("opacity","1")
+            .select("circle")
+            .style("stroke","red").style("stroke-width","3").empty())
+                found = true;
+                
+            
+            if(!d3.select("#"+picked+"석사").attr("opacity","1")
+            .select("circle")
+            .style("stroke","red").style("stroke-width","3").empty())
+                found = true;
+                
+            if(!d3.select("#"+picked+"박사").attr("opacity","1")
+            .select("circle")
+            .style("stroke","red").style("stroke-width","3").empty())
+                found = true;
+                
+            console.log(found)
+            if(!found){
+                d3.select("#그외").attr("opacity","1")
+                    .select("circle")
+                    .style("stroke","red").style("stroke-width","3")
+            }
         }
 
     }, year)
