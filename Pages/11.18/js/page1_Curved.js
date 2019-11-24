@@ -1,101 +1,114 @@
+function drawP1Curved(
+  _data,
+  _divName,
+  _cnt,
+  _categoryX,
+  _valueY,
+  _valueY_ko,
+  _valueY_RGB,
+  _title,
+  _numberFormat
+) {
+  am4core.ready(function() {
+    console.log(_divName, _data);
+    am4core.useTheme(am4themes_animated);
+    var chart = am4core.create(_divName, am4charts.XYChart);
+    chart.data = _data;
 
-function drawP1Curved(_data, _divName, _cnt, _categoryX, _valueY, _valueY_ko, _valueY_RGB, _title, _numberFormat) {
-    am4core.ready(function () {
-        console.log(_divName, _data);
-        am4core.useTheme(am4themes_animated);
-        var chart = am4core.create(_divName, am4charts.XYChart);
-        chart.data = _data;
+    var scaleTitle = chart.titles.create();
 
-        var scaleTitle = chart.titles.create();
+    scaleTitle.dy = -10;
+    var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "year";
+    categoryAxis.renderer.minGridDistance = 30;
+    categoryAxis.renderer.grid.template.location = 0;
 
-        scaleTitle.dy = -10;
-        var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-        categoryAxis.dataFields.category = "year";
-        categoryAxis.renderer.minGridDistance = 30;
-        categoryAxis.renderer.grid.template.location = 0;
+    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
-        var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-        
-        if (_divName == "divchart2") {
-            scaleTitle.text = ("(´ÜÀ§: %)");
-            scaleTitle.fontSize = 15;
-            scaleTitle.dx = 440;
-            scaleTitle.dy = -10;
+    if (_divName == "divchart2") {
+      scaleTitle.text = "(ï¿½ï¿½ï¿½ï¿½: %)";
+      scaleTitle.fontSize = 15;
+      scaleTitle.dx = 440;
+      scaleTitle.dy = -10;
 
-            valueAxis.min = 0;
-            valueAxis.max = 100.5;
-            valueAxis.strictMinMax = true;
+      valueAxis.min = 0;
+      valueAxis.max = 100.5;
+      valueAxis.strictMinMax = true;
 
-            var axisBreak = valueAxis.axisBreaks.create();
-            axisBreak.startValue = 0.2;
-            axisBreak.endValue = 97.7;
-            axisBreak.breakSize = 0.001;
-        }
-        else {        
-            scaleTitle.text = ("(´ÜÀ§ : ¥ö:1)");
-            scaleTitle.fontSize = 15;
-            scaleTitle.dx = 440;
-            scaleTitle.dy = -10;
+      var axisBreak = valueAxis.axisBreaks.create();
+      axisBreak.startValue = 0.2;
+      axisBreak.endValue = 97.7;
+      axisBreak.breakSize = 0.001;
+    } else {
+      scaleTitle.text = "(ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½:1)";
+      scaleTitle.fontSize = 15;
+      scaleTitle.dx = 440;
+      scaleTitle.dy = -10;
 
-            valueAxis.strictMinMax = true;
-            valueAxis.min = 0;
-            valueAxis.max = 16;
+      valueAxis.strictMinMax = true;
+      valueAxis.min = 0;
+      valueAxis.max = 16;
 
-            var axisBreak = valueAxis.axisBreaks.create();
-            axisBreak.startValue = 1;
-            axisBreak.endValue = 4;
-            axisBreak.breakSize = 0.08;
-        }
+      var axisBreak = valueAxis.axisBreaks.create();
+      axisBreak.startValue = 1;
+      axisBreak.endValue = 4;
+      axisBreak.breakSize = 0.08;
+    }
 
-        function P1CurvedcreateSeries(value, clr) {
-            var value_kr;
-            if (value == "society")
-                value_kr = "ÀÎ¹®»çÈ¸";
-            else if (value == "artphysical")
-                value_kr = "¿¹Ã¼´É";
-            else if (value == "science")
-                value_kr = "ÀÚ¿¬°úÇÐ";
-            else if (value == "mech")
-                value_kr = "°øÇÐ";
-            else
-                value_kr = "ÀüÃ¼";
+    function P1CurvedcreateSeries(value, clr) {
+      var value_kr;
+      if (value == "society") value_kr = "ï¿½Î¹ï¿½ï¿½ï¿½È¸";
+      else if (value == "artphysical") value_kr = "ï¿½ï¿½Ã¼ï¿½ï¿½";
+      else if (value == "science") value_kr = "ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½";
+      else if (value == "mech") value_kr = "ï¿½ï¿½ï¿½ï¿½";
+      else value_kr = "ï¿½ï¿½Ã¼";
 
-            var P1Cseries = chart.series.push(new am4charts.LineSeries());
-            P1Cseries.dataFields.valueY = value;
-            P1Cseries.strokeDasharray = ["dotted"];
-            P1Cseries.strokeOpacity = 1;
-            P1Cseries.strokeWidth = 2;
-            P1Cseries.dataFields.categoryX = "year";  
-            if (value != "all") {
-                P1Cseries.strokeWidth = 1;
-                P1Cseries.strokeDasharray = "2, 2";
-            }
-            P1Cseries.stroke = am4core.color(clr);
-            P1Cseries.strokeWidth = 3;
+      var P1Cseries = chart.series.push(new am4charts.LineSeries());
+      P1Cseries.dataFields.valueY = value;
+      P1Cseries.strokeDasharray = ["dotted"];
+      P1Cseries.strokeOpacity = 1;
+      P1Cseries.strokeWidth = 2;
+      P1Cseries.dataFields.categoryX = "year";
+      if (value != "all") {
+        P1Cseries.strokeWidth = 1;
+        P1Cseries.strokeDasharray = "2, 2";
+      }
+      P1Cseries.stroke = am4core.color(clr);
+      P1Cseries.strokeWidth = 3;
 
-            var bullet = P1Cseries.bullets.push(new am4charts.Bullet());
-            bullet.fill = am4core.color("#fff"); // tooltips grab fill from parent by default
-            if (_divName == "divchart1")
-                if(value_kr == "ÀüÃ¼")
-                    bullet.tooltipText = "[#000 font-size: 15px]{categoryX}ÇÐ³âµµ " + value_kr + " °æÀï·üÀº [bold]{valueY}:1[\] ÀÔ´Ï´Ù."
-                else
-                    bullet.tooltipText = "[#000 font-size: 15px]{categoryX}ÇÐ³âµµ " + value_kr + "°è¿­ÀÇ °æÀï·üÀº [bold]{valueY}:1[\] ÀÔ´Ï´Ù."
-            else 
-                if(value_kr == "ÀüÃ¼")
-                    bullet.tooltipText = "[#000 font-size: 15px]{categoryX}ÇÐ³âµµ " + value_kr + " Ãæ¿øÀ²Àº [bold]{valueY}%[\] ÀÔ´Ï´Ù."
-                else
-                    bullet.tooltipText = "[#000 font-size: 15px]{categoryX}ÇÐ³âµµ " + value_kr + "°è¿­ÀÇ Ãæ¿øÀ²Àº [bold]{valueY}%[\] ÀÔ´Ï´Ù."
-            var circle = bullet.createChild(am4core.Circle);
-            circle.radius = 4;
-            circle.fill = am4core.color(clr);
-            circle.strokeWidth = 3;
-        };
+      var bullet = P1Cseries.bullets.push(new am4charts.Bullet());
+      bullet.fill = am4core.color("#fff"); // tooltips grab fill from parent by default
+      if (_divName == "divchart1")
+        if (value_kr == "ï¿½ï¿½Ã¼")
+          bullet.tooltipText =
+            "[#000 font-size: 15px]{categoryX}ï¿½Ð³âµµ " +
+            value_kr +
+            " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ [bold]{valueY}:1[] ï¿½Ô´Ï´ï¿½.";
+        else
+          bullet.tooltipText =
+            "[#000 font-size: 15px]{categoryX}ï¿½Ð³âµµ " +
+            value_kr +
+            "ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ [bold]{valueY}:1[] ï¿½Ô´Ï´ï¿½.";
+      else if (value_kr == "ï¿½ï¿½Ã¼")
+        bullet.tooltipText =
+          "[#000 font-size: 15px]{categoryX}ï¿½Ð³âµµ " +
+          value_kr +
+          " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ [bold]{valueY}%[] ï¿½Ô´Ï´ï¿½.";
+      else
+        bullet.tooltipText =
+          "[#000 font-size: 15px]{categoryX}ï¿½Ð³âµµ " +
+          value_kr +
+          "ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ [bold]{valueY}%[] ï¿½Ô´Ï´ï¿½.";
+      var circle = bullet.createChild(am4core.Circle);
+      circle.radius = 4;
+      circle.fill = am4core.color(clr);
+      circle.strokeWidth = 3;
+    }
 
-        P1CurvedcreateSeries("all", "#FE4459"); // ÀüÃ¼
-        P1CurvedcreateSeries("science", "#FCFF57"); // ÀÚ¿¬°úÇÐ
-        P1CurvedcreateSeries("artphysical", "#52A1FF"); // ¿¹Ã¼´É
-        P1CurvedcreateSeries("mech", "#43E884"); // °ø´ë
-        P1CurvedcreateSeries("society", "#E8A343"); // ÀÎ¹®»çÈ¸
-    });
+    P1CurvedcreateSeries("all", "#FE4459"); // ï¿½ï¿½Ã¼
+    P1CurvedcreateSeries("science", "#FCFF57"); // ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½
+    P1CurvedcreateSeries("artphysical", "#52A1FF"); // ï¿½ï¿½Ã¼ï¿½ï¿½
+    P1CurvedcreateSeries("mech", "#43E884"); // ï¿½ï¿½ï¿½ï¿½
+    P1CurvedcreateSeries("society", "#E8A343"); // ï¿½Î¹ï¿½ï¿½ï¿½È¸
+  });
 }
-
