@@ -5,11 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
-            "type": "python",
+            "type": "chrome",
             "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": ["--disable-web-security"],
+            "file": "C:\\Users\\sphis\\OneDrive\\Desktop\\html파일 작업물\\views\\성과\\학위수여_3_학위수여10.html"
         }
     ]
 }

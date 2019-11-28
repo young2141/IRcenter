@@ -1,0 +1,587 @@
+[
+  {
+    "year": 2011,
+    "data": [
+      {
+        "major": "전자공학부",
+        "total": 501,
+        "male": 430,
+        "female": 71
+      },
+      {
+        "major": "경영학부",
+        "total": 275,
+        "male": 162,
+        "female": 113
+      },
+      {
+        "major": "법학부",
+        "total": 197,
+        "male": 112,
+        "female": 85
+      },
+      {
+        "major": "경제통상학부",
+        "total": 165,
+        "male": 102,
+        "female": 63
+      },
+      {
+        "major": "생명공학부",
+        "total": 132,
+        "male": 73,
+        "female": 59
+      },
+      {
+        "major": "기계공학부",
+        "total": 144,
+        "male": 132,
+        "female": 12
+      },
+      {
+        "major": "영어영문학과",
+        "total": 119,
+        "male": 48,
+        "female": 71
+      },
+      {
+        "major": "전기공학과",
+        "total": 114,
+        "male": 99,
+        "female": 15
+      },
+      {
+        "major": "컴퓨터학부",
+        "total": 104,
+        "male": 80,
+        "female": 24
+      },
+      {
+        "major": "간호학과",
+        "total": 121,
+        "male": 14,
+        "female": 107
+      }
+    ]
+  },
+  {
+    "year": 2012,
+    "data": [
+      {
+        "major": "영어영문학과",
+        "total": 104,
+        "male": 42,
+        "female": 62
+      },
+      {
+        "major": "생명과학부 생명공학전공",
+        "total": 87,
+        "male": 51,
+        "female": 36
+      },
+      {
+        "major": "경제통상학부",
+        "total": 167,
+        "male": 103,
+        "female": 64
+      },
+      {
+        "major": "경영학부",
+        "total": 255,
+        "male": 150,
+        "female": 105
+      },
+      {
+        "major": "법학부",
+        "total": 236,
+        "male": 134,
+        "female": 102
+      },
+      {
+        "major": "기계공학부",
+        "total": 141,
+        "male": 129,
+        "female": 12
+      },
+      {
+        "major": "전기공학과",
+        "total": 115,
+        "male": 100,
+        "female": 15
+      },
+      {
+        "major": "전자공학부",
+        "total": 521,
+        "male": 448,
+        "female": 73
+      },
+      {
+        "major": "컴퓨터학부",
+        "total": 122,
+        "male": 93,
+        "female": 29
+      },
+      {
+        "major": "간호학과",
+        "total": 131,
+        "male": 15,
+        "female": 116
+      }
+    ]
+  },
+  {
+    "year": 2013,
+    "data": [
+      {
+        "major": "간호학과",
+        "total": 159,
+        "male": 19,
+        "female": 140
+      },
+      {
+        "major": "생명과학부 생명공학전공",
+        "total": 121,
+        "male": 71,
+        "female": 50
+      },
+      {
+        "major": "경제통상학부",
+        "total": 228,
+        "male": 141,
+        "female": 87
+      },
+      {
+        "major": "경영학부",
+        "total": 354,
+        "male": 208,
+        "female": 146
+      },
+      {
+        "major": "법학부",
+        "total": 336,
+        "male": 191,
+        "female": 145
+      },
+      {
+        "major": "행정학과",
+        "total": 105,
+        "male": 61,
+        "female": 44
+      },
+      {
+        "major": "기계공학부",
+        "total": 191,
+        "male": 175,
+        "female": 16
+      },
+      {
+        "major": "전기공학과",
+        "total": 105,
+        "male": 91,
+        "female": 14
+      },
+      {
+        "major": "전자공학부",
+        "total": 614,
+        "male": 528,
+        "female": 86
+      },
+      {
+        "major": "컴퓨터학부",
+        "total": 120,
+        "male": 92,
+        "female": 28
+      }
+    ]
+  },
+  {
+    "year": 2014,
+    "data": [
+      {
+        "major": "영어영문학과",
+        "total": 99,
+        "male": 40,
+        "female": 59
+      },
+      {
+        "major": "생명과학부 생명공학전공",
+        "total": 132,
+        "male": 77,
+        "female": 55
+      },
+      {
+        "major": "경제통상학부",
+        "total": 218,
+        "male": 135,
+        "female": 83
+      },
+      {
+        "major": "경영학부",
+        "total": 275,
+        "male": 162,
+        "female": 113
+      },
+      {
+        "major": "법학부",
+        "total": 169,
+        "male": 96,
+        "female": 73
+      },
+      {
+        "major": "기계공학부",
+        "total": 146,
+        "male": 134,
+        "female": 12
+      },
+      {
+        "major": "전자공학부",
+        "total": 562,
+        "male": 483,
+        "female": 79
+      },
+      {
+        "major": "컴퓨터학부",
+        "total": 86,
+        "male": 66,
+        "female": 20
+      },
+      {
+        "major": "간호학과",
+        "total": 155,
+        "male": 18,
+        "female": 137
+      },
+      {
+        "major": "화학공학과",
+        "total": 71,
+        "male": 46,
+        "female": 25
+      }
+    ]
+  },
+  {
+    "year": 2015,
+    "data": [
+      {
+        "major": "영어영문학과",
+        "total": 106,
+        "male": 43,
+        "female": 63
+      },
+      {
+        "major": "생명과학부 생명공학전공",
+        "total": 149,
+        "male": 87,
+        "female": 62
+      },
+      {
+        "major": "경제통상학부",
+        "total": 296,
+        "male": 183,
+        "female": 113
+      },
+      {
+        "major": "경영학부",
+        "total": 262,
+        "male": 154,
+        "female": 108
+      },
+      {
+        "major": "법학부",
+        "total": 144,
+        "male": 82,
+        "female": 62
+      },
+      {
+        "major": "기계공학부",
+        "total": 196,
+        "male": 180,
+        "female": 16
+      },
+      {
+        "major": "전자공학부",
+        "total": 496,
+        "male": 426,
+        "female": 70
+      },
+      {
+        "major": "컴퓨터학부",
+        "total": 108,
+        "male": 83,
+        "female": 25
+      },
+      {
+        "major": "간호학과",
+        "total": 118,
+        "male": 14,
+        "female": 104
+      },
+      {
+        "major": "사회복지학과",
+        "total": 85,
+        "male": 26,
+        "female": 59
+      }
+    ]
+  },
+  {
+    "year": 2016,
+    "data": [
+      {
+        "major": "영어영문학과",
+        "total": 110,
+        "male": 45,
+        "female": 65
+      },
+      {
+        "major": "사회복지학과",
+        "total": 136,
+        "male": 42,
+        "female": 94
+      },
+      {
+        "major": "생명과학부 생명공학전공",
+        "total": 125,
+        "male": 73,
+        "female": 52
+      },
+      {
+        "major": "경제통상학부",
+        "total": 264,
+        "male": 163,
+        "female": 101
+      },
+      {
+        "major": "경영학부",
+        "total": 278,
+        "male": 164,
+        "female": 114
+      },
+      {
+        "major": "기계공학부",
+        "total": 143,
+        "male": 131,
+        "female": 12
+      },
+      {
+        "major": "식품영양학과",
+        "total": 94,
+        "male": 25,
+        "female": 69
+      },
+      {
+        "major": "전자공학부",
+        "total": 481,
+        "male": 413,
+        "female": 68
+      },
+      {
+        "major": "컴퓨터학부",
+        "total": 100,
+        "male": 77,
+        "female": 23
+      },
+      {
+        "major": "간호학과",
+        "total": 103,
+        "male": 12,
+        "female": 91
+      }
+    ]
+  },
+  {
+    "year": 2017,
+    "data": [
+      {
+        "major": "영어영문학과",
+        "total": 95,
+        "male": 38,
+        "female": 57
+      },
+      {
+        "major": "사회복지학과",
+        "total": 101,
+        "male": 31,
+        "female": 70
+      },
+      {
+        "major": "생명과학부 생명공학전공",
+        "total": 112,
+        "male": 66,
+        "female": 46
+      },
+      {
+        "major": "경제통상학부",
+        "total": 283,
+        "male": 175,
+        "female": 108
+      },
+      {
+        "major": "경영학부",
+        "total": 241,
+        "male": 142,
+        "female": 99
+      },
+      {
+        "major": "기계공학부",
+        "total": 154,
+        "male": 141,
+        "female": 13
+      },
+      {
+        "major": "전기공학과",
+        "total": 99,
+        "male": 86,
+        "female": 13
+      },
+      {
+        "major": "전자공학부",
+        "total": 555,
+        "male": 477,
+        "female": 78
+      },
+      {
+        "major": "컴퓨터학부",
+        "total": 124,
+        "male": 95,
+        "female": 29
+      },
+      {
+        "major": "간호학과",
+        "total": 112,
+        "male": 13,
+        "female": 99
+      }
+    ]
+  },
+  {
+    "year": 2018,
+    "data": [
+      {
+        "major": "영어영문학과",
+        "total": 90,
+        "male": 36,
+        "female": 54
+      },
+      {
+        "major": "생명과학부 생명공학전공",
+        "total": 117,
+        "male": 69,
+        "female": 48
+      },
+      {
+        "major": "경제통상학부",
+        "total": 224,
+        "male": 138,
+        "female": 86
+      },
+      {
+        "major": "경영학부",
+        "total": 279,
+        "male": 164,
+        "female": 115
+      },
+      {
+        "major": "전자공학부",
+        "total": 520,
+        "male": 447,
+        "female": 73
+      },
+      {
+        "major": "기계공학부",
+        "total": 144,
+        "male": 132,
+        "female": 12
+      },
+      {
+        "major": "컴퓨터학부",
+        "total": 138,
+        "male": 106,
+        "female": 32
+      },
+      {
+        "major": "전기공학과",
+        "total": 87,
+        "male": 75,
+        "female": 12
+      },
+      {
+        "major": "간호학과",
+        "total": 93,
+        "male": 11,
+        "female": 82
+      },
+      {
+        "major": "화학공학과",
+        "total": 72,
+        "male": 47,
+        "female": 25
+      }
+    ]
+  },
+  {
+    "year": 2019,
+    "data": [
+      {
+        "major": "생명과학부 생명공학전공",
+        "total": 102,
+        "male": 60,
+        "female": 42
+      },
+      {
+        "major": "경제통상학부",
+        "total": 242,
+        "male": 150,
+        "female": 92
+      },
+      {
+        "major": "경영학부",
+        "total": 219,
+        "male": 129,
+        "female": 90
+      },
+      {
+        "major": "기계공학부",
+        "total": 160,
+        "male": 147,
+        "female": 13
+      },
+      {
+        "major": "전기공학과",
+        "total": 92,
+        "male": 80,
+        "female": 12
+      },
+      {
+        "major": "전자공학부",
+        "total": 486,
+        "male": 417,
+        "female": 69
+      },
+      {
+        "major": "컴퓨터학부",
+        "total": 149,
+        "male": 114,
+        "female": 35
+      },
+      {
+        "major": "간호학과",
+        "total": 108,
+        "male": 12,
+        "female": 96
+      },
+      {
+        "major": "토목공학과",
+        "total": 77,
+        "male": 66,
+        "female": 11
+      },
+      {
+        "major": "영어영문학과",
+        "total": 72,
+        "male": 29,
+        "female": 43
+      }
+    ]
+  }
+]
