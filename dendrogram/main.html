@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+<style>
+  .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px;
+  }
+
+  .node text {
+    font: 12px sans-serif;
+  }
+
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+</style>
+
+<body>
+  <!-- load the d3.js library -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script>
+    var treeData = {
+      name: "경북대학교",
+      children: [
+        {
+          name: "본부",
+          children: [
+            {
+              name: "교무처",
+              children: [{ name: "교무과" }, { name: "학사과" }]
+            },
+            { name: "학생처", children: [{ name: "학생과" }] },
+            {
+              name: "기획처",
+              children: [{ name: "기획조정과" }, { name: "재정관리과" }]
+            },
+            {
+              name: "연구산학처",
+              children: [{ name: "연구진흥과" }, { name: "산학협력과" }]
+            },
+            { name: "국제교류처", children: [{ name: "국제교류과" }] },
+            {
+              name: "사무국",
+              children: [
+                { name: "총무과" },
+                { name: "재무과" },
+                { name: "시설과" }
+              ]
+            },
+            { name: "입학본부", children: [{ name: "입학과" }] },
+            {
+              name: "교육개발본부",
+              children: [
+                { name: "교양교육센터" },
+                { name: "교수학습센터" },
+                { name: "소프트웨어교육센터" }
+              ]
+            },
+            { name: "대외협력홍보실", children: [{ name: "대외협력홍보과" }] },
+            { name: "인재개발원" },
+            { name: "교육혁신정책실" },
+            {
+              name: "상주캠퍼스총괄지원본부",
+              children: [{ name: "행정지원부" }]
+            }
+          ]
+        },
+        {
+          name: "대학",
+          children: [
+            { name: "인문대학" },
+            { name: "사회과학대학" },
+            { name: "자연과학대학" },
+            { name: "경상대학" },
+            { name: "공과대학" },
+            { name: "IT대학" },
+            { name: "농업생명과학대학" },
+            { name: "예술대학" },
+            {
+              name: "사범대학",
+              children: [
+                { name: "부설초등학교" },
+                { name: "부설중학교" },
+                { name: "부설고등학교" }
+              ]
+            },
+            { name: "의과대학" },
+            { name: "치과대학" },
+            { name: "수의과대학" },
+            { name: "생활과학대학" },
+            { name: "간호대학" },
+            { name: "약학대학" },
+            { name: "생태환경대학" },
+            { name: "과학기술대학" },
+            { name: "행정학부" },
+            { name: "자율전공부" }
+          ]
+        },
+        {
+          name: "대학원",
+          children: [
+            { name: "일반대학원" },
+            { name: "법학전문대학원" },
+            { name: "교육대학원" },
+            { name: "행정대학원" },
+            { name: "경영대학원" },
+            { name: "보건대학원" },
+            { name: "산업대학원" },
+            { name: "농업생명융합대학원" },
+            { name: "국제대학원" },
+            { name: "정책정보대학원" },
+            { name: "수사과학대학원" },
+            { name: "과학기술대학원" }
+          ]
+        },
+        {
+          name: "교육기본 및 지원 및 부속시설",
+          children: [
+            {
+              name: "교육기본시설",
+              children: [
+                {
+                  name: "도서관",
+                  children: [
+                    { name: "학술정보개발과" },
+                    { name: "학술정보운영과" }
+                  ]
+                }
+              ]
+            },
+
+            {
+              name: "지원시설",
+              children: [
+                { name: "산학협력선도대학(LINC)사업단" },
+                { name: "정보전산원" },
+                { name: "생활관" },
+                { name: "보건진료소" },
+                { name: "공동실험실습관" },
+                { name: "신문방송사" },
+                { name: "외국어교육원" },
+                { name: "출판부" },
+                { name: "수련원" },
+                { name: "국제농업훈련원" },
+                { name: "체육진흥센터" },
+                { name: "법률상담소" },
+                { name: "평생교육원" },
+                { name: "테크노파크" },
+                { name: "대학기록관방" },
+                { name: "사선안전관리실" },
+                { name: "과학영재교육원" },
+                { name: "정보영재교육원" },
+                { name: "장애학생지원센터" },
+                { name: "실험동물자원관리센터" },
+                { name: "외국학술지지원센터(전기,전자,컴퓨터,정보공학 분야)" },
+                { name: "기업기술경영지원센터" },
+                { name: "서울어코드활성화사업단" },
+                { name: "대경권 블루골드 클러스터 구축사업단" },
+                { name: "대구약령시 RIS사업단" },
+                { name: "자원봉사센터" },
+                { name: "지방대학특성화사업단" },
+                { name: "코어 기술혁신형 겸 산학협력중개센터" },
+                { name: "자원개발특성화대학사업단" },
+                { name: "동해안지오투어리즘사업단" },
+                { name: "연구실안전관리센터" },
+                { name: "재난안전기술개발사업단" },
+                { name: "학생상담센터" },
+                { name: "KNU열린지식센터" },
+                { name: "대학인문역량강화사업단" },
+                { name: "산업연계교육활성화선도대학사업단" },
+                { name: "영농창업특성화사업단" },
+                { name: "인권센터" },
+                { name: "지역협력실여성과학기술인지원센터대경강원권역사업단" },
+                { name: "농산업창업지원센터" },
+                { name: "엑소좀융합사업단" },
+                { name: "농업생명공학연구단" },
+                { name: "창업지원단" }
+              ]
+            },
+            {
+              name: "부속시설",
+              children: [
+                { name: "박물관" },
+                { name: "자연사박물관" },
+                { name: "한국어문화원" },
+                { name: "학생군사교육단" },
+                { name: "공과대학 부속공장" },
+                { name: "농업생명과학대학 부속실험실습장" },
+                { name: "교육연수원" },
+                { name: "수의과대학 부속동물병원" },
+                { name: "친환경농산물인증센터" },
+                { name: "미술관" },
+                { name: "농업생명과학대학 부속농업교육센터" },
+                { name: "공학교육혁신센터" },
+                { name: "생태환경대학 부속목장" },
+                { name: "공과대학 부속산업현장기술지원단" },
+                { name: "상주캠퍼스 중소기업산학협력센터" },
+                { name: "약학대학부속 약초원" },
+                { name: "생태환경대학부속 실험실습장" }
+              ]
+            }
+          ]
+        },
+        {
+          name: "연구시설",
+          children: [
+            {
+              name: "인문사회과학분야",
+              children: [
+                { name: "경제경영연구소" },
+                { name: "경제교육연구소" },
+                { name: "공공문제연구소" },
+                { name: "과학교육연구소" },
+                { name: "디지털아트컨텐츠연구소" },
+                { name: "러시아·유라시아연구소" },
+                { name: "문화산업연구소" },
+                { name: "법학연구원사범대학부속중등교육연구소" },
+                { name: "사회과학기초자료연구소" },
+                { name: "사회과학연구원사회복지연구소" },
+                { name: "상주문화연구소" },
+                { name: "스포츠과학연구소" },
+                { name: "아시아연구소" },
+                { name: "에너지환경경제연구소" },
+                { name: "영남문화연구원예술학연구소" },
+                { name: "인문학술원장수생활과학연구소" },
+                { name: "지속가능경제발전연구소" },
+                { name: "지역개발연구소" },
+                { name: "지역시장연구소" },
+                { name: "퇴계연구소" },
+                { name: "평화문제연구소" },
+                { name: "행동과학연구소" },
+                { name: "IT와법연구소" }
+              ]
+            },
+            {
+              name: "기초과학분야",
+              children: [
+                { name: "경북해양과학연구소" },
+                { name: "계통진화유전체학연구소" },
+                { name: "고에너지물리연구소" },
+                { name: "기초과학연구소" },
+                { name: "대기원격탐사연구소" },
+                { name: "미생물연구소" },
+                { name: "방사선과학연구소" },
+                { name: "비선형동역학연구소" },
+                { name: "생명공학연구소" },
+                { name: "수리융합연구소" },
+                { name: "식품영양유전체연구센터" },
+                { name: "신바이오소재연구소" },
+                { name: "실및복소다양체연구소" },
+                { name: "울릉도·독도연구소" },
+                { name: "지진연구센터" },
+                { name: "청정나노소재연구소" },
+                { name: "환경과학기술연구소" }
+              ]
+            },
+            {
+              name: "공학분야",
+              children: [
+                { name: "건설환경에너지융합기술원" },
+                { name: "건축도시공간연구소" },
+                { name: "건축안전기술연구소" },
+                { name: "고분자나노재료연구소" },
+                { name: "공간정보연구소" },
+                { name: "공학설계연구소" },
+                { name: "국방수중통신/탐지특화연구센터" },
+                { name: "국토위성정보연구소" },
+                { name: "기계연구소" },
+                { name: "기능성소자융합플랫폼연구센터" },
+                { name: "나노포토닉스응용연구소" },
+                { name: "대경권국토교통기술지역거점센터" },
+                { name: "디스플레이나노소재연구소" },
+                { name: "디지털기술연구소" },
+                { name: "디지털설계및생산기술연구소" },
+                { name: "마이크로그리드연구센터" },
+                { name: "멀티스케일 유·무기 구조물 자율진단기술연구소" },
+                { name: "물산업융복합연구소" },
+                { name: "반도체융합기술연구원방재연구소" },
+                { name: "산업기술연구소" },
+                { name: "상주캠퍼스 산업디자인연구소" },
+                { name: "상주캠퍼스 에너지환경연구소" },
+                { name: "소프트웨어기술연구소" },
+                { name: "스타트업지원센터" },
+                { name: "음향공학연구소" },
+                { name: "이동네트워크정보보호기술연구소" },
+                { name: "인공지능연구원임베디드소프트웨어연구센터" },
+                { name: "지능형 건설자동화연구센터" },
+                { name: "자동차부품소재연구소" },
+                { name: "자율군집소프트웨어연구센터" },
+                { name: "전자기술연구소" },
+                { name: "지능형 건설자동화 연구센터" },
+                { name: "차세대에너지기술연구소" },
+                { name: "첨단센서인력양성및연구센터" },
+                { name: "첨단소재연구소" },
+                { name: "첨단정보통신융합산업기술원" },
+                { name: "초연결융합기술연구소" },
+                { name: "ICT·자동차 융합 연구센터" },
+                { name: "IDEC지역센터" },
+                { name: "KNU-LG전자 융합 연구센터" },
+                { name: "글로벌 기후변화 및 에너지 연구소" },
+                { name: "재료정보연구소" },
+                { name: "3D융합기술지원센터" },
+                { name: "레이저응용기술센터" },
+                { name: "로봇산업진흥센터" },
+                { name: "상주캠퍼스 건설기술연구소" },
+                { name: "상주캠퍼스 기계기술연구소" },
+                { name: "상주캠퍼스 산업과학기술연구소" }
+              ]
+            },
+            {
+              name: "농업과학분야",
+              children: [
+                { name: "국제개발연구원" },
+                { name: "농산물품질안전성평가연구소" },
+                { name: "농업과학기술연구소" },
+                { name: "말산업연구원말의학연구소" },
+                { name: "발효생물공학연구소" },
+                { name: "사과연구소" },
+                { name: "생태환경연구소" },
+                { name: "수목진단센터" },
+                { name: "스마트농업혁신센터" },
+                { name: "식물의학연구소" },
+                { name: "식품생물산업연구소" },
+                { name: "실크연구소" },
+                { name: "밭농업기계개발연구센터" },
+                { name: "친환경농업연구센터" },
+                { name: "퀀텀닷 바이오기술연구센터" },
+                { name: "한-AEC글로벌동반성장연구소" },
+                { name: "한방바이오융합진흥원" }
+              ]
+            },
+            {
+              name: "의과학분야",
+              children: [
+                { name: "간호과학연구소" },
+                { name: "경조직-바이오치아재생연구소" },
+                { name: "국제재생의학연구소" },
+                { name: "뇌과학연구소" },
+                { name: "뇌수술로봇시스템연구소" },
+                { name: "대사질환및노화연구소" },
+                { name: "얼굴 신경-뼈 네트워크 연구센터" },
+                { name: "분자진단·영상연구소" },
+                { name: "생명의학연구소" },
+                { name: "생체재료연구소" },
+                { name: "세포·기질연구소" },
+                { name: "수의전염병제어센터" },
+                { name: "심혈관연구소" },
+                { name: "암연구소" },
+                { name: "약학연구소" },
+                { name: "의공학연구소" },
+                { name: "의료로봇연구소" },
+                { name: "의료정보원천기술연구소" },
+                { name: "종양 이형성 및 네트워크 제어 연구센터" },
+                { name: "줄기세포치료기술연구소" },
+                { name: "첨단치과의료기기개발연구소" }
+              ]
+            }
+          ]
+        }
+      ]
+    };
+
+    // Set the dimensions and margins of the diagram
+    var margin = { top: 20, right: 90, bottom: 30, left: 90 },
+      width = 960 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
+
+    // append the svg object to the body of the page
+    // appends a 'group' element to 'svg'
+    // moves the 'group' element to the top left margin
+    var svg = d3
+      .select("body")
+      .append("svg")
+      .attr("width", width + margin.right + margin.left)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var i = 0,
+      duration = 750,
+      root;
+
+    // declares a tree layout and assigns the size
+    var treemap = d3.tree().size([height, width]);
+
+    // Assigns parent, children, height, depth
+    root = d3.hierarchy(treeData, function(d) {
+      return d.children;
+    });
+    root.x0 = height / 2;
+    root.y0 = 0;
+
+    // Collapse after the second level
+    root.children.forEach(collapse);
+
+    update(root);
+
+    // Collapse the node and all it's children
+    function collapse(d) {
+      if (d.children) {
+        d._children = d.children;
+        d._children.forEach(collapse);
+        d.children = null;
+      }
+    }
+
+    function update(source) {
+      // Assigns the x and y position for the nodes
+      var treeData = treemap(root);
+
+      // Compute the new tree layout.
+      var nodes = treeData.descendants(),
+        links = treeData.descendants().slice(1);
+
+      // Normalize for fixed-depth.
+      nodes.forEach(function(d) {
+        d.y = d.depth * 180;
+      });
+
+      // ****************** Nodes section ***************************
+
+      // Update the nodes...
+      var node = svg.selectAll("g.node").data(nodes, function(d) {
+        return d.id || (d.id = ++i);
+      });
+
+      // Enter any new modes at the parent's previous position.
+      var nodeEnter = node
+        .enter()
+        .append("g")
+        .attr("class", "node")
+        .attr("transform", function(d) {
+          return "translate(" + source.y0 + "," + source.x0 + ")";
+        })
+        .on("click", click);
+
+      // Add Circle for the nodes
+      nodeEnter
+        .append("circle")
+        .attr("class", "node")
+        .attr("r", 1e-6)
+        .style("fill", function(d) {
+          return d._children ? "lightsteelblue" : "#fff";
+        });
+
+      // Add labels for the nodes
+      nodeEnter
+        .append("text")
+        .attr("dy", ".35em")
+        .attr("x", function(d) {
+          return d.children || d._children ? -13 : 13;
+        })
+        .attr("text-anchor", function(d) {
+          return d.children || d._children ? "end" : "start";
+        })
+        .text(function(d) {
+          return d.data.name;
+        });
+
+      // UPDATE
+      var nodeUpdate = nodeEnter.merge(node);
+
+      // Transition to the proper position for the node
+      nodeUpdate
+        .transition()
+        .duration(duration)
+        .attr("transform", function(d) {
+          return "translate(" + d.y + "," + d.x + ")";
+        });
+
+      // Update the node attributes and style
+      nodeUpdate
+        .select("circle.node")
+        .attr("r", 10)
+        .style("fill", function(d) {
+          return d._children ? "lightsteelblue" : "#fff";
+        })
+        .attr("cursor", "pointer");
+
+      // Remove any exiting nodes
+      var nodeExit = node
+        .exit()
+        .transition()
+        .duration(duration)
+        .attr("transform", function(d) {
+          return "translate(" + source.y + "," + source.x + ")";
+        })
+        .remove();
+
+      // On exit reduce the node circles size to 0
+      nodeExit.select("circle").attr("r", 1e-6);
+
+      // On exit reduce the opacity of text labels
+      nodeExit.select("text").style("fill-opacity", 1e-6);
+
+      // ****************** links section ***************************
+
+      // Update the links...
+      var link = svg.selectAll("path.link").data(links, function(d) {
+        return d.id;
+      });
+
+      // Enter any new links at the parent's previous position.
+      var linkEnter = link
+        .enter()
+        .insert("path", "g")
+        .attr("class", "link")
+        .attr("d", function(d) {
+          var o = { x: source.x0, y: source.y0 };
+          return diagonal(o, o);
+        });
+
+      // UPDATE
+      var linkUpdate = linkEnter.merge(link);
+
+      // Transition back to the parent element position
+      linkUpdate
+        .transition()
+        .duration(duration)
+        .attr("d", function(d) {
+          return diagonal(d, d.parent);
+        });
+
+      // Remove any exiting links
+      var linkExit = link
+        .exit()
+        .transition()
+        .duration(duration)
+        .attr("d", function(d) {
+          var o = { x: source.x, y: source.y };
+          return diagonal(o, o);
+        })
+        .remove();
+
+      // Store the old positions for transition.
+      nodes.forEach(function(d) {
+        d.x0 = d.x;
+        d.y0 = d.y;
+      });
+
+      // Creates a curved (diagonal) path from parent to the child nodes
+      function diagonal(s, d) {
+        path = `M ${s.y} ${s.x}
+                                C ${(s.y + d.y) / 2} ${s.x},
+                                  ${(s.y + d.y) / 2} ${d.x},
+                                  ${d.y} ${d.x}`;
+
+        return path;
+      }
+
+      // Toggle children on click.
+      function click(d) {
+        if (d.children) {
+          d._children = d.children;
+          d.children = null;
+        } else {
+          d.children = d._children;
+          d._children = null;
+        }
+        update(d);
+      }
+    }
+  </script>
+</body>
