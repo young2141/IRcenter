@@ -1,5 +1,70 @@
 [
   {
+    "year": 2010,
+    "data": [
+      {
+        "major": "전자공학부",
+        "total": 501,
+        "male": 430,
+        "female": 71
+      },
+      {
+        "major": "경영학부",
+        "total": 275,
+        "male": 162,
+        "female": 113
+      },
+      {
+        "major": "법학부",
+        "total": 197,
+        "male": 112,
+        "female": 85
+      },
+      {
+        "major": "경제통상학부",
+        "total": 165,
+        "male": 102,
+        "female": 63
+      },
+      {
+        "major": "생명공학부",
+        "total": 132,
+        "male": 73,
+        "female": 59
+      },
+      {
+        "major": "기계공학부",
+        "total": 144,
+        "male": 132,
+        "female": 12
+      },
+      {
+        "major": "영어영문학과",
+        "total": 119,
+        "male": 48,
+        "female": 71
+      },
+      {
+        "major": "전기공학과",
+        "total": 114,
+        "male": 99,
+        "female": 15
+      },
+      {
+        "major": "컴퓨터학부",
+        "total": 104,
+        "male": 80,
+        "female": 24
+      },
+      {
+        "major": "간호학과",
+        "total": 121,
+        "male": 14,
+        "female": 107
+      }
+    ]
+  },
+  {
     "year": 2011,
     "data": [
       {

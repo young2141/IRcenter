@@ -1,29 +1,652 @@
 [
-{"year": 2011,
-"data": 
-[{	"major": "경영학부",	"total": 46,	"male": 27,	"female": 19},{	"major": "생명과학부",	"total": 40,	"male": 20,	"female": 20},{	"major": "환경공학과",	"total": 20,	"male": 12,	"female": 8},{	"major": "기계공학부",	"total": 44,	"male": 40,	"female": 4},{	"major": "간호학과",	"total": 10,	"male": 1,	"female": 9},{	"major": "의학과",	"total": 63,	"male": 40,	"female": 23},{	"major": "치의학과",	"total": 43,	"male": 11,	"female": 32},{	"major": "고분자공학과",	"total": 21,	"male": 15,	"female": 6},{	"major": "심리학과",	"total": 17,	"male": 5,	"female": 12},{	"major": "건축/토목공학부",	"total": 51,	"male": 38,	"female": 13}]},
-{"year": 2012,
-"data": 
-[{	"major": "의학과",	"total": 63,	"male": 40,	"female": 23},{	"major": "의과학과",	"total": 22,	"male": 13,	"female": 9},{	"major": "생명과학부",	"total": 36,	"male": 18,	"female": 18},{	"major": "간호학과",	"total": 14,	"male": 1,	"female": 13},{	"major": "경영학부",	"total": 36,	"male": 21,	"female": 15},{	"major": "기계공학부",	"total": 26,	"male": 23,	"female": 3},{	"major": "건축/토목공학부",	"total": 52,	"male": 39,	"female": 13},{	"major": "치의학과",	"total": 25,	"male": 6,	"female": 19},{	"major": "영어영문학과",	"total": 18,	"male": 7,	"female": 11},{	"major": "심리학과",	"total": 17,	"male": 5,	"female": 12}]},
-{"year": 2013,
-"data": 
-[{	"major": "간호학과",	"total": 18,	"male": 2,	"female": 16},{	"major": "심리학과",	"total": 28,	"male": 9,	"female": 19},{	"major": "생명과학부",	"total": 29,	"male": 14,	"female": 15},{	"major": "경영학부",	"total": 40,	"male": 23,	"female": 17},{	"major": "기계공학부",	"total": 21,	"male": 19,	"female": 2},{	"major": "건축/토목공학부",	"total": 46,	"male": 34,	"female": 12},{	"major": "교육학과",	"total": 24,	"male": 4,	"female": 20},{	"major": "의학과",	"total": 54,	"male": 35,	"female": 19},{	"major": "의과학과",	"total": 20,	"male": 12,	"female": 8},{	"major": "치의학과",	"total": 21,	"male": 5,	"female": 16}]},
-{"year": 2014,
-"data": 
-[{	"major": "영어영문학과",	"total": 28,	"male": 11,	"female": 17},{	"major": "생명과학부",	"total": 31,	"male": 15,	"female": 16},{	"major": "경영학부",	"total": 24,	"male": 14,	"female": 10},{	"major": "기계공학부",	"total": 29,	"male": 26,	"female": 3},{	"major": "전자공학부",	"total": 70,	"male": 60,	"female": 10},{	"major": "교육학과",	"total": 38,	"male": 6,	"female": 32},{	"major": "의학과",	"total": 43,	"male": 27,	"female": 16},{	"major": "간호학과",	"total": 19,	"male": 2,	"female": 17},{	"major": "컴퓨터학부",	"total": 19,	"male": 14,	"female": 5},{	"major": "건축/토목공학부",	"total": 16,	"male": 12,	"female": 4}]},
-{"year": 2015,
-"data": 
-[{	"major": "영어영문학과",	"total": 17,	"male": 6,	"female": 11},{	"major": "생명과학부",	"total": 30,	"male": 15,	"female": 15},{	"major": "경영학부",	"total": 35,	"male": 20,	"female": 15},{	"major": "기계공학부",	"total": 26,	"male": 23,	"female": 3},{	"major": "고분자공학과",	"total": 18,	"male": 13,	"female": 5},{	"major": "전자공학부",	"total": 86,	"male": 73,	"female": 13},{	"major": "컴퓨터학부",	"total": 23,	"male": 17,	"female": 6},{	"major": "교육학과",	"total": 21,	"male": 3,	"female": 18},{	"major": "의학과",	"total": 38,	"male": 24,	"female": 14},{	"major": "의과학과",	"total": 24,	"male": 14,	"female": 10}]},
-{"year": 2016,
-"data": 
-[{	"major": "간호학과",	"total": 21,	"male": 2,	"female": 19},{	"major": "치의학과",	"total": 21,	"male": 5,	"female": 16},{	"major": "의학과",	"total": 23,	"male": 14,	"female": 9},{	"major": "식품공학부 식품생물공학전공",	"total": 23,	"male": 10,	"female": 13},{	"major": "컴퓨터학부",	"total": 22,	"male": 16,	"female": 6},{	"major": "전자공학부",	"total": 78,	"male": 67,	"female": 11},{	"major": "기계공학부",	"total": 30,	"male": 27,	"female": 3},{	"major": "경영학부",	"total": 35,	"male": 20,	"female": 15},{	"major": "생명과학부",	"total": 37,	"male": 18,	"female": 19},{	"major": "심리학과",	"total": 24,	"male": 7,	"female": 17}]},
-{"year": 2017,
-"data": 
-[{	"major": "약학과",	"total": 30,	"male": 12,	"female": 18},{	"major": "의과학과",	"total": 28,	"male": 17,	"female": 11},{	"major": "의학과",	"total": 25,	"male": 16,	"female": 9},{	"major": "교육학과",	"total": 34,	"male": 6,	"female": 28},{	"major": "식품공학부 식품생물공학전공",	"total": 22,	"male": 10,	"female": 12},{	"major": "컴퓨터학부",	"total": 32,	"male": 24,	"female": 8},{	"major": "전자공학부",	"total": 89,	"male": 76,	"female": 13},{	"major": "기계공학부",	"total": 34,	"male": 31,	"female": 3},{	"major": "생명과학부",	"total": 34,	"male": 17,	"female": 17},{	"major": "경영학부",	"total": 39,	"male": 23,	"female": 16}]},
-{"year": 2018,
-"data": 
-[{	"major": "컴퓨터학부",	"total": 39,	"male": 30,	"female": 9},{	"major": "전자공학부",	"total": 61,	"male": 52,	"female": 9},{	"major": "심리학과",	"total": 17,	"male": 5,	"female": 12},{	"major": "간호학과",	"total": 13,	"male": 1,	"female": 12},{	"major": "기계공학부",	"total": 28,	"male": 25,	"female": 3},{	"major": "경영학부",	"total": 29,	"male": 17,	"female": 12},{	"major": "생명과학부",	"total": 26,	"male": 13,	"female": 13},{	"major": "교육학과",	"total": 25,	"male": 4,	"female": 21},{	"major": "의과학과",	"total": 25,	"male": 15,	"female": 10},{	"major": "식품공학부 식품생물공학전공",	"total": 12,	"male": 5,	"female": 7}]},
-{"year": 2019,
-"data": 
-[{	"major": "영어영문학과",	"total": 20,	"male": 8,	"female": 12},{	"major": "심리학과",	"total": 19,	"male": 6,	"female": 13},{	"major": "영어영문학과",	"total": 9,	"male": 3,	"female": 6},{	"major": "교육학과",	"total": 21,	"male": 3,	"female": 18},{	"major": "컴퓨터학부",	"total": 21,	"male": 16,	"female": 5},{	"major": "전자공학부",	"total": 68,	"male": 58,	"female": 10},{	"major": "고분자공학과",	"total": 20,	"male": 14,	"female": 6},{	"major": "기계공학부",	"total": 36,	"male": 33,	"female": 3},{	"major": "경영학부",	"total": 28,	"male": 16,	"female": 12},{	"major": "생명과학부",	"total": 35,	"male": 17,	"female": 18}]}
+    {
+        "year": 2010,
+        "data": [
+            {
+                "major": "경영학부",
+                "total": 46,
+                "male": 27,
+                "female": 19
+            },
+            {
+                "major": "생명과학부",
+                "total": 40,
+                "male": 20,
+                "female": 20
+            },
+            {
+                "major": "환경공학과",
+                "total": 20,
+                "male": 12,
+                "female": 8
+            },
+            {
+                "major": "기계공학부",
+                "total": 44,
+                "male": 40,
+                "female": 4
+            },
+            {
+                "major": "간호학과",
+                "total": 10,
+                "male": 1,
+                "female": 9
+            },
+            {
+                "major": "의학과",
+                "total": 63,
+                "male": 40,
+                "female": 23
+            },
+            {
+                "major": "치의학과",
+                "total": 43,
+                "male": 11,
+                "female": 32
+            },
+            {
+                "major": "고분자공학과",
+                "total": 21,
+                "male": 15,
+                "female": 6
+            },
+            {
+                "major": "심리학과",
+                "total": 17,
+                "male": 5,
+                "female": 12
+            },
+            {
+                "major": "건축/토목공학부",
+                "total": 51,
+                "male": 38,
+                "female": 13
+            }
+        ]
+    },
+    {
+        "year": 2011,
+        "data": [
+            {
+                "major": "경영학부",
+                "total": 46,
+                "male": 27,
+                "female": 19
+            },
+            {
+                "major": "생명과학부",
+                "total": 40,
+                "male": 20,
+                "female": 20
+            },
+            {
+                "major": "환경공학과",
+                "total": 20,
+                "male": 12,
+                "female": 8
+            },
+            {
+                "major": "기계공학부",
+                "total": 44,
+                "male": 40,
+                "female": 4
+            },
+            {
+                "major": "간호학과",
+                "total": 10,
+                "male": 1,
+                "female": 9
+            },
+            {
+                "major": "의학과",
+                "total": 63,
+                "male": 40,
+                "female": 23
+            },
+            {
+                "major": "치의학과",
+                "total": 43,
+                "male": 11,
+                "female": 32
+            },
+            {
+                "major": "고분자공학과",
+                "total": 21,
+                "male": 15,
+                "female": 6
+            },
+            {
+                "major": "심리학과",
+                "total": 17,
+                "male": 5,
+                "female": 12
+            },
+            {
+                "major": "건축/토목공학부",
+                "total": 51,
+                "male": 38,
+                "female": 13
+            }
+        ]
+    },
+    {
+        "year": 2012,
+        "data": [
+            {
+                "major": "의학과",
+                "total": 63,
+                "male": 40,
+                "female": 23
+            },
+            {
+                "major": "의과학과",
+                "total": 22,
+                "male": 13,
+                "female": 9
+            },
+            {
+                "major": "생명과학부",
+                "total": 36,
+                "male": 18,
+                "female": 18
+            },
+            {
+                "major": "간호학과",
+                "total": 14,
+                "male": 1,
+                "female": 13
+            },
+            {
+                "major": "경영학부",
+                "total": 36,
+                "male": 21,
+                "female": 15
+            },
+            {
+                "major": "기계공학부",
+                "total": 26,
+                "male": 23,
+                "female": 3
+            },
+            {
+                "major": "건축/토목공학부",
+                "total": 52,
+                "male": 39,
+                "female": 13
+            },
+            {
+                "major": "치의학과",
+                "total": 25,
+                "male": 6,
+                "female": 19
+            },
+            {
+                "major": "영어영문학과",
+                "total": 18,
+                "male": 7,
+                "female": 11
+            },
+            {
+                "major": "심리학과",
+                "total": 17,
+                "male": 5,
+                "female": 12
+            }
+        ]
+    },
+    {
+        "year": 2013,
+        "data": [
+            {
+                "major": "간호학과",
+                "total": 18,
+                "male": 2,
+                "female": 16
+            },
+            {
+                "major": "심리학과",
+                "total": 28,
+                "male": 9,
+                "female": 19
+            },
+            {
+                "major": "생명과학부",
+                "total": 29,
+                "male": 14,
+                "female": 15
+            },
+            {
+                "major": "경영학부",
+                "total": 40,
+                "male": 23,
+                "female": 17
+            },
+            {
+                "major": "기계공학부",
+                "total": 21,
+                "male": 19,
+                "female": 2
+            },
+            {
+                "major": "건축/토목공학부",
+                "total": 46,
+                "male": 34,
+                "female": 12
+            },
+            {
+                "major": "교육학과",
+                "total": 24,
+                "male": 4,
+                "female": 20
+            },
+            {
+                "major": "의학과",
+                "total": 54,
+                "male": 35,
+                "female": 19
+            },
+            {
+                "major": "의과학과",
+                "total": 20,
+                "male": 12,
+                "female": 8
+            },
+            {
+                "major": "치의학과",
+                "total": 21,
+                "male": 5,
+                "female": 16
+            }
+        ]
+    },
+    {
+        "year": 2014,
+        "data": [
+            {
+                "major": "영어영문학과",
+                "total": 28,
+                "male": 11,
+                "female": 17
+            },
+            {
+                "major": "생명과학부",
+                "total": 31,
+                "male": 15,
+                "female": 16
+            },
+            {
+                "major": "경영학부",
+                "total": 24,
+                "male": 14,
+                "female": 10
+            },
+            {
+                "major": "기계공학부",
+                "total": 29,
+                "male": 26,
+                "female": 3
+            },
+            {
+                "major": "전자공학부",
+                "total": 70,
+                "male": 60,
+                "female": 10
+            },
+            {
+                "major": "교육학과",
+                "total": 38,
+                "male": 6,
+                "female": 32
+            },
+            {
+                "major": "의학과",
+                "total": 43,
+                "male": 27,
+                "female": 16
+            },
+            {
+                "major": "간호학과",
+                "total": 19,
+                "male": 2,
+                "female": 17
+            },
+            {
+                "major": "컴퓨터학부",
+                "total": 19,
+                "male": 14,
+                "female": 5
+            },
+            {
+                "major": "건축/토목공학부",
+                "total": 16,
+                "male": 12,
+                "female": 4
+            }
+        ]
+    },
+    {
+        "year": 2015,
+        "data": [
+            {
+                "major": "영어영문학과",
+                "total": 17,
+                "male": 6,
+                "female": 11
+            },
+            {
+                "major": "생명과학부",
+                "total": 30,
+                "male": 15,
+                "female": 15
+            },
+            {
+                "major": "경영학부",
+                "total": 35,
+                "male": 20,
+                "female": 15
+            },
+            {
+                "major": "기계공학부",
+                "total": 26,
+                "male": 23,
+                "female": 3
+            },
+            {
+                "major": "고분자공학과",
+                "total": 18,
+                "male": 13,
+                "female": 5
+            },
+            {
+                "major": "전자공학부",
+                "total": 86,
+                "male": 73,
+                "female": 13
+            },
+            {
+                "major": "컴퓨터학부",
+                "total": 23,
+                "male": 17,
+                "female": 6
+            },
+            {
+                "major": "교육학과",
+                "total": 21,
+                "male": 3,
+                "female": 18
+            },
+            {
+                "major": "의학과",
+                "total": 38,
+                "male": 24,
+                "female": 14
+            },
+            {
+                "major": "의과학과",
+                "total": 24,
+                "male": 14,
+                "female": 10
+            }
+        ]
+    },
+    {
+        "year": 2016,
+        "data": [
+            {
+                "major": "간호학과",
+                "total": 21,
+                "male": 2,
+                "female": 19
+            },
+            {
+                "major": "치의학과",
+                "total": 21,
+                "male": 5,
+                "female": 16
+            },
+            {
+                "major": "의학과",
+                "total": 23,
+                "male": 14,
+                "female": 9
+            },
+            {
+                "major": "식품공학부 식품생물공학전공",
+                "total": 23,
+                "male": 10,
+                "female": 13
+            },
+            {
+                "major": "컴퓨터학부",
+                "total": 22,
+                "male": 16,
+                "female": 6
+            },
+            {
+                "major": "전자공학부",
+                "total": 78,
+                "male": 67,
+                "female": 11
+            },
+            {
+                "major": "기계공학부",
+                "total": 30,
+                "male": 27,
+                "female": 3
+            },
+            {
+                "major": "경영학부",
+                "total": 35,
+                "male": 20,
+                "female": 15
+            },
+            {
+                "major": "생명과학부",
+                "total": 37,
+                "male": 18,
+                "female": 19
+            },
+            {
+                "major": "심리학과",
+                "total": 24,
+                "male": 7,
+                "female": 17
+            }
+        ]
+    },
+    {
+        "year": 2017,
+        "data": [
+            {
+                "major": "약학과",
+                "total": 30,
+                "male": 12,
+                "female": 18
+            },
+            {
+                "major": "의과학과",
+                "total": 28,
+                "male": 17,
+                "female": 11
+            },
+            {
+                "major": "의학과",
+                "total": 25,
+                "male": 16,
+                "female": 9
+            },
+            {
+                "major": "교육학과",
+                "total": 34,
+                "male": 6,
+                "female": 28
+            },
+            {
+                "major": "식품공학부 식품생물공학전공",
+                "total": 22,
+                "male": 10,
+                "female": 12
+            },
+            {
+                "major": "컴퓨터학부",
+                "total": 32,
+                "male": 24,
+                "female": 8
+            },
+            {
+                "major": "전자공학부",
+                "total": 89,
+                "male": 76,
+                "female": 13
+            },
+            {
+                "major": "기계공학부",
+                "total": 34,
+                "male": 31,
+                "female": 3
+            },
+            {
+                "major": "생명과학부",
+                "total": 34,
+                "male": 17,
+                "female": 17
+            },
+            {
+                "major": "경영학부",
+                "total": 39,
+                "male": 23,
+                "female": 16
+            }
+        ]
+    },
+    {
+        "year": 2018,
+        "data": [
+            {
+                "major": "컴퓨터학부",
+                "total": 39,
+                "male": 30,
+                "female": 9
+            },
+            {
+                "major": "전자공학부",
+                "total": 61,
+                "male": 52,
+                "female": 9
+            },
+            {
+                "major": "심리학과",
+                "total": 17,
+                "male": 5,
+                "female": 12
+            },
+            {
+                "major": "간호학과",
+                "total": 13,
+                "male": 1,
+                "female": 12
+            },
+            {
+                "major": "기계공학부",
+                "total": 28,
+                "male": 25,
+                "female": 3
+            },
+            {
+                "major": "경영학부",
+                "total": 29,
+                "male": 17,
+                "female": 12
+            },
+            {
+                "major": "생명과학부",
+                "total": 26,
+                "male": 13,
+                "female": 13
+            },
+            {
+                "major": "교육학과",
+                "total": 25,
+                "male": 4,
+                "female": 21
+            },
+            {
+                "major": "의과학과",
+                "total": 25,
+                "male": 15,
+                "female": 10
+            },
+            {
+                "major": "식품공학부 식품생물공학전공",
+                "total": 12,
+                "male": 5,
+                "female": 7
+            }
+        ]
+    },
+    {
+        "year": 2019,
+        "data": [
+            {
+                "major": "영어영문학과",
+                "total": 20,
+                "male": 8,
+                "female": 12
+            },
+            {
+                "major": "심리학과",
+                "total": 19,
+                "male": 6,
+                "female": 13
+            },
+            {
+                "major": "영어영문학과",
+                "total": 9,
+                "male": 3,
+                "female": 6
+            },
+            {
+                "major": "교육학과",
+                "total": 21,
+                "male": 3,
+                "female": 18
+            },
+            {
+                "major": "컴퓨터학부",
+                "total": 21,
+                "male": 16,
+                "female": 5
+            },
+            {
+                "major": "전자공학부",
+                "total": 68,
+                "male": 58,
+                "female": 10
+            },
+            {
+                "major": "고분자공학과",
+                "total": 20,
+                "male": 14,
+                "female": 6
+            },
+            {
+                "major": "기계공학부",
+                "total": 36,
+                "male": 33,
+                "female": 3
+            },
+            {
+                "major": "경영학부",
+                "total": 28,
+                "male": 16,
+                "female": 12
+            },
+            {
+                "major": "생명과학부",
+                "total": 35,
+                "male": 17,
+                "female": 18
+            }
+        ]
+    }
 ]
