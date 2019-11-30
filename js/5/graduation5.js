@@ -80,7 +80,7 @@ function getCoreData(data, value) {
         if (element[value] > 0) {
             let obj = {};
             obj["major"] = element.major;
-            obj["percent"] = parseInt(element[value]/ element[level["degree"]] * 100, 10);
+            obj["percent"] = parseInt(element[value] / element[level["degree"]] * 100, 10);
             obj["gender"] = element[value];
             obj["total_headcount"] = element[level["degree"]];
             ret.push(obj);
@@ -136,7 +136,13 @@ function drawChart(input) {
         var series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.categoryY = "major";
         series.dataFields.valueX = "percent";
-        series.columns.template.tooltipText = "전공: {categoryY}\n비율: {valueX}\n전체 인원수: {total_headcount}";
+
+        if (level["gender"] == "man") {
+            series.columns.template.tooltipText = "전공: {categoryY}\n남자 비율: {valueX}\n전체 인원수: {total_headcount}";
+        }
+        else {
+            series.columns.template.tooltipText = "전공: {categoryY}\n여자 비율: {valueX}\n전체 인원수: {total_headcount}";
+        }
         series.columns.template.fillOpacity = .8;
 
         series.tooltip.getFillFromObject = false;

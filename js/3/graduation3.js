@@ -108,9 +108,6 @@ function genDataForChart(input) {
                     firstYearMajors.push(major);
                     checkForFirstYear[seriesName] = int_year[i] - 2010;
                 }
-                // else {
-                //     year_info[seriesName + "ShowTooltip"] = true;
-                // }
             }
             //case 2:
             //series found
@@ -257,13 +254,7 @@ function genDataForAllInOne(data) {
             var bullet = series.bullets.push(new am4charts.CircleBullet());
             bullet.strokeWidth = 10;
             bullet.tooltipText = namesOfSeries[i];
-            bullet.events.on("over", (target) =>{
-                console.log(target);                
-            })
             bullet.propertyFields.alwaysShowTooltip = seriesName + "ShowTooltip";
-
-            var bullet2 = series.bullets.push(new am4charts.CircleBullet());
-            
 
             //the label of bullet, marking the rank for each year.
             var valueLabel = series.bullets.push(new am4charts.LabelBullet());
