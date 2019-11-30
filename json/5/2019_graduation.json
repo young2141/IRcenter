@@ -1495,19 +1495,6 @@
 		"phd_woman": 0
 	},
 	{
-		"major": "행정학부 ",
-		"major_class": "예체능계열",
-		"bachelor": 24,
-		"bachelor_man": 21,
-		"bachelor_woman": 3,
-		"master": 2,
-		"master_man": 2,
-		"master_woman": 0,
-		"phd": 1,
-		"phd_man": 1,
-		"phd_woman": 0
-	},
-	{
 		"major": "계약학과",
 		"major_class": "예체능계열",
 		"bachelor": 3,
