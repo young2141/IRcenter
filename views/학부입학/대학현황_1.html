@@ -70,17 +70,17 @@
 			border-style: none;
 			margin-top: 20px;
 			margin-bottom: 20px;
-			padding: 10px;
+			padding:0px;
 		}
 
 		div.legend {
-        width: 200px;
-        height: 300px;
-        left: 82%;
-        top: 100px;
-        padding: 10px;
-        line-height: 30px;
-        margin: 10px;
+			width: 200px;
+			height: 300px;
+			left: 82%;
+			top: 100px;
+			padding: 10px;
+			line-height: 30px;
+			margin: 10px;
 		}
 
         div.legend a:visited {
@@ -278,6 +278,15 @@
 		{
 			background-color: none; padding: 3px; margin-left: 10px; font-size: 20px;
 		}
+		#unitBox
+		{
+			text-align: right;
+			font-size: 15px;
+			width: 980px;
+			margin: 0px;
+			padding-right: 20px;
+		}
+		
 	</style>
 
 	<body>
@@ -357,9 +366,11 @@
 			<h2>지원자 수, 모집인원 수, 입학자 수</h2>
 			<span id = "blue"> 2019학년도 정원내 신입생 지원자 수는 54,106명으로 2010학년도 대비 74.9%(30,928명) 증가합니다.
 			이에 비해, 모집인원 수는 20.7%, 입학자 수는 18.4% 각각 증가하여 상대적으로 증가폭이 작습니다.</span>
+			
 		</div>
 		
-
+		
+		<div id = "unitBox">(단위 : 명)</div>
 		<div id="chartdiv1" class="chartdiv"> 그래프 1</div>
 		<div class="legend" id="gotop" style = "left:65%; top :43%">
 
@@ -396,12 +407,18 @@
 			<h2>신입생 경쟁률</h2>
 			<span id = "blue">2019학년도 <span id ="P1">정원내</span> 신입생 경쟁률은 11.1:1로 2010학년도 대비 42.6% 증가합니다. </span>
 		</div>
+		<div id = "unitBox">
+		(단위 : x:1)
+		</div>
 		<div id="chartdiv2-1" class="chartdiv"> 그래프 2-1</div>
 		<br>
 		
 		<div id = "summaryBox">
 			<h2>신입생 충원율</h2>
 			<span id = "blue">2019학년도 <span id = "P2">정원내</span> 신입생 충원율은 99.7% 입니다.</span>
+		</div>
+		<div id = "unitBox">
+		(단위 : %)
 		</div>
 		<div id="chartdiv2-2" class="chartdiv"> 그래프 2-2</div>
 		<br>
