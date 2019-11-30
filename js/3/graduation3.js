@@ -10,7 +10,7 @@ function loadJSON(path, success) {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             if (xhr.responseText.length > 0) {
                 success(JSON.parse(xhr.responseText));
-            } 
+            }
         }
     };
     xhr.open("GET", path, true);
@@ -47,7 +47,7 @@ function checkRadioButton(name, id) {
         case "menu":
             gender = id;
     }
-    loadJSON(path, function (data){
+    loadJSON(path, function (data) {
         genDataForAllInOne(data);
     })
 }
@@ -68,21 +68,35 @@ function genDataForChart(input) {
     var series = [];
     var data = [];
 
-    var year = ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"];
+    var year = ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"];
+    var int_year = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019];
     var checkForLastYear = [];
+    var checkForFirstYear = [];
+    var firstYearMajors = [];
+    var headCount = [];
+
     for (let i = 0; i < input.length; ++i) {
         var year_info = new Object();
         var rank = 0;
 
         year_info["year"] = year[i];
         dataOfYear = input[i].data;
+        let headCountObj = {};
+        headCountObj["year"] = year[i];
+        headCountObj["info"] = [];
+
         for (let j = 0; j < 10; ++j) {
             ++rank;
+            let headCountDepartment = {};
             major = dataOfYear[j].major;
+            headCountDepartment["major"] = major;
+            headCountDepartment["headcount"] = dataOfYear[j][gender];
+            headCountObj["info"].push(headCountDepartment);
 
-            let idx = series.findIndex((item, idx) => {
-                return item == major;
-            });
+            let idx = series.findIndex(
+                (item) => {
+                    return item == major;
+                });
 
             //case 1:
             //series was not find
@@ -90,7 +104,13 @@ function genDataForChart(input) {
                 series.push(major);
                 var seriesName = name + (series.length - 1);
                 year_info[seriesName] = rank;
-                //year_info[seriesName+"ShowTooltip"] = true;
+                if (i == 0) {
+                    firstYearMajors.push(major);
+                    checkForFirstYear[seriesName] = int_year[i] - 2010;
+                }
+                // else {
+                //     year_info[seriesName + "ShowTooltip"] = true;
+                // }
             }
             //case 2:
             //series found
@@ -110,33 +130,31 @@ function genDataForChart(input) {
                     break;
                 }
             }
+
             if (isThere) {
                 checkForLastYear[idx2].year = year[i];
             } else {
                 checkForLastYear.push({
                     "major": major,
-                    "year": year
+                    "year": year[i]
                 });
             }
         }
         data.push(year_info);
+        headCount.push(headCountObj);
     }
-    return [series, data, checkForLastYear];
+    return [series, data, checkForLastYear, checkForFirstYear, firstYearMajors, headCount];
 }
 
-//mark the tooltip for last year
-function markLastYear(data, checkForLastYear, namesOfSeries) {
+// mark the tooltip for last year
+function markLastYear(data, checkForLastYear, namesOfSeries, firstYearMajors) {
     const seriesPrefix = "series";
     for (let i = 0; i < checkForLastYear.length; ++i) {
         let seriesName = seriesPrefix + i;
-        let major = namesOfSeries[i];
-        console.log(name);
-        for (let j = 0; j < checkForLastYear.length; ++j) {
-            if (checkForLastYear[j].major != major) continue;
-            var year = checkForLastYear[j].year;
-            for (let k = 0; k < data.length; ++k) {
-                if (data[k].year == year) {
-                    data[k][seriesName + "ShowTooltip"] = true;
+        if(!firstYearMajors.includes(checkForLastYear[i].major)){
+            for(let j = 0;j<data.length;++j){
+                if(data[j].year == checkForLastYear[i].year){
+                    data[j]["series" + String(i) + "ShowTooltip"] = true;
                 }
             }
         }
@@ -144,19 +162,28 @@ function markLastYear(data, checkForLastYear, namesOfSeries) {
     return data;
 }
 
+function RGB2Hexa(colors) {
+    //console.log(colors);
+    var r = colors["r"];
+    var g = colors["g"];
+    var b = colors["b"];
+    return "#" + r.toString(16) + g.toString(16) + b.toString(16);
+}
+
 //generate data for chart and then use it for chart.
 function genDataForAllInOne(data) {
-    console.log("raw " + data);
     for (var i = 0; i < 9; ++i)
         sortData(data[i].data, gender);
-    console.log("sorted "+ data);
 
     var returns = genDataForChart(data);
     var namesOfSeries = returns[0];
     var data = returns[1];
     var checkForLastYear = returns[2];
+    var checkForFirstYear = returns[3];
+    var firstYearMajors = returns[4];
+    var headCount = returns[5];
 
-    data = markLastYear(data, checkForLastYear, namesOfSeries);
+    data = markLastYear(data, checkForLastYear, namesOfSeries, firstYearMajors);
 
     //console.log(namesOfSeries);
     //console.log(data);
@@ -189,6 +216,7 @@ function genDataForAllInOne(data) {
         //the series about x and y-axis for chart
         for (let i = 0; i < namesOfSeries.length; ++i) {
             const seriesName = "series" + i;
+            let major = namesOfSeries[i];
             //series creation and then push it "chart object" by series
             var series = chart.series.push(new am4charts.LineSeries());
             //console.log(series);
@@ -207,12 +235,35 @@ function genDataForAllInOne(data) {
             series.tooltip.pointerOrientation = "vertical";
             series.tooltip.dy = -10;
 
+            series.events.on("hit", (target) => {
+                console.log(target._value);
+            }, this);
+
+            var label_bullet = series.bullets.push(new am4charts.LabelBullet());
+            label_bullet.label.adapter.add("text", (text, target, key) => {
+                if (!target.dataItem) return "";
+                const index = target.dataItem.index;
+                if (index == checkForFirstYear[seriesName])
+                    return text;
+            })
+            label_bullet.label.text = major;
+            label_bullet.label.dx = -5;
+            label_bullet.label.dy = 20;
+            label_bullet.label.fontSize = 12;
+            label_bullet.label.fill = RGB2Hexa(series.fill._value);
+            label_bullet.togglable = true;
+
             //the bullet, points of data insertion on a series for x-axis.
             var bullet = series.bullets.push(new am4charts.CircleBullet());
-            //console.log(bullet);
             bullet.strokeWidth = 10;
             bullet.tooltipText = namesOfSeries[i];
+            bullet.events.on("over", (target) =>{
+                console.log(target);                
+            })
             bullet.propertyFields.alwaysShowTooltip = seriesName + "ShowTooltip";
+
+            var bullet2 = series.bullets.push(new am4charts.CircleBullet());
+            
 
             //the label of bullet, marking the rank for each year.
             var valueLabel = series.bullets.push(new am4charts.LabelBullet());

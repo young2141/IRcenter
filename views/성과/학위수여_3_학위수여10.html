@@ -208,10 +208,7 @@
 
 
 		<script>
-			var filename = document.URL.substring(document.URL.lastIndexOf("/") + 1, document.URL.length);
-			var foldername = window.location.pathname;
-			console.log(filename);
-			console.log(foldername);
+
 			var path = "../../json/3/Top10Bachelor.json";
 			loadJSON(path, function (data){
 				genDataForAllInOne(data);
