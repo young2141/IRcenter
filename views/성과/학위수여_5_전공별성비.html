@@ -179,7 +179,7 @@
 						<option value="예체능계열">예체능계열</option>
 					</select><br><br>
 
-					<span style="font-size: 20px"><b>검색 개수</b></span><br>
+				<!--span style="font-size: 20px"><b>검색 개수</b></span><br>
 					<select id="select_num_selected" onchange="clickFormSelection('select', id, this.value)" name="menu"
 						style="width : 200px; height: 30px">
 						<option value="10">10</option>
@@ -187,7 +187,7 @@
 						<option value="30">30</option>
 						<option value="50" selected="selected">50</option>
 						<option value="70">70</option>
-					</select>
+					</select-->
 
 				</form>
 			</div>
@@ -221,7 +221,7 @@
 				level["major_class"] = getIdSelectedCheckbox("select_major_class");
 				//num_selected: how many major show in columns
 				//              default: 50
-				level["num_selected"] = getIdSelectedCheckbox("select_num_selected");
+				level["num_selected"] = "50";
 
 				//load json file to 'data'
 				var data;
