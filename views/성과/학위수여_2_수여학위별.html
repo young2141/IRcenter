@@ -116,6 +116,9 @@
 			모집인원과 입학자 수는 대학수용력의 제한으로 훨씬 더 적은 범위 안에 있습니다.
 		</div>
 		
+		<div id = "unitBox">
+		(단위 : 명)
+		</div>
 
 		<div id="myGraph",class="chartdiv"></div>
 		<div class="legend" id="gotop" style = "left:80%; top :40%">
@@ -134,7 +137,7 @@
 				<br>
             
 				<input type=button value='◀' onclick=decrease()>
-				<input id="years" type=range min=2013 max=2019 step=1 value=2019
+				<input id="years" type=range min=2010 max=2019 step=1 value=2019
 				   oninput=valuechange(parseInt(this.value))>
 				<input type=button value='▶' onclick=increase()>
 
