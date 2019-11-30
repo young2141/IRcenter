@@ -77,24 +77,16 @@ function clickFormSelection(input_type, name, value) {
 function getCoreData(data, value) {
     var ret = [];
     data.forEach(function (element) {
-        let obj = {};
-        obj["major_class"] = element.major_class;
-        obj["major"] = element.major;
-        obj[value] = element[value];
-        ret.push(obj);
+        if (element[value] > 0) {
+            let obj = {};
+            obj["major"] = element.major;
+            obj["percent"] = parseInt(element[value]/ element[level["degree"]] * 100, 10);
+            obj["gender"] = element[value];
+            obj["total_headcount"] = element[level["degree"]];
+            ret.push(obj);
+        }
     });
     return ret;
-}
-
-//to get the core key of object
-function getIntegerValue(obj) {
-    for (let key in obj) {
-        //the value of key is number, return it
-        //in other words, this is the number of student, bachelor, master, phd who is man or woman or all
-        if (typeof (obj[key]) == "number") {
-            return obj[key];
-        }
-    }
 }
 
 function getProperDataForSelection(data) {
@@ -105,78 +97,27 @@ function getProperDataForSelection(data) {
 
     //get the key string represent that
     //the number of student, bachelor, master, phd who is man or woman or all 
-    var value = level["degree"];
-    var gender;
-    switch (level["gender"]) {
-        case "male":
-            gender = "man";
-            break;
-        case "female":
-            gender = "woman";
-            break;
-        case "all":
-            gender = "all";
-    }
-    if (gender != "all") {
-        value += "_" + gender;
-    }
+    var value = level["degree"] + "_" + level["gender"];
 
     var ret = getCoreData(data, value).sort(function (a, b) {
         //sort order by desc
-        return getIntegerValue(b) - getIntegerValue(a);
+        return b["percent"] - a["percent"];
     });
 
     while (ret.length > level["num_selected"]) {
         ret.pop();
     }
 
-    return [ret, value];
+    return ret;
 }
 
-function getFontSize() {
-    switch (Number(level["num_selected"])) {
-        case 10:
-            return 18;
-        case 20:
-            return 15;
-        case 30:
-            return 13
-        case 50:
-            return 12;
-        case 70:
-            return 10;
-        default:
-            return 10;
-    }
-}
-
-function setChartdivHeight(num_column) {
-    var chartdiv = document.getElementById("chartdiv");
-    var height;
-    if (num_column <= 10)
-        height = "300";
-    else if (num_column <= 20)
-        height = "400";
-    else if (num_column <= 30)
-        height = "500";
-    else if (num_column <= 50)
-        height = "700";
-    else if (num_column <= 70)
-        height = "900";
-    else
-        height = "700"
-    chartdiv.style.height = String(height) + "px";
-}
 
 function drawChart(input) {
     //get the proper data for selection(options: degree, gender, class of major)
-    var ret = getProperDataForSelection(input)
-    var data = ret[0];
-    //value means the number of student, bachelor, master, phd
-    var value = ret[1];
+    var data = getProperDataForSelection(input)
     //console.log(data);
-    setChartdivHeight(data.length);
 
+    chartdiv.style.height = "700px";
     //chart
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
@@ -188,14 +129,24 @@ function drawChart(input) {
         categoryAxis.dataFields.category = "major";
         categoryAxis.renderer.minGridDistance = 10;
         categoryAxis.renderer.inversed = true;
-        categoryAxis.fontSize = getFontSize();
+        categoryAxis.fontSize = 12;
 
         var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
 
         var series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.categoryY = "major";
-        series.dataFields.valueX = value;
-        series.columns.template.tooltipText = "{categoryY}: [bold]{valueX}[/]";
+        series.dataFields.valueX = "percent";
+        series.columns.template.tooltipText = "전공: {categoryY}\n비율: {valueX}\n전체 인원수: {total_headcount}";
         series.columns.template.fillOpacity = .8;
+
+        series.tooltip.getFillFromObject = false;
+        series.tooltip.background.fill = am4core.color("#FFFFFF");
+        series.tooltip.autoTextColor = false;
+        series.tooltip.label.fill = am4core.color("#000000");
+
+        var labelBullet = series.bullets.push(new am4charts.LabelBullet());
+        labelBullet.label.text = "{percent}%  n = {gender}";
+        labelBullet.label.fontSize = 12;
+        labelBullet.label.dx = 40;
     });
 }
