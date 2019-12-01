@@ -1,40 +1,48 @@
-function drawChart(input, value) {
-    // //처리 전 데이터
-    // var preData = input.slice(0);
-    // createCheckboxes(preData);
-    // //chart에 적절한 데이터 값
-    // var result = getDataForChart(preData)
-    // var value = getWhichKey();
-
+function drawChart(data, value) {
     am4core.ready(function () {
-
-        // Themes begin
         am4core.useTheme(am4themes_animated);
-        // Themes end
 
-        // Create chart instance
         var chart = am4core.create("chartdiv", am4charts.XYChart);
+        chart.data = data;
 
-        // Add data
-        chart.data = input;
+        const size = 10;
+        for (let i = 0; i < 1; ++i) {
+            var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            xAxis.dataFields.category = "year";
 
-        var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-        xAxis.dataFields.category = "year";
+            var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
-        var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            var series = chart.series.push(new am4charts.ColumnSeries());
+            series.dataFields.categoryX = "year";
+            series.dataFields.valueY = value;
+        }
+        // var chart = am4core.create("chartdiv", am4charts.XYChart);
+        // chart.data = data;
 
-        // Add ranges
+        // var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+        // xAxis.dataFields.category = "year";
+
+        // var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+        // var series = chart.series.push(new am4charts.ColumnSeries());
+        // series.dataFields.categoryX = "year";
+        // series.dataFields.valueY = "major";
+
+        // // Add ranges
         // function addRange(label, start, end) {
         //     var range = yAxis.axisRanges.create();
-        //     range.category = label;
+        //     range.value = start;
+        //     range.endValue = end;
+        //     range.label.text = label;
+        //     // range.category = label;
         //     // range.value = start;
         //     // range.endValue = end;
-        //     range.label.text = label;
+        //     // range.label.text = label;
         //     range.label.disabled = false;
         //     range.label.location = 0;
         //     range.label.dx = -130;
         //     range.label.dy = 12;
-        //     //range.label.fontWeight = "bold";
+        //     range.label.fontWeight = "bold";
         //     range.label.fontSize = 12;
         //     range.label.horizontalCenter = "left"
         //     range.label.inside = true;
@@ -50,14 +58,10 @@ function drawChart(input, value) {
         //     range.locations.category = 1;
         // }
 
-        function createSeries(major, value) {
-            var series = chart.series.push(new am4charts.ColumnSeries());
-            series.dataFields.categoryX = "year";
-            series.dataFields.valueY = major + "_value;
-        }
+        // addRange(data[0].major, data[0].major + "_2010_" + value, data[0].major + "_2019_" + value);
 
-        for (let i = 0; i < majorInChart.length; ++i) {
-            createSeries(majorInChart[i], value);
-        }
+        // for (let i = 0, cnt = 10; i < majorInChart.length; i += cnt) {
+        //     addRange(data[i].major, "2010_"+value, "2019_"+value);
+        // }
     }); // end am4core.ready()
 }

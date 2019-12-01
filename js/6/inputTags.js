@@ -14,7 +14,7 @@ function getIdSelectedSelect(select_id) {
     return "None";
 }
 
- //Select 클릭 시 이벤트 처리 리스너
+//Select 클릭 시 이벤트 처리 리스너
 function clickFormSelection(input_type, name, value) {
     if (input_type == "select") {
         switch (name) {
@@ -35,13 +35,14 @@ function clickFormSelection(input_type, name, value) {
         }
     }
 
-    //처리 전 데이터
-    var preData = rawData.slice(0);
-    createCheckboxes(preData);
-    //chart에 적절한 데이터 값
-    var processedData = getDataForChart(preData);
-    var value = getWhichKey();
+    //분류 데이터 깊은 복사 및 선택 계열 데이터만 복사
+    let data = dataClassifiedByMajor.slice(0).filter(element => element.major_class == level["major_class"]);
+    //checkbox 생성
+    createCheckboxes(data);
+    //처리 결과 데이터
+    processedData = getDataForChart(data);
 
+    var value = getWhichKey();
     drawChart(processedData, value);
 }
 
@@ -57,28 +58,41 @@ function clickFormSelection(input_type, name, value) {
 //체크박스 클릭시 보이는 뷰
 var expanded = false;
 
+function getMajorNamesForCheckbox(input) {
+    var ret = [];
+    ret.push("(전체)");
+
+    majorNumberInChart = [];
+    for (let i = 0; i < input.length; ++i) {
+        ret.push(input[i].major);
+        let obj = {};
+        obj[input[i].major] = i;
+        majorNumberInChart.push(obj);
+    }
+    return ret;
+}
+
 function createCheckboxes(input) {
     var checkboxes = document.getElementById("checkboxes");
-    var allMajorsSelected = getMajorNamesForAllMajor(input).sort();
+    majorInChart = getMajorNamesForCheckbox(input).sort();
 
-    majorInChart = allMajorsSelected;
     while (checkboxes.hasChildNodes()) {
         checkboxes.removeChild(checkboxes.firstChild);
     }
 
-    for (let i = 0; i < allMajorsSelected.length; ++i) {
+    for (let i = 0; i < majorInChart.length; ++i) {
         let label = document.createElement("label");
-        label.htmlFor = allMajorsSelected[i];
+        label.htmlFor = majorInChart[i];
 
         let checkbox = document.createElement('input');
         checkbox.type = "checkbox";
-        checkbox.id = allMajorsSelected[i];
-        checkbox.value = allMajorsSelected[i];
+        checkbox.id = majorInChart[i];
+        checkbox.value = majorInChart[i];
         checkbox.checked = "checked";
         checkbox.addEventListener('click', selectCheckbox);
 
         label.appendChild(checkbox);
-        label.appendChild(document.createTextNode(allMajorsSelected[i]));
+        label.appendChild(document.createTextNode(majorInChart[i]));
         checkboxes.appendChild(label);
     }
 }
@@ -99,9 +113,10 @@ function selectCheckbox(event) {
     var whichTargetValue = event.target.defaultValue;
     let isChecked = false;
     if (whichTargetValue == "(전체)") {
-
         if (document.getElementById(whichTargetValue).checked) {
             isChecked = true;
+            clickFormSelection('select', 'major_class', level["major_class"]);
+            return;
         }
 
         let children = checkboxes.children;
@@ -109,16 +124,32 @@ function selectCheckbox(event) {
             var checkbox = children[i].firstChild;
             checkbox.checked = isChecked;
         }
+
+        drawChart("", "");
+        return;
     } else {
         isChecked = document.getElementById(whichTargetValue).checked;
         if (isChecked && !majorInChart.includes(whichTargetValue)) {
             majorInChart.push(whichTargetValue);
+            majorNumberInChart[whichTargetValue] = majorNumberInChart.length;
         } else {
-            const idx = majorInChart.findIndex(whichTargetValue);
+            const idx = majorInChart.findIndex(element => element === whichTargetValue);
             majorInChart.splice(idx, 1);
+            const idx2 = majorNumberInChart.findIndex(element => element == majorNumberInChart[majorInchart[idx]]);
+            majorNumberInChart.splice(idx2, 1);
+            for (let i = idx2; i < majorNumberInChart.length; ++i) {
+                majorNumberInChart[i] -= 1;
+            }
         }
     }
-    //drawChart()
+
+    //분류 데이터 깊은 복사 및 선택 계열 데이터만 복사
+    let data = dataClassifiedByMajor.slice(0).filter(element => element.major_class == level["major_class"]);
+    //처리 결과 데이터
+    processedData = getDataForChart(data);
+
+    var value = getWhichKey();
+    drawChart(processedData, value);
 }
 
 /*////////////////////////////////////////////////////////
