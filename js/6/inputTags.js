@@ -60,7 +60,6 @@ var expanded = false;
 
 function getMajorNamesForCheckbox(input) {
     var ret = [];
-    ret.push("(전체)");
 
     majorNumberInChart = [];
     for (let i = 0; i < input.length; ++i) {
@@ -79,6 +78,20 @@ function createCheckboxes(input) {
     while (checkboxes.hasChildNodes()) {
         checkboxes.removeChild(checkboxes.firstChild);
     }
+
+    let label = document.createElement("label");
+    label.htmlFor = "(전체)";
+
+    let checkbox = document.createElement('input');
+    checkbox.type = "checkbox";
+    checkbox.id = "(전체)";
+    checkbox.value = "(전체)";
+    checkbox.checked = "checked";
+    checkbox.addEventListener('click', selectCheckbox);
+
+    label.appendChild(checkbox);
+    label.appendChild(document.createTextNode("(전체)"));
+    checkboxes.appendChild(label);
 
     for (let i = 0; i < majorInChart.length; ++i) {
         let label = document.createElement("label");

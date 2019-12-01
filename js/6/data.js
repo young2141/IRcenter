@@ -75,9 +75,7 @@ function programStart() {
     createCheckboxes(data);
     //처리 결과 데이터
     processedData = getDataForChart(data);
-
-    var value = getWhichKey();
-    drawChart(processedData, value);
+    drawChart(processedData, getWhichKey());
 }
 
 
@@ -132,6 +130,14 @@ function classifyRawdataByMajor(rawData) {
     }
 }
 
+function getMappingNumberByMajor(major){
+    for(let i=0;i<majorNumberInChart.length;++i){
+        if(major in majorNumberInChart[i]){
+            return majorNumberInChart[i][major];
+        }
+    }
+}
+
 //차트를 그리기 위한 필요한 데이터만을 가져옴
 function getCoreData(data, degreeAndGender) {
     var ret = [];
@@ -171,8 +177,8 @@ function getDataForChart(data) {
     //필요 전공 계열(인문사회, 자연과학, 공학, 예체능) 데이터만 뽑아냄
     data = data.filter(element => majorInChart.includes(element.major));
 
-    for (let i = 0; i < 1; ++i) {
-    // for (let i = 0; i < data.length; ++i) {
+    // for (let i = 0; i < 1; ++i) {
+    for (let i = 0; i < data.length; ++i) {
         data[i] = getCoreData(data[i], degreeAndGender);
         for (let j = 0; j < data[i].length; ++j) {
             ret.push(data[i][j]);
