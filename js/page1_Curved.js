@@ -28,8 +28,8 @@ function drawP1Curved(
       valueAxis.strictMinMax = true;
 
       var axisBreak = valueAxis.axisBreaks.create();
-      axisBreak.startValue = 0.5;
-      axisBreak.endValue = 96.5;
+      axisBreak.startValue = 0.2;
+      axisBreak.endValue = 96.8;
       axisBreak.breakSize = 0.001;
     } else {
       valueAxis.strictMinMax = true;
@@ -37,8 +37,8 @@ function drawP1Curved(
       valueAxis.max = 16;
 
       var axisBreak = valueAxis.axisBreaks.create();
-      axisBreak.startValue = 1;
-      axisBreak.endValue = 4;
+      axisBreak.startValue = 0.3;
+      axisBreak.endValue = 5;
       axisBreak.breakSize = 0.08;
     }
 
