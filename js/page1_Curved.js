@@ -6,7 +6,7 @@ function drawP1Curved(_data, _divName, _cnt, _categoryX, _valueY, _valueY_ko, _v
         var chart = am4core.create(_divName, am4charts.XYChart);
         chart.data = _data;
 
-        var scaleTitle = chart.titles.create();
+
 
         scaleTitle.dy = -10;
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -17,11 +17,6 @@ function drawP1Curved(_data, _divName, _cnt, _categoryX, _valueY, _valueY_ko, _v
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         
         if (_divName == "divchart2") {
-            scaleTitle.text = ("(단위: %)");
-            scaleTitle.fontSize = 15;
-            scaleTitle.dx = 440;
-            scaleTitle.dy = -10;
-
             valueAxis.min = 0;
             valueAxis.max = 100.5;
             valueAxis.strictMinMax = true;
@@ -32,11 +27,6 @@ function drawP1Curved(_data, _divName, _cnt, _categoryX, _valueY, _valueY_ko, _v
             axisBreak.breakSize = 0.001;
         }
         else {        
-            scaleTitle.text = ("(단위 : χ:1)");
-            scaleTitle.fontSize = 15;
-            scaleTitle.dx = 440;
-            scaleTitle.dy = -10;
-
             valueAxis.strictMinMax = true;
             valueAxis.min = 0;
             valueAxis.max = 16;
