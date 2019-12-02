@@ -13,10 +13,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-
-    <script src="../../js/result_summary_graph.js"></script>
-    <script src="../../js/result_summary_Bar_Graph_height.js"></script>
-    <script src="../../js/result_summary_Bar_Graph_width.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	
+	
 
 </head>
 
@@ -42,7 +41,7 @@
     }
 </style>
 
-<body onload="loading()">
+<body>
     <div class="box1" id="wrapper">
         <form class>
             <br>
@@ -86,23 +85,46 @@
 
         </script>
 
-        <div id="chartdiv1" class="chartdiv11"> 그래프 1-1</div>
+ 
 		
 		<br>
 		
+		<div id="chart"></div>
+
 		<form>
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" value = "여자">
-		<input type = "button" style = "width:130; height: 30px; margin : 10px" value = "거주지(대구, 경북)">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" value = "조기졸업"><br>
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" value = "남자">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
-		<input type = "button" style = "width:130; height: 30px; margin : 10px" value = "복수전공 이수 졸업"><br>
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
-		<input type = "button" style = "width:130; height: 30px; margin : 10px" value = "부전공이수 졸업"><br>
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" value = "대학원진학">
+		<div id = "btn-div">
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "여자" value = "여자" onclick="onClick(this.id)">
+		<input type = "button" style = "width:130; height: 30px; margin : 10px" id = "거주지" value = "거주지(대구, 경북)" onclick="onClick(this.id)">
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "조기졸업" value = "조기졸업" onclick="onClick(this.id)"><br>
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "남자" value = "남자" onclick="onClick(this.id)">
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none" onclick="onClick(this.id)">
+		<input type = "button" style = "width:130; height: 30px; margin : 10px" id = "복수전공" value = "복수전공 이수 졸업" onclick="onClick(this.id)"><br>
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none" onclick="onClick(this.id)">
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none" onclick="onClick(this.id)">
+		<input type = "button" style = "width:130; height: 30px; margin : 10px" id = "부전공" value = "부전공이수 졸업" onclick="onClick(this.id)"><br>
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none" onclick="onClick(this.id)">
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none" onclick="onClick(this.id)">
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "대학원진학" value = "대학원진학">
+		</div>
+		</form>
+		
+		<!--<div id="btn-div">
+        <input type="button" id="여자" value="여자" onclick="onClick(this.id)">
+        <input type="button" id="남자" value="남자" onclick="onClick(this.id)">
+        <input type="button" id="거주지" value="거주지(대구, 경북)" onclick="onClick(this.id)">
+        <input type="button" id="조기졸업" value="조기졸업" onclick="onClick(this.id)">
+        <input type="button" id="복수전공" value="복수전공 이수 졸업" onclick="onClick(this.id)">
+        <input type="button" id="부전공" value="부전공 이수 졸업" onclick="onClick(this.id)">
+        <input type="button" id="대학원진학" value="대학원진학" onclick="onClick(this.id)">
+		</div>
+		</form>-->
+		
+		<script src="../../../js/data.js"></script>
+		<script src="../../../js/100_student.js"></script>
+		
+		
+		
+		
 		
 
 
