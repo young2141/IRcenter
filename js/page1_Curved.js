@@ -6,9 +6,6 @@ function drawP1Curved(_data, _divName, _cnt, _categoryX, _valueY, _valueY_ko, _v
         var chart = am4core.create(_divName, am4charts.XYChart);
         chart.data = _data;
 
-
-
-        scaleTitle.dy = -10;
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "year";
         categoryAxis.renderer.minGridDistance = 30;
