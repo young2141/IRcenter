@@ -116,7 +116,7 @@ function chart1(filename) {
     }
 
     var categoryX = "value";
-    var valueY_ko = ""
+    var valueY_ko = "";
     var numberFormat = "#%";
     drawP1Curved(
       result,
