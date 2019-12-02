@@ -25,7 +25,7 @@ var dataClassifiedByMajor = [];
 var processedData;
 var majorInChart = [];
 var majorNumberInChart = [];
-
+var maxValue = 0;
 //파일 경로
 const folder_path = "../../json/6/";
 
@@ -147,6 +147,9 @@ function getCoreData(data, degreeAndGender) {
         obj["major"] = major;
         obj["year"] = element.year;
         obj[degreeAndGender] = element[degreeAndGender];
+        if(maxValue < element[degreeAndGender]){
+            maxValue = element[degreeAndGender];
+        }
         // obj[major + "_" + element.year + "_" + degreeAndGender] = element[degreeAndGender];
         ret.push(obj);
     });

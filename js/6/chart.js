@@ -24,12 +24,11 @@ function drawChart(data, value) {
             let chart = container.createChild(am4charts.XYChart);
             chart.data = arr;
             chart.width = am4core.percent(100);
-            chart.height = am4core.percent(100/majorInChart.length);
-            chart.paddingLeft = 120;
-            chart.autoMargins = false;
-            
-
-            // s
+            chart.height = am4core.percent(100 / majorInChart.length);
+            chart.paddingRight = 0;
+            chart.paddingLeft = 0;
+            chart.paddingTop = 0;
+            chart.paddingBottom = 0;
 
             let xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
             xAxis.dataFields.category = "year";
@@ -46,7 +45,9 @@ function drawChart(data, value) {
             let yAxis = chart.yAxes.push(new am4charts.ValueAxis());
             yAxis.renderer.labels.template.disabled = true;
             yAxis.renderer.labels.template.location = 0;
-            
+            yAxis.min = 0;
+            yAxis.max = maxValue + 10;
+
             yAxis.title.text = arr[0].major;
             yAxis.title.align = "center";
             yAxis.title.valign = "middle";
@@ -56,6 +57,7 @@ function drawChart(data, value) {
             yAxis.title.wrap = true;
             yAxis.title.width = 120;
             yAxis.title.strokeWidth = 2;
+            yAxis.title.fontSize = 12;
 
             let series = chart.series.push(new am4charts.ColumnSeries());
             series.dataFields.categoryX = "year";
@@ -66,7 +68,8 @@ function drawChart(data, value) {
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
             labelBullet.label.text = "{valueY}";
             labelBullet.label.fondSize = 8;
-            labelBullet.label.wrap = true;
+            labelBullet.label.minGridDistance = 5;
+            // labelBullet.label.wrap = true;
             labelBullet.label.dy = -7;
         }
     }); // end am4core.ready()
