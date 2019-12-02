@@ -107,16 +107,16 @@ function chart1(filename) {
     result = jsonData;
     if (filename == "competition_rate.json") {
       var divName = "divchart1";
-      var title = "������";
+      var title = "경쟁률";
       var valueY_RGB = "";
     } else if (filename == "recruitment_rate.json") {
       var divName = "divchart2";
-      var title = "�����";
+      var title = "충원률";
       var valueY_RGB = "";
     }
 
     var categoryX = "value";
-    var valueY_ko = "��";
+    var valueY_ko = "";
     var numberFormat = "#%";
     drawP1Curved(
       result,

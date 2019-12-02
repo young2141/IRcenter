@@ -15,9 +15,6 @@ function drawP1Curved(
     var chart = am4core.create(_divName, am4charts.XYChart);
     chart.data = _data;
 
-    var scaleTitle = chart.titles.create();
-
-    scaleTitle.dy = -10;
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis.dataFields.category = "year";
     categoryAxis.renderer.minGridDistance = 30;
@@ -25,44 +22,33 @@ function drawP1Curved(
 
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
-    // if (_divName == "divchart2") {
-    //     scaleTitle.text = ("(����: %)");
-    //     scaleTitle.fontSize = 15;
-    //     scaleTitle.dx = 440;
-    //     scaleTitle.dy = -10;
+    if (_divName == "divchart2") {
+      valueAxis.min = 0;
+      valueAxis.max = 100.5;
+      valueAxis.strictMinMax = true;
 
-    //     valueAxis.min = 0;
-    //     valueAxis.max = 100.5;
-    //     valueAxis.strictMinMax = true;
+      var axisBreak = valueAxis.axisBreaks.create();
+      axisBreak.startValue = 0.2;
+      axisBreak.endValue = 96.8;
+      axisBreak.breakSize = 0.001;
+    } else {
+      valueAxis.strictMinMax = true;
+      valueAxis.min = 0;
+      valueAxis.max = 16;
 
-    //     var axisBreak = valueAxis.axisBreaks.create();
-    //     axisBreak.startValue = 0.2;
-    //     axisBreak.endValue = 97.7;
-    //     axisBreak.breakSize = 0.001;
-    // }
-    // else {
-    //     scaleTitle.text = ("(���� : ��:1)");
-    //     scaleTitle.fontSize = 15;
-    //     scaleTitle.dx = 440;
-    //     scaleTitle.dy = -10;
-
-    //     valueAxis.strictMinMax = true;
-    //     valueAxis.min = 0;
-    //     valueAxis.max = 16;
-
-    //     var axisBreak = valueAxis.axisBreaks.create();
-    //     axisBreak.startValue = 1;
-    //     axisBreak.endValue = 4;
-    //     axisBreak.breakSize = 0.08;
-    // }
+      var axisBreak = valueAxis.axisBreaks.create();
+      axisBreak.startValue = 0.3;
+      axisBreak.endValue = 5;
+      axisBreak.breakSize = 0.08;
+    }
 
     function P1CurvedcreateSeries(value, clr) {
       var value_kr;
-      if (value == "society") value_kr = "�ι���ȸ";
-      else if (value == "artphysical") value_kr = "��ü��";
-      else if (value == "science") value_kr = "�ڿ�����";
-      else if (value == "mech") value_kr = "����";
-      else value_kr = "��ü";
+      if (value == "society") value_kr = "인문사회";
+      else if (value == "artphysical") value_kr = "예체능";
+      else if (value == "science") value_kr = "자연과학";
+      else if (value == "mech") value_kr = "공학";
+      else value_kr = "전체";
 
       var P1Cseries = chart.series.push(new am4charts.LineSeries());
       P1Cseries.dataFields.valueY = value;
@@ -80,36 +66,25 @@ function drawP1Curved(
       var bullet = P1Cseries.bullets.push(new am4charts.Bullet());
       bullet.fill = am4core.color("#fff"); // tooltips grab fill from parent by default
       if (_divName == "divchart1")
-        if (value_kr == "��ü")
-          bullet.tooltipText =
-            "[#000 font-size: 15px]{categoryX}�г⵵ " +
-            value_kr +
-            " ������� [bold]{valueY}:1[] �Դϴ�.";
-        else
-          bullet.tooltipText =
-            "[#000 font-size: 15px]{categoryX}�г⵵ " +
-            value_kr +
-            "�迭�� ������� [bold]{valueY}:1[] �Դϴ�.";
-      else if (value_kr == "��ü")
         bullet.tooltipText =
-          "[#000 font-size: 15px]{categoryX}�г⵵ " +
+          "[#000 font-size: 15px]{categoryX}학년도 " +
           value_kr +
-          " ������� [bold]{valueY}%[] �Դϴ�.";
+          "계열의 경쟁율은 [bold]{valueY}:1[] 입니다.";
       else
         bullet.tooltipText =
-          "[#000 font-size: 15px]{categoryX}�г⵵ " +
+          "[#000 font-size: 15px]{categoryX}학년도 " +
           value_kr +
-          "�迭�� ������� [bold]{valueY}%[] �Դϴ�.";
+          "계열의 충원율은 [bold]{valueY}%[] 입니다.";
       var circle = bullet.createChild(am4core.Circle);
       circle.radius = 4;
       circle.fill = am4core.color(clr);
       circle.strokeWidth = 3;
     }
 
-    P1CurvedcreateSeries("all", "#FE4459"); // ��ü
-    P1CurvedcreateSeries("science", "#FCFF57"); // �ڿ�����
-    P1CurvedcreateSeries("artphysical", "#52A1FF"); // ��ü��
-    P1CurvedcreateSeries("mech", "#43E884"); // ����
-    P1CurvedcreateSeries("society", "#E8A343"); // �ι���ȸ
+    P1CurvedcreateSeries("all", "#FE4459"); // 전체
+    P1CurvedcreateSeries("science", "#FCFF57"); // 자연과학
+    P1CurvedcreateSeries("artphysical", "#52A1FF"); // 예체능
+    P1CurvedcreateSeries("mech", "#43E884"); // 공대
+    P1CurvedcreateSeries("society", "#E8A343"); // 인문사회
   });
 }
