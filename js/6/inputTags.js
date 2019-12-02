@@ -27,10 +27,6 @@ function clickFormSelection(input_type, name, value) {
             case "select_major_class":
                 level["major_class"] = value;
                 break;
-            case "select_num_selected":
-                level["num_selected"] = value;
-                break;
-            //TODO, if there are another selects, add here
             default:
         }
     }
@@ -130,16 +126,15 @@ function selectCheckbox(event) {
             isChecked = true;
             clickFormSelection('select', 'major_class', level["major_class"]);
             return;
-        }
+        } else {
 
-        let children = checkboxes.children;
-        for (let i = 0; i < children.length; ++i) {
-            var checkbox = children[i].firstChild;
-            checkbox.checked = isChecked;
+            let children = checkboxes.children;
+            for (let i = 0; i < children.length; ++i) {
+                var checkbox = children[i].firstChild;
+                checkbox.checked = isChecked;
+            }
+            majorInChart = [];
         }
-
-        drawChart("", "");
-        return;
     } else {
         isChecked = document.getElementById(whichTargetValue).checked;
         if (isChecked && !majorInChart.includes(whichTargetValue)) {
@@ -148,11 +143,6 @@ function selectCheckbox(event) {
         } else {
             const idx = majorInChart.findIndex(element => element === whichTargetValue);
             majorInChart.splice(idx, 1);
-            const idx2 = majorNumberInChart.findIndex(element => element == majorNumberInChart[majorInchart[idx]]);
-            majorNumberInChart.splice(idx2, 1);
-            for (let i = idx2; i < majorNumberInChart.length; ++i) {
-                majorNumberInChart[i] -= 1;
-            }
         }
     }
 
