@@ -5,18 +5,10 @@
     <meta charset="utf-8">
     <title>경북대학교 IR센터</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <script src="https://www.amcharts.com/lib/4/core.js"></script>
-    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
-    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-    <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">    
     <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-
-    <script src="../../js/result_summary_graph.js"></script>
-    <script src="../../js/result_summary_Bar_Graph_height.js"></script>
-    <script src="../../js/result_summary_Bar_Graph_width.js"></script>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 
 </head>
@@ -57,7 +49,7 @@
   }
 </style>
 
-<body onload="loading()">
+<body>
     <div class="box1" id="wrapper">
         <form class>
             <br>
@@ -74,6 +66,7 @@
     </div>
 
 
+
     <div class="bodyBox">
 
 
@@ -82,7 +75,7 @@
             <br><br>
        
         </div>
-	
+		<div id="myGraph",class="chartdiv"></div>
 		<script>
 		var treeData = {
 		  name: "경북대학교",
@@ -431,7 +424,7 @@
 		// appends a 'group' element to 'svg'
 		// moves the 'group' element to the top left margin
 		var svg = d3
-		  .select("body")
+		  .select("#myGraph")
 		  .append("svg")
 		  .attr("width", width + margin.right + margin.left)
 		  .attr("height", height + margin.top + margin.bottom)
