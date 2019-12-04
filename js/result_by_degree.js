@@ -31,7 +31,7 @@ function calld3(type, year, picked) {
     for (var i = 0; i < json.length; ++i) {
       if (type[0] == 1) {
         tmp = new Object();
-        tmp["Name"] = json[i]["category"] + " 학사";
+        tmp["Name"] = json[i]["category"] + "사";
         tmp["Count"] = json[i]["bachelor"];
         if (tmp["Count"]) children_array.push(tmp);
       }
@@ -99,7 +99,7 @@ function calld3(type, year, picked) {
       })
       .append("g")
       .attr("class", "node")
-      .attr("opacity", ".3")
+      .attr("opacity", ".5")
       .attr("id", function(d) {
         var s = d.data.Name;
         var ne = "";
@@ -161,7 +161,7 @@ function calld3(type, year, picked) {
       .attr("font-size", function(d) {
         return d.r / 5;
       })
-      .attr("fill", "white");
+      .attr("fill", "black");
 
     // node.append("text")
     //     .attr("dy", "1.3em")
@@ -180,15 +180,15 @@ function calld3(type, year, picked) {
     if (picked != "전체") {
       var found = false;
 
-      d3.select("#" + picked + "학사")
-        .attr("opacity", "1")
-        .select("circle")
-        .style("stroke", "red")
-        .style("stroke-width", "3");
+      // d3.select("#" + picked + "학사")
+      //   .attr("opacity", "1")
+      //   .select("circle")
+      //   .style("stroke", "red")
+      //   .style("stroke-width", "3");
 
       if (
         !d3
-          .select("#" + picked + "학사")
+          .select("#" + picked + "사")
           .attr("opacity", "1")
           .select("circle")
           .style("stroke", "red")
