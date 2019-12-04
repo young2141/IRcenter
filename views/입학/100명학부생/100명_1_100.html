@@ -21,23 +21,13 @@
 
 <style type="text/css">
     @import url('../../../css/output_default.css');
-    .chartdiv11 {
-        width: 70%;
-        height: 200px;
+    .chartdiv {
+        font-family: 'Comfortaa', sans-serif;
+        text-align: center;
+        margin: auto
     }
-    .chartdiv22 {
-        width: 70%;
-        height: 600px;
-        display: inline-block;
-        border-style: solid;
-        margin: 10px;
-        padding: 10px;
-        border-color: white;
-    }
-
-    .chartdiv33 {
-        width: 45%;
-        height: 500px;
+    .labels {
+        text-anchor: middle;
     }
 </style>
 
@@ -88,9 +78,9 @@
  
 		
 		<br>
-		
+		<div id="chartdiv">
 		<div id="chart"></div>
-
+		</div>
 		<form>
 		<div id = "btn-div">
 		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "여자" value = "여자" onclick="onClick(this.id)">
