@@ -1,7 +1,5 @@
 function parse(callback) {
   $.getJSON("dummy.json", json => {
-    //
-    console.log(json);
     callback(json);
   });
 }
