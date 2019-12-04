@@ -69,7 +69,7 @@ function drawP1Curved(
         bullet.tooltipText =
           "[#000 font-size: 15px]{categoryX}학년도 " +
           value_kr +
-          "계열의 경쟁률은 [bold]{valueY}:1[] 입니다.";
+          " 경쟁률은 [bold]{valueY}:1[] 입니다.";
       else
         bullet.tooltipText =
           "[#000 font-size: 15px]{categoryX}학년도 " +
