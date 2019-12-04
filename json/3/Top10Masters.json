@@ -600,12 +600,6 @@
                 "female": 13
             },
             {
-                "major": "영어영문학과",
-                "total": 9,
-                "male": 3,
-                "female": 6
-            },
-            {
                 "major": "교육학과",
                 "total": 21,
                 "male": 3,
@@ -646,6 +640,12 @@
                 "total": 35,
                 "male": 17,
                 "female": 18
+            },
+            {
+                "major": "식품공학부 식품생물공학전공",
+                "total": 12,
+                "male": 5,
+                "female": 7
             }
         ]
     }
