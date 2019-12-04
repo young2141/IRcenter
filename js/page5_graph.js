@@ -128,4 +128,4 @@ chart2("divchart2", "p5_school.json", "학생부교과", "#A9CBE4");
 chart2("divchart3", "p5_nonsul.json", "논술", "#FAC18E");
 chart2("divchart4", "p5_jonghap.json", "학생부종합 일반", "#96CAAC");
 chart2("divchart5", "p5_nongachon.json", "학생부종합 농어촌", "#FC9E96");
-chart2("divchart6", "p5_jeongsi.json", "정시일반", "#E1B3FA");
+chart2("divchart6", "p5_jeongsi.json", "정시 일반", "#E1B3FA");
