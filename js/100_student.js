@@ -88,7 +88,7 @@ var labels = g.append("g")
 
 labels.append("text")
     .attr("class", "label label-subcategory")
-    .style("font-size", 15)
+    .style("font-size", 25)
     .style("font-weight", "bold")
     .attr("y", 50)
     .style("fill", function (d) {
@@ -101,7 +101,7 @@ labels.append("text")
 
 labels.append("text")
     .attr("class", "label label-percentage")
-    .style("font-size", 30)
+    .style("font-size", 35)
     .style("font-weight", "bold")
     .style("fill", function (d) {
         return colour(d.key)
