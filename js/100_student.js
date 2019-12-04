@@ -88,6 +88,8 @@ var labels = g.append("g")
 
 labels.append("text")
     .attr("class", "label label-subcategory")
+    .style("font-size", 15)
+    .style("font-weight", "bold")
     .attr("y", 50)
     .style("fill", function (d) {
         return colour(d.key)
