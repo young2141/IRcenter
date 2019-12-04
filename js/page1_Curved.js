@@ -44,10 +44,10 @@ function drawP1Curved(
 
     function P1CurvedcreateSeries(value, clr) {
       var value_kr;
-      if (value == "society") value_kr = "인문사회";
-      else if (value == "artphysical") value_kr = "예체능";
-      else if (value == "science") value_kr = "자연과학";
-      else if (value == "mech") value_kr = "공학";
+      if (value == "society") value_kr = "인문사회계열의";
+      else if (value == "artphysical") value_kr = "예체능계열의";
+      else if (value == "science") value_kr = "자연과학계열의";
+      else if (value == "mech") value_kr = "공학계열의";
       else value_kr = "전체";
 
       var P1Cseries = chart.series.push(new am4charts.LineSeries());
@@ -69,12 +69,12 @@ function drawP1Curved(
         bullet.tooltipText =
           "[#000 font-size: 15px]{categoryX}학년도 " +
           value_kr +
-          "계열의 경쟁율은 [bold]{valueY}:1[] 입니다.";
+          "계열의 경쟁률은 [bold]{valueY}:1[] 입니다.";
       else
         bullet.tooltipText =
           "[#000 font-size: 15px]{categoryX}학년도 " +
           value_kr +
-          "계열의 충원율은 [bold]{valueY}%[] 입니다.";
+          " 충원율은 [bold]{valueY}%[] 입니다.";
       var circle = bullet.createChild(am4core.Circle);
       circle.radius = 4;
       circle.fill = am4core.color(clr);
