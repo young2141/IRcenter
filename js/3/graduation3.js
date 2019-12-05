@@ -194,6 +194,8 @@ function genDataForAllInOne(data) {
         var chart = am4core.create("chartdiv", am4charts.XYChart);
         chart.data = data;
         chart.padding = 30;
+        // chart.width = am4core.percent(100);
+        // chart.dx = -100
 
         //x-axis for chart
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -244,10 +246,12 @@ function genDataForAllInOne(data) {
                     return text;
             })
             label_bullet.label.text = major;
-            label_bullet.label.dx = -5;
-            label_bullet.label.dy = 20;
+            label_bullet.label.maxWidth = 50;
+            label_bullet.label.wrap = true;
+            label_bullet.label.dx = -50;
+            // label_bullet.label.dy = 0;
             label_bullet.label.fontSize = 12;
-            label_bullet.label.fill = RGB2Hexa(series.fill._value);
+            // label_bullet.label.fill = RGB2Hexa(series.fill._value);
             label_bullet.togglable = true;
 
             //the bullet, points of data insertion on a series for x-axis.
