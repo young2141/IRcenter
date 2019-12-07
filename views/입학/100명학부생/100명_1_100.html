@@ -21,10 +21,9 @@
 
 <style type="text/css">
     @import url('../../../css/output_default.css');
-    .chartdiv {
-        font-family: 'Comfortaa', sans-serif;
+    #chart {
         text-align: center;
-        margin: auto
+        margin: auto;
     }
     .labels {
         text-anchor: middle;
@@ -37,7 +36,7 @@
             <br>
             <a href="https://www.knu.ac.kr" target="_blank">
                 <b>경북대학교 홈페이지</b>
-                <a href="../첫화면.html"><b>| 경북대학교 IR센터</a></b>
+                <a href="../../첫화면.html"><b>| 경북대학교 IR센터</a></b>
                 <!--<a href = "로그인 화면.html">*/-->
                 <div class="loginBox">
                     <a href="첫화면.html">로그인　|　</a>
@@ -60,63 +59,31 @@
 
 
     <div id="TOP">
-        <script>
-            var currentPosition = parseInt($("#gotop").css("top"));
-            $(window).scroll(function () {
-                var position = $(window).scrollTop();
-
-                if (position > 750)
-                    $("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
-                else if (position < 300)
-                    $("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
-                else
-                    $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
-            });
-
-        </script>
-
- 
-		
-		<br>
-		<div id="chartdiv">
+        <center>
 		<div id="chart"></div>
-		</div>
 		<form>
 		<div id = "btn-div">
 		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "여자" value = "여자" onclick="onClick(this.id)">
 		<input type = "button" style = "width:130; height: 30px; margin : 10px" id = "거주지" value = "거주지(대구, 경북)" onclick="onClick(this.id)">
 		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "조기졸업" value = "조기졸업" onclick="onClick(this.id)"><br>
 		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "남자" value = "남자" onclick="onClick(this.id)">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none" onclick="onClick(this.id)">
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
 		<input type = "button" style = "width:130; height: 30px; margin : 10px" id = "복수전공" value = "복수전공 이수 졸업" onclick="onClick(this.id)"><br>
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none" onclick="onClick(this.id)">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none" onclick="onClick(this.id)">
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
 		<input type = "button" style = "width:130; height: 30px; margin : 10px" id = "부전공" value = "부전공이수 졸업" onclick="onClick(this.id)"><br>
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none" onclick="onClick(this.id)">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none" onclick="onClick(this.id)">
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
+		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
 		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "대학원진학" value = "대학원진학">
 		</div>
 		</form>
-		
-		<!--<div id="btn-div">
-        <input type="button" id="여자" value="여자" onclick="onClick(this.id)">
-        <input type="button" id="남자" value="남자" onclick="onClick(this.id)">
-        <input type="button" id="거주지" value="거주지(대구, 경북)" onclick="onClick(this.id)">
-        <input type="button" id="조기졸업" value="조기졸업" onclick="onClick(this.id)">
-        <input type="button" id="복수전공" value="복수전공 이수 졸업" onclick="onClick(this.id)">
-        <input type="button" id="부전공" value="부전공 이수 졸업" onclick="onClick(this.id)">
-        <input type="button" id="대학원진학" value="대학원진학" onclick="onClick(this.id)">
-		</div>
-		</form>-->
-		
 		<script src="../../../js/data.js"></script>
-		<script src="../../../js/100_student.js"></script>
+        <script src="../../../js/100_student.js"></script>
+        </center>
 		
 		
 		
 		
-		
-
 
         <div id="summaryBox" style="font-size: 15px">
             <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
