@@ -115,7 +115,7 @@
 								<a href="학위수여_5_전공별성비.html"><span id="black">전공별 성비</span></a>
 							</td>
 							<td style="background-color : #eeeeee">
-								<a href="학위수여_6_Explore.html"><span id="black"><b>Explore the Data</b></span></a>
+								<a href="학위수여_6_Explore.html"><span id="black"><b>Explore the data</b></span></a>
 							</td>
 
 							<td style="border-style: none; font-size : 30px">
@@ -133,10 +133,10 @@
 
 		<div id="TOP">
 			<div id="summaryBox">
-				<h2>Explore the Data</h2>
+				<h2>Explore the data</h2>
 			
 			</div>
-			<div id="chartdiv1" class="chartdiv"> 그래프 4-1</div>
+			<div id="chartdiv1" class="chartdiv" style = "height: 2000px"> 그래프 4-1</div>
 
 			<div class="legend" id="gotop" style="left:80%; top :40%">
 
@@ -155,10 +155,10 @@
 					<select id="select_major_class" onchange="clickFormSelection('select', id, this.value)"
 						style="width : 200px; height: 30px">
 						<!--option value="all" selected="selected">(전체)</option-->
-						<option value="인문사회계열" selected="selected">인문사회계열</option>
-						<option value="자연과학계열">자연과학계열</option>
-						<option value="공학계열">공학계열</option>
-						<option value="예체능계열">예체능계열</option>
+						<option value="인문사회계열" selected="selected">인문사회</option>
+						<option value="자연과학계열">자연과학</option>
+						<option value="공학계열">공학</option>
+						<option value="예체능계열">예체능</option>
 					</select><br><br>
 
 					<div class="multiselect">
@@ -179,21 +179,12 @@
 			<select id="select_gender" onchange="clickFormSelection('select', id, this.value)"
 				style="width : 200px; height: 30px">
 				<option value="all" selected="selected">(전체)</option>
-				<option value="male">남성</option>
-				<option value="female">여성</option>
+				<option value="male">남자</option>
+				<option value="female">여자</option>
 			</select>
 
 			<br><br>
 
-			<!-- <span style="font-size: 20px"><b>검색 개수</b></span><br>
-			<select id="select_num_selected" onchange="clickFormSelection('select', id, this.value)"
-				style="width : 200px; height: 30px">
-				<option value="3" selected="selected">3</option>
-				<option value="5">5</option>
-				<option value="10">10</option>
-				<option value="15">15</option>
-				<option value="20">20</option>
-			</select> -->
 			</div>
 			<br>
 
@@ -205,7 +196,7 @@
 			$(window).scroll(function () {
 				var position = $(window).scrollTop();
 
-				if (position > 750)
+				if (position > 300)
 					$("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
 				else if (position < 300)
 					$("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
