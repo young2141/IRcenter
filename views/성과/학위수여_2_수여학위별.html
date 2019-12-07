@@ -148,7 +148,7 @@
 						function decrease() {
 							current_value = document.getElementById('years').value
 							console.log(current_value);
-							document.getElementById('years').value -= 1
+							document.getElementById('years').value--;
 							valuechange(document.getElementById('years').value)
 						}
 						function increase() {
@@ -158,7 +158,7 @@
 							valuechange(document.getElementById('years').value)
 						}
 					</script>
-					<br><span id='span1'>2019</span>
+					<br><div style = "text-align: center; width: 180px"><span id="span1">2019</span></div>
 					<br><br>
 
 					<span style="font-size: 20px"><b>학위 종 검색</b></span><br>
