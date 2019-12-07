@@ -385,7 +385,7 @@
 		</div>
 		
 		<div id = "unitBox">
-			(단위 : 등급)
+			(단위 : 명)
 		</div>
 	
 		
@@ -428,13 +428,13 @@
             <br>
             
             <input type=button value='◀' onclick=decrease()>
-            <input id="years" type=range min=2013 max=2019 step=1 value=2019
+            <input id="years" type=range min=2010 max=2019 step=1 value=2019
                oninput=valuechange(parseInt(this.value))>
             <input type=button value='▶' onclick=increase()>
 
             <script>
                function valuechange(value) {
-                  document.getElementById('span1').innerHTML = (value);
+                  document.getElementById('span1').innerHTML = value;
                   parsing1();
                }
                function decrease() {
@@ -444,13 +444,14 @@
                   valuechange(document.getElementById('years').value)
                }
                function increase() {
-                  document.getElementById('years').value += 1;
+                  document.getElementById('years').value++;
                   current_value = document.getElementById('years').value
                   console.log(current_value);
                   valuechange(document.getElementById('years').value)
                }
             </script>
-            <br><span id='span1' style = "text-align : center">2019</span>
+			<br>
+			<div style = "text-align: center; width: 180px"><span id="span1">2019</span></div>
          </form>
 
       </div>
