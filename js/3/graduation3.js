@@ -203,6 +203,7 @@ function genDataForAllInOne(data) {
         categoryAxis.renderer.grid.template.disabled = true;
         categoryAxis.dx = 50;
         categoryAxis.dy = -20;
+        categoryAxis.width = am4core.percent(95);
 
         //y-axis for chart
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
@@ -261,6 +262,10 @@ function genDataForAllInOne(data) {
             bullet.tooltipText = namesOfSeries[i];
             bullet.propertyFields.alwaysShowTooltip = seriesName + "ShowTooltip";
             bullet.dx = 50
+
+            // bullet.events.on("hit", (target) => {
+            //     console.log(target._value);
+            // }, this);
 
             //the label of bullet, marking the rank for each year.
             var valueLabel = series.bullets.push(new am4charts.LabelBullet());
