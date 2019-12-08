@@ -1,71 +1,54 @@
-function P6drawBoxGraph_height(
-  _data,
-  _divName,
-  _categoryX,
-  _valueY,
-  _valueY_ko,
-  _valueY_RGB,
-  _title,
-  _numberFormat
-) {
-  am4core.ready(function() {
-    //console.log(_data);
-    am4core.useTheme(am4themes_animated);
-    var bhchart = am4core.create(_divName, am4charts.XYChart);
-    bhchart.data = _data;
-    console.log(_title);
+function P6drawBoxGraph_height(_data, _divName, _valueY, _valueY_RGB, _title, _cy, _ckr)
+{
+    am4core.ready(function () {
+        //console.log(_data);
+        am4core.useTheme(am4themes_animated);
+        var bhchart = am4core.create(_divName, am4charts.XYChart);
+        bhchart.data = _data;
 
-    // if(_divName=="chartdiv1"){
-    //     console.log("hi")
-    //     var title = bhchart.titles.create();
-    //     title.text = "(단위 : 명)";
-    //     title.fontSize = 15;
-    //     title.dx = 490;
-    //     title.dy = -15;
-    // }
+        var bhcategoryAxis = bhchart.xAxes.push(new am4charts.CategoryAxis());
+        bhcategoryAxis.dataFields.category = "year";
+        bhcategoryAxis.renderer.grid.template.location = 0;
+        bhcategoryAxis.renderer.minGridDistance = 30;
 
-    // Create axes : ������
-    var bhcategoryAxis = bhchart.xAxes.push(new am4charts.CategoryAxis());
-    bhcategoryAxis.dataFields.category = "year";
-    bhcategoryAxis.renderer.grid.template.location = 0;
-    bhcategoryAxis.renderer.minGridDistance = 30;
+        var bwvalueAxis = bhchart.yAxes.push(new am4charts.ValueAxis());
+        bwvalueAxis.min = 0;
+        bwvalueAxis.max = 7000;
+        bwvalueAxis.title.text = _title;
+        bwvalueAxis.title.fontSize = 18;
+        bwvalueAxis.title.rotation = 0;
+        bwvalueAxis.title.fontWeight = 400;
 
-    // ������
-    var bwvalueAxis = bhchart.yAxes.push(new am4charts.ValueAxis());
-    bwvalueAxis.min = 0;
-    bwvalueAxis.max = 7000;
-    bwvalueAxis.title.text = _title;
-    bwvalueAxis.title.fontSize = 18;
-    bwvalueAxis.title.rotation = 0;
-    bwvalueAxis.title.fontWeight = 400;
+        // var scaleTitle = bhchart.titles.create();
+        // scaleTitle.text = _title;
+        // scaleTitle.fontSize = 20;
+        // scaleTitle.dx = -385;
+        // scaleTitle.dy = -100;
+        //bwvalueAxis.strictMinMax = true;
 
-    // var scaleTitle = bhchart.titles.create();
-    // scaleTitle.text = _title;
-    // scaleTitle.fontSize = 20;
-    // scaleTitle.dx = -385;
-    // scaleTitle.dy = -100;
-    //bwvalueAxis.strictMinMax = true;
-
-    P6bhcreateSeries(bhchart, _categoryX, _valueY, _valueY_ko, 0, _valueY_RGB);
-  }); // end iter callback function
+        P6bhcreateSeries(bhchart, _valueY, _valueY_RGB, _cy, _title, _ckr);
+    }); // end iter callback function
 }
 
-function P6bhcreateSeries(
-  bhchart,
-  _categoryX,
-  _valueY,
-  _valueY_ko,
-  _percent,
-  _valueY_RGB
-) {
-  var bhseries = bhchart.series.push(new am4charts.ColumnSeries());
-  bhseries.dataFields.valueY = _valueY;
-  bhseries.dataFields.categoryX = "year";
-  bhseries.columns.template.strokeWidth = 0;
-  bhseries.columns.template.stroke = am4core.color(_valueY_RGB); //����
-  bhseries.columns.template.fill = am4core.color(_valueY_RGB); // ����
+function P6bhcreateSeries(bhchart, _valueY, _valueY_RGB, _cy, _title, _ckr)
+{
+    var bhseries = bhchart.series.push(new am4charts.ColumnSeries());
+    bhseries.dataFields.valueY = _valueY;
+    bhseries.dataFields.categoryX = "year";
+    bhseries.columns.template.strokeWidth = 0;
+    bhseries.columns.template.stroke = am4core.color(_valueY_RGB);
+    bhseries.columns.template.fill = am4core.color(_valueY_RGB);
 
-  var bhserieslabel = bhseries.bullets.push(new am4charts.LabelBullet());
-  bhserieslabel.label.text = "{valueY}";
-  bhserieslabel.label.dy = -10;
+    bhseries.columns.template.strokeWidth = 0;
+    bhseries.columns.template.stroke = am4core.color(_valueY_RGB); //색상
+    bhseries.columns.template.fill = am4core.color(_valueY_RGB); // 색상
+    bhseries.tooltip.getFillFromObject = false;
+    if(_ckr != "전체")
+        bhseries.columns.template.tooltipText = "[#000 font-size: 15px]" + _cy + "년도 " + _ckr + " " + _title + " 학위수여자는 [#000 bold]{valueY}명[#000] 입니다.";
+    else
+        bhseries.columns.template.tooltipText = "[#000 font-size: 15px]" + _cy + "년도 " + _title + " 학위수여자는 [#000 bold]{valueY}명[#000] 입니다.";
+
+    var bhserieslabel = bhseries.bullets.push(new am4charts.LabelBullet());
+    bhserieslabel.label.text = "{valueY}";
+    bhserieslabel.label.dy = -10;
 }
