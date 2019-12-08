@@ -121,24 +121,23 @@
 
 		<div id="TOP">
 
-			<script>
-				//parse(json => { document.write(json[0]["year"]) });
-			</script>
+
 
 
 			<div id="summaryBox">
-				<h2>전공별 학위 수여 여자 비율</h2>
-
+				<h2>전공별 학위 수여 <span id="P1">남자</span>비율</h2>
 			</div>
-			<div id = "unitBox">
-			(단위 : %)
+			<div id="unitBox">
+				(단위 : %)
 			</div>
-			<div id="chartdiv"> 그래프 4-1</div>
+			<div id="chartdiv" style="height: 1500px"> 그래프 4-1</div>
 
 			<div class="legend" id="gotop" style="left:80%; top :40%">
 
 				<br><br>
 				<form>
+					<span style = "color: 6fa1e3">■</span>남자<br>
+					<span style = "color: db4455">■</span>여자<br><br>
 
 					<span style="font-size: 20px"><b>학위수준별 검색</b></span>
 					<br>
@@ -154,42 +153,23 @@
 					<span style="font-size: 20px"><b>성별 검색</b></span><br>
 					<select id="select_gender" onchange="clickFormSelection('select', id, this.value)" name="menu"
 						style="width : 200px; height: 30px">
-						<!--option value="all" selected="selected">(전체)</option-->
-						<option value="man" selected="selected">남성</option>
-						<option value="woman">여성</option>
+						<option value="man" id="T1" selected="selected">남자</option>
+						<option value="woman" id="T2" onclick="Change()">여자</option>
 					</select><br><br>
-
-					<!--input type="radio" name="radio_gender" id="all" onclick="clickFormSelection(type, name, id)"
-						checked="checked">
-					<label for='all'>전체</label><br>
-					<input type="radio" name="radio_gender" id="man" onclick="clickFormSelection(type, name, id)">
-					<label for='male'>남성</label><br>
-					<input type="radio" name="radio_gender" id="woman" onclick="clickFormSelection(type, name, id)">
-					<label for='female'>여성</label><br><br-->
 
 					<span style="font-size: 20px"><b>전공별 검색</b></span><br>
 					<select id="select_major_class" onchange="clickFormSelection('select', id, this.value)" name="menu"
 						style="width : 200px; height: 30px">
 						<option value="all" selected="selected">(전체)</option>
 						//HS: Humanities and Social Sciences
-						<option value="인문사회계열">인문사회계열</option>
+						<option value="인문사회계열">인문사회</option>
 						//NS: Natural Science
-						<option value="자연과학계열">자연과학계열</option>
+						<option value="자연과학계열">자연과학</option>
 						//EN: ENgineering
-						<option value="공학계열">공학계열</option>
+						<option value="공학계열">공학</option>
 						//AMP: Art, Music, Physical
-						<option value="예체능계열">예체능계열</option>
+						<option value="예체능계열">예체능</option>
 					</select><br><br>
-
-				<!--span style="font-size: 20px"><b>검색 개수</b></span><br>
-					<select id="select_num_selected" onchange="clickFormSelection('select', id, this.value)" name="menu"
-						style="width : 200px; height: 30px">
-						<option value="10">10</option>
-						<option value="20">20</option>
-						<option value="30">30</option>
-						<option value="50" selected="selected">50</option>
-						<option value="70">70</option>
-					</select-->
 
 				</form>
 			</div>
@@ -207,6 +187,15 @@
 				});
 
 			</script>
+
+			<script>
+				function Change() {
+					//var temp = document.getElementById("T2");
+					var Target1 = document.getElementById("P1");
+					Target1.innerHTML = "여자"
+				}
+			</script>
+
 
 			<script>
 				//path of data file
@@ -230,6 +219,7 @@
 				loadJSON(path);
 
 			</script>
+
 			<br>
 
 
@@ -262,32 +252,6 @@
 
 			</div>
 		</div>
-
-		<script>
-			// years1();
-			// years2();
-			// function Change() {
-			// 	var temp = document.getElementById("T1")
-			// 	var Target1 = document.getElementById("P1")
-			// 	var Target2 = document.getElementById("P2")
-			// 	if (temp.checked == true) {
-			// 		Target1.innerHTML = "전체"
-			// 		Target2.innerHTML = "전체"
-			// 	}
-			// 	temp = document.getElementById("T2")
-			// 	if (temp.checked == true) {
-			// 		Target1.innerHTML = "정원내"
-			// 		Target2.innerHTML = "정원내"
-			// 	}
-
-			// 	temp = document.getElementById("T3")
-			// 	if (temp.checked == true) {
-			// 		Target1.innerHTML = "정원외"
-			// 		Target2.innerHTML = "정원외"
-			// 	}
-
-			// }
-		</script>
 
 
 

@@ -1,5 +1,5 @@
 function parse(callback) {
-  $.getJSON("dummy.json", json => {
+  $.getJSON("../../../Undergraduate Graduation Rates/dummy.json", json => {
     callback(json);
   });
 }

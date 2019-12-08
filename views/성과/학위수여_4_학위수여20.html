@@ -103,13 +103,13 @@
 
 			<div id="summaryBox">
 				<h2>학위수여가 가장 많은 20개 전공</h2>
-			
 			</div>
 			
 			<div id = "unitBox">
 			(단위 : 명)
 			</div>
-			<div id="chartdiv" class="chartdiv"> 그래프 4-1</div>
+
+			<div id="chartdiv" class="chartdiv" style = "height: 1000px"> 그래프 4-1</div>
 
 			<div class="legend" id="gotop" style="left:80%; top :40%">
 
@@ -128,7 +128,7 @@
 					<br>
 
 					<input type="button" value='◀' onclick="decrease();">
-					<input id="years" type="range" min="2013" max="2019" step="1" value="2019"
+					<input id="years" type="range" min="2010" max="2019" step="1" value="2019"
 						oninput="valuechange(parseInt(this.value))">
 					<input type="button" value='▶' onclick="increase()">
 
@@ -144,16 +144,16 @@
 							valuechange(document.getElementById('years').value)
 						}
 						function increase() {
-							document.getElementById('years').value += 1;
+							document.getElementById('years').value ++;
 							current_value = document.getElementById('years').value
 							console.log(current_value);
 							valuechange(document.getElementById('years').value)
 						}
 					</script>
-					<br><span id='span1'>2019</span>
+					<br><div style = "text-align: center; width: 180px"><span id="span1">2019</span></div>
 					<br><br>
 
-					<span style="font-size: 20px"><b>학위 종 찾기</b></span><br>
+					<span style="font-size: 20px"><b>학위 종 검색</b></span><br>
 					<select name="menu" onchange="location.href=this.value" style="width : 200px; height: 30px">
 						<option>(전체)</option>
 						<option>가정학</option>
@@ -217,8 +217,6 @@
 						<option value="science">자연과학</option>
 						<option value="engineering">공학</option>
 						<option value="art">예체능</option>
-						<option value="medicine">의학</option>
-						<option value="etc">기타</option>
 					</select>
 
 					<br><br>
@@ -239,7 +237,7 @@
 				$(window).scroll(function () {
 					var position = $(window).scrollTop();
 
-					if (position > 750)
+					if (position > 300)
 						$("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
 					else if (position < 300)
 						$("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
