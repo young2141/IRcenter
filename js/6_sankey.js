@@ -13,16 +13,24 @@ am4core.ready(function () {
     var data = [];
     for (var i = 0; i < 2; i++) {
         for (var j = 0; j < colleges.length; j++) {
-            for (var k = 0; k < Math.floor(Math.random() * 5) + 1; k++) {
+            var sum = Math.floor(Math.random() * 10) + 1;
+            for (var k = 0; k < colleges.length; k++) {
+                var val = Math.floor(Math.random() * 3);
+                if (sum < val) val = 0;
+                else sum -= val;
                 data.push({
                     from: colleges[j] + temp[i],
-                    to: colleges[Math.floor(Math.random() * colleges.length)] + temp[i + 1],
-                    value: Math.floor(Math.random() * 10) + 1,
+                    to: colleges[k] + temp[i + 1],
+                    value: val,
                     id: colleges[j] + String(k) + "-" + String(i)
                 })
             }
         }
     }
+
+
+
+    console.log(data);
 
     chart.data = data;
 

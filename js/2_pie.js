@@ -4,9 +4,17 @@
     var result = [];
     var categories = ["normal", "special_intent", "specified", "free", "etc"];
     var categories_ko = ["일반고", "특수목적고", "특성화고", "자율고", "기타"];
+    var full_highschool = [
+      "일반고등학교",
+      "특수목적고등학교",
+      "특성화고등학교",
+      "자율고등학교",
+      "기타"
+    ];
     for (var i = 0; i < categories.length; i++) {
       result.push({
         category: categories_ko[i],
+        full_name: full_highschool[i],
         value: jsonData[categories[i]]
       });
     }
@@ -15,7 +23,7 @@
 }
 
 function drawPieChart(_data) {
-  am4core.ready(function() {
+  am4core.ready(function () {
     am4core.useTheme(am4themes_animated);
     am4core.useTheme(am4themes_material);
     var chart = am4core.create("chartdiv2", am4charts.PieChart);
@@ -33,6 +41,7 @@ function drawPieChart(_data) {
 
 function createSeries2(_chart) {
   var pieSeries = _chart.series.push(new am4charts.PieSeries());
+  console.log("?!", pieSeries);
   pieSeries.dataFields.value = "value";
   pieSeries.dataFields.category = "category";
   pieSeries.slices.template.strokeWidth = 2;
@@ -40,7 +49,8 @@ function createSeries2(_chart) {
   pieSeries.slices.template.stroke = am4core.color("#ffffff");
   pieSeries.tooltip.getFillFromObject = false;
   pieSeries.slices.template.tooltipText =
-    "[#000]2019학년도 전체 신입생 중 {category} 학생은 [bold]{value}명[] 입니다.";
+    "[#000]2019학년도 전체 신입생 중 {full_name} 출신은 [bold]{value.percent.formatNumber('#.#')}%[] 입니다.";
+  // 툴팁에 실제 value값도 필요하다면 ({value}명) 추가하기
   pieSeries.tooltip.label.fill = am4core.color("#000000");
   // This creates initial animation
   pieSeries.hiddenState.properties.opacity = 1;
