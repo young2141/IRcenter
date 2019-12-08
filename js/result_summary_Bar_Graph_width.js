@@ -1,4 +1,4 @@
-function P6drawBoxGraph_width(_data, _divName, _cnt, _categoryX, _valueY, _valueY_ko, _valueY_RGB, _title, _numberFormat) {
+function P6drawBoxGraph_width(_data, _divName, _categoryX, _valueY, _valueY_RGB, _title, _cy, _ckr) {
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
 
@@ -12,7 +12,7 @@ function P6drawBoxGraph_width(_data, _divName, _cnt, _categoryX, _valueY, _value
         //     title.dx = 180;
         //     title.dy = -35;
         // }
-        
+
         var scaleTitle = bwchart.titles.create();
         scaleTitle.text = _title;
         scaleTitle.fontSize = 20;
@@ -32,15 +32,21 @@ function P6drawBoxGraph_width(_data, _divName, _cnt, _categoryX, _valueY, _value
 
         valueAxis.renderer.baseGrid.disabled = true;
         valueAxis.renderer.minGridDistance = 40;
-        P6bwcreateSeries(bwchart, _valueY, _categoryX, _valueY_ko, 0, _valueY_RGB)
+        P6bwcreateSeries(bwchart, _valueY, _categoryX, _valueY_RGB, _title, _cy, _ckr)
     }) // end iter callback function
 }
 
-function P6bwcreateSeries(bwchart, _categoryX, _valueY, _valueY_ko, _percent, _valueY_RGB) {
+function P6bwcreateSeries(bwchart, _categoryX, _valueY, _valueY_RGB, _title, _cy, _ckr) {
     var bwseries = bwchart.series.push(new am4charts.ColumnSeries());
-    bwseries.dataFields.valueX = _valueY; // �� ������ ��
+    bwseries.dataFields.valueX = _valueY;
     bwseries.dataFields.categoryY = _categoryX;
     bwseries.stroke = "#a16973";
     bwseries.fill = "#a16973";
 
+    bwseries.columns.template.strokeWidth = 0;
+    bwseries.tooltip.getFillFromObject = false;
+    if (_ckr != "전체")
+        bwseries.columns.template.tooltipText = "[#000 font-size: 15px]" + _cy + "년도 {categoryY} " + _ckr + " " + _title + " 학위수여자는 [#000 bold]{valueX}명[#000] 입니다.";
+    else
+        bwseries.columns.template.tooltipText = "[#000 font-size: 15px]" + _cy + "년도 {categoryY} " + _title + " 학위수여자는 [#000 bold]{valueX}명[#000] 입니다.";
 }
