@@ -27,7 +27,12 @@ function P6drawBoxGraph_width(_data, _divName, _categoryX, _valueY, _valueY_RGB,
         // ������
         var valueAxis = bwchart.xAxes.push(new am4charts.ValueAxis());
         valueAxis.renderer.ticks.template.strokeOpacity = 0.5;
-
+        valueAxis.min = 0;
+        valueAxis.strictMinMax = true;
+        if (_title == "학사")
+            valueAxis.max = 600;
+        else
+            valueAxis.max = 100;
         //wvalueAxis.title.text = _title;
 
         valueAxis.renderer.baseGrid.disabled = true;
