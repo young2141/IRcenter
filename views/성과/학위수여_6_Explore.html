@@ -1,4 +1,4 @@
-﻿<!DOCUTYPE html>
+﻿﻿<!DOCUTYPE html>
 	<html>
 
 	<head>
@@ -13,12 +13,9 @@
 		<script src="https://code.jquery.com/jquery-3.4.1.js"
 			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-
-		<!-- 그래프 처리 JS 구현 파일들 -->
 		<script src="../../js/6/chart.js"></script>
 		<script src="../../js/6/data.js"></script>
 		<script src="../../js/6/inputTags.js"></script>
-
 		<style>
 			.multiselect {
 				width: 200px;
@@ -55,18 +52,16 @@
 			}
 		</style>
 
-		<style type="text/css">
-			@import url('../../css/output_default.css');
-
-			#chartdiv1 {
-				width: 80%;
-				height: 80%;
-			}
-		</style>
-
 	</head>
 
+	<style type="text/css">
+		@import url('../../css/output_default.css');
 
+		#chartdiv {
+			width: 80%;
+			height: 1000px;
+		}
+	</style>
 
 	<body>
 		<div class="box1" id="wrapper">
@@ -139,8 +134,7 @@
 		<div id="TOP">
 			<div id="summaryBox">
 				<h2>Explore the Data</h2>
-				지난 10년동안 <span id="blue">경북대학교의 지원자 수는 증가하는 추세</span>입니다.
-				모집인원과 입학자 수는 대학수용력의 제한으로 훨씬 더 적은 범위 안에 있습니다.
+			
 			</div>
 			<div id="chartdiv1" class="chartdiv"> 그래프 4-1</div>
 
@@ -182,30 +176,30 @@
 					<br>
 
 					<span style="font-size: 20px"><b>성별 검색</b></span><br>
-					<select id="select_gender" onchange="clickFormSelection('select', id, this.value)"
-						style="width : 200px; height: 30px">
-						<option value="all" selected="selected">(전체)</option>
-						<option value="male">남성</option>
-						<option value="female">여성</option>
-					</select>
+			<select id="select_gender" onchange="clickFormSelection('select', id, this.value)"
+				style="width : 200px; height: 30px">
+				<option value="all" selected="selected">(전체)</option>
+				<option value="male">남성</option>
+				<option value="female">여성</option>
+			</select>
 
-					<br><br>
+			<br><br>
 
-					<!-- <span style="font-size: 20px"><b>검색 개수</b></span><br>
-					<select id="select_num_selected" onchange="clickFormSelection('select', id, this.value)"
-						style="width : 200px; height: 30px">
-						<option value="3" selected="selected">3</option>
-						<option value="5">5</option>
-						<option value="10">10</option>
-						<option value="15">15</option>
-						<option value="20">20</option>
-					</select> -->
+			<!-- <span style="font-size: 20px"><b>검색 개수</b></span><br>
+			<select id="select_num_selected" onchange="clickFormSelection('select', id, this.value)"
+				style="width : 200px; height: 30px">
+				<option value="3" selected="selected">3</option>
+				<option value="5">5</option>
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="20">20</option>
+			</select> -->
 			</div>
 			<br>
 
 			</form>
 
-		</div>
+		
 		<script>
 			var currentPosition = parseInt($("#gotop").css("top"));
 			$(window).scroll(function () {
@@ -223,6 +217,7 @@
 
 		<script>
 			programStart();
+
 		</script>
 		<br>
 
@@ -242,6 +237,7 @@
 
 			<br><br>
 		</div>
+	</div>
 
 
 		<div class="bottomframe">

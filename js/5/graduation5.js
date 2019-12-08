@@ -74,14 +74,17 @@ function clickFormSelection(input_type, name, value) {
 
 //get the array consisted of major_class, class
 //the number of student, bachelor, master, phd who is man or woman or all 
-function getCoreData(data, value) {
+function getCoreData(data) {
     var ret = [];
+    var value = level["degree"] + "_" + level["gender"];
     data.forEach(function (element) {
         if (element[value] > 0) {
             let obj = {};
             obj["major"] = element.major;
-            obj["percent"] = parseInt(element[value] / element[level["degree"]] * 100, 10);
-            obj["gender"] = element[value];
+            obj["man_percent"] = parseInt(element[level["degree"] + "_man"] / element[level["degree"]] * 100, 10);
+            obj["man"] = element[level["degree"] + "_man"];
+            obj["woman_percent"] = 100 - obj["man_percent"];
+            obj["woman"] = element[level["degree"] + "_woman"];
             obj["total_headcount"] = element[level["degree"]];
             ret.push(obj);
         }
@@ -97,11 +100,9 @@ function getProperDataForSelection(data) {
 
     //get the key string represent that
     //the number of student, bachelor, master, phd who is man or woman or all 
-    var value = level["degree"] + "_" + level["gender"];
-
-    var ret = getCoreData(data, value).sort(function (a, b) {
+    var ret = getCoreData(data).sort(function (a, b) {
         //sort order by desc
-        return b["percent"] - a["percent"];
+        return b[level["gender"] + "_percent"] - a[level["gender"] + "_percent"];
     });
 
     while (ret.length > level["num_selected"]) {
@@ -132,17 +133,32 @@ function drawChart(input) {
         categoryAxis.fontSize = 12;
 
         var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
-
+        valueAxis.max = 100;
         var series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.categoryY = "major";
-        series.dataFields.valueX = "percent";
+        series.dataFields.valueX = level["gender"] + "_percent";
+        series.stacked = true;
+        series.sequencedInterpolation = true;
 
+        // var labelBullet = series.bullets.push(new am4charts.LabelBullet());
+        let other_gender;
         if (level["gender"] == "man") {
             series.columns.template.tooltipText = "전공: {categoryY}\n남자 비율: {valueX}\n전체 인원수: {total_headcount}";
+            series.fill = am4core.color("#4B89DC");
+            other_gender = "woman_percent";
+
+            // labelBullet.label.text = "{man_percent}%  n = {man}";
         }
         else {
             series.columns.template.tooltipText = "전공: {categoryY}\n여자 비율: {valueX}\n전체 인원수: {total_headcount}";
+            series.fill = am4core.color("#DB4455");
+            other_gender = "man_percent";
+            // labelBullet.label.text = "{woman_percent}%  n = {woman}";
         }
+
+        // labelBullet.label.fontSize = 12;
+        // labelBullet.label.dx = 40;
+
         series.columns.template.fillOpacity = .8;
 
         series.tooltip.getFillFromObject = false;
@@ -150,9 +166,26 @@ function drawChart(input) {
         series.tooltip.autoTextColor = false;
         series.tooltip.label.fill = am4core.color("#000000");
 
-        var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-        labelBullet.label.text = "{percent}%  n = {gender}";
-        labelBullet.label.fontSize = 12;
-        labelBullet.label.dx = 40;
+        var series2 = chart.series.push(new am4charts.ColumnSeries());
+        series2.dataFields.categoryY = "major";
+        series2.dataFields.valueX = other_gender;
+        series2.stacked = true;
+        series2.sequencedInterpolation = true;
+
+        series2.tooltip.getFillFromObject = false;
+        series2.tooltip.background.fill = am4core.color("#FFFFFF");
+        series2.tooltip.autoTextColor = false;
+        series2.tooltip.label.fill = am4core.color("#000000");
+
+        if (level["gender"] == "man") {
+            series2.columns.template.tooltipText = "전공: {categoryY}\n여자 비율: {valueX}\n전체 인원수: {total_headcount}";
+            series2.fill = am4core.color("#DB4455");
+        }
+        else {
+            series2.columns.template.tooltipText = "전공: {categoryY}\n남자 비율: {valueX}\n전체 인원수: {total_headcount}";
+            series2.fill = am4core.color("#4B89DC");
+        }
+
+
     });
 }

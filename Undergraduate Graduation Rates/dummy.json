@@ -1,0 +1,93 @@
+[
+  {
+    "year": "2010",
+    "gradIn1-4y": 3055,
+    "gradIn4.5y": 414,
+    "gradIn5y": 289,
+    "gradIn5.5-6y": 108,
+    "gradOver6y": 93,
+    "notYetGrad": 305
+  },
+  {
+    "year": "2011",
+    "gradIn1-4y": 3090,
+    "gradIn4.5y": 300,
+    "gradIn5y": 291,
+    "gradIn5.5-6y": 80,
+    "gradOver6y": 59,
+    "notYetGrad": 70
+  },
+
+  {
+    "year": "2012",
+    "gradIn1-4y": 3200,
+    "gradIn4.5y": 310,
+    "gradIn5y": 212,
+    "gradIn5.5-6y": 100,
+    "gradOver6y": 59,
+    "notYetGrad": 91
+  },
+  {
+    "year": "2013",
+    "gradIn1-4y": 3020,
+    "gradIn4.5y": 280,
+    "gradIn5y": 192,
+    "gradIn5.5-6y": 90,
+    "gradOver6y": 72,
+    "notYetGrad": 12
+  },
+  {
+    "year": "2014",
+    "gradIn1-4y": 3400,
+    "gradIn4.5y": 400,
+    "gradIn5y": 200,
+    "gradIn5.5-6y": 100,
+    "gradOver6y": 100,
+    "notYetGrad": 120
+  },
+  {
+    "year": "2015",
+    "gradIn1-4y": 3587,
+    "gradIn4.5y": 410,
+    "gradIn5y": 239,
+    "gradIn5.5-6y": 0,
+    "gradOver6y": 3,
+    "notYetGrad": 501
+  },
+  {
+    "year": "2016",
+    "gradIn1-4y": 4153,
+    "gradIn4.5y": 0,
+    "gradIn5y": 0,
+    "gradIn5.5-6y": 0,
+    "gradOver6y": 0,
+    "notYetGrad": 1334
+  },
+  {
+    "year": "2017",
+    "gradIn1-4y": 254,
+    "gradIn4.5y": 0,
+    "gradIn5y": 0,
+    "gradIn5.5-6y": 0,
+    "gradOver6y": 0,
+    "notYetGrad": 5311
+  },
+  {
+    "year": "2018",
+    "gradIn1-4y": 0,
+    "gradIn4.5y": 0,
+    "gradIn5y": 0,
+    "gradIn5.5-6y": 0,
+    "gradOver6y": 0,
+    "notYetGrad": 6258
+  },
+  {
+    "year": "2019",
+    "gradIn1-4y": 0,
+    "gradIn4.5y": 0,
+    "gradIn5y": 0,
+    "gradIn5.5-6y": 0,
+    "gradOver6y": 0,
+    "notYetGrad": 5000
+  }
+]

@@ -47,8 +47,8 @@
 		"master": 0,
 		"master_man": 0,
 		"master_woman": 0,
-		"phd": 1,
-		"phd_man": 1,
+		"phd": 0,
+		"phd_man": 0,
 		"phd_woman": 0
 	},
 	{
@@ -230,8 +230,8 @@
 		"master_man": 1,
 		"master_woman": 1,
 		"phd": 1,
-		"phd_man": 0,
-		"phd_woman": 1
+		"phd_man": 1,
+		"phd_woman": 0
 	},
 	{
 		"major": "사회복지학부 사회복지실천전공",
@@ -244,7 +244,7 @@
 		"master_woman": 1,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "신문방송학과",
@@ -256,8 +256,8 @@
 		"master_man": 3,
 		"master_woman": 3,
 		"phd": 1,
-		"phd_man": 0,
-		"phd_woman": 1
+		"phd_man": 1,
+		"phd_woman": 0
 	},
 	{
 		"major": "수학과",
@@ -309,7 +309,7 @@
 		"master_woman": 1,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "생물학과",
@@ -335,7 +335,7 @@
 		"master_woman": 2,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "통계학과",
@@ -504,7 +504,7 @@
 		"master_woman": 0,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "무역학과",
@@ -582,7 +582,7 @@
 		"master_woman": 3,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "컴퓨터공학과",
@@ -738,7 +738,7 @@
 		"master_woman": 3,
 		"phd": 2,
 		"phd_man": 1,
-		"phd_woman": 1
+		"phd_woman": 4
 	},
 	{
 		"major": "건축학부 건축학전공",
@@ -891,7 +891,7 @@
 		"bachelor_woman": 2,
 		"master": 2,
 		"master_man": 0,
-		"master_woman": 2,
+		"master_woman": 0,
 		"phd": 0,
 		"phd_man": 0,
 		"phd_woman": 0
@@ -944,9 +944,9 @@
 		"master": 3,
 		"master_man": 3,
 		"master_woman": 0,
-		"phd": 0,
-		"phd_man": 0,
-		"phd_woman": 0
+		"phd": 5,
+		"phd_man": 4,
+		"phd_woman": 1
 	},
 	{
 		"major": "응용생명과학부 생명식품공학전공",
@@ -954,9 +954,9 @@
 		"bachelor": 0,
 		"bachelor_man": 0,
 		"bachelor_woman": 0,
-		"master": 0,
-		"master_man": 0,
-		"master_woman": 0,
+		"master": 2,
+		"master_man": 1,
+		"master_woman": 1,
 		"phd": 1,
 		"phd_man": 0,
 		"phd_woman": 1
@@ -985,7 +985,7 @@
 		"master_woman": 0,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 2
 	},
 	{
 		"major": "응용생명과학부 응용생물화학전공",
@@ -1102,7 +1102,7 @@
 		"master_woman": 1,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "산림과학조경학부 임산공학전공",
@@ -1179,8 +1179,8 @@
 		"master_man": 0,
 		"master_woman": 6,
 		"phd": 1,
-		"phd_man": 1,
-		"phd_woman": 0
+		"phd_man": 0,
+		"phd_woman": 1
 	},
 	{
 		"major": "식물생명과학부 ",
@@ -1235,7 +1235,7 @@
 		"phd_woman": 1
 	},
 	{
-		"major": "식품공학부 식품소재공학전공",
+		"major": "응용생명과학부 환경생명화학전공",
 		"major_class": "예체능계열",
 		"bachelor": 17,
 		"bachelor_man": 12,
@@ -1244,8 +1244,8 @@
 		"master_man": 1,
 		"master_woman": 3,
 		"phd": 1,
-		"phd_man": 1,
-		"phd_woman": 0
+		"phd_man": 0,
+		"phd_woman": 1
 	},
 	{
 		"major": "식품공학부 식품응용공학전공",
@@ -1339,7 +1339,7 @@
 		"phd_woman": 0
 	},
 	{
-		"major": "국어교육과",
+		"major": "농업경제학과",
 		"major_class": "예체능계열",
 		"bachelor": 11,
 		"bachelor_man": 7,
@@ -1362,7 +1362,7 @@
 		"master_woman": 0,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 4
 	},
 	{
 		"major": "유럽어교육학부 독어교육전공",
@@ -1453,7 +1453,7 @@
 		"master_woman": 4,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "수학교육",
@@ -1673,8 +1673,8 @@
 		"master_man": 0,
 		"master_woman": 2,
 		"phd": 2,
-		"phd_man": 1,
-		"phd_woman": 1
+		"phd_man": 2,
+		"phd_woman": 0
 	},
 	{
 		"major": "식품영양학과",
@@ -1790,8 +1790,21 @@
 		"master_man": 0,
 		"master_woman": 3,
 		"phd": 1,
-		"phd_man": 1,
-		"phd_woman": 0
+		"phd_man": 0,
+		"phd_woman": 1
+	},
+	{
+		"major": "디지털미디어아트학",
+		"major_class": "공학계열",
+		"bachelor": 5,
+		"bachelor_man": 4,
+		"bachelor_woman": 1,
+		"master": 1,
+		"master_man": 1,
+		"master_woman": 0,
+		"phd": 1,
+		"phd_man": 0,
+		"phd_woman": 1
 	},
 	{
 		"major": "전자공학부 제어시스템전공",
@@ -1856,7 +1869,7 @@
 		"master_woman": 2,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "지역정보학",
@@ -2119,7 +2132,7 @@
 		"phd_woman": 1
 	},
 	{
-		"major": "식량안보및농업개발학과",
+		"major": "공업교육과 토건",
 		"major_class": "공학계열",
 		"bachelor": 7,
 		"bachelor_man": 0,

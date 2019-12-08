@@ -76,8 +76,8 @@ function genDataForChart(input) {
     var headCount = [];
 
     for (let i = 0; i < input.length; ++i) {
-        var year_info = new Object();
-        var rank = 0;
+        let year_info = new Object();
+        let rank = 0;
 
         year_info["year"] = year[i];
         dataOfYear = input[i].data;
@@ -88,7 +88,7 @@ function genDataForChart(input) {
         for (let j = 0; j < 10; ++j) {
             ++rank;
             let headCountDepartment = {};
-            major = dataOfYear[j].major;
+            let major = dataOfYear[j].major;
             headCountDepartment["major"] = major;
             headCountDepartment["headcount"] = dataOfYear[j][gender];
             headCountObj["info"].push(headCountDepartment);
@@ -102,7 +102,7 @@ function genDataForChart(input) {
             //series was not find
             if (idx == -1) {
                 series.push(major);
-                var seriesName = name + (series.length - 1);
+                let seriesName = name + (series.length - 1);
                 year_info[seriesName] = rank;
                 if (i == 0) {
                     firstYearMajors.push(major);
@@ -112,7 +112,7 @@ function genDataForChart(input) {
             //case 2:
             //series found
             else {
-                var seriesName = name + idx;
+                let seriesName = name + idx;
                 year_info[seriesName] = rank;
                 //year_info[seriesName+"ShowTooltip"] = false;
             }
@@ -169,7 +169,7 @@ function RGB2Hexa(colors) {
 
 //generate data for chart and then use it for chart.
 function genDataForAllInOne(data) {
-    for (var i = 0; i < 9; ++i)
+    for (var i = 0; i < 10; ++i)
         sortData(data[i].data, gender);
 
     var returns = genDataForChart(data);
@@ -195,13 +195,14 @@ function genDataForAllInOne(data) {
         chart.data = data;
         chart.padding = 30;
         // chart.width = am4core.percent(100);
-        // chart.dx = -100
 
         //x-axis for chart
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "year";
         categoryAxis.renderer.minGridDistance = 20;
         categoryAxis.renderer.grid.template.disabled = true;
+        categoryAxis.dx = 50;
+        categoryAxis.dy = -20;
 
         //y-axis for chart
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
@@ -228,6 +229,8 @@ function genDataForAllInOne(data) {
             series.name = namesOfSeries[i];
             series.id = i;
             series.strokeWidth = 8;
+            series.dx = 50;
+            series.width = "700px";
 
             //setting for tooltip of series
             series.tooltip.fontSize = 15;
@@ -246,12 +249,10 @@ function genDataForAllInOne(data) {
                     return text;
             })
             label_bullet.label.text = major;
+            label_bullet.label.width = 80;
             label_bullet.label.maxWidth = 50;
             label_bullet.label.wrap = true;
-            label_bullet.label.dx = -50;
-            // label_bullet.label.dy = 0;
             label_bullet.label.fontSize = 12;
-            // label_bullet.label.fill = RGB2Hexa(series.fill._value);
             label_bullet.togglable = true;
 
             //the bullet, points of data insertion on a series for x-axis.
@@ -259,10 +260,12 @@ function genDataForAllInOne(data) {
             bullet.strokeWidth = 10;
             bullet.tooltipText = namesOfSeries[i];
             bullet.propertyFields.alwaysShowTooltip = seriesName + "ShowTooltip";
+            bullet.dx = 50
 
             //the label of bullet, marking the rank for each year.
             var valueLabel = series.bullets.push(new am4charts.LabelBullet());
             valueLabel.label.text = "{valueY}";
+            valueLabel.label.dx = 50;
         }
     });
 }

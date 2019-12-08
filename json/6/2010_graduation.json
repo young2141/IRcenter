@@ -47,8 +47,8 @@
 		"master": 2,
 		"master_man": 2,
 		"master_woman": 0,
-		"phd": 0,
-		"phd_man": 0,
+		"phd": 1,
+		"phd_man": 1,
 		"phd_woman": 0
 	},
 	{
@@ -113,8 +113,8 @@
 		"master_man": 10,
 		"master_woman": 0,
 		"phd": 1,
-		"phd_man": 1,
-		"phd_woman": 0
+		"phd_man": 0,
+		"phd_woman": 1
 	},
 	{
 		"major": "철학과",
@@ -166,7 +166,7 @@
 		"master_woman": 0,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 2
 	},
 	{
 		"major": "지리학과",
@@ -244,7 +244,7 @@
 		"master_woman": 2,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "신문방송학과",
@@ -325,7 +325,7 @@
 		"phd_woman": 0
 	},
 	{
-		"major": "지질학과",
+		"major": "생물학과",
 		"major_class": "자연과학계열",
 		"bachelor": 19,
 		"bachelor_man": 2,
@@ -361,10 +361,10 @@
 		"master_woman": 1,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
-		"major": "생명과학부 ",
+		"major": "생명공학부 ",
 		"major_class": "자연과학계열",
 		"bachelor": 5,
 		"bachelor_man": 2,
@@ -385,9 +385,9 @@
 		"master": 3,
 		"master_man": 3,
 		"master_woman": 0,
-		"phd": 1,
+		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "생명과학부 생물학전공",
@@ -462,6 +462,32 @@
 		"bachelor_woman": 15,
 		"master": 0,
 		"master_man": 0,
+		"master_woman": 7,
+		"phd": 1,
+		"phd_man": 0,
+		"phd_woman": 1
+	},
+	{
+		"major": "경영학부 ",
+		"major_class": "공학계열",
+		"bachelor": 87,
+		"bachelor_man": 43,
+		"bachelor_woman": 44,
+		"master": 6,
+		"master_man": 5,
+		"master_woman": 1,
+		"phd": 12,
+		"phd_man": 10,
+		"phd_woman": 2
+	},
+	{
+		"major": "회계학과",
+		"major_class": "예체능계열",
+		"bachelor": 4,
+		"bachelor_man": 2,
+		"bachelor_woman": 2,
+		"master": 3,
+		"master_man": 3,
 		"master_woman": 0,
 		"phd": 1,
 		"phd_man": 1,
@@ -621,7 +647,7 @@
 		"master_woman": 7,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "건축공학과",
@@ -647,7 +673,7 @@
 		"master_woman": 0,
 		"phd": 1,
 		"phd_man": 1,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "화학공학과",
@@ -676,7 +702,7 @@
 		"phd_woman": 1
 	},
 	{
-		"major": "신소재공학부 금속신소재공학전공",
+		"major": "환경공학과",
 		"major_class": "자연과학계열",
 		"bachelor": 21,
 		"bachelor_man": 20,
@@ -689,7 +715,7 @@
 		"phd_woman": 3
 	},
 	{
-		"major": "신소재공학부 전자재료공학전공",
+		"major": "건축학부 건축학전공",
 		"major_class": "인문사회계열",
 		"bachelor": 4,
 		"bachelor_man": 4,
@@ -764,7 +790,7 @@
 		"master_woman": 2,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 21
 	},
 	{
 		"major": "건축토목공학부 건축공학전공",
@@ -1050,7 +1076,7 @@
 		"master_woman": 13,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "농업토목공학과",
@@ -1297,7 +1323,7 @@
 		"master_woman": 0,
 		"phd": 2,
 		"phd_man": 0,
-		"phd_woman": 2
+		"phd_woman": 0
 	},
 	{
 		"major": "미술학과",
@@ -1362,7 +1388,7 @@
 		"master_woman": 2,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 3
 	},
 	{
 		"major": "유럽어교육학부 독어교육전공",
@@ -1400,8 +1426,8 @@
 		"master_man": 0,
 		"master_woman": 4,
 		"phd": 1,
-		"phd_man": 0,
-		"phd_woman": 1
+		"phd_man": 1,
+		"phd_woman": 0
 	},
 	{
 		"major": "사회교육학부 역사교육전공",
@@ -1673,8 +1699,21 @@
 		"master_man": 1,
 		"master_woman": 0,
 		"phd": 3,
+		"phd_man": 2,
+		"phd_woman": 1
+	},
+	{
+		"major": "보건학과",
+		"major_class": "자연과학계열",
+		"bachelor": 2,
+		"bachelor_man": 0,
+		"bachelor_woman": 2,
+		"master": 1,
+		"master_man": 0,
+		"master_woman": 1,
+		"phd": 4,
 		"phd_man": 3,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "식품영양학과",
@@ -1855,8 +1894,8 @@
 		"master_man": 3,
 		"master_woman": 0,
 		"phd": 1,
-		"phd_man": 0,
-		"phd_woman": 1
+		"phd_man": 1,
+		"phd_woman": 0
 	},
 	{
 		"major": "지역정보학",
@@ -1945,9 +1984,9 @@
 		"master": 4,
 		"master_man": 3,
 		"master_woman": 1,
-		"phd": 0,
+		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "발효생물공학",
@@ -1973,7 +2012,7 @@
 		"master_woman": 3,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "기록학",
@@ -1983,6 +2022,19 @@
 		"bachelor_woman": 0,
 		"master": 1,
 		"master_man": 1,
+		"master_woman": 1,
+		"phd": 2,
+		"phd_man": 2,
+		"phd_woman": 0
+	},
+	{
+		"major": "의료정보학",
+		"major_class": "자연과학계열",
+		"bachelor": 2,
+		"bachelor_man": 2,
+		"bachelor_woman": 0,
+		"master": 0,
+		"master_man": 0,
 		"master_woman": 0,
 		"phd": 0,
 		"phd_man": 0,
@@ -2063,8 +2115,21 @@
 		"master_man": 1,
 		"master_woman": 3,
 		"phd": 1,
+		"phd_man": 1,
+		"phd_woman": 0
+	},
+	{
+		"major": "기후변화학과",
+		"major_class": "예체능계열",
+		"bachelor": 4,
+		"bachelor_man": 3,
+		"bachelor_woman": 1,
+		"master": 3,
+		"master_man": 3,
+		"master_woman": 0,
+		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "수산자원개발학과",
@@ -2133,6 +2198,45 @@
 	},
 	{
 		"major": "지리지질학과",
+		"major_class": "예체능계열",
+		"bachelor": 7,
+		"bachelor_man": 4,
+		"bachelor_woman": 3,
+		"master": 21,
+		"master_man": 3,
+		"master_woman": 18,
+		"phd": 0,
+		"phd_man": 0,
+		"phd_woman": 0
+	},
+	{
+		"major": "공업교육과",
+		"major_class": "공학계열",
+		"bachelor": 6,
+		"bachelor_man": 2,
+		"bachelor_woman": 4,
+		"master": 4,
+		"master_man": 3,
+		"master_woman": 1,
+		"phd": 0,
+		"phd_man": 0,
+		"phd_woman": 0
+	},
+	{
+		"major": "공업교육과 토건",
+		"major_class": "공학계열",
+		"bachelor": 4,
+		"bachelor_man": 4,
+		"bachelor_woman": 0,
+		"master": 0,
+		"master_man": 0,
+		"master_woman": 0,
+		"phd": 1,
+		"phd_man": 1,
+		"phd_woman": 0
+	},
+	{
+		"major": "농예화학과",
 		"major_class": "인문사회계열",
 		"bachelor": 8,
 		"bachelor_man": 0,

@@ -49,12 +49,12 @@
         series.columns.template.tooltipText =
           "[#000 font-size: 15px]" +
           _year +
-          "학년도 {category}지역 출신 지원자는 [#000 bold]{valueY}명[ #000] 입니다.";
+          "학년도 {city}지역 출신 지원자는 [#000 bold]{valueY}명[ #000] 입니다.";
       } else {
         series.columns.template.tooltipText =
           "[#000 font-size: 15px]" +
           _year +
-          "학년도 {category}지역 출신 입학생은 [#000 bold]{valueY}명[ #000] 입니다.";
+          "학년도 {city}지역 출신 입학생은 [#000 bold]{valueY}명[ #000] 입니다.";
       }
     }
 

@@ -128,6 +128,9 @@ function classifyRawdataByMajor(rawData) {
             }
         }
     }
+    dataClassifiedByMajor.sort(function(a, b){
+        return a.major < b.major ? -1 : a.major > b.major ? 1: 0;
+    });
 }
 
 function getMappingNumberByMajor(major){

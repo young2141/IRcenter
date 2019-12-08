@@ -334,7 +334,20 @@
 		"master_man": 4,
 		"master_woman": 1,
 		"phd": 1,
-		"phd_man": 1,
+		"phd_man": 0,
+		"phd_woman": 1
+	},
+	{
+		"major": "생명공학부 ",
+		"major_class": "자연과학계열",
+		"bachelor": 0,
+		"bachelor_man": 0,
+		"bachelor_woman": 0,
+		"master": 3,
+		"master_man": 3,
+		"master_woman": 0,
+		"phd": 0,
+		"phd_man": 0,
 		"phd_woman": 0
 	},
 	{
@@ -423,7 +436,33 @@
 		"bachelor_woman": 1,
 		"master": 0,
 		"master_man": 0,
-		"master_woman": 0,
+		"master_woman": 1,
+		"phd": 1,
+		"phd_man": 1,
+		"phd_woman": 0
+	},
+	{
+		"major": "미생물학과",
+		"major_class": "예체능계열",
+		"bachelor": 8,
+		"bachelor_man": 6,
+		"bachelor_woman": 2,
+		"master": 4,
+		"master_man": 0,
+		"master_woman": 4,
+		"phd": 1,
+		"phd_man": 0,
+		"phd_woman": 1
+	},
+	{
+		"major": "유전공학과",
+		"major_class": "공학계열",
+		"bachelor": 7,
+		"bachelor_man": 7,
+		"bachelor_woman": 0,
+		"master": 4,
+		"master_man": 0,
+		"master_woman": 4,
 		"phd": 0,
 		"phd_man": 0,
 		"phd_woman": 0
@@ -455,16 +494,16 @@
 		"phd_woman": 1
 	},
 	{
-		"major": "지구시스템과학부 해양학전공",
+		"major": "컴퓨터과학과",
 		"major_class": "자연과학계열",
 		"bachelor": 39,
 		"bachelor_man": 36,
 		"bachelor_woman": 3,
 		"master": 3,
-		"master_man": 2,
-		"master_woman": 1,
-		"phd": 0,
-		"phd_man": 0,
+		"master_man": 3,
+		"master_woman": 0,
+		"phd": 1,
+		"phd_man": 1,
 		"phd_woman": 0
 	},
 	{
@@ -477,8 +516,8 @@
 		"master_man": 1,
 		"master_woman": 1,
 		"phd": 1,
-		"phd_man": 0,
-		"phd_woman": 1
+		"phd_man": 1,
+		"phd_woman": 0
 	},
 	{
 		"major": "경제통상학부 ",
@@ -487,8 +526,8 @@
 		"bachelor_man": 46,
 		"bachelor_woman": 145,
 		"master": 2,
-		"master_man": 1,
-		"master_woman": 1,
+		"master_man": 0,
+		"master_woman": 2,
 		"phd": 0,
 		"phd_man": 0,
 		"phd_woman": 0
@@ -559,7 +598,7 @@
 		"phd_woman": 0
 	},
 	{
-		"major": "행정학과",
+		"major": "법학부 ",
 		"major_class": "자연과학계열",
 		"bachelor": 5,
 		"bachelor_man": 2,
@@ -751,7 +790,7 @@
 		"master_woman": 4,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "건축토목공학부 ",
@@ -1037,7 +1076,7 @@
 		"master_woman": 3,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 4
 	},
 	{
 		"major": "원예과학과",
@@ -1102,7 +1141,7 @@
 		"master_woman": 2,
 		"phd": 1,
 		"phd_man": 1,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "산림과학조경학부 임산공학전공",
@@ -1362,7 +1401,7 @@
 		"master_woman": 0,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "유럽어교육학부 독어교육전공",
@@ -1430,7 +1469,7 @@
 		"phd_woman": 0
 	},
 	{
-		"major": "사회교육학부 일반사회교육전공",
+		"major": "미술학과",
 		"major_class": "자연과학계열",
 		"bachelor": 16,
 		"bachelor_man": 14,
@@ -1440,7 +1479,7 @@
 		"master_woman": 0,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "윤리교육",
@@ -1479,7 +1518,7 @@
 		"master_woman": 1,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "과학교육학부 물리교육전공",
@@ -1502,7 +1541,7 @@
 		"bachelor_woman": 2,
 		"master": 2,
 		"master_man": 0,
-		"master_woman": 2,
+		"master_woman": 0,
 		"phd": 1,
 		"phd_man": 0,
 		"phd_woman": 1
@@ -1685,8 +1724,8 @@
 		"master": 5,
 		"master_man": 2,
 		"master_woman": 3,
-		"phd": 2,
-		"phd_man": 1,
+		"phd": 1,
+		"phd_man": 0,
 		"phd_woman": 1
 	},
 	{
@@ -1833,6 +1872,19 @@
 		"phd_woman": 0
 	},
 	{
+		"major": "조사통계학과",
+		"major_class": "인문사회계열",
+		"bachelor": 1,
+		"bachelor_man": 1,
+		"bachelor_woman": 0,
+		"master": 1,
+		"master_man": 1,
+		"master_woman": 0,
+		"phd": 1,
+		"phd_man": 1,
+		"phd_woman": 0
+	},
+	{
 		"major": "비즈니스학",
 		"major_class": "인문사회계열",
 		"bachelor": 5,
@@ -1965,8 +2017,21 @@
 	{
 		"major": "의료정보학",
 		"major_class": "인문사회계열",
-		"bachelor": 0,
-		"bachelor_man": 0,
+		"bachelor": 2,
+		"bachelor_man": 2,
+		"bachelor_woman": 0,
+		"master": 5,
+		"master_man": 1,
+		"master_woman": 4,
+		"phd": 2,
+		"phd_man": 0,
+		"phd_woman": 2
+	},
+	{
+		"major": "의료정보학",
+		"major_class": "자연과학계열",
+		"bachelor": 6,
+		"bachelor_man": 6,
 		"bachelor_woman": 0,
 		"master": 3,
 		"master_man": 2,
@@ -2039,6 +2104,19 @@
 		"phd": 1,
 		"phd_man": 1,
 		"phd_woman": 0
+	},
+	{
+		"major": "로봇공학과",
+		"major_class": "자연과학계열",
+		"bachelor": 3,
+		"bachelor_man": 0,
+		"bachelor_woman": 3,
+		"master": 2,
+		"master_man": 1,
+		"master_woman": 1,
+		"phd": 1,
+		"phd_man": 0,
+		"phd_woman": 1
 	},
 	{
 		"major": "에너지과학과",

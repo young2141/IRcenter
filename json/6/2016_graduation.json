@@ -36,7 +36,7 @@
 		"master_woman": 1,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "독어독문학과",
@@ -72,7 +72,7 @@
 		"bachelor_woman": 5,
 		"master": 0,
 		"master_man": 0,
-		"master_woman": 0,
+		"master_woman": 1,
 		"phd": 1,
 		"phd_man": 0,
 		"phd_woman": 1
@@ -140,7 +140,7 @@
 		"master_woman": 0,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 3
 	},
 	{
 		"major": "정치외교학과",
@@ -257,7 +257,7 @@
 		"master_woman": 0,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "수학과",
@@ -487,8 +487,8 @@
 		"bachelor_man": 34,
 		"bachelor_woman": 184,
 		"master": 2,
-		"master_man": 1,
-		"master_woman": 1,
+		"master_man": 0,
+		"master_woman": 2,
 		"phd": 0,
 		"phd_man": 0,
 		"phd_woman": 0
@@ -581,8 +581,8 @@
 		"master_man": 3,
 		"master_woman": 1,
 		"phd": 1,
-		"phd_man": 1,
-		"phd_woman": 0
+		"phd_man": 0,
+		"phd_woman": 1
 	},
 	{
 		"major": "컴퓨터공학과",
@@ -777,7 +777,7 @@
 		"master_woman": 1,
 		"phd": 1,
 		"phd_man": 1,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "건축토목공학부 토목공학전공",
@@ -786,7 +786,20 @@
 		"bachelor_man": 0,
 		"bachelor_woman": 2,
 		"master": 1,
-		"master_man": 0,
+		"master_man": 1,
+		"master_woman": 0,
+		"phd": 1,
+		"phd_man": 1,
+		"phd_woman": 0
+	},
+	{
+		"major": "신소재공학부 전자재료공학전공",
+		"major_class": "자연과학계열",
+		"bachelor": 48,
+		"bachelor_man": 35,
+		"bachelor_woman": 13,
+		"master": 6,
+		"master_man": 5,
 		"master_woman": 1,
 		"phd": 5,
 		"phd_man": 5,
@@ -829,7 +842,7 @@
 		"master_woman": 1,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 2
 	},
 	{
 		"major": "에너지공학부 에너지변환전공",
@@ -842,7 +855,7 @@
 		"master_woman": 0,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "전기공학과",
@@ -920,7 +933,7 @@
 		"master_woman": 2,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "응용생명과학부 동물공학전공",
@@ -946,7 +959,7 @@
 		"master_woman": 0,
 		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 1
 	},
 	{
 		"major": "응용생명과학부 생명식품공학전공",
@@ -1193,7 +1206,7 @@
 		"master_woman": 1,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "응용생물과학부 응용생물화학전공",
@@ -1204,9 +1217,9 @@
 		"master": 3,
 		"master_man": 3,
 		"master_woman": 0,
-		"phd": 1,
+		"phd": 0,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "생명식품공학부 ",
@@ -1321,9 +1334,9 @@
 		"master": 5,
 		"master_man": 4,
 		"master_woman": 1,
-		"phd": 0,
+		"phd": 2,
 		"phd_man": 0,
-		"phd_woman": 0
+		"phd_woman": 2
 	},
 	{
 		"major": "교육학과",
@@ -1346,9 +1359,9 @@
 		"bachelor_woman": 7,
 		"master": 0,
 		"master_man": 0,
-		"master_woman": 0,
-		"phd": 1,
-		"phd_man": 1,
+		"master_woman": 7,
+		"phd": 0,
+		"phd_man": 0,
 		"phd_woman": 0
 	},
 	{
@@ -1557,7 +1570,7 @@
 		"master_woman": 0,
 		"phd": 4,
 		"phd_man": 0,
-		"phd_woman": 4
+		"phd_woman": 0
 	},
 	{
 		"major": "의학과",
@@ -1916,11 +1929,11 @@
 		"bachelor": 1,
 		"bachelor_man": 1,
 		"bachelor_woman": 0,
-		"master": 4,
+		"master": 6,
 		"master_man": 1,
-		"master_woman": 3,
-		"phd": 0,
-		"phd_man": 0,
+		"master_woman": 5,
+		"phd": 1,
+		"phd_man": 1,
 		"phd_woman": 0
 	},
 	{
@@ -1995,8 +2008,8 @@
 		"bachelor_man": 2,
 		"bachelor_woman": 3,
 		"master": 2,
-		"master_man": 1,
-		"master_woman": 1,
+		"master_man": 2,
+		"master_woman": 0,
 		"phd": 1,
 		"phd_man": 0,
 		"phd_woman": 1
@@ -2142,7 +2155,7 @@
 		"master_woman": 6,
 		"phd": 1,
 		"phd_man": 0,
-		"phd_woman": 1
+		"phd_woman": 0
 	},
 	{
 		"major": "공업교육과",
