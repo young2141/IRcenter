@@ -116,7 +116,6 @@ function getProperDataForSelection(data) {
 function drawChart(input) {
     //get the proper data for selection(options: degree, gender, class of major)
     var data = getProperDataForSelection(input)
-    //console.log(data);
 
     chartdiv.style.height = "700px";
     //chart
@@ -133,31 +132,23 @@ function drawChart(input) {
         categoryAxis.fontSize = 12;
 
         var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
-        valueAxis.max = 100;
+        valueAxis.max = 120;
         var series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.categoryY = "major";
         series.dataFields.valueX = level["gender"] + "_percent";
         series.stacked = true;
         series.sequencedInterpolation = true;
 
-        // var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-        let other_gender;
         if (level["gender"] == "man") {
             series.columns.template.tooltipText = "전공: {categoryY}\n남자 비율: {valueX}\n전체 인원수: {total_headcount}";
             series.fill = am4core.color("#4B89DC");
             other_gender = "woman_percent";
-
-            // labelBullet.label.text = "{man_percent}%  n = {man}";
         }
         else {
             series.columns.template.tooltipText = "전공: {categoryY}\n여자 비율: {valueX}\n전체 인원수: {total_headcount}";
             series.fill = am4core.color("#DB4455");
             other_gender = "man_percent";
-            // labelBullet.label.text = "{woman_percent}%  n = {woman}";
         }
-
-        // labelBullet.label.fontSize = 12;
-        // labelBullet.label.dx = 40;
 
         series.columns.template.fillOpacity = .8;
 
@@ -177,13 +168,21 @@ function drawChart(input) {
         series2.tooltip.autoTextColor = false;
         series2.tooltip.label.fill = am4core.color("#000000");
 
+        let LabelBullet = series2.bullets.push(new am4charts.LabelBullet());
+        LabelBullet.label.truncate = false;
+        LabelBullet.label.wrap = false;
+        LabelBullet.label.dx = 45;
+        LabelBullet.label.fontSize = 12;
+
         if (level["gender"] == "man") {
             series2.columns.template.tooltipText = "전공: {categoryY}\n여자 비율: {valueX}\n전체 인원수: {total_headcount}";
             series2.fill = am4core.color("#DB4455");
+            LabelBullet.label.text = "{man_percent}%  n = {man}";
         }
         else {
             series2.columns.template.tooltipText = "전공: {categoryY}\n남자 비율: {valueX}\n전체 인원수: {total_headcount}";
             series2.fill = am4core.color("#4B89DC");
+            LabelBullet.label.text = "{woman_percent}%  n = {woman}";
         }
 
 
