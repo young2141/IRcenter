@@ -99,7 +99,7 @@ function calld3(type, year, picked) {
       })
       .append("g")
       .attr("class", "node")
-      .attr("opacity", ".5")
+      .attr("opacity", ".7")
       .attr("id", function(d) {
         var s = d.data.Name;
         var ne = "";
