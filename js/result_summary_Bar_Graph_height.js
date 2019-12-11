@@ -44,7 +44,7 @@ function P6bhcreateSeries(bhchart, _valueY, _valueY_RGB, _cy, _title, _ckr)
     bhseries.columns.template.fill = am4core.color(_valueY_RGB); // 색상
     bhseries.tooltip.getFillFromObject = false;
     if(_ckr != "전체")
-        bhseries.columns.template.tooltipText = "[#000 font-size: 15px]" + _cy + "년도 " + _ckr + " " + _title + " 학위수여자는 [#000 bold]{valueY}명[#000] 입니다.";
+        bhseries.columns.template.tooltipText = "[#000 font-size: 15px]" + _cy + "학년도 " + _ckr + " " + _title + " 학위수여자는 [#000 bold]{valueY}명[#000] 입니다.";
     else
         bhseries.columns.template.tooltipText = "[#000 font-size: 15px]" + _cy + "년도 " + _title + " 학위수여자는 [#000 bold]{valueY}명[#000] 입니다.";
 
