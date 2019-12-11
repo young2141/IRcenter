@@ -51,7 +51,7 @@ function P6bwcreateSeries(bwchart, _categoryX, _valueY, _valueY_RGB, _title, _cy
     bwseries.columns.template.strokeWidth = 0;
     bwseries.tooltip.getFillFromObject = false;
     if (_ckr != "전체")
-        bwseries.columns.template.tooltipText = "[#000 font-size: 15px]" + _cy + "년도 {categoryY} " + _ckr + " " + _title + " 학위수여자는 [#000 bold]{valueX}명[#000] 입니다.";
+        bwseries.columns.template.tooltipText = "[#000 font-size: 15px]" + _cy + "학년도 {categoryY} " + _ckr + " " + _title + " 학위수여자는 [#000 bold]{valueX}명[#000] 입니다.";
     else
-        bwseries.columns.template.tooltipText = "[#000 font-size: 15px]" + _cy + "년도 {categoryY} " + _title + " 학위수여자는 [#000 bold]{valueX}명[#000] 입니다.";
+        bwseries.columns.template.tooltipText = "[#000 font-size: 15px]" + _cy + "학년도 {categoryY} " + _title + " 학위수여자는 [#000 bold]{valueX}명[#000] 입니다.";
 }
