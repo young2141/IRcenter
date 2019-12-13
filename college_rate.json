@@ -1,0 +1,82 @@
+[
+  {
+    "year": 2010,
+    "all": 0.13,
+    "science": 0.16,
+    "artphysical": 0.14,
+    "mech": 0.18,
+    "society": 0.07
+  },
+  {
+    "year": 2011,
+    "all": 0.13,
+    "science": 0.16,
+    "artphysical": 0.14,
+    "mech": 0.17,
+    "society": 0.06
+  },
+  {
+    "year": 2012,
+    "all": 0.12,
+    "science": 0.17,
+    "artphysical": 0.13,
+    "mech": 0.16,
+    "society": 0.06
+  },
+  {
+    "year": 2013,
+    "all": 0.12,
+    "science": 0.17,
+    "artphysical": 0.13,
+    "mech": 0.15,
+    "society": 0.06
+  },
+  {
+    "year": 2014,
+    "all": 0.12,
+    "science": 0.17,
+    "artphysical": 0.13,
+    "mech": 0.15,
+    "society": 0.06
+  },
+  {
+    "year": 2015,
+    "all": 0.12,
+    "science": 0.17,
+    "artphysical": 0.13,
+    "mech": 0.15,
+    "society": 0.06
+  },
+  {
+    "year": 2016,
+    "all": 0.12,
+    "science": 0.17,
+    "artphysical": 0.13,
+    "mech": 0.15,
+    "society": 0.06
+  },
+  {
+    "year": 2017,
+    "all": 0.12,
+    "science": 0.17,
+    "artphysical": 0.13,
+    "mech": 0.15,
+    "society": 0.06
+  },
+  {
+    "year": 2018,
+    "all": 0.12,
+    "science": 0.17,
+    "artphysical": 0.13,
+    "mech": 0.15,
+    "society": 0.06
+  },
+  {
+    "year": 2019,
+    "all": 0.12,
+    "science": 0.17,
+    "artphysical": 0.13,
+    "mech": 0.15,
+    "society": 0.06
+  }
+]
