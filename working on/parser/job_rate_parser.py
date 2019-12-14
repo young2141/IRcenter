@@ -43,14 +43,11 @@ for year in range(2010, 2018):
                 major = m.group(1)[:-1]
 
             # print(major)
-            A = int(sheet.cell_value(row, 9)) + int(sheet.cell_value(row, 10)) + \
-                int(sheet.cell_value(row, 11)) + int(sheet.cell_value(row, 12))
-            B = int(sheet.cell_value(row, 7)) + int(sheet.cell_value(row, 8)) - \
-                int(sheet.cell_value(row, 13)) - \
-                int(sheet.cell_value(row, 14)) - int(sheet.cell_value(row, 15)) -\
-                int(sheet.cell_value(row, 16)) - int(sheet.cell_value(row, 17)) -\
-                int(sheet.cell_value(row, 18)) - int(sheet.cell_value(row, 19)) -\
-                int(sheet.cell_value(row, 20)) - int(sheet.cell_value(row, 21))
+            A = int(sheet.cell_value(row, 9)) + int(sheet.cell_value(row, 10))
+
+            B = int(sheet.cell_value(row, 7)) + int(sheet.cell_value(row, 8)) - int(sheet.cell_value(row, 13)) - int(sheet.cell_value(row, 11)) - int(sheet.cell_value(row, 12)) - \
+                int(sheet.cell_value(row, 14)) - int(sheet.cell_value(row, 15)) - int(sheet.cell_value(
+                    row, 16)) - int(sheet.cell_value(row, 17)) - int(sheet.cell_value(row, 18))
             if major == '융복합시스템공학부 플랜트시스템전공':
                 calculator[3][0] += A
                 calculator[categories[colleague]][1] += B
@@ -61,7 +58,7 @@ for year in range(2010, 2018):
                     continue
                 calculator[categories[colleague]][0] += A
                 calculator[categories[colleague]][1] += B
-                # print(major, B, A)
+                #print(major, B, A, A/B)
             else:
                 print('exception : '+major+' not found')
 
@@ -71,12 +68,15 @@ for year in range(2010, 2018):
             totB += calculator[i][0]
         try:
             tmp = {}
-            tmp['year'] = year
-            tmp['all'] = round(totB/totA, 2)
-            tmp['science'] = round(calculator[2][0] / calculator[2][1], 2)
-            tmp['artphysical'] = round(calculator[4][0] / calculator[4][1], 2)
-            tmp['mech'] = round(calculator[3][0] / calculator[3][1], 2)
-            tmp['society'] = round(calculator[1][0] / calculator[1][1], 2)
+            tmp['year'] = str(year)
+            tmp['all'] = round(totB/totA, 2) * 100
+            tmp['science'] = round(
+                calculator[2][0] / calculator[2][1], 2) * 100
+            tmp['artphysical'] = round(
+                calculator[4][0] / calculator[4][1], 2) * 100
+            tmp['mech'] = round(calculator[3][0] / calculator[3][1], 2) * 100
+            tmp['society'] = round(
+                calculator[1][0] / calculator[1][1], 2) * 100
         except:
             pass
         outj.append(tmp)

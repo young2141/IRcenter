@@ -53,12 +53,13 @@ for year in range(2010, 2018):
             totB += calculator[i][0]
 
         tmp = {}
-        tmp['year'] = year
-        tmp['all'] = round(totB/totA, 2)
-        tmp['science'] = round(calculator[2][0] / calculator[2][1], 2)
-        tmp['artphysical'] = round(calculator[4][0] / calculator[4][1], 2)
-        tmp['mech'] = round(calculator[3][0] / calculator[3][1], 2)
-        tmp['society'] = round(calculator[1][0] / calculator[1][1], 2)
+        tmp['year'] = str(year)
+        tmp['all'] = round(totB/totA, 2) * 100
+        tmp['science'] = round(calculator[2][0] / calculator[2][1], 2) * 100
+        tmp['artphysical'] = round(
+            calculator[4][0] / calculator[4][1], 2) * 100
+        tmp['mech'] = round(calculator[3][0] / calculator[3][1], 2) * 100
+        tmp['society'] = round(calculator[1][0] / calculator[1][1], 2) * 100
 
         outj.append(tmp)
 

@@ -1,82 +1,82 @@
 [
   {
-    "year": 2010,
-    "all": 0.13,
-    "science": 0.16,
-    "artphysical": 0.14,
-    "mech": 0.18,
-    "society": 0.07
+    "year": "2010",
+    "all": 13.0,
+    "science": 16.0,
+    "artphysical": 14.000000000000002,
+    "mech": 18.0,
+    "society": 7.000000000000001
   },
   {
-    "year": 2011,
-    "all": 0.13,
-    "science": 0.16,
-    "artphysical": 0.14,
-    "mech": 0.17,
-    "society": 0.06
+    "year": "2011",
+    "all": 13.0,
+    "science": 16.0,
+    "artphysical": 14.000000000000002,
+    "mech": 17.0,
+    "society": 6.0
   },
   {
-    "year": 2012,
-    "all": 0.12,
-    "science": 0.17,
-    "artphysical": 0.13,
-    "mech": 0.16,
-    "society": 0.06
+    "year": "2012",
+    "all": 12.0,
+    "science": 17.0,
+    "artphysical": 13.0,
+    "mech": 16.0,
+    "society": 6.0
   },
   {
-    "year": 2013,
-    "all": 0.12,
-    "science": 0.17,
-    "artphysical": 0.13,
-    "mech": 0.15,
-    "society": 0.06
+    "year": "2013",
+    "all": 12.0,
+    "science": 17.0,
+    "artphysical": 13.0,
+    "mech": 15.0,
+    "society": 6.0
   },
   {
-    "year": 2014,
-    "all": 0.12,
-    "science": 0.17,
-    "artphysical": 0.13,
-    "mech": 0.15,
-    "society": 0.06
+    "year": "2014",
+    "all": 12.0,
+    "science": 17.0,
+    "artphysical": 13.0,
+    "mech": 15.0,
+    "society": 6.0
   },
   {
-    "year": 2015,
-    "all": 0.12,
-    "science": 0.17,
-    "artphysical": 0.13,
-    "mech": 0.15,
-    "society": 0.06
+    "year": "2015",
+    "all": 12.0,
+    "science": 17.0,
+    "artphysical": 13.0,
+    "mech": 15.0,
+    "society": 6.0
   },
   {
-    "year": 2016,
-    "all": 0.12,
-    "science": 0.17,
-    "artphysical": 0.13,
-    "mech": 0.15,
-    "society": 0.06
+    "year": "2016",
+    "all": 12.0,
+    "science": 17.0,
+    "artphysical": 13.0,
+    "mech": 15.0,
+    "society": 6.0
   },
   {
-    "year": 2017,
-    "all": 0.12,
-    "science": 0.17,
-    "artphysical": 0.13,
-    "mech": 0.15,
-    "society": 0.06
+    "year": "2017",
+    "all": 12.0,
+    "science": 17.0,
+    "artphysical": 13.0,
+    "mech": 15.0,
+    "society": 6.0
   },
   {
-    "year": 2018,
-    "all": 0.12,
-    "science": 0.17,
-    "artphysical": 0.13,
-    "mech": 0.15,
-    "society": 0.06
+    "year": "2018",
+    "all": 12.0,
+    "science": 17.0,
+    "artphysical": 13.0,
+    "mech": 15.0,
+    "society": 6.0
   },
   {
-    "year": 2019,
-    "all": 0.12,
-    "science": 0.17,
-    "artphysical": 0.13,
-    "mech": 0.15,
-    "society": 0.06
+    "year": "2019",
+    "all": 12.0,
+    "science": 17.0,
+    "artphysical": 13.0,
+    "mech": 15.0,
+    "society": 6.0
   }
 ]
