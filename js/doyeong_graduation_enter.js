@@ -1,6 +1,6 @@
 function parsing() {
     var filename = "doyeong_graduation_and_enter.json";
-    var gender = $('input[name="성별"]:checked').val();
+    var gender = $('select[name="성별"]').val();
     gender = gender.toLowerCase();
 
     $.getJSON("../../../json/" + filename, jsonData => {
