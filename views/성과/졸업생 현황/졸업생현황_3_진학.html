@@ -100,6 +100,10 @@
                             <td>
                                 <a href="졸업생현황_6_Explore.html"><span id="black">Explore the data</span></a>
                             </td>
+                            
+                            <td>
+                                <a href="졸업생현황_7_조기졸업.html"><span id="black" style = "font-size: 13px">조기졸업자 및<br>복수전공/부전공이수<br> 졸업자 현황</span></a>
+                            </td>
 
                             <td style="border-style: none; font-size : 30px">
                                 <a href="졸업생현황_4_취업.html">
@@ -119,14 +123,18 @@
 
 
                 <form>
-
-                    <span style="font-size: 20px"><b>성별 검색</b></span><br>
-
-                    <input type="radio" name="성별" value="All" checked="checked" onclick="parsing()" />전체<br>
-                    <input type="radio" name="성별" value="Male" onclick="parsing()" />남자<br>
-                    <input type="radio" name="성별" value="Female" onclick="parsing()" />여자<br>
+                    
+                        <span style="font-size: 20px"><b>성별 검색</b></span><br>
+                        <select id="gender" name="성별" onchange = "parsing()" style="width : 200px; height: 30px">
+                            <option name = "성별" value="All" selected = "selected" onclick="parsing()">(전체)</option>
+                            <option name = "성별" value="Male">남자</option>
+                            <option name = "성별" value="Female">여자</option>
+                            <br><br>
+                        </select>
 
                 </form>
+
+
 
             </div>
             <script>
@@ -145,14 +153,20 @@
             </script>
 
             <div id="summaryBox">
-                <h2>진학</h2>
-
+                <h2>진학자 수</h2>
             </div>
             <div id="unitBox">
                 (단위 : 명)
             </div>
 
             <div id="chartdiv1" class="chartdiv11"></div>
+
+            <div id="summaryBox">
+                <h2>진학률</h2>
+            </div>
+            <div id="unitBox">
+                    (단위 : %)
+            </div>
             <div id="chartdiv2" class="chartdiv11"></div>
 
             <br>
