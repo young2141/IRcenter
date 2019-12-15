@@ -1,11 +1,11 @@
-function drawChart() {
+function drawChart2() {
     am4core.ready(function () {
 
         // Themes begin
         am4core.useTheme(am4themes_animated);
         // Themes end
 
-        var chart = am4core.create("chartdiv", am4charts.XYChart);
+        var chart = am4core.create("chartdiv2", am4charts.XYChart);
         // chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
         // chart.maskBullets = false;
