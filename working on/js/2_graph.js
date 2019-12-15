@@ -4,7 +4,7 @@ function parse(callback) {
   });
 }
 
-function bar_graph(data) {
+function bar_graph(data, college) {
   am4core.ready(function() {
     // Themes begin
     am4core.useTheme(am4themes_animated);
@@ -40,7 +40,8 @@ function bar_graph(data) {
     series.dataFields.valueY = "graduate";
     series.dataFields.categoryX = "year";
     series.name = "졸업자 수";
-    series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/]";
+    series.columns.template.tooltipText =
+      "{categoryX}" + " " + college + " 졸업생 : [bold]{valueY}[/] 명";
     series.columns.template.fillOpacity = 0.8;
 
     var columnTemplate = series.columns.template;
@@ -49,7 +50,7 @@ function bar_graph(data) {
   }); // end am4core.ready()
 }
 
-function line_graph(data) {
+function line_graph(data, college) {
   am4core.ready(function() {
     // Themes begin
     am4core.useTheme(am4themes_animated);
@@ -68,8 +69,8 @@ function line_graph(data) {
 
     // Create value axis
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-    valueAxis.min = 5;
-    valueAxis.max = 8;
+    // valueAxis.min = 5;
+    // valueAxis.max = 8;
 
     // Create series
     var series = chart.series.push(new am4charts.LineSeries());
@@ -87,7 +88,8 @@ function line_graph(data) {
     var bullet = series.bullets.push(new am4charts.CircleBullet());
     bullet.circle.strokeWidth = 15;
     bullet.fill = am4core.color("#00a686");
-    bullet.tooltipText = "평균 졸업소요시간: {valueY}년";
+    bullet.tooltipText =
+      "{categoryX} " + college + " 평균 졸업소요시간: {valueY}년";
   }); // end am4core.ready()
 }
 
@@ -109,9 +111,14 @@ function call() {
 
       data.push(year_data);
     }
+    if (college == "society") college = "인문사회계열의";
+    else if (college == "artphysical") college = "예체능계열의";
+    else if (college == "science") college = "자연과학계열의";
+    else if (college == "mech") college = "공학계열의";
+    else college = "전체";
 
-    bar_graph(data);
-    line_graph(data);
+    bar_graph(data, college);
+    line_graph(data, college);
     //console.log(data);
   });
 }

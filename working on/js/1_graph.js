@@ -105,11 +105,11 @@ function chart1(filename) {
 
   $.getJSON("C:/workspace/IRcenter/working on/json/" + filename, jsonData => {
     result = jsonData;
-    if (filename == "college_rate.json") {
+    if (filename == "college_rate_simple.json") {
       var divName = "divchart1";
       var title = "경쟁률";
       var valueY_RGB = "";
-    } else if (filename == "job_rate.json") {
+    } else if (filename == "job_rate_simple.json") {
       var divName = "divchart2";
       var title = "충원률";
       var valueY_RGB = "";
@@ -131,5 +131,5 @@ function chart1(filename) {
     );
   });
 }
-chart1("college_rate.json");
-chart1("job_rate.json");
+chart1("college_rate_simple.json");
+chart1("job_rate_simple.json");

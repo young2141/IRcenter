@@ -6,27 +6,54 @@ import re
 from pprint import pprint
 
 
-json_data = open('working on/sort.json', encoding='utf-8').read()
+json_data = open('working on/parser/sort.json', encoding='utf-8').read()
 sorter = json.loads(json_data)
 categories = {
-    "인문사회계열": 1,  # "society"
-    "자연과학계열": 2,  # "science"
-    "공학계열": 3,  # "mech"
-    "예체능계열":  4  # "artphysical"
+    "인문사회계열": "society",  # "society"
+    "자연과학계열": "science",  # "science"
+    "공학계열": "mech",  # "mech"
+    "예체능계열": "artphysical",  # "artphysical"
+    "의학계열": "의학계열"
 }
-ex = {
-    "year": "2011",
-    "all": 7.99,
-    "science": 6.94,
-    "artphysical": 7.23,
-    "mech": 6.06,
-    "society": 9.8
-}
+
 outj = []
-calculator = [[0 for _ in range(2)] for _ in range(5)]
+
 
 for year in range(2010, 2018):
     print(year)
+    calculator = {
+        "all": {
+            "maleA": 0,
+            "maleB": 0,
+            "femaleA": 0,
+            "femaleB": 0
+        },
+        "science": {
+            "maleA": 0,
+            "maleB": 0,
+            "femaleA": 0,
+            "femaleB": 0
+        },
+        "artphysical": {
+            "maleA": 0,
+            "maleB": 0,
+            "femaleA": 0,
+            "femaleB": 0
+        },
+        "mech": {
+            "maleA": 0,
+            "maleB": 0,
+            "femaleA": 0,
+            "femaleB": 0
+        },
+        "society": {
+            "maleA": 0,
+            "maleB": 0,
+            "femaleA": 0,
+            "femaleB": 0
+        },
+    }
+
     if year >= 2011:
         starter = 4
     else:
@@ -42,43 +69,109 @@ for year in range(2010, 2018):
             if m:
                 major = m.group(1)[:-1]
 
-            # print(major)
-            A = int(sheet.cell_value(row, 9)) + int(sheet.cell_value(row, 10))
+            # print(major) mil = 15
+            A = int(sheet.cell_value(row, 9)) + int(sheet.cell_value(row, 10)) + \
+                int(sheet.cell_value(row, 11)) + int(sheet.cell_value(row, 12))
 
-            B = int(sheet.cell_value(row, 7)) + int(sheet.cell_value(row, 8)) - int(sheet.cell_value(row, 13)) - int(sheet.cell_value(row, 11)) - int(sheet.cell_value(row, 12)) - \
+            B = int(sheet.cell_value(row, 7)) + int(sheet.cell_value(row, 8)) - int(sheet.cell_value(row, 13)) -\
                 int(sheet.cell_value(row, 14)) - int(sheet.cell_value(row, 15)) - int(sheet.cell_value(
                     row, 16)) - int(sheet.cell_value(row, 17)) - int(sheet.cell_value(row, 18))
-            if major == '융복합시스템공학부 플랜트시스템전공':
-                calculator[3][0] += A
-                calculator[categories[colleague]][1] += B
 
             if major in sorter:
-                colleague = sorter[major]
+                colleague = categories[sorter[major]]
                 if colleague == '의학계열':
                     continue
-                calculator[categories[colleague]][0] += A
-                calculator[categories[colleague]][1] += B
+                if year == 2010:
+                    calculator[colleague]['maleA'] += int(
+                        sheet.cell_value(row, 9))
+                    calculator[colleague]['femaleA'] += int(
+                        sheet.cell_value(row, 10))
+                    calculator["all"]['maleA'] += int(
+                        sheet.cell_value(row, 9))
+                    calculator["all"]['femaleA'] += int(
+                        sheet.cell_value(row, 10))
+                    calculator[colleague]['maleB'] += int(sheet.cell_value(row, 7)) - int(sheet.cell_value(row, 11)) - int(sheet.cell_value(row, 13)) - int(sheet.cell_value(
+                        row, 15)) - int(sheet.cell_value(row, 16)) - int(sheet.cell_value(row, 18))/2
+                    calculator[colleague]['femaleB'] += int(sheet.cell_value(row, 8)) - int(sheet.cell_value(row, 12)) - int(
+                        sheet.cell_value(row, 17)) - int(sheet.cell_value(row, 15)) - int(sheet.cell_value(row, 18))/2
+                    calculator["all"]['maleB'] += int(sheet.cell_value(row, 7)) - int(sheet.cell_value(row, 11)) - int(sheet.cell_value(row, 13)) - int(sheet.cell_value(
+                        row, 15)) - int(sheet.cell_value(row, 16)) - int(sheet.cell_value(row, 18))/2
+                    calculator["all"]['femaleB'] += int(sheet.cell_value(row, 8)) - int(sheet.cell_value(row, 12)) - int(
+                        sheet.cell_value(row, 17)) - int(sheet.cell_value(row, 15)) - int(sheet.cell_value(row, 18))/2
+
+                elif year == 2011:
+                    calculator[colleague]['maleA'] += int(
+                        sheet.cell_value(row, 9)) + int(sheet.cell_value(row, 11))
+                    calculator[colleague]['femaleA'] += int(
+                        sheet.cell_value(row, 10)) + int(sheet.cell_value(row, 12))
+                    calculator[colleague]['maleB'] += int(sheet.cell_value(row, 7)) - int(sheet.cell_value(row, 13)) - int(sheet.cell_value(
+                        row, 15)) - int(sheet.cell_value(row, 16)) - int(sheet.cell_value(row, 18)) - int(sheet.cell_value(row, 20))
+                    calculator[colleague]['femaleB'] += int(sheet.cell_value(row, 8)) - int(sheet.cell_value(row, 14)) - int(
+                        sheet.cell_value(row, 17)) - int(sheet.cell_value(row, 19)) - int(sheet.cell_value(row, 21))
+
+                    calculator["all"]['maleA'] += int(
+                        sheet.cell_value(row, 9)) + int(sheet.cell_value(row, 11))
+                    calculator["all"]['femaleA'] += int(
+                        sheet.cell_value(row, 10)) + int(sheet.cell_value(row, 12))
+                    calculator["all"]['maleB'] += int(sheet.cell_value(row, 7)) - int(sheet.cell_value(row, 13)) - int(sheet.cell_value(
+                        row, 15)) - int(sheet.cell_value(row, 16)) - int(sheet.cell_value(row, 18)) - int(sheet.cell_value(row, 20))
+                    calculator["all"]['femaleB'] += int(sheet.cell_value(row, 8)) - int(sheet.cell_value(row, 14)) - int(
+                        sheet.cell_value(row, 17)) - int(sheet.cell_value(row, 19)) - int(sheet.cell_value(row, 21))
+
+                else:
+                    calculator[colleague]['maleA'] += int(sheet.cell_value(row, 9)) + int(sheet.cell_value(row, 11)) + int(sheet.cell_value(
+                        row, 13)) + int(sheet.cell_value(row, 15)) + int(sheet.cell_value(row, 17)) + int(sheet.cell_value(row, 19))
+                    calculator[colleague]['femaleA'] += int(sheet.cell_value(row, 10)) + int(sheet.cell_value(row, 12)) + int(
+                        sheet.cell_value(row, 14)) + int(sheet.cell_value(row, 16)) + int(sheet.cell_value(row, 18)) + int(sheet.cell_value(row, 20))
+                    calculator[colleague]['maleB'] += int(sheet.cell_value(row, 7)) - int(sheet.cell_value(row, 21)) - int(sheet.cell_value(
+                        row, 23)) - int(sheet.cell_value(row, 24)) - int(sheet.cell_value(row, 26)) - int(sheet.cell_value(row, 28))
+                    calculator[colleague]['femaleB'] += int(sheet.cell_value(row, 8)) - int(sheet.cell_value(row, 22)) - int(sheet.cell_value(
+                        row, 25)) - int(sheet.cell_value(row, 27)) - int(sheet.cell_value(row, 29))
+                    calculator["all"]['maleA'] += int(sheet.cell_value(row, 9)) + int(sheet.cell_value(row, 11)) + int(sheet.cell_value(
+                        row, 13)) + int(sheet.cell_value(row, 15)) + int(sheet.cell_value(row, 17)) + int(sheet.cell_value(row, 19))
+                    calculator["all"]['femaleA'] += int(sheet.cell_value(row, 10)) + int(sheet.cell_value(row, 12)) + int(
+                        sheet.cell_value(row, 14)) + int(sheet.cell_value(row, 16)) + int(sheet.cell_value(row, 18)) + int(sheet.cell_value(row, 20))
+                    calculator["all"]['maleB'] += int(sheet.cell_value(row, 7)) - int(sheet.cell_value(row, 21)) - int(sheet.cell_value(
+                        row, 23)) - int(sheet.cell_value(row, 24)) - int(sheet.cell_value(row, 26)) - int(sheet.cell_value(row, 28))
+                    calculator["all"]['femaleB'] += int(sheet.cell_value(row, 8)) - int(sheet.cell_value(row, 22)) - int(sheet.cell_value(
+                        row, 25)) - int(sheet.cell_value(row, 27)) - int(sheet.cell_value(row, 29))
                 #print(major, B, A, A/B)
             else:
                 print('exception : '+major+' not found')
+        pprint(calculator)
+        tmp = {
+            "all": {
+                "all": 0,
+                "male": 0,
+                "female": 0},
+            "science": {
+                "all": 0,
+                "male": 0,
+                "female": 0},
+            "artphysical": {
+                "all": 0,
+                "male": 0,
+                "female": 0},
+            "mech": {
+                "all": 0,
+                "male": 0,
+                "female": 0},
+            "society": {
+                "all": 0,
+                "male": 0,
+                "female": 0},
+        }
 
-        totA = totB = 0
-        for i in range(1, 5):
-            totA += calculator[i][1]
-            totB += calculator[i][0]
-        try:
-            tmp = {}
-            tmp['year'] = str(year)
-            tmp['all'] = round(totB/totA, 2) * 100
-            tmp['science'] = round(
-                calculator[2][0] / calculator[2][1], 2) * 100
-            tmp['artphysical'] = round(
-                calculator[4][0] / calculator[4][1], 2) * 100
-            tmp['mech'] = round(calculator[3][0] / calculator[3][1], 2) * 100
-            tmp['society'] = round(
-                calculator[1][0] / calculator[1][1], 2) * 100
-        except:
-            pass
+        for cat in tmp:
+            for sex in tmp[cat]:
+                if sex == 'all':
+                    tmp[cat][sex] = round((calculator[cat]['maleA'] + calculator[cat]['femaleA']) / (
+                        calculator[cat]['maleB'] + calculator[cat]['femaleB']) * 100, 2)
+                else:
+                    tmp[cat][sex] = round(
+                        calculator[cat][sex+'A'] / calculator[cat][sex+'B'] * 100, 2)
+
+        tmp['year'] = str(year)
         outj.append(tmp)
 
 with open('job_rate.json', 'w') as f:

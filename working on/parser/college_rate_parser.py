@@ -2,30 +2,55 @@
 import os
 import xlrd
 import json
+import re
 from pprint import pprint
 
 
-json_data = open('working on/sort.json', encoding='utf-8').read()
+json_data = open('working on/parser/sort.json', encoding='utf-8').read()
 sorter = json.loads(json_data)
 categories = {
-    "인문사회계열": 1,  # "society"
-    "자연과학계열": 2,  # "science"
-    "공학계열": 3,  # "mech"
-    "예체능계열":  4  # "artphysical"
-}
-ex = {
-    "year": "2011",
-    "all": 7.99,
-    "science": 6.94,
-    "artphysical": 7.23,
-    "mech": 6.06,
-    "society": 9.8
+    "인문사회계열": "society",  # "society"
+    "자연과학계열": "science",  # "science"
+    "공학계열": "mech",  # "mech"
+    "예체능계열": "artphysical",  # "artphysical"
+    "의학계열": "의학계열"
 }
 outj = []
-calculator = [[0 for _ in range(2)] for _ in range(5)]
 
 
 for year in range(2010, 2018):
+    calculator = {
+        "all": {
+            "maleA": 0,
+            "maleB": 0,
+            "femaleA": 0,
+            "femaleB": 0
+        },
+        "science": {
+            "maleA": 0,
+            "maleB": 0,
+            "femaleA": 0,
+            "femaleB": 0
+        },
+        "artphysical": {
+            "maleA": 0,
+            "maleB": 0,
+            "femaleA": 0,
+            "femaleB": 0
+        },
+        "mech": {
+            "maleA": 0,
+            "maleB": 0,
+            "femaleA": 0,
+            "femaleB": 0
+        },
+        "society": {
+            "maleA": 0,
+            "maleB": 0,
+            "femaleA": 0,
+            "femaleB": 0
+        },
+    }
     if year >= 2014:
         starter = 4
     else:
@@ -36,31 +61,64 @@ for year in range(2010, 2018):
         n = sheet.nrows
         for row in range(starter, n):
             major = sheet.cell_value(row, 4)
-            A = int(sheet.cell_value(row, 7)) + int(sheet.cell_value(row, 8))
-            B = int(sheet.cell_value(row, 9)) + int(sheet.cell_value(row, 10))
+            p = re.compile(r'([ 가-힣|(|)|,|・|.|/a-zA-Z]*)([\d]+)')
+            m = p.match(major)
+            if m:
+                major = m.group(1)[:-1]
 
             if major in sorter:
-                colleague = sorter[major]
+                colleague = categories[sorter[major]]
                 if colleague == '의학계열':
                     continue
-                calculator[categories[colleague]][0] += B
-                calculator[categories[colleague]][1] += A
-                #print(major, B, A)
 
-        totA = totB = 0
-        for i in range(1, 5):
-            totA += calculator[i][1]
-            totB += calculator[i][0]
+                calculator[colleague]['maleA'] += int(sheet.cell_value(row, 7))
+                calculator[colleague]['maleB'] += int(sheet.cell_value(row, 9))
+                calculator[colleague]['femaleA'] += int(
+                    sheet.cell_value(row, 8))
+                calculator[colleague]['femaleB'] += int(
+                    sheet.cell_value(row, 10))
+                calculator['all']['maleA'] += int(sheet.cell_value(row, 7))
+                calculator['all']['maleB'] += int(sheet.cell_value(row, 9))
+                calculator['all']['femaleA'] += int(
+                    sheet.cell_value(row, 8))
+                calculator['all']['femaleB'] += int(
+                    sheet.cell_value(row, 10))
 
-        tmp = {}
+        pprint(calculator)
+
+        tmp = {
+            "all": {
+                "all": 0,
+                "male": 0,
+                "female": 0},
+            "science": {
+                "all": 0,
+                "male": 0,
+                "female": 0},
+            "artphysical": {
+                "all": 0,
+                "male": 0,
+                "female": 0},
+            "mech": {
+                "all": 0,
+                "male": 0,
+                "female": 0},
+            "society": {
+                "all": 0,
+                "male": 0,
+                "female": 0},
+        }
+
+        for cat in tmp:
+            for sex in tmp[cat]:
+                if sex == 'all':
+                    tmp[cat][sex] = round((calculator[cat]['maleB'] + calculator[cat]['femaleB']) / (
+                        calculator[cat]['maleA'] + calculator[cat]['femaleA']) * 100, 2)
+                else:
+                    tmp[cat][sex] = round(
+                        calculator[cat][sex+'B'] / calculator[cat][sex+'A'] * 100, 2)
+
         tmp['year'] = str(year)
-        tmp['all'] = round(totB/totA, 2) * 100
-        tmp['science'] = round(calculator[2][0] / calculator[2][1], 2) * 100
-        tmp['artphysical'] = round(
-            calculator[4][0] / calculator[4][1], 2) * 100
-        tmp['mech'] = round(calculator[3][0] / calculator[3][1], 2) * 100
-        tmp['society'] = round(calculator[1][0] / calculator[1][1], 2) * 100
-
         outj.append(tmp)
 
 with open('college_rate.json', 'w') as f:
