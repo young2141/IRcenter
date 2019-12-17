@@ -13,15 +13,19 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-
+    <script src="../../../js/doyeong_graduation_status_pie.js"></script>
 
 </head>
 
 <style type="text/css">
     @import url('../../../css/output_default.css');
     .chartdiv11 {
-        width: 1000px;
-        height: 200px;
+        width: 40%;
+        height: 300px;
+        display : inline-block;
+        /*float : left; */
+        padding-right : 20px;
+        padding-bottom : 40px;
     }
     .chartdiv22 {
         width: 1000px;
@@ -39,7 +43,7 @@
     }
 </style>
 
-<body onload="loading()">
+<body>
     <div class="box1" id="wrapper">
         <form class>
             <br>
@@ -131,7 +135,7 @@
                 <script>
                     function valuechange(value) {
                         document.getElementById('span1').innerHTML = (value - 4) + "~" + (value);
-                        parsing1();
+                        parsing();
                     }
                     function decrease() {
                         current_value = document.getElementById('years').value
@@ -173,9 +177,15 @@
         </div>
 		<div id = "unitBox">
 		(단위 : 명)
-		</div>
+        </div>
 
         <br>
+
+        <div class = "chartdiv11" id="chartdiv1"></div>
+        <div class = "chartdiv11" id="chartdiv2"></div>
+        <div class = "chartdiv11" id="chartdiv3"></div>
+        <div class = "chartdiv11" id="chartdiv4"></div>
+        <div class = "chartdiv11" id="chartdiv5"></div>
 
 
         <div id="summaryBox" style="font-size: 15px">
@@ -206,6 +216,8 @@
 
         </div>
     </div>
+
+    <script>parsing();</script>
 
 </body>
 

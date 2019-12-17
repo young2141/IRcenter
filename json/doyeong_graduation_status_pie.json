@@ -1,0 +1,92 @@
+[
+	{
+		"category": "2010",
+		"enter": 535,
+		"employment": 1819,
+		"millitary": 6,
+		"foreign": 38,
+		"etc": 1629,
+		"exception": 34
+	},
+	{
+		"category": "2011",
+		"enter": 528,
+		"employment": 2173,
+		"millitary": 19,
+		"foreign": 90,
+		"etc": 1507,
+		"exception": 19
+	},
+	{
+		"category": "2012",
+		"enter": 1560,
+		"employment": 6368,
+		"millitary": 62,
+		"foreign": 404,
+		"etc": 4364,
+		"exception": 95
+	},
+	{
+		"category": "2013",
+		"enter": 1750,
+		"employment": 7199,
+		"millitary": 70,
+		"foreign": 589,
+		"etc": 6094,
+		"exception": 129
+	},
+	{
+		"category": "2014",
+		"enter": 1634,
+		"employment": 7010,
+		"millitary": 63,
+		"foreign": 608,
+		"etc": 6194,
+		"exception": 131
+	},
+	{
+		"category": "2015",
+		"enter": 1664,
+		"employment": 6666,
+		"millitary": 57,
+		"foreign": 460,
+		"etc": 6368,
+		"exception": 19
+	},
+	{
+		"category": "2016",
+		"enter": 525,
+		"employment": 2352,
+		"millitary": 28,
+		"foreign": 100,
+		"etc": 1967,
+		"exception": 26
+	},
+	{
+		"category": "2017",
+		"enter": 474,
+		"employment": 2410,
+		"millitary": 26,
+		"foreign": 80,
+		"etc": 2113,
+		"exception": 27
+	},
+	{
+		"category": "2018",
+		"enter": 474,
+		"employment": 4010,
+		"millitary": 26,
+		"foreign": 80,
+		"etc": 3613,
+		"exception": 27
+	},
+	{
+		"category": "2019",
+		"enter": 474,
+		"employment": 2590,
+		"millitary": 26,
+		"foreign": 80,
+		"etc": 1203,
+		"exception": 27
+	}
+]
