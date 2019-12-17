@@ -1,0 +1,74 @@
+[
+	{
+		"category": "2010",
+		"employment_number_all": 1819,
+		"employment_number_male": 1183,
+		"employment_number_female": 636,
+		"employment_percentage_all": 52.8,
+		"employment_percentage_male": 64.2,
+		"employment_percentage_female": 40.5
+	},
+	{
+		"category": "2011",
+		"employment_number_all": 2173,
+		"employment_number_male": 1440,
+		"employment_number_female": 733,
+		"employment_percentage_all": 57.5,
+		"employment_percentage_male": 76.4,
+		"employment_percentage_female": 39.5
+	},
+	{
+		"category": "2012",
+		"employment_number_all": 6362,
+		"employment_number_male": 4211,
+		"employment_number_female": 2151,
+		"employment_percentage_all": 49.3,
+		"employment_percentage_male": 58.1,
+		"employment_percentage_female": 38.0
+	},
+	{
+		"category": "2013",
+		"employment_number_all": 7194,
+		"employment_number_male": 4999,
+		"employment_number_female": 2195,
+		"employment_percentage_all": 45.2,
+		"employment_percentage_male": 52.4,
+		"employment_percentage_female": 34.5
+	},
+	{
+		"category": "2014",
+		"employment_number_all": 7005,
+		"employment_number_male": 4786,
+		"employment_number_female": 2219,
+		"employment_percentage_all": 44.5,
+		"employment_percentage_male": 50.5,
+		"employment_percentage_female": 35.4
+	},
+	{
+		"category": "2015",
+		"employment_number_all": 6660,
+		"employment_number_male": 4380,
+		"employment_number_female": 2280,
+		"employment_percentage_all": 43.4,
+		"employment_percentage_male": 48.5,
+		"employment_percentage_female": 36.2
+	},
+	{
+		"category": "2016",
+		"employment_number_all": 2344,
+		"employment_number_male": 1517,
+		"employment_number_female": 827,
+		"employment_percentage_all": 45.7,
+		"employment_percentage_male": 50.7,
+		"employment_percentage_female": 38.7
+	},
+	{
+		"category": "2017",
+		"employment_number_all": 2406,
+		"employment_number_male": 1550,
+		"employment_number_female": 856,
+		"employment_percentage_all": 45.7,
+		"employment_percentage_male": 50.6,
+		"employment_percentage_female": 39.2
+	}
+]

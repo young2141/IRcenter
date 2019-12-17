@@ -1,0 +1,74 @@
+[
+	{
+		"category": "2010",
+		"enter_number_all": 535,
+		"enter_number_male": 303,
+		"enter_number_female": 232,
+		"enter_percentage_all": 13.2,
+		"enter_percentage_male": 13.8,
+		"enter_percentage_female": 12.5
+	},
+	{
+		"category": "2011",
+		"enter_number_all": 528,
+		"enter_number_male": 309,
+		"enter_number_female": 219,
+		"enter_percentage_all": 12.1,
+		"enter_percentage_male": 12.6,
+		"enter_percentage_female": 11.5
+	},
+	{
+		"category": "2012",
+		"enter_number_all": 517,
+		"enter_number_male": 303,
+		"enter_number_female": 214,
+		"enter_percentage_all": 12.0,
+		"enter_percentage_male": 12.6,
+		"enter_percentage_female": 11.3
+	},
+	{
+		"category": "2013",
+		"enter_number_all": 611,
+		"enter_number_male": 376,
+		"enter_number_female": 235,
+		"enter_percentage_all": 10.5,
+		"enter_percentage_male": 10.5,
+		"enter_percentage_female": 10.5
+	},
+	{
+		"category": "2014",
+		"enter_number_all": 525,
+		"enter_number_male": 323,
+		"enter_number_female": 202,
+		"enter_percentage_all": 10.5,
+		"enter_percentage_male": 10.9,
+		"enter_percentage_female": 10.0
+	},
+	{
+		"category": "2015",
+		"enter_number_all": 557,
+		"enter_number_male": 334,
+		"enter_number_female": 223,
+		"enter_percentage_all": 10.8,
+		"enter_percentage_male": 11.0,
+		"enter_percentage_female": 10.4
+	},
+	{
+		"category": "2016",
+		"enter_number_all": 525,
+		"enter_number_male": 316,
+		"enter_number_female": 209,
+		"enter_percentage_all": 10.1,
+		"enter_percentage_male": 10.5,
+		"enter_percentage_female": 9.7
+	},
+	{
+		"category": "2017",
+		"enter_number_all": 474,
+		"enter_number_male": 287,
+		"enter_number_female": 187,
+		"enter_percentage_all": 8.9,
+		"enter_percentage_male": 9.2,
+		"enter_percentage_female": 8.4
+	}
+]

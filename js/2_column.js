@@ -33,7 +33,7 @@
 }
 
 async function drawColumnChart(_data, _cnt, _year) {
-  am4core.ready(function() {
+  am4core.ready(function () {
     am4core.useTheme(am4themes_animated);
     am4core.useTheme(am4themes_material);
     var chart = am4core.create("chartdiv1-" + String(_cnt), am4charts.XYChart);
@@ -84,18 +84,27 @@ function createSeries1(_chart, _year) {
   series.columns.template.tooltipText =
     "[#000]" +
     String(_year) +
-    "년도 {categoryX} 신입생은 [bold]{valueY}명[] 입니다.";
+    "학년도 전체 신입생 중 {full_name} 출신은 [bold]{valueY}명[] 입니다.";
   series.columns.template.fillOpacity = 0.8;
-  series.columns.template.adapter.add("fill", function(fill, target) {
-    if (target.dataItem.categoryX == "일반고") return am4core.color("#ff3d00");
-    else if (target.dataItem.categoryX == "특수목적고")
+  series.columns.template.adapter.add("fill", function (fill, target) {
+    if (target.dataItem.categoryX == "일반고") {
+      return am4core.color("#ff3d00");
+    }
+    else if (target.dataItem.categoryX == "특수목적고") {
       return am4core.color("#ef5350");
-    else if (target.dataItem.categoryX == "특성화고")
+    }
+
+    else if (target.dataItem.categoryX == "특성화고") {
       return am4core.color("#ff7f27");
-    else if (target.dataItem.categoryX == "자율고")
+    }
+
+    else if (target.dataItem.categoryX == "자율고") {
       return am4core.color("#ffc102");
-    else if (target.dataItem.categoryX == "기타")
+    }
+
+    else if (target.dataItem.categoryX == "기타") {
       return am4core.color("#fdf5bc");
+    }
   });
   series.columns.template.stroke = "#ffffff";
 

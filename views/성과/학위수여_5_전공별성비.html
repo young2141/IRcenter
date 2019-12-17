@@ -151,10 +151,10 @@
 					<label for='phd'>박사</label><br><br>
 
 					<span style="font-size: 20px"><b>성별 검색</b></span><br>
-					<select id="select_gender" onchange="clickFormSelection('select', id, this.value)" name="menu"
+					<select id="select_gender" onchange="clickFormSelection('select', id, this.value), Change()" name="menu"
 						style="width : 200px; height: 30px">
 						<option value="man" id="T1" selected="selected">남자</option>
-						<option value="woman" id="T2" onclick="Change()">여자</option>
+						<option value="woman" id="T2">여자</option>
 					</select><br><br>
 
 					<span style="font-size: 20px"><b>전공별 검색</b></span><br>
@@ -190,9 +190,13 @@
 
 			<script>
 				function Change() {
-					//var temp = document.getElementById("T2");
+					val = $("#select_gender option:selected").val();
 					var Target1 = document.getElementById("P1");
-					Target1.innerHTML = "여자"
+					if(val == 'woman')
+						Target1.innerHTML = "여자";
+
+					if(val == 'man')
+						Target1.innerHTML = "남자";
 				}
 			</script>
 

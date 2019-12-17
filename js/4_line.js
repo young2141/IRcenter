@@ -28,7 +28,7 @@ function parsing2(_year, _condition1, _condition2, _data1, _data2) {
 }
 
 function drawLineChart(_data1, _data2, _condition1, _condition2) {
-  am4core.ready(function() {
+  am4core.ready(function () {
     am4core.useTheme(am4themes_animated);
     am4core.useTheme(am4themes_material);
     // Create chart instance

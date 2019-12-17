@@ -1,4 +1,4 @@
-function drawChart2_2() {
+function drawChart2_1() {
     am4core.ready(function () {
 
         // Themes begin
@@ -6,7 +6,7 @@ function drawChart2_2() {
         // Themes end
 
         // Create chart instance
-        var chart = am4core.create("chartdiv2_2", am4charts.XYChart);
+        var chart = am4core.create("chartdiv2_1", am4charts.XYChart);
 
         // Add data
         chart.data = [{

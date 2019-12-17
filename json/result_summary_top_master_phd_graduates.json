@@ -1,42 +1,62 @@
 [
-    {
-        "major": "전자공학부",
-        "value": 92
-    },
-    {
-        "major": "컴퓨터학부",
-        "value": 51
-    },
-    {
-        "major": "의학과",
-        "value": 39
-    },
-    {
-        "major": "생명과학부",
-        "value": 38
-    },
-    {
-        "major": "교육학과",
-        "value": 35
-    },
-    {
-        "major": "의과학과",
-        "value": 35
-    },
-    {
-        "major": "경영학부",
-        "value": 34
-    },
-    {
-        "major": "기계공학부",
-        "value": 32
-    },
-    {
-        "major": "환경에너지공학전공",
-        "value": 28
-    },
-    {
-        "major": "치의학과",
-        "value": 24
-    }
+  {
+    "major": "전자공학부",
+    "All": 92,
+    "Male": 61,
+    "Female": 30
+  },
+  {
+    "major": "컴퓨터학부",
+    "All": 51,
+    "Male": 31,
+    "Female": 20
+  },
+  {
+    "major": "의학과",
+    "All": 39,
+    "Male": 20,
+    "Female": 19
+  },
+  {
+    "major": "생명과학부",
+    "All": 38,
+    "Male": 19,
+    "Female": 19
+  },
+  {
+    "major": "교육학과",
+    "All": 35,
+    "Male": 18,
+    "Female": 17
+  },
+  {
+    "major": "의과학과",
+    "All": 35,
+    "Male": 20,
+    "Female": 15
+  },
+  {
+    "major": "경영학부",
+    "All": 34,
+    "Male": 24,
+    "Female": 10
+  },
+  {
+    "major": "기계공학부",
+    "All": 32,
+    "Male": 18,
+    "Female": 14
+  },
+  {
+    "major": "환경에너지공학전공",
+    "All": 28,
+    "Male": 10,
+    "Female": 18
+  },
+  {
+    "major": "치의학과",
+    "All": 24,
+    "Male": 8,
+    "Female": 16
+  }
 ]

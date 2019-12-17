@@ -2,8 +2,21 @@ function parsing() {
     var year = document.getElementById("years").value;
     var type = $('input:radio[name=학위]:checked').val();
     var gender = $('#gender option:selected').val();
-    var filename = "4_" + year + "_degree.json";
     var college = $('#college option:selected').val();
+    var filename = "4_" + year + "_degree.json";
+
+    console.log(gender, college, type);
+    var tooltipText = String(year) + "학년도 {categoryY} ";
+    if (gender == "man") tooltipText += "남자 ";
+    else if (gender == "woman") tooltipText += "여자 ";
+
+    if (type == "bachelor") tooltipText += "학사 ";
+    else if (type == "master") tooltipText += "석사 ";
+    else tooltipText += "박사 ";
+
+    tooltipText += "학위수여자는 [bold]{valueX}명[/]입니다."
+
+
 
     $.getJSON("../../json/" + filename, (jsonData) => {
         var data = [];
@@ -16,16 +29,17 @@ function parsing() {
             temp["value"] = jsonData[i][type + "_" + gender];
             data.push(temp);
         }
+        console.log(data);
         data.sort((a, b) => {
             return a.value > b.value ? -1 : a.value < b.value ? 1 : 0;
         });
         data = data.slice(0, 20);
         data.reverse();
-        drawHorizontalChart(data);
+        drawHorizontalChart(data, tooltipText);
     })
 }
 
-function drawHorizontalChart(_data) {
+function drawHorizontalChart(_data, _tooltipText) {
     am4core.ready(function () {
 
         // Themes begin
@@ -35,7 +49,6 @@ function drawHorizontalChart(_data) {
         // Create chart instance
         var chart = am4core.create("chartdiv", am4charts.XYChart);
         chart.data = _data;
-        console.log(_data);
 
         // Create axes
         var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
@@ -50,7 +63,7 @@ function drawHorizontalChart(_data) {
         var series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.valueX = "value";
         series.dataFields.categoryY = "category";
-        series.columns.template.tooltipText = "{categoryY}: [bold]{valueX}[/]";
+        series.columns.template.tooltipText = _tooltipText;
         series.columns.template.strokeWidth = 0;
         series.columns.template.adapter.add("fill", function (fill, target) {
             if (target.dataItem) {

@@ -99,7 +99,7 @@ function calld3(type, year, picked) {
       })
       .append("g")
       .attr("class", "node")
-      .attr("opacity", ".5")
+      .attr("opacity", ".7")
       .attr("id", function(d) {
         var s = d.data.Name;
         var ne = "";
@@ -122,7 +122,14 @@ function calld3(type, year, picked) {
           .duration(50)
           .style("opacity", 1);
         div
-          .html("학문 : " + d.data.Name + "</br>" + "인원 : " + d.data.Count)
+          .html(
+            year +
+              "학년도 " +
+              d.data.Name +
+              "는 " +
+              d3.format(",")(d.data.Count) +
+              "명 입니다."
+          )
           .style("left", d3.event.pageX + 10 + "px")
           .style("top", d3.event.pageY - 10 + "px");
       })

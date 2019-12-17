@@ -1,7 +1,10 @@
 function parse(callback) {
-  $.getJSON("../../../Undergraduate Graduation Rates/dummy.json", json => {
-    callback(json);
-  });
+  $.getJSON(
+    "../../../json/졸업생 현황/dummy_for_graduation_rate.json",
+    json => {
+      callback(json);
+    }
+  );
 }
 
 function runGraph(show) {
@@ -12,12 +15,12 @@ function runGraph(show) {
       // Themes end
 
       var chart = am4core.create("chartdiv", am4charts.XYChart);
+
       chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
       chart.data = json;
 
       chart.colors.step = 2;
       chart.padding(30, 30, 10, 30);
-      chart.legend = new am4charts.Legend();
 
       var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
       categoryAxis.dataFields.category = "year";
@@ -46,7 +49,6 @@ function runGraph(show) {
       var bullet1 = series1.bullets.push(new am4charts.LabelBullet());
       bullet1.interactionsEnabled = true;
       bullet1.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
-      bullet1.label.fill = am4core.color("#ffffff");
       bullet1.locationY = 0.5;
       bullet1.label.adapter.add("textOutput", function(text, target) {
         // Hide labels with 0 value
@@ -72,7 +74,6 @@ function runGraph(show) {
       bullet2.interactionsEnabled = false;
       bullet2.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
       bullet2.locationY = 0.5;
-      bullet2.label.fill = am4core.color("#ffffff");
       bullet2.label.adapter.add("textOutput", function(text, target) {
         // Hide labels with 0 value
         if (target.dataItem && parseInt(target.dataItem.valueY) < show) {
@@ -97,7 +98,6 @@ function runGraph(show) {
       bullet3.interactionsEnabled = false;
       bullet3.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
       bullet3.locationY = 0.5;
-      bullet3.label.fill = am4core.color("#ffffff");
       bullet3.label.adapter.add("textOutput", function(text, target) {
         // Hide labels with 0 value
         if (target.dataItem && parseInt(target.dataItem.valueY) < show) {
@@ -122,7 +122,6 @@ function runGraph(show) {
       bullet4.interactionsEnabled = false;
       bullet4.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
       bullet4.locationY = 0.5;
-      bullet4.label.fill = am4core.color("#ffffff");
       bullet4.label.adapter.add("textOutput", function(text, target) {
         // Hide labels with 0 value
         if (target.dataItem && parseInt(target.dataItem.valueY) < show) {
@@ -147,7 +146,6 @@ function runGraph(show) {
       bullet5.interactionsEnabled = false;
       bullet5.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
       bullet5.locationY = 0.5;
-      bullet5.label.fill = am4core.color("#ffffff");
       bullet5.label.adapter.add("textOutput", function(text, target) {
         if (target.dataItem && parseInt(target.dataItem.valueY) < show) {
           return "";
@@ -171,7 +169,6 @@ function runGraph(show) {
       bullet6.interactionsEnabled = false;
       bullet6.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
       bullet6.locationY = 0.5;
-      bullet6.label.fill = am4core.color("#ffffff");
       bullet6.label.adapter.add("textOutput", function(text, target) {
         // Hide labels with 0 value
         if (target.dataItem && parseInt(target.dataItem.valueY) < show) {
