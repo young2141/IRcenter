@@ -1,4 +1,4 @@
-function drawChart() {
+function drawChart2_2() {
     am4core.ready(function () {
 
         // Themes begin
@@ -6,28 +6,31 @@ function drawChart() {
         // Themes end
 
         // Create chart instance
-        var chart = am4core.create("chartdiv", am4charts.XYChart);
+        var chart = am4core.create("chartdiv2_2", am4charts.XYChart);
 
         // Add data
         chart.data = [{
-            "Employed Full-Time": 88,
-            "Seeking Employment": 12,
-            "x": "2+ Internships"
+            "구직 활동중": 10,
+            "정규직 고용": 90,
+            "x": "졸업 6개월 전"
         }, {
-            "Employed Full-Time": 75,
-            "Seeking Employment": 25,
-            "x": "1+ Internships"
+            "구직 활동중": 25,
+            "정규직 고용": 75,
+            "x": "졸업 3-6개월 전"
         }, {
-            "Employed Full-Time": 61,
-            "Seeking Employment": 39,
-            "x": "0 Internships"
+            "구직 활동중": 37,
+            "정규직 고용": 63,
+            "x": "졸업 3개월 전"
+        },{
+            "구직 활동중": 10,
+            "정규직 고용": 90,
+            "x": "졸업 후 또는 구직활동 미시작"
         }];
 
         // Create axes
         var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "x";
         categoryAxis.renderer.grid.template.location = 0;
-
 
         var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
         valueAxis.renderer.inside = true;
@@ -61,11 +64,20 @@ function drawChart() {
             return series;
         }
 
-        createSeries("Seeking Employment", "Seeking Employment", am4core.color("#FCD12A"));
-        createSeries("Employed Full-Time", "Employed Full-Time", chart.colors.getIndex(1).brighten(0));
+        // define colors
+        let color_seeking = document.getElementById("color_seeking").getAttribute("value");
+        let color_fulltime = document.getElementById("color_fulltime").getAttribute("value");
+        // define colors
+        var colors = {
+            "seeking": am4core.color(color_seeking),
+            "fulltime": am4core.color(color_fulltime)
+        };
+
+        createSeries("구직 활동중", "구직 활동중", colors.seeking);
+        createSeries("정규직 고용", "정규직 고용", colors.fulltime);
 
         // Legend
         chart.legend = new am4charts.Legend();
-
+        chart.legend.dx =60;
     }); // end am4core.ready()
 }
