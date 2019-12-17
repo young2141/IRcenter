@@ -1,0 +1,136 @@
+﻿<!DOCUTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>경북대학교 IR센터</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script
+      crossorigin="anonymous"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      src="https://code.jquery.com/jquery-3.4.1.js"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="../js/2_graph.js"></script>
+  </head>
+
+  <style type="text/css">
+    @import url("../../css/output_default.css");
+    .chartdiv11 {
+      width: 1000px;
+      height: 400px;
+    }
+  </style>
+
+  <body>
+    <div id="TOP">
+      <div class="legend" id="gotop" style="left:80%; top :40%">
+        <form>
+          <span style="font-size: 20px"> <b>계열별 검색</b> </span><br />
+          <input
+            checked="checked"
+            name="college"
+            onclick="call()"
+            type="radio"
+            value="all"
+          />전체<br />
+          <input
+            name="college"
+            onclick="call()"
+            type="radio"
+            value="mech"
+          />공학<br />
+          <input
+            name="college"
+            onclick="call()"
+            type="radio"
+            value="science"
+          />자연과학<br />
+          <input
+            name="college"
+            onclick="call()"
+            type="radio"
+            value="society"
+          />인문사회<br />
+          <input
+            name="college"
+            onclick="call()"
+            type="radio"
+            value="artphysical"
+          />예체능<br />
+          <br /><br />
+          <span style="font-size: 20px"> <b>성별 검색</b> </span><br />
+          <input
+            checked="checked"
+            name="sex"
+            onclick="call()"
+            type="radio"
+            value="all"
+          />전체<br />
+          <input
+            name="sex"
+            onclick="call()"
+            type="radio"
+            value="male"
+          />남자<br />
+          <input
+            name="sex"
+            onclick="call()"
+            type="radio"
+            value="female"
+          />여자<br />
+        </form>
+      </div>
+      <script>
+        var currentPosition = parseInt($("#gotop").css("top"));
+        $(window).scroll(function() {
+          var position = $(window).scrollTop();
+
+          if (position > 750)
+            $("#gotop")
+              .stop()
+              .animate(
+                {
+                  top: position + currentPosition - 300 + "px"
+                },
+                1000
+              );
+          else if (position < 300)
+            $("#gotop")
+              .stop()
+              .animate(
+                {
+                  top: position + currentPosition + 40 + "px"
+                },
+                1000
+              );
+          else
+            $("#gotop")
+              .stop()
+              .animate(
+                {
+                  top: position + currentPosition + "px"
+                },
+                1000
+              );
+        });
+      </script>
+
+      <script>
+        call();
+      </script>
+      <div class="chartdiv11" id="chartdiv1">진학률</div>
+      <div class="chartdiv11" id="chartdiv2">취업률</div>
+    </div>
+  </body>
+</html>

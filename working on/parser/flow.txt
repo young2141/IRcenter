@@ -1,0 +1,22 @@
+학과분류 = { 학과이름 : 단대이름 }
+
+final = []
+calculator = [5][2]
+
+for rows:
+    if 학과 in categories :
+        calculator[categories[학과]][0] = B
+        calculator[categories[학과]][1] = A
+    
+    tmp = {}
+    tmp{
+        year
+        all
+        science
+        artphysical
+        mech
+        society
+    }
+
+    final.append(tmp)
+

@@ -1,10 +1,7 @@
 function parse(callback) {
-  $.getJSON(
-    "../../../json/졸업생 현황/dummy_for_graduation_rate.json",
-    json => {
-      callback(json);
-    }
-  );
+  $.getJSON("../../../json/dummy_for_graduation_rate.json", json => {
+    callback(json);
+  });
 }
 
 function runGraph(show) {
