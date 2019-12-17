@@ -1,7 +1,9 @@
 //const localPath = "http://localhost:80/data/graduation3/Top10";
 const localPath = "../../json/3/Top10";
 var degree = "bachelor";
+var degreeString = "학사";
 var gender = "total";
+var genderString = "";
 
 //load JSON files by pure javascript methods
 function loadJSON(path, success) {
@@ -34,17 +36,27 @@ function checkRadioButton(name, id) {
         case "학위":
             if (id == "T1") {
                 degree = "masters";
+                degreeString = "석사";
             }
             else if (id == "T1") {
                 degree = "bachelor";
+                degreeString = "학사";
             }
             else {
                 degree = "phd";
+                degreeString = "박사";
             }
             //change of file path
             path = localPath + degree + ".json";
             break;
         case "menu":
+            if (id == "all") {
+                genderString = "";
+            } else if (id == "male") {
+                genderString = " 남자";
+            } else if (id == "female") {
+                genderString = " 여자";
+            }
             gender = id;
     }
     loadJSON(path, function (data) {
@@ -106,7 +118,7 @@ function genDataForChart(input) {
                 year_info[seriesName] = rank;
                 if (i == 0) {
                     firstYearMajors.push(major);
-                    checkForFirstYear[seriesName] = int_year[i] - 2010;
+                    checkForFirstYear[seriesName] = 0;
                 }
             }
             //case 2:
@@ -143,21 +155,21 @@ function genDataForChart(input) {
     return [series, data, checkForLastYear, checkForFirstYear, firstYearMajors, headCount];
 }
 
-// mark the tooltip for last year
-function markLastYear(data, checkForLastYear, namesOfSeries, firstYearMajors) {
-    const seriesPrefix = "series";
-    for (let i = 0; i < checkForLastYear.length; ++i) {
-        let seriesName = seriesPrefix + i;
-        if(!firstYearMajors.includes(checkForLastYear[i].major)){
-            for(let j = 0;j<data.length;++j){
-                if(data[j].year == checkForLastYear[i].year){
-                    data[j]["series" + String(i) + "ShowTooltip"] = true;
-                }
-            }
-        }
-    }
-    return data;
-}
+// // mark the tooltip for last year
+// function markLastYear(data, checkForLastYear, namesOfSeries, firstYearMajors) {
+//     const seriesPrefix = "series";
+//     for (let i = 0; i < checkForLastYear.length; ++i) {
+//         let seriesName = seriesPrefix + i;
+//         if (!firstYearMajors.includes(checkForLastYear[i].major)) {
+//             for (let j = 0; j < data.length; ++j) {
+//                 if (data[j].year == checkForLastYear[i].year) {
+//                     data[j]["series" + String(i) + "ShowTooltip"] = true;
+//                 }
+//             }
+//         }
+//     }
+//     return data;
+// }
 
 function RGB2Hexa(colors) {
     //console.log(colors);
@@ -178,12 +190,27 @@ function genDataForAllInOne(data) {
     var checkForLastYear = returns[2];
     var checkForFirstYear = returns[3];
     var firstYearMajors = returns[4];
+    var markForLastYear = [];
     var headCount = returns[5];
 
-    data = markLastYear(data, checkForLastYear, namesOfSeries, firstYearMajors);
+    // data = markLastYear(data, checkForLastYear, namesOfSeries, firstYearMajors);
 
-    //console.log(namesOfSeries);
-    //console.log(data);
+    let keys = Object.keys(checkForFirstYear);
+    let firstYearMajorNames = [];
+    for (let i = 0; i < keys.length; ++i) {
+        keys[i] = keys[i].substr(6, keys[i].length);
+        keys[i] = Number(keys[i]);
+        firstYearMajorNames.push(namesOfSeries[keys[i]]);
+    }
+
+    // console.log(keys);
+    for (let i = 0; i < checkForLastYear.length; ++i) {
+        if (firstYearMajorNames.includes(checkForLastYear[i].major)) {
+            checkForLastYear.splice(i, 1);
+            --i;
+        }
+    }
+
 
     //initiate for am4chart
     am4core.ready(function () {
@@ -218,6 +245,15 @@ function genDataForAllInOne(data) {
         for (let i = 0; i < namesOfSeries.length; ++i) {
             const seriesName = "series" + i;
             let major = namesOfSeries[i];
+            let isFirstYearMajor = true;
+
+            for (let i = 0; i < checkForLastYear.length; ++i) {
+                if (checkForLastYear[i].major == major) {
+                    markForLastYear[seriesName] = Number(checkForLastYear[i].year.substr(3, 4));
+                    isFirstYearMajor = false;
+                }
+            }
+
             //series creation and then push it "chart object" by series
             var series = chart.series.push(new am4charts.LineSeries());
             //console.log(series);
@@ -242,25 +278,36 @@ function genDataForAllInOne(data) {
                 console.log(target._value);
             }, this);
 
+            
             var label_bullet = series.bullets.push(new am4charts.LabelBullet());
+
+            label_bullet.label.text = major;
+            label_bullet.label.width = 80;
+            label_bullet.label.maxWidth = 100;
+            label_bullet.label.wrap = true;
+            label_bullet.label.fontSize = 12;
+
+
             label_bullet.label.adapter.add("text", (text, target, key) => {
                 if (!target.dataItem) return "";
                 const index = target.dataItem.index;
-                if (index == checkForFirstYear[seriesName])
+                if (index == checkForFirstYear[seriesName]) {
                     return text;
-            })
-            label_bullet.label.text = major;
-            label_bullet.label.width = 80;
-            label_bullet.label.maxWidth = 50;
-            label_bullet.label.wrap = true;
-            label_bullet.label.fontSize = 12;
-            label_bullet.togglable = true;
-
+                } else if (index == markForLastYear[seriesName]) {
+                    target.width = 80;
+                    target.height = 20;
+                    target.dx = 50;
+                    target.dy = 20;
+                    target.background.fill = RGB2Hexa(series.fill._value);
+                    return text;
+                }
+            });
             //the bullet, points of data insertion on a series for x-axis.
             var bullet = series.bullets.push(new am4charts.CircleBullet());
             bullet.strokeWidth = 10;
-            bullet.tooltipText = namesOfSeries[i];
-            bullet.propertyFields.alwaysShowTooltip = seriesName + "ShowTooltip";
+            bullet.tooltipText = "{categoryX}학년도 "+ namesOfSeries[i] + genderString +" "+degreeString + " 학위수여자는 명으로, 학위수여자가 " + "{valueY}" +"번째로 많은 전공입니다.";
+            // bullet.tooltipText = namesOfSeries[i];
+            // bullet.propertyFields.alwaysShowTooltip = seriesName + "ShowTooltip";
             bullet.dx = 50
 
             // bullet.events.on("hit", (target) => {
@@ -272,5 +319,8 @@ function genDataForAllInOne(data) {
             valueLabel.label.text = "{valueY}";
             valueLabel.label.dx = 50;
         }
+
+        // chart.series.template.bullets.template.tooltip.text = "{categoryX}학년도";
+        console.log(chart.series);
     });
 }

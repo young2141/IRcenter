@@ -59,11 +59,41 @@ function drawChart(data, value) {
             yAxis.title.strokeWidth = 2;
             yAxis.title.fontSize = 12;
 
+
+            let gender;
+            switch (level["gender"]) {
+                case "male":
+                    gender = "남자";
+                    break;
+                case "female":
+                    gender = "여자";
+                    break;
+                default:
+                    gender = "";
+            }
+
+            let degree;
+            switch (level["degree"]) {
+                case "bachelor":
+                    degree = "학사";
+                    break;
+                case "master":
+                    degree = "석사";
+                    break;
+                case "phd":
+                    degree = "박사";
+                    break;
+            }
             let series = chart.series.push(new am4charts.ColumnSeries());
             series.dataFields.categoryX = "year";
             series.dataFields.valueY = value;
-            series.columns.template.tooltipText = "전공: {major}\n연도: {categoryX}\n인원 수: {valueY}";
-            // series.columns.template.fill = am4core.color("#0000f0");
+            series.columns.template.tooltipText = "{categoryX}학년도 {major}\n" + gender + " " + degree + " 학위수여자는 {valueY}명입니다.";
+            series.tooltip.getFillFromObject = false;
+
+            series.tooltip.autoTextColor = false;
+            series.tooltip.background.fill = am4core.color("#FFFFFF");
+            series.tooltip.label.fill = am4core.color("#000000");
+            // (2019)학년도 (전자공학부) (남자) (학사) 학위수여자는 ( )명입니다
 
             var labelBullet = series.bullets.push(new am4charts.LabelBullet());
             labelBullet.label.text = "{valueY}";
@@ -72,5 +102,6 @@ function drawChart(data, value) {
             // labelBullet.label.wrap = true;
             labelBullet.label.dy = -7;
         }
+
     }); // end am4core.ready()
 }

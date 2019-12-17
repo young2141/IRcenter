@@ -140,12 +140,14 @@ function drawChart(input) {
         series.sequencedInterpolation = true;
 
         if (level["gender"] == "man") {
-            series.columns.template.tooltipText = "전공: {categoryY}\n남자 비율: {valueX}\n전체 인원수: {total_headcount}";
+            // 2019학년도 (영어영문학과) 학생 총( )명 중 (여자)는 (78)명으로, (100%)를 차지합니다.
+            series.columns.template.tooltipText = "2019학년도 {categoryY} 학생\n총 {total_headcount}명 중 남자는 {man}명으로, {valueX}를 차지합니다.";
+            // series.columns.template.tooltipText = "전공: {categoryY}\n남자 비율: {valueX}\n전체 인원수: {total_headcount}";
             series.fill = am4core.color("#4B89DC");
             other_gender = "woman_percent";
         }
         else {
-            series.columns.template.tooltipText = "전공: {categoryY}\n여자 비율: {valueX}\n전체 인원수: {total_headcount}";
+            series.columns.template.tooltipText = "2019학년도 {categoryY} 학생\n총 {total_headcount}명 중 여자는 {woman}명으로, {valueX}를 차지합니다.";
             series.fill = am4core.color("#DB4455");
             other_gender = "man_percent";
         }
@@ -168,23 +170,21 @@ function drawChart(input) {
         series2.tooltip.autoTextColor = false;
         series2.tooltip.label.fill = am4core.color("#000000");
 
-        let LabelBullet = series2.bullets.push(new am4charts.LabelBullet());
+        let LabelBullet = series.bullets.push(new am4charts.LabelBullet());
         LabelBullet.label.truncate = false;
         LabelBullet.label.wrap = false;
         LabelBullet.label.dx = 45;
         LabelBullet.label.fontSize = 12;
 
         if (level["gender"] == "man") {
-            series2.columns.template.tooltipText = "전공: {categoryY}\n여자 비율: {valueX}\n전체 인원수: {total_headcount}";
+            series2.columns.template.tooltipText = "2019학년도 {categoryY} 학생\n총 {total_headcount}명 중 남자는 {man}명으로, {valueX}를 차지합니다.";
             series2.fill = am4core.color("#DB4455");
             LabelBullet.label.text = "{man_percent}%  n = {man}";
         }
         else {
-            series2.columns.template.tooltipText = "전공: {categoryY}\n남자 비율: {valueX}\n전체 인원수: {total_headcount}";
+            series2.columns.template.tooltipText = "2019학년도 {categoryY} 학생\n총 {total_headcount}명 중 여자는 {woman}명으로, {valueX}를 차지합니다.";
             series2.fill = am4core.color("#4B89DC");
             LabelBullet.label.text = "{woman_percent}%  n = {woman}";
         }
-
-
     });
 }
