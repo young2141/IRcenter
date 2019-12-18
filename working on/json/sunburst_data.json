@@ -1,0 +1,67 @@
+{
+  "name": "root",
+  "children": [
+    {
+      "name": "a",
+      "children": [
+        {
+          "name": "aa",
+          "children": [
+            {
+              "name": "aaa",
+              "children": [
+                {
+                  "name": "aaaa",
+                  "children": [
+                    {
+                      "name": "aaaaa",
+                      "size": 7
+                    },
+                    {
+                      "name": "aaaab",
+                      "size": 4
+                    },
+                    {
+                      "name": "aaaac",
+                      "size": 9
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "aab",
+              "size": 2
+            },
+            {
+              "name": "aac",
+              "size": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "b",
+      "children": [
+        {
+          "name": "ba",
+          "children": [
+            {
+              "name": "baa",
+              "size": 2
+            },
+            {
+              "name": "bab",
+              "size": 5
+            },
+            {
+              "name": "bac",
+              "size": 7
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

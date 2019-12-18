@@ -1,0 +1,1332 @@
+[
+  {
+    "all": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 302,
+        "gradIn4.5y": 24,
+        "gradIn5y": 149,
+        "gradIn5.5-6y": 18,
+        "gradOver6y": 23,
+        "notYetGrad": 323
+      },
+      "female": {
+        "gradIn1-4y": 312,
+        "gradIn4.5y": 41,
+        "gradIn5y": 28,
+        "gradIn5.5-6y": 10,
+        "gradOver6y": 9,
+        "notYetGrad": 30
+      }
+    },
+    "science": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "artphysical": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "mech": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "society": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "year": "2010"
+  },
+  {
+    "all": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "science": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "artphysical": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "mech": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "society": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "year": "2011"
+  },
+  {
+    "all": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "science": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "artphysical": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "mech": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "society": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "year": "2012"
+  },
+  {
+    "all": {
+      "all": {
+        "gradIn1-4y": 2000,
+        "gradIn4.5y": 300,
+        "gradIn5y": 545,
+        "gradIn5.5-6y": 234,
+        "gradOver6y": 123,
+        "notYetGrad": 324
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "science": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "artphysical": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "mech": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "society": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "year": "2013"
+  },
+  {
+    "all": {
+      "all": {
+        "gradIn1-4y": 430,
+        "gradIn4.5y": 123,
+        "gradIn5y": 135,
+        "gradIn5.5-6y": 646,
+        "gradOver6y": 84,
+        "notYetGrad": 250
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "science": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "artphysical": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "mech": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "society": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "year": "2014"
+  },
+  {
+    "all": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "science": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "artphysical": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "mech": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "society": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "year": "2015"
+  },
+  {
+    "all": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "science": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "artphysical": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "mech": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "society": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "year": "2016"
+  },
+  {
+    "all": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "science": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "artphysical": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "mech": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "society": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "year": "2017"
+  },
+  {
+    "all": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "science": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "artphysical": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "mech": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "society": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "year": "2018"
+  },
+  {
+    "all": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "science": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "artphysical": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "mech": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "society": {
+      "all": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "male": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      },
+      "female": {
+        "gradIn1-4y": 3055,
+        "gradIn4.5y": 414,
+        "gradIn5y": 289,
+        "gradIn5.5-6y": 108,
+        "gradOver6y": 93,
+        "notYetGrad": 305
+      }
+    },
+    "year": "2019"
+  }
+]

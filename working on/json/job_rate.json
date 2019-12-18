@@ -1,0 +1,282 @@
+[
+  {
+    "all": {
+      "all": 52.56,
+      "male": 63.44,
+      "female": 40.05
+    },
+    "science": {
+      "all": 43.73,
+      "male": 50.0,
+      "female": 40.56
+    },
+    "artphysical": {
+      "all": 28.9,
+      "male": 35.19,
+      "female": 26.05
+    },
+    "mech": {
+      "all": 71.88,
+      "male": 77.08,
+      "female": 53.85
+    },
+    "society": {
+      "all": 43.36,
+      "male": 50.87,
+      "female": 37.06
+    },
+    "year": "2010"
+  },
+  {
+    "all": {
+      "all": 58.85,
+      "male": 69.59,
+      "female": 45.32
+    },
+    "science": {
+      "all": 45.03,
+      "male": 49.81,
+      "female": 42.32
+    },
+    "artphysical": {
+      "all": 28.57,
+      "male": 38.24,
+      "female": 25.25
+    },
+    "mech": {
+      "all": 79.47,
+      "male": 82.17,
+      "female": 70.4
+    },
+    "society": {
+      "all": 48.07,
+      "male": 58.37,
+      "female": 38.79
+    },
+    "year": "2011"
+  },
+  {
+    "all": {
+      "all": 61.09,
+      "male": 70.54,
+      "female": 49.1
+    },
+    "science": {
+      "all": 49.56,
+      "male": 51.42,
+      "female": 48.5
+    },
+    "artphysical": {
+      "all": 26.5,
+      "male": 38.36,
+      "female": 22.38
+    },
+    "mech": {
+      "all": 81.0,
+      "male": 83.28,
+      "female": 72.68
+    },
+    "society": {
+      "all": 51.0,
+      "male": 59.06,
+      "female": 43.79
+    },
+    "year": "2012"
+  },
+  {
+    "all": {
+      "all": 56.25,
+      "male": 63.92,
+      "female": 44.93
+    },
+    "science": {
+      "all": 46.36,
+      "male": 50.42,
+      "female": 43.62
+    },
+    "artphysical": {
+      "all": 32.08,
+      "male": 41.28,
+      "female": 27.85
+    },
+    "mech": {
+      "all": 74.23,
+      "male": 75.75,
+      "female": 67.03
+    },
+    "society": {
+      "all": 46.33,
+      "male": 51.97,
+      "female": 40.59
+    },
+    "year": "2013"
+  },
+  {
+    "all": {
+      "all": 55.37,
+      "male": 61.84,
+      "female": 45.34
+    },
+    "science": {
+      "all": 48.73,
+      "male": 52.96,
+      "female": 45.68
+    },
+    "artphysical": {
+      "all": 38.48,
+      "male": 49.32,
+      "female": 32.31
+    },
+    "mech": {
+      "all": 72.02,
+      "male": 73.34,
+      "female": 65.56
+    },
+    "society": {
+      "all": 44.4,
+      "male": 48.52,
+      "female": 39.91
+    },
+    "year": "2014"
+  },
+  {
+    "all": {
+      "all": 53.35,
+      "male": 59.18,
+      "female": 45.08
+    },
+    "science": {
+      "all": 47.65,
+      "male": 49.87,
+      "female": 46.11
+    },
+    "artphysical": {
+      "all": 36.12,
+      "male": 44.94,
+      "female": 30.77
+    },
+    "mech": {
+      "all": 68.21,
+      "male": 69.72,
+      "female": 61.62
+    },
+    "society": {
+      "all": 44.83,
+      "male": 48.85,
+      "female": 40.77
+    },
+    "year": "2015"
+  },
+  {
+    "all": {
+      "all": 56.03,
+      "male": 61.0,
+      "female": 49.11
+    },
+    "science": {
+      "all": 52.32,
+      "male": 55.23,
+      "female": 49.83
+    },
+    "artphysical": {
+      "all": 51.22,
+      "male": 58.82,
+      "female": 47.45
+    },
+    "mech": {
+      "all": 64.34,
+      "male": 66.45,
+      "female": 55.0
+    },
+    "society": {
+      "all": 51.38,
+      "male": 56.26,
+      "female": 46.94
+    },
+    "year": "2016"
+  },
+  {
+    "all": {
+      "all": 54.86,
+      "male": 59.74,
+      "female": 48.05
+    },
+    "science": {
+      "all": 50.8,
+      "male": 53.79,
+      "female": 48.3
+    },
+    "artphysical": {
+      "all": 46.48,
+      "male": 55.81,
+      "female": 40.16
+    },
+    "mech": {
+      "all": 63.96,
+      "male": 64.89,
+      "female": 60.45
+    },
+    "society": {
+      "all": 48.96,
+      "male": 54.96,
+      "female": 43.63
+    },
+    "year": "2017"
+  },
+  {
+    "all": {
+      "all": 54.86,
+      "male": 59.74,
+      "female": 48.05
+    },
+    "science": {
+      "all": 50.8,
+      "male": 53.79,
+      "female": 48.3
+    },
+    "artphysical": {
+      "all": 46.48,
+      "male": 55.81,
+      "female": 40.16
+    },
+    "mech": {
+      "all": 63.96,
+      "male": 64.89,
+      "female": 60.45
+    },
+    "society": {
+      "all": 48.96,
+      "male": 54.96,
+      "female": 43.63
+    },
+    "year": "2018"
+  },
+  {
+    "all": {
+      "all": 54.86,
+      "male": 59.74,
+      "female": 48.05
+    },
+    "science": {
+      "all": 50.8,
+      "male": 53.79,
+      "female": 48.3
+    },
+    "artphysical": {
+      "all": 46.48,
+      "male": 55.81,
+      "female": 40.16
+    },
+    "mech": {
+      "all": 63.96,
+      "male": 64.89,
+      "female": 60.45
+    },
+    "society": {
+      "all": 48.96,
+      "male": 54.96,
+      "female": 43.63
+    },
+    "year": "2019"
+  }
+]
