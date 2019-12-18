@@ -1,12 +1,19 @@
 const path = "../../../json/등록/복수전공/";
 var filename;
-var raw_data;
+var data;
 var level = {};
-var color = [];
+var color = {};
+var division = {};
+var maxValue = {};
 
 function init() {
     level["ordered"] = getSelectedbox("sel_ord");
     level["semester"] = getSelectedbox("sel_sbs");
+    division["인문사회계열"] = "hs";
+    division["자연과학계열"] = "ns";
+    division["공학계열"] = "en";
+    division["예체능계열"] = "amp";
+    division["타계열"] = "dd";
 
     filename = level["semester"];
     filename = filename.slice(0, 4) + "_" + filename.slice(5, 6) + "_dualdegree.json";
@@ -14,7 +21,7 @@ function init() {
     //TODO:
     //FILE IS DUMMY DATA!!!
     //MODIFY THE FILE NAME OF REAL DATA.
-    raw_data = loadJSON(path + filename, success);
+    loadJSON(path + filename, success);
     executeProgram();
 }
 
@@ -31,8 +38,8 @@ function loadJSON(path, success) {
     xhr.send();
 }
 
-function success(data) {
-    raw_data = data;
+function success(input) {
+    data = input;
     executeProgram();
 }
 
@@ -64,13 +71,68 @@ function sortData(data) {
     return data;
 }
 
-function addColor(data){
-    getColorsByDvisions()
+function addColor(data) {
+    getColorsByDvisions();
+
+    for (let i = 0; i < data.length; ++i) {
+        if (data[i]["major1"] in maxValue) {
+            maxValue[data[i]["major1"]] = Math.max(maxValue[data[i]["major1"]], data[i]["total"]);
+        } else {
+            maxValue[data[i]["major1"]] = data[i]["total"];
+        }
+    }
+
+    for (let i = 0; i < data.length; ++i) {
+        data[i]["div1_color"] = am4core.color(color[division[data[i]["div_major1"]]]);
+        data[i]["div2_color"] = am4core.color(color[division[data[i]["div_major2"]]]);
+        if (data[i].major1 == data[i].major2) {
+            data[i]["color"] = am4core.color("#FFFFFF");
+            continue;
+        }
+
+        let alpha = 1;
+        if (maxValue[data[i]["major1"]] != 0) {
+            alpha = data[i]["total"] / maxValue[data[i]["major1"]] + 0.2;
+        }
+        if (alpha > 1) alpha = 1.0;
+
+        switch (data[i].div_major1) {
+            case "인문사회계열":
+                if (data[i].div_major2 == "인문사회계열") {
+                    data[i]["color"] = am4core.color(color.hs);
+                } else{
+                    data[i]["color"] = am4core.color(color.dd);
+                }
+                break;
+            case "자연과학계열":
+                if (data[i].div_major2 == "자연과학계열") {
+                    data[i]["color"] = am4core.color(color.ns);
+                } else{
+                    data[i]["color"] = am4core.color(color.dd);
+                }
+                break;
+            case "공학계열":
+                if (data[i].div_major2 == "공학계열") {
+                    data[i]["color"] = am4core.color(color.en);
+                } else{
+                    data[i]["color"] = am4core.color(color.dd);
+                }
+                break;
+            case "예체능계열":
+                if (data[i].div_major2 == "예체능계열") {
+                    data[i]["color"] = am4core.color(color.amp);
+                } else{
+                    data[i]["color"] = am4core.color(color.dd);
+                }
+                break;
+        }
+        data[i]["color"].alpha = alpha;
+    }
 }
 
 function executeProgram() {
-    let data = raw_data.slice(0);
-    sortData(data);
-    addColor(data);
-    drawChart(data);
+    let input = data.slice(0);
+    sortData(input);
+    addColor(input);
+    drawChart(input);
 }

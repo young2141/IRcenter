@@ -1,17 +1,18 @@
-function selectSelectbox(id, value) {
-    switch (id) {
-        case "sel_ord":
-            level["ordered"] = value;
-            executeProgram();
-            break;
-        case "sel_sbs":
-            level["semester"] = value;
-            filename = level["semester"];
-            filename = filename.slice(0, 4) + "_" + filename.slice(5, 6) + "_dualdegree.json";
-            loadJSON(path + filename);
-            break;
-    }
-}
+// function selectSelectbox(id, value) {
+//     switch (id) {
+//         case "sel_ord":
+//             level["ordered"] = value;
+//             updateGraph(value);
+//             // executeProgram();
+//             break;
+//         case "sel_sbs":
+//             level["semester"] = value;
+//             filename = level["semester"];
+//             filename = filename.slice(0, 4) + "_" + filename.slice(5, 6) + "_dualdegree.json";
+//             loadJSON(path + filename, success);
+//             break;
+//     }
+// }
 
 function getSelectedbox(id) {
     let select = document.getElementById(id);
@@ -20,30 +21,34 @@ function getSelectedbox(id) {
 
 function getColorsByDvisions() {
     let colors = document.getElementById("colors");
-    let obj = {};
-    let rgb;
+    color["hs"]= colors.children.color_hs.getAttribute("value");
+    color["ns"]= colors.children.color_ns.getAttribute("value");
+    color["en"]= colors.children.color_en.getAttribute("value");
+    color["amp"]= colors.children.color_amp.getAttribute("value");
+    color["dd"] = colors.children.color_dd.getAttribute("value");
 
-    rgb = convertHex2RGB(colors.children.color_hs.getAttribute("value").slice(1, 7));
-    obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
-    color.push({"인문사회계열": obj});
+    // let obj = {};
 
-    rgb = convertHex2RGB(colors.children.color_ns.getAttribute("value").slice(1, 7));
-    obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
-    color.push({"자연과학계열": obj});
 
-    rgb = convertHex2RGB(colors.children.color_en.getAttribute("value").slice(1, 7));
-    obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
-    color.push({"공학계열": obj});
+    // rgb = convertHex2RGB(colors.children.color_hs.getAttribute("value").slice(1, 7));
+    // color["hs"]= am4core.color(colors.children.color_hs.getAttribute("value"));
 
-    rgb = convertHex2RGB(colors.children.color_amp.getAttribute("value").slice(1, 7));
-    obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
-    color.push({"예체능계열": obj});
+    // rgb = convertHex2RGB(colors.children.color_ns.getAttribute("value").slice(1, 7));
+    // obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
+    // color["ns"]= am4core.color(colors.children.color_ns.getAttribute("value"));
 
-    rgb = convertHex2RGB(colors.children.color_dd.getAttribute("value").slice(1, 7));
-    obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
-    color.push({"타계열": obj});
+    // rgb = convertHex2RGB(colors.children.color_en.getAttribute("value").slice(1, 7));
+    // obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
+    // color["en"]= am4core.color(colors.children.color_en.getAttribute("value"));
 
-    console.log(color);
+    // rgb = convertHex2RGB(colors.children.color_amp.getAttribute("value").slice(1, 7));
+    // obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
+    // color["amp"]= am4core.color(colors.children.color_amp.getAttribute("value"));
+
+    // rgb = convertHex2RGB(colors.children.color_dd.getAttribute("value").slice(1, 7));
+    // obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
+    // color["dd"] = am4core.color(colors.children.color_dd.getAttribute("value"));
+    // // color["dd"]= Object.assign({}, obj);
 }
 
 function convertHex2RGB(hexa) {
