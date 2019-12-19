@@ -4,7 +4,6 @@ var data;
 var level = {};
 var color = {};
 var division = {};
-var maxValue = {};
 
 function init() {
     level["ordered"] = getSelectedbox("sel_ord");
@@ -75,57 +74,49 @@ function addColor(data) {
     getColorsByDvisions();
 
     for (let i = 0; i < data.length; ++i) {
-        if (data[i]["major1"] in maxValue) {
-            maxValue[data[i]["major1"]] = Math.max(maxValue[data[i]["major1"]], data[i]["total"]);
-        } else {
-            maxValue[data[i]["major1"]] = data[i]["total"];
-        }
-    }
-
-    for (let i = 0; i < data.length; ++i) {
         data[i]["div1_color"] = am4core.color(color[division[data[i]["div_major1"]]]);
         data[i]["div2_color"] = am4core.color(color[division[data[i]["div_major2"]]]);
-        if (data[i].major1 == data[i].major2) {
+        if (data[i].major1 == data[i].major2 || data[i].total == 0) {
             data[i]["color"] = am4core.color("#FFFFFF");
             continue;
         }
-
-        let alpha = 1;
-        if (maxValue[data[i]["major1"]] != 0) {
-            alpha = data[i]["total"] / maxValue[data[i]["major1"]] + 0.2;
-        }
-        if (alpha > 1) alpha = 1.0;
 
         switch (data[i].div_major1) {
             case "인문사회계열":
                 if (data[i].div_major2 == "인문사회계열") {
                     data[i]["color"] = am4core.color(color.hs);
-                } else{
+                } else {
                     data[i]["color"] = am4core.color(color.dd);
                 }
                 break;
             case "자연과학계열":
                 if (data[i].div_major2 == "자연과학계열") {
                     data[i]["color"] = am4core.color(color.ns);
-                } else{
+                } else {
                     data[i]["color"] = am4core.color(color.dd);
                 }
                 break;
             case "공학계열":
                 if (data[i].div_major2 == "공학계열") {
                     data[i]["color"] = am4core.color(color.en);
-                } else{
+                } else {
                     data[i]["color"] = am4core.color(color.dd);
                 }
                 break;
             case "예체능계열":
                 if (data[i].div_major2 == "예체능계열") {
                     data[i]["color"] = am4core.color(color.amp);
-                } else{
+                } else {
                     data[i]["color"] = am4core.color(color.dd);
                 }
                 break;
         }
+
+        //alpha condition
+        let alpha = 1;
+        if(data[i].total <10) alpha = 0.3;
+        else if( data[i].total <= 20) alpha = 0.7;
+
         data[i]["color"].alpha = alpha;
     }
 }
@@ -134,5 +125,6 @@ function executeProgram() {
     let input = data.slice(0);
     sortData(input);
     addColor(input);
+    // d3_darwChart(input);
     drawChart(input);
 }
