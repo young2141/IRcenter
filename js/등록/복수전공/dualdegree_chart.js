@@ -14,7 +14,7 @@ function selectSelectbox(id, value) {
                 chart.data.sort((a,b) => {return sortByFrequency(a, b)});
             }
             
-            chart.invalidateData();
+            // chart.invalidateData();
             // updateGraph(value);
             // executeProgram();
             break;
@@ -32,7 +32,8 @@ function drawChart(data) {
         am4core.useTheme(am4themes_animated);
         chart = am4core.create("chartdiv", am4charts.XYChart);
         chart.data = data;
-        // chart.animationDuration = 5000;
+        chart.fillOpacity = 1;
+        chart.strokeOpcacity = 1;
 
         var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
         var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
@@ -62,10 +63,6 @@ function drawChart(data) {
         series.dataFields.categoryX = "major2";
         series.dataFields.categoryY = "major1";
         series.dataFields.value = "total";
-        // series.sequencedInterpolation = true;
-        // series.defaultState.transitionDuration = 5000;
-        // series.hiddenState.transitionDuration = 5000;
-        // series.animationDuration = 5000;
 
         var column = series.columns.template;
         column.strokeOpacity = 0;
@@ -73,26 +70,5 @@ function drawChart(data) {
         column.height = am4core.percent(80);
         column.tooltipText = "복수전공: {categoryY} + {categoryX}\n인원: {total}";
         column.propertyFields.fill = "color";
-        // column.sequencedInterpolation = true;
-        // column.defaultState.transitionDuration = 5000;
-        // column.hiddenState.transitionDuration = 5000;
-        // column.animationDuration = 5000;     
     });
 }
-
-// function updateGraph(value) {
-    // if(value == "major") {
-    //     data = data.sort((a,b) => {return sortByMajor(a, b)});
-    // }
-    // else if (value == "division") {
-    //     data = data.sort((a,b) => {return sortByDivision(a, b)});
-    // }
-    // else if (value == "frequency") {
-    //     data = data.sort((a,b) => {return sortByFrequency(a, b)});
-    // }
-
-//     chart.dataProvider = data;
-
-//     // use Animate plugin
-//     // chart.animateData( newData, { duration: 1000 } );
-//   }

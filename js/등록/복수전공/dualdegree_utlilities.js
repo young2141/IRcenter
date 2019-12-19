@@ -26,29 +26,6 @@ function getColorsByDvisions() {
     color["en"]= colors.children.color_en.getAttribute("value");
     color["amp"]= colors.children.color_amp.getAttribute("value");
     color["dd"] = colors.children.color_dd.getAttribute("value");
-
-    // let obj = {};
-
-
-    // rgb = convertHex2RGB(colors.children.color_hs.getAttribute("value").slice(1, 7));
-    // color["hs"]= am4core.color(colors.children.color_hs.getAttribute("value"));
-
-    // rgb = convertHex2RGB(colors.children.color_ns.getAttribute("value").slice(1, 7));
-    // obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
-    // color["ns"]= am4core.color(colors.children.color_ns.getAttribute("value"));
-
-    // rgb = convertHex2RGB(colors.children.color_en.getAttribute("value").slice(1, 7));
-    // obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
-    // color["en"]= am4core.color(colors.children.color_en.getAttribute("value"));
-
-    // rgb = convertHex2RGB(colors.children.color_amp.getAttribute("value").slice(1, 7));
-    // obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
-    // color["amp"]= am4core.color(colors.children.color_amp.getAttribute("value"));
-
-    // rgb = convertHex2RGB(colors.children.color_dd.getAttribute("value").slice(1, 7));
-    // obj["r"] = rgb[0]; obj["g"] = rgb[1]; obj["b"] = rgb[2];
-    // color["dd"] = am4core.color(colors.children.color_dd.getAttribute("value"));
-    // // color["dd"]= Object.assign({}, obj);
 }
 
 function convertHex2RGB(hexa) {

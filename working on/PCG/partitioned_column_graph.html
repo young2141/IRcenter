@@ -1,0 +1,358 @@
+<!-- Styles -->
+<style>
+    #chartdiv {
+      width: 100%;
+      height: 800px;
+    }
+    </style>
+    
+    <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    
+    <!-- Chart code -->
+    <script>
+    am4core.ready(function() {
+    
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+    
+    // Create chart instance
+    var chart = am4core.create("chartdiv", am4charts.XYChart);
+    chart.width = am4core.percent(80);
+    chart.height = am4core.percent(80);
+    
+    // Add data
+    chart.data = [
+      {
+        "division": "인문사회계열",
+        "major": "North Dakota",
+        "value": 920
+      },
+      {
+        "division": "인문사회계열",
+        "major": "공학계열 Dakota",
+        "value": 1317
+      },
+      {
+        "division": "인문사회계열",
+        "major": "Kansas",
+        "value": 2916
+      },
+      {
+        "division": "인문사회계열",
+        "major": "Iowa",
+        "value": 4577
+      },
+      {
+        "division": "인문사회계열",
+        "major": "Nebraska",
+        "value": 7464
+      },
+      {
+        "division": "인문사회계열",
+        "major": "Oklahoma",
+        "value": 19686
+      },
+      {
+        "division": "인문사회계열",
+        "major": "Missouri",
+        "value": 22207
+      },
+      {
+        "division": "인문사회계열",
+        "major": "Minnesota",
+        "value": 29865
+      },
+      {
+        "division": "인문사회계열",
+        "major": "Wisconsin",
+        "value": 32125
+      },
+      {
+        "division": "인문사회계열",
+        "major": "Indiana",
+        "value": 53549
+      },
+      {
+        "division": "인문사회계열",
+        "major": "Michigan",
+        "value": 76281
+      },
+      {
+        "division": "인문사회계열",
+        "major": "Illinois",
+        "value": 80162
+      },
+      {
+        "division": "인문사회계열",
+        "major": "Texas",
+        "value": 170187
+      },
+      {
+        "division": "자연과학계열",
+        "major": "예체능계열 Virginia",
+        "value": 1209
+      },
+      {
+        "division": "자연과학계열",
+        "major": "Maine",
+        "value": 1270
+      },
+      {
+        "division": "자연과학계열",
+        "major": "District of Columbia",
+        "value": 2866
+      },
+      {
+        "division": "자연과학계열",
+        "major": "New Hampshire",
+        "value": 7294
+      },
+      {
+        "division": "자연과학계열",
+        "major": "Vermont",
+        "value": 8929
+      },
+      {
+        "division": "자연과학계열",
+        "major": "Connecticut",
+        "value": 13386
+      },
+      {
+        "division": "자연과학계열",
+        "major": "Rhode Island",
+        "value": 22629
+      },
+      {
+        "division": "자연과학계열",
+        "major": "Maryland",
+        "value": 23707
+      },
+      {
+        "division": "자연과학계열",
+        "major": "Delaware",
+        "value": 27453
+      },
+      {
+        "division": "자연과학계열",
+        "major": "Massachusetts",
+        "value": 28639
+      },
+      {
+        "division": "자연과학계열",
+        "major": "New Jersey",
+        "value": 35763
+      },
+      {
+        "division": "자연과학계열",
+        "major": "Ohio",
+        "value": 78253
+      },
+      {
+        "division": "자연과학계열",
+        "major": "Pennsylvania",
+        "value": 116522
+      },
+      {
+        "division": "자연과학계열",
+        "major": "New York",
+        "value": 310914
+      },
+      {
+        "division": "공학계열",
+        "major": "공학계열 Carolina",
+        "value": 8483
+      },
+      {
+        "division": "공학계열",
+        "major": "Louisiana",
+        "value": 9219
+      },
+      {
+        "division": "공학계열",
+        "major": "Mississippi",
+        "value": 10772
+      },
+      {
+        "division": "공학계열",
+        "major": "Arkansas",
+        "value": 11678
+      },
+      {
+        "division": "공학계열",
+        "major": "Alabama",
+        "value": 19511
+      },
+      {
+        "division": "공학계열",
+        "major": "Tennessee",
+        "value": 30662
+      },
+      {
+        "division": "공학계열",
+        "major": "Kentucky",
+        "value": 36598
+      },
+      {
+        "division": "공학계열",
+        "major": "Georgia",
+        "value": 49103
+      },
+      {
+        "division": "공학계열",
+        "major": "North Carolina",
+        "value": 55604
+      },
+      {
+        "division": "공학계열",
+        "major": "Virginia",
+        "value": 70641
+      },
+      {
+        "division": "공학계열",
+        "major": "Florida",
+        "value": 89479
+      },
+      {
+        "division": "예체능계열",
+        "major": "Wyoming",
+        "value": 1603
+      },
+      {
+        "division": "예체능계열",
+        "major": "Idaho",
+        "value": 4380
+      },
+      {
+        "division": "예체능계열",
+        "major": "New Mexico",
+        "value": 4779
+      },
+      {
+        "division": "예체능계열",
+        "major": "Montana",
+        "value": 5589
+      },
+      {
+        "division": "예체능계열",
+        "major": "Utah",
+        "value": 11223
+      },
+      {
+        "division": "예체능계열",
+        "major": "Nevada",
+        "value": 16729
+      },
+      {
+        "division": "예체능계열",
+        "major": "Oregon",
+        "value": 17431
+      },
+      {
+        "division": "예체능계열",
+        "major": "Colorado",
+        "value": 32110
+      },
+      {
+        "division": "예체능계열",
+        "major": "Arizona",
+        "value": 35283
+      },
+      {
+        "division": "예체능계열",
+        "major": "Washington",
+        "value": 138656
+      },
+      {
+        "division": "예체능계열",
+        "major": "California",
+        "value": 457731
+      }
+    ];
+    
+    // Create axes
+    var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+    yAxis.dx = 50;
+    yAxis.dataFields.category = "major";
+    yAxis.renderer.grid.template.dx = 50;
+    yAxis.renderer.grid.template.location = 0;
+    yAxis.renderer.labels.template.fontSize = 10;
+    yAxis.renderer.minGridDistance = 10;
+    
+    var xAxis = chart.xAxes.push(new am4charts.ValueAxis());
+    xAxis.dx = 50;
+    xAxis.renderer.grid.template.dx = 50;
+    xAxis.renderer.grid.template.height = 50;
+    xAxis.renderer.ticks.template.length = 100;
+
+    // Create series
+    var series = chart.series.push(new am4charts.ColumnSeries());
+    series.dataFields.valueX = "value";
+    series.dataFields.categoryY = "major";
+    series.columns.template.tooltipText = "{categoryY}: [bold]{valueX}[/]";
+    series.columns.template.strokeWidth = 0;
+
+    series.dx = 50;
+    series.columns.template.adapter.add("fill", function(fill, target) {
+      if (target.dataItem) {
+        switch(target.dataItem.dataContext.division) {
+          case "인문사회계열":
+            return chart.colors.getIndex(0);
+            break;
+          case "자연과학계열":
+            return chart.colors.getIndex(1);
+            break;
+          case "공학계열":
+            return chart.colors.getIndex(2);
+            break;
+          case "예체능계열":
+            return chart.colors.getIndex(3);
+            break;
+        }
+      }
+      return fill;
+    });
+    
+    // Add ranges
+    function addRange(label, start, end, color) {
+      var range = yAxis.axisRanges.create();
+      range.category = start;
+      range.endCategory = end;
+      range.label.text = label;
+      range.label.width = 100;
+      range.label.disabled = false;
+      range.label.fill = color;
+      range.label.location = 0;
+      range.label.dx = -180;
+      range.label.dy = 12;
+      range.label.fontWeight = "bold";
+      range.label.fontSize = 12;
+      range.label.horizontalCenter = "left"
+      range.label.inside = true;
+      
+      range.grid.stroke = am4core.color("#396478");
+      range.grid.strokeOpacity = 1;
+      range.tick.length = 200;
+      range.tick.disabled = false;
+      range.tick.strokeOpacity = 0.6;
+      range.tick.stroke = am4core.color("#396478");
+      range.tick.location = 0;
+      
+      range.locations.category = 1;
+    }
+    
+    addRange("인문사회계열", "Texas", "North Dakota", chart.colors.getIndex(0));
+    addRange("자연과학계열", "New York", "예체능계열 Virginia", chart.colors.getIndex(1));
+    addRange("공학계열", "Florida", "공학계열 Carolina", chart.colors.getIndex(2));
+    addRange("예체능계열", "California", "Wyoming", chart.colors.getIndex(3));
+    
+    chart.cursor = new am4charts.XYCursor();
+    
+    }); // end am4core.ready()
+    </script>
+    
+    <!-- HTML -->
+    <div id="chartdiv"></div>
