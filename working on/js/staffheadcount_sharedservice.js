@@ -8,54 +8,54 @@ function drawChart(){
 
         chart.data = [{
             "year": "2010",
-            "shared": 0,
-            "allother": 0,
+            "admin/tech": 242,
+            "exp/mng/acc": -242,
             "difference": 0
         }, {
             "year": "2011",
-            "shared": 10,
-            "allother": -167,
-            "difference": 177
+            "admin/tech": 242,
+            "exp/mng/acc": -245,
+            "difference": -3
         }, {
             "year": "2012",
-            "shared": 374,
-            "allother": -82,
-            "difference": 292
+            "admin/tech": 248,
+            "exp/mng/acc": -231,
+            "difference": 17
         }, {
             "year": "2013",
-            "shared": 591,
-            "allother": -127,
-            "difference": 464
+            "admin/tech": 252,
+            "exp/mng/acc": -227,
+            "difference": 25
         }, {
             "year": "2014",
-            "shared": 353,
-            "allother": -202,
-            "difference": 151
+            "admin/tech": 293,
+            "exp/mng/acc": -197,
+            "difference": 96
         }, {
             "year": "2015",
-            "shared": 311,
-            "allother": -279,
-            "difference": 32
+            "admin/tech": 316,
+            "exp/mng/acc": -164,
+            "difference": 152
         }, {
             "year": "2016",
-            "shared": 382,
-            "allother": -433,
-            "difference": -51
+            "admin/tech": 316,
+            "exp/mng/acc": -159,
+            "difference": 157
         }, {
             "year": "2017",
-            "shared": 252,
-            "allother": -300,
-            "difference": -48
+            "admin/tech": 324,
+            "exp/mng/acc": -146,
+            "difference": 178
         }, {
             "year": "2018",
-            "shared": 189,
-            "allother": -200,
-            "difference": -11
+            "admin/tech": 326,
+            "exp/mng/acc": -136,
+            "difference": 190
         }, {
             "year": "2019",
-            "shared": 240,
-            "allother": -256,
-            "difference": -16
+            "admin/tech": 337,
+            "exp/mng/acc": -126,
+            "difference": 211
         }];
 
         var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -69,14 +69,14 @@ function drawChart(){
 
         var series1 = chart.series.push(new am4charts.ColumnSeries());
         series1.dataFields.categoryX = "year";
-        series1.dataFields.valueY = "shared";
+        series1.dataFields.valueY = "admin/tech";
         series1.stacked = true;
-        series1.name = "Shared Service";
+        series1.name = "admin/tech Service";
         series1.columns.template.fill = am4core.color("#FCD12A");
 
         var series2 = chart.series.push(new am4charts.ColumnSeries());
         series2.dataFields.categoryX = "year";
-        series2.dataFields.valueY = "allother";
+        series2.dataFields.valueY = "exp/mng/acc";
         series2.name = "All Other Units";
         series2.stacked = true;
         series2.columns.template.fill = am4core.color("#000080");
