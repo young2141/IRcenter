@@ -70,5 +70,23 @@
 		"employment_percentage_all": 45.7,
 		"employment_percentage_male": 50.6,
 		"employment_percentage_female": 39.2
+	},
+	{
+		"category": "2018",
+		"employment_number_all": 2406,
+		"employment_number_male": 1550,
+		"employment_number_female": 856,
+		"employment_percentage_all": 45.7,
+		"employment_percentage_male": 50.6,
+		"employment_percentage_female": 39.2
+	},
+	{
+		"category": "2019",
+		"employment_number_all": 2406,
+		"employment_number_male": 1550,
+		"employment_number_female": 856,
+		"employment_percentage_all": 45.7,
+		"employment_percentage_male": 50.6,
+		"employment_percentage_female": 39.2
 	}
 ]
