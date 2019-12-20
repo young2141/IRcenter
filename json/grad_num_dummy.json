@@ -933,12 +933,12 @@
   {
     "all": {
       "all": {
-        "gradIn1-4y": 3055,
+        "gradIn1-4y": 199,
         "gradIn4.5y": 414,
         "gradIn5y": 289,
         "gradIn5.5-6y": 108,
         "gradOver6y": 93,
-        "notYetGrad": 305
+        "notYetGrad": 2000
       },
       "male": {
         "gradIn1-4y": 3055,
@@ -1066,11 +1066,11 @@
   {
     "all": {
       "all": {
-        "gradIn1-4y": 3055,
-        "gradIn4.5y": 414,
-        "gradIn5y": 289,
-        "gradIn5.5-6y": 108,
-        "gradOver6y": 93,
+        "gradIn1-4y": 0,
+        "gradIn4.5y": 0,
+        "gradIn5y": 0,
+        "gradIn5.5-6y": 0,
+        "gradOver6y": 0,
         "notYetGrad": 305
       },
       "male": {
@@ -1199,11 +1199,11 @@
   {
     "all": {
       "all": {
-        "gradIn1-4y": 3055,
-        "gradIn4.5y": 414,
-        "gradIn5y": 289,
-        "gradIn5.5-6y": 108,
-        "gradOver6y": 93,
+        "gradIn1-4y": 0,
+        "gradIn4.5y": 0,
+        "gradIn5y": 0,
+        "gradIn5.5-6y": 0,
+        "gradOver6y": 0,
         "notYetGrad": 305
       },
       "male": {
@@ -1311,9 +1311,9 @@
         "notYetGrad": 305
       },
       "male": {
-        "gradIn1-4y": 3055,
-        "gradIn4.5y": 414,
-        "gradIn5y": 289,
+        "gradIn1-4y": 0,
+        "gradIn4.5y": 0,
+        "gradIn5y": 0,
         "gradIn5.5-6y": 108,
         "gradOver6y": 93,
         "notYetGrad": 305

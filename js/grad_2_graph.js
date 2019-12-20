@@ -1,5 +1,5 @@
 function parse(callback) {
-  $.getJSON("../json/grad_info.json", json => {
+  $.getJSON("../../../json/grad_info.json", json => {
     callback(json);
   });
 }
@@ -97,8 +97,9 @@ function call() {
   parse(json => {
     // console.log(json);
 
-    var college = $(":input:radio[name=college]:checked").val();
-    var sex = $(":input:radio[name=sex]:checked").val();
+    var college = $("#college").val();
+    var sex = $("#sex").val();
+    console.log(college, sex);
 
     data = [];
     for (var i = 0; i < json.length; i++) {

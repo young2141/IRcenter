@@ -1,5 +1,5 @@
 function parse(callback, filename) {
-  $.getJSON("../json/" + filename, json => {
+  $.getJSON("../../../json/" + filename, json => {
     callback(json);
   });
 }
@@ -227,8 +227,8 @@ function stackGraph(data, show) {
 }
 
 function call() {
-  var college = $(":input:radio[name=college]:checked").val();
-  var sex = $(":input:radio[name=sex]:checked").val();
+  var college = $("#college").val();
+  var sex = $("#sex").val();
 
   parse(json => {
     data = [];
