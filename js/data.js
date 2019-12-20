@@ -36,6 +36,18 @@ let data = [
         "percentage": 38
     },
     {
+        "category": "거주지2",
+        "subcategory": "거주지 기타",
+        "position": "left",
+        "percentage": 38
+    },
+    {
+        "category": "거주지2",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 62
+    },
+    {
         "category": "조기졸업",
         "subcategory": "조기졸업",
         "position": "left",
