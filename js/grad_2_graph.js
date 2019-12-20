@@ -34,6 +34,7 @@ function bar_graph(data, college) {
     });
 
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min = 0;
 
     // Create series
     var series = chart.series.push(new am4charts.ColumnSeries());
