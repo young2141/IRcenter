@@ -1,0 +1,499 @@
+[
+  {
+    "year": 1949,
+    "graduate_male": 1869,
+    "graduate_female": 1549,
+    "undergraduate_male": 5867,
+    "undergraduate_female": 4661
+  },
+  {
+    "year": 1950,
+    "graduate_male": 1739,
+    "graduate_female": 1233,
+    "undergraduate_male": 4322,
+    "undergraduate_female": 4507
+  },
+  {
+    "year": 1951,
+    "graduate_male": 1922,
+    "graduate_female": 1383,
+    "undergraduate_male": 4953,
+    "undergraduate_female": 4223
+  },
+  {
+    "year": 1952,
+    "graduate_male": 1576,
+    "graduate_female": 1215,
+    "undergraduate_male": 5884,
+    "undergraduate_female": 4329
+  },
+  {
+    "year": 1953,
+    "graduate_male": 1796,
+    "graduate_female": 1400,
+    "undergraduate_male": 5848,
+    "undergraduate_female": 4322
+  },
+  {
+    "year": 1954,
+    "graduate_male": 1942,
+    "graduate_female": 1286,
+    "undergraduate_male": 5378,
+    "undergraduate_female": 3743
+  },
+  {
+    "year": 1955,
+    "graduate_male": 1996,
+    "graduate_female": 1427,
+    "undergraduate_male": 5008,
+    "undergraduate_female": 3975
+  },
+  {
+    "year": 1956,
+    "graduate_male": 1677,
+    "graduate_female": 1314,
+    "undergraduate_male": 5260,
+    "undergraduate_female": 4677
+  },
+  {
+    "year": 1957,
+    "graduate_male": 1585,
+    "graduate_female": 1300,
+    "undergraduate_male": 4969,
+    "undergraduate_female": 3506
+  },
+  {
+    "year": 1958,
+    "graduate_male": 1888,
+    "graduate_female": 1453,
+    "undergraduate_male": 5091,
+    "undergraduate_female": 4009
+  },
+  {
+    "year": 1959,
+    "graduate_male": 1608,
+    "graduate_female": 1261,
+    "undergraduate_male": 5419,
+    "undergraduate_female": 3730
+  },
+  {
+    "year": 1960,
+    "graduate_male": 1649,
+    "graduate_female": 1437,
+    "undergraduate_male": 5107,
+    "undergraduate_female": 3679
+  },
+  {
+    "year": 1961,
+    "graduate_male": 1743,
+    "graduate_female": 1544,
+    "undergraduate_male": 4995,
+    "undergraduate_female": 4800
+  },
+  {
+    "year": 1962,
+    "graduate_male": 1757,
+    "graduate_female": 1339,
+    "undergraduate_male": 5770,
+    "undergraduate_female": 3717
+  },
+  {
+    "year": 1963,
+    "graduate_male": 1533,
+    "graduate_female": 1513,
+    "undergraduate_male": 4730,
+    "undergraduate_female": 4397
+  },
+  {
+    "year": 1964,
+    "graduate_male": 1812,
+    "graduate_female": 1214,
+    "undergraduate_male": 4944,
+    "undergraduate_female": 4575
+  },
+  {
+    "year": 1965,
+    "graduate_male": 1792,
+    "graduate_female": 1593,
+    "undergraduate_male": 5764,
+    "undergraduate_female": 4563
+  },
+  {
+    "year": 1966,
+    "graduate_male": 1756,
+    "graduate_female": 1326,
+    "undergraduate_male": 5237,
+    "undergraduate_female": 4300
+  },
+  {
+    "year": 1967,
+    "graduate_male": 1777,
+    "graduate_female": 1434,
+    "undergraduate_male": 4984,
+    "undergraduate_female": 4863
+  },
+  {
+    "year": 1968,
+    "graduate_male": 1548,
+    "graduate_female": 1398,
+    "undergraduate_male": 4478,
+    "undergraduate_female": 3771
+  },
+  {
+    "year": 1969,
+    "graduate_male": 1838,
+    "graduate_female": 1489,
+    "undergraduate_male": 5043,
+    "undergraduate_female": 4112
+  },
+  {
+    "year": 1970,
+    "graduate_male": 1507,
+    "graduate_female": 1547,
+    "undergraduate_male": 5614,
+    "undergraduate_female": 4175
+  },
+  {
+    "year": 1971,
+    "graduate_male": 1674,
+    "graduate_female": 1437,
+    "undergraduate_male": 4203,
+    "undergraduate_female": 4019
+  },
+  {
+    "year": 1972,
+    "graduate_male": 1609,
+    "graduate_female": 1540,
+    "undergraduate_male": 5754,
+    "undergraduate_female": 4612
+  },
+  {
+    "year": 1973,
+    "graduate_male": 1745,
+    "graduate_female": 1412,
+    "undergraduate_male": 5746,
+    "undergraduate_female": 4091
+  },
+  {
+    "year": 1974,
+    "graduate_male": 1914,
+    "graduate_female": 1231,
+    "undergraduate_male": 4095,
+    "undergraduate_female": 3997
+  },
+  {
+    "year": 1975,
+    "graduate_male": 1978,
+    "graduate_female": 1366,
+    "undergraduate_male": 5443,
+    "undergraduate_female": 4598
+  },
+  {
+    "year": 1976,
+    "graduate_male": 1579,
+    "graduate_female": 1590,
+    "undergraduate_male": 4749,
+    "undergraduate_female": 4049
+  },
+  {
+    "year": 1977,
+    "graduate_male": 1537,
+    "graduate_female": 1536,
+    "undergraduate_male": 4350,
+    "undergraduate_female": 3926
+  },
+  {
+    "year": 1978,
+    "graduate_male": 1538,
+    "graduate_female": 1501,
+    "undergraduate_male": 4506,
+    "undergraduate_female": 3936
+  },
+  {
+    "year": 1979,
+    "graduate_male": 1569,
+    "graduate_female": 1367,
+    "undergraduate_male": 5312,
+    "undergraduate_female": 4744
+  },
+  {
+    "year": 1980,
+    "graduate_male": 2160,
+    "graduate_female": 2022,
+    "undergraduate_male": 8290,
+    "undergraduate_female": 7932
+  },
+  {
+    "year": 1981,
+    "graduate_male": 2399,
+    "graduate_female": 1897,
+    "undergraduate_male": 8863,
+    "undergraduate_female": 7276
+  },
+  {
+    "year": 1982,
+    "graduate_male": 2048,
+    "graduate_female": 2088,
+    "undergraduate_male": 8616,
+    "undergraduate_female": 7797
+  },
+  {
+    "year": 1983,
+    "graduate_male": 2419,
+    "graduate_female": 2083,
+    "undergraduate_male": 8314,
+    "undergraduate_female": 8860
+  },
+  {
+    "year": 1984,
+    "graduate_male": 2093,
+    "graduate_female": 2091,
+    "undergraduate_male": 8901,
+    "undergraduate_female": 7263
+  },
+  {
+    "year": 1985,
+    "graduate_male": 2343,
+    "graduate_female": 2004,
+    "undergraduate_male": 8284,
+    "undergraduate_female": 8686
+  },
+  {
+    "year": 1986,
+    "graduate_male": 2318,
+    "graduate_female": 1929,
+    "undergraduate_male": 8305,
+    "undergraduate_female": 8005
+  },
+  {
+    "year": 1987,
+    "graduate_male": 2059,
+    "graduate_female": 2152,
+    "undergraduate_male": 8889,
+    "undergraduate_female": 8321
+  },
+  {
+    "year": 1988,
+    "graduate_male": 2023,
+    "graduate_female": 1831,
+    "undergraduate_male": 9204,
+    "undergraduate_female": 7815
+  },
+  {
+    "year": 1989,
+    "graduate_male": 2336,
+    "graduate_female": 2037,
+    "undergraduate_male": 9643,
+    "undergraduate_female": 8981
+  },
+  {
+    "year": 1990,
+    "graduate_male": 2479,
+    "graduate_female": 1906,
+    "undergraduate_male": 8909,
+    "undergraduate_female": 8324
+  },
+  {
+    "year": 1991,
+    "graduate_male": 2430,
+    "graduate_female": 1929,
+    "undergraduate_male": 9652,
+    "undergraduate_female": 8979
+  },
+  {
+    "year": 1992,
+    "graduate_male": 2281,
+    "graduate_female": 2029,
+    "undergraduate_male": 9016,
+    "undergraduate_female": 7803
+  },
+  {
+    "year": 1993,
+    "graduate_male": 2268,
+    "graduate_female": 2144,
+    "undergraduate_male": 8100,
+    "undergraduate_female": 7080
+  },
+  {
+    "year": 1994,
+    "graduate_male": 2244,
+    "graduate_female": 2144,
+    "undergraduate_male": 9304,
+    "undergraduate_female": 7940
+  },
+  {
+    "year": 1995,
+    "graduate_male": 2335,
+    "graduate_female": 1984,
+    "undergraduate_male": 9595,
+    "undergraduate_female": 7349
+  },
+  {
+    "year": 1996,
+    "graduate_male": 2161,
+    "graduate_female": 2075,
+    "undergraduate_male": 8262,
+    "undergraduate_female": 7948
+  },
+  {
+    "year": 1997,
+    "graduate_male": 2117,
+    "graduate_female": 2193,
+    "undergraduate_male": 9662,
+    "undergraduate_female": 8934
+  },
+  {
+    "year": 1998,
+    "graduate_male": 2316,
+    "graduate_female": 2147,
+    "undergraduate_male": 9807,
+    "undergraduate_female": 8745
+  },
+  {
+    "year": 1999,
+    "graduate_male": 2444,
+    "graduate_female": 1834,
+    "undergraduate_male": 9636,
+    "undergraduate_female": 7910
+  },
+  {
+    "year": 2000,
+    "graduate_male": 2129,
+    "graduate_female": 2163,
+    "undergraduate_male": 9155,
+    "undergraduate_female": 8318
+  },
+  {
+    "year": 2001,
+    "graduate_male": 2189,
+    "graduate_female": 1993,
+    "undergraduate_male": 8791,
+    "undergraduate_female": 8247
+  },
+  {
+    "year": 2002,
+    "graduate_male": 2310,
+    "graduate_female": 1993,
+    "undergraduate_male": 8162,
+    "undergraduate_female": 8630
+  },
+  {
+    "year": 2003,
+    "graduate_male": 2178,
+    "graduate_female": 2064,
+    "undergraduate_male": 9359,
+    "undergraduate_female": 7975
+  },
+  {
+    "year": 2004,
+    "graduate_male": 2177,
+    "graduate_female": 1969,
+    "undergraduate_male": 8641,
+    "undergraduate_female": 8183
+  },
+  {
+    "year": 2005,
+    "graduate_male": 2183,
+    "graduate_female": 2016,
+    "undergraduate_male": 8465,
+    "undergraduate_female": 8354
+  },
+  {
+    "year": 2006,
+    "graduate_male": 2092,
+    "graduate_female": 1847,
+    "undergraduate_male": 9417,
+    "undergraduate_female": 8390
+  },
+  {
+    "year": 2007,
+    "graduate_male": 2272,
+    "graduate_female": 2091,
+    "undergraduate_male": 8522,
+    "undergraduate_female": 7952
+  },
+  {
+    "year": 2008,
+    "graduate_male": 2486,
+    "graduate_female": 1846,
+    "undergraduate_male": 8757,
+    "undergraduate_female": 8874
+  },
+  {
+    "year": 2009,
+    "graduate_male": 2272,
+    "graduate_female": 2032,
+    "undergraduate_male": 8333,
+    "undergraduate_female": 7574
+  },
+  {
+    "year": 2010,
+    "graduate_male": 2203,
+    "graduate_female": 1858,
+    "undergraduate_male": 11803,
+    "undergraduate_female": 8410
+  },
+  {
+    "year": 2011,
+    "graduate_male": 2451,
+    "graduate_female": 1909,
+    "undergraduate_male": 11680,
+    "undergraduate_female": 8350
+  },
+  {
+    "year": 2012,
+    "graduate_male": 2405,
+    "graduate_female": 1886,
+    "undergraduate_male": 11883,
+    "undergraduate_female": 8383
+  },
+  {
+    "year": 2013,
+    "graduate_male": 3569,
+    "graduate_female": 2245,
+    "undergraduate_male": 11819,
+    "undergraduate_female": 8232
+  },
+  {
+    "year": 2014,
+    "graduate_male": 2967,
+    "graduate_female": 2028,
+    "undergraduate_male": 11757,
+    "undergraduate_female": 8445
+  },
+  {
+    "year": 2015,
+    "graduate_male": 3036,
+    "graduate_female": 2144,
+    "undergraduate_male": 11942,
+    "undergraduate_female": 8630
+  },
+  {
+    "year": 2016,
+    "graduate_male": 3019,
+    "graduate_female": 2158,
+    "undergraduate_male": 11595,
+    "undergraduate_female": 8756
+  },
+  {
+    "year": 2017,
+    "graduate_male": 3103,
+    "graduate_female": 2218,
+    "undergraduate_male": 11189,
+    "undergraduate_female": 8699
+  },
+  {
+    "year": 2018,
+    "graduate_male": 3028,
+    "graduate_female": 2154,
+    "undergraduate_male": 11094,
+    "undergraduate_female": 8664
+  },
+  {
+    "year": 2019,
+    "graduate_male": 2991,
+    "graduate_female": 2207,
+    "undergraduate_male": 10957,
+    "undergraduate_female": 8657
+  }
+]
