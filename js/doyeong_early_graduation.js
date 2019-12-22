@@ -1,5 +1,6 @@
 function parsing() {
     var year = parseInt($("#years").val());
+
     var filename = "doyeong_early_graduation.json";
     $.getJSON("../../../json/" + filename, (jsonData) => {
         var cnt = 0;
@@ -47,16 +48,18 @@ function draw(_data, _N, _year) {
         categoryAxis.renderer.grid.template.location = 0;
         categoryAxis.renderer.minGridDistance = 30;
 
-        categoryAxis.renderer.labels.template.adapter.add("dy", function (dy, target) {
-            if (target.dataItem && target.dataItem.index & 2 == 2) {
-                return dy + 2;
-            }
-            return dy;
-        });
+        // categoryAxis.renderer.labels.template.adapter.add("dy", function (dy, target) {
+        //     if (target.dataItem && target.dataItem.index & 2 == 2) {
+        //         return dy + 2;
+        //     }
+        //     return dy;
+        // });
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 0;
         valueAxis.max = 800;
+
+        if (_N >= 2) valueAxis.renderer.labels.template.fillOpacity = 0;
 
         // Create series
         var series = chart.series.push(new am4charts.ColumnSeries());
