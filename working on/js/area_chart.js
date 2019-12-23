@@ -206,8 +206,6 @@ function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h) {
         .attr("class", function (d) { return "myArea " + d.key })
         .style("fill", function (d) { return color(d.key); })
         .attr("d", area)
-        .on("mouseover", function () { tooltip.style("display", null); })
-        .on("mouseout", function () { tooltip.style("display", "none"); })
 
     //////////
     // HIGHLIGHT GROUP //
