@@ -7,7 +7,7 @@ am4core.ready(function () {
     var chart = am4core.create("chartdiv", am4charts.SankeyDiagram);
     chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
-    var colleges = ["인문대학", "사회과학대학", "자연과학대학", "경상대학", "법과대학", "공과대학", "IT대학", "농업생명과학대학", "예술대학", "사범대학", "수의과대학", "생활과학대학", "간호대학", "약학대학", "글로벌인재학부", "행정학부"];
+    var colleges = ["인문대학", "사회과학대학", "자연과학대학", "경상대학", "법과대학", "공과대학", "IT대학", "농업생명과학대학", "예술대학", "사범대학", "의과대학", "치과대학", "수의과대학", "생활과학대학", "간호대학", "약학대학", "글로벌인재학부", "행정학부", "자율전공부"];
     var temp = ["", " ", "  "];
 
     var data = [];
@@ -18,15 +18,40 @@ am4core.ready(function () {
                 var val = Math.floor(Math.random() * 3);
                 if (sum < val) val = 0;
                 else sum -= val;
+                var dest;
+                if(i == 0 && (colleges[j].trim() == "의과대학" || colleges[j].trim() == "치과대학" || colleges[j].trim() == "수의과대학" || colleges[j].trim() == "간호대학" || colleges[j].trim() == "약학대학" || colleges[j].trim() == "글로벌인재학부" || colleges[j].trim() == "자율전공부")){
+                    dest = colleges[j];
+                    val = 0.1;
+                }else if(i == 1 && (colleges[j].trim() == "의과대학" || colleges[j].trim() == "치과대학")){
+                    dest = "No Degree";
+                    val = 0.1;
+                }                    
+                else if(i == 1 && (colleges[j].trim() == "수의과대학" || colleges[j].trim() == "간호대학" || colleges[j].trim() == "약학대학" || colleges[j].trim() == "글로벌인재학부" || colleges[j].trim() == "자율전공부")){
+                    dest = colleges[j];
+                    val = 0.1;
+                }
+                else{
+                    do{
+                        dest = colleges[Math.floor(Math.random() * colleges.length)].trim();
+                    }while(dest == "의과대학" || dest == "치과대학" || dest == "수의과대학" || dest == "간호대학" || dest == "약학대학" || dest == "글로벌인재학부" || dest == "자율전공부");
+                }
                 data.push({
                     from: colleges[j] + temp[i],
-                    to: colleges[k] + temp[i + 1],
+                    to: dest + temp[i + 1],
                     value: val,
                     id: colleges[j] + String(k) + "-" + String(i)
                 })
             }
         }
     }
+
+    /**
+     * 의과대학
+     * 치과대학
+     * 수의대
+     * 간호대
+     * 약대
+     */
 
 
 
