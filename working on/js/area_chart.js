@@ -26,21 +26,21 @@ function stackedAreaChart() {
     if ($(":input:checkbox[id=graduate]").is(":checked")) {
         if ($(":input:checkbox[id=male]").is(":checked")) {
             keys.push('graduate_male')
-            cls.push('#EAD27A')
+            cls.push('#FE4459')
         }
         if ($(":input:checkbox[id=female]").is(":checked")) {
             keys.push('graduate_female')
-            cls.push('#FFD173')
+            cls.push('#E8A343')
         }
     }
     if ($(":input:checkbox[id=undergraduate]").is(":checked")) {
         if ($(":input:checkbox[id=male]").is(":checked")) {
             keys.push('undergraduate_male')
-            cls.push('#8FB0C1')
+            cls.push('#FCFF57')
         }
         if ($(":input:checkbox[id=female]").is(":checked")) {
             keys.push('undergraduate_female')
-            cls.push('#87B6C8')
+            cls.push('#43E884')
         }
     }
 
@@ -117,7 +117,7 @@ function multiplesAreaChart() {
                 var stackedData = d3.stack()
                     .keys(['graduate_male'])
                     (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_male'], ['#EAD27A'], max_val, h);
+                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_male'], ['#FE4459'], max_val, h);
                 svg_index++;
             });
         }
@@ -129,7 +129,7 @@ function multiplesAreaChart() {
                 var stackedData = d3.stack()
                     .keys(['graduate_female'])
                     (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_female'], ['#FFD173'], max_val, h);
+                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_female'], ['#E8A343'], max_val, h);
                 svg_index++;
             });
         }
@@ -143,7 +143,7 @@ function multiplesAreaChart() {
                 var stackedData = d3.stack()
                     .keys(['undergraduate_male'])
                     (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_male'], ['#8FB0C1'], max_val, h);
+                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_male'], ['#FCFF57'], max_val, h);
                 svg_index++;
             });
         }
@@ -155,7 +155,7 @@ function multiplesAreaChart() {
                 var stackedData = d3.stack()
                     .keys(['undergraduate_female'])
                     (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_female'], ['#87B6C8'], max_val, h);
+                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_female'], ['#43E884'], max_val, h);
                 svg_index++;
             });
         }
