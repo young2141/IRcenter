@@ -25,6 +25,9 @@ function line_graph(data, div, chartName, college, sex, color) {
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
     // valueAxis.min = min;
     // valueAxis.max = max;
+    valueAxis.strictMinMax = true;
+    valueAxis.extraMin = 0.15;
+    valueAxis.extraMax = 0.15;
 
     // Create series
     var series = chart.series.push(new am4charts.LineSeries());
@@ -72,6 +75,7 @@ function stackGraph(data, show) {
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis.dataFields.category = "year";
     categoryAxis.renderer.grid.template.location = 0;
+    categoryAxis.renderer.minGridDistance = 10;
 
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
     // valueAxis.min = 0;

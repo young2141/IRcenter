@@ -17,24 +17,24 @@ function drawP1Curved(
 
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis.dataFields.category = "year";
-    categoryAxis.renderer.minGridDistance = 30;
-    categoryAxis.renderer.grid.template.location = 0;
+    // categoryAxis.renderer.minGridDistance = 30;
+    // categoryAxis.renderer.grid.template.location = 0;
 
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
     if (_divName == "divchart2") {
       valueAxis.min = 0;
-      valueAxis.max = 90;
+      valueAxis.max = 86;
       valueAxis.strictMinMax = true;
 
-      // var axisBreak = valueAxis.axisBreaks.create();
-      // axisBreak.startValue = 0.2;
-      // axisBreak.endValue = 97.8;
-      // axisBreak.breakSize = 0.001;
+      var axisBreak = valueAxis.axisBreaks.create();
+      axisBreak.startValue = 2;
+      axisBreak.endValue = 21;
+      axisBreak.breakSize = 0.05;
     } else {
       valueAxis.strictMinMax = true;
       valueAxis.min = 0;
-      valueAxis.max = 25;
+      valueAxis.max = 21;
 
       // var axisBreak = valueAxis.axisBreaks.create();
       // axisBreak.startValue = 0.3;
