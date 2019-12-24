@@ -1,19 +1,17 @@
-<html>
+﻿<html>
 
 <head>
     <meta charset="utf-8">
     <title>경북대학교 IR센터</title>
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <script src="https://www.amcharts.com/lib/4/core.js"></script>
-    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
-    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-    <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <script src="../../../js/grad_1_curved.js"></script>
-    <script src="../../../js/grad_1_graph.js"></script>
+    <script src="../../../js/area_chart.js"></script>
+
 
 
 </head>
@@ -88,29 +86,25 @@
 
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
-
-
             <span style="font-size: 20px"><b>Select View</b></span><br>
             <form>
-                <input type = "radio" name = "Gtype">누적 영역형<br>
-                <input type = "radio" name = "Gtype">영역형<br><br>
+                <input type="radio" name="Gtype" id="stacked" checked="checked" onclick="drawChart()">누적 영역형<br>
+                <input type="radio" name="Gtype" id="multiples" onclick="drawChart()">영역형<br><br>
 
-                <input type = "checkbox">재적생<br>
-                <input type = "checkbox">졸업생<br><br>
+                <input type="radio" name="grad" id="all" checked="checked" onclick="drawChart()">전체<br>
+                <input type="radio" name="grad" id="graduate" onclick="drawChart()">졸업<br>
+                <input type="radio" name="grad" id="undergraduate" onclick="drawChart()">재적<br>
 
-                <input type = "checkbox">남자<br>
-                <input type = "checkbox">여자<br><br>
+                <input type="radio" name="gender" id="all" checked="checked" onclick="drawChart()">전체<br>
+                <input type="radio" name="gender" id="male" onclick="drawChart()">남자<br>
+                <input type="radio" name="gender" id="female" onclick="drawChart()">여자<br>
 
             </form>
-
-
-            <span style="color:#FE4459; font-size: 20px;">■</span> 졸업생 남자<br>
-            <span style="color:#E8A343; font-size: 20px;">■</span> 졸업생 여자<br>
-            <span style="color:#FCFF57; font-size: 20px;">■</span> 재적생 남자<br>
-            <span style="color:#43E884; font-size: 20px;">■</span> 재적생 여자<br>
+            <span style="color:#FE4459; font-size: 20px;" onmouseover="mouseOver('graduate_male')" onmouseleave="mouseLeave()">■</span> 졸업생 남자<br>
+            <span style="color:#E8A343; font-size: 20px;" onmouseover="mouseOver('graduate_female')" onmouseleave="mouseLeave()">■</span> 졸업생 여자<br>
+            <span style="color:#FCFF57; font-size: 20px;" onmouseover="mouseOver('undergraduate_male')" onmouseleave="mouseLeave()">■</span> 재적생 남자<br>
+            <span style="color:#43E884; font-size: 20px;" onmouseover="mouseOver('undergraduate_female')" onmouseleave="mouseLeave()">■</span> 재적생 여자<br>
             <br><br>
-            
-
         </div>
         <script>
             var currentPosition = parseInt($("#gotop").css("top"));
@@ -133,8 +127,11 @@
         <div id="unitBox">
             (단위 : 명)
         </div>
-        <div id="divchart1" class="chartdiv">그래프 1-1</div>
-
+        <div id="divchart1"></div>
+        <div id="divchart2"></div>
+        <div id="divchart3"></div>
+        <div id="divchart4"></div>
+        <div id="divchart5"></div>
         <br>
 
 
@@ -168,7 +165,7 @@
 
         </div>
     </div>
-
+    <script>drawChart()</script>
 </body>
 
 </html>
