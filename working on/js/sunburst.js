@@ -1,6 +1,10 @@
-var width = 750;
+﻿var width = 850;
 var height = 600;
 var radius = Math.min(width, height) / 2;
+
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("display", "none");
 
 // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
 var b = {
@@ -9,12 +13,8 @@ var b = {
 
 // Mapping of step names to colors.
 var colors = {
-    "home": "#5687d1",
-    "product": "#7b615c",
-    "search": "#de783b",
-    "account": "#6ab975",
-    "other": "#a173d1",
-    "end": "#bbbbbb"
+    "남자": "#0000ff",
+    "여자": "#ff0000"
 };
 
 // Total size of all segments; we set this later, after loading the data.
@@ -62,7 +62,7 @@ function createVisualization(json) {
     // Turn the data into a d3 hierarchy and calculate the sums.
     var root = d3.hierarchy(json)
         .sum(function (d) { return d.size; })
-        .sort(function (a, b) { return b.value - a.value; });
+        //.sort(function (a, b) { return b.value - a.value; });
 
     // For efficiency, filter nodes to keep only those large enough to see.
     var nodes = partition(root).descendants()
@@ -95,15 +95,25 @@ function mouseover(d) {
         percentageString = "< 0.1%";
     }
 
-    d3.select("#percentage")
-        .text(percentageString);
-
-    d3.select("#explanation")
-        .style("visibility", "");
-
+    /*tooltip
+        .style("display", null)
+        .html(d.data.name + "의 사람수는 " + d.data.size + "입니다.")
+        .style("left", (d3.event.pageX) + "px")
+        .style("top", (d3.event.pageY - 28) + "px");
+    */
     var sequenceArray = d.ancestors().reverse();
     sequenceArray.shift(); // remove root node from the array
     updateBreadcrumbs(sequenceArray, percentageString);
+
+    var sequenceString = "";
+    for (var i = 0; i < sequenceArray.length; i++) {
+        sequenceString += "[" + sequenceArray[i].data.name + "]";
+    }
+    d3.select("#percentage")
+        .html(sequenceString + "<br>" + percentageString)
+
+    d3.select("#explanation")
+        .style("visibility", "");
 
     // Fade all the segments.
     d3.selectAll("path")
@@ -119,18 +129,17 @@ function mouseover(d) {
 
 // Restore everything to full opacity when moving off the visualization.
 function mouseleave(d) {
-
     // Hide the breadcrumb trail
     d3.select("#trail")
         .style("visibility", "hidden");
 
+    tooltip.style("display", "none");
     // Deactivate all segments during transition.
     d3.selectAll("path").on("mouseover", null);
 
     // Transition each segment to full opacity and then reactivate it.
     d3.selectAll("path")
         .transition()
-        .duration(100)
         .style("opacity", 1)
         .on("end", function () {
             d3.select(this).on("mouseover", mouseover);
@@ -138,6 +147,7 @@ function mouseleave(d) {
 
     d3.select("#explanation")
         .style("visibility", "hidden");
+
 }
 
 function initializeBreadcrumbTrail() {
@@ -172,8 +182,9 @@ function updateBreadcrumbs(nodeArray, percentageString) {
     // Data join; key function combines name and depth (= position in sequence).
     var trail = d3.select("#trail")
         .selectAll("g")
-        .data(nodeArray, function (d) { return d.data.name + d.depth; });
+        .data(nodeArray, function (d) { return d.data.name + d.depth; })
 
+    console.log(trail)
     // Remove exiting nodes.
     trail.exit().remove();
 
@@ -182,6 +193,7 @@ function updateBreadcrumbs(nodeArray, percentageString) {
 
     entering.append("svg:polygon")
         .attr("points", breadcrumbPoints)
+        .attr("width", width)
         .style("fill", function (d) { return colors[d.data.name]; });
 
     entering.append("svg:text")
@@ -211,50 +223,6 @@ function updateBreadcrumbs(nodeArray, percentageString) {
 
 }
 
-//목록을 그릴 것인가?
-/*
-function drawLegend() {
-
-    // Dimensions of legend item: width, height, spacing, radius of rounded rect.
-    var li = {
-        w: 75, h: 30, s: 3, r: 3
-    };
-
-    var legend = d3.select("#legend").append("svg:svg")
-        .attr("width", li.w)
-        .attr("height", d3.keys(colors).length * (li.h + li.s));
-
-    var g = legend.selectAll("g")
-        .data(d3.entries(colors))
-        .enter().append("svg:g")
-        .attr("transform", function (d, i) {
-            return "translate(0," + i * (li.h + li.s) + ")";
-        });
-
-    g.append("svg:rect")
-        .attr("rx", li.r)
-        .attr("ry", li.r)
-        .attr("width", li.w)
-        .attr("height", li.h)
-        .style("fill", function (d) { return d.value; });
-
-    g.append("svg:text")
-        .attr("x", li.w / 2)
-        .attr("y", li.h / 2)
-        .attr("dy", "0.35em")
-        .attr("text-anchor", "middle")
-        .text(function (d) { return d.key; });
-}
-
-function toggleLegend() {
-    var legend = d3.select("#legend");
-    if (legend.style("visibility") == "hidden") {
-        legend.style("visibility", "");
-    } else {
-        legend.style("visibility", "hidden");
-    }
-}
-*/
 function buildHierarchy(csv) {
     var root = { "name": "root", "children": [] };
     for (var i = 0; i < csv.length; i++) {
