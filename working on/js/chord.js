@@ -30,15 +30,13 @@ function drawChordChart(data) {
         chart.dataFields.toName = "to";
         chart.dataFields.value = "value";
 
-
-
         chart.nodePadding = 0.5;
         chart.minNodeSize = 0.01;
         chart.startAngle = 80;
         chart.endAngle = chart.startAngle + 360;
         chart.sortBy = "value";
-        chart.fontSize = 10;
-
+        chart.fontSize = 11;
+        chart.fontWeight = 1000;
         var nodeTemplate = chart.nodes.template;
         nodeTemplate.readerTitle = "Click to show/hide or drag to rearrange";
         nodeTemplate.showSystemTooltip = true;
