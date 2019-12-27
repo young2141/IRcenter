@@ -10,8 +10,8 @@ function drawBullet(){
         // Themes end
         
         var container = am4core.create("chartdiv", am4core.Container);
-        container.width = am4core.percent(50);
-        container.height = am4core.percent(50);
+        container.width = am4core.percent(70);
+        container.height = am4core.percent(70);
         container.layout = "vertical";
         
         createBulletChart(container, "solid", {"category" : "행정직", "value" : {"4" : 57, "5" : 54, "6" : 47, "7" : 42, "8" : 33, "9" : 32}});
