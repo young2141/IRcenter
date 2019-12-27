@@ -37,7 +37,7 @@ let data = [
     },
     {
         "category": "거주지2",
-        "subcategory": "거주지 기타",
+        "subcategory": "거주지(기타)",
         "position": "left",
         "percentage": 38
     },

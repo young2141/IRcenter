@@ -12,7 +12,6 @@ function drawChart() {
 }
 
 function mouseOver(key) {
-    console.log(11)
     d3.selectAll(".myArea").style("opacity", .1)
     // expect the one that is hovered
     d3.select("." + key).style("opacity", 1)
@@ -102,6 +101,20 @@ function stackedAreaChart() {
     });
 }
 
+function prevmultiplechart(cnt, svgarr, keys, colors) {
+    var h = height / cnt;
+    d3.json("../../../json/area_chart_data.json", function (data) {
+        for (var i = 0; i < cnt; i++) {
+            var max_val = d3.max(data, function (d) {
+                return d[keys[i]];
+            }) + 1000;
+            var stackedData = d3.stack()
+                .keys([keys[i]])
+                (data)
+            drawAreaChart(svgarr[i], data, stackedData, [keys[i]], [colors[i]], max_val, h);
+        }
+    });
+}
 function multiplesAreaChart() {
     var check_cnt = 0; // 몇개의 영역이 그려져야되는지
     var svg_arr = [], svg1, svg2, svg3, svg4;
@@ -147,7 +160,7 @@ function multiplesAreaChart() {
             .attr("width", width + margin.left + margin.right)
             .attr("height", (height + margin.top + margin.bottom) / check_cnt)
             .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top+ ")");
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         svg_arr.push(svg3)
     }
     if (check_cnt > 3) {
@@ -162,179 +175,35 @@ function multiplesAreaChart() {
 
     if ($(":input:radio[name=grad]:checked").attr('id') == 'all') {
         if ($(":input:radio[name=gender]:checked").attr('id') == 'all') {
-            d3.json("../../../json/area_chart_data.json", function (data) {
-                var max_val = d3.max(data, function (d) {
-                    return d["graduate_male"];
-                }) + 1000;
-                var stackedData = d3.stack()
-                    .keys(['graduate_male'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_male'], ['#FE4459'], max_val, h);
-                svg_index++;
-
-                max_val = d3.max(data, function (d) {
-                    return d["graduate_female"];
-                }) + 1000;
-                stackedData = d3.stack()
-                    .keys(['graduate_female'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_female'], ['#E8A343'], max_val, h);
-                svg_index++;
-
-                max_val = d3.max(data, function (d) {
-                    return d["undergraduate_male"];
-                }) + 1000;
-                stackedData = d3.stack()
-                    .keys(['undergraduate_male'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_male'], ['#FCFF57'], max_val, h);
-                svg_index++;
-
-                max_val = d3.max(data, function (d) {
-                    return d["undergraduate_female"];
-                }) + 1000;
-                stackedData = d3.stack()
-                    .keys(['undergraduate_female'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_female'], ['#43E884'], max_val, h);
-                svg_index++;
-            });
+            prevmultiplechart(check_cnt, svg_arr, ['graduate_male', 'graduate_female', 'undergraduate_male', 'undergraduate_female'], ['#FE4459', '#E8A343', '#FCFF57', '#43E884']);
         }
         else if ($(":input:radio[name=gender]:checked").attr('id') == 'male') {
-            d3.json("../../../json/area_chart_data.json", function (data) {
-                var max_val = d3.max(data, function (d) {
-                    return d["graduate_male"];
-                }) + 1000;
-                var stackedData = d3.stack()
-                    .keys(['graduate_male'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_male'], ['#FE4459'], max_val, h);
-                svg_index++;
-
-                max_val = d3.max(data, function (d) {
-                    return d["undergraduate_male"];
-                }) + 1000;
-                stackedData = d3.stack()
-                    .keys(['undergraduate_male'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_male'], ['#FCFF57'], max_val, h);
-                svg_index++;
-            });
+            prevmultiplechart(check_cnt, svg_arr, ['graduate_male', 'undergraduate_male'], ['#FE4459', '#FCFF57']);
         }
         else if ($(":input:radio[name=gender]:checked").attr('id') == 'female') {
-            d3.json("../../../json/area_chart_data.json", function (data) {
-                var max_val = d3.max(data, function (d) {
-                    return d["graduate_female"];
-                }) + 1000;
-                var stackedData = d3.stack()
-                    .keys(['graduate_female'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_female'], ['#E8A343'], max_val, h);
-                svg_index++;
-
-                max_val = d3.max(data, function (d) {
-                    return d["undergraduate_female"];
-                }) + 1000;
-                stackedData = d3.stack()
-                    .keys(['undergraduate_female'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_female'], ['#43E884'], max_val, h);
-                svg_index++;
-            });
+            prevmultiplechart(check_cnt, svg_arr, ['graduate_female', 'undergraduate_female'], ['#E8A343', '#43E884']);
         }
     }
     else if ($(":input:radio[name=grad]:checked").attr('id') == 'graduate') {
         if ($(":input:radio[name=gender]:checked").attr('id') == 'all') {
-            d3.json("../../../json/area_chart_data.json", function (data) {
-                var max_val = d3.max(data, function (d) {
-                    return d["graduate_male"];
-                }) + 1000;
-                var stackedData = d3.stack()
-                    .keys(['graduate_male'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_male'], ['#FE4459'], max_val, h);
-                svg_index++;
-
-                max_val = d3.max(data, function (d) {
-                    return d["graduate_female"];
-                }) + 1000;
-                stackedData = d3.stack()
-                    .keys(['graduate_female'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_female'], ['#E8A343'], max_val, h);
-                svg_index++;
-            });
+            prevmultiplechart(check_cnt, svg_arr, ['graduate_male', 'graduate_female'], ['#FE4459', '#E8A343']);
         }
         else if ($(":input:radio[name=gender]:checked").attr('id') == 'male') {
-            d3.json("../../../json/area_chart_data.json", function (data) {
-                var max_val = d3.max(data, function (d) {
-                    return d["graduate_male"];
-                }) + 1000;
-                var stackedData = d3.stack()
-                    .keys(['graduate_male'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_male'], ['#FE4459'], max_val, h);
-                svg_index++;
-            });
+            prevmultiplechart(check_cnt, svg_arr, ['graduate_male'], ['#FE4459']);
         }
         else if ($(":input:radio[name=gender]:checked").attr('id') == 'female') {
-            d3.json("../../../json/area_chart_data.json", function (data) {
-                var max_val = d3.max(data, function (d) {
-                    return d["graduate_female"];
-                }) + 1000;
-                var stackedData = d3.stack()
-                    .keys(['graduate_female'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['graduate_female'], ['#E8A343'], max_val, h);
-                svg_index++;
-            });
+            prevmultiplechart(check_cnt, svg_arr, ['graduate_female'], ['#E8A343']);
         }
     }
     else if ($(":input:radio[name=grad]:checked").attr('id') == 'undergraduate') {
         if ($(":input:radio[name=gender]:checked").attr('id') == 'all') {
-            d3.json("../../../json/area_chart_data.json", function (data) {
-                var max_val = d3.max(data, function (d) {
-                    return d["undergraduate_male"];
-                }) + 1000;
-                var stackedData = d3.stack()
-                    .keys(['undergraduate_male'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_male'], ['#FCFF57'], max_val, h);
-                svg_index++;
-
-                max_val = d3.max(data, function (d) {
-                    return d["undergraduate_female"];
-                }) + 1000;
-                stackedData = d3.stack()
-                    .keys(['undergraduate_female'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_female'], ['#43E884'], max_val, h);
-                svg_index++;
-            });
+            prevmultiplechart(check_cnt, svg_arr, ['undergraduate_male', 'undergraduate_female'], ['#FCFF57', '#43E884']);
         }
         else if ($(":input:radio[name=gender]:checked").attr('id') == 'male') {
-            d3.json("../../../json/area_chart_data.json", function (data) {
-                var max_val = d3.max(data, function (d) {
-                    return d["undergraduate_male"];
-                }) + 1000;
-                var stackedData = d3.stack()
-                    .keys(['undergraduate_male'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_male'], ['#FCFF57'], max_val, h);
-                svg_index++;
-            });
+            prevmultiplechart(check_cnt, svg_arr, ['undergraduate_male'], ['#FCFF57']);
         }
         else if ($(":input:radio[name=gender]:checked").attr('id') == 'female') {
-            d3.json("../../../json/area_chart_data.json", function (data) {
-                var max_val = d3.max(data, function (d) {
-                    return d["undergraduate_female"];
-                }) + 1000;
-                var stackedData = d3.stack()
-                    .keys(['undergraduate_female'])
-                    (data)
-                drawAreaChart(svg_arr[svg_index], data, stackedData, ['undergraduate_female'], ['#43E884'], max_val, h);
-                svg_index++;
-            });
+            prevmultiplechart(check_cnt, svg_arr, ['undergraduate_female'], ['#43E884']);
         }
     }
 }
@@ -349,12 +218,12 @@ function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h) {
     //////////
     // Add X axis
     var x = d3.scaleLinear()
-        .domain(d3.extent(data, function (d) { return d.year; }))
+        .domain(d3.extent(data, function (d) { return String(d.year); }))
         .range([0, width]);
 
     var xAxis = svg.append("g")
-        .attr("transform", "translate(0," + h + ")")
-        .call(d3.axisBottom(x).ticks(5))
+        .attr("transform", "translate(0," + h + ")") 
+        .call(d3.axisBottom(x).tickValues([1949, 1960, 1970, 1980, 1990, 2000, 2010, 2019,]).tickFormat(d3.format("d")))
 
     // Add Y axis
     var y = d3.scaleLinear()

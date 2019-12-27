@@ -1,0 +1,166 @@
+<!DOCUTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>경북대학교 IR센터</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+        <!-- <script src="../../../js/6_sankey.js"></script> -->
+        <script src="../../../js/hj_declare.js"></script>
+        <script src="../../../js/hj_declare2.js"></script>
+
+    </head>
+
+    <style type="text/css">
+        @import url('../../../css/output_default.css');
+
+        .chartdiv11 {
+            width: 80%;
+            height: 700px;
+        }
+
+
+        .chartdiv22 {
+            width: 70%;
+            height: 600px;
+            display: inline-block;
+            border-style: solid;
+            margin: 10px;
+            padding: 10px;
+            border-color: white;
+        }
+
+        .chartdiv33 {
+            width: 45%;
+            height: 500px;
+        }
+    </style>
+
+    <body onload="loading()">
+        <div class="box1" id="wrapper">
+            <form class>
+                <br>
+                <a href="https://www.knu.ac.kr" target="_blank">
+                    <b>경북대학교 홈페이지</b>
+                    <a href="../첫화면.html"><b>| 경북대학교 IR센터</a></b>
+                    <!--<a href = "로그인 화면.html">*/-->
+                    <div class="loginBox">
+                        <a href="첫화면.html">로그인　|　</a>
+                        <input type="text" value="" placeholder="Search this site">
+                        <input type="button" value="검색">
+                    </div>
+            </form>
+        </div>
+
+
+        <div class="bodyBox">
+            <div id="titleBox">
+                <span id="titleFont"><b>학부이동</b></span>
+                <br><br>
+            </div>
+        </div>
+
+        <div id="TOP">
+            <div class="legend" id="gotop" style="left:80%; top :40%">
+                <form></form>
+                    <span style="font-size: 20px"><b>입학년도 검색</b></span>
+                    <br>
+
+                    <input type=button value='◀' onclick=decrease()>
+                    <input id="years" type=range min=2010 max=2015 step=1 value=2015
+                        oninput=valuechange(parseInt(this.value))>
+                    <input type=button value='▶' onclick=increase()>
+
+                    <script>
+                        function valuechange(value) {
+                            document.getElementById('span1').innerHTML = (value);
+                            check();
+                        }
+                        function decrease() {
+                            current_value = document.getElementById('years').value
+                            console.log(current_value);
+                            document.getElementById('years').value -= 1
+                            valuechange(document.getElementById('years').value)
+                        }
+                        function increase() {
+                            current_value = document.getElementById('years').value
+                            console.log(current_value);
+                            document.getElementById('years').value++;
+                            valuechange(document.getElementById('years').value)
+                        }
+                    </script>
+                    <br><div style = "text-align: center; width: 180px"><span id="span1">2019</span></div>
+                    <br><br>
+
+                </form>
+            </div>
+
+
+            <script>
+                var currentPosition = parseInt($("#gotop").css("top"));
+                $(window).scroll(function () {
+                    var position = $(window).scrollTop();
+
+                    if (position > 750)
+                        $("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
+                    else if (position < 300)
+                        $("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
+                    else
+                        $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
+                });
+
+            </script>
+
+            <div style = "width: 250px; margin-right: 230px; float: left; margin-bottom: 20px; font-size: 20px"><b>입학학과(부)</b></div>
+            <div style = "width: 250px; margin-right: 230px; float: left; margin-bottom: 20px; font-size: 20px"><b>전입학과(부)</b></div>
+            <div style = "width: 250px; float: left; margin-bottom: 20px; font-size: 20px"><b>졸업학과(부)</b></div>
+            <div id="chartdeclare" class="chartdiv11"></div>
+            <br><br><br><br>
+            <div id="chartdeclare2" class="chartdiv11"></div>
+            <br><br>
+
+
+
+
+
+            <div id="summaryBox" style="font-size: 15px">
+                <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
+
+                <b>출처 및 방법론</b><br>
+                - 이 대시보드에 표시된 가장 최근 연도의 데이터는 해당 지원주기가 끝날 때까지(당해년도의 3월초부터 이듬해 2월말) 예비적인 것으로 간주해야합니다.<br>
+
+                <b>사용 가능한 다른 데이터에 대한 참고사항</b><br>
+                - 경북대학교 입학정보 홈페이지에서는 학부 입학 전형 일정 및 절차, 선발기준 및 방법에 대한 광범위한 정보를 제공합니다.<br>
+                - 경북대학교 입학정보 홈페이지에서는 2020년도 경북대학교 대학입학전형 안내 동영상을 다음
+                링크(https://www.youtube.com/watch?v=xuArJ6qPbMM&feature=youtu.be)에서 제공합니다.<br>
+
+                <br><br>
+            </div>
+        </div>
+
+        <div class="bottomframe">
+            <div class="inbottomframe"></div>
+            <div class="inbottomframe"></div>
+            <div class="inbottomframe">
+                <a href="#">개인정보처리방침</a>
+                <a href="#">　이메일 무단수집거부</a>
+                <br><br>
+                <span class="white">대구광역시 북구 대학로 80 경북대학교 | 053-950-2963</span>
+                <br>
+                <span class="white">Copyright(c) Kyungpook National University. All rights reserved.</span>
+
+            </div>
+        </div>
+
+    </body>
+
+    </html>
