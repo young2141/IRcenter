@@ -173,7 +173,6 @@ parse(json => {
     
         var ch = 0
         for(var d=0 ;d<data.length;d++){
-            alert("ch")
             if(ch>=10)break;
             if(data[d].value>=100)continue;
             createColumn("",[{"category":data[d].category,"value":data[d].value}],colors.getIndex(d));
