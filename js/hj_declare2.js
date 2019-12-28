@@ -38,8 +38,8 @@ parse(json => {
         function createColumn(title, data, color) {
         
             var chart = container.createChild(am4charts.XYChart);
-            chart.width = am4core.percent(60);
-            chart.height = am4core.percent(100);
+            chart.width = am4core.percent(90);
+            chart.height = am4core.percent(60);
         
             chart.data = data;
         
@@ -51,6 +51,7 @@ parse(json => {
             categoryAxis.renderer.labels.template.disabled = false;
             categoryAxis.cursorTooltipEnabled = false;
             categoryAxis.dataFields.category = "category";
+            categoryAxis.renderer.minGridDistance = 1;
         
             var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
             valueAxis.min = 0;
