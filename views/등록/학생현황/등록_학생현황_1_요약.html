@@ -58,13 +58,13 @@
                             <a href="등록_학생현황_1_요약.html"><span id="black"><b>요약</b></span></a>
                         </td>
                         <td>
-                            <a href="등록_학생현황_2_항목2.html"><span id="black">항목2</span></a>
+                            <a href="등록_학생현황_2_항목2.html"><span id="black">학부과정</span></a>
                         </td>
                         <td>
-                            <a href="등록_학생현황_3_항목3.html"><span id="black">항목3</span></a>
+                            <a href="등록_학생현황_3_항목3.html"><span id="black">석사과정</span></a>
                         </td>
                         <td>
-                            <a href="등록_학생현황_4_항목4.html"><span id="black">항목4</span></a>
+                            <a href="등록_학생현황_4_항목4.html"><span id="black">박사과정</span></a>
                         </td>
                         <td>
                             <a href="등록_학생현황_5_Explore.html"><span id="black">Explore the data</span></a>
@@ -91,12 +91,22 @@
                 <input type="radio" name="Gtype" id="multiples" onclick="drawChart(mode)">영역형<br><br>
             </form>
 
+
+            <span style="font-size: 20px"><b>차트 종류</b></span><br>
+            <form>
+                <input type = "radio" id = "T1" name = "Gtype" onclick = Change()>누적 영역형<br>
+                <input type = "radio" id = "T2" name = "Gtype" onclick = Change()>영역형<br><br>
+            </form>
+
+
             <span style="color:#FE4459; font-size: 20px;">■</span> 졸업생 박사<br>
             <span style="color:#E8A343; font-size: 20px;">■</span> 졸업생 석사<br>
             <span style="color:#FCFF57; font-size: 20px;">■</span> 졸업생 학사<br>
             <span style="color:#43E884; font-size: 20px;">■</span> 재적생 박사<br>
             <span style="color:#006400; font-size: 20px;">■</span> 재적생 석사<br>
             <span style="color:#46FFFF; font-size: 20px;">■</span> 재적생 학사<br>
+            <span style="color:#43E884; font-size: 20px;">■</span> 재적생 석사<br>
+            <span style="color:#43E884; font-size: 20px;">■</span> 재적생 학사<br>
             <br><br>
 
 
@@ -118,6 +128,7 @@
 
         <div id="summaryBox">
             <h2 id="chartTypeBox">누적 영역형 차트</h2>
+            <h2><span id = "P1">누적 영역형 차트</span></h2>
         </div>
         <div id="unitBox">
             (단위 : 명)
@@ -148,6 +159,24 @@
         </div>
 
     </div>
+
+    <script>
+        drawChart();
+        function Change() {
+            var temp = document.getElementById("T1")
+            var Target1 = document.getElementById("P1")
+
+            if (temp.checked == true) {
+                Target1.innerHTML = "누적 영역형 차트"
+            }
+            temp = document.getElementById("T2")
+            if (temp.checked == true) {
+                Target1.innerHTML = "영역형 차트"
+            }
+
+        }
+
+    </script>
 
     <div class="bottomframe">
         <div class="inbottomframe"></div>

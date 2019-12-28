@@ -63,13 +63,12 @@
                 //DD: different divisions
                 -->
 
+
                 <div id="colors">
-                    <b>계열대비 색상<br></b>
-                    <span id="color_hs" value="#E8A343" style="color:#E8A343; font-size: 20px;">■ </span>인문사회계열<br>
-                    <span id="color_ns" value="#FCFF57" style="color:#FCFF57; font-size: 20px;">■ </span>자연과학계열<br>
-                    <span id="color_en" value="#43E884" style="color:#43E884; font-size: 20px;">■ </span>공학계열<br>
-                    <span id="color_amp" value="#52A1FF" style="color:#52A1FF; font-size: 20px;">■ </span>예체능계열<br>
-                    <span style="font-size: 13px"><b>동일 계열 : 고채도 색상<br></b></span>
+                    <span id="color_hs" value="#E8A343" style="color:#E8A343; font-size: 20px;">■ </span>인문사회<br>
+                    <span id="color_ns" value="#FCFF57" style="color:#FCFF57; font-size: 20px;">■ </span>자연과학<br>
+                    <span id="color_en" value="#43E884" style="color:#43E884; font-size: 20px;">■ </span>공학<br>
+                    <span id="color_amp" value="#52A1FF" style="color:#52A1FF; font-size: 20px;">■ </span>예체능<br>
                     <span id="color_dd" value="#808080" style="color:#808080; font-size: 20px;">■ </span>타계열<br><br>
 
                 </div>
@@ -79,48 +78,49 @@
                     sel_sbs; select, search by semester
                  -->
                 <div>
-                    <label for="sel_sbd"><b>정렬 조건<br></b>
-                        <select id="sel_ord" onchange="selectSelectbox(id, this.value)" style="width: 120px">
-                            <option value="major" selected>전공이름</option>
-                            <option value="division">계열이름</option>
-                            <option value="frequency">인원수</option>
-                        </select>
+                    <span style="font-size: 20px"><b>정렬 조건</b></span><br>
+                    <select name="menu" id="sel_ord" onchange="selectSelectbox(id, this.value)"
+                        style="width : 200px; height: 30px">
+                        <option value="major" selected>전공이름순</option>
+                        <option value="division">계열별</option>
+                        <option value="frequency">빈도순</option>
+                    </select>
                     </label><br><br>
-                    <label for="sel_sbs"><b>학기별 검색<br></b>
-                        <select id="sel_sbs" onchange="selectSelectbox(id, this.value)" style="width: 120px">
-                            <option value="2019.2" selected>2019 2</option>
-                            <option value="2019.1">2019 1</option>
-                            <option value="2018.2">2018 2</option>
-                            <option value="2018.1">2018 1</option>
-                            <option value="2017.2">2017 2</option>
-                            <option value="2017.1">2017 1</option>
-                            <option value="2016.2">2016 2</option>
-                            <option value="2016.1">2016 1</option>
-                            <option value="2015.2">2015 2</option>
-                            <option value="2015.1">2015 1</option>
-                            <option value="2014.2">2014 2</option>
-                            <option value="2014.1">2014 1</option>
-                            <option value="2013.2">2013 2</option>
-                            <option value="2013.1">2013 1</option>
-                            <option value="2012.2">2012 2</option>
-                            <option value="2012.1">2012 1</option>
-                            <option value="2011.2">2011 2</option>
-                            <option value="2011.1">2011 1</option>
-                            <option value="2010.2">2010 2</option>
-                            <option value="2010.1">2010 1</option>
-                        </select>
+                    <span style="font-size: 20px"><b>학기별 검색</b></span><br>
+                    <select name="menu" id="sel_sbs" onchange="selectSelectbox(id, this.value)"
+                        style="width : 200px; height: 30px">
+                        <option value="2019.2" selected>2019 2학기</option>
+                        <option value="2019.1">2019 1학기</option>
+                        <option value="2018.2">2018 2학기</option>
+                        <option value="2018.1">2018 1학기</option>
+                        <option value="2017.2">2017 2학기</option>
+                        <option value="2017.1">2017 1학기</option>
+                        <option value="2016.2">2016 2학기</option>
+                        <option value="2016.1">2016 1학기</option>
+                        <option value="2015.2">2015 2학기</option>
+                        <option value="2015.1">2015 1학기</option>
+                        <option value="2014.2">2014 2학기</option>
+                        <option value="2014.1">2014 1학기</option>
+                        <option value="2013.2">2013 2학기</option>
+                        <option value="2013.1">2013 1학기</option>
+                        <option value="2012.2">2012 2학기</option>
+                        <option value="2012.1">2012 1학기</option>
+                        <option value="2011.2">2011 2학기</option>
+                        <option value="2011.1">2011 1학기</option>
+                        <option value="2010.2">2010 2학기</option>
+                        <option value="2010.1">2010 1학기</option>
+                    </select>
                     </label><br><br>
 
                     <!-- 
                     TODO: List to do
                  -->
 
-                    <label for="TODO_LIST" style="color:red"><b>TODO LIST</b>
-                        <div id="TODO_LIST" style="color:black; vertical-align: middle;">
-                            <input type="checkbox">animation<br>
-                            <input type="checkbox" checked>color gradient<br>
-                            <input type="checkbox">extension to total list<br>
-                        </div>
+                    <div id="TODO_LIST" style="color:black; vertical-align: middle;">
+                        <input type="checkbox">animation<br>
+                        <input type="checkbox" checked>color gradient<br>
+                        <input type="checkbox">extension to total list<br>
+                    </div>
                     </label>
                 </div>
 

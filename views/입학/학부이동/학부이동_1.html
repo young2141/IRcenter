@@ -15,6 +15,10 @@
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 
         <script src="../../../js/6_sankey.js"></script>
+        <script src="../../../js/hj_declare.js"></script>
+        <script src="../../../js/hj_declare2.js"></script>
+        <script src="../../../js/intended1.js"></script>
+        <script src="../../../js/intended2.js"></script>
 
     </head>
 
@@ -22,8 +26,31 @@
         @import url('../../../css/output_default.css');
 
         .chartdiv11 {
-            width: 80%;
-            height: 700px;
+            width: 60%;
+            height: 850px;
+            float: left;
+        }
+
+        .chartdivS{
+            width: 30%;
+            height: 350px;
+            float: right;
+            margin-right: 10%;
+        }
+
+        .summaryBoxS{
+            width: 30%;
+            float: right;
+            margin-right: 10%;
+            font-size: 20px;
+        }
+
+        .legendBoxS{
+            width:30%;
+            float: right;
+            margin-right: 10%;
+            text-align: right;
+            font-size: 15px;
         }
 
         .chartdiv22 {
@@ -48,7 +75,7 @@
                 <br>
                 <a href="https://www.knu.ac.kr" target="_blank">
                     <b>경북대학교 홈페이지</b>
-                    <a href="../첫화면.html"><b>| 경북대학교 IR센터</a></b>
+                    <a href="../../첫화면.html"><b>| 경북대학교 IR센터</a></b>
                     <!--<a href = "로그인 화면.html">*/-->
                     <div class="loginBox">
                         <a href="첫화면.html">로그인　|　</a>
@@ -103,7 +130,7 @@
                             valuechange(document.getElementById('years').value)
                         }
                     </script>
-                    <br><div style = "text-align: center; width: 180px"><span id="span1">2019</span></div>
+                    <br><div style = "text-align: center; width: 180px"><span id="span1">2015</span></div>
                     <br><br>
 
                 </form>
@@ -125,13 +152,43 @@
 
             </script>
 
-            <div style = "width: 250px; margin-right: 230px; float: left; margin-bottom: 20px; font-size: 20px"><b>입학학과(부)</b></div>
-            <div style = "width: 250px; margin-right: 230px; float: left; margin-bottom: 20px; font-size: 20px"><b>전입학과(부)</b></div>
+            <div style = "width: 250px; margin-right: 6%; float: left; margin-bottom: 20px; font-size: 20px"><b>입학학과(부)</b></div>
+            <div style = "width: 250px; margin-right: 6%; float: left; margin-bottom: 20px; font-size: 20px"><b>전입학과(부)</b></div>
             <div style = "width: 250px; float: left; margin-bottom: 20px; font-size: 20px"><b>졸업학과(부)</b></div>
             <div id="chartdiv" class="chartdiv11"></div>
 
-
+            <!--입학학과(부) -> 전입학과(부)<br>-->
+            <div class ="summaryBoxS"><b>입학학과(부)->전입학과(부)</b></div><br>
+            <div class ="legendBoxS">(단위 : %)</div><br>
+            <div id="chartdeclare3" class="chartdivS"></div>
             <br><br>
+
+            <!--전입학과(부) -> 졸업학과(부)<br>-->
+            <div class ="summaryBoxS"><b>전입학과(부)->졸업학과(부)</b></div><br>
+            <div class ="legendBoxS">(단위 : %)</div><br>
+            <div id="chartdeclare" class="chartdivS"></div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <div id="summaryBox">
+                <h2>입학학과(부)->전입학과(부)</h2>
+            </div>
+            <div id="unitBox" style = "width: 60%; float: right; margin-right: 10%">
+                (단위 : %)
+            </div>
+            <br>
+
+            <div id="chartdeclare2" style = "width: 60%; height: 500px; float: right; margin-right: 10%"></div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <div id="summaryBox">
+                <h2>전입학과(부)->졸업학과(부)</h2>
+            </div>
+            <div id="unitBox" style = "width: 60%; float: right; margin-right: 10%">
+                (단위 : %)
+            </div>
+            <br>
+            <div id="chartdeclare4" style = "width: 60%; height: 500px; float: right; margin-right: 10%"></div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
 

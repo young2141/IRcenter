@@ -4,7 +4,7 @@ function parse(callback) {
 
         for (var i = 0; i < json.length; i++) {
             var temp = {}
-            if(json[i].category.trim()=="전입후졸업"){
+            if(json[i].category.trim()=="입학후전입"){
                 temp["from"] = json[i].from.trim()
                 temp["to"] = json[i].to.trim()
                 temp["value"] = json[i].value  
@@ -25,7 +25,7 @@ parse(json => {
         // Themes end
         
         // Create chart instance
-        var container = am4core.create("chartdeclare2", am4core.Container);
+        var container = am4core.create("chartdeclare4", am4core.Container);
         container.layout = "grid";
         container.fixedWidthGrid = false;
         container.width = am4core.percent(100);
@@ -38,8 +38,8 @@ parse(json => {
         function createColumn(title, data, color) {
         
             var chart = container.createChild(am4charts.XYChart);
-            chart.width = am4core.percent(90);
-            chart.height = am4core.percent(60);
+            chart.width = am4core.percent(60);
+            chart.height = am4core.percent(100);
         
             chart.data = data;
         
@@ -51,18 +51,18 @@ parse(json => {
             categoryAxis.renderer.labels.template.disabled = false;
             categoryAxis.cursorTooltipEnabled = false;
             categoryAxis.dataFields.category = "category";
-            categoryAxis.renderer.minGridDistance = 1;
         
             var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
             valueAxis.min = 0;
             valueAxis.max = 100;
+            // valueAxis.title.text = "(%)";
             valueAxis.renderer.grid.template.disabled = false;
             valueAxis.renderer.baseGrid.disabled = false;
             valueAxis.renderer.labels.template.disabled = false;
             valueAxis.cursorTooltipEnabled = false;
         
-            //chart.cursor = new am4charts.XYCursor();
-            //chart.cursor.lineY.disabled = true;
+            // chart.cursor = new am4charts.XYCursor();
+            // chart.cursor.lineY.disabled = true;
         
             var series = chart.series.push(new am4charts.ColumnSeries());
             series.dataFields.categoryY = "category";
@@ -76,7 +76,7 @@ parse(json => {
             return chart;
         }
         
-        //그리기시작
+
         colorcnt=0;
         var data=[]
         for (var i = 0; i < json.length; i++) {
