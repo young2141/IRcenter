@@ -62,13 +62,13 @@
                             <a href="등록_학생현황_1_요약.html"><span id="black">요약</span></a>
                         </td>
                         <td>
-                            <a href="등록_학생현황_2_항목2.html"><span id="black">항목2</span></a>
+                            <a href="등록_학생현황_2_항목2.html"><span id="black">학사과정</span></a>
                         </td>
                         <td style="background-color : #eeeeee">
-                            <a href="등록_학생현황_3_항목3.html"><span id="black"><b>항목3</b></span></a>
+                            <a href="등록_학생현황_3_항목3.html"><span id="black"><b>석사과정</b></span></a>
                         </td>
                         <td>
-                            <a href="등록_학생현황_4_항목4.html"><span id="black">항목4</span></a>
+                            <a href="등록_학생현황_4_항목4.html"><span id="black">박사과정</span></a>
                         </td>
                         <td>
                             <a href="등록_학생현황_5_Explore.html"><span id="black">Explore the data</span></a>
@@ -88,29 +88,43 @@
 
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
-
-
-            <span style="font-size: 20px"><b>Select View</b></span><br>
+            <span style="font-size: 20px"><b>차트 종류</b></span><br>
             <form>
-                <input type = "radio" name = "Gtype">누적 영역형<br>
-                <input type = "radio" name = "Gtype">영역형<br><br>
 
-                <input type = "checkbox">재적생<br>
-                <input type = "checkbox">졸업생<br><br>
+                
+                <input type="radio" name="Gtype" id="stacked" checked="checked" onclick= "Change()">누적 영역형<br>
+                <input type="radio" name="Gtype" id="multiples" onclick= "Change()">영역형<br><br>
 
-                <input type = "checkbox">남자<br>
-                <input type = "checkbox">여자<br><br>
+                
+                <span style="font-size: 20px"><b>선택항목1</b></span><br>
+                <select name="grad" onchange = "drawChart()" style="width : 200px; height: 30px">
+                    <option name = "grad" id = "all" selected = "selected" onclick="drawChart()">(전체)</option>
+                    <option name = "grad" id = "graduate">졸업생</option>
+                    <option name = "grad" id = "undergraduate">재적생</option>
+                </select><br><br>
+
+                <!--<input type="radio" name="grad" id="all" checked="checked" onclick="drawChart()">전체<br>
+                <input type="radio" name="grad" id="graduate" onclick="drawChart()">졸업<br>
+                <input type="radio" name="grad" id="undergraduate" onclick="drawChart()">재적<br><br>-->
+
+                
+                <span style="font-size: 20px"><b>선택항목2</b></span><br>
+                <select name="gender" onchange = "drawChart()" style="width : 200px; height: 30px">
+                    <option name = "gender" id = "all" selected = "selected" onclick="drawChart()">(전체)</option>
+                    <option name = "gender" id = "male">남자</option>
+                    <option name = "gender" id = "female">여자</option>
+                </select><br><br>
+
+                <!--<input type="radio" name="gender" id="all" checked="checked" onclick="drawChart()">전체<br>
+                <input type="radio" name="gender" id="male" onclick="drawChart()">남자<br>
+                <input type="radio" name="gender" id="female" onclick="drawChart()">여자<br><br>-->
 
             </form>
-
-
-            <span style="color:#FE4459; font-size: 20px;">■</span> 졸업생 남자<br>
-            <span style="color:#E8A343; font-size: 20px;">■</span> 졸업생 여자<br>
-            <span style="color:#FCFF57; font-size: 20px;">■</span> 재적생 남자<br>
-            <span style="color:#43E884; font-size: 20px;">■</span> 재적생 여자<br>
+            <span style="color:#FE4459; font-size: 20px;" onmouseover="mouseOver('graduate_male')" onmouseleave="mouseLeave()">■</span> 졸업생 남자<br>
+            <span style="color:#E8A343; font-size: 20px;" onmouseover="mouseOver('graduate_female')" onmouseleave="mouseLeave()">■</span> 졸업생 여자<br>
+            <span style="color:#FCFF57; font-size: 20px;" onmouseover="mouseOver('undergraduate_male')" onmouseleave="mouseLeave()">■</span> 재적생 남자<br>
+            <span style="color:#43E884; font-size: 20px;" onmouseover="mouseOver('undergraduate_female')" onmouseleave="mouseLeave()">■</span> 재적생 여자<br>
             <br><br>
-            
-
         </div>
         <script>
             var currentPosition = parseInt($("#gotop").css("top"));
@@ -128,7 +142,7 @@
         </script>
 
         <div id="summaryBox">
-            <h2>누적 영역형 차트</h2>
+            <h2><span id = "P1">누적 영역형 차트</span></h2>
         </div>
         <div id="unitBox">
             (단위 : 명)
@@ -155,6 +169,23 @@
 
     </div>
 
+    <script>
+        function Change() {
+            var temp = document.getElementById("stacked")
+            var Target1 = document.getElementById("P1")
+
+            if (temp.checked == true) {
+                Target1.innerHTML = "누적 영역형 차트"
+            }
+            temp = document.getElementById("multiples")
+            if (temp.checked == true) {
+                Target1.innerHTML = "영역형 차트"
+            }
+
+        }
+
+    </script>
+
     <div class="bottomframe">
         <div class="inbottomframe"></div>
         <div class="inbottomframe"></div>
@@ -168,6 +199,7 @@
 
         </div>
     </div>
+
 
 </body>
 
