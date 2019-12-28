@@ -85,17 +85,10 @@
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
-            <span style="font-size: 20px"><b>Select View</b></span><br>
-            <form>
-                <input type="radio" name="Gtype" id="stacked" checked="checked" onclick="drawChart(mode)">누적 영역형<br>
-                <input type="radio" name="Gtype" id="multiples" onclick="drawChart(mode)">영역형<br><br>
-            </form>
-
-
             <span style="font-size: 20px"><b>차트 종류</b></span><br>
             <form>
-                <input type = "radio" id = "T1" name = "Gtype" onclick = Change()>누적 영역형<br>
-                <input type = "radio" id = "T2" name = "Gtype" onclick = Change()>영역형<br><br>
+                <input type = "radio" id = "stacked" name = "Gtype" onclick = "drawChart(mode)">누적 영역형<br>
+                <input type = "radio" id = "multiples" name = "Gtype" onclick = "drawChart(mode)">영역형<br><br>
             </form>
 
 
@@ -105,8 +98,6 @@
             <span style="color:#43E884; font-size: 20px;">■</span> 재적생 박사<br>
             <span style="color:#006400; font-size: 20px;">■</span> 재적생 석사<br>
             <span style="color:#46FFFF; font-size: 20px;">■</span> 재적생 학사<br>
-            <span style="color:#43E884; font-size: 20px;">■</span> 재적생 석사<br>
-            <span style="color:#43E884; font-size: 20px;">■</span> 재적생 학사<br>
             <br><br>
 
 
@@ -127,8 +118,7 @@
         </script>
 
         <div id="summaryBox">
-            <h2 id="chartTypeBox">누적 영역형 차트</h2>
-            <h2><span id = "P1">누적 영역형 차트</span></h2>
+            <h2><span id = "chartTypeBox">누적 영역형 차트</span></h2>
         </div>
         <div id="unitBox">
             (단위 : 명)
