@@ -12,7 +12,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-        <script src="../../../working on/js/treemap(도영).js"></script>
+        <script src="../../../js/chord.js"></script>
 </head>
 
 <style type="text/css">
@@ -20,7 +20,7 @@
 
     .chartdiv11 {
         width: 1400px;
-        height: 1000px;
+        height: 1400px;
         display: inline-block;
     }
 
@@ -58,7 +58,7 @@
 
 
     <div class="bodyBox">
-        <span id="titleFont"><b>Arc Diagram</b></span>
+        <span id="titleFont"><b>Chord Diagram</b></span>
     </div>
 
     <div id="TOP">
@@ -83,8 +83,9 @@
 
         <br>
 
-        <!--이 부분에 그래프를 삽입-->
-        <div class="chartdiv" id="chartdiv"></div>
+        <!-- 이 부분에 그래프 삽입 -->
+        <div class="chartdiv11" id="chartdiv"></div>
+        <script>drawChart()</script>
 
 
         <div id="summaryBox" style="font-size: 15px">
