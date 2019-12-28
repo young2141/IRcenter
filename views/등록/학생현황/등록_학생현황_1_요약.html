@@ -92,12 +92,12 @@
             </form>
 
 
-            <span style="color:#FE4459; font-size: 20px;">■</span> 졸업생 박사<br>
-            <span style="color:#E8A343; font-size: 20px;">■</span> 졸업생 석사<br>
-            <span style="color:#FCFF57; font-size: 20px;">■</span> 졸업생 학사<br>
-            <span style="color:#43E884; font-size: 20px;">■</span> 재적생 박사<br>
-            <span style="color:#006400; font-size: 20px;">■</span> 재적생 석사<br>
-            <span style="color:#46FFFF; font-size: 20px;">■</span> 재적생 학사<br>
+            <span style="color:#FE4459; font-size: 20px;" onmouseover="mouseOver('graduate_doctor')" onmouseleave="    mouseLeave()">■</span> 졸업생 박사<br>
+            <span style="color:#E8A343; font-size: 20px;" onmouseover="mouseOver('graduate_master')" onmouseleave="    mouseLeave()">■</span> 졸업생 석사<br>
+            <span style="color:#FCFF57; font-size: 20px;" onmouseover="mouseOver('graduate_college')" onmouseleave="    mouseLeave()">■</span> 졸업생 학사<br>
+            <span style="color:#43E884; font-size: 20px;" onmouseover="mouseOver('undergraduate_doctor')" onmouseleave="    mouseLeave()">■</span> 재적생 박사<br>
+            <span style="color:#006400; font-size: 20px;" onmouseover="mouseOver('undergraduate_master')" onmouseleave="    mouseLeave()">■</span> 재적생 석사<br>
+            <span style="color:#46FFFF; font-size: 20px;" onmouseover="mouseOver('undergraduate_college')" onmouseleave="    mouseLeave()">■</span> 재적생 학사<br>
             <br><br>
 
 
@@ -149,24 +149,6 @@
         </div>
 
     </div>
-
-    <script>
-        drawChart();
-        function Change() {
-            var temp = document.getElementById("T1")
-            var Target1 = document.getElementById("P1")
-
-            if (temp.checked == true) {
-                Target1.innerHTML = "누적 영역형 차트"
-            }
-            temp = document.getElementById("T2")
-            if (temp.checked == true) {
-                Target1.innerHTML = "영역형 차트"
-            }
-
-        }
-
-    </script>
 
     <div class="bottomframe">
         <div class="inbottomframe"></div>

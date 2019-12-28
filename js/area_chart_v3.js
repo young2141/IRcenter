@@ -40,13 +40,13 @@ function mouseLeave() {
 function GetDrawCode() {
     var result = 0;
 
-    if ($(":input:radio[name=grad]:checked").attr('id') == 'all') {
+    if ($("#grad option:selected").val() == 'all') {
         result += Math.pow(2, 0) + Math.pow(2, 1)
     }
-    else if ($(":input:radio[name=grad]:checked").attr('id') == 'graduate') {
+    else if ($("#grad option:selected").val() == 'graduate') {
         result += Math.pow(2, 0)
     }
-    else if ($(":input:radio[name=grad]:checked").attr('id') == 'undergraduate') {
+    else if ($("#grad option:selected").val() == 'undergraduate') {
         result += Math.pow(2, 1)
     }
 
@@ -62,13 +62,13 @@ function GetDrawCode() {
     }
 
     // 성별 코드 부여
-    if ($(":input:radio[name=gender]:checked").attr('id') == 'all') {
+    if ($("#gender option:selected").val() == 'all') {
         result += Math.pow(2, 5) + Math.pow(2, 6)
     }
-    else if ($(":input:radio[name=gender]:checked").attr('id') == 'male') {
+    else if ($("#gender option:selected").val() == 'male') {
         result += Math.pow(2, 5)
     }
-    else if ($(":input:radio[name=gender]:checked").attr('id') == 'female') {
+    else if ($("#gender option:selected").val() == 'female') {
         result += Math.pow(2, 6)
     }
 

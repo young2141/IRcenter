@@ -7,7 +7,7 @@ var draw_mode;
 
 function drawChart(mode) {
     var chartTypeBox = document.getElementById("chartTypeBox")
-    draw_mode = "_" + mode
+    draw_mode = mode
     d3.selectAll("svg").remove();
     if ($(":input:radio[name='Gtype']:checked").attr('id') == 'stacked') {
         chartTypeBox.innerHTML = "누적 영역형 차트"
@@ -41,8 +41,10 @@ function stackedAreaChart() {
     var keys = []
     var cls = []
 
-    if ($(":input:radio[name=grad]:checked").attr('id') == 'all') {
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'all') {
+    if ($("#grad option:selected").val() == 'all') {
+
+        if (($("#gender option:selected").val()) == 'all') {
+
             keys.push('graduate_male' + draw_mode)
             keys.push('graduate_female' + draw_mode)
             keys.push('undergraduate_male' + draw_mode)
@@ -52,47 +54,47 @@ function stackedAreaChart() {
             cls.push('#FCFF57')
             cls.push('#43E884')
         }
-        else if ($(":input:radio[id=male]:checked").attr('id') == 'male') {
+        else if ($("#gender option:selected").val() == 'male') {
             keys.push('graduate_male' + draw_mode)
             keys.push('undergraduate_male' + draw_mode)
             cls.push('#FE4459')
             cls.push('#FCFF57')
         }
-        else if ($(":input:radio[id=female]:checked").attr('id') == 'female') {
+        else if ($("#gender option:selected").val() == 'female') {
             keys.push('graduate_female' + draw_mode)
             keys.push('undergraduate_female' + draw_mode)
             cls.push('#E8A343')
             cls.push('#43E884')
         }
     }
-    else if ($(":input:radio[name=grad]:checked").attr('id') == 'graduate') {
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'all') {
+    else if ($("#grad option:selected").val() == 'graduate') {
+        if ($("#gender option:selected").val() == 'all') {
             keys.push('graduate_male' + draw_mode)
             keys.push('graduate_female' + draw_mode)
             cls.push('#FE4459')
             cls.push('#E8A343')
         }
-        else if ($(":input:radio[name=gender]:checked").attr('id') == 'male') {
+        else if ($("#gender option:selected").val() == 'male') {
             keys.push('graduate_male' + draw_mode)
             cls.push('#FE4459')
         }
-        else if ($(":input:radio[name=gender]:checked").attr('id') == 'female') {
+        else if ($("#gender option:selected").val() == 'female') {
             keys.push('graduate_female' + draw_mode)
             cls.push('#E8A343')
         }
     }
-    else if ($(":input:radio[name=grad]:checked").attr('id') == 'undergraduate') {
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'all') {
+    else if ($("#grad option:selected").val() == 'undergraduate') {
+        if ($("#gender option:selected").val() == 'all') {
             keys.push('undergraduate_male' + draw_mode)
             keys.push('undergraduate_female' + draw_mode)
             cls.push('#FCFF57')
             cls.push('#43E884')
         }
-        else if ($(":input:radio[name=gender]:checked").attr('id') == 'male') {
+        else if ($("#gender option:selected").val() == 'male') {
             keys.push('undergraduate_male' + draw_mode)
             cls.push('#FCFF57')
         }
-        else if ($(":input:radio[name=gender]:checked").attr('id') == 'female') {
+        else if ($("#gender option:selected").val() == 'female') {
             keys.push('undergraduate_female' + draw_mode)
             cls.push('#43E884')
         }
@@ -127,20 +129,20 @@ function multiplesAreaChart() {
     var check_cnt = 0; // 몇개의 영역이 그려져야되는지
     var svg_arr = [], svg1, svg2, svg3, svg4;
     var svg_index = 0;
-    if ($(":input:radio[name=grad]:checked").attr('id') == 'all') {
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'all') check_cnt = 4;
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'male') check_cnt = 2;
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'female') check_cnt = 2;
+    if ($("#grad option:selected").val() == 'all') {
+        if ($("#gender option:selected").val() == 'all') check_cnt = 4;
+        if ($("#gender option:selected").val() == 'male') check_cnt = 2;
+        if ($("#gender option:selected").val() == 'female') check_cnt = 2;
     }
-    else if ($(":input:radio[name=grad]:checked").attr('id') == 'graduate') {
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'all') check_cnt = 2;
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'male') check_cnt = 1;
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'female') check_cnt = 1;
+    else if ($("#grad option:selected").val() == 'graduate') {
+        if ($("#gender option:selected").val() == 'all') check_cnt = 2;
+        if ($("#gender option:selected").val() == 'male') check_cnt = 1;
+        if ($("#gender option:selected").val() == 'female') check_cnt = 1;
     }
-    else if ($(":input:radio[name=grad]:checked").attr('id') == 'undergraduate') {
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'all') check_cnt = 2;
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'male') check_cnt = 1;
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'female') check_cnt = 1;
+    else if ($("#grad option:selected").val() == 'undergraduate') {
+        if ($("#gender option:selected").val() == 'all') check_cnt = 2;
+        if ($("#gender option:selected").val() == 'male') check_cnt = 1;
+        if ($("#gender option:selected").val() == 'female') check_cnt = 1;
     }
     var h = height / check_cnt
     //선택된 갯수만큼만만 svg영역을 잡는다.
@@ -181,36 +183,36 @@ function multiplesAreaChart() {
         svg_arr.push(svg4)
     }
 
-    if ($(":input:radio[name=grad]:checked").attr('id') == 'all') {
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'all') {
+    if ($("#grad option:selected").val() == 'all') {
+        if ($("#gender option:selected").val() == 'all') {
             prevmultiplechart(check_cnt, svg_arr, ['graduate_male' + draw_mode, 'graduate_female' + draw_mode, 'undergraduate_male' + draw_mode, 'undergraduate_female' + draw_mode], ['#FE4459', '#E8A343', '#FCFF57', '#43E884']);
         }
-        else if ($(":input:radio[name=gender]:checked").attr('id') == 'male') {
+        else if ($("#gender option:selected").val() == 'male') {
             prevmultiplechart(check_cnt, svg_arr, ['graduate_male' + draw_mode, 'undergraduate_male' + draw_mode], ['#FE4459', '#FCFF57']);
         }
-        else if ($(":input:radio[name=gender]:checked").attr('id') == 'female') {
+        else if ($("#gender option:selected").val() == 'female') {
             prevmultiplechart(check_cnt, svg_arr, ['graduate_female' + draw_mode, 'undergraduate_female' + draw_mode], ['#E8A343', '#43E884']);
         }
     }
-    else if ($(":input:radio[name=grad]:checked").attr('id') == 'graduate') {
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'all') {
+    else if ($("#grad option:selected").val() == 'graduate') {
+        if ($("#gender option:selected").val() == 'all') {
             prevmultiplechart(check_cnt, svg_arr, ['graduate_male' + draw_mode, 'graduate_female' + draw_mode], ['#FE4459', '#E8A343']);
         }
-        else if ($(":input:radio[name=gender]:checked").attr('id') == 'male') {
+        else if ($("#gender option:selected").val() == 'male') {
             prevmultiplechart(check_cnt, svg_arr, ['graduate_male' + draw_mode], ['#FE4459']);
         }
-        else if ($(":input:radio[name=gender]:checked").attr('id') == 'female') {
+        else if ($("#gender option:selected").val() == 'female') {
             prevmultiplechart(check_cnt, svg_arr, ['graduate_female' + draw_mode], ['#E8A343']);
         }
     }
-    else if ($(":input:radio[name=grad]:checked").attr('id') == 'undergraduate') {
-        if ($(":input:radio[name=gender]:checked").attr('id') == 'all') {
+    else if ($("#grad option:selected").val() == 'undergraduate') {
+        if ($("#gender option:selected").val() == 'all') {
             prevmultiplechart(check_cnt, svg_arr, ['undergraduate_male' + draw_mode, 'undergraduate_female' + draw_mode], ['#FCFF57', '#43E884']);
         }
-        else if ($(":input:radio[name=gender]:checked").attr('id') == 'male') {
+        else if ($("#gender option:selected").val() == 'male') {
             prevmultiplechart(check_cnt, svg_arr, ['undergraduate_male' + draw_mode], ['#FCFF57']);
         }
-        else if ($(":input:radio[name=gender]:checked").attr('id') == 'female') {
+        else if ($("#gender option:selected").val() == 'female') {
             prevmultiplechart(check_cnt, svg_arr, ['undergraduate_female' + draw_mode], ['#43E884']);
         }
     }
