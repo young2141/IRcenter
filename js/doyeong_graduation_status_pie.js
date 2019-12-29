@@ -1,4 +1,4 @@
-function parsing() {
+function parsingPie() {
     var year = parseInt($('#years').val())// string 타입
     var filename = "doyeong_graduation_status_pie.json";
     $.getJSON("../../../json/" + filename, (jsonData) => {
@@ -33,7 +33,7 @@ function parsing() {
                             "value": jsonData[i]["exception"]
                         }
                     ];
-                    draw(data);
+                    drawPie(data);
                     cnt++;
                     break;
                 }
@@ -42,10 +42,9 @@ function parsing() {
     })
 }
 
-function draw(_data) {
+function drawPie(_data) {
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
-        am4core.useTheme(am4themes_material);
         var chart = am4core.create("chartdiv", am4charts.PieChart);
         chart.data = _data;
         console.log(_data);
