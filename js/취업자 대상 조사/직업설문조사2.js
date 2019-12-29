@@ -1,14 +1,14 @@
-function drawChart2() {
+function drawChart2_1() {
     am4core.ready(function () {
 
         // Themes begin
         am4core.useTheme(am4themes_animated);
         // Themes end
 
-        var chart = am4core.create("chartdiv2", am4charts.XYChart);
+        var chart = am4core.create("chartdiv2_1", am4charts.XYChart);
 
-        var height = document.getElementById("chartdiv").clientHeight;
-        var width = document.getElementById("chartdiv").clientWidth;
+        var height = document.getElementById("chartdiv2_1").clientHeight;
+        var width = document.getElementById("chartdiv2_1").clientWidth;
 
         var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
         var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
@@ -19,14 +19,10 @@ function drawChart2() {
         xAxis.renderer.grid.template.disabled = true;
         xAxis.renderer.ticks.template.disabled = false;
         xAxis.renderer.ticks.template.strokeOpacity = 0.8;
-        xAxis.renderer.ticks.template.length = height - 220;
-        xAxis.renderer.ticks.template.dy = height - 253;
+        xAxis.renderer.ticks.template.length = height - 185;
+        xAxis.renderer.ticks.template.dy = height - 213;
         xAxis.renderer.ticks.template.location = 0;
         xAxis.title.text = "구직활동 기간";
-        // xAxis.renderer.grid.template.minGridDistance = 1;
-        // xAxis.renderer.labels.template.width = 100;
-        // xAxis.width = 700;
-
 
         yAxis.dataFields.category = "y";
         yAxis.renderer.grid.template.disabled = true;

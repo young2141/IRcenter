@@ -9,10 +9,10 @@
     <script src="https://www.amcharts.com/lib/4/core.js"></script>
     <script src="https://www.amcharts.com/lib/4/charts.js"></script>
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-    <script src="../../../js/등록/직업설문조사.js"></script>
-    <script src="../../../js/등록/직업설문조사_컬럼그래프.js"></script>
-    <script src="../../../js/등록/직업설문조사2.js"></script>
-    <script src="../../../js/등록/직업설문조사2_컬럼그래프.js"></script>
+    <script src="../../../js/취업자 대상 조사/직업설문조사.js"></script>
+    <script src="../../../js/취업자 대상 조사/직업설문조사_컬럼그래프.js"></script>
+    <script src="../../../js/취업자 대상 조사/직업설문조사2.js"></script>
+    <script src="../../../js/취업자 대상 조사/직업설문조사2_컬럼그래프.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 
 
@@ -47,18 +47,17 @@
         </div>
 
     </div>
-    <script>
+    <!-- <script>
             drawChart();
             drawChart2();
             drawChart_2();
             drawChart2_2();
-    </script>
+    </script> -->
 
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
-            <span style = "color: #fcd12a">■</span> 정규직 고용<br>
-            <span style = "color: #6794dc">■</span> 구직 활동 중<br>
-
+            <span id="color_fulltime" style = "color: #fcd12a" value="#fcd12a">■</span> 정규직 고용<br>
+            <span id="color_seeking" style = "color: #6794dc" value="#6794dc">■</span> 구직 활동 중<br>
         </div>
 
         <script>
@@ -82,38 +81,9 @@
 		(단위 : %)
         </div>
         <script>
-                drawChart();
-        </script>
-       <div id="chartdiv" style = "width: 1000px; height: 500px"></div>
-
-
-
-        <div id="summaryBox">
-            <h2>언제부터 적극적으로 구직활동을 시작하셨나요?</h2>
-        </div>
-        <div id = "unitBox">
-            (단위 : %)
-        </div>
-        <script>
-                drawChart2();
-        </script>
-        <div id="chartdiv2" style="width: 1000px; height:400px"></div>
-
-
-
-
-        <div id="summaryBox">
-            <h2>대학시절 직업관련 인턴쉽은 몇 번이나 했었나요?</h2>
-        </div>
-        <div id = "unitBox">
-            (단위 : %)
-        </div>
-        <script>
                 drawChart1_1();
         </script>
-            <!-- <div id="chartdiv"></div> -->
-        <div id="chartdiv1_1" style="width: 1000px; height:400px"></div>
-
+       <div id="chartdiv1_1" style = "width: 1000px; height: 500px"></div>
 
 
 
@@ -126,8 +96,37 @@
         <script>
                 drawChart2_1();
         </script>
-            <!-- <div id="chartdiv"></div> -->
         <div id="chartdiv2_1" style="width: 1000px; height:400px"></div>
+
+
+
+
+        <div id="summaryBox">
+            <h2>대학시절 직업관련 인턴쉽은 몇 번이나 했었나요?</h2>
+        </div>
+        <div id = "unitBox">
+            (단위 : %)
+        </div>
+        <script>
+                drawChart1_2();
+        </script>
+            <!-- <div id="chartdiv"></div> -->
+        <div id="chartdiv1_2" style="width: 1000px; height:400px"></div>
+
+
+
+
+        <div id="summaryBox">
+            <h2>언제부터 적극적으로 구직활동을 시작하셨나요?</h2>
+        </div>
+        <div id = "unitBox">
+            (단위 : %)
+        </div>
+        <script>
+                drawChart2_2();
+        </script>
+            <!-- <div id="chartdiv"></div> -->
+        <div id="chartdiv2_2" style="width: 1000px; height:400px"></div>
         
 
 

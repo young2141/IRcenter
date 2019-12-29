@@ -1,4 +1,4 @@
-function drawChart1_1() {
+function drawChart1_2() {
     am4core.ready(function () {
 
         // Themes begin
@@ -6,7 +6,7 @@ function drawChart1_1() {
         // Themes end
 
         // Create chart instance
-        var chart = am4core.create("chartdiv_2", am4charts.XYChart);
+        var chart = am4core.create("chartdiv1_2", am4charts.XYChart);
 
         // Add data
         chart.data = [{
@@ -27,12 +27,12 @@ function drawChart1_1() {
         var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "x";
         categoryAxis.renderer.grid.template.location = 0;
-        categoryAxis.renderer.grid.template.strokeWidth = 2;
+        // categoryAxis.renderer.grid.template.strokeWidth = 2;
         categoryAxis.renderer.grid.template.strokeOpacity = 0.3;
 
 
         var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
-        valueAxis.renderer.grid.template.strokeWidth = 2;
+        // valueAxis.renderer.grid.template.strokeWidth = 2;
         valueAxis.renderer.grid.template.strokeOpacity = 0.3;
         valueAxis.min = 0;
         valueAxis.max = 100;

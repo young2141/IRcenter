@@ -1,11 +1,11 @@
-function drawChart() {
+function drawChart1_1() {
     am4core.ready(function () {
 
         // Themes begin
         am4core.useTheme(am4themes_animated);
         // Themes end
 
-        var chart = am4core.create("chartdiv", am4charts.XYChart);
+        var chart = am4core.create("chartdiv1_1", am4charts.XYChart);
 
         let color_seeking = document.getElementById("color_seeking").getAttribute("value");
         let color_fulltime = document.getElementById("color_fulltime").getAttribute("value");
@@ -56,8 +56,8 @@ function drawChart() {
         var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
         var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
 
-        var height = document.getElementById("chartdiv").clientHeight;
-        var width = document.getElementById("chartdiv").clientWidth;
+        var height = document.getElementById("chartdiv1_1").clientHeight;
+        var width = document.getElementById("chartdiv1_1").clientWidth;
 
         xAxis.dataFields.category = "x";
         xAxis.renderer.opposite = true;
