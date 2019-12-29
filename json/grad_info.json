@@ -1,0 +1,382 @@
+[
+  {
+    "all": {
+      "all": 3967,
+      "male": 2135,
+      "female": 1832,
+      "time taken": 5467.666666666666,
+      "count": 878
+    },
+    "science": {
+      "all": 843,
+      "male": 302,
+      "female": 541,
+      "time taken": 1354.5,
+      "count": 230
+    },
+    "artphysical": {
+      "all": 206,
+      "male": 62,
+      "female": 144,
+      "time taken": 341.0,
+      "count": 52
+    },
+    "mech": {
+      "all": 1441,
+      "male": 1104,
+      "female": 337,
+      "time taken": 1543.0,
+      "count": 232
+    },
+    "society": {
+      "all": 1477,
+      "male": 667,
+      "female": 810,
+      "time taken": 2229.166666666666,
+      "count": 364
+    },
+    "year": "`09.09-`10.02"
+  },
+  {
+    "all": {
+      "all": 4287,
+      "male": 2396,
+      "female": 1891,
+      "time taken": 5732.75,
+      "count": 937
+    },
+    "science": {
+      "all": 900,
+      "male": 344,
+      "female": 556,
+      "time taken": 1315.0,
+      "count": 228
+    },
+    "artphysical": {
+      "all": 162,
+      "male": 42,
+      "female": 120,
+      "time taken": 249.0,
+      "count": 42
+    },
+    "mech": {
+      "all": 1686,
+      "male": 1292,
+      "female": 394,
+      "time taken": 1899.1666666666667,
+      "count": 285
+    },
+    "society": {
+      "all": 1539,
+      "male": 718,
+      "female": 821,
+      "time taken": 2269.583333333333,
+      "count": 382
+    },
+    "year": "`10.09-`11.02"
+  },
+  {
+    "all": {
+      "all": 4228,
+      "male": 2359,
+      "female": 1869,
+      "time taken": 5859.583333333332,
+      "count": 951
+    },
+    "science": {
+      "all": 913,
+      "male": 341,
+      "female": 572,
+      "time taken": 1483.25,
+      "count": 249
+    },
+    "artphysical": {
+      "all": 176,
+      "male": 43,
+      "female": 133,
+      "time taken": 251.08333333333334,
+      "count": 45
+    },
+    "mech": {
+      "all": 1554,
+      "male": 1246,
+      "female": 308,
+      "time taken": 1794.0833333333333,
+      "count": 271
+    },
+    "society": {
+      "all": 1585,
+      "male": 729,
+      "female": 856,
+      "time taken": 2331.166666666666,
+      "count": 386
+    },
+    "year": "`11.09-`12.02"
+  },
+  {
+    "all": {
+      "all": 5742,
+      "male": 3528,
+      "female": 2214,
+      "time taken": 7975.25,
+      "count": 1201
+    },
+    "science": {
+      "all": 1307,
+      "male": 588,
+      "female": 719,
+      "time taken": 2043.333333333333,
+      "count": 319
+    },
+    "artphysical": {
+      "all": 238,
+      "male": 85,
+      "female": 153,
+      "time taken": 401.0,
+      "count": 62
+    },
+    "mech": {
+      "all": 2182,
+      "male": 1828,
+      "female": 354,
+      "time taken": 2542.75,
+      "count": 358
+    },
+    "society": {
+      "all": 2015,
+      "male": 1027,
+      "female": 988,
+      "time taken": 2988.166666666667,
+      "count": 462
+    },
+    "year": "`12.09-`13.02"
+  },
+  {
+    "all": {
+      "all": 4931,
+      "male": 2926,
+      "female": 2005,
+      "time taken": 6394.666666666666,
+      "count": 1103
+    },
+    "science": {
+      "all": 1183,
+      "male": 538,
+      "female": 645,
+      "time taken": 1595.4999999999995,
+      "count": 291
+    },
+    "artphysical": {
+      "all": 241,
+      "male": 81,
+      "female": 160,
+      "time taken": 287.0,
+      "count": 53
+    },
+    "mech": {
+      "all": 1774,
+      "male": 1437,
+      "female": 337,
+      "time taken": 1929.5,
+      "count": 322
+    },
+    "society": {
+      "all": 1733,
+      "male": 870,
+      "female": 863,
+      "time taken": 2582.666666666666,
+      "count": 437
+    },
+    "year": "`13.09-`14.02"
+  },
+  {
+    "all": {
+      "all": 5115,
+      "male": 2992,
+      "female": 2123,
+      "time taken": 6749.583333333332,
+      "count": 1156
+    },
+    "science": {
+      "all": 1251,
+      "male": 544,
+      "female": 707,
+      "time taken": 1743.25,
+      "count": 314
+    },
+    "artphysical": {
+      "all": 256,
+      "male": 98,
+      "female": 158,
+      "time taken": 329.5,
+      "count": 57
+    },
+    "mech": {
+      "all": 1804,
+      "male": 1472,
+      "female": 332,
+      "time taken": 2145.1666666666665,
+      "count": 362
+    },
+    "society": {
+      "all": 1804,
+      "male": 878,
+      "female": 926,
+      "time taken": 2531.6666666666665,
+      "count": 423
+    },
+    "year": "`14.09-`15.02"
+  },
+  {
+    "all": {
+      "all": 5117,
+      "male": 2978,
+      "female": 2139,
+      "time taken": 6624.666666666668,
+      "count": 1118
+    },
+    "science": {
+      "all": 1347,
+      "male": 634,
+      "female": 713,
+      "time taken": 1810.5833333333335,
+      "count": 315
+    },
+    "artphysical": {
+      "all": 234,
+      "male": 78,
+      "female": 156,
+      "time taken": 333.5,
+      "count": 60
+    },
+    "mech": {
+      "all": 1747,
+      "male": 1423,
+      "female": 324,
+      "time taken": 2023.5,
+      "count": 336
+    },
+    "society": {
+      "all": 1789,
+      "male": 843,
+      "female": 946,
+      "time taken": 2457.0833333333335,
+      "count": 407
+    },
+    "year": "`15.09-`16.02"
+  },
+  {
+    "all": {
+      "all": 5257,
+      "male": 3059,
+      "female": 2198,
+      "time taken": 6811.75,
+      "count": 1175
+    },
+    "science": {
+      "all": 1396,
+      "male": 653,
+      "female": 743,
+      "time taken": 1933.5833333333333,
+      "count": 340
+    },
+    "artphysical": {
+      "all": 251,
+      "male": 97,
+      "female": 154,
+      "time taken": 328.0,
+      "count": 61
+    },
+    "mech": {
+      "all": 1928,
+      "male": 1530,
+      "female": 398,
+      "time taken": 2066.5,
+      "count": 348
+    },
+    "society": {
+      "all": 1682,
+      "male": 779,
+      "female": 903,
+      "time taken": 2483.6666666666665,
+      "count": 426
+    },
+    "year": "`16.09-`17.02"
+  },
+  {
+    "all": {
+      "all": 5113,
+      "male": 2986,
+      "female": 2127,
+      "time taken": 6864.583333333332,
+      "count": 1181
+    },
+    "science": {
+      "all": 1340,
+      "male": 624,
+      "female": 716,
+      "time taken": 2072.1666666666665,
+      "count": 359
+    },
+    "artphysical": {
+      "all": 292,
+      "male": 116,
+      "female": 176,
+      "time taken": 362.0,
+      "count": 66
+    },
+    "mech": {
+      "all": 1856,
+      "male": 1446,
+      "female": 410,
+      "time taken": 1991.0,
+      "count": 345
+    },
+    "society": {
+      "all": 1625,
+      "male": 800,
+      "female": 825,
+      "time taken": 2439.416666666666,
+      "count": 411
+    },
+    "year": "`17.09-`18.02"
+  },
+  {
+    "all": {
+      "all": 5125,
+      "male": 2946,
+      "female": 2179,
+      "time taken": 7061.583333333333,
+      "count": 1187
+    },
+    "science": {
+      "all": 1367,
+      "male": 645,
+      "female": 722,
+      "time taken": 2042.7499999999998,
+      "count": 362
+    },
+    "artphysical": {
+      "all": 262,
+      "male": 101,
+      "female": 161,
+      "time taken": 366.0833333333333,
+      "count": 62
+    },
+    "mech": {
+      "all": 1913,
+      "male": 1451,
+      "female": 462,
+      "time taken": 2166.1666666666665,
+      "count": 358
+    },
+    "society": {
+      "all": 1583,
+      "male": 749,
+      "female": 834,
+      "time taken": 2486.583333333333,
+      "count": 405
+    },
+    "year": "`18.09-`19.02"
+  }
+]

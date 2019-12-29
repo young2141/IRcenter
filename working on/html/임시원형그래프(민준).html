@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -18,15 +18,22 @@
             position: absolute;
             top: 260px;
             left: 305px;
-            width: 140px;
+            width: 170px;
             text-align: center;
             color: #666;
             z-index: -1;
         }
 
-        #percentage {
-            font-size: 2.5em;
+        div.tooltip {
+            position: absolute;
+            border-style: solid;
+            border-color: black, black, black, black;
+            background-color: white;
+            padding: 5px;
+            text-align: center;
+            font-size: 12px;
         }
+
     </style>
 </head>
 <body>
@@ -36,9 +43,6 @@
     <div id="chart">
         <div id="explanation" style="visibility: hidden;">
             <span id="percentage"></span><br />
-            
-            >_<<br>text is here
-
         </div>
     </div>
     <script type="text/javascript" src="../js/sunburst.js">

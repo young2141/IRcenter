@@ -70,5 +70,23 @@
 		"enter_percentage_all": 8.9,
 		"enter_percentage_male": 9.2,
 		"enter_percentage_female": 8.4
+	},
+	{
+		"category": "2018",
+		"enter_number_all": 474,
+		"enter_number_male": 287,
+		"enter_number_female": 187,
+		"enter_percentage_all": 8.9,
+		"enter_percentage_male": 9.2,
+		"enter_percentage_female": 8.4
+	},
+	{
+		"category": "2019",
+		"enter_number_all": 474,
+		"enter_number_male": 287,
+		"enter_number_female": 187,
+		"enter_percentage_all": 8.9,
+		"enter_percentage_male": 9.2,
+		"enter_percentage_female": 8.4
 	}
 ]

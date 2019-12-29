@@ -1,0 +1,62 @@
+[
+	{
+		"category": "2010",
+		"early_graduation": 114,
+		"multiple_major": 614,
+		"sub_major": 634
+	},
+	{
+		"category": "2011",
+		"early_graduation": 105,
+		"multiple_major": 637,
+		"sub_major": 672
+	},
+	{
+		"category": "2012",
+		"early_graduation": 111,
+		"multiple_major": 574,
+		"sub_major": 651
+	},
+	{
+		"category": "2013",
+		"early_graduation": 115,
+		"multiple_major": 674,
+		"sub_major": 785
+	},
+	{
+		"category": "2014",
+		"early_graduation": 79,
+		"multiple_major": 609,
+		"sub_major": 675
+	},
+	{
+		"category": "2015",
+		"early_graduation": 87,
+		"multiple_major": 641,
+		"sub_major": 649
+	},
+	{
+		"category": "2016",
+		"early_graduation": 55,
+		"multiple_major": 557,
+		"sub_major": 671
+	},
+	{
+		"category": "2017",
+		"early_graduation": 60,
+		"multiple_major": 530,
+		"sub_major": 683
+	},
+	{
+		"category": "2018",
+		"early_graduation": 50,
+		"multiple_major": 396,
+		"sub_major": 787
+	},
+	{
+		"category": "2019",
+		"early_graduation": 50,
+		"multiple_major": 396,
+		"sub_major": 787
+	}
+]

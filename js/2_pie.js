@@ -1,6 +1,6 @@
 ﻿function parsing2() {
   var filename = "2page_2019.json";
-  $.getJSON("../../json/" + filename, jsonData => {
+  $.getJSON("../../json/" + filename, (jsonData) => {
     var result = [];
     var categories = ["normal", "special_intent", "specified", "free", "etc"];
     var categories_ko = ["일반고", "특수목적고", "특성화고", "자율고", "기타"];
@@ -34,7 +34,6 @@ function drawPieChart(_data) {
     // title.dy = 0;
 
     chart.data = _data;
-    console.log("파이", _data);
     createSeries2(chart);
   });
 }

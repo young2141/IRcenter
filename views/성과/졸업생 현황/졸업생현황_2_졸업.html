@@ -14,15 +14,15 @@
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 
-
+        <script src="../../../js/grad_2_graph.js"></script>
     </head>
 
     <style type="text/css">
         @import url('../../../css/output_default.css');
 
         .chartdiv11 {
-            width: 1000px;
-            height: 200px;
+            width: 1100px;
+            height: 450px;
         }
 
         .chartdiv22 {
@@ -41,7 +41,7 @@
         }
     </style>
 
-    <body onload="loading()">
+    <body>
         <div class="box1" id="wrapper">
             <form class>
                 <br>
@@ -124,21 +124,21 @@
                 <form>
 
                     <span style="font-size: 20px"><b>계열별 검색</b></span><br>
-                    <select id="college" name="menu" onchange="parsing()" style="width : 200px; height: 30px">
+                    <select id="college" name="menu" onchange="call()" style="width : 200px; height: 30px">
                         <option value="all">(전체)</option>
-                        <option value="social">인문사회</option>
+                        <option value="society">인문사회</option>
                         <option value="science">자연과학</option>
-                        <option value="engineering">공학</option>
-                        <option value="art">예체능</option>
+                        <option value="mech">공학</option>
+                        <option value="artphysical">예체능</option>
                     </select>
 
                     <br><br>
 
                     <span style="font-size: 20px"><b>성별 검색</b></span><br>
-                    <select id="gender" name="menu" onchange="parsing()" style="width : 200px; height: 30px">
+                    <select id="sex" name="menu" onchange="call()" style="width : 200px; height: 30px">
                         <option value="all">(전체)</option>
-                        <option value="man">남자</option>
-                        <option value="woman">여자</option>
+                        <option value="male">남자</option>
+                        <option value="female">여자</option>
                         <br><br>
                     </select>
 
@@ -157,23 +157,26 @@
                     else
                         $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
                 });
-
+            
             </script>
 
             <div id="summaryBox">
                 <h2>졸업자 수</h2>
             </div>
-            <div id="unitBox">
+            <div id="unitBox" style = "width: 1100px">
                 (단위 : 명)
             </div>
-
+            <div class="chartdiv11" id="chartdiv1">진학률</div>
             <div id="summaryBox">
                     <h2>평균 졸업소요기간</h2>
             </div>
-            <div id="unitBox">
-                    (단위 : 명)
+            <div id="unitBox" style = "width: 1100px">
+                    (단위 : 년)
             </div>
-            
+            <div class="chartdiv11" id="chartdiv2">취업률</div>
+            <script>
+                call();
+            </script>
 
             <br>
 

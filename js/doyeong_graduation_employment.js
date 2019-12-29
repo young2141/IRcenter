@@ -44,14 +44,8 @@ function drawColumn(_data) {
         categoryAxis.renderer.grid.template.location = 0;
         categoryAxis.renderer.minGridDistance = 30;
 
-        categoryAxis.renderer.labels.template.adapter.add("dy", function (dy, target) {
-            if (target.dataItem && target.dataItem.index & 2 == 2) {
-                return dy + 25;
-            }
-            return dy;
-        });
-
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.min = 0;
 
         // Create series
         var series = chart.series.push(new am4charts.ColumnSeries());
@@ -76,12 +70,17 @@ function drawLine(_data) {
         var chart = am4core.create("chartdiv2", am4charts.XYChart);
         chart.data = _data;
 
+        var min = getMinVal(chart.data);
+        var max = getMaxVal(chart.data);
+
         // Create axes
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
         categoryAxis.renderer.minGridDistance = 60;
         categoryAxis.dataFields.category = "category";
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+        valueAxis.min = min - 2;
+        valueAxis.max = max + 2;
         // Create series
         var series = chart.series.push(new am4charts.LineSeries());
         series.dataFields.valueY = "value";
@@ -96,4 +95,23 @@ function drawLine(_data) {
         bullet.tooltipText = "[#000]{category}학년도 취업률 : [bold]{value}%[/]";
 
     }); // end am4core.ready()
+}
+
+function getMaxVal(data) {
+    var result = data[0]["value"];
+    for (var i = 1; i < data.length; i++) {
+        if (result < data[i]["value"])
+            result = data[i]["value"]
+    }
+
+    return result;
+}
+
+function getMinVal(data) {
+    var result = data[0]["value"];
+    for (var i = 1; i < data.length; i++) {
+        if (result > data[i]["value"])
+            result = data[i]["value"]
+    }
+    return result;
 }

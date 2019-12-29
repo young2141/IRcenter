@@ -22,6 +22,7 @@ function runGraph(show) {
       var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
       categoryAxis.dataFields.category = "year";
       categoryAxis.renderer.grid.template.location = 0;
+      categoryAxis.renderer.minGridDistance = 10;
 
       var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
       // valueAxis.min = 0;
@@ -29,7 +30,7 @@ function runGraph(show) {
       //valueAxis.renderer.inside = true;
       valueAxis.strictMinMax = true;
       valueAxis.calculateTotals = true;
-      // valueAxis.renderer.minWidth = 50;
+      valueAxis.renderer.minWidth = 10;
 
       var series1 = chart.series.push(new am4charts.ColumnSeries());
       series1.columns.template.width = am4core.percent(80);

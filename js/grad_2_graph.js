@@ -1,5 +1,5 @@
 function parse(callback) {
-  $.getJSON("../json/grad_info.json", json => {
+  $.getJSON("../../../json/grad_info.json", json => {
     callback(json);
   });
 }
@@ -23,17 +23,18 @@ function bar_graph(data, college) {
     categoryAxis.renderer.grid.template.location = 0;
     categoryAxis.renderer.minGridDistance = 30;
 
-    categoryAxis.renderer.labels.template.adapter.add("dy", function(
-      dy,
-      target
-    ) {
-      if (target.dataItem && target.dataItem.index & (2 == 2)) {
-        return dy + 25;
-      }
-      return dy;
-    });
+    // categoryAxis.renderer.labels.template.adapter.add("dy", function(
+    //   dy,
+    //   target
+    // ) {
+    //   if (target.dataItem && target.dataItem.index & (2 == 2)) {
+    //     return dy + 25;
+    //   }
+    //   return dy;
+    // });
 
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min = 0;
 
     // Create series
     var series = chart.series.push(new am4charts.ColumnSeries());
@@ -64,13 +65,27 @@ function line_graph(data, college) {
 
     // Create axes
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-    categoryAxis.renderer.minGridDistance = 10;
+    categoryAxis.renderer.minGridDistance = 0.1;
     categoryAxis.dataFields.category = "year";
 
     // Create value axis
+    // var small = 9999,
+    //   big = 0;
+    // for (var i = 0; i < data.length; i++) {
+    //   if (data[i]["time"] < small) {
+    //     small = data[i]["time"];
+    //   }
+    //   if (data[i]["time"] > big) {
+    //     big = data[i]["time"];
+    //   }
+    // }
+
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-    // valueAxis.min = 5;
-    // valueAxis.max = 8;
+    // valueAxis.min = parseFloat(small) - 0.5;
+    // valueAxis.max = parseFloat(big) + 0.5;
+    valueAxis.strictMinMax = true;
+    valueAxis.extraMin = 0.15;
+    valueAxis.extraMax = 0.15;
 
     // Create series
     var series = chart.series.push(new am4charts.LineSeries());
@@ -95,10 +110,8 @@ function line_graph(data, college) {
 
 function call() {
   parse(json => {
-    // console.log(json);
-
-    var college = $(":input:radio[name=college]:checked").val();
-    var sex = $(":input:radio[name=sex]:checked").val();
+    var college = $("#college").val();
+    var sex = $("#sex").val();
 
     data = [];
     for (var i = 0; i < json.length; i++) {
@@ -119,6 +132,5 @@ function call() {
 
     bar_graph(data, college);
     line_graph(data, college);
-    //console.log(data);
   });
 }

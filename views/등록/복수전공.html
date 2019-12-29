@@ -1,0 +1,181 @@
+<!DOCUTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>경북대학교 IR센터</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+        <!-- <script src="https://www.amcharts.com/lib/3/plugins/animate/animate.min.js"></script> -->
+        <!-- <script src="https://d3js.org/d3.v2.min.js" charset="utf-8"></script> -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <script src="../../../js/등록/복수전공/dualdegree_utlilities.js"></script>
+        <script src="../../../js/등록/복수전공/dualdegree_chart.js"></script>
+        <script src="../../../js/등록/복수전공/dualdegree_data.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+
+    </head>
+
+    <style type="text/css">
+        @import url('../../../css/output_default.css');
+    </style>
+
+    <body>
+        <div class="box1" id="wrapper">
+            <form class>
+                <br>
+                <a href="https://www.knu.ac.kr" target="_blank">
+                    <b>경북대학교 홈페이지</b>
+                    <a href="../../첫화면.html"><b>| 경북대학교 IR센터</a></b>
+                    <!--<a href = "로그인 화면.html">*/-->
+                    <div class="loginBox">
+                        <a href="첫화면.html">로그인　|　</a>
+                        <input type="text" value="" placeholder="Search this site">
+                        <input type="button" value="검색">
+                    </div>
+            </form>
+        </div>
+
+
+        <div class="bodyBox">
+
+
+            <div id="titleBox">
+                <span id="titleFont"><b>복수전공</b></span>
+            </div>
+
+        </div>
+
+        <div id="TOP">
+            <div class="legend" id="gotop" style="left:80%; top :30%">
+
+
+                <!-- 
+                //HS: Humanities and Social Sciences
+                //NS: Natural Science
+                //EN: ENgineering
+                //AMP: Art, Music, Physical 
+                //DD: different divisions
+                -->
+
+                
+                <div id="colors">
+                    <span id="color_hs" value="#E8A343" style="color:#E8A343; font-size: 20px;">■ </span>인문사회<br>
+                    <span id="color_ns" value="#FCFF57" style="color:#FCFF57; font-size: 20px;">■ </span>자연과학<br>
+                    <span id="color_en" value="#43E884" style="color:#43E884; font-size: 20px;">■ </span>공학<br>
+                    <span id="color_amp" value="#52A1FF" style="color:#52A1FF; font-size: 20px;">■ </span>예체능<br>
+                    <span id="color_dd" value="#808080" style="color:#808080; font-size: 20px;">■ </span>타계열<br><br>
+
+                </div>
+
+                <!-- 
+                    sel_ord: select, ordered by what
+                    sel_sbs; select, search by semester
+                 -->
+                <div>
+                    <span style="font-size: 20px"><b>정렬 조건</b></span><br>
+                        <select name ="menu" id="sel_ord" onchange="selectSelectbox(id, this.value)" style="width : 200px; height: 30px" >
+                            <option value="major" selected>전공이름순</option>
+                            <option value="division">계열별</option>
+                            <option value="frequency">빈도순</option>
+                        </select>
+                    </label><br><br>
+                    <span style="font-size: 20px"><b>학기별 검색</b></span><br>
+                        <select name ="menu" id="sel_sbs" onchange="selectSelectbox(id, this.value)" style="width : 200px; height: 30px" >
+                            <option value="2019.2" selected>2019 2학기</option>
+                            <option value="2019.1">2019 1학기</option>
+                            <option value="2018.2">2018 2학기</option>
+                            <option value="2018.1">2018 1학기</option>
+                            <option value="2017.2">2017 2학기</option>
+                            <option value="2017.1">2017 1학기</option>
+                            <option value="2016.2">2016 2학기</option>
+                            <option value="2016.1">2016 1학기</option>
+                            <option value="2015.2">2015 2학기</option>
+                            <option value="2015.1">2015 1학기</option>
+                            <option value="2014.2">2014 2학기</option>
+                            <option value="2014.1">2014 1학기</option>
+                            <option value="2013.2">2013 2학기</option>
+                            <option value="2013.1">2013 1학기</option>
+                            <option value="2012.2">2012 2학기</option>
+                            <option value="2012.1">2012 1학기</option>
+                            <option value="2011.2">2011 2학기</option>
+                            <option value="2011.1">2011 1학기</option>
+                            <option value="2010.2">2010 2학기</option>
+                            <option value="2010.1">2010 1학기</option>
+                        </select>
+                    </label><br><br>
+
+                    <!-- 
+                    TODO: List to do
+                 -->
+
+                    <label for="TODO_LIST" style="color:red"><b>TODO LIST</b>
+                        <div id="TODO_LIST" style="color:black; vertical-align: middle;">
+                            <input type="checkbox">animation<br>
+                            <input type="checkbox" checked>color gradient<br>
+                            <input type="checkbox">extension to total list<br>
+                        </div>
+                    </label>
+                </div>
+
+
+            </div>
+
+
+
+            <script>
+                var currentPosition = parseInt($("#gotop").css("top"));
+                $(window).scroll(function () {
+                    var position = $(window).scrollTop();
+                    if (position > 500)
+                        $("#gotop").stop().animate({ "top": position + currentPosition - 20 + "px" }, 1000);
+                    else if (position < 300)
+                        $("#gotop").stop().animate({ "top": position + currentPosition - 50 + "px" }, 1000);
+                    else
+                        $("#gotop").stop().animate({ "top": position + currentPosition - 100 + "px" }, 1000);
+                });
+
+            </script>
+
+            <div id="chartdiv" style="height: 1000px; width: 1000px"></div>
+
+            <div id="summaryBox" style="font-size: 15px">
+                <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
+
+                <b>출처 및 방법론</b><br>
+                - 이 대시보드에 표시된 가장 최근 연도의 데이터는 해당 지원주기가 끝날 때까지(당해년도의 3월초부터 이듬해 2월말) 예비적인 것으로 간주해야합니다.<br>
+
+                <b>사용 가능한 다른 데이터에 대한 참고사항</b><br>
+                - 경북대학교 입학정보 홈페이지에서는 학부 입학 전형 일정 및 절차, 선발기준 및 방법에 대한 광범위한 정보를 제공합니다.<br>
+                - 경북대학교 입학정보 홈페이지에서는 2020년도 경북대학교 대학입학전형 안내 동영상을 다음
+                링크(https://www.youtube.com/watch?v=xuArJ6qPbMM&feature=youtu.be)에서 제공합니다.<br>
+
+                <br><br>
+            </div>
+
+        </div>
+
+        <div class="bottomframe">
+            <div class="inbottomframe"></div>
+            <div class="inbottomframe"></div>
+            <div class="inbottomframe">
+                <a href="#">개인정보처리방침</a>
+                <a href="#">　이메일 무단수집거부</a>
+                <br><br>
+                <span class="white">대구광역시 북구 대학로 80 경북대학교 | 053-950-2963</span>
+                <br>
+                <span class="white">Copyright(c) Kyungpook National University. All rights reserved.</span>
+
+            </div>
+        </div>
+
+        <script>init()</script>
+
+    </body>
+
+    </html>

@@ -65,7 +65,7 @@ function calld3(type, year, picked) {
     dataset["children"] = children_array;
     // console.log(dataset)
     d3.select("svg").remove();
-    var diameter = 600;
+    var diameter = 900;
     var color = d3.scaleOrdinal(d3.schemeCategory20);
 
     var bubble = d3

@@ -13,9 +13,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-        <script src="../../../js/doyeong_graduation_enter.js"></script>
-        <script src="../../../js/doyeong_graduation_employment.js"></script>
-        <script src="../../../js/졸업생 현황/graduationRate_column.js"></script>
+        <script src="../../../js/grad_6_graph.js"></script>
 
     </head>
 
@@ -24,7 +22,7 @@
 
         .chartdiv11 {
             width: 1000px;
-            height: 200px;
+            height: 450px;
         }
 
         .chartdiv22 {
@@ -43,7 +41,7 @@
         }
     </style>
 
-    <body onload="loading()">
+    <body >
         <div class="box1" id="wrapper">
             <form class>
                 <br>
@@ -124,21 +122,21 @@
             <div class="legend" id="gotop" style="left:80%; top :40%">
 
                 <span style="font-size: 20px"><b>계열별 검색</b></span><br>
-                <select id="college" name="menu" onchange="parsing()" style="width : 200px; height: 30px">
+                <select id="college" name="menu" onchange="call()" style="width : 200px; height: 30px">
                     <option value="all">(전체)</option>
-                    <option value="social">인문사회</option>
+                    <option value="society">인문사회</option>
                     <option value="science">자연과학</option>
-                    <option value="engineering">공학</option>
-                    <option value="art">예체능</option>
+                    <option value="mech">공학</option>
+                    <option value="artphysical">예체능</option>
                 </select>
 
                 <br><br>
 
                 <span style="font-size: 20px"><b>성별 검색</b></span><br>
-                <select id="gender" name="menu" onchange="parsing()" style="width : 200px; height: 30px">
+                <select id="sex" name="menu" onchange="call()" style="width : 200px; height: 30px">
                     <option value="all">(전체)</option>
-                    <option value="man">남자</option>
-                    <option value="woman">여자</option>
+                    <option value="male">남자</option>
+                    <option value="female">여자</option>
                     <br><br>
                 </select>
 
@@ -165,7 +163,7 @@
             <div id="unitBox">
                 (단위 : %)
             </div>
-            <div id="chartdiv2" class="chartdiv11"></div>
+            <div id="chartdiv1" class="chartdiv11"></div>
 
             <div id="summaryBox">
                 <h2>취업률</h2>
@@ -181,9 +179,9 @@
             <div id="unitBox" style="width: 1000px;" >
                 (단위 : %)
             </div>
-            <div id="chartdiv" style ="width:1000px; height:500px;"></div>
+            <div id="chartdiv3" style="width:1000px; height:500px;"></div>
             <script>
-                runGraph(250);
+                call();
             </script>
 
             <br>

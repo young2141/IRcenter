@@ -103,7 +103,7 @@ function chart1(filename) {
   var valueY = ["year"];
   var cnt = valueY.length;
 
-  $.getJSON("C:/workspace/IRcenter/working on/json/" + filename, jsonData => {
+  $.getJSON("../../../json/" + filename, jsonData => {
     result = jsonData;
     if (filename == "college_rate_simple.json") {
       var divName = "divchart1";
