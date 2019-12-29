@@ -1,4 +1,4 @@
-function drawChart_2() {
+function drawChart1_1() {
     am4core.ready(function () {
 
         // Themes begin

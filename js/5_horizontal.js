@@ -54,7 +54,7 @@ function drawHorizontalChart(_data, _tooltipText) {
         var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
         yAxis.dataFields.category = "category";
         yAxis.renderer.grid.template.location = 0;
-        yAxis.renderer.labels.template.fontSize = 10;
+        // yAxis.renderer.labels.template.fontSize = 15;
         yAxis.renderer.minGridDistance = 10;
 
         var xAxis = chart.xAxes.push(new am4charts.ValueAxis());

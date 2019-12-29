@@ -155,22 +155,6 @@ function genDataForChart(input) {
     return [series, data, checkForLastYear, checkForFirstYear, firstYearMajors, headCount];
 }
 
-// // mark the tooltip for last year
-// function markLastYear(data, checkForLastYear, namesOfSeries, firstYearMajors) {
-//     const seriesPrefix = "series";
-//     for (let i = 0; i < checkForLastYear.length; ++i) {
-//         let seriesName = seriesPrefix + i;
-//         if (!firstYearMajors.includes(checkForLastYear[i].major)) {
-//             for (let j = 0; j < data.length; ++j) {
-//                 if (data[j].year == checkForLastYear[i].year) {
-//                     data[j]["series" + String(i) + "ShowTooltip"] = true;
-//                 }
-//             }
-//         }
-//     }
-//     return data;
-// }
-
 function RGB2Hexa(colors) {
     //console.log(colors);
     var r = colors["r"];
@@ -216,11 +200,12 @@ function genDataForAllInOne(data) {
     am4core.ready(function () {
         //setting for amcharts theme
         am4core.useTheme(am4themes_animated);
+        let maxLabelSize = 90;
 
         //setting the charts at html <div id="chartdiv"></div>
         var chart = am4core.create("chartdiv", am4charts.XYChart);
         chart.data = data;
-        chart.padding = 30;
+        // chart.padding = 30;
         // chart.width = am4core.percent(100);
 
         //x-axis for chart
@@ -228,9 +213,9 @@ function genDataForAllInOne(data) {
         categoryAxis.dataFields.category = "year";
         categoryAxis.renderer.minGridDistance = 20;
         categoryAxis.renderer.grid.template.disabled = true;
-        categoryAxis.dx = 50;
-        categoryAxis.dy = -20;
-        categoryAxis.width = am4core.percent(95);
+        categoryAxis.dx = maxLabelSize;
+        // categoryAxis.dy = -20;
+        categoryAxis.width = am4core.percent(90);
 
         //y-axis for chart
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
@@ -245,19 +230,16 @@ function genDataForAllInOne(data) {
         for (let i = 0; i < namesOfSeries.length; ++i) {
             const seriesName = "series" + i;
             let major = namesOfSeries[i];
-            let isFirstYearMajor = true;
 
             for (let i = 0; i < checkForLastYear.length; ++i) {
                 if (checkForLastYear[i].major == major) {
                     markForLastYear[seriesName] = Number(checkForLastYear[i].year.substr(3, 4));
-                    isFirstYearMajor = false;
                 }
             }
 
             //series creation and then push it "chart object" by series
             var series = chart.series.push(new am4charts.LineSeries());
-            //console.log(series);
-
+            series.dx = maxLabelSize;
             //mapping x, y axis data of the series to chart x, y axis
             series.dataFields.valueY = seriesName;
             series.dataFields.categoryX = "year";
@@ -266,61 +248,40 @@ function genDataForAllInOne(data) {
             series.name = namesOfSeries[i];
             series.id = i;
             series.strokeWidth = 8;
-            series.dx = 50;
-            series.width = "700px";
 
             //setting for tooltip of series
             series.tooltip.fontSize = 15;
             series.tooltip.pointerOrientation = "vertical";
-            series.tooltip.dy = -10;
 
-            series.events.on("hit", (target) => {
-                console.log(target._value);
-            }, this);
-
-            
             var label_bullet = series.bullets.push(new am4charts.LabelBullet());
-
             label_bullet.label.text = major;
-            label_bullet.label.width = 80;
-            label_bullet.label.maxWidth = 100;
+            label_bullet.label.horizontalCenter = "right";
+            label_bullet.dx = 80;
+            label_bullet.label.width = 120;
             label_bullet.label.wrap = true;
-            label_bullet.label.fontSize = 12;
-
-
             label_bullet.label.adapter.add("text", (text, target, key) => {
                 if (!target.dataItem) return "";
                 const index = target.dataItem.index;
                 if (index == checkForFirstYear[seriesName]) {
+                    // target.locationX = 0;
                     return text;
                 } else if (index == markForLastYear[seriesName]) {
-                    target.width = 80;
-                    target.height = 20;
-                    target.dx = 50;
                     target.dy = 20;
-                    target.background.fill = RGB2Hexa(series.fill._value);
+                    target.dx = maxLabelSize;
                     return text;
                 }
             });
+
             //the bullet, points of data insertion on a series for x-axis.
             var bullet = series.bullets.push(new am4charts.CircleBullet());
             bullet.strokeWidth = 10;
-            bullet.tooltipText = "{categoryX}학년도 "+ namesOfSeries[i] + genderString +" "+degreeString + " 학위수여자는 명으로, 학위수여자가 " + "{valueY}" +"번째로 많은 전공입니다.";
-            // bullet.tooltipText = namesOfSeries[i];
-            // bullet.propertyFields.alwaysShowTooltip = seriesName + "ShowTooltip";
-            bullet.dx = 50
-
-            // bullet.events.on("hit", (target) => {
-            //     console.log(target._value);
-            // }, this);
+            bullet.dx = maxLabelSize;
+            bullet.tooltipText = "{categoryX}학년도 " + namesOfSeries[i] + genderString + " " + degreeString + " 학위수여자는 명으로, 학위수여자가 " + "{valueY}" + "번째로 많은 전공입니다.";
 
             //the label of bullet, marking the rank for each year.
             var valueLabel = series.bullets.push(new am4charts.LabelBullet());
             valueLabel.label.text = "{valueY}";
-            valueLabel.label.dx = 50;
+            valueLabel.dx = maxLabelSize;
         }
-
-        // chart.series.template.bullets.template.tooltip.text = "{categoryX}학년도";
-        console.log(chart.series);
     });
 }

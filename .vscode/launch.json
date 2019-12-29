@@ -11,7 +11,12 @@
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}",
             "runtimeArgs": ["--disable-web-security"],
-            "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\views\\등록\\복수전공\\복수전공.html"
+            "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\views\\성과\\취업자 대상 조사\\취업자 대상 조사.html"
+            // "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\views\\등록\\직업설문조사.html"
+            // "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\views\\성과\\학위수여_3_학위수여10.html"
+            // "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\views\\등록\\복수전공\\복수전공.html"
+            // "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\working on\\html\\staffheadcount_sharedservice.html"
+            // "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\working on\\PCG\\partitioned_column_graph.html"
         }
     ]
 }

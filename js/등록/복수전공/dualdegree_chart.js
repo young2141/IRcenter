@@ -1,30 +1,30 @@
 var chart;
 
 function selectSelectbox(id, value) {
-    // switch (id) {
-    //     case "sel_ord":
-    //         level["ordered"] = value;
-    //         if (value == "major") {
-    //             chart.data.sort((a, b) => { return sortByMajor(a, b) });
-    //         }
-    //         else if (value == "division") {
-    //             chart.data.sort((a, b) => { return sortByDivision(a, b) });
-    //         }
-    //         else if (value == "frequency") {
-    //             chart.data.sort((a, b) => { return sortByFrequency(a, b) });
-    //         }
+    switch (id) {
+        case "sel_ord":
+            level["ordered"] = value;
+            if (value == "major") {
+                chart.data.sort((a, b) => { return sortByMajor(a, b) });
+            }
+            else if (value == "division") {
+                chart.data.sort((a, b) => { return sortByDivision(a, b) });
+            }
+            else if (value == "frequency") {
+                chart.data.sort((a, b) => { return sortByFrequency(a, b) });
+            }
 
-    //         // chart.invalidateData();
-    //         // updateGraph(value);
-    //         // executeProgram();
-    //         break;
-    //     case "sel_sbs":
-    //         level["semester"] = value;
-    //         filename = level["semester"];
-    //         filename = filename.slice(0, 4) + "_" + filename.slice(5, 6) + "_dualdegree.json";
-    //         loadJSON(path + filename, success);
-    //         break;
-    // }
+            chart.invalidateData();
+            // updateGraph(value);
+            // executeProgram();
+            break;
+        case "sel_sbs":
+            level["semester"] = value;
+            filename = level["semester"];
+            filename = filename.slice(0, 4) + "_" + filename.slice(5, 6) + "_dualdegree.json";
+            loadJSON(path + filename, success);
+            break;
+    }
 }
 
 function d3_darwChart(data) {

@@ -89,7 +89,5 @@ function drawChart(){
         series3.strokeWidth = 4;
         series3.name = "Net Difference";
         series3.stroke = am4core.color("#58641D");
-
-
     });
 }
