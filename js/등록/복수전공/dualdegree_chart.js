@@ -1,51 +1,48 @@
+const path = "../../../json/등록/복수전공/";
+var filename = "2019_2_dualdegree.json";
 var chart;
+var color = {};
+
+function getColorsByDvisions() {
+    let colors = document.getElementById("colors");
+    color["1"] = colors.children.color_hs.getAttribute("value");
+    color["2"] = colors.children.color_ns.getAttribute("value");
+    color["3"] = colors.children.color_en.getAttribute("value");
+    color["4"] = colors.children.color_amp.getAttribute("value");
+    color["5"] = colors.children.color_dd.getAttribute("value");
+    color["6"] = "#FFFFFF";
+}
+
+function init() {
+    getColorsByDvisions();
+    d3_drawChart();
+}
 
 function selectSelectbox(id, value) {
     switch (id) {
-        case "sel_ord":
-            level["ordered"] = value;
-            if (value == "major") {
-                chart.data.sort((a, b) => { return sortByMajor(a, b) });
-            }
-            else if (value == "division") {
-                chart.data.sort((a, b) => { return sortByDivision(a, b) });
-            }
-            else if (value == "frequency") {
-                chart.data.sort((a, b) => { return sortByFrequency(a, b) });
-            }
-
-            chart.invalidateData();
-            // updateGraph(value);
-            // executeProgram();
-            break;
         case "sel_sbs":
-            level["semester"] = value;
-            filename = level["semester"];
-            filename = filename.slice(0, 4) + "_" + filename.slice(5, 6) + "_dualdegree.json";
-            loadJSON(path + filename, success);
+            filename = value.slice(0, 4) + "_" + value.slice(5, 6) + "_dualdegree.json";
+            d3_drawChart()
             break;
     }
 }
 
-function d3_darwChart(data) {
-    var margin = { top: 80, right: 0, bottom: 10, left: 80 },
+function d3_drawChart() {
+    var margin = { top: 80, right: 80, bottom: 10, left: 80 },
         width = 720,
         height = 720;
 
-    var x = d3.scale.ordinal().rangeBands([0, width]),
-        z = d3.scale.linear().domain([0, 4]).clamp(true),
-        c = d3.scale.category10().domain(d3.range(10));
+    var x = d3.scale.ordinal().rangeBands([0, width]);
 
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#chartdiv").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
-        .style("margin-left", -margin.left + "px")
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
-    d3.json(path + filename, function (miserables) {
+    d3.json(path + filename, function (majors) {
         var matrix = [],
-            nodes = miserables.nodes,
+            nodes = majors.nodes,
             n = nodes.length;
 
         // Compute index per node.
@@ -56,7 +53,7 @@ function d3_darwChart(data) {
         });
 
         // Convert links to matrix; count character occurrences.
-        miserables.links.forEach(function (link) {
+        majors.links.forEach(function (link) {
             matrix[link.source][link.target].z += link.value;
             matrix[link.target][link.source].z += link.value;
             matrix[link.source][link.source].z += link.value;
@@ -69,7 +66,7 @@ function d3_darwChart(data) {
         var orders = {
             name: d3.range(n).sort(function (a, b) { return d3.ascending(nodes[a].name, nodes[b].name); }),
             count: d3.range(n).sort(function (a, b) { return nodes[b].count - nodes[a].count; }),
-            group: d3.range(n).sort(function (a, b) { return nodes[b].group - nodes[a].group; })
+            group: d3.range(n).sort(function (a, b) { return nodes[a].group - nodes[b].group; })
         };
 
         // The default sort order.
@@ -78,13 +75,15 @@ function d3_darwChart(data) {
         svg.append("rect")
             .attr("class", "background")
             .attr("width", width)
-            .attr("height", height);
+            .attr("height", height)
+            .attr("fill", "#FFFFFF");
 
         var row = svg.selectAll(".row")
             .data(matrix)
             .enter().append("g")
             .attr("class", "row")
-            .attr("transform", function (d, i) { return "translate(0," + x(i) + ")"; })
+            .attr("transform", function (d, i) { 
+                return "translate(0," + x(i) + ")"; })
             .each(row);
 
         row.append("line")
@@ -121,8 +120,26 @@ function d3_darwChart(data) {
                 .attr("x", function (d) { return x(d.x); })
                 .attr("width", x.rangeBand())
                 .attr("height", x.rangeBand())
-                .style("fill-opacity", function (d) { return z(d.z); })
-                .style("fill", function (d) { return nodes[d.x].group == nodes[d.y].group ? c(nodes[d.x].group) : null; })
+                .style("fill",
+                    function (d) {
+                        if (d.x == d.y) {
+                            return color["6"];
+                        } else if (nodes[d.x].group == nodes[d.y].group) {
+                            return color[nodes[d.x].group];
+                        } else if (nodes[d.x].group != nodes[d.y].group) {
+                            return color["5"];
+                        }
+                    })
+                .style("fill-opacity",
+                    function (d) {
+                        if (d.z < 10) {
+                            return 0.4;
+                        } else if (d.z <= 20) {
+                            return 0.7;
+                        } else {
+                            return 1;
+                        }
+                    })
                 .on("mouseover", mouseover)
                 .on("mouseout", mouseout);
         }
@@ -136,14 +153,14 @@ function d3_darwChart(data) {
             d3.selectAll("text").classed("active", false);
         }
 
-        d3.select("#order").on("change", function () {
+        d3.select("#sel_ord").on("change", function () {
             clearTimeout(timeout);
-            order(this.value);
+            let idx = this.selectedIndex
+            order(this.options[idx].getAttribute("value"));
         });
 
         function order(value) {
             x.domain(orders[value]);
-
             var t = svg.transition().duration(2500);
 
             t.selectAll(".row")
@@ -160,53 +177,7 @@ function d3_darwChart(data) {
 
         var timeout = setTimeout(function () {
             order("group");
-            d3.select("#order").property("selectedIndex", 2).node().focus();
+            d3.select("#sel_ord").property("selectedIndex", 2).node().focus();
         }, 5000);
-    });
-}
-
-function drawChart(data) {
-    am4core.ready(function () {
-        am4core.useTheme(am4themes_animated);
-        chart = am4core.create("chartdiv", am4charts.XYChart);
-        chart.data = data;
-        chart.fillOpacity = 1;
-        chart.strokeOpcacity = 1;
-
-        var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-        var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
-
-        xAxis.dataFields.category = "major2";
-        xAxis.renderer.labels.template.fontSize = 10;
-        xAxis.renderer.labels.template.rotation = 270;
-        xAxis.renderer.labels.template.horizontalCenter = "left";
-        xAxis.renderer.labels.template.verticalCenter = "middle";
-        xAxis.renderer.labels.template.propertyFields.fill = "div2_color";
-        xAxis.renderer.labels.template.width = 100;
-        xAxis.renderer.labels.template.truncate = true;
-        xAxis.renderer.grid.template.disabled = true;
-        xAxis.renderer.minGridDistance = 10;
-        xAxis.renderer.opposite = true;
-
-        yAxis.dataFields.category = "major1";
-        yAxis.renderer.labels.template.fontSize = 10;
-        yAxis.renderer.labels.template.propertyFields.fill = "div1_color";
-        yAxis.renderer.labels.template.width = 100;
-        yAxis.renderer.labels.template.truncate = true;
-        yAxis.renderer.grid.template.disabled = true;
-        yAxis.renderer.minGridDistance = 10;
-        yAxis.renderer.inversed = true;
-
-        var series = chart.series.push(new am4charts.ColumnSeries());
-        series.dataFields.categoryX = "major2";
-        series.dataFields.categoryY = "major1";
-        series.dataFields.value = "total";
-
-        var column = series.columns.template;
-        column.strokeOpacity = 0;
-        column.width = am4core.percent(80);
-        column.height = am4core.percent(80);
-        column.tooltipText = "복수전공: {categoryY} + {categoryX}\n인원: {total}";
-        column.propertyFields.fill = "color";
     });
 }
