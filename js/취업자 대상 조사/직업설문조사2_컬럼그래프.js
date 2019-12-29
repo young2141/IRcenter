@@ -79,7 +79,7 @@ function drawChart2_2() {
         createSeries("정규직 고용", "정규직 고용", colors.fulltime);
 
         // Legend
-        chart.legend = new am4charts.Legend();
-        chart.legend.dx =60;
+        // chart.legend = new am4charts.Legend();
+        // chart.legend.dx =60;
     }); // end am4core.ready()
 }
