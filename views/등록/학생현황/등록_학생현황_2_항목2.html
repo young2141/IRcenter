@@ -88,33 +88,22 @@
             <span style="font-size: 20px"><b>차트 종류</b></span><br>
             <form>
 
-                
-                <input type="radio" name="Gtype" id="stacked" checked="checked" onclick= "drawChart(); Change()">누적 영역형<br>
-                <input type="radio" name="Gtype" id="multiples" onclick= "drawChart(); Change()">영역형<br><br>
+                <input type="radio" name="Gtype" id="stacked" checked="checked" onclick= "drawChart();">누적 영역형<br>
+                <input type="radio" name="Gtype" id="multiples" onclick="drawChart();">영역형<br><br>
 
-                
                 <span style="font-size: 20px"><b>선택항목1</b></span><br>
-                <!--<select name="grad" onchange = "drawChart()" style="width : 200px; height: 30px">
-                    <option name = "grad" id = "all" selected = "selected" onclick="drawChart()">(전체)</option>
+                <select name="grad" id='test' onchange = "drawChart()" style="width : 200px; height: 30px">
+                    <option name = "grad" id = "all" selected = "selected">(전체)</option>
                     <option name = "grad" id = "graduate">졸업</option>
                     <option name = "grad" id = "undergraduate">재적</option>
-                </select><br><br>-->
-
-                <input type="radio" name="grad" id="all" checked="checked" onclick="drawChart()">전체<br>
-                <input type="radio" name="grad" id="graduate" onclick="drawChart()">졸업생<br>
-                <input type="radio" name="grad" id="undergraduate" onclick="drawChart()">재적생<br><br>
-
-                
+                </select><br><br>
+           
                 <span style="font-size: 20px"><b>선택항목2</b></span><br>
-                <!--<select name="gender" onchange = "drawChart()" style="width : 200px; height: 30px">
-                    <option name = "gender" id = "all" selected = "selected" onclick="drawChart()">(전체)</option>
-                    <option name = "gender" id = "male">남자</option>
-                    <option name = "gender" id = "female">여자</option>
-                </select><br><br>-->
-
-                <input type="radio" name="gender" id="all" checked="checked" onclick="drawChart()">전체<br>
-                <input type="radio" name="gender" id="male" onclick="drawChart()">남자<br>
-                <input type="radio" name="gender" id="female" onclick="drawChart()">여자<br><br>
+                <select name="gender" onchange = "drawChart()" style="width : 200px; height: 30px">
+                    <option name = "gender" id = "all" selected = "selected">(전체)</option>
+                    <option name = "gender" id = "male" onclick="drawChart()">남자</option>
+                    <option name = "gender" id = "female" onclick="drawChart()">여자</option>
+                </select>
 
             </form>
             <span style="color:#FE4459; font-size: 20px;" onmouseover="mouseOver('graduate_male')" onmouseleave="mouseLeave()">■</span> 졸업생 남자<br>
