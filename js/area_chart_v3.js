@@ -149,10 +149,19 @@ function stackedAreaChart() {
 function prevmultiplechart(cnt, svgarr, keys, colors) {
     var h = height / cnt;
     d3.json("../../../json/area_chart_data_v2.json", function (data) {
+        var max_val = 0;
         for (var i = 0; i < cnt; i++) {
-            var max_val = d3.max(data, function (d) {
+            var max_temp = d3.max(data, function (d) {
                 return d[keys[i]];
-            }) + 1000;
+            });
+            
+            if (max_temp > max_val)
+                max_val = max_temp
+        }
+
+        max_val += 1000
+
+        for (var i = 0; i < cnt; i++) {
             var stackedData = d3.stack()
                 .keys([keys[i]])
                 (data)
