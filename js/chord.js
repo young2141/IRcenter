@@ -1,7 +1,7 @@
 ﻿function drawChart()
 {
     console.log(1)
-    $.getJSON("../../../working on/json/chord.json", jsonData => {
+    $.getJSON("../../../json/chord.json", jsonData => {
         drawChordChart(jsonData);
     });
 }
@@ -30,6 +30,7 @@ function drawChordChart(data) {
         chart.dataFields.toName = "to";
         chart.dataFields.value = "value";
 
+        chart.radius = 290;
         chart.nodePadding = 0.5;
         chart.minNodeSize = 0.01;
         chart.startAngle = 80;
