@@ -1,4 +1,4 @@
-function parsing() {
+function parsingColumn() {
     var year = parseInt($("#years").val());
 
     var filename = "doyeong_early_graduation.json";
@@ -22,7 +22,7 @@ function parsing() {
                             "value": jsonData[i]["sub_major"]
                         }
                     ];
-                    draw(data, 5 - cnt, year--)
+                    drawColumn(data, 5 - cnt, year--)
                     cnt++;
                     break;
                 }
@@ -31,7 +31,7 @@ function parsing() {
     })
 }
 
-function draw(_data, _N, _year) {
+function drawColumn(_data, _N, _year) {
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
 
@@ -48,12 +48,9 @@ function draw(_data, _N, _year) {
         categoryAxis.renderer.grid.template.location = 0;
         categoryAxis.renderer.minGridDistance = 30;
 
-        // categoryAxis.renderer.labels.template.adapter.add("dy", function (dy, target) {
-        //     if (target.dataItem && target.dataItem.index & 2 == 2) {
-        //         return dy + 2;
-        //     }
-        //     return dy;
-        // });
+        categoryAxis.renderer.labels.template.horizontalCenter = "right";
+        categoryAxis.renderer.labels.template.verticalCenter = "middle";
+        categoryAxis.renderer.labels.template.rotation = -90;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 0;
@@ -68,12 +65,12 @@ function draw(_data, _N, _year) {
         series.columns.template.tooltipText = "{categoryX}: [bold]{valueY}[/]";
         series.columns.template.fillOpacity = .8;
 
-        categoryAxis.renderer.labels.template.adapter.add("dy", function (dy, target) {
-            if (target.dataItem && target.dataItem.index & 2 == 2) {
-                return dy + 25;
-            }
-            return dy;
-        });
+        // categoryAxis.renderer.labels.template.adapter.add("dy", function (dy, target) {
+        //     if (target.dataItem && target.dataItem.index & 2 == 2) {
+        //         return dy + 25;
+        //     }
+        //     return dy;
+        // });
 
         var columnTemplate = series.columns.template;
         columnTemplate.strokeWidth = 2;
@@ -82,7 +79,7 @@ function draw(_data, _N, _year) {
         var title = chart.titles.create();
         title.fontSize = 15;
         title.text = String(_year) + "학년도";
-        title.dx = 0;
-        title.dy = 0;
+        title.dx = 20;
+        title.dy = -10;
     });
 }
