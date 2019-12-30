@@ -28,7 +28,7 @@ function selectSelectbox(id, value) {
 }
 
 function d3_drawChart() {
-    var margin = { top: 80, right: 80, bottom: 10, left: 80 },
+    var margin = { top: 200, right: 80, bottom: 10, left: 200 },
         width = 720,
         height = 720;
 
@@ -38,7 +38,11 @@ function d3_drawChart() {
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var sel_ord = document.getElementById("sel_ord")
+    var option = sel_ord.options[sel_ord.selectedIndex].getAttribute("value");
+    console.log(option);
 
     d3.json(path + filename, function (majors) {
         var matrix = [],
@@ -46,7 +50,8 @@ function d3_drawChart() {
             n = nodes.length;
 
         // Compute index per node.
-        nodes.forEach(function (node, i) {
+        nodes.some(function (node, i) {
+            if(option != "all" && i > 50) return true;
             node.index = i;
             node.count = 0;
             matrix[i] = d3.range(n).map(function (j) { return { x: j, y: i, z: 0 }; });

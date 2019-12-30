@@ -88,14 +88,15 @@
             <span style="font-size: 20px"><b>차트 종류</b></span><br>
             <form>
 
-                <input type="radio" name="Gtype" id="stacked" checked="checked" onclick= "drawChart();">누적 영역형<br>
-                <input type="radio" name="Gtype" id="multiples" onclick="drawChart();">영역형<br><br>
+                <input type="radio" name="Gtype" id="stacked" checked="checked" onclick= "Change(); drawChart();">누적 영역형<br>
+                <input type="radio" name="Gtype" id="multiples" onclick="Change(); drawChart();">영역형<br><br>
 
                 <span style="font-size: 20px"><b>선택항목1</b></span><br>
                 <select name="grad" id='test' onchange = "drawChart()" style="width : 200px; height: 30px">
                     <option name = "grad" id = "all" selected = "selected">(전체)</option>
-                    <option name = "grad" id = "graduate">졸업</option>
-                    <option name = "grad" id = "undergraduate">재적</option>
+                    <option name = "grad" id = "undergraduate">재적생</option>
+                    <option name = "grad" id = "graduate">졸업생</option>
+                    
                 </select><br><br>
            
                 <span style="font-size: 20px"><b>선택항목2</b></span><br>
@@ -106,6 +107,7 @@
                 </select>
 
             </form>
+            <br>
             <span style="color:#FE4459; font-size: 20px;" onmouseover="mouseOver('graduate_male')" onmouseleave="mouseLeave()">■</span> 졸업생 남자<br>
             <span style="color:#E8A343; font-size: 20px;" onmouseover="mouseOver('graduate_female')" onmouseleave="mouseLeave()">■</span> 졸업생 여자<br>
             <span style="color:#FCFF57; font-size: 20px;" onmouseover="mouseOver('undergraduate_male')" onmouseleave="mouseLeave()">■</span> 재적생 남자<br>

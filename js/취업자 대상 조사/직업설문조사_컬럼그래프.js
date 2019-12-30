@@ -89,8 +89,8 @@ function drawChart1_2() {
         createSeries("정규직 고용", "정규직 고용", colors.fulltime);
 
         // Legend
-        let legend = new am4charts.Legend();
-        chart.legend = legend;
-        legend.dx = 60;
+        // let legend = new am4charts.Legend();
+        // chart.legend = legend;
+        // legend.dx = 60;
     }); // end am4core.ready()
 }
