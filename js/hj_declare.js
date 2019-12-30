@@ -51,7 +51,7 @@ parse(json => {
             var chart = lineContainer.createChild(am4charts.XYChart);
             chart.layout = "vertical"
             chart.width = am4core.percent(100);
-            chart.height = 35;
+            chart.height = 16.5;
         
             chart.data = data;
         
@@ -107,7 +107,7 @@ parse(json => {
             var chart = lineContainer.createChild(am4charts.XYChart);
             chart.layout = "vertical"
             chart.width = am4core.percent(100);
-            chart.height = am4core.percent(100);;
+            chart.height = am4core.percent(100);
         
             chart.data = data;
         
@@ -117,7 +117,7 @@ parse(json => {
             chart.titles.create().text = title;
             
         
-            chart.padding(5, 5, 2, 5);
+            chart.padding(0, 0, 0, 0);
 
             var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
             categoryAxis.renderer.grid.template.disabled = true;
