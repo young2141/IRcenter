@@ -129,7 +129,8 @@ function stackGraph(data) {
 }
 
 function call() {
-    var sex = $(":input:radio[name=sex]:checked").val();
+    var Select = document.getElementById("sex_selectbar");
+    var sex = Select.options[Select.selectedIndex].value;
 
     parse(json => {
         data = [];
@@ -140,6 +141,7 @@ function call() {
                 else yearly_data[key] = json[i][key][sex];
             }
             data.push(yearly_data);
+            console.log(yearly_data);
         }
         stackGraph(data);
     });

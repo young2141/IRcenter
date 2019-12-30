@@ -105,19 +105,13 @@
 	<div id="TOP">
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
-			<!-- <form>
-
-
-				<span style="font-size: 20px"><b>선택항목1</b></span><br>
-				<input type="checkbox" name="gender" checked="checked">남<br>
-				<input type="checkbox" name="gender">여<br><br>
-			</form> -->
-			<form>
-				<span style="font-size: 20px"> <b>선택항목1</b> </span><br />
-				<input checked="checked" name="sex" onclick="call()" type="radio" value="all" />전체<br />
-				<input name="sex" onclick="call()" type="radio" value="male" />남자<br />
-				<input name="sex" onclick="call()" type="radio" value="female" />여자<br />
-			</form>
+			<span style="font-size: 20px"> <b>선택항목1</b> </span><br />
+			<select id="sex_selectbar" onchange="call()">
+				<option name="sex" value="all">전체</option>
+				<option name="sex" value="male">남자</option>
+				<option name="sex" value="female">여자</option>
+			</select>
+			<br><br>
 			<span style="color:#FE4459; font-size: 20px;"> ■ </span> 본부<br>
 			<span style="color:#E8A343; font-size: 20px;"> ■ </span> 행정지원부<br>
 			<span style="color:#FCFF57; font-size: 20px;"> ■ </span> 대학(원)<br>

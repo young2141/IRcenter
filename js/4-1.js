@@ -131,7 +131,8 @@ function stackGraph(data) {
 }
 
 function call() {
-    var sex = $(":input:radio[name=sex]:checked").val();
+    var Select = document.getElementById("sex_selectbar");
+    var sex = Select.options[Select.selectedIndex].value;
 
     parse1(json => {
         data = [];
