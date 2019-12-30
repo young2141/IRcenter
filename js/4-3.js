@@ -1,5 +1,5 @@
 function parse(callback) {
-    $.getJSON("../json/4-3.json", json => {
+    $.getJSON("../../../json/4-3.json", json => {
         callback(json);
     });
 }
@@ -10,7 +10,7 @@ function stackGraph(data) {
         // Themes end
         console.log(data);
         // Create chart instance
-        var chart = am4core.create("chartdiv", am4charts.XYChart);
+        var chart = am4core.create("chartdiv1", am4charts.XYChart);
 
         chart.data = data;
 

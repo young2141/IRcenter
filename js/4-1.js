@@ -1,5 +1,5 @@
-function parse(callback) {
-    $.getJSON("../json/4-1.json", json => {
+function parse1(callback) {
+    $.getJSON("../../../json/4-1.json", json => {
         callback(json);
     });
 }
@@ -8,12 +8,12 @@ function stackGraph(data) {
         // Themes begin
         am4core.useTheme(am4themes_animated);
         // Themes end
-        console.log(data);
+        
         // Create chart instance
-        var chart = am4core.create("chartdiv", am4charts.XYChart);
+        var chart = am4core.create("chartdiv1", am4charts.XYChart);
 
         chart.data = data;
-
+        console.log(data);
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "year";
         categoryAxis.renderer.grid.template.location = 0;
@@ -126,13 +126,14 @@ function stackGraph(data) {
         var labelBullet7 = series7.bullets.push(new am4charts.LabelBullet());
         labelBullet7.label.text = "{valueY}";
         labelBullet7.locationY = 0.5;
+        console.log(data);
     }); // end am4core.ready()
 }
 
 function call() {
     var sex = $(":input:radio[name=sex]:checked").val();
 
-    parse(json => {
+    parse1(json => {
         data = [];
         for (var i = 0; i < json.length; i++) {
             yearly_data = {};
@@ -141,7 +142,41 @@ function call() {
                 else yearly_data[key] = json[i][key][sex];
             }
             data.push(yearly_data);
+            console.log(yearly_data);
         }
         stackGraph(data);
     });
 }
+function parse2(callback) {
+    $.getJSON("../../../json/4-2.json", json => {
+        callback(json);
+    });
+}
+parse2(json => {
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        // Create chart instance
+        var chart = am4core.create("chartdiv2", am4charts.PieChart);
+
+        // Add data
+        chart.data = json;
+
+        var pieSeries = chart.series.push(new am4charts.PieSeries());
+        pieSeries.dataFields.value = "field";
+        pieSeries.dataFields.category = "name";
+        pieSeries.slices.template.stroke = am4core.color("#fff");
+        pieSeries.slices.template.strokeWidth = 2;
+        pieSeries.slices.template.strokeOpacity = 1;
+
+        // This creates initial animation
+        pieSeries.hiddenState.properties.opacity = 1;
+        pieSeries.hiddenState.properties.endAngle = -90;
+        pieSeries.hiddenState.properties.startAngle = -90;
+    }); // end am4core.ready()}
+
+}
+)
