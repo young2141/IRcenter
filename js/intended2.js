@@ -51,6 +51,7 @@ parse(json => {
             categoryAxis.renderer.labels.template.disabled = false;
             categoryAxis.cursorTooltipEnabled = false;
             categoryAxis.dataFields.category = "category";
+            categoryAxis.renderer.minGridDistance = 1;
         
             var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
             valueAxis.min = 0;
@@ -60,9 +61,6 @@ parse(json => {
             valueAxis.renderer.baseGrid.disabled = false;
             valueAxis.renderer.labels.template.disabled = false;
             valueAxis.cursorTooltipEnabled = false;
-        
-            // chart.cursor = new am4charts.XYCursor();
-            // chart.cursor.lineY.disabled = true;
         
             var series = chart.series.push(new am4charts.ColumnSeries());
             series.dataFields.categoryY = "category";
