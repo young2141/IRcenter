@@ -6,7 +6,14 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
-		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="https://www.amcharts.com/lib/4/core.js"></script>
+	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+	<script src="../../../js/4-1.js"></script>
+	<!-- <script src="../../../js/4-2.js"></script> -->
+	<!-- <script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> -->
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 
@@ -29,6 +36,11 @@
 		fill: none;
 		stroke: #ccc;
 		stroke-width: 2px;
+	}
+
+	.chartdiv {
+		width: 80%;
+		height: 500px;
 	}
 </style>
 
@@ -90,74 +102,83 @@
 		<hr style="border-color: black">
 
 	</div>
-</center>
+	</center>
 
 	<div id="TOP">
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
-            <form>
+			<!-- <form>
 
                 
 				<span style="font-size: 20px"><b>선택항목1</b></span><br>
 				<input type = "checkbox" name = "gender" checked = "checked">남<br>
 				<input type = "checkbox" name = "gender" >여<br><br>
 
-            </form>
-            <span style="color:#FE4459; font-size: 20px;"> ■ </span> 일반직<br>
-            <span style="color:#E8A343; font-size: 20px;"> ■ </span> 기술직<br>
-            <span style="color:#FCFF57; font-size: 20px;"> ■ </span> 별정직<br>
+			</form> -->
+			<form>
+				<span style="font-size: 20px"> <b>선택항목1</b> </span><br />
+				<input checked="checked" name="sex" onclick="call()" type="radio" value="all" />전체<br />
+				<input name="sex" onclick="call()" type="radio" value="male" />남자<br />
+				<input name="sex" onclick="call()" type="radio" value="female" />여자<br />
+			</form>
+
+			<span style="color:#FE4459; font-size: 20px;"> ■ </span> 일반직<br>
+			<span style="color:#E8A343; font-size: 20px;"> ■ </span> 기술직<br>
+			<span style="color:#FCFF57; font-size: 20px;"> ■ </span> 별정직<br>
 			<span style="color:#43E884; font-size: 20px;"> ■ </span> 기능직<br>
 			<span style="color:#43E884; font-size: 20px;"> ■ </span> 대학회계직<br>
 			<span style="color:#43E884; font-size: 20px;"> ■ </span> 교육전문직<br>
 			<span style="color:#43E884; font-size: 20px;"> ■ </span> 계약직<br>
-            <br><br>
+			<br><br>
 		</div>
-		
+
 		<script>
-            var currentPosition = parseInt($("#gotop").css("top"));
-            $(window).scroll(function () {
-                var position = $(window).scrollTop();
+			var currentPosition = parseInt($("#gotop").css("top"));
+			$(window).scroll(function () {
+				var position = $(window).scrollTop();
 
-                if (position > 750)
-                    $("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
-                else if (position < 300)
-                    $("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
-                else
-                    $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
-            });
+				if (position > 750)
+					$("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
+				else if (position < 300)
+					$("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
+				else
+					$("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
+			});
 
-        </script>
+			call();
+
+		</script>
 
 		<div id="summaryBox">
-            <h2><span id="P1">직원수</span></h2>
-        </div>
-        <div id="unitBox">
-            (단위 : 명)
-        </div>
-		<div id="chartdiv" class="chartdiv">그래프 1</div>
-		
+			<h2><span id="P1">직원수</span></h2>
+		</div>
+		<div id="unitBox">
+			(단위 : 명)
+		</div>
+		<div id="chartdiv1" class="chartdiv">그래프 1</div>
+
 		<div id="summaryBox">
-            <h2><span id="P1">2019년도 직원 구성 비율</span></h2>
-        </div>
-        <div id="unitBox">
-            (단위 : %)
-        </div>
-        <div id="chartdiv" class="chartdiv">그래프 2</div>
+			<h2><span id="P1">2019년도 직원 구성 비율</span></h2>
+		</div>
+		<div id="unitBox">
+			(단위 : %)
+		</div>
+		<div id="chartdiv2" class="chartdiv">그래프 2</div>
 
-	<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
-		<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
+		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
+			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
 
-		<b>출처 및 방법론</b><br>
-		- 이 대시보드에 표시된 가장 최근 연도의 데이터는 해당 지원주기가 끝날 때까지(당해년도의 3월초부터 이듬해 2월말) 예비적인 것으로 간주해야합니다.<br>
+			<b>출처 및 방법론</b><br>
+			- 이 대시보드에 표시된 가장 최근 연도의 데이터는 해당 지원주기가 끝날 때까지(당해년도의 3월초부터 이듬해 2월말) 예비적인 것으로 간주해야합니다.<br>
 
-		<b>사용 가능한 다른 데이터에 대한 참고사항</b><br>
-		- 경북대학교 입학정보 홈페이지에서는 학부 입학 전형 일정 및 절차, 선발기준 및 방법에 대한 광범위한 정보를 제공합니다.<br>
-		- 경북대학교 입학정보 홈페이지에서는 2020년도 경북대학교 대학입학전형 안내 동영상을 다음
-		링크(https://www.youtube.com/watch?v=xuArJ6qPbMM&feature=youtu.be)에서 제공합니다.<br>
+			<b>사용 가능한 다른 데이터에 대한 참고사항</b><br>
+			- 경북대학교 입학정보 홈페이지에서는 학부 입학 전형 일정 및 절차, 선발기준 및 방법에 대한 광범위한 정보를 제공합니다.<br>
+			- 경북대학교 입학정보 홈페이지에서는 2020년도 경북대학교 대학입학전형 안내 동영상을 다음
+			링크(https://www.youtube.com/watch?v=xuArJ6qPbMM&feature=youtu.be)에서 제공합니다.<br>
 
-		<br><br>
+			<br><br>
 
-	</div>
+		</div>
 
 	</div>
 
