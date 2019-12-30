@@ -92,48 +92,45 @@
             <div id="titleBox">
                 <span id="titleFont"><b>학부이동</b></span>
                 <br><br>
-
-                
-
             </div>
+
+            <form>
+
+                <span style="font-size: 20px"><b>입학년도 검색</b></span>
+                <br>
+
+                <input type=button value='◀' onclick=decrease()>
+                <input id="years" type=range min=2010 max=2015 step=1 value=2015
+                    oninput=valuechange(parseInt(this.value))>
+                <input type=button value='▶' onclick=increase()>
+
+                <script>
+                    function valuechange(value) {
+                        document.getElementById('span1').innerHTML = (value);
+                        check();
+                    }
+                    function decrease() {
+                        current_value = document.getElementById('years').value
+                        console.log(current_value);
+                        document.getElementById('years').value -= 1
+                        valuechange(document.getElementById('years').value)
+                    }
+                    function increase() {
+                        current_value = document.getElementById('years').value
+                        console.log(current_value);
+                        document.getElementById('years').value++;
+                        valuechange(document.getElementById('years').value)
+                    }
+                </script>
+                <br><div style = "text-align: center; width: 180px"><span id="span1">2015</span></div>
+
+            </form>
         </div>
 
         <div id="TOP">
             <div class="legend" id="gotop" style="left:80%; top :40%">
 
 
-                <form>
-
-                    <span style="font-size: 20px"><b>입학년도 검색</b></span>
-                    <br>
-
-                    <input type=button value='◀' onclick=decrease()>
-                    <input id="years" type=range min=2010 max=2015 step=1 value=2015
-                        oninput=valuechange(parseInt(this.value))>
-                    <input type=button value='▶' onclick=increase()>
-
-                    <script>
-                        function valuechange(value) {
-                            document.getElementById('span1').innerHTML = (value);
-                            check();
-                        }
-                        function decrease() {
-                            current_value = document.getElementById('years').value
-                            console.log(current_value);
-                            document.getElementById('years').value -= 1
-                            valuechange(document.getElementById('years').value)
-                        }
-                        function increase() {
-                            current_value = document.getElementById('years').value
-                            console.log(current_value);
-                            document.getElementById('years').value++;
-                            valuechange(document.getElementById('years').value)
-                        }
-                    </script>
-                    <br><div style = "text-align: center; width: 180px"><span id="span1">2015</span></div>
-                    <br><br>
-
-                </form>
             </div>
 
 
@@ -177,7 +174,8 @@
             </div>
             <br>
 
-            <div id="chartdeclare2" style = "width: 60%; height: 500px; float: right; margin-right: 10%"></div>
+            <div id="chartdeclare4" style = "width: 60%; height: 500px; float: right; margin-right: 10%"></div>
+            
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
             <div id="summaryBox">
@@ -187,7 +185,7 @@
                 (단위 : %)
             </div>
             <br>
-            <div id="chartdeclare4" style = "width: 60%; height: 500px; float: right; margin-right: 10%"></div>
+            <div id="chartdeclare2" style = "width: 60%; height: 500px; float: right; margin-right: 10%"></div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
