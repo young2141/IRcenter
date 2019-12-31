@@ -26,25 +26,148 @@ parse(json => {
         
         // Create chart instance
         var container = am4core.create("chartdeclare4", am4core.Container);
-        container.layout = "grid";
+        container.layout = "horizontal";
         container.fixedWidthGrid = false;
-        container.width = am4core.percent(100);
+        container.width = am4core.percent(70);
         container.height = am4core.percent(100);
-        
+
+        var columContainer = container.createChild(am4core.Container);
+        columContainer.layout = "vertical";
+        columContainer.width = am4core.percent(70);
+        columContainer.height = am4core.percent(100);
+
+
+
+        var lineContainer = container.createChild(am4core.Container);
+        lineContainer.layout = "vertical";
+        lineContainer.width = am4core.percent(10);
+        lineContainer.height = am4core.percent(100);
         // Color set
         var colors = new am4core.ColorSet();
         
+        // Functions that create various sparklines
+        function createLine(title, data, color) {
+        
+            var chart = lineContainer.createChild(am4charts.XYChart);
+            chart.layout = "vertical"
+            chart.width = am4core.percent(100);
+            chart.height = am4core.percent(45);
+            // chart.height = 35;
+        
+            chart.data = data;
+        
+            chart.titles.template.fontSize = 10;
+            chart.titles.template.textAlign = "left";
+            chart.titles.template.isMeasured = false;
+            chart.titles.create().text = title;
+            
+        
+            chart.padding(0, 0, 0, 0);
+
+    
+
+            var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            categoryAxis.renderer.grid.template.disabled = true;
+            categoryAxis.renderer.labels.template.disabled = true;
+            categoryAxis.cursorTooltipEnabled = false;
+            categoryAxis.dataFields.category = "category";
+        
+            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            valueAxis.min = 0;
+            valueAxis.renderer.grid.template.disabled = true;
+            valueAxis.renderer.baseGrid.disabled = true;
+            valueAxis.renderer.labels.template.disabled = true;
+            valueAxis.cursorTooltipEnabled = false;
+        
+            chart.cursor = new am4charts.XYCursor();
+            chart.cursor.lineY.disabled = true;
+            chart.cursor.behavior = "none";
+        
+            var series = chart.series.push(new am4charts.LineSeries());
+            series.tooltipText = "{category}: [bold]{value}";
+            series.dataFields.categoryX = "category";
+            series.dataFields.valueY = "value";
+            series.tensionX = 0.8;
+            series.strokeWidth = 2;
+            series.stroke = color;
+        
+            // render data points as bullets
+            var bullet = series.bullets.push(new am4charts.CircleBullet());
+            bullet.circle.opacity = 0;
+            bullet.circle.fill = color;
+            bullet.circle.propertyFields.opacity = "opacity";
+            bullet.circle.radius = 3;
+        
+            return chart;
+        }
+
+
+
+
+        function createLine2(title, data, color) {
+        
+            var chart = lineContainer.createChild(am4charts.XYChart);
+            chart.layout = "vertical"
+            chart.width = am4core.percent(100);
+            chart.height = am4core.percent(100);;
+        
+            chart.data = data;
+        
+            chart.titles.template.fontSize = 10;
+            chart.titles.template.textAlign = "left";
+            chart.titles.template.isMeasured = false;
+            chart.titles.create().text = title;
+            
+        
+            chart.padding(0, 0, 0, 0);
+
+            var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            categoryAxis.renderer.grid.template.disabled = true;
+            categoryAxis.renderer.labels.template.disabled = false;
+            categoryAxis.cursorTooltipEnabled = false;
+            categoryAxis.dataFields.category = "category";
+            categoryAxis.renderer.minGridDistance = 60;
+        
+            var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            valueAxis.min = 0;
+            valueAxis.renderer.grid.template.disabled = true;
+            valueAxis.renderer.baseGrid.disabled = true;
+            valueAxis.renderer.labels.template.disabled = true;
+            valueAxis.cursorTooltipEnabled = false;
+        
+            chart.cursor = new am4charts.XYCursor();
+            chart.cursor.lineY.disabled = true;
+            chart.cursor.behavior = "none";
+        
+            var series = chart.series.push(new am4charts.LineSeries());
+            series.tooltipText = "{category}: [bold]{value}";
+            series.dataFields.categoryX = "category";
+            series.dataFields.valueY = "value";
+            series.tensionX = 0.8;
+            series.strokeWidth = 2;
+            series.stroke = color;
+        
+            // render data points as bullets
+            var bullet = series.bullets.push(new am4charts.CircleBullet());
+            bullet.circle.opacity = 0;
+            bullet.circle.fill = color;
+            bullet.circle.propertyFields.opacity = "opacity";
+            bullet.circle.radius = 3;
+        
+            return chart;
+        }
+
         
         function createColumn(title, data, color) {
         
-            var chart = container.createChild(am4charts.XYChart);
-            chart.width = am4core.percent(60);
+            var chart = columContainer.createChild(am4charts.XYChart);
+            chart.width = am4core.percent(90);
             chart.height = am4core.percent(100);
         
             chart.data = data;
         
         
-            chart.padding(5, 5, 2, 5);
+            chart.padding(0, 0, 0, 0);
         
             var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
             categoryAxis.renderer.grid.template.disabled = true;
@@ -104,7 +227,7 @@ parse(json => {
             if(colorcnt!=0){
                 var k
                 for(k =0;k<data.length;k++){
-                    if(temp.value<data[k].value){
+                    if(temp.value<=data[k].value){
                         check=1
                         break;
                     }
@@ -122,6 +245,39 @@ parse(json => {
             
         }
         createColumn("",data,colors.getIndex(1));
+        for(var d=0 ;d<data.length;d++){
+            if(d>=data.length-1){
+                createLine2("", [
+                    { "category": "'06", "value": 57 },
+                    { "category": "'07", "value": 27 },
+                    { "category": "'08", "value": 24 },
+                    { "category": "'09", "value": 59 },
+                    { "category": "'10", "value": 33 },
+                    { "category": "'11", "value": 46 },
+                    { "category": "'12", "value": 20 },
+                    { "category": "'13", "value": 42 },
+                    { "category": "'14", "value": 59,},
+                    { "category": "'15", "value": 70,}
+                ], colors.getIndex(d));
+            }
+            else{
+                createLine("", [
+                    { "category": "'06", "value": 57 },
+                    { "category": "'07", "value": 27 },
+                    { "category": "'08", "value": 24 },
+                    { "category": "'09", "value": 59 },
+                    { "category": "'10", "value": 33 },
+                    { "category": "'11", "value": 46 },
+                    { "category": "'12", "value": 20 },
+                    { "category": "'13", "value": 42 },
+                    { "category": "'14", "value": 59,},
+                    { "category": "'15", "value": 70,}
+                ], colors.getIndex(d));
+            }
+            
+        }
+        
+        
     
      }); // end am4core.ready()
 });

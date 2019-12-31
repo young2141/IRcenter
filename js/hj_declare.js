@@ -161,7 +161,7 @@ parse(json => {
         function createColumn(title, data, color) {
         
             var chart = columContainer.createChild(am4charts.XYChart);
-            chart.width = am4core.percent(95);
+            chart.width = am4core.percent(90);
             chart.height = am4core.percent(100);
         
             chart.data = data;

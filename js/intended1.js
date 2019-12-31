@@ -225,7 +225,7 @@ parse(json => {
             if(colorcnt!=0){
                 var k
                 for(k =0;k<data.length;k++){
-                    if(temp.value<data[k].value){
+                    if(temp.value<=data[k].value){
                         check=1
                         break;
                     }
