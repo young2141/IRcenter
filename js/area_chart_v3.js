@@ -233,7 +233,7 @@ function multiplesAreaChart() {
         var svg_temp = d3.select('#divchart' + (2 + i))
             .append("svg")
             .attr("width", width + margin.left + margin.right)
-            .attr("height", (height + margin.top + margin.bottom) / check_cnt)
+            .attr("height", (height + 3 * (margin.top + margin.bottom)) / check_cnt)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
         svg_arr.push(svg_temp)
