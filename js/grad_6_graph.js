@@ -18,14 +18,15 @@ function line_graph(data, div, chartName, college, sex, color) {
 
     // Create axes
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-    categoryAxis.renderer.minGridDistance = 10;
+    categoryAxis.renderer.minGridDistance = 30;
+    categoryAxis.renderer.grid.template.location = 0;
     categoryAxis.dataFields.category = "year";
 
     // Create value axis
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
     // valueAxis.min = min;
     // valueAxis.max = max;
-    valueAxis.strictMinMax = true;
+    valueAxis.strictMinMax = false;
     valueAxis.extraMin = 0.15;
     valueAxis.extraMax = 0.15;
 
