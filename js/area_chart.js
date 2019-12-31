@@ -113,7 +113,7 @@ function prevmultiplechart(cnt, svgarr, keys, colors) {
             var stackedData = d3.stack()
                 .keys([keys[i]])
                 (data)
-            drawAreaChart(svgarr[i], data, stackedData, [keys[i]], [colors[i]], 15000, h, 3);
+            drawAreaChart(svgarr[i], data, stackedData, [keys[i]], [colors[i]], 25000, h, 5);
         }
     });
 }
