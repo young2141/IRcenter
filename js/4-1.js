@@ -30,8 +30,8 @@ function stackGraph(data) {
 
         // series1
         var series1 = chart.series.push(new am4charts.ColumnSeries());
-        series1.name = "일반직";
-        series1.dataFields.valueY = "일반직";
+        series1.name = "계약직";
+        series1.dataFields.valueY = "계약직";
         series1.dataFields.categoryX = "year";
         series1.sequencedInterpolation = true;
         series1.stacked = true;
@@ -44,8 +44,8 @@ function stackGraph(data) {
 
         // series2
         var series2 = chart.series.push(new am4charts.ColumnSeries());
-        series2.name = "기술직";
-        series2.dataFields.valueY = "기술직";
+        series2.name = "교육전문직";
+        series2.dataFields.valueY = "교육전문직";
         series2.dataFields.categoryX = "year";
         series2.sequencedInterpolation = true;
         series2.stacked = true;
@@ -58,8 +58,8 @@ function stackGraph(data) {
 
         // series3
         var series3 = chart.series.push(new am4charts.ColumnSeries());
-        series3.name = "별정직";
-        series3.dataFields.valueY = "별정직";
+        series3.name = "대학회계직";
+        series3.dataFields.valueY = "대학회계직";
         series3.dataFields.categoryX = "year";
         series3.sequencedInterpolation = true;
         series3.stacked = true;
@@ -86,8 +86,8 @@ function stackGraph(data) {
 
         // series5
         var series5 = chart.series.push(new am4charts.ColumnSeries());
-        series5.name = "대학회계직";
-        series5.dataFields.valueY = "대학회계직";
+        series5.name = "별정직";
+        series5.dataFields.valueY = "별정직";
         series5.dataFields.categoryX = "year";
         series5.sequencedInterpolation = true;
         series5.stacked = true;
@@ -100,8 +100,8 @@ function stackGraph(data) {
 
         // series6
         var series6 = chart.series.push(new am4charts.ColumnSeries());
-        series6.name = "교육전문직";
-        series6.dataFields.valueY = "교육전문직";
+        series6.name = "기술직";
+        series6.dataFields.valueY = "기술직";
         series6.dataFields.categoryX = "year";
         series6.sequencedInterpolation = true;
         series6.stacked = true;
@@ -114,8 +114,8 @@ function stackGraph(data) {
 
         // series7
         var series7 = chart.series.push(new am4charts.ColumnSeries());
-        series7.name = "계약직";
-        series7.dataFields.valueY = "계약직";
+        series7.name = "일반직";
+        series7.dataFields.valueY = "일반직";
         series7.dataFields.categoryX = "year";
         series7.sequencedInterpolation = true;
         series7.stacked = true;
