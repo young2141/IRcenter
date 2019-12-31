@@ -30,8 +30,8 @@ function stackGraph(data) {
 
         // series1
         var series1 = chart.series.push(new am4charts.ColumnSeries());
-        series1.name = "본부";
-        series1.dataFields.valueY = "본부";
+        series1.name = "부설학교";
+        series1.dataFields.valueY = "부설학교";
         series1.dataFields.categoryX = "year";
         series1.sequencedInterpolation = true;
         series1.stacked = true;
@@ -44,8 +44,8 @@ function stackGraph(data) {
 
         // series2
         var series2 = chart.series.push(new am4charts.ColumnSeries());
-        series2.name = "행정지원부";
-        series2.dataFields.valueY = "행정지원부";
+        series2.name = "부속시설";
+        series2.dataFields.valueY = "부속시설";
         series2.dataFields.categoryX = "year";
         series2.sequencedInterpolation = true;
         series2.stacked = true;
@@ -58,8 +58,8 @@ function stackGraph(data) {
 
         // series3
         var series3 = chart.series.push(new am4charts.ColumnSeries());
-        series3.name = "대학(원)";
-        series3.dataFields.valueY = "대학(원)";
+        series3.name = "지원 및 연구시설";
+        series3.dataFields.valueY = "지원 및 연구시설";
         series3.dataFields.categoryX = "year";
         series3.sequencedInterpolation = true;
         series3.stacked = true;
@@ -86,8 +86,8 @@ function stackGraph(data) {
 
         // series5
         var series5 = chart.series.push(new am4charts.ColumnSeries());
-        series5.name = "지원 및 연구시설";
-        series5.dataFields.valueY = "지원 및 연구시설";
+        series5.name = "대학(원)";
+        series5.dataFields.valueY = "대학(원)";
         series5.dataFields.categoryX = "year";
         series5.sequencedInterpolation = true;
         series5.stacked = true;
@@ -100,8 +100,8 @@ function stackGraph(data) {
 
         // series6
         var series6 = chart.series.push(new am4charts.ColumnSeries());
-        series6.name = "부속시설";
-        series6.dataFields.valueY = "부속시설";
+        series6.name = "행정지원부";
+        series6.dataFields.valueY = "행정지원부";
         series6.dataFields.categoryX = "year";
         series6.sequencedInterpolation = true;
         series6.stacked = true;
@@ -114,8 +114,8 @@ function stackGraph(data) {
 
         // series7
         var series7 = chart.series.push(new am4charts.ColumnSeries());
-        series7.name = "부설학교";
-        series7.dataFields.valueY = "부설학교";
+        series7.name = "본부";
+        series7.dataFields.valueY = "본부";
         series7.dataFields.categoryX = "year";
         series7.sequencedInterpolation = true;
         series7.stacked = true;
