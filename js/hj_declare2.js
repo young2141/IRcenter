@@ -124,7 +124,7 @@ parse(json => {
             categoryAxis.renderer.labels.template.disabled = false;
             categoryAxis.cursorTooltipEnabled = false;
             categoryAxis.dataFields.category = "category";
-            categoryAxis.renderer.minGridDistance = 40;
+            categoryAxis.renderer.minGridDistance = 60;
         
             var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
             valueAxis.min = 0;
