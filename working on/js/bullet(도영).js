@@ -35,7 +35,7 @@ function drawBullet(){
         createBulletChart(container2, "평균근속년수", "solid", {"category" : "관리운영", "value" : {"8" : 12, "7" : 27, "6" : 29}});
         
         /* Create ranges */
-        function createRange(axis, from, to, color) {
+        function createRange(axis, from, to, color, type, category, level, value) {
           var range = axis.axisRanges.create();
           range.value = from;
           range.endValue = to;
@@ -43,6 +43,12 @@ function drawBullet(){
           range.axisFill.fillOpacity = 0.8;
           range.label.disabled = true;
           range.grid.disabled = true;
+          if(level != "start" && level != "end"){
+            range.axisFill.tooltip = new am4core.Tooltip();
+            range.axisFill.tooltipText = category + " " + level + "급의 " + type + "은 [bold]" + value + "세[/] 입니다.";
+            range.axisFill.interactionsEnabled = true; // 마우스 올렸을 때 툴팁 띄우기
+            range.axisFill.isMeasured = true; // 마우스 위치에 맞춰서 tooltip 팝업
+          }
         }
         
         /* Create bullet chart with specified color type for background */
@@ -54,7 +60,9 @@ function drawBullet(){
             "6" : "#f6d32b", 
             "5" : "#fb7116",
             "4" : "#a93700",
-            "고위공무원" : "#ff0000"
+            "고위공무원" : "#ff0000",
+            "start" : "#eeeeee", 
+            "end" : "#eeeeee"
           };
         
           /* Create chart instance */
@@ -64,26 +72,35 @@ function drawBullet(){
           chart.paddingRight = 25;
 
           var keys = Object.keys(data["value"]);
-          
 
+          var maxVal = data["value"][keys[0]]
+          var minVal = data["value"][keys[0]]
+          for(var i=1; i<keys.length; i++){
+            if(maxVal < data["value"][keys[i]]) maxVal = data["value"][keys[i]]
+            if(minVal > data["value"][keys[i]]) minVal = data["value"][keys[i]]
+          }
+
+          data["value"]["start"] = minVal - 2;
+          data["value"]["end"] = maxVal + 2;
+
+          keys = Object.keys(data["value"]);
           keys.sort(function(a,b) {
             return data["value"][a] - data["value"][b];
           })
-
           // data["value"]["end"] = data["value"][keys[keys.length - 1]] + 2;
           // keys.push("end");
           
           var s = 0;
           for(var k=0; k<keys.length; k++){
-            if(keys[k] == "end") continue;
+            if(keys[k] == "end" || keys[k] == "start") continue;
             s += data["value"][keys[k]];
           }
 
           /* Add data */
           chart.data = [{
             "category": data["category"],
-            "value": (s / keys.length).toFixed(1),
-            "target": (s / keys.length + 5).toFixed(1)
+            "value": (s / (keys.length - 2)).toFixed(1)
+            //"target": (s / keys.length + 5).toFixed(1)
           }];
  
           /* Create axes */
@@ -110,7 +127,7 @@ function drawBullet(){
             for (var i = 0; i < keys.length; i++) {
               start = data["value"][keys[i]];
               end = data["value"][keys[i+1]];
-              createRange(valueAxis, start, end, am4core.color(colors[keys[i]]));
+              createRange(valueAxis, start, end, am4core.color(colors[keys[i]]), dataType, data["category"], keys[i], data["value"][keys[i]]);
             }
           }
           /*
@@ -123,7 +140,7 @@ function drawBullet(){
               // add each color that makes up the gradient
               gradient.addColor(am4core.color(colors[i]));
             }
-            createRange(valueAxis, 0, 100, gradient);
+            //createRange(valueAxis, 0, 100, gradient);
           }
         
           /* Create series */
