@@ -37,7 +37,7 @@
 	}
 
 	#chartdiv1 {
-		width: 80%;
+		width: 1000px;
 		height: 500px;
 	}
 </style>
@@ -105,21 +105,20 @@
 	<div id="TOP">
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
-			<span style="font-size: 20px"> <b>선택항목1</b> </span><br />
-			<select id="sex_selectbar" onchange="call()">
-				<option name="sex" value="all">전체</option>
+			<span style="font-size: 20px"> <b>성별 검색</b> </span><br />
+			<select id="sex_selectbar" onchange="call()" style="width : 200px; height: 30px">
+				<option name="sex" value="all">(전체)</option>
 				<option name="sex" value="male">남자</option>
 				<option name="sex" value="female">여자</option>
 			</select>
 			<br><br>
-			<span style="color:#FE4459; font-size: 20px;"> ■ </span> 본부<br>
-			<span style="color:#E8A343; font-size: 20px;"> ■ </span> 행정지원부<br>
-			<span style="color:#FCFF57; font-size: 20px;"> ■ </span> 대학(원)<br>
-			<span style="color:#43E884; font-size: 20px;"> ■ </span> 교육기본시설<br>
-			<span style="color:#43E884; font-size: 20px;"> ■ </span> 지원 및 연구시설<br>
-			<span style="color:#43E884; font-size: 20px;"> ■ </span> 부속시설<br>
-			<span style="color:#43E884; font-size: 20px;"> ■ </span> 부설학교<br>
-			<br><br>
+			<span style="color:#dc67ce; font-size: 20px;"> ■ </span> 본부<br>
+			<span style="color:#c767dc; font-size: 20px;"> ■ </span> 행정지원부 <br>
+			<span style="color:#a367dc; font-size: 20px;"> ■ </span> 대학(원)<br>
+			<span style="color:#8067dc; font-size: 20px;"> ■ </span> 교육기본시설<br>
+			<span style="color:#6771dc; font-size: 20px;"> ■ </span> 지원 및 연구시설<br>
+			<span style="color:#6794dc; font-size: 20px;"> ■ </span> 부속시설<br>
+			<span style="color:#67b7dc; font-size: 20px;"> ■ </span> 부설학교<br>
 		</div>
 
 		<script>

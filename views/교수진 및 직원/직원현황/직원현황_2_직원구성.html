@@ -39,7 +39,7 @@
 	}
 
 	.chartdiv {
-		width: 80%;
+		width: 1000px;
 		height: 500px;
 	}
 </style>
@@ -107,22 +107,21 @@
 	<div id="TOP">
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
-			<span style="font-size: 20px"> <b>선택항목1</b> </span><br />
-			<select id="sex_selectbar" onchange="call()">
-				<option name="sex" value="all">전체</option>
+			<span style="font-size: 20px"> <b>성별 검색</b> </span><br />
+			<select id="sex_selectbar" onchange="call()" style="width : 200px; height: 30px">
+				<option name="sex" value="all">(전체)</option>
 				<option name="sex" value="male">남자</option>
 				<option name="sex" value="female">여자</option>
 			</select>
 			<br><br>
 
-			<span style="color:#FE4459; font-size: 20px;"> ■ </span> 일반직<br>
-			<span style="color:#E8A343; font-size: 20px;"> ■ </span> 기술직<br>
-			<span style="color:#FCFF57; font-size: 20px;"> ■ </span> 별정직<br>
-			<span style="color:#43E884; font-size: 20px;"> ■ </span> 기능직<br>
-			<span style="color:#43E884; font-size: 20px;"> ■ </span> 대학회계직<br>
-			<span style="color:#43E884; font-size: 20px;"> ■ </span> 교육전문직<br>
-			<span style="color:#43E884; font-size: 20px;"> ■ </span> 계약직<br>
-			<br><br>
+			<span style="color:#dc67ce; font-size: 20px;"> ■ </span> 일반직<br>
+			<span style="color:#c767dc; font-size: 20px;"> ■ </span> 기술직<br>
+			<span style="color:#a367dc; font-size: 20px;"> ■ </span> 별정직<br>
+			<span style="color:#8067dc; font-size: 20px;"> ■ </span> 기능직<br>
+			<span style="color:#6771dc; font-size: 20px;"> ■ </span> 대학회계직<br>
+			<span style="color:#6794dc; font-size: 20px;"> ■ </span> 교육전문직<br>
+			<span style="color:#67b7dc; font-size: 20px;"> ■ </span> 계약직<br>
 		</div>
 
 		<script>
