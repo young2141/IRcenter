@@ -64,6 +64,7 @@ function drawBullet(){
           chart.paddingRight = 25;
 
           var keys = Object.keys(data["value"]);
+          
 
           keys.sort(function(a,b) {
             return data["value"][a] - data["value"][b];
@@ -72,7 +73,6 @@ function drawBullet(){
           // data["value"]["end"] = data["value"][keys[keys.length - 1]] + 2;
           // keys.push("end");
           
-          console.log(data["value"])
           var s = 0;
           for(var k=0; k<keys.length; k++){
             if(keys[k] == "end") continue;
