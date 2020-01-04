@@ -112,8 +112,8 @@ function drawBullet(){
           var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
           valueAxis.renderer.minGridDistance = 70;
           valueAxis.renderer.grid.template.disabled = true;
-          valueAxis.min = data["value"][keys[0]];
-          valueAxis.max = data["value"][keys[keys.length-1]];
+          valueAxis.min = data["value"]["start"];
+          valueAxis.max = data["value"]["end"];
           valueAxis.strictMinMax = true; // 세로 가로 간격맞추기
           valueAxis.numberFormatter.numberFormat = "#";
           valueAxis.renderer.baseGrid.disabled = true;
