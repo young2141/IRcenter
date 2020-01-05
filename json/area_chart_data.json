@@ -414,86 +414,86 @@
   },
   {
     "year": 2008,
-    "graduate_male": 2486,
-    "graduate_female": 1846,
-    "undergraduate_male": 8757,
-    "undergraduate_female": 8874
+    "graduate_male": 2164,
+    "graduate_female": 1959,
+    "undergraduate_male": 18346,
+    "undergraduate_female": 10019
   },
   {
     "year": 2009,
-    "graduate_male": 2272,
-    "graduate_female": 2032,
-    "undergraduate_male": 8333,
-    "undergraduate_female": 7574
+    "graduate_male": 2182,
+    "graduate_female": 1838,
+    "undergraduate_male": 19153,
+    "undergraduate_female": 10241
   },
   {
     "year": 2010,
     "graduate_male": 2203,
     "graduate_female": 1858,
-    "undergraduate_male": 11803,
-    "undergraduate_female": 8410
+    "undergraduate_male": 19789,
+    "undergraduate_female": 10579
   },
   {
     "year": 2011,
     "graduate_male": 2451,
     "graduate_female": 1909,
-    "undergraduate_male": 11680,
-    "undergraduate_female": 8350
+    "undergraduate_male": 20205,
+    "undergraduate_female":10794
   },
   {
     "year": 2012,
     "graduate_male": 2405,
     "graduate_female": 1886,
-    "undergraduate_male": 11883,
-    "undergraduate_female": 8383
+    "undergraduate_male": 22884,
+    "undergraduate_female": 11349
   },
   {
     "year": 2013,
     "graduate_male": 3569,
     "graduate_female": 2245,
-    "undergraduate_male": 11819,
-    "undergraduate_female": 8232
+    "undergraduate_male": 22592,
+    "undergraduate_female": 11292
   },
   {
     "year": 2014,
     "graduate_male": 2967,
     "graduate_female": 2028,
-    "undergraduate_male": 11757,
-    "undergraduate_female": 8445
+    "undergraduate_male": 22243,
+    "undergraduate_female": 11360
   },
   {
     "year": 2015,
     "graduate_male": 3036,
     "graduate_female": 2144,
-    "undergraduate_male": 11942,
-    "undergraduate_female": 8630
+    "undergraduate_male": 21706,
+    "undergraduate_female": 11438
   },
   {
     "year": 2016,
     "graduate_male": 3019,
     "graduate_female": 2158,
-    "undergraduate_male": 11595,
-    "undergraduate_female": 8756
+    "undergraduate_male": 21075,
+    "undergraduate_female": 11611
   },
   {
     "year": 2017,
     "graduate_male": 3103,
     "graduate_female": 2218,
-    "undergraduate_male": 11189,
-    "undergraduate_female": 8699
+    "undergraduate_male": 20490,
+    "undergraduate_female": 11545
   },
   {
     "year": 2018,
-    "graduate_male": 3028,
-    "graduate_female": 2154,
-    "undergraduate_male": 11094,
-    "undergraduate_female": 8664
+    "graduate_male": 3103,
+    "graduate_female": 2218,
+    "undergraduate_male": 19977,
+    "undergraduate_female": 11497
   },
   {
     "year": 2019,
-    "graduate_male": 2991,
-    "graduate_female": 2207,
-    "undergraduate_male": 10957,
-    "undergraduate_female": 8657
+    "graduate_male": 3103,
+    "graduate_female": 2218,
+    "undergraduate_male": 19442,
+    "undergraduate_female": 11277
   }
 ]

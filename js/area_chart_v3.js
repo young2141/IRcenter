@@ -9,31 +9,55 @@ var gradArray = ['graduate_', 'undergraduate_']
 var genderArray = ['male_', 'female_']
 var degreeArray = ['doctor', 'master', 'college']
 
+var isStack = true
+var do_event = false
 var draw_code
 var draw_mode
 
 function drawChart(mode) {
     draw_mode = mode
     var chartTypeBox = document.getElementById("chartTypeBox")
+    var divChartMaster = document.getElementById("divchartmaster")
     d3.selectAll("svg").remove();
     if ($(":input:radio[name='Gtype']:checked").attr('id') == 'stacked') {
+        isStack = true
+        if (draw_mode == 'explore')
+            divChartMaster.style = "width:1000px"
         chartTypeBox.innerHTML = "누적 영역형 차트"
         height = 600 - margin.top - margin.bottom;
         stackedAreaChart()
     }
     else {
+        isStack = false
+        if (draw_mode == 'explore')
+            divChartMaster.style = "width:1000px; height: 70%; overflow:scroll"
         chartTypeBox.innerHTML = "영역형 차트"
-        multiplesAreaChart()
+        multiplesAreaChart("")
     }
 }
 
 function mouseOver(key) {
-    d3.selectAll(".myArea").style("opacity", .1)
-    // expect the one that is hovered
-    d3.select("." + key).style("opacity", 1)
+    if (!isStack) {
+        if (!do_event) {
+            do_event = true
+            d3.selectAll("svg").remove();
+            multiplesAreaChart(key)
+        }
+    }
+    else {
+        d3.selectAll(".myArea").style("opacity", .1)
+        // expect the one that is hovered
+        d3.select("." + key).style("opacity", 1)
+    }
 }
 
 function mouseLeave() {
+    if (!isStack) {
+        d3.selectAll("svg").remove();
+        multiplesAreaChart("")
+        do_event = false
+    }
+    
     d3.selectAll(".myArea").style("opacity", 1)
 }
 
@@ -142,21 +166,24 @@ function stackedAreaChart() {
         var stackedData = d3.stack()
             .keys(keys)
             (data)
-        drawAreaChart(svg, data, stackedData, keys, cls, max_val, height);
+        drawAreaChart(svg, data, stackedData, keys, cls, max_val, height, "");
     });
 }
 
-function prevmultiplechart(cnt, svgarr, keys, colors) {
+function prevmultiplechart(cnt, svgarr, keys, colors, key_value) {
     var h = height / cnt;
+    var max_array = [];
+
     d3.json("../../../json/area_chart_data_v2.json", function (data) {
         var max_val = 0;
         for (var i = 0; i < cnt; i++) {
-            var max_temp = d3.max(data, function (d) {
+            max_array[i] = d3.max(data, function (d) {
                 return d[keys[i]];
             });
             
-            if (max_temp > max_val)
-                max_val = max_temp
+            
+            if (max_array[i] > max_val)
+                max_val = max_array[i]
         }
 
         max_val += 1000
@@ -165,11 +192,11 @@ function prevmultiplechart(cnt, svgarr, keys, colors) {
             var stackedData = d3.stack()
                 .keys([keys[i]])
                 (data)
-            drawAreaChart(svgarr[i], data, stackedData, [keys[i]], [colors[i]], max_val, h);
+            drawAreaChart(svgarr[i], data, stackedData, [keys[i]], [colors[i]], key_value == keys[i] ? max_array[i] : max_val, h, key_value);
         }
     });
 }
-function multiplesAreaChart() {
+function multiplesAreaChart(key_value) {
     var check_cnt = 0; // 몇개의 영역이 그려져야되는지
     var svg_arr = [];
     
@@ -233,16 +260,16 @@ function multiplesAreaChart() {
         var svg_temp = d3.select('#divchart' + (2 + i))
             .append("svg")
             .attr("width", width + margin.left + margin.right)
-            .attr("height", (height + margin.top + margin.bottom) / check_cnt)
+            .attr("height", (height + 3 * (margin.top + margin.bottom)) / check_cnt)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
         svg_arr.push(svg_temp)
     }
 
-    prevmultiplechart(check_cnt, svg_arr, keyArrayMult, colorArrayMult);
+    prevmultiplechart(check_cnt, svg_arr, keyArrayMult, colorArrayMult, key_value);
 }
 
-function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h) {
+function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h, key_value) {
     var color = d3.scaleOrdinal()
         .domain(keys)
         .range(cls) //key 순서대로 색상 결정
@@ -285,6 +312,7 @@ function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h) {
         .append("path")
         .attr("class", function (d) { return "myArea " + d.key })
         .style("fill", function (d) { return color(d.key); })
+        .style("opacity", function (d) { return (isStack || key_value == "" || d.key == key_value) ? 1 : .1 })
         .attr("stroke", "#000000")
         .attr("d", area)
 

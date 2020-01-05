@@ -91,15 +91,16 @@
                 <input type="radio" name="Gtype" id="stacked" checked="checked" onclick= "Change(); drawChart();">누적 영역형<br>
                 <input type="radio" name="Gtype" id="multiples" onclick="Change(); drawChart();">영역형<br><br>
 
-                <span style="font-size: 20px"><b>선택항목1</b></span><br>
+                <span style="font-size: 20px"><b>학생 구분 검색</b></span><br>
                 <select name="grad" id='test' onchange = "drawChart()" style="width : 200px; height: 30px">
                     <option name = "grad" id = "all" selected = "selected">(전체)</option>
-                    <option name = "grad" id = "undergraduate">재적생</option>
                     <option name = "grad" id = "graduate">졸업생</option>
+                    <option name = "grad" id = "undergraduate">재적생</option>
+                    
                     
                 </select><br><br>
            
-                <span style="font-size: 20px"><b>선택항목2</b></span><br>
+                <span style="font-size: 20px"><b>성별 검색</b></span><br>
                 <select name="gender" onchange = "drawChart()" style="width : 200px; height: 30px">
                     <option name = "gender" id = "all" selected = "selected">(전체)</option>
                     <option name = "gender" id = "male" onclick="drawChart()">남자</option>

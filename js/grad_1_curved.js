@@ -10,29 +10,29 @@ function drawP1Curved(
   _numberFormat
 ) {
   am4core.ready(function() {
-    console.log(_divName, _data);
     am4core.useTheme(am4themes_animated);
     var chart = am4core.create(_divName, am4charts.XYChart);
     chart.data = _data;
 
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis.dataFields.category = "year";
-    // categoryAxis.renderer.minGridDistance = 30;
-    // categoryAxis.renderer.grid.template.location = 0;
+    categoryAxis.renderer.minGridDistance = 30;
+    categoryAxis.renderer.grid.template.location = 0;
 
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
     if (_divName == "divchart2") {
-      valueAxis.min = 0;
-      valueAxis.max = 86;
-      valueAxis.strictMinMax = true;
+      // valueAxis.min = 0;
+      valueAxis.extraMin = 0.15;
+      valueAxis.extraMax = 0.15;
+      valueAxis.strictMinMax = false;
 
-      var axisBreak = valueAxis.axisBreaks.create();
-      axisBreak.startValue = 2;
-      axisBreak.endValue = 21;
-      axisBreak.breakSize = 0.05;
+      // var axisBreak = valueAxis.axisBreaks.create();
+      // axisBreak.startValue = 2;
+      // axisBreak.endValue = 21;
+      // axisBreak.breakSize = 0.05;
     } else {
-      valueAxis.strictMinMax = true;
+      valueAxis.strictMinMax = false;
       valueAxis.min = 0;
       valueAxis.max = 21;
 

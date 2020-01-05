@@ -65,25 +65,14 @@ function line_graph(data, college) {
 
     // Create axes
     var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-    categoryAxis.renderer.minGridDistance = 0.1;
+    categoryAxis.renderer.minGridDistance = 30;
+    categoryAxis.renderer.grid.template.location = 0;
     categoryAxis.dataFields.category = "year";
-
-    // Create value axis
-    // var small = 9999,
-    //   big = 0;
-    // for (var i = 0; i < data.length; i++) {
-    //   if (data[i]["time"] < small) {
-    //     small = data[i]["time"];
-    //   }
-    //   if (data[i]["time"] > big) {
-    //     big = data[i]["time"];
-    //   }
-    // }
 
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
     // valueAxis.min = parseFloat(small) - 0.5;
     // valueAxis.max = parseFloat(big) + 0.5;
-    valueAxis.strictMinMax = true;
+    valueAxis.strictMinMax = false;
     valueAxis.extraMin = 0.15;
     valueAxis.extraMax = 0.15;
 

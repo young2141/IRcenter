@@ -1,5 +1,5 @@
 function parse(callback) {
-    $.getJSON("../json/4-2.json", json => {
+    $.getJSON("../../../json/4-2.json", json => {
         callback(json);
     });
 }
@@ -12,7 +12,7 @@ parse(json => {
         // Themes end
 
         // Create chart instance
-        var chart = am4core.create("chartdiv", am4charts.PieChart);
+        var chart = am4core.create("chartdiv2", am4charts.PieChart);
 
         // Add data
         chart.data = json;

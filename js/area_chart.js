@@ -94,11 +94,12 @@ function stackedAreaChart() {
     d3.json("../../../json/area_chart_data.json", function (data) {
         var max_val = d3.max(data, function (d) {
             return d["undergraduate_male"] + d["undergraduate_female"] + d["graduate_male"] + d["graduate_female"];
-        }) + 3000;
+        });
+        max_val += (5000 - (max_val % 5000))
         var stackedData = d3.stack()
             .keys(keys)
             (data)
-        drawAreaChart(svg, data, stackedData, keys, cls, max_val, height);
+        drawAreaChart(svg, data, stackedData, keys, cls, max_val, height, max_val / 5000);
     });
 }
 
@@ -112,7 +113,7 @@ function prevmultiplechart(cnt, svgarr, keys, colors) {
             var stackedData = d3.stack()
                 .keys([keys[i]])
                 (data)
-            drawAreaChart(svgarr[i], data, stackedData, [keys[i]], [colors[i]], max_val, h);
+            drawAreaChart(svgarr[i], data, stackedData, [keys[i]], [colors[i]], 25000, h, 5);
         }
     });
 }
@@ -209,7 +210,7 @@ function multiplesAreaChart() {
     }
 }
 
-function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h) {
+function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h, tick) {
     var color = d3.scaleOrdinal()
         .domain(keys)
         .range(cls) //key 순서대로 색상 결정
@@ -230,9 +231,9 @@ function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h) {
     var y = d3.scaleLinear()
         .domain([0, max_val])
         .range([h, 0]);
-
+    
     svg.append("g")
-        .call(d3.axisLeft(y).ticks(5))
+        .call(d3.axisLeft(y).ticks(tick))
 
     // Create the scatter variable: where both the circles and the brush take place
     var areaChart = svg.append('g')
