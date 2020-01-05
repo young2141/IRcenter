@@ -6,10 +6,11 @@
         <title>경북대학교 IR센터</title>
 
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-        <script src="https://d3js.org/d3.v2.min.js" charset="utf-8"></script>
+        <script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-queue/2.0.3/d3-queue.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        <script src="../../../js/등록/복수전공/dualdegree_chart.js"></script>
+        <script src="../../../js/등록/복수전공/multidegree.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 
         <style>
@@ -72,7 +73,6 @@
                     <span id="color_en" value="#43E884" style="color:#43E884; font-size: 20px;">■ </span>공학<br>
                     <span id="color_amp" value="#52A1FF" style="color:#52A1FF; font-size: 20px;">■ </span>예체능<br>
                     <span id="color_dd" value="#808080" style="color:#808080; font-size: 20px;">■ </span>타계열<br><br>
-
                 </div>
 
                 <!-- 
@@ -80,41 +80,43 @@
                     sel_sbs; select, search by semester
                  -->
                 <div>
+                    <span style="font-size: 20px"><b>데이터 범위</b></span><br>
+                    <input type="radio" name="data_range" value="part" checked> 부분<br>
+                    <input type="radio" name="data_range" value="all"> 전체<br><br>
+
                     <span style="font-size: 20px"><b>정렬 조건</b></span><br>
-                    <select name="menu" id="sel_ord" style="width : 200px; height: 30px">
+                    <select name="menu" id="order" style="width : 200px; height: 30px">
                         <option value="name" selected = "selected">전공이름순</option>
                         <option value="group">계열별</option>
                         <option value="count">빈도순</option>
-                        <option value="all">모든 전공</option>
-                    </select>
+                    </select><br><br>
 
-                    </label><br><br>
                     <span style="font-size: 20px"><b>학기별 검색</b></span><br>
-                    <select name="menu" id="sel_sbs" style="width : 200px; height: 30px" onchange="selectSelectbox(id, this.value)">
-                        <option value="2019.2" selected>2019 2학기</option>
-                        <option value="2019.1">2019 1학기</option>
-                        <option value="2018.2">2018 2학기</option>
-                        <option value="2018.1">2018 1학기</option>
-                        <option value="2017.2">2017 2학기</option>
-                        <option value="2017.1">2017 1학기</option>
-                        <option value="2016.2">2016 2학기</option>
-                        <option value="2016.1">2016 1학기</option>
-                        <option value="2015.2">2015 2학기</option>
-                        <option value="2015.1">2015 1학기</option>
-                        <option value="2014.2">2014 2학기</option>
-                        <option value="2014.1">2014 1학기</option>
-                        <option value="2013.2">2013 2학기</option>
-                        <option value="2013.1">2013 1학기</option>
-                        <option value="2012.2">2012 2학기</option>
-                        <option value="2012.1">2012 1학기</option>
-                        <option value="2011.2">2011 2학기</option>
-                        <option value="2011.1">2011 1학기</option>
-                        <option value="2010.2">2010 2학기</option>
-                        <option value="2010.1">2010 1학기</option>
-                    </select>
-                    </label><br><br>
-                    </label>
+                    <select name="menu" id="termyear" style="width : 200px; height: 30px" onchange="selectSelectbox(id, this.value)">
+                        <option value="2019 2" selected>2019 2</option>
+                        <option value="2019 1">2019 1</option>
+                        <option value="2018 2">2018 2</option>
+                        <option value="2018 1">2018 1</option>
+                        <option value="2017 2">2017 2</option>
+                        <option value="2017 1">2017 1</option>
+                        <option value="2016 2">2016 2</option>
+                        <option value="2016 1">2016 1</option>
+                        <option value="2015 2">2015 2</option>
+                        <option value="2015 1">2015 1</option>
+                        <option value="2014 2">2014 2</option>
+                        <option value="2014 1">2014 1</option>
+                        <option value="2013 2">2013 2</option>
+                        <option value="2013 1">2013 1</option>
+                        <option value="2012 2">2012 2</option>
+                        <option value="2012 1">2012 1</option>
+                        <option value="2011 2">2011 2</option>
+                        <option value="2011 1">2011 1</option>
+                        <option value="2010 2">2010 2</option>
+                        <option value="2010 1">2010 1</option>
+                    </select><br><br>
+                    
                 </div>
+
 
 
             </div>
