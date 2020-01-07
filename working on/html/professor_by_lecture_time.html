@@ -1,0 +1,316 @@
+<!-- Styles -->
+<style>
+    #chartdiv {
+      width: 100%;
+      height: 500px;
+    }
+    
+    </style>
+    
+    <!-- Resources -->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    
+    <!-- Chart code -->
+    <script>
+    am4core.ready(function() {
+    
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+    
+    var chart = am4core.create("chartdiv", am4charts.XYChart);
+    chart.maskBullets = false;
+    
+    var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+    
+    yAxis.dataFields.category = "prof";
+    xAxis.renderer.minGridDistance = 1;
+    xAxis.dataFields.category = "time";
+    
+    xAxis.renderer.grid.template.disabled = true;
+    yAxis.renderer.grid.template.disabled = true;
+    xAxis.renderer.axisFills.template.disabled = true;
+    yAxis.renderer.axisFills.template.disabled = true;
+    yAxis.renderer.ticks.template.disabled = true;
+    xAxis.renderer.ticks.template.disabled = true;
+    
+    yAxis.renderer.inversed = true;
+    
+    var series = chart.series.push(new am4charts.ColumnSeries());
+    series.dataFields.categoryY = "prof";
+    series.dataFields.categoryX = "time";
+    series.dataFields.value = "value";
+    series.columns.template.disabled = true;
+    series.sequencedInterpolation = true;
+    //series.defaultState.transitionDuration = 3000;
+    
+    var bullet = series.bullets.push(new am4core.Circle());
+    bullet.tooltipText = "{prof}, {time}: {value.workingValue.formatNumber('#.')}";
+    bullet.strokeWidth = 3;
+    bullet.stroke = am4core.color("#ffffff");
+    bullet.strokeOpacity = 0;
+    
+    bullet.adapter.add("tooltipY", function(tooltipY, target) {
+      return -target.radius + 1;
+    })
+    
+    series.heatRules.push({
+      property: "radius",
+      target: bullet,
+      min: 2,
+      max: 40
+    });
+    
+    bullet.hiddenState.properties.scale = 0.01;
+    bullet.hiddenState.properties.opacity = 1;
+    
+    var hoverState = bullet.states.create("hover");
+    hoverState.properties.strokeOpacity = 1;
+    
+    chart.data = [
+      {
+        "time": "1미만",
+        "prof": "교수",
+        "value": 0
+       },
+       {
+        "time": "1미만",
+        "prof": "부교수",
+        "value": 0
+       },
+       {
+        "time": "1미만",
+        "prof": "조교수",
+        "value": 0
+       },
+       {
+        "time": "1미만",
+        "prof": "기금교수",
+        "value": 0
+       },
+       {
+        "time": "1미만",
+        "prof": "비전임교원",
+        "value": 0
+       },
+       {
+        "time": "1~3",
+        "prof": "교수",
+        "value": 2
+       },
+       {
+        "time": "1~3",
+        "prof": "부교수",
+        "value": 0
+       },
+       {
+        "time": "1~3",
+        "prof": "조교수",
+        "value": 0
+       },
+       {
+        "time": "1~3",
+        "prof": "기금교수",
+        "value": 0
+       },
+       {
+        "time": "1~3",
+        "prof": "비전임교원",
+        "value": 178
+       },
+       {
+        "time": "4~6",
+        "prof": "교수",
+        "value": 3
+       },
+       {
+        "time": "4~6",
+        "prof": "부교수",
+        "value": 0
+       },
+       {
+        "time": "4~6",
+        "prof": "조교수",
+        "value": 2
+       },
+       {
+        "time": "4~6",
+        "prof": "기금교수",
+        "value": 0
+       },
+       {
+        "time": "4~6",
+        "prof": "비전임교원",
+        "value": 
+       },
+       {
+        "time": "7~9",
+        "prof": "교수",
+        "value": 0
+       },
+       {
+        "time": "7~9",
+        "prof": "부교수",
+        "value": 0
+       },
+       {
+        "time": "7~9",
+        "prof": "조교수",
+        "value": 0
+       },
+       {
+        "time": "7~9",
+        "prof": "기금교수",
+        "value": 0
+       },
+       {
+        "time": "7~9",
+        "prof": "비전임교원",
+        "value": 0
+       },
+       {
+        "time": "10~12",
+        "prof": "교수",
+        "value": 0
+       },
+       {
+        "time": "10~12",
+        "prof": "부교수",
+        "value": 0
+       },
+       {
+        "time": "10~12",
+        "prof": "조교수",
+        "value": 0
+       },
+       {
+        "time": "10~12",
+        "prof": "기금교수",
+        "value": 0
+       },
+       {
+        "time": "10~12",
+        "prof": "비전임교원",
+        "value": 0
+       },
+       {
+        "time": "13~15",
+        "prof": "교수",
+        "value": 0
+       },
+       {
+        "time": "13~15",
+        "prof": "부교수",
+        "value": 0
+       },
+       {
+        "time": "13~15",
+        "prof": "조교수",
+        "value": 0
+       },
+       {
+        "time": "13~15",
+        "prof": "기금교수",
+        "value": 0
+       },
+       {
+        "time": "13~15",
+        "prof": "비전임교원",
+        "value": 0
+       },
+       {
+        "time": "16~18",
+        "prof": "교수",
+        "value": 0
+       },
+       {
+        "time": "16~18",
+        "prof": "부교수",
+        "value": 0
+       },
+       {
+        "time": "16~18",
+        "prof": "조교수",
+        "value": 0
+       },
+       {
+        "time": "16~18",
+        "prof": "기금교수",
+        "value": 0
+       },
+       {
+        "time": "16~18",
+        "prof": "비전임교원",
+        "value": 0
+       },
+       {
+        "time": "19~21",
+        "prof": "교수",
+        "value": 0
+       },
+       {
+        "time": "19~21",
+        "prof": "부교수",
+        "value": 0
+       },
+       {
+        "time": "19~21",
+        "prof": "조교수",
+        "value": 0
+       },
+       {
+        "time": "19~21",
+        "prof": "기금교수",
+        "value": 0
+       },
+       {
+        "time": "19~21",
+        "prof": "비전임교원",
+        "value": 0
+       },
+       {
+        "time": "22이상",
+        "prof": "교수",
+        "value": 0
+       },
+       {
+        "time": "22이상",
+        "prof": "부교수",
+        "value": 0
+       },
+       {
+        "time": "22이상",
+        "prof": "조교수",
+        "value": 0
+       },
+       {
+        "time": "22이상",
+        "prof": "기금교수",
+        "value": 0
+       },
+       {
+        "time": "22이상",
+        "prof": "비전임교원",
+        "value": 0
+       },
+      ]
+
+      
+        
+    // this changes data each 3 seconds
+    // setInterval(function(){
+    //     series.dataItems.each(function(dataItem){
+    //         dataItem.value += dataItem.value * Math.random() * 0.3;        
+    //     })
+    // }, 3000)
+    
+    
+    
+    }); // end am4core.ready()
+    </script>
+    
+    <!-- HTML -->
+    <div id="chartdiv"></div>
