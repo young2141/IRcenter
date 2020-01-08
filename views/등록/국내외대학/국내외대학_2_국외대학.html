@@ -8,15 +8,38 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-	<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-	<script src="../../../working on/js/staffheadcount_sharedservice.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<script src="https://d3js.org/d3.v4.min"></script>
+	<script src="../../../js/4-3.js"></script>
+
 
 </head>
 
 <style type="text/css">
 	@import url('../../../css/output_default.css');
+
+	.node circle {
+		fill: #fff;
+		stroke: steelblue;
+		stroke-width: 3px;
+	}
+
+	.node text {
+		font: 12px sans-serif;
+	}
+
+	.link {
+		fill: none;
+		stroke: #ccc;
+		stroke-width: 2px;
+	}
+
+	#chartdiv1 {
+		width: 1000px;
+		height: 500px;
+	}
 </style>
 
 <body>
@@ -47,31 +70,31 @@
 		</div>
 
 		<center>
-			<div id="tableBox">
-				<table cellspacing="0" cellpadding="0">
-					<tbody>
-						<tr>
-							<td style="border-style: none; font-size : 30px">
-								<a href="국내외대학_2_국외대학.html">
-									<span id="black">◀</span>
-								</a>
-							</td>
-							<td style="background-color : #eeeeee">
-								<a href="국내외대학_1_국내대학.html"><span id="black"><b>국내대학</b></span></a>
-							</td>
-							<td>
-								<a href="국내외대학_2_국외대학.html"><span id="black">국외대학</span></a>
-							</td>
-							<td style="border-style: none; font-size : 30px">
-								<a href="국내외대학_2_국외대학.html">
-									<span style="color: black">▶</span>
-								</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<hr style="border-color: black">
+		<div id="tableBox">
+			<table cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td style="border-style: none; font-size : 30px">
+							<a href="국내외대학_1_국내대학.html">
+								<span id="black">◀</span>
+							</a>
+						</td>
+						<td>
+							<a href="국내외대학_1_국내대학.html"><span id="black">국내대학</span></a>
+						</td>
+						<td style="background-color : #eeeeee">
+							<a href="국내외대학_2_국외대학.html"><span id="black"><b>국외대학</b></span></a>
+						</td>
+						<td style="border-style: none; font-size : 30px">
+							<a href="국내외대학_1_국내대학.html">
+								<span style="color: black">▶</span>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr style="border-color: black">
 
 	</div>
 	</center>
@@ -128,12 +151,17 @@
 				else
 					$("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
 			});
+
 		</script>
 
-		<div id="chartdiv" class="chartdiv">그래프 1</div>
-		<script>
-			//drawChart();
-		</script>
+
+		<!--<div id="summaryBox">
+			<h2><span id="P1">기관별 직원수</span></h2>
+		</div>
+		<div id="unitBox">
+			(단위 : 명)
+		</div>-->
+		<div id="chartdiv1" class="chartdiv">그래프 1</div>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
