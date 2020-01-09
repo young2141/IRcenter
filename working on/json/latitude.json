@@ -1,0 +1,100 @@
+[
+	{
+		"university": "마샬대학",
+		"disfatch": "-",
+		"invitation": "-  ",
+		"latitude": 38.4235,
+		"longitude": -82.4286
+	},
+	{
+		"university": "랜더대학",
+		"disfatch": 6.0,
+		"invitation": 1.0,
+		"latitude": 34.2003,
+		"longitude": -82.1739
+	},
+	{
+		"university": "럿거스캄덴대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 39.9476,
+		"longitude": -75.1318
+	},
+	{
+		"university": "모어헤드주립대학",
+		"disfatch": 1.0,
+		"invitation": 3.0,
+		"latitude": 38.1886,
+		"longitude": -83.4402
+	},
+	{
+		"university": "게르첸사범대학",
+		"disfatch": 4.0,
+		"invitation": 3.0,
+		"latitude": 59.9339,
+		"longitude": 30.3201
+	},
+	{
+		"university": "크라스노다르대학(쿠반)",
+		"disfatch": "-",
+		"invitation": "-　",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "쿠반국립대학",
+		"disfatch": 6.0,
+		"invitation": 9.0,
+		"latitude": 45.02,
+		"longitude": 39.0305
+	},
+	{
+		"university": "블라디보스톡경제대학",
+		"disfatch": 5.0,
+		"invitation": 4.0,
+		"latitude": 43.1255,
+		"longitude": 131.9052
+	},
+	{
+		"university": "노보시비리스크경제경영대학",
+		"disfatch": 2.0,
+		"invitation": 1.0,
+		"latitude": 55.0344,
+		"longitude": 82.9293
+	},
+	{
+		"university": "막심고리키문학대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 55.763,
+		"longitude": 37.6024
+	},
+	{
+		"university": "상트페테르부르크국립대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 59.9426,
+		"longitude": 30.2989
+	},
+	{
+		"university": "옴스크국립사범대학",
+		"disfatch": "-",
+		"invitation": 3.0,
+		"latitude": 54.9908,
+		"longitude": 73.3577
+	},
+	{
+		"university": "상트페테르부르크경제대학",
+		"disfatch": 2.0,
+		"invitation": 3.0,
+		"latitude": 59.8964,
+		"longitude": 30.4087
+	},
+	{
+		"university": "상트페테르부르크공과대학",
+		"disfatch": 5.0,
+		"invitation": 3.0,
+		"latitude": 60.0087,
+		"longitude": 30.3724
+	}
+]
