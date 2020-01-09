@@ -76,11 +76,10 @@ function draw_map(input_mode) {
 
         // define template
         var imageSeriesTemplate = imageSeries.mapImages.template;
-        var circle = imageSeriesTemplate.createChild(am4core.Circle);
+        var circle = imageSeriesTemplate.createChild(am4plugins_bullets.PointedCircle);
         circle.radius = 6;
         circle.fill = chart.colors.getIndex(mode == "파견" ? 8 : 11).brighten(-0.2);
         circle.strokeWidth = 2;
-        circle.stroke = am4core.color("#fff")
         // what about scale...
 
         // set propertyfields
