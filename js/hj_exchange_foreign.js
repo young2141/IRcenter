@@ -121,11 +121,11 @@ function draw_map(input_mode) {
         else {
             for (var i = 0; i < universities.length; i++) {
                 if(mode2=="전체"){
-                    if (universities[i].disfatch.toString().trim() == "-" || universities[i].latitude == '')
+                    if (universities[i].invitation.toString().trim() == "-" || universities[i].latitude == '')
                     continue
                 }
                 else{
-                    if (universities[i].university.trim()!=mode2|| universities[i].disfatch.toString().trim() == "-" || universities[i].latitude == '')
+                    if (universities[i].university.trim()!=mode2|| universities[i].invitation.toString().trim() == "-" || universities[i].latitude == '')
                     continue
                 }
                 imageSeries.data.push(universities[i])
