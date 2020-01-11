@@ -12,7 +12,6 @@
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script src="https://d3js.org/d3.v4.min"></script>
-	<script src="../../../js/4-3.js"></script>
 
 
 </head>
@@ -132,7 +131,258 @@
 		<div id="unitBox">
 			(단위 : 세)
 		</div>
-		<div id="chartdiv1" class="chartdiv">그래프 1</div>
+		<div id="chartdiv" class="chartdiv">그래프 1</div>
+		<script>
+		am4core.ready(function() {
+    
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+    
+    var chart = am4core.create("chartdiv", am4charts.XYChart);
+    chart.maskBullets = false;
+    
+    var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+    
+    yAxis.dataFields.category = "prof";
+    xAxis.renderer.minGridDistance = 1;
+    xAxis.dataFields.category = "age";
+    
+    xAxis.renderer.grid.template.disabled = true;
+    yAxis.renderer.grid.template.disabled = true;
+    xAxis.renderer.axisFills.template.disabled = true;
+    yAxis.renderer.axisFills.template.disabled = true;
+    yAxis.renderer.ticks.template.disabled = true;
+    xAxis.renderer.ticks.template.disabled = true;
+    
+    yAxis.renderer.inversed = true;
+    
+    var series = chart.series.push(new am4charts.ColumnSeries());
+    series.dataFields.categoryY = "prof";
+    series.dataFields.categoryX = "age";
+    series.dataFields.value = "value";
+    series.columns.template.disabled = true;
+    series.sequencedInterpolation = true;
+    //series.defaultState.transitionDuration = 3000;
+    
+    var bullet = series.bullets.push(new am4core.Circle());
+    bullet.tooltipText = "{prof}, {age}세: {value.workingValue.formatNumber('#.')}명";
+    bullet.strokeWidth = 3;
+    bullet.stroke = am4core.color("#ffffff");
+    bullet.strokeOpacity = 0;
+    
+    bullet.adapter.add("tooltipY", function(tooltipY, target) {
+      return -target.radius + 1;
+    })
+    
+    series.heatRules.push({
+      property: "radius",
+      target: bullet,
+      min: 2,
+      max: 40
+    });
+    
+    bullet.hiddenState.properties.scale = 0.01;
+    bullet.hiddenState.properties.opacity = 1;
+    
+    var hoverState = bullet.states.create("hover");
+    hoverState.properties.strokeOpacity = 1;
+    
+    chart.data = [
+      {
+        "age": "25세이하",
+        "prof": "교수",
+        "value": 0
+       },
+       
+       {
+        "age": "25세이하",
+        "prof": "부교수",
+        "value": 0
+       },
+       {
+        "age": "25세이하",
+        "prof": "조교수",
+        "value": 0
+       },
+       {
+        "age": "25세이하",
+        "prof": "조교",
+        "value": 1
+       },
+       {
+        "age": "26~30",
+        "prof": "교수",
+        "value": 0
+       },
+       
+       {
+        "age": "26~30",
+        "prof": "부교수",
+        "value": 0
+       },
+       {
+        "age": "26~30",
+        "prof": "조교수",
+        "value": 1
+       },
+       {
+        "age": "26~30",
+        "prof": "조교",
+        "value": 24
+       },
+       {
+        "age": "31~35",
+        "prof": "교수",
+        "value": 0
+       },
+       
+       {
+        "age": "31~35",
+        "prof": "부교수",
+        "value": 1
+       },
+       {
+        "age": "31~35",
+        "prof": "조교수",
+        "value": 22
+       },
+       {
+        "age": "31~35",
+        "prof": "조교",
+        "value": 36
+       },
+       {
+        "age": "36~40",
+        "prof": "교수",
+        "value": 0
+       },
+       
+       {
+        "age": "36~40",
+        "prof": "부교수",
+        "value": 27
+       },
+       {
+        "age": "36~40",
+        "prof": "조교수",
+        "value": 83
+       },
+       {
+        "age": "36~40",
+        "prof": "조교",
+        "value": 32
+       },
+       {
+        "age": "41~45",
+        "prof": "교수",
+        "value": 14
+       },
+       
+       {
+        "age": "41~45",
+        "prof": "부교수",
+        "value": 72
+       },
+       {
+        "age": "41~45",
+        "prof": "조교수",
+        "value": 55
+       },
+       {
+        "age": "41~45",
+        "prof": "조교",
+        "value": 49
+       },
+       {
+        "age": "46~50",
+        "prof": "교수",
+        "value": 117
+       },
+       
+       {
+        "age": "46~50",
+        "prof": "부교수",
+        "value": 73
+       },
+       {
+        "age": "46~50",
+        "prof": "조교수",
+        "value": 20
+       },
+       {
+        "age": "46~50",
+        "prof": "조교",
+        "value": 36
+       },
+       {
+        "age": "51~55",
+        "prof": "교수",
+        "value": 211
+       },
+       
+       {
+        "age": "51~55",
+        "prof": "부교수",
+        "value": 25
+       },
+       {
+        "age": "51~55",
+        "prof": "조교수",
+        "value": 5
+       },
+       {
+        "age": "51~55",
+        "prof": "조교",
+        "value": 24
+       },
+       {
+        "age": "56~60",
+        "prof": "교수",
+        "value": 246
+       },
+       
+       {
+        "age": "56~60",
+        "prof": "부교수",
+        "value": 11
+       },
+       {
+        "age": "56~60",
+        "prof": "조교수",
+        "value": 1
+       },
+       {
+        "age": "56~60",
+        "prof": "조교",
+        "value": 19
+       },
+       {
+        "age": "61~65",
+        "prof": "교수",
+        "value": 191
+       },
+       
+       {
+        "age": "61~65",
+        "prof": "부교수",
+        "value": 5
+       },
+       {
+        "age": "61~65",
+        "prof": "조교수",
+        "value": 0
+       },
+       {
+        "age": "61~65",
+        "prof": "조교",
+        "value": 3
+       },
+      ]
+    }); // end am4core.ready()
+
+		</script>
 
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
