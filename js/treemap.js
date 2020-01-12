@@ -5,10 +5,10 @@ am4core.ready(function () {
     // Themes end
 
     // create chart
-    var chart = am4core.create("chartdiv", am4charts.TreeMap);
+    var chart = am4core.create("chartdiv2", am4charts.TreeMap);
     chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
 
-    jQuery.getJSON("C:/Users/tkekd/OneDrive/바탕 화면/IR센터/json/treemap.json", json => {
+    jQuery.getJSON("../../../json/treemap.json", json => {
         chartele(json);
     });
     function chartele(json) {
@@ -22,24 +22,6 @@ am4core.ready(function () {
     // chart.dataFields.name = "name";
     // chart.dataFields.id = "val1";
     chart.dataFields.children = "children";
-
-    chart.dataFields.tooltipHTML = `<center><strong>YEAR {categoryX}</strong></center>
-    <hr />
-    <table>
-    <tr>
-    <th align="left">Cars</th>
-    <td>{cars}</td>
-    </tr>
-    <tr>
-    <th align="left">Motorcycles</th>
-    <td>{motorcycles}</td>
-    </tr>
-    <tr>
-    <th align="left">Bicycles</th>
-    <td>{bicycles}</td>
-    </tr>
-    </table>
-    <hr />`;
     chart.zoomable = false;
     var bgColor = new am4core.InterfaceColorSet().getFor("background");
 
