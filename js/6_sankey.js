@@ -1,7 +1,71 @@
 function parsing() {
     var filename = "doyeong_sankey_dumy.json";
+    var color1 = {
+        "인문대학" : "#99ff6a",
+        "사회과학대학" : "#ff0000",
+        "자연과학대학" : "#00ff00",
+        "경상대학" : "#0000ff",
+        "공과대학" : "#ffff00",
+        "IT대학" : "#ff00ff",
+        "농업생명과학대학" : "#00ffff",
+        "예술대학" : "#f0000f",
+        "사범대학" : "#f00f00",
+        "의과대학" : "#f000f0",
+        "치과대학" : "#f0f0f0",
+        "수의과대학" : "#f0f0ff",
+        "생활과학대학" : "#f00fff",
+        "간호대학" : "#f0ffff",
+        "약학대학" : "#ffff0f",
+        "글로벌인재학부" : "#f00fff",
+        "행정학부" : "#123456",
+        "법과대학" : "#66ffff",
+        "자율전공부" : "#29845a",
+        "No Degree" : "#0f0f0f"
+    };
+    var color2 = {
+        "인문대학" : "#99ff6b",
+        "사회과학대학" : "#ff0001",
+        "자연과학대학" : "#00ff01",
+        "경상대학" : "#0000fe",
+        "공과대학" : "#ffff01",
+        "IT대학" : "#ff00fe",
+        "농업생명과학대학" : "#00fffe",
+        "예술대학" : "#f0000e",
+        "사범대학" : "#f00f01",
+        "의과대학" : "#f000f1",
+        "치과대학" : "#f0f0f1",
+        "수의과대학" : "#f0f0fe",
+        "생활과학대학" : "#f00ffe",
+        "간호대학" : "#f0fffe",
+        "약학대학" : "#ffff0e",
+        "글로벌인재학부" : "#f00ffe",
+        "행정학부" : "#123455",
+        "법과대학" : "#66fffe",
+        "자율전공부" : "#29845b",
+        "No Degree" : "#0f0f0e"
+    }
     $.getJSON("../../../json/" + filename, (jsonData) => {
-        console.log(jsonData);
+        var keys = Object.keys(color1);
+        var pre = "";
+        var len = jsonData.length;
+
+        for(var i=0; i<len; i++){
+            if(jsonData[i].category == "입학후전입")    
+                jsonData[i].color = color1[(jsonData[i].from).trim()];
+            else{
+                if(pre == jsonData[i].from.trim()) continue
+                pre = jsonData[i].from.trim();
+                jsonData.push({
+                    "from" : jsonData[i].from,
+                    "color" : color1[jsonData[i].from.trim()]
+                });
+
+                jsonData.push({
+                    "to" : jsonData[i].to,
+                    "color" : color1[jsonData[i].to.trim()]
+                });
+            }            
+        }
         drawSankey(jsonData);
     })
 }
@@ -18,66 +82,13 @@ function drawSankey(_data) {
     
         chart.data = _data;
     
-        // chart.data = [
-        //     { from: "A", to: "E", value: 1, id: "A0-0" },
-        //     { from: "A", to: "F", value: 1, id: "A1-0" },
-        //     { from: "A", to: "G", value: 1, id: "A2-0" },
-    
-        //     { from: "B", to: "E", value: 1, id: "B0-0" },
-        //     { from: "B", to: "F", value: 1, id: "B1-0" },
-        //     { from: "B", to: "G", value: 1, id: "B2-0" },
-    
-        //     { from: "C", to: "F", value: 1, id: "C0-0" },
-        //     { from: "C", to: "G", value: 1, id: "C1-0" },
-        //     { from: "C", to: "H", value: 1, id: "C2-0" },
-    
-        //     { from: "D", to: "E", value: 1, id: "D0-0" },
-        //     { from: "D", to: "F", value: 1, id: "D1-0" },
-        //     { from: "D", to: "G", value: 1, id: "D2-0" },
-        //     { from: "D", to: "H", value: 1, id: "D3-0" },
-    
-        //     { from: "E", to: "I", value: 1, id: "A0-1" },
-        //     { from: "E", to: "I", value: 1, id: "B0-1" },
-        //     { from: "E", to: "L", value: 1, id: "D0-1" },
-    
-        //     { from: "F", to: "I", value: 1, id: "A1-1" },
-        //     { from: "F", to: "I", value: 1, id: "C0-1" },
-        //     { from: "F", to: "I", value: 1, id: "D1-1" },
-        //     { from: "F", to: "M", value: 1, id: "B1-1" },
-    
-        //     { from: "G", to: "I", value: 1, id: "A2-1" },
-        //     { from: "G", to: "I", value: 1, id: "B2-1" },
-        //     { from: "G", to: "J", value: 1, id: "C1-1" },
-        //     { from: "G", to: "N", value: 1, id: "D2-1" },
-    
-        //     { from: "H", to: "K", value: 1, id: "C2-1" },
-        //     { from: "H", to: "N", value: 1, id: "D3-1" },
-    
-        //     { from: "I", to: "O", value: 1, id: "A0-2" },
-        //     { from: "I", to: "O", value: 1, id: "B2-2" },
-        //     { from: "I", to: "Q", value: 1, id: "A1-2" },
-        //     { from: "I", to: "R", value: 1, id: "A2-2" },
-        //     { from: "I", to: "S", value: 1, id: "D1-2" },
-        //     { from: "I", to: "T", value: 1, id: "B0-2" },
-        //     { from: "I", to: "Q", value: 1, id: "C0-2" },
-    
-        //     { from: "J", to: "U", value: 1, id: "C1-2" },
-    
-        //     { from: "K", to: "V", value: 1, id: "C2-2" },
-        //     { from: "M", to: "U", value: 1, id: "B1-2" },
-    
-        //     { from: "N", to: "Q", value: 1, id: "D2-2" },
-        //     { from: "N", to: "Q", value: 1, id: "D3-2" },
-    
-        //     { from: "L", to: "W", value: 1, id: "D0-2" }
-        // ];
-    
         let hoverState = chart.links.template.states.create("hover");
         hoverState.properties.fillOpacity = 0.6;
     
         chart.dataFields.fromName = "from";
         chart.dataFields.toName = "to";
         chart.dataFields.value = "value";
+        chart.dataFields.color = "color";
     
         //chart.links.template.propertyFields.id = "id";
         chart.links.template.colorMode = "solid";
@@ -86,23 +97,23 @@ function drawSankey(_data) {
         chart.links.template.tooltipText = "";
     
         // highlight all links with the same id beginning
-        chart.links.template.events.on("over", function (event) {
-            let link = event.target;
-            let id = link.id.split("-")[0];
-            console.log("아이디값 : " + id);
+        // chart.links.template.events.on("over", function (event) {
+        //     let link = event.target;
+        //     let id = link.id.split("-")[0];
+        //     console.log("아이디값 : " + id);
     
-            chart.links.each(function (link) {
-                if (link.id.indexOf(id) != -1) {
-                    link.isHover = false;
-                }
-            })
-        })
+        //     chart.links.each(function (link) {
+        //         if (link.id.indexOf(id) != -1) {
+        //             link.isHover = false;
+        //         }
+        //     })
+        // })
     
-        chart.links.template.events.on("out", function (event) {
-            chart.links.each(function (link) {
-                link.isHover = false;
-            })
-        })
+        // chart.links.template.events.on("out", function (event) {
+        //     chart.links.each(function (link) {
+        //         link.isHover = false;
+        //     })
+        // })
     
         // for right-most label to fit
         chart.paddingRight = 150;
@@ -113,7 +124,7 @@ function drawSankey(_data) {
         nodeTemplate.readerTitle = "Drag me!";
         nodeTemplate.showSystemTooltip = true;
         nodeTemplate.width = 20;
-    
+
         // make nodes draggable
         var nodeTemplate = chart.nodes.template;
         nodeTemplate.readerTitle = "Click to show/hide or drag to rearrange";

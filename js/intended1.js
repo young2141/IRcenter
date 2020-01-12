@@ -32,15 +32,15 @@ parse(json => {
         container.height = am4core.percent(100);
 
         var columContainer = container.createChild(am4core.Container);
-        columContainer.layout = "horizontal";
-        columContainer.width = am4core.percent(60);
+        columContainer.layout = "vertical";
+        columContainer.width = am4core.percent(80);
         columContainer.height = am4core.percent(100);
 
 
 
         var lineContainer = container.createChild(am4core.Container);
         lineContainer.layout = "vertical";
-        lineContainer.width = am4core.percent(10);
+        lineContainer.width = am4core.percent(20);
         lineContainer.height = am4core.percent(100);
         // Color set
         var colors = new am4core.ColorSet();
@@ -50,8 +50,9 @@ parse(json => {
         
             var chart = lineContainer.createChild(am4charts.XYChart);
             chart.layout = "vertical"
-            chart.width = am4core.percent(100);
-            chart.height = 35;
+            chart.width = am4core.percent(90);
+            // chart.height = 35;
+            chart.height = 16.5;
         
             chart.data = data;
         
@@ -62,15 +63,8 @@ parse(json => {
             
         
             chart.padding(0, 0, 0, 0);
-        
-            /* var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-            dateAxis.renderer.grid.template.disabled = true;
-            dateAxis.renderer.labels.template.disabled = true;
-            dateAxis.renderer.baseGrid.disabled = false;
+
     
-            dateAxis.startLocation = 0.5;
-            dateAxis.endLocation = 0.7;
-            dateAxis.cursorTooltipEnabled = false; */
 
             var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
             categoryAxis.renderer.grid.template.disabled = true;
@@ -114,7 +108,7 @@ parse(json => {
         
             var chart = lineContainer.createChild(am4charts.XYChart);
             chart.layout = "vertical"
-            chart.width = am4core.percent(100);
+            chart.width = am4core.percent(90);
             chart.height = am4core.percent(100);;
         
             chart.data = data;
@@ -125,22 +119,14 @@ parse(json => {
             chart.titles.create().text = title;
             
         
-            chart.padding(5, 5, 2, 5);
-        
-            /* var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-            dateAxis.renderer.grid.template.disabled = true;
-            dateAxis.renderer.labels.template.disabled = true;
-            dateAxis.renderer.baseGrid.disabled = false;
-    
-            dateAxis.startLocation = 0.5;
-            dateAxis.endLocation = 0.7;
-            dateAxis.cursorTooltipEnabled = false; */
+            chart.padding(0, 0, 0, 0);
 
             var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
             categoryAxis.renderer.grid.template.disabled = true;
             categoryAxis.renderer.labels.template.disabled = false;
             categoryAxis.cursorTooltipEnabled = false;
             categoryAxis.dataFields.category = "category";
+            categoryAxis.renderer.minGridDistance = 65;
         
             var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
             valueAxis.min = 0;
@@ -175,13 +161,12 @@ parse(json => {
         function createColumn(title, data, color) {
         
             var chart = columContainer.createChild(am4charts.XYChart);
-            chart.width = am4core.percent(100);
+            chart.width = am4core.percent(90);
             chart.height = am4core.percent(100);
         
             chart.data = data;
-        
-        
-            chart.padding(5, 20, 2, 5);
+    
+            chart.padding(5, 5, 2, 5);
         
             var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
             categoryAxis.renderer.grid.template.disabled = true;
@@ -189,6 +174,7 @@ parse(json => {
             categoryAxis.cursorTooltipEnabled = false;
             categoryAxis.renderer.labels.template.width = 50;
             categoryAxis.dataFields.category = "category";
+            categoryAxis.renderer.minGridDistance = 1;
         
             var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
             valueAxis.min = 0;
@@ -198,9 +184,7 @@ parse(json => {
             valueAxis.renderer.baseGrid.disabled = true;
             valueAxis.renderer.labels.template.disabled = false;
             valueAxis.cursorTooltipEnabled = false;
-        
-            // chart.cursor = new am4charts.XYCursor();
-            // chart.cursor.lineY.disabled = true;
+            valueAxis.renderer.minGridDistance = 60;
         
             var series = chart.series.push(new am4charts.ColumnSeries());
             series.dataFields.categoryY = "category";
@@ -242,7 +226,7 @@ parse(json => {
             if(colorcnt!=0){
                 var k
                 for(k =0;k<data.length;k++){
-                    if(temp.value<data[k].value){
+                    if(temp.value<=data[k].value){
                         check=1
                         break;
                     }

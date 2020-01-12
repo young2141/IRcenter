@@ -1,0 +1,422 @@
+﻿{
+  "name": "root",
+  "color": "#ffffff",
+  "children": [
+    {
+      "name": "본부",
+      "color": "#dc67ce",
+      "children": [
+        {
+          "name": "교무처",
+          "color": "#dc67ce",
+          "children": [
+            {
+              "name": "교무과",
+              "color": "#dc67ce",
+              "size": 11
+            },
+            {
+              "name": "학사과",
+              "color": "#dc67ce",
+              "size": 8
+            }
+          ]
+        },
+        {
+          "name": "학생처",
+          "color": "#dc67ce",
+          "children": [
+            {
+              "name": "학생과",
+              "color": "#dc67ce",
+              "size": 13
+            }
+          ]
+        },
+        {
+          "name": "기획처",
+          "color": "#dc67ce",
+          "children": [
+            {
+              "name": "기획조정과",
+              "color": "#dc67ce",
+              "size": 10
+            },
+            {
+              "name": "재정관리과",
+              "color": "#dc67ce",
+              "size": 6
+            }
+          ]
+        },
+        {
+          "name": "연구산학처",
+          "color": "#dc67ce",
+          "children": [
+            {
+              "name": "연구진흥과",
+              "color": "#dc67ce",
+              "size": 6
+            },
+            {
+              "name": "산학협력과",
+              "color": "#dc67ce",
+              "size": 3
+            }
+          ]
+        },
+        {
+          "name": "국제교류처",
+          "color": "#dc67ce",
+          "children": [
+            {
+              "name": "국제교류과",
+              "color": "#dc67ce",
+              "size": 7
+            },
+            {
+              "name": "유학생지원담당관",
+              "color": "#dc67ce",
+              "size": 0
+
+            }
+          ]
+        },
+        {
+          "name": "사무국",
+          "color": "#dc67ce",
+          "children": [
+            {
+              "name": "사무국",
+              "color": "#dc67ce",
+              "size": 1
+            },
+            {
+              "name": "총무과",
+              "color": "#dc67ce",
+              "size": 45
+            },
+            {
+              "name": "재무과",
+              "color": "#dc67ce",
+              "size": 13
+            },
+            {
+              "name": "시설과",
+              "color": "#dc67ce",
+              "size": 34
+            },
+            {
+              "name": "예비군연대",
+              "color": "#dc67ce",
+              "size": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "경북대학교(공로연수, 육아휴직 등)",
+      "color":  "#ff00ff",
+      "size": 38
+    },
+    {
+      "name": "행정지원부",
+      "color": "#c767dc",
+      "size": 17
+    },
+    {
+      "name": "대학(원)",
+      "color": "#a367dc",
+      "children": [
+        {
+          "name": "인문대학",
+          "color": "#a367dc",
+          "size": 6
+        },
+        {
+          "name": "사회과학대학",
+          "color": "#a367dc",
+          "size": 6
+        },
+        {
+          "name": "자연과학대학",
+          "color": "#a367dc",
+          "size": 6
+        },
+        {
+          "name": "경상대학",
+          "color": "#a367dc",
+          "size": 6
+        },
+        {
+          "name": "법학전문대학원, 행정학부",
+          "color": "#a367dc",
+          "size": 6
+        },
+        {
+          "name": "공과대학",
+          "color": "#a367dc",
+          "size": 8
+        },
+        {
+          "name": "IT대학",
+          "color": "#a367dc",
+          "size": 8
+        },
+        {
+          "name": "농업생명과학대학",
+          "color": "#a367dc",
+          "size": 9
+        },
+        {
+          "name": "예술대학",
+          "color": "#a367dc",
+          "size": 4
+        },
+        {
+          "name": "사범대학",
+          "color": "#a367dc",
+          "size": 9
+        },
+        {
+          "name": "수의과대학",
+          "color": "#a367dc",
+          "size": 3
+        },
+        {
+          "name": "생활과학대학",
+          "color": "#a367dc",
+          "size": 3
+        },
+        {
+          "name": "간호대학",
+          "color": "#a367dc",
+          "size": 4
+        },
+        {
+          "name": "약학대학",
+          "color": "#a367dc",
+          "size": 3
+        },
+        {
+          "name": "생태환경대학",
+          "color": "#a367dc",
+          "size": 10
+        },
+        {
+          "name": "축산대학",
+          "color": "#a367dc",
+          "size": 0
+        },
+        {
+          "name": "과학기술대학",
+          "color": "#a367dc",
+          "size": 7
+        },
+        {
+          "name": "글로벌인재학부",
+          "color": "#a367dc",
+          "size": 0
+        },
+        {
+          "name": "의과대학",
+          "color": "#a367dc",
+          "size": 16
+        },
+        {
+          "name": "치과대학",
+          "color": "#a367dc",
+          "size": 8
+        }
+      ]
+    },
+    {
+      "name": "교육기본시설",
+      "color": "#8067dc",
+      "children": [
+        {
+          "name": "도서관",
+          "color": "#8067dc",
+          "size": 35
+        },
+        {
+          "name": "도서관 분관",
+          "color": "#8067dc",
+          "size": 5
+        }
+      ]
+    },
+    {
+      "name": "지원 및 연구시설",
+      "color": "#6771dc",
+      "children": [
+        {
+          "name": "입학본부",
+          "color": "#6771dc",
+          "children": [
+            {
+              "name": "입학과",
+              "color": "#6771dc",
+              "size": 8
+            }
+
+          ]
+        },
+        {
+          "name": "대외협력홍보실",
+          "color": "#6771dc",
+          "children": [
+            {
+              "name": "대외협력홍보과",
+              "color": "#6771dc",
+              "size": 7
+            }
+          ]
+        },
+        {
+          "name": "인재개발원",
+          "color": "#6771dc",
+          "size": 5
+        },
+        {
+          "name": "교육혁신정책실",
+          "color": "#6771dc",
+          "size": 3
+        },
+        {
+          "name": "통합교육지원본부",
+          "color": "#6771dc",
+          "size": 0
+        },
+        {
+          "name": "교육개발본부",
+          "color": "#6771dc",
+          "size": 8
+        },
+        {
+          "name": "정보전산원",
+          "color": "#6771dc",
+          "size": 13
+        },
+        {
+          "name": "생활관",
+          "color": "#6771dc",
+          "size": 4
+        },
+        {
+          "name": "생활관 분관",
+          "color": "#6771dc",
+          "size": 2
+        },
+        {
+          "name": "보건진료소",
+          "color": "#6771dc",
+          "size": 2
+        },
+        {
+          "name": "공동실험실습관",
+          "color": "#6771dc",
+          "size": 3
+        },
+        {
+          "name": "신문방송사",
+          "color": "#6771dc",
+          "size": 1
+        },
+        {
+          "name": "외국어교육원",
+          "color": "#6771dc",
+          "size": 1
+        },
+        {
+          "name": "출판부",
+          "color": "#6771dc",
+          "size": 0
+        },
+        {
+          "name": "수련원",
+          "color": "#6771dc",
+          "size": 1
+        },
+        {
+          "name": "국제농업훈련원",
+          "color": "#6771dc",
+          "size": 0
+        },
+        {
+          "name": "체육진흥센터",
+          "color": "#6771dc",
+          "size": 1
+        },
+        {
+          "name": "평생교육원",
+          "color": "#6771dc",
+          "size": 0
+        },
+        {
+          "name": "기타",
+          "color": "#6771dc",
+          "size": 7
+        }
+      ]
+    },
+    {
+      "name": "부속시설",
+      "color": "#6794dc",
+      "children": [
+        {
+          "name": "박물관",
+          "color": "#6794dc",
+          "size": 2
+        },
+        {
+          "name": "자연사 박물관",
+          "color": "#6794dc",
+          "size": 2
+        },
+        {
+          "name": "미술관",
+          "color": "#6794dc",
+          "size": 1
+        },
+        {
+          "name": "농업생명과학대학 부속실험실습장",
+          "color": "#6794dc",
+          "size": 5
+        },
+        {
+          "name": "동물병원",
+          "color": "#6794dc",
+          "size": 2
+        },
+        {
+          "name": "부속공장",
+          "color": "#6794dc",
+          "size": 2
+        }
+      ]
+    },
+    {
+      "name": "부설학교",
+      "color": "#67b7dc",
+      "children": [
+        {
+          "name": "초등학교",
+          "color": "#67b7dc",
+          "size": 2
+        },
+        {
+          "name": "중학교",
+          "color": "#67b7dc",
+          "size": 2
+        },
+        {
+          "name": "고등학교",
+          "color": "#67b7dc",
+          "size": 3
+        }
+      ]
+    }
+  ]
+}

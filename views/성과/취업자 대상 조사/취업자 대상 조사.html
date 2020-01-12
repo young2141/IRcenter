@@ -1,25 +1,46 @@
-<!DOCUTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>경북대학교 IR센터</title>
+        <title>경북대학교 IR센터</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <script src="https://www.amcharts.com/lib/4/core.js"></script>
-    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
-    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-    <script src="../../../js/취업자 대상 조사/직업설문조사.js"></script>
-    <script src="../../../js/취업자 대상 조사/직업설문조사_컬럼그래프.js"></script>
-    <script src="../../../js/취업자 대상 조사/직업설문조사2.js"></script>
-    <script src="../../../js/취업자 대상 조사/직업설문조사2_컬럼그래프.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-
-
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+        <script src="../../../js/취업자 대상 조사/직업설문조사.js"></script>
+        <script src="../../../js/취업자 대상 조사/직업설문조사_컬럼그래프.js"></script>
+        <script src="../../../js/취업자 대상 조사/직업설문조사2.js"></script>
+        <script src="../../../js/취업자 대상 조사/직업설문조사2_컬럼그래프.js"></script>
 </head>
 
 <style type="text/css">
     @import url('../../../css/output_default.css');
+
+    .chartdiv11 {
+        width: 1400px;
+        height: 1000px;
+        display: inline-block;
+    }
+
+    .chartdiv22 {
+        width: 1000px;
+        height: 600px;
+        display: inline-block;
+        border-style: solid;
+        margin: 10px;
+        padding: 10px;
+        border-color: white;
+    }
+
+    .chartdiv33 {
+        width: 500px;
+        height: 500px;
+    }
 </style>
 
 <body>
@@ -40,19 +61,8 @@
 
 
     <div class="bodyBox">
-
-
-        <div id="titleBox">
-            <span id="titleFont"><b>취업자 대상 조사</b></span>
-        </div>
-
+        <span id="titleFont"><b>취업자 대상 조사</b></span>
     </div>
-    <!-- <script>
-            drawChart();
-            drawChart2();
-            drawChart_2();
-            drawChart2_2();
-    </script> -->
 
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
@@ -61,19 +71,23 @@
         </div>
 
         <script>
-               var currentPosition = parseInt($("#gotop").css("top"));
-                $(window).scroll(function () {
-                    var position = $(window).scrollTop();
+            var currentPosition = parseInt($("#gotop").css("top"));
+            $(window).scroll(function () {
+                var position = $(window).scrollTop();
 
-                    if (position > 750)
-                        $("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
-                    else if (position < 300)
-                        $("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
-                    else
-                        $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
-                });
+                if (position > 750)
+                    $("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
+                else if (position < 300)
+                    $("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
+                else
+                    $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
+            });
+
         </script>
 
+        <br>
+
+        <!-- 이 부분에 그래프 삽입 -->
         <div id="summaryBox">
             <h2>대학시절 직업관련 인턴쉽은 몇 번이나 했었나요?</h2>
         </div>
@@ -81,7 +95,7 @@
 		(단위 : %)
         </div>
         <script>
-                drawChart1_1();
+            drawChart1_1();
         </script>
        <div id="chartdiv1_1" style = "width: 1000px; height: 500px"></div>
 
@@ -94,7 +108,7 @@
             (단위 : %)
         </div>
         <script>
-                drawChart2_1();
+            drawChart2_1();
         </script>
         <div id="chartdiv2_1" style="width: 1000px; height:400px"></div>
 
@@ -108,7 +122,7 @@
             (단위 : %)
         </div>
         <script>
-                drawChart1_2();
+            drawChart1_2();
         </script>
             <!-- <div id="chartdiv"></div> -->
         <div id="chartdiv1_2" style="width: 1000px; height:400px"></div>
@@ -127,10 +141,7 @@
         </script>
             <!-- <div id="chartdiv"></div> -->
         <div id="chartdiv2_2" style="width: 1000px; height:400px"></div>
-        
 
-
-        
 
         <div id="summaryBox" style="font-size: 15px">
             <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
@@ -140,12 +151,13 @@
 
             <b>사용 가능한 다른 데이터에 대한 참고사항</b><br>
             - 경북대학교 입학정보 홈페이지에서는 학부 입학 전형 일정 및 절차, 선발기준 및 방법에 대한 광범위한 정보를 제공합니다.<br>
-            - 경북대학교 입학정보 홈페이지에서는 2020년도 경북대학교 대학입학전형 안내 동영상을 다음 링크(https://www.youtube.com/watch?v=xuArJ6qPbMM&feature=youtu.be)에서 제공합니다.<br>
+            - 경북대학교 입학정보 홈페이지에서는 2020년도 경북대학교 대학입학전형 안내 동영상을 다음
+            링크(https://www.youtube.com/watch?v=xuArJ6qPbMM&feature=youtu.be)에서 제공합니다.<br>
 
             <br><br>
         </div>
 
-</div>
+    </div>
 
     <div class="bottomframe">
         <div class="inbottomframe"></div>

@@ -28,7 +28,7 @@ function parsing2(_year, _condition1, _condition2, _data1, _data2) {
 }
 
 function drawLineChart(_data1, _data2, _condition1, _condition2) {
-  am4core.ready(function () {
+  am4core.ready(function() {
     am4core.useTheme(am4themes_animated);
     am4core.useTheme(am4themes_material);
     // Create chart instance
@@ -65,11 +65,13 @@ function drawLineChart(_data1, _data2, _condition1, _condition2) {
     // Create axes
     var categoryAxis1 = chart1.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis1.renderer.minGridDistance = 10;
+    categoryAxis1.renderer.grid.template.location = 0;
     categoryAxis1.dataFields.category = "year";
     //categoryAxis.renderer.labels.template.horizontalCenter = "right";
 
     var categoryAxis2 = chart2.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis2.renderer.minGridDistance = 10;
+    categoryAxis2.renderer.grid.template.location = 0;
     categoryAxis2.dataFields.category = "year";
     //categoryAxis.renderer.labels.template.horizontalCenter = "right";
 
@@ -136,8 +138,8 @@ function createAxisAndSeries(
   var series = _chart.series.push(new am4charts.LineSeries());
 
   //valueAxis.title.text = _title;
-  valueAxis.min = _min - 1;
-  valueAxis.max = _max + 1;
+  // valueAxis.min = _min - 1;
+  // valueAxis.max = _max + 1;
 
   series.dataFields.valueY = _value;
   series.dataFields.categoryX = "year";
@@ -150,12 +152,15 @@ function createAxisAndSeries(
   series.stroke = _rgb;
   series.fill = _rgb;
 
-  valueAxis.renderer.line.strokeOpacity = 1;
-  valueAxis.renderer.line.strokeWidth = 2;
-  valueAxis.renderer.line.stroke = am4core.color("#ffffff"); //series.stroke;
-  //valueAxis.renderer.labels.template.fill = am4core.color("#ffffff")
-  valueAxis.renderer.opposite = false;
-  valueAxis.renderer.grid.template.disabled = true;
+  valueAxis.extraMin = 0.15;
+  valueAxis.extraMax = 0.15;
+  valueAxis.strictMinMax = false;
+  // valueAxis.renderer.line.strokeOpacity = 1;
+  // valueAxis.renderer.line.strokeWidth = 2;
+  // valueAxis.renderer.line.stroke = am4core.color("#ffffff"); //series.stroke;
+  // //valueAxis.renderer.labels.template.fill = am4core.color("#ffffff")
+  // valueAxis.renderer.opposite = false;
+  // valueAxis.renderer.grid.template.disabled = true;
 
   // 꼭지점 찍기
   var bullet = series.bullets.push(new am4charts.CircleBullet());

@@ -28,7 +28,7 @@ function parsing2(year, condition, data1, data2) {
 }
 
 function drawLineChart(_data1, _data2, _condition) {
-  am4core.ready(function () {
+  am4core.ready(function() {
     am4core.useTheme(am4themes_animated);
     am4core.useTheme(am4themes_material);
     // Create chart instance
@@ -65,11 +65,13 @@ function drawLineChart(_data1, _data2, _condition) {
     // Create axes
     var categoryAxis1 = chart1.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis1.renderer.minGridDistance = 10;
+    categoryAxis1.renderer.grid.template.location = 0;
     categoryAxis1.dataFields.category = "year";
     //categoryAxis.renderer.labels.template.horizontalCenter = "right";
 
     var categoryAxis2 = chart2.xAxes.push(new am4charts.CategoryAxis());
     categoryAxis2.renderer.minGridDistance = 10;
+    categoryAxis2.renderer.grid.template.location = 0;
     categoryAxis2.dataFields.category = "year";
     //categoryAxis.renderer.labels.template.horizontalCenter = "right";
 
@@ -106,35 +108,36 @@ function createAxisAndSeries(_chart, _value, _ko, _rgb, _title, _condition) {
   //valueAxis.title.text = _title;
 
   console.log(_condition);
-  if (_condition == "over") {
-    if (_ko == "경쟁률") {
-      valueAxis.min = 0;
-      valueAxis.max = 9;
-    } else {
-      valueAxis.min = 70;
-      valueAxis.max = 125;
-    }
-  } else if (_condition == "total") {
-    if (_ko == "경쟁률") {
-      valueAxis.min = 5;
-      valueAxis.max = 13;
-    } else {
-      valueAxis.min = 95;
-      valueAxis.max = 102;
-    }
-  } else {
-    // 정원내
-    if (_ko == "경쟁률") {
-      valueAxis.min = 5;
-      valueAxis.max = 14;
-    } else {
-      valueAxis.min = 98;
-      valueAxis.max = 101;
-    }
-  }
+  // if (_condition == "over") {
+  //   if (_ko == "경쟁률") {
+  //     valueAxis.min = 0;
+  //     valueAxis.max = 9;
+  //   } else {
+  //     valueAxis.min = 70;
+  //     valueAxis.max = 125;
+  //   }
+  // } else if (_condition == "total") {
+  //   if (_ko == "경쟁률") {
+  //     valueAxis.min = 5;
+  //     valueAxis.max = 13;
+  //   } else {
+  //     valueAxis.min = 95;
+  //     valueAxis.max = 102;
+  //   }
+  // } else {
+  //   // 정원내
+  //   if (_ko == "경쟁률") {
+  //     valueAxis.min = 5;
+  //     valueAxis.max = 14;
+  //   } else {
+  //     valueAxis.min = 98;
+  //     valueAxis.max = 101;
+  //   }
+  // }
 
   series.dataFields.valueY = _value;
   series.dataFields.categoryX = "year";
+  series.strokeOpacity = 1;
   series.strokeWidth = 2;
   series.yAxis = valueAxis;
   series.tooltip.pointerOrientation = "vertical";
@@ -144,12 +147,15 @@ function createAxisAndSeries(_chart, _value, _ko, _rgb, _title, _condition) {
   series.stroke = _rgb;
   series.fill = _rgb;
 
-  valueAxis.renderer.line.strokeOpacity = 1;
-  valueAxis.renderer.line.strokeWidth = 2;
-  valueAxis.renderer.line.stroke = am4core.color("#ffffff"); //series.stroke;
+  // valueAxis.renderer.line.strokeOpacity = 1;
+  // valueAxis.renderer.line.strokeWidth = 2;
+  valueAxis.extraMin = 0.15;
+  valueAxis.extraMax = 0.15;
+  valueAxis.strictMinMax = false;
+  // valueAxis.renderer.line.stroke = am4core.color("#ffffff"); //series.stroke;
   //valueAxis.renderer.labels.template.fill = am4core.color("#ffffff")
-  valueAxis.renderer.opposite = false;
-  valueAxis.renderer.grid.template.disabled = true;
+  // valueAxis.renderer.opposite = false;
+  // valueAxis.renderer.grid.template.disabled = true;
 
   // 꼭지점 찍기
   var bullet = series.bullets.push(new am4charts.CircleBullet());

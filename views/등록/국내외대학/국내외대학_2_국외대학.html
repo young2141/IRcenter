@@ -1,0 +1,453 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <title>경북대학교 IR센터</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/continentsLow.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="../../../js/4-3.js"></script>
+    <script src="../../../js/exchange_foreign.js"></script>
+	<script src="../../../js/hj_exchange_foreign.js"></script>
+	<script src="https://www.amcharts.com/lib/4/plugins/bullets.js"></script>
+</head>
+
+<style type="text/css">
+	@import url('../../../css/output_default.css');
+
+	.node circle {
+		fill: #fff;
+		stroke: steelblue;
+		stroke-width: 3px;
+	}
+
+	.node text {
+		font: 12px sans-serif;
+	}
+
+	.link {
+		fill: none;
+		stroke: #ccc;
+		stroke-width: 2px;
+	}
+
+	#chartdiv1 {
+		width: 1000px;
+		height: 500px;
+	}
+</style>
+
+<body>
+	<div class="box1" id="wrapper">
+		<form class>
+			<br>
+			<a href="https://www.knu.ac.kr" target="_blank">
+				<b>경북대학교 홈페이지</b>
+				<a href="../../첫화면.html"><b>| 경북대학교 IR센터</a></b>
+				<!--<a href = "로그인 화면.html">*/-->
+				<div class="loginBox">
+					<a href="첫화면.html">로그인　|　</a>
+					<input type="text" value="" placeholder="Search this site">
+					<input type="button" value="검색">
+				</div>
+		</form>
+	</div>
+
+
+
+	<div class="bodyBox">
+
+
+		<div id="titleBox">
+			<span id="titleFont"><b>국내·외 대학 학생교류 현황</b></span>
+			<br><br>
+			추가적인 정보를 보기 위해서 각 대시보드 페이지 위에 나타나는 메뉴박스들을 클릭하세요.<br>
+		</div>
+
+		<center>
+		<div id="tableBox">
+			<table cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td style="border-style: none; font-size : 30px">
+							<a href="국내외대학_1_국내대학.html">
+								<span id="black">◀</span>
+							</a>
+						</td>
+						<td>
+							<a href="국내외대학_1_국내대학.html"><span id="black">국내대학</span></a>
+						</td>
+						<td style="background-color : #eeeeee">
+							<a href="국내외대학_2_국외대학.html"><span id="black"><b>국외대학</b></span></a>
+						</td>
+						<td style="border-style: none; font-size : 30px">
+							<a href="국내외대학_1_국내대학.html">
+								<span style="color: black">▶</span>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr style="border-color: black">
+
+	</div>
+	</center>
+
+	<div id="TOP">
+
+		<div class="legend" id="gotop" style="left:80%; top :40%">
+
+			<span style="font-size: 20px"><b>구분</b></span><br>
+                    <input type="radio" name="type" value="파견" checked onclick= "draw_map(this.value)"> 파견<br>
+					<input type="radio" name="type" value="초청" onclick= "draw_map(this.value)"> 초청<br><br>
+		
+			<span style="font-size: 20px"> <b>대학명 검색</b> </span><br>
+			<select id="university_selectbar" onchange="change()" style="width : 200px; height: 30px">
+				<option name='' value='전체'>전체</option>
+				<option name='' value='마샬대학'>마샬대학</option>
+				<option name='' value='랜더대학'>랜더대학</option>
+				<option name='' value='럿거스캄덴대학'>럿거스캄덴대학</option>
+				<option name='' value='모어헤드주립대학'>모어헤드주립대학</option>
+				<option name='' value='오클라호마대학'>오클라호마대학</option>
+				<option name='' value='오클라호마주립대'>오클라호마주립대</option>
+				<option name='' value='캘리포니아롱비치주립대학'>캘리포니아롱비치주립대학</option>
+				<option name='' value='캘리포니아리버사이드주립대학'>캘리포니아리버사이드주립대학</option>
+				<option name='' value='캘리포니아대학데이비스캠퍼스'>캘리포니아대학데이비스캠퍼스</option>
+				<option name='' value='텍사스달라스대학'>텍사스달라스대학</option>
+				<option name='' value='오스틴피주립대학'>오스틴피주립대학</option>
+				<option name='' value='뉴욕오스웨고주립대학'>뉴욕오스웨고주립대학</option>
+				<option name='' value='웨스턴워싱턴대학'>웨스턴워싱턴대학</option>
+				<option name='' value='인디아나펜실베니아대학'>인디아나펜실베니아대학</option>
+				<option name='' value='메다이대학'>메다이대학</option>
+				<option name='' value='텍사스오스틴주립대학 '>텍사스오스틴주립대학 </option>
+				<option name='' value='브릿지워터주립대학'>브릿지워터주립대학</option>
+				<option name='' value='콜럼비아미주리대학'>콜럼비아미주리대학</option>
+				<option name='' value='사우스다코타대학'>사우스다코타대학</option>
+				<option name='' value='산호세주립대학'>산호세주립대학</option>
+				<option name='' value='위버주립대학'>위버주립대학</option>
+				<option name='' value='퍼듀대학교'>퍼듀대학교</option>
+				<option name='' value='콜럼버스주립대학'>콜럼버스주립대학</option>
+				<option name='' value='노던아이오와대학'>노던아이오와대학</option>
+				<option name='' value='위스콘신대학화이트워터'>위스콘신대학화이트워터</option>
+				<option name='' value='메사추세츠대학Amherst'>메사추세츠대학Amherst</option>
+				<option name='' value='미주리대학'>미주리대학</option>
+				<option name='' value='캘리포니아몬테레이베이주립대학'>캘리포니아몬테레이베이주립대학</option>
+				<option name='' value='더피플대학'>더피플대학</option>
+				<option name='' value='게르첸사범대학'>게르첸사범대학</option>
+				<option name='' value='크라스노다르대학(쿠반)'>크라스노다르대학(쿠반)</option>
+				<option name='' value='쿠반국립대학'>쿠반국립대학</option>
+				<option name='' value='블라디보스톡경제대학'>블라디보스톡경제대학</option>
+				<option name='' value='노보시비리스크경제경영대학'>노보시비리스크경제경영대학</option>
+				<option name='' value='막심고리키문학대학'>막심고리키문학대학</option>
+				<option name='' value='상트페테르부르크국립대학'>상트페테르부르크국립대학</option>
+				<option name='' value='옴스크국립사범대학'>옴스크국립사범대학</option>
+				<option name='' value='상트페테르부르크경제대학'>상트페테르부르크경제대학</option>
+				<option name='' value='상트페테르부르크공과대학'>상트페테르부르크공과대학</option>
+				<option name='' value='상트페테르부르크전기공학대학'>상트페테르부르크전기공학대학</option>
+				<option name='' value='극동연방대학'>극동연방대학</option>
+				<option name='' value='모스크바대학교'>모스크바대학교</option>
+				<option name='' value='청도대학'>청도대학</option>
+				<option name='' value='하얼빈공업대학'>하얼빈공업대학</option>
+				<option name='' value='남개대학'>남개대학</option>
+				<option name='' value='남경농업대학 '>남경농업대학 </option>
+				<option name='' value='섬서사범대학'>섬서사범대학</option>
+				<option name='' value='정주대학'>정주대학</option>
+				<option name='' value='중국인민대학'>중국인민대학</option>
+				<option name='' value='난주대학'>난주대학</option>
+				<option name='' value='산동대학위해분교'>산동대학위해분교</option>
+				<option name='' value='길림대학'>길림대학</option>
+				<option name='' value='연변과학기술대학'>연변과학기술대학</option>
+				<option name='' value='화북전력대학'>화북전력대학</option>
+				<option name='' value='닝보공정학원'>닝보공정학원</option>
+				<option name='' value='연변대학교'>연변대학교</option>
+				<option name='' value='남경대학'>남경대학</option>
+				<option name='' value='충칭과학기술대학'>충칭과학기술대학</option>
+				<option name='' value='북경대학'>북경대학</option>
+				<option name='' value='북경우전대학'>북경우전대학</option>
+				<option name='' value='충칭대'>충칭대</option>
+				<option name='' value='후베이 폴리테크닉대학'>후베이 폴리테크닉대학</option>
+				<option name='' value='선얏센대학'>선얏센대학</option>
+				<option name='' value='연산대학'>연산대학</option>
+				<option name='' value='장안대학'>장안대학</option>
+				<option name='' value='하문대학'>하문대학</option>
+				<option name='' value='절강외국어대학'>절강외국어대학</option>
+				<option name='' value='무한대학'>무한대학</option>
+				<option name='' value='강소대학'>강소대학</option>
+				<option name='' value='교토대학'>교토대학</option>
+				<option name='' value='히로시마대학'>히로시마대학</option>
+				<option name='' value='히로시마시티대학'>히로시마시티대학</option>
+				<option name='' value='히로시마시립대학'>히로시마시립대학</option>
+				<option name='' value='도호쿠대학'>도호쿠대학</option>
+				<option name='' value='도쿠시마대학'>도쿠시마대학</option>
+				<option name='' value='히로사키대학'>히로사키대학</option>
+				<option name='' value='나가사키대학'>나가사키대학</option>
+				<option name='' value='시마네대학'>시마네대학</option>
+				<option name='' value='규슈대학'>규슈대학</option>
+				<option name='' value='학습원대학'>학습원대학</option>
+				<option name='' value='우쯔노미야대학'>우쯔노미야대학</option>
+				<option name='' value='시즈오카대학'>시즈오카대학</option>
+				<option name='' value='도야마대학'>도야마대학</option>
+				<option name='' value='오차노미즈대학'>오차노미즈대학</option>
+				<option name='' value='와카야마대학'>와카야마대학</option>
+				<option name='' value='간사이대학'>간사이대학</option>
+				<option name='' value='도쿄외국어대학'>도쿄외국어대학</option>
+				<option name='' value='동경농업대학'>동경농업대학</option>
+				<option name='' value='동경가정대학'>동경가정대학</option>
+				<option name='' value='신슈대학'>신슈대학</option>
+				<option name='' value='후쿠이대학'>후쿠이대학</option>
+				<option name='' value='필리핀대학'>필리핀대학</option>
+				<option name='' value='앤티크대학'>앤티크대학</option>
+				<option name='' value='라살대학'>라살대학</option>
+				<option name='' value='홀리엔젤대학'>홀리엔젤대학</option>
+				<option name='' value='산어거스틴대학'>산어거스틴대학</option>
+				<option name='' value='홍콩영남대학'>홍콩영남대학</option>
+				<option name='' value='홍콩중문대학'>홍콩중문대학</option>
+				<option name='' value='홍콩침례대학'>홍콩침례대학</option>
+				<option name='' value='대만청화대학'>대만청화대학</option>
+				<option name='' value='대만정의대학'>대만정의대학</option>
+				<option name='' value='국립정치대학'>국립정치대학</option>
+				<option name='' value='국립윈린과학기술대학'>국립윈린과학기술대학</option>
+				<option name='' value='중국문화대학'>중국문화대학</option>
+				<option name='' value='까오슝사범대학'>까오슝사범대학</option>
+				<option name='' value='대만타이페이경영대학'>대만타이페이경영대학</option>
+				<option name='' value='실천대학'>실천대학</option>
+				<option name='' value='중정국립대학'>중정국립대학</option>
+				<option name='' value='정치대학'>정치대학</option>
+				<option name='' value='말레야대학'>말레야대학</option>
+				<option name='' value='스윈번사라왁캠퍼스'>스윈번사라왁캠퍼스</option>
+				<option name='' value='HELP대학'>HELP대학</option>
+				<option name='' value='말레야사라왁대학'>말레야사라왁대학</option>
+				<option name='' value='말레이시아 케방산 국립대학'>말레이시아 케방산 국립대학</option>
+				<option name='' value='노썸브리아대학'>노썸브리아대학</option>
+				<option name='' value='에딘버러대학'>에딘버러대학</option>
+				<option name='' value='리버풀대학'>리버풀대학</option>
+				<option name='' value='울버햄튼대학'>울버햄튼대학</option>
+				<option name='' value='글로스터셔대학교'>글로스터셔대학교</option>
+				<option name='' value='퀸즈랜드대학 '>퀸즈랜드대학 </option>
+				<option name='' value='퀸즈랜드공과대학'>퀸즈랜드공과대학</option>
+				<option name='' value='에디슨코완대학'>에디슨코완대학</option>
+				<option name='' value='라로셸대학'>라로셸대학</option>
+				<option name='' value='IPAG경영대학'>IPAG경영대학</option>
+				<option name='' value='ECE파리공과대학'>ECE파리공과대학</option>
+				<option name='' value='ESSCA'>ESSCA</option>
+				<option name='' value='ICN경영대학'>ICN경영대학</option>
+				<option name='' value='INP툴르즈대학'>INP툴르즈대학</option>
+				<option name='' value='INSEEC'>INSEEC</option>
+				<option name='' value='ESME Sudria'>ESME Sudria</option>
+				<option name='' value='버건디경영대학'>버건디경영대학</option>
+				<option name='' value='ECE리옹'>ECE리옹</option>
+				<option name='' value='ECE보르도'>ECE보르도</option>
+				<option name='' value='ECE파리'>ECE파리</option>
+				<option name='' value='오덴시아비지니스스쿨'>오덴시아비지니스스쿨</option>
+				<option name='' value='툴루즈비지니스스쿨'>툴루즈비지니스스쿨</option>
+				<option name='' value='파리7대학'>파리7대학</option>
+				<option name='' value='INP - ENSIACET'>INP - ENSIACET</option>
+				<option name='' value='리옹카톨릭대학'>리옹카톨릭대학</option>
+				<option name='' value='몬테레이대학'>몬테레이대학</option>
+				<option name='' value='몬테레이공과대학'>몬테레이공과대학</option>
+				<option name='' value='시우다드후아레스 자치대학'>시우다드후아레스 자치대학</option>
+				<option name='' value='마부르크대학'>마부르크대학</option>
+				<option name='' value='함부르크대학'>함부르크대학</option>
+				<option name='' value='보쿰대학'>보쿰대학</option>
+				<option name='' value='본응용과학대학'>본응용과학대학</option>
+				<option name='' value='하일브론응용과학대학'>하일브론응용과학대학</option>
+				<option name='' value='노르트하우젠대학'>노르트하우젠대학</option>
+				<option name='' value='캠튼응용과학대학'>캠튼응용과학대학</option>
+				<option name='' value='울름응용과학대학'>울름응용과학대학</option>
+				<option name='' value='담슈타트응용과학대학'>담슈타트응용과학대학</option>
+				<option name='' value='노르트하우젠응용과학대학'>노르트하우젠응용과학대학</option>
+				<option name='' value='윈즈하임대학'>윈즈하임대학</option>
+				<option name='' value='하일브론대학'>하일브론대학</option>
+				<option name='' value='쾰른대학'>쾰른대학</option>
+				<option name='' value='라드분트대학'>라드분트대학</option>
+				<option name='' value='마부르크대학'>마부르크대학</option>
+				<option name='' value='베를린공과대학'>베를린공과대학</option>
+				<option name='' value='베를린자유대학'>베를린자유대학</option>
+				<option name='' value='뮌헨공과대학'>뮌헨공과대학</option>
+				<option name='' value='달하우지대학'>달하우지대학</option>
+				<option name='' value='레이크해드대학'>레이크해드대학</option>
+				<option name='' value='뉴브런즈윅대학'>뉴브런즈윅대학</option>
+				<option name='' value='나이아가라대학'>나이아가라대학</option>
+				<option name='' value='빅토리아대학'>빅토리아대학</option>
+				<option name='' value='컨커디어대학'>컨커디어대학</option>
+				<option name='' value='캐네디언 메노니트 대학'>캐네디언 메노니트 대학</option>
+				<option name='' value='알고마대학'>알고마대학</option>
+				<option name='' value='바르샤바대학'>바르샤바대학</option>
+				<option name='' value='바르샤바공과대학'>바르샤바공과대학</option>
+				<option name='' value='바르샤바경제대학'>바르샤바경제대학</option>
+				<option name='' value='그댄스크대학'>그댄스크대학</option>
+				<option name='' value='카토비체경제대학'>카토비체경제대학</option>
+				<option name='' value='브로츠와프공과대학'>브로츠와프공과대학</option>
+				<option name='' value='크라코우공과대학'>크라코우공과대학</option>
+				<option name='' value='아반스응용과학대학'>아반스응용과학대학</option>
+				<option name='' value='윈즈하임응용과학대학'>윈즈하임응용과학대학</option>
+				<option name='' value='유트렉대학'>유트렉대학</option>
+				<option name='' value='트벤테대학'>트벤테대학</option>
+				<option name='' value='그로닝엔대학'>그로닝엔대학</option>
+				<option name='' value='와겐닝엔대학'>와겐닝엔대학</option>
+				<option name='' value='류블리아나대학'>류블리아나대학</option>
+				<option name='' value='몬스대학'>몬스대학</option>
+				<option name='' value='자그레브대학'>자그레브대학</option>
+				<option name='' value='헬싱키메트로폴리아대학'>헬싱키메트로폴리아대학</option>
+				<option name='' value='JAMK응용과학대학'>JAMK응용과학대학</option>
+				<option name='' value='동핀란드대학'>동핀란드대학</option>
+				<option name='' value='오울루응용과학대학'>오울루응용과학대학</option>
+				<option name='' value='빌니우스대학'>빌니우스대학</option>
+				<option name='' value='빌니우스공과대학'>빌니우스공과대학</option>
+				<option name='' value='ISM경영경제대학'>ISM경영경제대학</option>
+				<option name='' value='몽골국제대학'>몽골국제대학</option>
+				<option name='' value='몽골과학기술대학'>몽골과학기술대학</option>
+				<option name='' value='앙코르 대학'>앙코르 대학</option>
+				<option name='' value='부다페스트기술경제대학'>부다페스트기술경제대학</option>
+				<option name='' value='페치대학'>페치대학</option>
+				<option name='' value='FHS응용과학대학'>FHS응용과학대학</option>
+				<option name='' value='말라달렌대학'>말라달렌대학</option>
+				<option name='' value='더블린시티대학'>더블린시티대학</option>
+				<option name='' value='더블린공과대학'>더블린공과대학</option>
+				<option name='' value='도큐즈에이럴대학'>도큐즈에이럴대학</option>
+				<option name='' value='이스탄불에이딘대학'>이스탄불에이딘대학</option>
+				<option name='' value='아나돌루대학'>아나돌루대학</option>
+				<option name='' value='앙카라대학'>앙카라대학</option>
+				<option name='' value='일디림베야지트대학'>일디림베야지트대학</option>
+				<option name='' value='리가공과대학'>리가공과대학</option>
+				<option name='' value='라트비아대학'>라트비아대학</option>
+				<option name='' value='다우가우필스대학'>다우가우필스대학</option>
+				<option name='' value='탈린공과대학'>탈린공과대학</option>
+				<option name='' value='탈린대학'>탈린대학</option>
+				<option name='' value='IMC크램스대학'>IMC크램스대학</option>
+				<option name='' value='짤츠부르크대학'>짤츠부르크대학</option>
+				<option name='' value='테헤란 대학교'>테헤란 대학교</option>
+				<option name='' value='인도네시아대학'>인도네시아대학</option>
+				<option name='' value='젬버폴리테크닉대학'>젬버폴리테크닉대학</option>
+				<option name='' value='가자마다대학'>가자마다대학</option>
+				<option name='' value='체코공과대학'>체코공과대학</option>
+				<option name='' value='토마스베타대학'>토마스베타대학</option>
+				<option name='' value='VSB오스트라바기술대학'>VSB오스트라바기술대학</option>
+				<option name='' value='찰스대학'>찰스대학</option>
+				<option name='' value='UCAM'>UCAM</option>
+				<option name='' value='레온대학'>레온대학</option>
+				<option name='' value='비고대학'>비고대학</option>
+				<option name='' value='예이다대학'>예이다대학</option>
+				<option name='' value='바르셀로나대학'>바르셀로나대학</option>
+				<option name='' value='아순시온 카톨릭 대학교'>아순시온 카톨릭 대학교</option>
+				<option name='' value='ISCTE 리스본대학'>ISCTE 리스본대학</option>
+				<option name='' value='카포스카리대학'>카포스카리대학</option>
+				<option name='' value='페데리코2대학'>페데리코2대학</option>
+				<option name='' value='파도바대학'>파도바대학</option>
+				<option name='' value='IIT MADRAS'>IIT MADRAS</option>
+				<option name='' value='크라이스트대학'>크라이스트대학</option>
+				<option name='' value='유라시안국립대학'>유라시안국립대학</option>
+				<option name='' value='카자흐스탄 아브라이 콴 국제 관계 및 세계 언어 대학교'>카자흐스탄 아브라이 콴 국제 관계 및 세계 언어 대학교</option>
+				<option name='' value='카자흐스탄농업대학'>카자흐스탄농업대학</option>
+				<option name='' value='그리스아메리칸컬리지'>그리스아메리칸컬리지</option>
+				<option name='' value='난양공과대학'>난양공과대학</option>
+				<option name='' value='PSB아카데미'>PSB아카데미</option>
+				<option name='' value='타마삿대학'>타마삿대학</option>
+				<option name='' value='마이돌대학'>마이돌대학</option>
+				<option name='' value='마하사라캄 대학교'>마하사라캄 대학교</option>
+				<option name='' value='매파루앙대학'>매파루앙대학</option>
+				<option name='' value='스리나카린위랏대학'>스리나카린위랏대학</option>
+				<option name='' value='르이라차팟대학'>르이라차팟대학</option>
+				<option name='' value='베네수엘라 중앙 대학교'>베네수엘라 중앙 대학교</option>
+				<option name='' value='타이뉴엔농업대학'>타이뉴엔농업대학</option>
+				<option name='' value='타이뉴엔공과대학'>타이뉴엔공과대학</option>
+				<option name='' value='호찌민 베트남 국립대학교'>호찌민 베트남 국립대학교</option>
+				<option name='' value='하노이 대학'>하노이 대학</option>
+				<option name='' value='후에외국어대학'>후에외국어대학</option>
+				<option name='' value='유라시아대학'>유라시아대학</option>
+				<option name='' value='키르기스스탄 국립농업대학'>키르기스스탄 국립농업대학</option>
+				<option name='' value='타지키스탄 교육대학교'>타지키스탄 교육대학교</option>
+				<option name='' value='Obafemi Awolowo University'>Obafemi Awolowo University</option>
+				<option name='' value='University of Ilorin'>University of Ilorin</option>
+				<option name='' value='University of Rwanda'>University of Rwanda</option>
+				<option name='' value='Wollega University'>Wollega University</option>
+				<option name='' value='Addis Ababa University'>Addis Ababa University</option>
+				<option name='' value='Uganda Christian University'>Uganda Christian University</option>
+				<option name='' value='Makerere University'>Makerere University</option>
+				<option name='' value='Kumi University'>Kumi University</option>
+				<option name='' value='Kenyatta University'>Kenyatta University</option>
+				<option name='' value='나이로비 대학 건설환경학교'>나이로비 대학 건설환경학교</option>
+			</select>
+		</div>
+
+		<script>
+			function change(){
+				var found = null;
+				var type = document.getElementsByName("type");
+				for(var i=0; i<type.length; i++) {
+					if(type[i].checked == true){
+						found = type[i];
+					}
+						
+				}
+				draw_map(found.value)
+
+			}
+
+
+			var currentPosition = parseInt($("#gotop").css("top"));
+			$(window).scroll(function () {
+				var position = $(window).scrollTop();
+
+				if (position > 750)
+					$("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
+				else if (position < 300)
+					$("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
+				else
+					$("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
+			});
+
+		</script>
+
+
+		<!--<div id="summaryBox">
+			<h2><span id="P1">기관별 직원수</span></h2>
+		</div>
+		<div id="unitBox">
+			(단위 : 명)
+		</div>-->
+<!-- 		<div id="chartdiv1" class="chartdiv">그래프 1</div> -->
+		<div id="chartdiv1" class="chartdiv2">그래프 1</div>
+
+		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
+			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
+
+			<b>출처 및 방법론</b><br>
+			- 이 대시보드에 표시된 가장 최근 연도의 데이터는 해당 지원주기가 끝날 때까지(당해년도의 3월초부터 이듬해 2월말) 예비적인 것으로 간주해야합니다.<br>
+
+			<b>사용 가능한 다른 데이터에 대한 참고사항</b><br>
+			- 경북대학교 입학정보 홈페이지에서는 학부 입학 전형 일정 및 절차, 선발기준 및 방법에 대한 광범위한 정보를 제공합니다.<br>
+			- 경북대학교 입학정보 홈페이지에서는 2020년도 경북대학교 대학입학전형 안내 동영상을 다음
+			링크(https://www.youtube.com/watch?v=xuArJ6qPbMM&feature=youtu.be)에서 제공합니다.<br>
+
+			<br><br>
+
+		</div>
+
+	</div>
+
+	<div class="bottomframe">
+		<div class="inbottomframe"></div>
+		<div class="inbottomframe"></div>
+		<div class="inbottomframe">
+			<a href="#">개인정보처리방침</a>
+			<a href="#">　이메일 무단수집거부</a>
+			<br><br>
+			<span class="white">대구광역시 북구 대학로 80 경북대학교 | 053-950-2963</span>
+			<br>
+			<span class="white">Copyright(c) Kyungpook National University. All rights reserved.</span>
+
+		</div>
+	</div>
+
+    <script>
+        draw_map("파견")
+    </script>
+</body>
+
+</html>

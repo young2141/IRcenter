@@ -30,13 +30,13 @@ function drawChordChart(data) {
         chart.dataFields.toName = "to";
         chart.dataFields.value = "value";
 
-        chart.radius = 290;
+        chart.radius = 310;
         chart.nodePadding = 0.5;
         chart.minNodeSize = 0.01;
         chart.startAngle = 80;
         chart.endAngle = chart.startAngle + 360;
         chart.sortBy = "value";
-        chart.fontSize = 11;
+        chart.fontSize = 10;
         chart.fontWeight = 1000;
         var nodeTemplate = chart.nodes.template;
         nodeTemplate.readerTitle = "Click to show/hide or drag to rearrange";
@@ -132,7 +132,7 @@ function drawChordChart(data) {
         // link template
         var linkTemplate = chart.links.template;
         linkTemplate.strokeOpacity = 0;
-        linkTemplate.fillOpacity = 0.15;
+        linkTemplate.fillOpacity = 0.4;
         linkTemplate.tooltipText = "{fromName} <-> {toName}";
 
         var hoverState = linkTemplate.states.create("hover");

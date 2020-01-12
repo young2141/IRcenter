@@ -100,19 +100,20 @@
                 <input type="radio" name="Gtype" id="stacked" checked="checked" onclick="drawChart(mode)">누적 영역형<br>
                 <input type="radio" name="Gtype" id="multiples" onclick="drawChart(mode)">영역형<br><br>
 
-                <span style="font-size: 20px"><b>선택항목1</b></span><br>
+                <span style="font-size: 20px"><b>학생 구분 검색</b></span><br>
                 <select id="grad" onchange="drawChart(mode)" style="width : 200px; height: 30px">
                     <option name="grad" value="all" selected="selected">(전체)</option>
-                    <option name="grad" value="undergraduate">재적생</option>
                     <option name="grad" value="graduate">졸업생</option>
-                    
+                    <option name="grad" value="undergraduate">재적생</option>
+
+
                 </select><br><br>
 
                 <!--<input type="radio" name="grad" id="all" checked="checked" onclick="drawChart()">전체<br>
             <input type="radio" name="grad" id="graduate" onclick="drawChart()">졸업<br>
             <input type="radio" name="grad" id="undergraduate" onclick="drawChart()">재적<br><br>-->
 
-                <span style="font-size: 20px"><b>선택항목2</b></span><br>
+                <span style="font-size: 20px"><b>학위수준별 검색</b></span><br>
 
                 <div style="width : 200px; height: 30px; border-style: solid; border-width: 0.5px; border-color:darkgray; padding: 1px">
                     <span id="selectBox1" name="selectBox1" onClick="choiceSelectBox(this);" style="font-size: 15px">
@@ -128,7 +129,7 @@
                 <br>
 
 
-                <span style="font-size: 20px"><b>선택항목3</b></span><br>
+                <span style="font-size: 20px"><b>성별 검색</b></span><br>
                 <select id="gender" onchange="drawChart(mode)" style="width : 200px; height: 30px">
                     <option name="gender" value="all" selected="selected">(전체)</option>
                     <option name="gender" value="male">남자</option>
@@ -165,37 +166,34 @@
             (단위 : 명)
         </div>
 
-        <div id="divchart1"></div>
-        <div id="divchart2"></div>
-        <div id="divchart3"></div>
-        <div id="divchart4"></div>
-        <div id="divchart5"></div>
-        <div id="divchart6"></div>
-        <div id="divchart7"></div>
-        <div id="divchart8"></div>
-        <div id="divchart9"></div>
-        <div id="divchart10"></div>
-        <div id="divchart11"></div>
-        <div id="divchart12"></div>
-        <div id="divchart13"></div>
 
-        <br>
-
-        <span style="color:#FE4459; font-size: 20px;" onmouseover="mouseOver('graduate_male_doctor')" onmouseleave="mouseLeave()">■</span> 졸업생 박사 남자
-        <span style="color:#E8A343; font-size: 20px;" onmouseover="mouseOver('graduate_female_doctor')" onmouseleave="mouseLeave()">■</span> 졸업생 박사 여자<br>
-        <span style="color:#FCFF57; font-size: 20px;" onmouseover="mouseOver('graduate_male_master')" onmouseleave="mouseLeave()">■</span> 졸업생 석사 남자
-        <span style="color:#43E884; font-size: 20px;" onmouseover="mouseOver('graduate_female_master')" onmouseleave="mouseLeave()">■</span> 졸업생 석사 여자<br>
-        <span style="color:#006400; font-size: 20px;" onmouseover="mouseOver('graduate_male_college')" onmouseleave="mouseLeave()">■</span> 졸업생 학사 남자
-        <span style="color:#46FFFF; font-size: 20px;" onmouseover="mouseOver('graduate_female_college')" onmouseleave="mouseLeave()">■</span> 졸업생 학사 여자<br>
-        <span style="color:#0078FF; font-size: 20px;" onmouseover="mouseOver('undergraduate_male_doctor')" onmouseleave="mouseLeave()">■</span> 재적생 박사 남자
-        <span style="color:#030066; font-size: 20px;" onmouseover="mouseOver('undergraduate_female_doctor')" onmouseleave="mouseLeave()">■</span> 재적생 박사 여자<br>
-        <span style="color:#3D0099; font-size: 20px;" onmouseover="mouseOver('undergraduate_male_master')" onmouseleave="mouseLeave()">■</span> 재적생 석사 남자
-        <span style="color:#990085; font-size: 20px;" onmouseover="mouseOver('undergraduate_female_master')" onmouseleave="mouseLeave()">■</span> 재적생 석사 여자<br>
-        <span style="color:#F261AA; font-size: 20px;" onmouseover="mouseOver('undergraduate_male_college')" onmouseleave="mouseLeave()">■</span> 재적생 학사 남자
-        <span style="color:#A6A6A6; font-size: 20px;" onmouseover="mouseOver('undergraduate_female_college')" onmouseleave="mouseLeave()">■</span> 재적생 학사 여자<br>
-        <br>
-
-
+        <div id ="divchartmaster" style="width:1000px; height: 70%; overflow:scroll">
+            <div id="divchart1"></div>
+            <div id="divchart2" onmouseover="mouseOver('graduate_male_doctor')" onmouseleave="mouseLeave()"></div>
+            <div id="divchart3" onmouseover="mouseOver('graduate_female_doctor')" onmouseleave="mouseLeave()"></div>
+            <div id="divchart4" onmouseover="mouseOver('graduate_male_master')" onmouseleave="mouseLeave()"></div>
+            <div id="divchart5" onmouseover="mouseOver('graduate_female_master')" onmouseleave="mouseLeave()"></div>
+            <div id="divchart6" onmouseover="mouseOver('graduate_male_college')" onmouseleave="mouseLeave()"></div>
+            <div id="divchart7" onmouseover="mouseOver('graduate_female_college')" onmouseleave="mouseLeave()"></div>
+            <div id="divchart8" onmouseover="mouseOver('undergraduate_male_doctor')" onmouseleave="mouseLeave()"></div>
+            <div id="divchart9" onmouseover="mouseOver('undergraduate_female_doctor')" onmouseleave="mouseLeave()"></div>
+            <div id="divchart10" onmouseover="mouseOver('undergraduate_male_master')" onmouseleave="mouseLeave()"></div>
+            <div id="divchart11" onmouseover="mouseOver('undergraduate_female_master')" onmouseleave="    mouseLeave()"></div>
+            <div id="divchart12" onmouseover="mouseOver('undergraduate_male_college')" onmouseleave="mouseLeave()"></div>
+            <div id="divchart13" onmouseover="mouseOver('undergraduate_female_college')" onmouseleave="mouseLeave()"></div>
+        </div>
+        <span id="color" style="color:#FE4459; font-size: 20px;" onmouseover="mouseOver('graduate_male_doctor')" onmouseleave="mouseLeave()">■</span> 졸업생 박사 남자
+        <span id="color" style="color:#E8A343; font-size: 20px;" onmouseover="mouseOver('graduate_female_doctor')" onmouseleave="mouseLeave()">■</span> 졸업생 박사 여자
+        <span id="color" style="color:#FCFF57; font-size: 20px;" onmouseover="mouseOver('graduate_male_master')" onmouseleave="mouseLeave()">■</span> 졸업생 석사 남자
+        <span id="color" style="color:#43E884; font-size: 20px;" onmouseover="mouseOver('graduate_female_master')" onmouseleave="mouseLeave()">■</span> 졸업생 석사 여자
+        <span id="color" style="color:#006400; font-size: 20px;" onmouseover="mouseOver('graduate_male_college')" onmouseleave="mouseLeave()">■</span> 졸업생 학사 남자
+        <span id="color" style="color:#46FFFF; font-size: 20px;" onmouseover="mouseOver('graduate_female_college')" onmouseleave="mouseLeave()">■</span> 졸업생 학사 여자<br>
+        <span id="color" style="color:#0078FF; font-size: 20px;" onmouseover="mouseOver('undergraduate_male_doctor')" onmouseleave="mouseLeave()">■</span> 재적생 박사 남자
+        <span id="color" style="color:#030066; font-size: 20px;" onmouseover="mouseOver('undergraduate_female_doctor')" onmouseleave="mouseLeave()">■</span> 재적생 박사 여자
+        <span id="color" style="color:#3D0099; font-size: 20px;" onmouseover="mouseOver('undergraduate_male_master')" onmouseleave="mouseLeave()">■</span> 재적생 석사 남자
+        <span id="color" style="color:#990085; font-size: 20px;" onmouseover="mouseOver('undergraduate_female_master')" onmouseleave="mouseLeave()">■</span> 재적생 석사 여자
+        <span id="color" style="color:#F261AA; font-size: 20px;" onmouseover="mouseOver('undergraduate_male_college')" onmouseleave="mouseLeave()">■</span> 재적생 학사 남자
+        <span id="color" style="color:#A6A6A6; font-size: 20px;" onmouseover="mouseOver('undergraduate_female_college')" onmouseleave="mouseLeave()">■</span> 재적생 학사 여자
 
 
 
