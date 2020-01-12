@@ -18,7 +18,6 @@ function stackGraph(data) {
         categoryAxis.dataFields.category = "year";
         categoryAxis.renderer.grid.template.location = 0;
         categoryAxis.renderer.minGridDistance = 40;
-        categoryAxis.fontSize = 11;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 0;
