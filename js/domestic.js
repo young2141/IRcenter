@@ -1,12 +1,12 @@
 var sort = $(":input:radio[name=type]:checked").val();
 
 function parse(callback) {
-    $.getJSON("C:/Users/tkekd/OneDrive/바탕 화면/IR센터/json/patch.json", json => {
+    $.getJSON("../../../json/patch.json", json => {
         callback(json);
     });
 }
 function parse1(callback) {
-    $.getJSON("C:/Users/tkekd/OneDrive/바탕 화면/IR센터/json/invite.json", json => {
+    $.getJSON("../../../json/invite.json", json => {
         callback(json);
     });
 }
@@ -64,9 +64,9 @@ am4core.ready(function () {
         imageSeriesTemplate.propertyFields.latitude = "latitude";
         imageSeriesTemplate.propertyFields.longitude = "longitude";
 
-        var sort = $(":input:radio[name=sort]:checked").val();
+        var sort = $(":input:radio[name=type]:checked").val();
 
-        jQuery.getJSON("C:/Users/tkekd/OneDrive/바탕 화면/IR센터/json/patch.json", json => {
+        jQuery.getJSON("../../../json/patch.json", json => {
             data = [];
             for (var i = 0; i < json.length; i++) {
                 new_data = {};
@@ -93,13 +93,13 @@ am4core.ready(function () {
 // 파견버튼눌렀을때
 function patch() {
     var coll = document.getElementById('coll');
-    var sort1 = document.getElementsByName('sort');
+    var sort1 = document.getElementsByName('type');
     for (var i = 0; i < sort1.length; i++) {
         if (sort1[i].checked == true)
             coll.reset();
     }
 
-    var sort = $(":input:radio[name=sort]:checked").val();
+    var sort = $(":input:radio[name=type]:checked").val();
 
     parse(json => {
         data = [];
@@ -168,9 +168,9 @@ function patch() {
             imageSeriesTemplate.propertyFields.latitude = "latitude";
             imageSeriesTemplate.propertyFields.longitude = "longitude";
 
-            var sort = $(":input:radio[name=sort]:checked").val();
+            var sort = $(":input:radio[name=type]:checked").val();
 
-            jQuery.getJSON("C:/Users/tkekd/OneDrive/바탕 화면/IR센터/json/patch.json", json => {
+            jQuery.getJSON("../../../json/patch.json", json => {
                 data = [];
                 for (var i = 0; i < json.length; i++) {
                     new_data = {};
@@ -198,13 +198,13 @@ function patch() {
 function invite() {
 
     var coll = document.getElementById('coll');
-    var sort1 = document.getElementsByName('sort');
+    var sort1 = document.getElementsByName('type');
     for (var i = 0; i < sort1.length; i++) {
         if (sort1[i].checked == true)
             coll.reset();
     }
 
-    var sort = $(":input:radio[name=sort]:checked").val();
+    var sort = $(":input:radio[name=type]:checked").val();
 
     parse1(json => {
         data = [];
@@ -276,7 +276,7 @@ function invite() {
 
             var sort = $(":input:radio[name=type]:checked").val();
 
-            jQuery.getJSON("C:/Users/tkekd/OneDrive/바탕 화면/IR센터/json/invite.json", json => {
+            jQuery.getJSON("../../../json/invite.json", json => {
                 data = [];
                 for (var i = 0; i < json.length; i++) {
                     new_data = {};
@@ -299,7 +299,7 @@ function invite() {
     }); // end am4core.ready()
 }
 function change() {
-    var selectValue = document.getElementById('selectmenu').value;
+    var selectValue = document.getElementById("sex_selectbar").value;
 
 
     // Themes begin
@@ -362,7 +362,7 @@ function change() {
         //         console.log(set1);
         // }
 
-        jQuery.getJSON("C:/Users/tkekd/OneDrive/바탕 화면/IR센터/json/domestic.json", json => {
+        jQuery.getJSON("../../../json/domestic.json", json => {
 
             var sort = $(":input:radio[name=type]:checked").val();
 
