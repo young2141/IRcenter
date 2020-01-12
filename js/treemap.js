@@ -22,6 +22,7 @@ am4core.ready(function () {
     // chart.dataFields.name = "name";
     // chart.dataFields.id = "val1";
     chart.dataFields.children = "children";
+    chart.dataFields.color = "color";
     chart.zoomable = false;
     var bgColor = new am4core.InterfaceColorSet().getFor("background");
 
@@ -35,7 +36,6 @@ am4core.ready(function () {
     // level0ColumnTemplate.strokeOpacity = 0;
 
     // level 1 series template
-    var series1= chart.series.push(new am4charts.TreeMapSeries());
     var level1SeriesTemplate = chart.seriesTemplates.create("1");
     var level1ColumnTemplate = level1SeriesTemplate.columns.template;
 
@@ -45,6 +45,7 @@ am4core.ready(function () {
     level1SeriesTemplate.tooltip.pointerOrientation = "vertical";
     level1SeriesTemplate.tooltip.dy=-25;
 
+
     // level1ColumnTemplate.column.cornerRadius(5, 5, 5, 5)
     level1ColumnTemplate.fillOpacity = 1;
     // level1ColumnTemplate.strokeWidth = 4;
@@ -52,12 +53,11 @@ am4core.ready(function () {
 
 
     //series1
-    var series1 = chart.series.push(new am4charts.TreeMapSeries());
     var bullet1 = level1SeriesTemplate.bullets.push(new am4charts.LabelBullet());
     bullet1.locationY = 0.5;
     bullet1.locationX = 0.5;
     bullet1.label.text = "[bold]{name}[/]\n [font-size:12px]{val1}";
-    bullet1.label.fill = am4core.color("#ffffff");
+    // bullet1.label.fill = am4core.color("#ffffff");
     // bullet1.tooltipText = "{name} \n {val1}%,{val2}명"
 
     chart.maxLevels = 3;

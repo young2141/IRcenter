@@ -18,7 +18,6 @@ function stackGraph(data) {
         categoryAxis.dataFields.category = "year";
         categoryAxis.renderer.grid.template.location = 0;
         categoryAxis.renderer.minGridDistance = 40;
-        categoryAxis.fontSize = 11;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 0;
@@ -39,7 +38,11 @@ function stackGraph(data) {
         series1.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet1 = series1.bullets.push(new am4charts.LabelBullet());
-        labelBullet1.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["계약직"] < 10.0){
+                labelBullet1.label.text = "{valueY}";
+            }
+        }
         labelBullet1.locationY = 0.5;
 
         // series2
@@ -53,7 +56,11 @@ function stackGraph(data) {
         series2.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet2 = series2.bullets.push(new am4charts.LabelBullet());
-        labelBullet2.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["교육전문직"] < 10.0){
+                labelBullet2.label.text = "{valueY}";
+            }
+        }
         labelBullet2.locationY = 0.5;
 
         // series3
@@ -67,7 +74,11 @@ function stackGraph(data) {
         series3.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet3 = series3.bullets.push(new am4charts.LabelBullet());
-        labelBullet3.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["대학회계직"] < 10.0){
+                labelBullet3.label.text = "{valueY}";
+            }
+        }
         labelBullet3.locationY = 0.5;
 
         // series4
@@ -81,7 +92,11 @@ function stackGraph(data) {
         series4.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet4 = series4.bullets.push(new am4charts.LabelBullet());
-        labelBullet4.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["기능직"] < 10.0){
+                labelBullet4.label.text = "{valueY}";
+            }
+        }
         labelBullet4.locationY = 0.5;
 
         // series5
@@ -95,7 +110,11 @@ function stackGraph(data) {
         series5.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet5 = series5.bullets.push(new am4charts.LabelBullet());
-        labelBullet5.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["별정직"] < 10.0){
+                labelBullet5.label.text = "{valueY}";
+            }
+        }
         labelBullet5.locationY = 0.5;
 
         // series6
@@ -109,7 +128,11 @@ function stackGraph(data) {
         series6.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet6 = series6.bullets.push(new am4charts.LabelBullet());
-        labelBullet6.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["기술직"] < 10.0){
+                labelBullet6.label.text = "{valueY}";
+            }
+        }
         labelBullet6.locationY = 0.5;
 
         // series7
@@ -124,7 +147,11 @@ function stackGraph(data) {
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
 
         var labelBullet7 = series7.bullets.push(new am4charts.LabelBullet());
-        labelBullet7.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["일반직"] < 10.0){
+                labelBullet7.label.text = "{valueY}";
+            }
+        }
         labelBullet7.locationY = 0.5;
         console.log(data);
     }); // end am4core.ready()
@@ -172,6 +199,15 @@ parse2(json => {
         pieSeries.slices.template.stroke = am4core.color("#fff");
         pieSeries.slices.template.strokeWidth = 2;
         pieSeries.slices.template.strokeOpacity = 1;
+        pieSeries.colors.list = [
+            am4core.color("#dc67ce"),
+            am4core.color("#c767dc"),
+            am4core.color("#a367dc"),
+            am4core.color("#8067dc"),
+            am4core.color("#6771dc"),
+            am4core.color("#6794dc"),
+            am4core.color("#67b7dc"),
+        ];
 
         // This creates initial animation
         pieSeries.hiddenState.properties.opacity = 1;

@@ -8,7 +8,7 @@ function stackGraph(data) {
         // Themes begin
         am4core.useTheme(am4themes_animated);
         // Themes end
-        console.log(data);
+        // console.log(data);
         // Create chart instance
         var chart = am4core.create("chartdiv1", am4charts.XYChart);
 
@@ -38,7 +38,11 @@ function stackGraph(data) {
         series1.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet1 = series1.bullets.push(new am4charts.LabelBullet());
-        labelBullet1.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["부설학교"] < 10.0){
+                labelBullet1.label.text = "{valueY}";
+            }
+        }
         labelBullet1.locationY = 0.5;
 
         // series2
@@ -52,7 +56,11 @@ function stackGraph(data) {
         series2.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet2 = series2.bullets.push(new am4charts.LabelBullet());
-        labelBullet2.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["부속시설"] < 10.0){
+                labelBullet2.label.text = "{valueY}";
+            }
+        }
         labelBullet2.locationY = 0.5;
 
         // series3
@@ -66,7 +74,11 @@ function stackGraph(data) {
         series3.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet3 = series3.bullets.push(new am4charts.LabelBullet());
-        labelBullet3.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["지원 및 연구시설"] < 10.0){
+                labelBullet3.label.text = "{valueY}";
+            }
+        }
         labelBullet3.locationY = 0.5;
 
         // series4
@@ -80,7 +92,11 @@ function stackGraph(data) {
         series4.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet4 = series4.bullets.push(new am4charts.LabelBullet());
-        labelBullet4.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["교육기본시설"] < 10.0){
+                labelBullet4.label.text = "{valueY}";
+            }
+        }
         labelBullet4.locationY = 0.5;
 
         // series5
@@ -94,7 +110,11 @@ function stackGraph(data) {
         series5.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet5 = series5.bullets.push(new am4charts.LabelBullet());
-        labelBullet5.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["대학(원)"] < 10.0){
+                labelBullet5.label.text = "{valueY}";
+            }
+        }
         labelBullet5.locationY = 0.5;
 
         // series6
@@ -108,12 +128,18 @@ function stackGraph(data) {
         series6.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet6 = series6.bullets.push(new am4charts.LabelBullet());
-        labelBullet6.label.text = "{valueY}";
+        // console.log(json["행정지원부"]);
+        for(var i=0;i<data.length;i++){
+            if(data[i]["행정지원부"] < 10.0){
+                labelBullet6.label.text = "{valueY}";
+            }
+        }
         labelBullet6.locationY = 0.5;
 
         // series7
         var series7 = chart.series.push(new am4charts.ColumnSeries());
         series7.name = "본부";
+        // series7.fill=am4core.color("#555");
         series7.dataFields.valueY = "본부";
         series7.dataFields.categoryX = "year";
         series7.sequencedInterpolation = true;
@@ -122,7 +148,11 @@ function stackGraph(data) {
         series7.columns.template.tooltipText =
             "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
         var labelBullet7 = series7.bullets.push(new am4charts.LabelBullet());
-        labelBullet7.label.text = "{valueY}";
+        for(var i=0;i<data.length;i++){
+            if(data[i]["본부"] < 10.0){
+                labelBullet7.label.text = "{valueY}";
+            }
+        }
         labelBullet7.locationY = 0.5;
     }); // end am4core.ready()
 }
