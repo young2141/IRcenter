@@ -56,7 +56,12 @@ am4core.ready(function () {
     var bullet1 = level1SeriesTemplate.bullets.push(new am4charts.LabelBullet());
     bullet1.locationY = 0.5;
     bullet1.locationX = 0.5;
-    bullet1.label.text = "[bold]{name}[/]\n [font-size:12px]{val1}";
+    // var myname = {name};
+    // myname = parseString(myname)
+    // myname2 = myname.slice(0,5);
+    // myname2 += "\n";
+    // myname2 += myname.slice(5,12);
+    bullet1.label.text = "[font-size:20px][bold]{name}[/] [font-size:12px]{val1}";
     // bullet1.label.fill = am4core.color("#ffffff");
     // bullet1.tooltipText = "{name} \n {val1}%,{val2}명"
 
