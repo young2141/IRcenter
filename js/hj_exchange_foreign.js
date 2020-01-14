@@ -69,18 +69,19 @@ function draw_map(input_mode) {
         var polygonTemplate = polygonSeries.mapPolygons.template;
         polygonTemplate.strokeOpacity = 0.8;
         polygonTemplate.nonScalingStroke = true;
-        polygonTemplate.fill = chart.colors.getIndex(1);
 
         // create capital markers
         var imageSeries = chart.series.push(new am4maps.MapImageSeries());
 
         // define template
         var imageSeriesTemplate = imageSeries.mapImages.template;
-        var circle = imageSeriesTemplate.createChild(am4plugins_bullets.PointedCircle);
-        circle.radius = 6;
-        circle.fill = chart.colors.getIndex(mode == "파견" ? 8 : 11).brighten(-0.2);
-        circle.strokeWidth = 2;
-        // what about scale...
+        var marker = imageSeriesTemplate.createChild(am4core.Image);
+        marker.href = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-160/marker.svg";
+        marker.width = 15;
+        marker.height = 15;
+        marker.tooltipText = "[bold]{title}[/]\n파견: {patch}명";
+        marker.horizontalCenter = "middle";
+        marker.verticalCenter = "bottom";
 
         // set propertyfields
         imageSeriesTemplate.propertyFields.latitude = "latitude";
