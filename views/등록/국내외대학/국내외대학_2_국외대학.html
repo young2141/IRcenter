@@ -102,13 +102,13 @@
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
 
-			<span style="font-size: 20px"><b>구분</b></span><br>
-                    <input type="radio" name="type" value="파견" checked onclick= "draw_map(this.value)"> 파견<br>
-					<input type="radio" name="type" value="초청" onclick= "draw_map(this.value)"> 초청<br><br>
+		
+            <input type="radio" name="type" value="파견" checked onclick= "draw_map(this.value)"> 파견<br>
+			<input type="radio" name="type" value="초청" onclick= "draw_map(this.value)"> 초청<br><br>
 		
 			<span style="font-size: 20px"> <b>대학명 검색</b> </span><br>
 			<select id="university_selectbar" onchange="change()" style="width : 200px; height: 30px">
-				<option name='' value='전체'>전체</option>
+				<option name='' value='전체'>(전체)</option>
 				<option name='' value='마샬대학'>마샬대학</option>
 				<option name='' value='랜더대학'>랜더대학</option>
 				<option name='' value='럿거스캄덴대학'>럿거스캄덴대학</option>
@@ -404,14 +404,9 @@
 
 		</script>
 
-
-		<!--<div id="summaryBox">
-			<h2><span id="P1">기관별 직원수</span></h2>
+		<div id="summaryBox">
+			<h2><span id="P1">국외대학</span></h2>
 		</div>
-		<div id="unitBox">
-			(단위 : 명)
-		</div>-->
-<!-- 		<div id="chartdiv1" class="chartdiv">그래프 1</div> -->
 		<div id="chartdiv1" class="chartdiv2">그래프 1</div>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">

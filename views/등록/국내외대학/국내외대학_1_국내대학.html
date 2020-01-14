@@ -80,21 +80,28 @@
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
 
-			<span style="font-size: 20px"><b>구분</b></span><br>
 			<input type="radio" onclick="patch()" name="type" value="patch" checked> 파견<br>
 			<input type="radio" onclick="invite()" name="type" value="invite"> 초청<br><br>
 			<form id="coll">
 				<span style="font-size: 20px"> <b>대학명 검색</b> </span><br>
 				<select id="sex_selectbar" onchange="change()" style="width : 200px; height: 30px">
-					<option value=""></option>
+					<option value="">(전체)</option>
 					<option name="" value="강원대학교">강원대학교</option>
 					<option name="" value="경상대학교">경상대학교</option>
+					<option name="" value="계명대학교">계명대학교</option>
+					<option name="" value="과학기술연합대학원대학교">과학기술연합대학원대학교</option>
 					<option name="" value="금오공과대학교">금오공과대학교</option>
-					<option name="" value="영남대학교">영남대학교</option>
-					<option name="" value="부산대학교">부산대학교</option>
+					<option name="" value="대구교육대학교">대구교육대학교</option>
+					<option name="" value="대구대학교">대구대학교</option>
+					<option name="" value="대구외국어대학교">대구외국어대학교</option>
 					<option name="" value="부경대학교">부경대학교</option>
+					<option name="" value="부산대학교">부산대학교</option>
 					<option name="" value="서울대학교">서울대학교</option>
+					<option name="" value="숙명여자대학교">숙명여자대학교</option>
 					<option name="" value="안동대학교">안동대학교</option>
+					<option name="" value="영남대학교">영남대학교</option>
+					<option name="" value="울산과학기술원">울산과학기술원</option>
+					<option name="" value="울산대학교">울산대학교</option>
 					<option name="" value="전남대학교">전남대학교</option>
 					<option name="" value="전북대학교">전북대학교</option>
 					<option name="" value="제주대학교">제주대학교</option>
@@ -102,16 +109,8 @@
 					<option name="" value="충남대학교">충남대학교</option>
 					<option name="" value="충북대학교">충북대학교</option>
 					<option name="" value="한국교원대학교">한국교원대학교</option>
-					<option name="" value="숙명여자대학교">숙명여자대학교</option>
-					<option name="" value="대구외국어대학교">대구외국어대학교</option>
-					<option name="" value="대구교육대학교">대구교육대학교</option>
-					<option name="" value="대구대학교">대구대학교</option>
 					<option name="" value="한국종합예술학교">한국종합예술학교</option>
-					<option name="" value="과학기술연합대학원대학교">과학기술연합대학원대학교</option>
-					<option name="" value="계명대학교">계명대학교</option>
 					<option name="" value="한동대학교">한동대학교</option>
-					<option name="" value="울산과학기술원">울산과학기술원</option>
-					<option name="" value="울산대학교">울산대학교</option>
 				</select>
 			</form>
 
@@ -130,6 +129,10 @@
 					$("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
 			});
 		</script>
+
+		<div id="summaryBox">
+			<h2><span id="P1">국내대학</span></h2>
+		</div>
 
 		<div id="chartdiv" class="chartdiv">그래프 1</div>
 		<script>
