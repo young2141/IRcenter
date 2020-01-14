@@ -44,6 +44,8 @@ function draw_map(input_mode) {
 
         // Zoom control
         chart.zoomControl = new am4maps.ZoomControl();
+        chart.zoomControl.align="left"
+        chart.zoomControl.marginBottom = 20;
 
         var homeButton = new am4core.Button();
         homeButton.events.on("hit", restoreContinents);
