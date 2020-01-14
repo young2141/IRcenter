@@ -45,7 +45,7 @@ am4core.ready(function () {
 
         // Zoom control
         chart.zoomControl = new am4maps.ZoomControl();
-        chart.zoomControl.align="left"
+        chart.zoomControl.align = "left"
         chart.zoomControl.marginBottom = 30;
 
         var homeButton = new am4core.Button();
@@ -395,14 +395,14 @@ function change() {
             for (var i = 0; i < json.length; i++) {
                 if (selectValue == json[i]["title"]) {
                     if (sort == "patch") {
-                        if(json[i]["파견"]>0){
+                        if (json[i]["파견"] > 0) {
                             new_data[sort] = json[i]["파견"];
                             new_data["latitude"] = json[i]["latitude"];
                             new_data["longitude"] = json[i]["longitude"];
                         }
                     }
                     else if (sort == "invite") {
-                        if(json[i]["초청"]>0){
+                        if (json[i]["초청"] > 0) {
                             new_data[sort] = json[i]["초청"];
                             new_data["latitude"] = json[i]["latitude"];
                             new_data["longitude"] = json[i]["longitude"];
