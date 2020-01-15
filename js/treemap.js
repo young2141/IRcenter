@@ -41,9 +41,10 @@ am4core.ready(function () {
 
     level1SeriesTemplate.tooltip.animationDuration = 0;
     level1SeriesTemplate.strokeOpacity = 1;
-    level1ColumnTemplate.tooltipText="[bold]{name}[/]\n[font-size:14px]{val1}({val2})";
+    level1ColumnTemplate.tooltipText="[bold]{name}[/]: [font-size:14px]{val1}%({val2}명)";
+    // level1ColumnTemplate.tooltipHTML = `<center><strong>{name}</strong><br>{val1}%({val2}명)</center>`;
     level1SeriesTemplate.tooltip.pointerOrientation = "vertical";
-    level1SeriesTemplate.tooltip.dy=-25;
+    level1SeriesTemplate.tooltip.dy = -25;
 
 
     // level1ColumnTemplate.column.cornerRadius(5, 5, 5, 5)
@@ -61,7 +62,9 @@ am4core.ready(function () {
     // myname2 = myname.slice(0,5);
     // myname2 += "\n";
     // myname2 += myname.slice(5,12);
-    bullet1.label.text = "[font-size:20px][bold]{name}[/] [font-size:12px]{val1}";
+    // bullet1.label.text = "[font-size: 25px][bold]{name}[/][font-size: 12px] {val1}%";
+    bullet1.label.html = `<div style='font-size:10px;'><center><strong>{name}</strong> {val1}%</center></div>`;
+
     // bullet1.label.fill = am4core.color("#ffffff");
     // bullet1.tooltipText = "{name} \n {val1}%,{val2}명"
 

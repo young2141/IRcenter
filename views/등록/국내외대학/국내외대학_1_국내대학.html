@@ -6,10 +6,10 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
-    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
-    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	<script src="https://www.amcharts.com/lib/4/maps.js"></script>
+	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="../../../working on/js/staffheadcount_sharedservice.js"></script>
 	<script src="../../../js/domestic.js"></script>
 
@@ -80,12 +80,12 @@
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
 
-			<input type="radio" onclick="patch()" name="type" value="patch" checked> 파견<br>
-			<input type="radio" onclick="invite()" name="type" value="invite"> 초청<br><br>
+			<input type="radio" onclick="draw_map(this.value)" name="type" value="파견" checked> 파견<br>
+			<input type="radio" onclick="draw_map(this.value)" name="type" value="초청"> 초청<br><br>
 			<form id="coll">
 				<span style="font-size: 20px"> <b>대학명 검색</b> </span><br>
-				<select id="sex_selectbar" onchange="change()" style="width : 200px; height: 30px">
-					<option value="">(전체)</option>
+				<select id="university_selectbar" onchange="change()" style="width : 200px; height: 30px">
+					<option value='전체'>(전체)</option>
 					<option name="" value="강원대학교">강원대학교</option>
 					<option name="" value="경상대학교">경상대학교</option>
 					<option name="" value="계명대학교">계명대학교</option>
@@ -117,6 +117,19 @@
 		</div>
 
 		<script>
+			function change() {
+				var found = null;
+				var type = document.getElementsByName("type");
+				for (var i = 0; i < type.length; i++) {
+					if (type[i].checked == true) {
+						found = type[i];
+					}
+
+				}
+				draw_map(found.value)
+
+			}
+
 			var currentPosition = parseInt($("#gotop").css("top"));
 			$(window).scroll(function () {
 				var position = $(window).scrollTop();
