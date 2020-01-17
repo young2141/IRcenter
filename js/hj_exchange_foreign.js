@@ -1,5 +1,5 @@
 var mode
-var mode2
+// var mode2
 var chart
 var universities
 var key_dict = {}
@@ -10,12 +10,11 @@ function parse(callback) {
     });
 }
 
-function draw_map(input_mode) {
+function draw_map(input_mode, mode2) {
     parse(json => {
         universities = json
 
     mode = input_mode
-    mode2 = $("#university_selectbar option:selected").val();
 
     am4core.ready(function () {
 
@@ -107,31 +106,35 @@ function draw_map(input_mode) {
         });
         imageSeries.data = []
 
+        var uni_select = document.getElementById("university_selectbar")
+        uni_select.innerHTML = "<option name='' value='전체'></option>"
+
         if (mode == "파견") {
             for (var i = 0; i < universities.length; i++) {
-                if(mode2=="전체"){
-                    if (universities[i].disfatch.toString().trim() == "-" || universities[i].latitude == '')
+                if (universities[i].disfatch.toString().trim() == "-" || universities[i].latitude == '')
                     continue
-                }
-                else{
-                    if (universities[i].university.trim()!=mode2|| universities[i].disfatch.toString().trim() == "-" || universities[i].latitude == '')
+
+                uni_select.innerHTML += "<option name='' value='" + universities[i].university + "'></option>"
+
+                if (mode2 != "전체" && universities[i].university.trim() != mode2)
                     continue
-                }
                 
                 imageSeries.data.push(universities[i])
+                
             }
         }
         else {
             for (var i = 0; i < universities.length; i++) {
-                if(mode2=="전체"){
-                    if (universities[i].invitation.toString().trim() == "-" || universities[i].latitude == '')
+                if (universities[i].invitation.toString().trim() == "-" || universities[i].latitude == '')
                     continue
-                }
-                else{
-                    if (universities[i].university.trim()!=mode2|| universities[i].invitation.toString().trim() == "-" || universities[i].latitude == '')
+
+                uni_select.innerHTML += "<option name='' value='" + universities[i].university + "'></option>"
+
+                if (mode2 != "전체" && universities[i].university.trim() != mode2)
                     continue
-                }
+
                 imageSeries.data.push(universities[i])
+                
             }
         }
 

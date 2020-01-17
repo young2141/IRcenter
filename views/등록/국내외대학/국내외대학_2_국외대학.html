@@ -11,7 +11,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="../../../js/4-3.js"></script>
-    <script src="../../../js/exchange_foreign.js"></script>
 	<script src="../../../js/hj_exchange_foreign.js"></script>
 	<script src="https://www.amcharts.com/lib/4/plugins/bullets.js"></script>
 </head>
@@ -107,7 +106,9 @@
 			<input type="radio" name="type" value="초청" onclick= "draw_map(this.value)"> 초청<br><br>
 		
 			<span style="font-size: 20px"> <b>대학명 검색</b> </span><br>
-			<select id="university_selectbar" onchange="change()" style="width : 200px; height: 30px">
+            <input type="text" id="university_search_text" list="university_selectbar">
+            <input type="button" onclick="change()" value="검색">
+			<datalist id="university_selectbar" style="width : 200px; height: 30px">
 				<option name='' value='전체'>(전체)</option>
 				<option name='' value='마샬대학'>마샬대학</option>
 				<option name='' value='랜더대학'>랜더대학</option>
@@ -372,7 +373,7 @@
 				<option name='' value='Kumi University'>Kumi University</option>
 				<option name='' value='Kenyatta University'>Kenyatta University</option>
 				<option name='' value='나이로비 대학 건설환경학교'>나이로비 대학 건설환경학교</option>
-			</select>
+			</datalist>
 		</div>
 
 		<script>
@@ -385,7 +386,10 @@
 					}
 						
 				}
-				draw_map(found.value)
+
+				var search = document.getElementById("university_search_text").value
+				document.getElementById("university_search_text").value = ""
+				draw_map(found.value, search)
 
 			}
 
@@ -441,7 +445,7 @@
 	</div>
 
     <script>
-        draw_map("파견")
+        draw_map("파견", "전체")
     </script>
 </body>
 
