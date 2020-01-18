@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>경북대학교 IR센터</title>
 
+
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -11,7 +12,13 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-	<script src="../../../js/교원및조교_요약_2019그래프.js"></script>
+
+
+	<script src="../../../js/교원및조교_요약_연도별그래프.js"></script>
+	<script src="../../../js/교원및조교_요약_2019그래프.js"></script>-->
+	
+	
+	
 
 
 </head>
@@ -63,65 +70,93 @@
 
 
 		<div id="titleBox">
-
 			<span id="titleFont"><b>교원 및 조교</b></span>
-
 			<br><br>
 			추가적인 정보를 보기 위해서 각 대시보드 페이지 위에 나타나는 메뉴박스들을 클릭하세요.<br>
-
 		</div>
 
 		<center>
-			<div id="tableBox">
-				<table cellspacing="0" cellpadding="0">
-					<tbody>
-						<tr>
-							<td style="border-style: none; font-size : 30px">
-								<a href="교원및조교_7_Explore.html">
-									<span id="black">◀</span>
-								</a>
-							</td>
-							<td style="background-color : #eeeeee">
-								<a href="교원및조교_1_요약.html"><span id="black"><b>요약</b></span></a>
-							</td>
-							<td>
-								<a href="교원및조교_2_교원및조교수.html"><span id="black">교원 및 조교 수</span></a>
-							</td>
-							<td>
-								<a href="교원및조교_3_계열별대학별.html"><span id="black">계열별, 대학(원)별</span></a>
-							</td>
-							<td>
-								<a href="교원및조교_4_연령별근속연수.html"><span id="black">연령별, 근속연수별</span></a>
-							</td>
-							<td>
-								<a href="교원및조교_5_성비.html"><span id="black">성비</span></a>
-							</td>
-							<td>
-								<a href="교원및조교_6_변동.html"><span id="black">변동</span></a>
-							</td>
-							<td>
-								<a href="교원및조교_7_Explore.html"><span id="black">Explore the data</span></a>
-							</td>
-							<td style="border-style: none; font-size : 30px">
-								<a href="교원및조교_2_교원및조교수.html">
-									<span style="color: black">▶</span>
-								</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<hr style="border-color: black">
+		<div id="tableBox">
+			<table cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td style="border-style: none; font-size : 30px">
+							<a href="교원및조교_1_요약.html">
+								<span id="black">◀</span>
+							</a>
+						</td>
+						<td>
+							<a href="교원및조교_1_요약.html"><span id="black">요약</span></a>
+						</td>
+						<td style="background-color : #eeeeee">
+							<a href="교원및조교_2_교원및조교수.html"><span id="black"><b>교원 및 조교 수</b></span></a>
+						</td>
+						<td>
+							<a href="교원및조교_3_계열별대학별.html"><span id="black">계열별, 대학(원)별</span></a>
+						</td>
+						<td>
+							<a href="교원및조교_4_연령별근속연수.html"><span id="black">연령별, 근속연수별</span></a>
+						</td>
+						<td>
+							<a href="교원및조교_5_성비.html"><span id="black">성비</span></a>
+            			</td>
+           				<td>
+							<a href="교원및조교_6_변동.html"><span id="black">변동</span></a>
+						</td>
+						<td>
+							<a href="교원및조교_7_Explore.html"><span id="black">Explore the data</span></a>
+						</td>
+						<td style="border-style: none; font-size : 30px">
+							<a href="교원및조교_3_계열별대학별.html">
+								<span style="color: black">▶</span>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr style="border-color: black">
+
 	</div>
 	</center>
 
 	<div id="TOP">
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
-			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 교수<br>
-			<span style="color:#0000ff; font-size: 20px;"> ■ </span> 부교수<br>
-			<span style="color:#00ff00; font-size: 20px;"> ■ </span> 조교수<br>
+			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 전임교원<br>
+			<span style="color:#0000ff; font-size: 20px;"> ■ </span> 비전임교원<br>
+			<span style="color:#00ff00; font-size: 20px;"> ■ </span> 조교<br><br>
+			
 
+			<span style="font-size: 20px"><b>년도별 검색</b></span>
+            <br>
+
+            <input type=button value='◀' onclick=decrease()>
+            <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
+            <input type=button value='▶' onclick=increase()>
+
+            <script>
+                function valuechange(value) {
+					document.getElementById('span1').innerHTML = (value);
+					document.getElementById('span2').innerHTML = (value);
+                    check();
+                }
+                function decrease() {
+                    current_value = document.getElementById('years').value
+                    console.log(current_value);
+                    document.getElementById('years').value -= 1
+                    valuechange(document.getElementById('years').value)
+                }
+                function increase() {
+                    current_value = document.getElementById('years').value
+                    console.log(current_value);
+                    document.getElementById('years').value++;
+                    valuechange(document.getElementById('years').value)
+                }
+            </script>
+
+            <br>
+            <div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
 		</div>
 
 		<script>
@@ -137,21 +172,30 @@
 					$("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
 			});
 
-
+			
 		</script>
 
 
+		
 		<a href="../교수진 및 직원.html"><span id="black">이전 메뉴로 이동</a></span>
 		<div id="summaryBox">
-			<h2><span id="P1">요약</span></h2>
+			<h2><span id="P1">교원 및 조교 수</span></h2>
 		</div>
 		<div id="unitBox">
 			(단위 : 명)
 		</div>
-		<div id="chartdiv" class="chartdiv"></div>
-		<script>
-			init();
-		</script>
+		<div id="chartdiv1" class="chartdiv">그래프 1</div>
+		<script>init();</script>
+		
+
+		<div id="summaryBox">
+			<h2><span id="span2">2019</span>년도 교원 및 조교 구성</span></h2>
+		</div>
+		<div id="unitBox">
+			(단위 : 명)
+		</div>
+		<div id="chartdiv2" class="chartdiv">그래프 2</div>
+		<script>init2();</script>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
