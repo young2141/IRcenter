@@ -95,7 +95,7 @@ function call() {
                 else yearly_data[key] = json[i][key][sex];
             }
             data.push(yearly_data);
-            console.log(yearly_data);
+            // console.log(yearly_data);
         }
         stackGraph(data);
     });

@@ -154,9 +154,9 @@
             <span style="font-size: 20px"><b>년도별 검색</b></span>
 			<br>
 
-			<input type=button value='◀' onclick=decrease()>
-			<input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
-			<input type=button value='▶' onclick=increase()>
+			<input type=button value='◀' onclick="decrease()">
+			<input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput="valuechange(parseInt(this.value))" >
+			<input type=button value='▶' onclick="increase()">
 
 			<script>
 				function valuechange(value) {
@@ -178,7 +178,7 @@
             </script>
             
             <br>
-			<div style="text-align: center; width: 180px"><span id="span1" onchange="changedata()">2019</span></div>
+			<div style="text-align: center; width: 180px"><span id="span1" oninput="call2()">2019</span></div>
 
         </div>
 
@@ -194,10 +194,12 @@
                     $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
             });
             call();
+            // call2();
+            stackGraph();
             function changedata(){
                 span = document.getElementById('span1').innerHTML;
                 console.log(span);
-                changegraph()
+                changegraph(span)
             }
         </script>
 

@@ -18,7 +18,7 @@ am4core.ready(function () {
     chart.colors.step = 2;
 
     // define data fields
-    chart.dataFields.value = "val2";
+    chart.dataFields.value = "value";
     // chart.dataFields.name = "name";
     // chart.dataFields.id = "val1";
     chart.dataFields.children = "children";
@@ -41,7 +41,7 @@ am4core.ready(function () {
 
     level1SeriesTemplate.tooltip.animationDuration = 0;
     level1SeriesTemplate.strokeOpacity = 1;
-    level1ColumnTemplate.tooltipText = "[bold]{name}[/]: [font-size:14px]{val1}%({val2}명)";
+    level1ColumnTemplate.tooltipText = "[bold]{name}[/]: [font-size:14px]{value}%({value}명)";
     // level1ColumnTemplate.tooltipHTML = `<center><strong>{name}</strong><br>{val1}%({val2}명)</center>`;
     level1SeriesTemplate.tooltip.pointerOrientation = "vertical";
     level1SeriesTemplate.tooltip.dy = -25;
@@ -63,7 +63,7 @@ am4core.ready(function () {
     // myname2 += "\n";
     // myname2 += myname.slice(5,12);
     // bullet1.label.text = "[font-size: 25px][bold]{name}[/][font-size: 12px] {val1}%";
-    bullet1.label.html = `<div style='font-size:10px;'><center><strong>{name}</strong> {val1}%</center></div>`;
+    bullet1.label.html = `<div style='font-size:10px;'><center><strong>{name}</strong> {value}%</center></div>`;
     // bullet1.label.fill = am4core.color("#ffffff");
     // bullet1.tooltipText = "{name} \n {val1}%,{val2}명"
 
@@ -94,7 +94,7 @@ function changegraph() {
         chart.colors.step = 2;
 
         // define data fields
-        chart.dataFields.value = "val2";
+        chart.dataFields.value = "value";
         // chart.dataFields.name = "name";
         // chart.dataFields.id = "val1";
         chart.dataFields.children = "children";
