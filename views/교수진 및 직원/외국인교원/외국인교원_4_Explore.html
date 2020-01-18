@@ -91,11 +91,46 @@
 	<div id="TOP">
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
-			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 교수<br>
-			<span style="color:#0000ff; font-size: 20px;"> ■ </span> 부교수<br>
-			<span style="color:#00ff00; font-size: 20px;"> ■ </span> 조교수<br>
+			<span style="font-size: 20px"><b>차트 구분</b></span><br>
+            <form>
+			<input type="radio" name="Gtype" value = "1" id="" checked="checked" onclick= "">교원 구성별<br>
+			<input type="radio" name="Gtype" value = "2" id="" onclick="">전공계열별<br><br>
+			</form>
+			
+			<div id = "legend1">
+				<span style="color:#ff0000; font-size: 20px;"> ■ </span> 교수<br>
+				<span style="color:yellow; font-size: 20px;"> ■ </span> 부교수<br>
+				<span style="color:green; font-size: 20px;"> ■ </span> 조교수<br>
+				<span style="color:blue; font-size: 20px;"> ■ </span> 비전임교수<br><br>
+			</div>
 
+			<div id = "legend2" style = "display: none">
+				<span style="color:#ff0000; font-size: 20px;"> ■ </span> 인문사회<br>
+				<span style="color:yellow; font-size: 20px;"> ■ </span> 자연과학<br>
+				<span style="color:green; font-size: 20px;"> ■ </span> 공학<br>
+				<span style="color:blue; font-size: 20px;"> ■ </span> 예체능<br><br>
+			</div>
 		</div>
+
+		<script>
+			$('input[type = radio][name=Gtype]').on('click',function(){
+				var chkValue = $('input[type=radio][name=Gtype]:checked').val();
+
+				if(chkValue == '1')
+				{
+					$('#legend1').css('display','block');
+					$('#legend2').css('display','none');
+					
+				}
+
+				else if(chkValue == '2')
+				{
+					$('#legend1').css('display','none');
+					$('#legend2').css('display','block');
+
+				}
+			});
+		</script>
 
 		<script>
 			var currentPosition = parseInt($("#gotop").css("top"));
