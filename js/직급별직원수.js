@@ -116,6 +116,66 @@ parse2(json => {
         // Create chart instance
         var chart = am4core.create("chartdiv2", am4charts.PieChart);
 
+        // var year;
+        // var treeData=[];
+        // var brandData={};
+        // for(var i=0;i<json.length;i++){
+        //     for(var name in json["year"][i])
+        // }
+        
+        // brandData[]
+        // json
+
+        // Add data
+        chart.data = json;
+
+        var pieSeries = chart.series.push(new am4charts.PieSeries());
+        pieSeries.dataFields.value = "field";
+        pieSeries.dataFields.category = "name";
+        pieSeries.slices.template.stroke = am4core.color("#fff");
+        pieSeries.slices.template.strokeWidth = 2;
+        pieSeries.slices.template.tooltipText = "[bold]{category}[/]: {value.percent.formatNumber('#.0')}%({value}명)";
+        pieSeries.slices.template.strokeOpacity = 1;
+        pieSeries.colors.list = [
+            am4core.color("#dc67ce"),
+            am4core.color("#c767dc"),
+            am4core.color("#a367dc"),
+            am4core.color("#8067dc"),
+            am4core.color("#6771dc"),
+            am4core.color("#6794dc"),
+            am4core.color("#67b7dc"),
+        ];
+
+        // This creates initial animation
+        pieSeries.hiddenState.properties.opacity = 1;
+        pieSeries.hiddenState.properties.endAngle = -90;
+        pieSeries.hiddenState.properties.startAngle = -90;
+
+        pieSeries.slices.template.events.on("hit", function (ev) {
+            var series = ev.target.dataItem.component;
+            series.slices.each(function (item) {
+                if (item.isActive && item != ev.target) {
+                    item.isActive = false;
+                }
+            })
+        });
+
+        // var grouper = pieSeries.plugins.push(new am4plugins_sliceGrouper.SliceGrouper());
+        // grouper.clickBehavior = "zoom";
+        // grouper.threshold = 15;
+    }); // end am4core.ready()}
+
+})
+function changegraph() {
+    am4core.ready(function () {
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        // Create chart instance
+        var chart = am4core.create("chartdiv2", am4charts.PieChart);
+
         // Add data
         chart.data = json;
 
@@ -156,4 +216,3 @@ parse2(json => {
     }); // end am4core.ready()}
 
 }
-)
