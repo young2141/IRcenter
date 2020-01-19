@@ -33,7 +33,9 @@ function draw(_num, _data, _year, _job) {
 
         // Add data
         chart.data = _data;
-
+        chart.data.sort((a, b) => {
+            return a["value"] - b["value"];
+        }); // 근속연수가 높은 급수를 위로 올리기!
         // Make chart not full circle
         chart.startAngle = -90;
         chart.endAngle = 180;
