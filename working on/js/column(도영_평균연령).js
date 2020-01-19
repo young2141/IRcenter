@@ -1,7 +1,7 @@
 function parsing() {
     var filename = "doyeong_avgAge.json";
     var year = "2019";
-    var job = ["행정직", "사서직", "기술직", "전산직", "전문경력관", "관리운영"];
+    var job = ["행정직", "사서직", "기술직", "전산직", "전문경력관", "관리운영", "대학회계직"];
     $.getJSON("../json/" + filename, (jsonData) => {
         var num = 0;
         for (var i = 0; i < jsonData.length; i++) {
@@ -9,10 +9,11 @@ function parsing() {
             var keys = Object.keys(jsonData[i]["value"]);
             var data = [];
             for (var j = 0; j < keys.length; j++) {
-                data.push({
-                    "category": keys[j] + "급",
-                    "value": jsonData[i]["value"][keys[j]]
-                })
+                var temp = {};
+                temp["category"] = keys[j];
+                if (jsonData[i]["category"] != "대학회계직") temp["category"] += "급";
+                temp["value"] = jsonData[i]["value"][keys[j]];
+                data.push(temp);
             }
             draw(num + 1, data, year, job[num++]);
             // }
@@ -28,10 +29,12 @@ function draw(_num, _data, _year, _job) {
 
         // Create chart instance
         var chart = am4core.create("chartdiv" + String(_num), am4charts.XYChart);
-        console.log(_data);
 
         // Add data
         chart.data = _data;
+        chart.data.sort((a, b) => {
+            return a["value"] - b["value"];
+        }); // 데이터 정렬...높은 고위직일수록 평균연령이 높을테니 category값은 무시하고 value값만을 기준으로 내림차순 정렬
 
         // Create axes
 
@@ -42,6 +45,9 @@ function draw(_num, _data, _year, _job) {
 
         var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 25;
+        valueAxis.max = 65;
+        valueAxis.strictMinMax = true; // 강제로 min, max값 적용시키기! default는 false
+
 
         // Create series
         var series = chart.series.push(new am4charts.ColumnSeries());
@@ -58,5 +64,4 @@ function draw(_num, _data, _year, _job) {
 
     }); // end am4core.ready()
 }
-
 parsing();
