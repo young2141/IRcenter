@@ -1,22 +1,28 @@
 ﻿<html>
 
 <head>
-	<meta charset="utf-8">
-	<title>경북대학교 IR센터</title>
+    <meta charset="utf-8">
+    <title>경북대학교 IR센터</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script src="https://www.amcharts.com/lib/4/core.js"></script>
-	<script src="https://www.amcharts.com/lib/4/maps.js"></script>
-	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.js"
-		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-	<script src="../../../working on/js/staffheadcount_sharedservice.js"></script>
-	<script src="../../../js/domestic.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="../../../working on/js/staffheadcount_sharedservice.js"></script>
+    <script src="../../../js/domestic.js"></script>
 
 </head>
 
 <style type="text/css">
 	@import url('../../../css/output_default.css');
+
+    .chartdiv {
+        width: 1000px;
+        height: 500px;
+    }
 </style>
 
 <body>
@@ -80,12 +86,12 @@
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
 
-			<input type="radio" onclick="draw_map(this.value, '전체')" name="type" value="파견" checked> 파견<br>
-			<input type="radio" onclick="draw_map(this.value, '전체')" name="type" value="초청"> 초청<br><br>
+			<input type="radio" onclick="change('전체')" name="type" value="파견" checked> 파견<br>
+			<input type="radio" onclick="change('전체')" name="type" value="초청"> 초청<br><br>
 			<form id="coll">
 				<span style="font-size: 20px"> <b>대학명 검색</b> </span><br>
                 <input type="text" id="university_search_text" list="university_selectbar">
-                <input type="button" onclick="change()" value="검색">
+                <input type="button" onclick="change('')" value="검색">
                 <datalist id="university_selectbar" style="width : 200px; height: 30px">
                     <option value='전체'>(전체)</option>
                     <option name="" value="강원대학교">강원대학교</option>
@@ -119,7 +125,7 @@
 		</div>
 
 		<script>
-			function change() {
+			function change(search) {
 				var found = null;
 				var type = document.getElementsByName("type");
 				for (var i = 0; i < type.length; i++) {
@@ -128,7 +134,8 @@
 					}
 
 				}
-				var search = document.getElementById("university_search_text").value
+                if (search == "")
+				    search = document.getElementById("university_search_text").value
 				document.getElementById("university_search_text").value = ""
 				draw_map(found.value, search)
 				// draw_map(found.value)
@@ -152,9 +159,10 @@
 			<h2><span id="P1">국내대학</span></h2>
 		</div>
 
-		<div id="chartdiv" class="chartdiv">그래프 1</div>
+		<div id="chartdiv1" class="chartdiv"></div>
+        <div id="chartdiv2" class="chartdiv"></div>
 		<script>
-            draw_map("파견", "전체")
+            change('전체')
 		</script>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
