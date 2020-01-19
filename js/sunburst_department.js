@@ -3,6 +3,8 @@ var height = 600;
 var radius = Math.min(width, height) / 2;
 
 function drawSunburst() {
+    d3.select("#chartdiv3").select("svg").remove();
+    $("#sequence").empty();
     var year = document.getElementById("years").value;
     var tooltip = d3.select("body").append("div")
         .attr("class", "tooltip")

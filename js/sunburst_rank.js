@@ -2,19 +2,15 @@
 var height = 600;
 var radius = Math.min(width, height) / 2;
 
-function drawSunbusrt() {
+function drawSunburst() {
+    d3.select("#chartdiv3").select("svg").remove();
+    $("#sequence").empty();
     var year = document.getElementById("years").value;
-    var tooltip = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("display", "none");
 
     // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
     var b = {
         w: 250, h: 30, s: 3, t: 10
     };
-
-    // Mapping of step names to colors.
-
     // Total size of all segments; we set this later, after loading the data.
     var totalSize = 0;
 
@@ -127,7 +123,6 @@ function drawSunbusrt() {
         d3.select("#trail")
             .style("visibility", "hidden");
 
-        tooltip.style("display", "none");
         // Deactivate all segments during transition.
         d3.selectAll("path").on("mouseover", null);
 
@@ -254,5 +249,5 @@ function drawSunbusrt() {
             }
         }
         return root;
-    }
-};
+    };
+}

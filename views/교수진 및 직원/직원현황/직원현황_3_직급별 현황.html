@@ -59,6 +59,8 @@
         top: 260px;
         left: 350px;
         width: 170px;
+        font-size: 30px;
+        font-weight:bold;
         text-align: center;
         color: #666;
         z-index: -1;
@@ -134,8 +136,6 @@
     <div id="TOP">
 
         <div class="legend" id="gotop" style="left:80%; top :40%">
-
-
             <span style="color:#dc67ce; font-size: 20px;"> ■ </span> 일반직<br>
             <span style="color:#c767dc; font-size: 20px;"> ■ </span> 기술직<br>
             <span style="color:#a367dc; font-size: 20px;"> ■ </span> 별정직<br>
@@ -164,7 +164,7 @@
             <script>
                 function valuechange(value) {
                     document.getElementById('span1').innerHTML = (value);
-                    check();
+                    drawSunburst();
                 }
                 function decrease() {
                     current_value = document.getElementById('years').value
@@ -218,7 +218,7 @@
         <div id="sequence"></div>
         <div id="chartdiv3" class="chartdiv" style="margin-left: 5%">
             <div id="explanation" style="visibility: hidden;">
-                <span id="percentage"></span><br />
+                <span id="percentage"></span><br/>
             </div>
         </div>
         <script>drawSunburst()</script>
