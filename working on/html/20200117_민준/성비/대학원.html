@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<head>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="../../../js/mj_college.js"></script>
+</head>
+<style>
+    #chartdiv1 {
+        width: 1000px;
+        height: 1500px;
+    }
+</style>
+<body>
+    <div id="chartdiv1"></div>
+
+    <form>
+        <input type=button value='◀' onclick=decrease()>
+        <input id="years" type=range min=2010 max=2019 step=1 value=2019
+               oninput=valuechange(parseInt(this.value))>
+        <input type=button value='▶' onclick=increase()>
+        <script>
+            function valuechange(value) {
+                document.getElementById('span1').innerHTML = value;
+                chart();
+            }
+            function decrease() {
+                current_value = document.getElementById('years').value
+                document.getElementById('years').value -= 1
+                valuechange(document.getElementById('years').value)
+            }
+            function increase() {
+                document.getElementById('years').value++;
+                current_value = document.getElementById('years').value
+                valuechange(document.getElementById('years').value)
+            }
+        </script>
+        <br>
+        <div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
+
+    </form>
+    <form>
+        <select name="menu" onchange="chart()" style="width : 200px; height: 30px">
+            <option value="전체" selected="selected">(전체)</option>
+            <option value="인문대학">인문대학</option>
+            <option value="사회과학대학">사회과학대학</option>
+            <option value="자연과학대학">자연과학대학</option>
+            <option value="경상대학">경상대학</option>
+            <option value="공과대학">공과대학</option>
+            <option value="IT대학">IT대학</option>
+            <option value="농업생명과학대학">농업생명과학대학</option>
+            <option value="예술대학">예술대학</option>
+            <option value="사범대학">사범대학</option>
+            <option value="수의과대학">수의과대학</option>
+            <option value="생활과학대학">생활과학대학</option>
+            <option value="간호대학">간호대학</option>
+            <option value="약학대학">약학대학</option>
+            <option value="행정학부">행정학부</option>
+            <option value="법학전문대학원">법학전문대학원</option>
+            <option value="의과대학">의과대학</option>
+            <option value="치과대학">치과대학</option>
+            <option value="부속기관">부속기관</option>
+        </select>
+    </form>
+    <script>chart()</script>
+</body>

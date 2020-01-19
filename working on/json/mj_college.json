@@ -1,0 +1,1282 @@
+﻿{
+  "2010": {
+    "humanities": {
+      "type": "인문대학",
+      "male": 67,
+      "female": 16,
+      "malerate": 80.72289156626506,
+      "femalerate": 19.277108433734938
+    },
+    "society": {
+      "type": "사회과학대학",
+      "male": 43,
+      "female": 13,
+      "malerate": 76.78571428571429,
+      "femalerate": 23.214285714285708
+    },
+    "science": {
+      "type": "자연과학대학",
+      "male": 99,
+      "female": 11,
+      "malerate": 90,
+      "femalerate": 10
+    },
+    "economy": {
+      "type": "경상대학",
+      "male": 61,
+      "female": 6,
+      "malerate": 91.04477611940298,
+      "femalerate": 8.955223880597018
+    },
+    "mechanic": {
+      "type": "공과대학",
+      "male": 116,
+      "female": 3,
+      "malerate": 97.47899159663865,
+      "femalerate": 2.52100840336135
+    },
+    "IT": {
+      "type": "IT대학",
+      "male": 108,
+      "female": 8,
+      "malerate": 93.10344827586206,
+      "femalerate": 6.896551724137936
+    },
+    "farm": {
+      "type": "농업생명과학대학",
+      "male": 77,
+      "female": 9,
+      "malerate": 89.53488372093024,
+      "femalerate": 10.465116279069761
+    },
+    "art": {
+      "type": "예술대학",
+      "male": 18,
+      "female": 9,
+      "malerate": 66.66666666666667,
+      "femalerate": 33.33333333333333
+    },
+    "teach": {
+      "type": "사범대학",
+      "male": 70,
+      "female": 19,
+      "malerate": 78.65168539325843,
+      "femalerate": 21.348314606741567
+    },
+    "pet": {
+      "type": "수의과대학",
+      "male": 21,
+      "female": 4,
+      "malerate": 84,
+      "femalerate": 16
+    },
+    "life": {
+      "type": "생활과학대학",
+      "male": 1,
+      "female": 16,
+      "malerate": 5.882352941176471,
+      "femalerate": 94.11764705882354
+    },
+    "nurse": {
+      "type": "간호대학",
+      "male": 0,
+      "female": 17,
+      "malerate": 0,
+      "femalerate": 100
+    },
+    "medicine": {
+      "type": "약학대학",
+      "male": 11,
+      "female": 6,
+      "malerate": 64.70588235294117,
+      "femalerate": 35.294117647058826
+    },
+    "admin": {
+      "type": "행정학부",
+      "male": 14,
+      "female": 2,
+      "malerate": 87.5,
+      "femalerate": 12.5
+    },
+    "law": {
+      "type": "법학전문대학원",
+      "male": 30,
+      "female": 7,
+      "malerate": 81.08108108108108,
+      "femalerate": 18.91891891891892
+    },
+    "medical": {
+      "type": "의과대학",
+      "male": 127,
+      "female": 24,
+      "malerate": 84.10596026490066,
+      "femalerate": 15.89403973509934
+    },
+    "dental": {
+      "type": "치과대학",
+      "male": 38,
+      "female": 9,
+      "malerate": 80.85106382978724,
+      "femalerate": 19.148936170212764
+    },
+    "etc": {
+      "type": "부속기관",
+      "male": 4,
+      "female": 1,
+      "malerate": 80,
+      "femalerate": 20
+    }
+  },
+  "2011": {
+    "humanities": {
+      "type": "인문대학",
+      "male": 67,
+      "female": 16,
+      "malerate": 80.72289156626506,
+      "femalerate": 19.277108433734938
+    },
+    "society": {
+      "type": "사회과학대학",
+      "male": 43,
+      "female": 13,
+      "malerate": 76.78571428571429,
+      "femalerate": 23.214285714285708
+    },
+    "science": {
+      "type": "자연과학대학",
+      "male": 99,
+      "female": 11,
+      "malerate": 90,
+      "femalerate": 10
+    },
+    "economy": {
+      "type": "경상대학",
+      "male": 61,
+      "female": 6,
+      "malerate": 91.04477611940298,
+      "femalerate": 8.955223880597018
+    },
+    "mechanic": {
+      "type": "공과대학",
+      "male": 116,
+      "female": 3,
+      "malerate": 97.47899159663865,
+      "femalerate": 2.52100840336135
+    },
+    "IT": {
+      "type": "IT대학",
+      "male": 108,
+      "female": 8,
+      "malerate": 93.10344827586206,
+      "femalerate": 6.896551724137936
+    },
+    "farm": {
+      "type": "농업생명과학대학",
+      "male": 77,
+      "female": 9,
+      "malerate": 89.53488372093024,
+      "femalerate": 10.465116279069761
+    },
+    "art": {
+      "type": "예술대학",
+      "male": 18,
+      "female": 9,
+      "malerate": 66.66666666666667,
+      "femalerate": 33.33333333333333
+    },
+    "teach": {
+      "type": "사범대학",
+      "male": 70,
+      "female": 19,
+      "malerate": 78.65168539325843,
+      "femalerate": 21.348314606741567
+    },
+    "pet": {
+      "type": "수의과대학",
+      "male": 21,
+      "female": 4,
+      "malerate": 84,
+      "femalerate": 16
+    },
+    "life": {
+      "type": "생활과학대학",
+      "male": 1,
+      "female": 16,
+      "malerate": 5.882352941176471,
+      "femalerate": 94.11764705882354
+    },
+    "nurse": {
+      "type": "간호대학",
+      "male": 0,
+      "female": 17,
+      "malerate": 0,
+      "femalerate": 100
+    },
+    "medicine": {
+      "type": "약학대학",
+      "male": 11,
+      "female": 6,
+      "malerate": 64.70588235294117,
+      "femalerate": 35.294117647058826
+    },
+    "admin": {
+      "type": "행정학부",
+      "male": 14,
+      "female": 2,
+      "malerate": 87.5,
+      "femalerate": 12.5
+    },
+    "law": {
+      "type": "법학전문대학원",
+      "male": 30,
+      "female": 7,
+      "malerate": 81.08108108108108,
+      "femalerate": 18.91891891891892
+    },
+    "medical": {
+      "type": "의과대학",
+      "male": 127,
+      "female": 24,
+      "malerate": 84.10596026490066,
+      "femalerate": 15.89403973509934
+    },
+    "dental": {
+      "type": "치과대학",
+      "male": 38,
+      "female": 9,
+      "malerate": 80.85106382978724,
+      "femalerate": 19.148936170212764
+    },
+    "etc": {
+      "type": "부속기관",
+      "male": 4,
+      "female": 1,
+      "malerate": 80,
+      "femalerate": 20
+    }
+  },
+  "2012": {
+    "humanities": {
+      "type": "인문대학",
+      "male": 67,
+      "female": 16,
+      "malerate": 80.72289156626506,
+      "femalerate": 19.277108433734938
+    },
+    "society": {
+      "type": "사회과학대학",
+      "male": 43,
+      "female": 13,
+      "malerate": 76.78571428571429,
+      "femalerate": 23.214285714285708
+    },
+    "science": {
+      "type": "자연과학대학",
+      "male": 99,
+      "female": 11,
+      "malerate": 90,
+      "femalerate": 10
+    },
+    "economy": {
+      "type": "경상대학",
+      "male": 61,
+      "female": 6,
+      "malerate": 91.04477611940298,
+      "femalerate": 8.955223880597018
+    },
+    "mechanic": {
+      "type": "공과대학",
+      "male": 116,
+      "female": 3,
+      "malerate": 97.47899159663865,
+      "femalerate": 2.52100840336135
+    },
+    "IT": {
+      "type": "IT대학",
+      "male": 108,
+      "female": 8,
+      "malerate": 93.10344827586206,
+      "femalerate": 6.896551724137936
+    },
+    "farm": {
+      "type": "농업생명과학대학",
+      "male": 77,
+      "female": 9,
+      "malerate": 89.53488372093024,
+      "femalerate": 10.465116279069761
+    },
+    "art": {
+      "type": "예술대학",
+      "male": 18,
+      "female": 9,
+      "malerate": 66.66666666666667,
+      "femalerate": 33.33333333333333
+    },
+    "teach": {
+      "type": "사범대학",
+      "male": 70,
+      "female": 19,
+      "malerate": 78.65168539325843,
+      "femalerate": 21.348314606741567
+    },
+    "pet": {
+      "type": "수의과대학",
+      "male": 21,
+      "female": 4,
+      "malerate": 84,
+      "femalerate": 16
+    },
+    "life": {
+      "type": "생활과학대학",
+      "male": 1,
+      "female": 16,
+      "malerate": 5.882352941176471,
+      "femalerate": 94.11764705882354
+    },
+    "nurse": {
+      "type": "간호대학",
+      "male": 0,
+      "female": 17,
+      "malerate": 0,
+      "femalerate": 100
+    },
+    "medicine": {
+      "type": "약학대학",
+      "male": 11,
+      "female": 6,
+      "malerate": 64.70588235294117,
+      "femalerate": 35.294117647058826
+    },
+    "admin": {
+      "type": "행정학부",
+      "male": 14,
+      "female": 2,
+      "malerate": 87.5,
+      "femalerate": 12.5
+    },
+    "law": {
+      "type": "법학전문대학원",
+      "male": 30,
+      "female": 7,
+      "malerate": 81.08108108108108,
+      "femalerate": 18.91891891891892
+    },
+    "medical": {
+      "type": "의과대학",
+      "male": 127,
+      "female": 24,
+      "malerate": 84.10596026490066,
+      "femalerate": 15.89403973509934
+    },
+    "dental": {
+      "type": "치과대학",
+      "male": 38,
+      "female": 9,
+      "malerate": 80.85106382978724,
+      "femalerate": 19.148936170212764
+    },
+    "etc": {
+      "type": "부속기관",
+      "male": 4,
+      "female": 1,
+      "malerate": 80,
+      "femalerate": 20
+    }
+  },
+  "2013": {
+    "humanities": {
+      "type": "인문대학",
+      "male": 67,
+      "female": 16,
+      "malerate": 80.72289156626506,
+      "femalerate": 19.277108433734938
+    },
+    "society": {
+      "type": "사회과학대학",
+      "male": 43,
+      "female": 13,
+      "malerate": 76.78571428571429,
+      "femalerate": 23.214285714285708
+    },
+    "science": {
+      "type": "자연과학대학",
+      "male": 99,
+      "female": 11,
+      "malerate": 90,
+      "femalerate": 10
+    },
+    "economy": {
+      "type": "경상대학",
+      "male": 61,
+      "female": 6,
+      "malerate": 91.04477611940298,
+      "femalerate": 8.955223880597018
+    },
+    "mechanic": {
+      "type": "공과대학",
+      "male": 116,
+      "female": 3,
+      "malerate": 97.47899159663865,
+      "femalerate": 2.52100840336135
+    },
+    "IT": {
+      "type": "IT대학",
+      "male": 108,
+      "female": 8,
+      "malerate": 93.10344827586206,
+      "femalerate": 6.896551724137936
+    },
+    "farm": {
+      "type": "농업생명과학대학",
+      "male": 77,
+      "female": 9,
+      "malerate": 89.53488372093024,
+      "femalerate": 10.465116279069761
+    },
+    "art": {
+      "type": "예술대학",
+      "male": 18,
+      "female": 9,
+      "malerate": 66.66666666666667,
+      "femalerate": 33.33333333333333
+    },
+    "teach": {
+      "type": "사범대학",
+      "male": 70,
+      "female": 19,
+      "malerate": 78.65168539325843,
+      "femalerate": 21.348314606741567
+    },
+    "pet": {
+      "type": "수의과대학",
+      "male": 21,
+      "female": 4,
+      "malerate": 84,
+      "femalerate": 16
+    },
+    "life": {
+      "type": "생활과학대학",
+      "male": 1,
+      "female": 16,
+      "malerate": 5.882352941176471,
+      "femalerate": 94.11764705882354
+    },
+    "nurse": {
+      "type": "간호대학",
+      "male": 0,
+      "female": 17,
+      "malerate": 0,
+      "femalerate": 100
+    },
+    "medicine": {
+      "type": "약학대학",
+      "male": 11,
+      "female": 6,
+      "malerate": 64.70588235294117,
+      "femalerate": 35.294117647058826
+    },
+    "admin": {
+      "type": "행정학부",
+      "male": 14,
+      "female": 2,
+      "malerate": 87.5,
+      "femalerate": 12.5
+    },
+    "law": {
+      "type": "법학전문대학원",
+      "male": 30,
+      "female": 7,
+      "malerate": 81.08108108108108,
+      "femalerate": 18.91891891891892
+    },
+    "medical": {
+      "type": "의과대학",
+      "male": 127,
+      "female": 24,
+      "malerate": 84.10596026490066,
+      "femalerate": 15.89403973509934
+    },
+    "dental": {
+      "type": "치과대학",
+      "male": 38,
+      "female": 9,
+      "malerate": 80.85106382978724,
+      "femalerate": 19.148936170212764
+    },
+    "etc": {
+      "type": "부속기관",
+      "male": 4,
+      "female": 1,
+      "malerate": 80,
+      "femalerate": 20
+    }
+  },
+  "2014": {
+    "humanities": {
+      "type": "인문대학",
+      "male": 67,
+      "female": 16,
+      "malerate": 80.72289156626506,
+      "femalerate": 19.277108433734938
+    },
+    "society": {
+      "type": "사회과학대학",
+      "male": 43,
+      "female": 13,
+      "malerate": 76.78571428571429,
+      "femalerate": 23.214285714285708
+    },
+    "science": {
+      "type": "자연과학대학",
+      "male": 99,
+      "female": 11,
+      "malerate": 90,
+      "femalerate": 10
+    },
+    "economy": {
+      "type": "경상대학",
+      "male": 61,
+      "female": 6,
+      "malerate": 91.04477611940298,
+      "femalerate": 8.955223880597018
+    },
+    "mechanic": {
+      "type": "공과대학",
+      "male": 116,
+      "female": 3,
+      "malerate": 97.47899159663865,
+      "femalerate": 2.52100840336135
+    },
+    "IT": {
+      "type": "IT대학",
+      "male": 108,
+      "female": 8,
+      "malerate": 93.10344827586206,
+      "femalerate": 6.896551724137936
+    },
+    "farm": {
+      "type": "농업생명과학대학",
+      "male": 77,
+      "female": 9,
+      "malerate": 89.53488372093024,
+      "femalerate": 10.465116279069761
+    },
+    "art": {
+      "type": "예술대학",
+      "male": 18,
+      "female": 9,
+      "malerate": 66.66666666666667,
+      "femalerate": 33.33333333333333
+    },
+    "teach": {
+      "type": "사범대학",
+      "male": 70,
+      "female": 19,
+      "malerate": 78.65168539325843,
+      "femalerate": 21.348314606741567
+    },
+    "pet": {
+      "type": "수의과대학",
+      "male": 21,
+      "female": 4,
+      "malerate": 84,
+      "femalerate": 16
+    },
+    "life": {
+      "type": "생활과학대학",
+      "male": 1,
+      "female": 16,
+      "malerate": 5.882352941176471,
+      "femalerate": 94.11764705882354
+    },
+    "nurse": {
+      "type": "간호대학",
+      "male": 0,
+      "female": 17,
+      "malerate": 0,
+      "femalerate": 100
+    },
+    "medicine": {
+      "type": "약학대학",
+      "male": 11,
+      "female": 6,
+      "malerate": 64.70588235294117,
+      "femalerate": 35.294117647058826
+    },
+    "admin": {
+      "type": "행정학부",
+      "male": 14,
+      "female": 2,
+      "malerate": 87.5,
+      "femalerate": 12.5
+    },
+    "law": {
+      "type": "법학전문대학원",
+      "male": 30,
+      "female": 7,
+      "malerate": 81.08108108108108,
+      "femalerate": 18.91891891891892
+    },
+    "medical": {
+      "type": "의과대학",
+      "male": 127,
+      "female": 24,
+      "malerate": 84.10596026490066,
+      "femalerate": 15.89403973509934
+    },
+    "dental": {
+      "type": "치과대학",
+      "male": 38,
+      "female": 9,
+      "malerate": 80.85106382978724,
+      "femalerate": 19.148936170212764
+    },
+    "etc": {
+      "type": "부속기관",
+      "male": 4,
+      "female": 1,
+      "malerate": 80,
+      "femalerate": 20
+    }
+  },
+  "2015": {
+    "humanities": {
+      "type": "인문대학",
+      "male": 67,
+      "female": 16,
+      "malerate": 80.72289156626506,
+      "femalerate": 19.277108433734938
+    },
+    "society": {
+      "type": "사회과학대학",
+      "male": 43,
+      "female": 13,
+      "malerate": 76.78571428571429,
+      "femalerate": 23.214285714285708
+    },
+    "science": {
+      "type": "자연과학대학",
+      "male": 99,
+      "female": 11,
+      "malerate": 90,
+      "femalerate": 10
+    },
+    "economy": {
+      "type": "경상대학",
+      "male": 61,
+      "female": 6,
+      "malerate": 91.04477611940298,
+      "femalerate": 8.955223880597018
+    },
+    "mechanic": {
+      "type": "공과대학",
+      "male": 116,
+      "female": 3,
+      "malerate": 97.47899159663865,
+      "femalerate": 2.52100840336135
+    },
+    "IT": {
+      "type": "IT대학",
+      "male": 108,
+      "female": 8,
+      "malerate": 93.10344827586206,
+      "femalerate": 6.896551724137936
+    },
+    "farm": {
+      "type": "농업생명과학대학",
+      "male": 77,
+      "female": 9,
+      "malerate": 89.53488372093024,
+      "femalerate": 10.465116279069761
+    },
+    "art": {
+      "type": "예술대학",
+      "male": 18,
+      "female": 9,
+      "malerate": 66.66666666666667,
+      "femalerate": 33.33333333333333
+    },
+    "teach": {
+      "type": "사범대학",
+      "male": 70,
+      "female": 19,
+      "malerate": 78.65168539325843,
+      "femalerate": 21.348314606741567
+    },
+    "pet": {
+      "type": "수의과대학",
+      "male": 21,
+      "female": 4,
+      "malerate": 84,
+      "femalerate": 16
+    },
+    "life": {
+      "type": "생활과학대학",
+      "male": 1,
+      "female": 16,
+      "malerate": 5.882352941176471,
+      "femalerate": 94.11764705882354
+    },
+    "nurse": {
+      "type": "간호대학",
+      "male": 0,
+      "female": 17,
+      "malerate": 0,
+      "femalerate": 100
+    },
+    "medicine": {
+      "type": "약학대학",
+      "male": 11,
+      "female": 6,
+      "malerate": 64.70588235294117,
+      "femalerate": 35.294117647058826
+    },
+    "admin": {
+      "type": "행정학부",
+      "male": 14,
+      "female": 2,
+      "malerate": 87.5,
+      "femalerate": 12.5
+    },
+    "law": {
+      "type": "법학전문대학원",
+      "male": 30,
+      "female": 7,
+      "malerate": 81.08108108108108,
+      "femalerate": 18.91891891891892
+    },
+    "medical": {
+      "type": "의과대학",
+      "male": 127,
+      "female": 24,
+      "malerate": 84.10596026490066,
+      "femalerate": 15.89403973509934
+    },
+    "dental": {
+      "type": "치과대학",
+      "male": 38,
+      "female": 9,
+      "malerate": 80.85106382978724,
+      "femalerate": 19.148936170212764
+    },
+    "etc": {
+      "type": "부속기관",
+      "male": 4,
+      "female": 1,
+      "malerate": 80,
+      "femalerate": 20
+    }
+  },
+  "2016": {
+    "humanities": {
+      "type": "인문대학",
+      "male": 67,
+      "female": 16,
+      "malerate": 80.72289156626506,
+      "femalerate": 19.277108433734938
+    },
+    "society": {
+      "type": "사회과학대학",
+      "male": 43,
+      "female": 13,
+      "malerate": 76.78571428571429,
+      "femalerate": 23.214285714285708
+    },
+    "science": {
+      "type": "자연과학대학",
+      "male": 99,
+      "female": 11,
+      "malerate": 90,
+      "femalerate": 10
+    },
+    "economy": {
+      "type": "경상대학",
+      "male": 61,
+      "female": 6,
+      "malerate": 91.04477611940298,
+      "femalerate": 8.955223880597018
+    },
+    "mechanic": {
+      "type": "공과대학",
+      "male": 116,
+      "female": 3,
+      "malerate": 97.47899159663865,
+      "femalerate": 2.52100840336135
+    },
+    "IT": {
+      "type": "IT대학",
+      "male": 108,
+      "female": 8,
+      "malerate": 93.10344827586206,
+      "femalerate": 6.896551724137936
+    },
+    "farm": {
+      "type": "농업생명과학대학",
+      "male": 77,
+      "female": 9,
+      "malerate": 89.53488372093024,
+      "femalerate": 10.465116279069761
+    },
+    "art": {
+      "type": "예술대학",
+      "male": 18,
+      "female": 9,
+      "malerate": 66.66666666666667,
+      "femalerate": 33.33333333333333
+    },
+    "teach": {
+      "type": "사범대학",
+      "male": 70,
+      "female": 19,
+      "malerate": 78.65168539325843,
+      "femalerate": 21.348314606741567
+    },
+    "pet": {
+      "type": "수의과대학",
+      "male": 21,
+      "female": 4,
+      "malerate": 84,
+      "femalerate": 16
+    },
+    "life": {
+      "type": "생활과학대학",
+      "male": 1,
+      "female": 16,
+      "malerate": 5.882352941176471,
+      "femalerate": 94.11764705882354
+    },
+    "nurse": {
+      "type": "간호대학",
+      "male": 0,
+      "female": 17,
+      "malerate": 0,
+      "femalerate": 100
+    },
+    "medicine": {
+      "type": "약학대학",
+      "male": 11,
+      "female": 6,
+      "malerate": 64.70588235294117,
+      "femalerate": 35.294117647058826
+    },
+    "admin": {
+      "type": "행정학부",
+      "male": 14,
+      "female": 2,
+      "malerate": 87.5,
+      "femalerate": 12.5
+    },
+    "law": {
+      "type": "법학전문대학원",
+      "male": 30,
+      "female": 7,
+      "malerate": 81.08108108108108,
+      "femalerate": 18.91891891891892
+    },
+    "medical": {
+      "type": "의과대학",
+      "male": 127,
+      "female": 24,
+      "malerate": 84.10596026490066,
+      "femalerate": 15.89403973509934
+    },
+    "dental": {
+      "type": "치과대학",
+      "male": 38,
+      "female": 9,
+      "malerate": 80.85106382978724,
+      "femalerate": 19.148936170212764
+    },
+    "etc": {
+      "type": "부속기관",
+      "male": 4,
+      "female": 1,
+      "malerate": 80,
+      "femalerate": 20
+    }
+  },
+  "2017": {
+    "humanities": {
+      "type": "인문대학",
+      "male": 67,
+      "female": 16,
+      "malerate": 80.72289156626506,
+      "femalerate": 19.277108433734938
+    },
+    "society": {
+      "type": "사회과학대학",
+      "male": 43,
+      "female": 13,
+      "malerate": 76.78571428571429,
+      "femalerate": 23.214285714285708
+    },
+    "science": {
+      "type": "자연과학대학",
+      "male": 99,
+      "female": 11,
+      "malerate": 90,
+      "femalerate": 10
+    },
+    "economy": {
+      "type": "경상대학",
+      "male": 61,
+      "female": 6,
+      "malerate": 91.04477611940298,
+      "femalerate": 8.955223880597018
+    },
+    "mechanic": {
+      "type": "공과대학",
+      "male": 116,
+      "female": 3,
+      "malerate": 97.47899159663865,
+      "femalerate": 2.52100840336135
+    },
+    "IT": {
+      "type": "IT대학",
+      "male": 108,
+      "female": 8,
+      "malerate": 93.10344827586206,
+      "femalerate": 6.896551724137936
+    },
+    "farm": {
+      "type": "농업생명과학대학",
+      "male": 77,
+      "female": 9,
+      "malerate": 89.53488372093024,
+      "femalerate": 10.465116279069761
+    },
+    "art": {
+      "type": "예술대학",
+      "male": 18,
+      "female": 9,
+      "malerate": 66.66666666666667,
+      "femalerate": 33.33333333333333
+    },
+    "teach": {
+      "type": "사범대학",
+      "male": 70,
+      "female": 19,
+      "malerate": 78.65168539325843,
+      "femalerate": 21.348314606741567
+    },
+    "pet": {
+      "type": "수의과대학",
+      "male": 21,
+      "female": 4,
+      "malerate": 84,
+      "femalerate": 16
+    },
+    "life": {
+      "type": "생활과학대학",
+      "male": 1,
+      "female": 16,
+      "malerate": 5.882352941176471,
+      "femalerate": 94.11764705882354
+    },
+    "nurse": {
+      "type": "간호대학",
+      "male": 0,
+      "female": 17,
+      "malerate": 0,
+      "femalerate": 100
+    },
+    "medicine": {
+      "type": "약학대학",
+      "male": 11,
+      "female": 6,
+      "malerate": 64.70588235294117,
+      "femalerate": 35.294117647058826
+    },
+    "admin": {
+      "type": "행정학부",
+      "male": 14,
+      "female": 2,
+      "malerate": 87.5,
+      "femalerate": 12.5
+    },
+    "law": {
+      "type": "법학전문대학원",
+      "male": 30,
+      "female": 7,
+      "malerate": 81.08108108108108,
+      "femalerate": 18.91891891891892
+    },
+    "medical": {
+      "type": "의과대학",
+      "male": 127,
+      "female": 24,
+      "malerate": 84.10596026490066,
+      "femalerate": 15.89403973509934
+    },
+    "dental": {
+      "type": "치과대학",
+      "male": 38,
+      "female": 9,
+      "malerate": 80.85106382978724,
+      "femalerate": 19.148936170212764
+    },
+    "etc": {
+      "type": "부속기관",
+      "male": 4,
+      "female": 1,
+      "malerate": 80,
+      "femalerate": 20
+    }
+  },
+  "2018": {
+    "humanities": {
+      "type": "인문대학",
+      "male": 67,
+      "female": 16,
+      "malerate": 80.72289156626506,
+      "femalerate": 19.277108433734938
+    },
+    "society": {
+      "type": "사회과학대학",
+      "male": 43,
+      "female": 13,
+      "malerate": 76.78571428571429,
+      "femalerate": 23.214285714285708
+    },
+    "science": {
+      "type": "자연과학대학",
+      "male": 99,
+      "female": 11,
+      "malerate": 90,
+      "femalerate": 10
+    },
+    "economy": {
+      "type": "경상대학",
+      "male": 61,
+      "female": 6,
+      "malerate": 91.04477611940298,
+      "femalerate": 8.955223880597018
+    },
+    "mechanic": {
+      "type": "공과대학",
+      "male": 116,
+      "female": 3,
+      "malerate": 97.47899159663865,
+      "femalerate": 2.52100840336135
+    },
+    "IT": {
+      "type": "IT대학",
+      "male": 108,
+      "female": 8,
+      "malerate": 93.10344827586206,
+      "femalerate": 6.896551724137936
+    },
+    "farm": {
+      "type": "농업생명과학대학",
+      "male": 77,
+      "female": 9,
+      "malerate": 89.53488372093024,
+      "femalerate": 10.465116279069761
+    },
+    "art": {
+      "type": "예술대학",
+      "male": 18,
+      "female": 9,
+      "malerate": 66.66666666666667,
+      "femalerate": 33.33333333333333
+    },
+    "teach": {
+      "type": "사범대학",
+      "male": 70,
+      "female": 19,
+      "malerate": 78.65168539325843,
+      "femalerate": 21.348314606741567
+    },
+    "pet": {
+      "type": "수의과대학",
+      "male": 21,
+      "female": 4,
+      "malerate": 84,
+      "femalerate": 16
+    },
+    "life": {
+      "type": "생활과학대학",
+      "male": 1,
+      "female": 16,
+      "malerate": 5.882352941176471,
+      "femalerate": 94.11764705882354
+    },
+    "nurse": {
+      "type": "간호대학",
+      "male": 0,
+      "female": 17,
+      "malerate": 0,
+      "femalerate": 100
+    },
+    "medicine": {
+      "type": "약학대학",
+      "male": 11,
+      "female": 6,
+      "malerate": 64.70588235294117,
+      "femalerate": 35.294117647058826
+    },
+    "admin": {
+      "type": "행정학부",
+      "male": 14,
+      "female": 2,
+      "malerate": 87.5,
+      "femalerate": 12.5
+    },
+    "law": {
+      "type": "법학전문대학원",
+      "male": 30,
+      "female": 7,
+      "malerate": 81.08108108108108,
+      "femalerate": 18.91891891891892
+    },
+    "medical": {
+      "type": "의과대학",
+      "male": 127,
+      "female": 24,
+      "malerate": 84.10596026490066,
+      "femalerate": 15.89403973509934
+    },
+    "dental": {
+      "type": "치과대학",
+      "male": 38,
+      "female": 9,
+      "malerate": 80.85106382978724,
+      "femalerate": 19.148936170212764
+    },
+    "etc": {
+      "type": "부속기관",
+      "male": 4,
+      "female": 1,
+      "malerate": 80,
+      "femalerate": 20
+    }
+  },
+  "2019": {
+    "humanities": {
+      "type": "인문대학",
+      "male": 67,
+      "female": 16,
+      "malerate": 80.72289156626506,
+      "femalerate": 19.277108433734938
+    },
+    "society": {
+      "type": "사회과학대학",
+      "male": 43,
+      "female": 13,
+      "malerate": 76.78571428571429,
+      "femalerate": 23.214285714285708
+    },
+    "science": {
+      "type": "자연과학대학",
+      "male": 99,
+      "female": 11,
+      "malerate": 90,
+      "femalerate": 10
+    },
+    "economy": {
+      "type": "경상대학",
+      "male": 61,
+      "female": 6,
+      "malerate": 91.04477611940298,
+      "femalerate": 8.955223880597018
+    },
+    "mechanic": {
+      "type": "공과대학",
+      "male": 116,
+      "female": 3,
+      "malerate": 97.47899159663865,
+      "femalerate": 2.52100840336135
+    },
+    "IT": {
+      "type": "IT대학",
+      "male": 108,
+      "female": 8,
+      "malerate": 93.10344827586206,
+      "femalerate": 6.896551724137936
+    },
+    "farm": {
+      "type": "농업생명과학대학",
+      "male": 77,
+      "female": 9,
+      "malerate": 89.53488372093024,
+      "femalerate": 10.465116279069761
+    },
+    "art": {
+      "type": "예술대학",
+      "male": 18,
+      "female": 9,
+      "malerate": 66.66666666666667,
+      "femalerate": 33.33333333333333
+    },
+    "teach": {
+      "type": "사범대학",
+      "male": 70,
+      "female": 19,
+      "malerate": 78.65168539325843,
+      "femalerate": 21.348314606741567
+    },
+    "pet": {
+      "type": "수의과대학",
+      "male": 21,
+      "female": 4,
+      "malerate": 84,
+      "femalerate": 16
+    },
+    "life": {
+      "type": "생활과학대학",
+      "male": 1,
+      "female": 16,
+      "malerate": 5.882352941176471,
+      "femalerate": 94.11764705882354
+    },
+    "nurse": {
+      "type": "간호대학",
+      "male": 0,
+      "female": 17,
+      "malerate": 0,
+      "femalerate": 100
+    },
+    "medicine": {
+      "type": "약학대학",
+      "male": 11,
+      "female": 6,
+      "malerate": 64.70588235294117,
+      "femalerate": 35.294117647058826
+    },
+    "admin": {
+      "type": "행정학부",
+      "male": 14,
+      "female": 2,
+      "malerate": 87.5,
+      "femalerate": 12.5
+    },
+    "law": {
+      "type": "법학전문대학원",
+      "male": 30,
+      "female": 7,
+      "malerate": 81.08108108108108,
+      "femalerate": 18.91891891891892
+    },
+    "medical": {
+      "type": "의과대학",
+      "male": 127,
+      "female": 24,
+      "malerate": 84.10596026490066,
+      "femalerate": 15.89403973509934
+    },
+    "dental": {
+      "type": "치과대학",
+      "male": 38,
+      "female": 9,
+      "malerate": 80.85106382978724,
+      "femalerate": 19.148936170212764
+    },
+    "etc": {
+      "type": "부속기관",
+      "male": 4,
+      "female": 1,
+      "malerate": 80,
+      "femalerate": 20
+    }
+  }
+}
