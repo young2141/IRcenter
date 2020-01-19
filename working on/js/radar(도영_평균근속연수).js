@@ -23,7 +23,6 @@ function parsing() {
 
 function draw(_num, _data, _year, _job) {
     am4core.ready(function () {
-        console.log(_num, _data);
         // Themes begin
         am4core.useTheme(am4themes_animated);
         // Themes end
