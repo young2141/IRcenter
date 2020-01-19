@@ -91,7 +91,7 @@ function draw_map(input_mode, mode2) {
                 marker.href = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-160/marker.svg";
                 marker.width = 15;
                 marker.height = 15;
-                marker.tooltipText = "[bold]{title}[/]\n파견: {patch}명";
+                // marker.tooltipText = "[bold]{title}[/]\n파견: {patch}명";
                 marker.horizontalCenter = "middle";
                 marker.verticalCenter = "bottom";
 
@@ -100,11 +100,12 @@ function draw_map(input_mode, mode2) {
                 imageSeriesTemplate.propertyFields.longitude = "longitude";
                 imageSeriesTemplate.horizontalCenter = "middle";
                 imageSeriesTemplate.verticalCenter = "middle";
-                imageSeriesTemplate.align = "center";
+                imageSeriesTemplate.align = "middle";
                 imageSeriesTemplate.valign = "middle";
                 imageSeriesTemplate.width = 0;
                 imageSeriesTemplate.height = 0;
                 imageSeriesTemplate.nonScaling = true;
+                imageSeriesTemplate.alwaysShowTooltip = mode2 != "전체"
                 if (mode == "파견")
                     imageSeriesTemplate.tooltipText = "{title}의 파견 인원은 {파견}명입니다.";
                 else

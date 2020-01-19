@@ -80,7 +80,7 @@ function draw_map(input_mode, mode2) {
         marker.href = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-160/marker.svg";
         marker.width = 15;
         marker.height = 15;
-        marker.tooltipText = "[bold]{title}[/]\n파견: {patch}명";
+        // marker.tooltipText = "[bold]{title}[/]\n파견: {patch}명";
         marker.horizontalCenter = "middle";
         marker.verticalCenter = "bottom";
 
@@ -94,6 +94,7 @@ function draw_map(input_mode, mode2) {
         imageSeriesTemplate.width = 0;
         imageSeriesTemplate.height = 0;
         imageSeriesTemplate.nonScaling = true;
+        imageSeriesTemplate.alwaysShowTooltip = mode2 != "전체"
         if (mode == "파견")
             imageSeriesTemplate.tooltipText = "{university}의 파견 인원은 {disfatch}명입니다.";
         else
