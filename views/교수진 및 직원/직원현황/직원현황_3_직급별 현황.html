@@ -6,7 +6,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://www.amcharts.com/lib/4/core.js"></script>
     <script src="https://www.amcharts.com/lib/4/charts.js"></script>
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
@@ -17,7 +17,7 @@
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> -->
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <script src="https://d3js.org/d3.v4.min.js"></script>
-
+    <script src="../../../js/sunburst_rank.js"></script>
 </head>
 
 <style type="text/css">
@@ -59,6 +59,8 @@
         top: 260px;
         left: 350px;
         width: 170px;
+        font-size: 30px;
+        font-weight:bold;
         text-align: center;
         color: #666;
         z-index: -1;
@@ -134,8 +136,6 @@
     <div id="TOP">
 
         <div class="legend" id="gotop" style="left:80%; top :40%">
-
-
             <span style="color:#dc67ce; font-size: 20px;"> ■ </span> 일반직<br>
             <span style="color:#c767dc; font-size: 20px;"> ■ </span> 기술직<br>
             <span style="color:#a367dc; font-size: 20px;"> ■ </span> 별정직<br>
@@ -164,7 +164,7 @@
             <script>
                 function valuechange(value) {
                     document.getElementById('span1').innerHTML = (value);
-                    check();
+                    drawSunburst();
                 }
                 function decrease() {
                     current_value = document.getElementById('years').value
@@ -218,10 +218,10 @@
         <div id="sequence"></div>
         <div id="chartdiv3" class="chartdiv" style="margin-left: 5%">
             <div id="explanation" style="visibility: hidden;">
-                <span id="percentage"></span><br />
+                <span id="percentage"></span><br/>
             </div>
         </div>
-        <script src="../../../js/sunburst_rank.js"></script>
+        <script>drawSunburst()</script>
 
         <div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
             <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
@@ -235,9 +235,7 @@
             링크(https://www.youtube.com/watch?v=xuArJ6qPbMM&feature=youtu.be)에서 제공합니다.<br>
 
             <br><br>
-
         </div>
-
     </div>
 
     <div class="bottomframe">

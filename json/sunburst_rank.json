@@ -1,108 +1,1082 @@
 ﻿{
-  "name": "root",
-  "color":  "#ffffff",
-  "children": [
-    {
-      "name": "일반직",
-      "color": "#dc67ce",
-      "children": [
-        {
-          "name": "고위공무원",
-          "color": "#dc67ce",
-          "size": 1
-        },
-        {
-          "name": "4급",
-          "color": "#dc67ce",
-          "size": 5
-        },
-        {
-          "name": "5급",
-          "color": "#dc67ce",
-          "size": 30
-        },
-        {
-          "name": "6급",
-          "color": "#dc67ce",
-          "size": 84
-        },
-        {
-          "name": "7급",
-          "color": "#dc67ce",
-          "size": 48
-        },
-        {
-          "name": "8급",
-          "color": "#dc67ce",
-          "size": 30
-        },
-        {
-          "name": "9급",
-          "color": "#dc67ce",
-          "size": 28
-        }
-      ]
-    },
-    {
-      "name": "기술직",
-      "color": "#c767dc",
-      "children": [
-        {
-          "name": "4급",
-          "color": "#c767dc",
-          "size": 3
-        },
-        {
-          "name": "5급",
-          "color": "#c767dc",
-          "size": 12
-        },
-        {
-          "name": "6급",
-          "color": "#c767dc",
-          "size": 48
-        },
-        {
-          "name": "7급",
-          "color": "#c767dc",
-          "size": 36
-        },
-        {
-          "name": "8급",
-          "color": "#c767dc",
-          "size": 24
-        },
-        {
-          "name": "9급",
-          "color": "#c767dc",
-          "size": 22
-        }
-      ]
-    },
-    {
-      "name": "별정직",
-      "color": "#a367dc",
-      "size": 65
-    },
-    {
-      "name": "기능직",
-      "color": "#8067dc",
-      "size": 45
-    },
-    {
-      "name": "대학회계직",
-      "color": "#6771dc",
-      "size": 57
-    },
-    {
-      "name": "교육전문직",
-      "color": "#6794dc",
-      "size": 38
-    },
-    {
-      "name": "계약직",
-      "color": "#67b7dc",
-      "size": 42
-    }
-  ]
+  "2010": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "일반직",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "고위공무원",
+            "color": "#dc67ce",
+            "size": 1
+          },
+          {
+            "name": "4급",
+            "color": "#dc67ce",
+            "size": 21
+          },
+          {
+            "name": "5급",
+            "color": "#dc67ce",
+            "size": 28
+          },
+          {
+            "name": "6급",
+            "color": "#dc67ce",
+            "size": 74
+          },
+          {
+            "name": "7급",
+            "color": "#dc67ce",
+            "size": 61
+          },
+          {
+            "name": "8급",
+            "color": "#dc67ce",
+            "size": 27
+          },
+          {
+            "name": "9급",
+            "color": "#dc67ce",
+            "size": 20
+          }
+        ]
+      },
+      {
+        "name": "기술직",
+        "color": "#c767dc",
+        "children": [
+          {
+            "name": "4급",
+            "color": "#c767dc",
+            "size": 8
+          },
+          {
+            "name": "5급",
+            "color": "#c767dc",
+            "size": 19
+          },
+          {
+            "name": "6급",
+            "color": "#c767dc",
+            "size": 59
+          },
+          {
+            "name": "7급",
+            "color": "#c767dc",
+            "size": 44
+          },
+          {
+            "name": "8급",
+            "color": "#c767dc",
+            "size": 24
+          },
+          {
+            "name": "9급",
+            "color": "#c767dc",
+            "size": 19
+          }
+        ]
+      },
+      {
+        "name": "별정직",
+        "color": "#a367dc",
+        "size": 4
+      },
+      {
+        "name": "기능직",
+        "color": "#8067dc",
+        "size": 98
+      },
+      {
+        "name": "대학회계직",
+        "color": "#6771dc",
+        "size": 118
+      },
+      {
+        "name": "교육전문직",
+        "color": "#6794dc",
+        "size": 5
+      },
+      {
+        "name": "계약직",
+        "color": "#67b7dc",
+        "size": 511
+      }
+    ]
+  },
+  "2011": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "일반직",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "고위공무원",
+            "color": "#dc67ce",
+            "size": 1
+          },
+          {
+            "name": "4급",
+            "color": "#dc67ce",
+            "size": 21
+          },
+          {
+            "name": "5급",
+            "color": "#dc67ce",
+            "size": 31
+          },
+          {
+            "name": "6급",
+            "color": "#dc67ce",
+            "size": 75
+          },
+          {
+            "name": "7급",
+            "color": "#dc67ce",
+            "size": 62
+          },
+          {
+            "name": "8급",
+            "color": "#dc67ce",
+            "size": 29
+          },
+          {
+            "name": "9급",
+            "color": "#dc67ce",
+            "size": 20
+          }
+        ]
+      },
+      {
+        "name": "기술직",
+        "color": "#c767dc",
+        "children": [
+          {
+            "name": "4급",
+            "color": "#c767dc",
+            "size": 8
+          },
+          {
+            "name": "5급",
+            "color": "#c767dc",
+            "size": 19
+          },
+          {
+            "name": "6급",
+            "color": "#c767dc",
+            "size": 60
+          },
+          {
+            "name": "7급",
+            "color": "#c767dc",
+            "size": 45
+          },
+          {
+            "name": "8급",
+            "color": "#c767dc",
+            "size": 22
+          },
+          {
+            "name": "9급",
+            "color": "#c767dc",
+            "size": 19
+          }
+        ]
+      },
+      {
+        "name": "별정직",
+        "color": "#a367dc",
+        "size": 5
+      },
+      {
+        "name": "기능직",
+        "color": "#8067dc",
+        "size": 93
+      },
+      {
+        "name": "대학회계직",
+        "color": "#6771dc",
+        "size": 133
+      },
+      {
+        "name": "교육전문직",
+        "color": "#6794dc",
+        "size": 4
+      },
+      {
+        "name": "계약직",
+        "color": "#67b7dc",
+        "size": 383
+      }
+    ]
+  },
+  "2012": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "일반직",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "고위공무원",
+            "color": "#dc67ce",
+            "size": 1
+          },
+          {
+            "name": "4급",
+            "color": "#dc67ce",
+            "size": 21
+          },
+          {
+            "name": "5급",
+            "color": "#dc67ce",
+            "size": 31
+          },
+          {
+            "name": "6급",
+            "color": "#dc67ce",
+            "size": 72
+          },
+          {
+            "name": "7급",
+            "color": "#dc67ce",
+            "size": 58
+          },
+          {
+            "name": "8급",
+            "color": "#dc67ce",
+            "size": 29
+          },
+          {
+            "name": "9급",
+            "color": "#dc67ce",
+            "size": 20
+          }
+        ]
+      },
+      {
+        "name": "기술직",
+        "color": "#c767dc",
+        "children": [
+          {
+            "name": "4급",
+            "color": "#c767dc",
+            "size": 8
+          },
+          {
+            "name": "5급",
+            "color": "#c767dc",
+            "size": 19
+          },
+          {
+            "name": "6급",
+            "color": "#c767dc",
+            "size": 57
+          },
+          {
+            "name": "7급",
+            "color": "#c767dc",
+            "size": 44
+          },
+          {
+            "name": "8급",
+            "color": "#c767dc",
+            "size": 22
+          },
+          {
+            "name": "9급",
+            "color": "#c767dc",
+            "size": 19
+          }
+        ]
+      },
+      {
+        "name": "별정직",
+        "color": "#a367dc",
+        "size": 6
+      },
+      {
+        "name": "기능직",
+        "color": "#8067dc",
+        "size": 93
+      },
+      {
+        "name": "대학회계직",
+        "color": "#6771dc",
+        "size": 126
+      },
+      {
+        "name": "교육전문직",
+        "color": "#6794dc",
+        "size": 2
+      },
+      {
+        "name": "계약직",
+        "color": "#67b7dc",
+        "size": 444
+      }
+    ]
+  },
+  "2013": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "일반직",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "고위공무원",
+            "color": "#dc67ce",
+            "size": 1
+          },
+          {
+            "name": "4급",
+            "color": "#dc67ce",
+            "size": 23
+          },
+          {
+            "name": "5급",
+            "color": "#dc67ce",
+            "size": 33
+          },
+          {
+            "name": "6급",
+            "color": "#dc67ce",
+            "size": 74
+          },
+          {
+            "name": "7급",
+            "color": "#dc67ce",
+            "size": 60
+          },
+          {
+            "name": "8급",
+            "color": "#dc67ce",
+            "size": 31
+          },
+          {
+            "name": "9급",
+            "color": "#dc67ce",
+            "size": 24
+          }
+        ]
+      },
+      {
+        "name": "기술직",
+        "color": "#c767dc",
+        "children": [
+          {
+            "name": "4급",
+            "color": "#c767dc",
+            "size": 8
+          },
+          {
+            "name": "5급",
+            "color": "#c767dc",
+            "size": 19
+          },
+          {
+            "name": "6급",
+            "color": "#c767dc",
+            "size": 54
+          },
+          {
+            "name": "7급",
+            "color": "#c767dc",
+            "size": 46
+          },
+          {
+            "name": "8급",
+            "color": "#c767dc",
+            "size": 22
+          },
+          {
+            "name": "9급",
+            "color": "#c767dc",
+            "size": 19
+          }
+        ]
+      },
+      {
+        "name": "별정직",
+        "color": "#a367dc",
+        "size": 4
+      },
+      {
+        "name": "기능직",
+        "color": "#8067dc",
+        "size": 104
+      },
+      {
+        "name": "대학회계직",
+        "color": "#6771dc",
+        "size": 127
+      },
+      {
+        "name": "교육전문직",
+        "color": "#6794dc",
+        "size": 1
+      },
+      {
+        "name": "계약직",
+        "color": "#67b7dc",
+        "size": 347
+      }
+    ]
+  },
+  "2014": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "일반직",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "고위공무원",
+            "color": "#dc67ce",
+            "size": 10
+          },
+          {
+            "name": "4급",
+            "color": "#dc67ce",
+            "size": 35
+          },
+          {
+            "name": "5급",
+            "color": "#dc67ce",
+            "size": 45
+          },
+          {
+            "name": "6급",
+            "color": "#dc67ce",
+            "size": 81
+          },
+          {
+            "name": "7급",
+            "color": "#dc67ce",
+            "size": 66
+          },
+          {
+            "name": "8급",
+            "color": "#dc67ce",
+            "size": 43
+          },
+          {
+            "name": "9급",
+            "color": "#dc67ce",
+            "size": 36
+          }
+        ]
+      },
+      {
+        "name": "기술직",
+        "color": "#c767dc",
+        "children": [
+          {
+            "name": "4급",
+            "color": "#c767dc",
+            "size": 10
+          },
+          {
+            "name": "5급",
+            "color": "#c767dc",
+            "size": 21
+          },
+          {
+            "name": "6급",
+            "color": "#c767dc",
+            "size": 57
+          },
+          {
+            "name": "7급",
+            "color": "#c767dc",
+            "size": 47
+          },
+          {
+            "name": "8급",
+            "color": "#c767dc",
+            "size": 25
+          },
+          {
+            "name": "9급",
+            "color": "#c767dc",
+            "size": 21
+          }
+        ]
+      },
+      {
+        "name": "별정직",
+        "color": "#a367dc",
+        "size": 0
+      },
+      {
+        "name": "기능직",
+        "color": "#8067dc",
+        "size": 5
+      },
+      {
+        "name": "대학회계직",
+        "color": "#6771dc",
+        "size": 124
+      },
+      {
+        "name": "교육전문직",
+        "color": "#6794dc",
+        "size": 3
+      },
+      {
+        "name": "계약직",
+        "color": "#67b7dc",
+        "size": 347
+      }
+    ]
+  },
+  "2015": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "일반직",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "고위공무원",
+            "color": "#dc67ce",
+            "size": 7
+          },
+          {
+            "name": "4급",
+            "color": "#dc67ce",
+            "size": 25
+          },
+          {
+            "name": "5급",
+            "color": "#dc67ce",
+            "size": 35
+          },
+          {
+            "name": "6급",
+            "color": "#dc67ce",
+            "size": 46
+          },
+          {
+            "name": "7급",
+            "color": "#dc67ce",
+            "size": 56
+          },
+          {
+            "name": "8급",
+            "color": "#dc67ce",
+            "size": 28
+          },
+          {
+            "name": "9급",
+            "color": "#dc67ce",
+            "size": 26
+          }
+        ]
+      },
+      {
+        "name": "기술직",
+        "color": "#c767dc",
+        "children": [
+          {
+            "name": "4급",
+            "color": "#c767dc",
+            "size": 7
+          },
+          {
+            "name": "5급",
+            "color": "#c767dc",
+            "size": 11
+          },
+          {
+            "name": "6급",
+            "color": "#c767dc",
+            "size": 36
+          },
+          {
+            "name": "7급",
+            "color": "#c767dc",
+            "size": 32
+          },
+          {
+            "name": "8급",
+            "color": "#c767dc",
+            "size": 25
+          },
+          {
+            "name": "9급",
+            "color": "#c767dc",
+            "size": 21
+          }
+        ]
+      },
+      {
+        "name": "별정직",
+        "color": "#a367dc",
+        "size": 0
+      },
+      {
+        "name": "기능직",
+        "color": "#8067dc",
+        "size": 0
+      },
+      {
+        "name": "대학회계직",
+        "color": "#6771dc",
+        "size": 113
+      },
+      {
+        "name": "교육전문직",
+        "color": "#6794dc",
+        "size": 4
+      },
+      {
+        "name": "계약직",
+        "color": "#67b7dc",
+        "size": 258
+      }
+    ]
+  },
+  "2016": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "일반직",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "고위공무원",
+            "color": "#dc67ce",
+            "size": 10
+          },
+          {
+            "name": "4급",
+            "color": "#dc67ce",
+            "size": 25
+          },
+          {
+            "name": "5급",
+            "color": "#dc67ce",
+            "size": 35
+          },
+          {
+            "name": "6급",
+            "color": "#dc67ce",
+            "size": 49
+          },
+          {
+            "name": "7급",
+            "color": "#dc67ce",
+            "size": 61
+          },
+          {
+            "name": "8급",
+            "color": "#dc67ce",
+            "size": 26
+          },
+          {
+            "name": "9급",
+            "color": "#dc67ce",
+            "size": 20
+          }
+        ]
+      },
+      {
+        "name": "기술직",
+        "color": "#c767dc",
+        "children": [
+          {
+            "name": "4급",
+            "color": "#c767dc",
+            "size": 7
+          },
+          {
+            "name": "5급",
+            "color": "#c767dc",
+            "size": 11
+          },
+          {
+            "name": "6급",
+            "color": "#c767dc",
+            "size": 36
+          },
+          {
+            "name": "7급",
+            "color": "#c767dc",
+            "size": 32
+          },
+          {
+            "name": "8급",
+            "color": "#c767dc",
+            "size": 21
+          },
+          {
+            "name": "9급",
+            "color": "#c767dc",
+            "size": 21
+          }
+        ]
+      },
+      {
+        "name": "별정직",
+        "color": "#a367dc",
+        "size": 3
+      },
+      {
+        "name": "기능직",
+        "color": "#8067dc",
+        "size": 0
+      },
+      {
+        "name": "대학회계직",
+        "color": "#6771dc",
+        "size": 112
+      },
+      {
+        "name": "교육전문직",
+        "color": "#6794dc",
+        "size": 4
+      },
+      {
+        "name": "계약직",
+        "color": "#67b7dc",
+        "size": 266
+      }
+    ]
+  },
+  "2017": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "일반직",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "고위공무원",
+            "color": "#dc67ce",
+            "size": 10
+          },
+          {
+            "name": "4급",
+            "color": "#dc67ce",
+            "size": 20
+          },
+          {
+            "name": "5급",
+            "color": "#dc67ce",
+            "size": 25
+          },
+          {
+            "name": "6급",
+            "color": "#dc67ce",
+            "size": 46
+          },
+          {
+            "name": "7급",
+            "color": "#dc67ce",
+            "size": 56
+          },
+          {
+            "name": "8급",
+            "color": "#dc67ce",
+            "size": 20
+          },
+          {
+            "name": "9급",
+            "color": "#dc67ce",
+            "size": 19
+          }
+        ]
+      },
+      {
+        "name": "기술직",
+        "color": "#c767dc",
+        "children": [
+          {
+            "name": "4급",
+            "color": "#c767dc",
+            "size": 12
+          },
+          {
+            "name": "5급",
+            "color": "#c767dc",
+            "size": 17
+          },
+          {
+            "name": "6급",
+            "color": "#c767dc",
+            "size": 42
+          },
+          {
+            "name": "7급",
+            "color": "#c767dc",
+            "size": 38
+          },
+          {
+            "name": "8급",
+            "color": "#c767dc",
+            "size": 27
+          },
+          {
+            "name": "9급",
+            "color": "#c767dc",
+            "size": 27
+          }
+        ]
+      },
+      {
+        "name": "별정직",
+        "color": "#a367dc",
+        "size": 1
+      },
+      {
+        "name": "기능직",
+        "color": "#8067dc",
+        "size": 0
+      },
+      {
+        "name": "대학회계직",
+        "color": "#6771dc",
+        "size": 108
+      },
+      {
+        "name": "교육전문직",
+        "color": "#6794dc",
+        "size": 4
+      },
+      {
+        "name": "계약직",
+        "color": "#67b7dc",
+        "size": 282
+      }
+    ]
+  },
+  "2018": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "일반직",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "고위공무원",
+            "color": "#dc67ce",
+            "size": 10
+          },
+          {
+            "name": "4급",
+            "color": "#dc67ce",
+            "size": 24
+          },
+          {
+            "name": "5급",
+            "color": "#dc67ce",
+            "size": 34
+          },
+          {
+            "name": "6급",
+            "color": "#dc67ce",
+            "size": 50
+          },
+          {
+            "name": "7급",
+            "color": "#dc67ce",
+            "size": 60
+          },
+          {
+            "name": "8급",
+            "color": "#dc67ce",
+            "size": 27
+          },
+          {
+            "name": "9급",
+            "color": "#dc67ce",
+            "size": 25
+          }
+        ]
+      },
+      {
+        "name": "기술직",
+        "color": "#c767dc",
+        "children": [
+          {
+            "name": "4급",
+            "color": "#c767dc",
+            "size": 5
+          },
+          {
+            "name": "5급",
+            "color": "#c767dc",
+            "size": 10
+          },
+          {
+            "name": "6급",
+            "color": "#c767dc",
+            "size": 35
+          },
+          {
+            "name": "7급",
+            "color": "#c767dc",
+            "size": 31
+          },
+          {
+            "name": "8급",
+            "color": "#c767dc",
+            "size": 20
+          },
+          {
+            "name": "9급",
+            "color": "#c767dc",
+            "size": 20
+          }
+        ]
+      },
+      {
+        "name": "별정직",
+        "color": "#a367dc",
+        "size": 1
+      },
+      {
+        "name": "기능직",
+        "color": "#8067dc",
+        "size": 0
+      },
+      {
+        "name": "대학회계직",
+        "color": "#6771dc",
+        "size": 105
+      },
+      {
+        "name": "교육전문직",
+        "color": "#6794dc",
+        "size": 5
+      },
+      {
+        "name": "계약직",
+        "color": "#67b7dc",
+        "size": 485
+      }
+    ]
+  },
+  "2019": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "일반직",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "고위공무원",
+            "color": "#dc67ce",
+            "size": 10
+          },
+          {
+            "name": "4급",
+            "color": "#dc67ce",
+            "size": 20
+          },
+          {
+            "name": "5급",
+            "color": "#dc67ce",
+            "size": 40
+          },
+          {
+            "name": "6급",
+            "color": "#dc67ce",
+            "size": 60
+          },
+          {
+            "name": "7급",
+            "color": "#dc67ce",
+            "size": 52
+          },
+          {
+            "name": "8급",
+            "color": "#dc67ce",
+            "size": 35
+          },
+          {
+            "name": "9급",
+            "color": "#dc67ce",
+            "size": 25
+          }
+        ]
+      },
+      {
+        "name": "기술직",
+        "color": "#c767dc",
+        "children": [
+          {
+            "name": "4급",
+            "color": "#c767dc",
+            "size": 3
+          },
+          {
+            "name": "5급",
+            "color": "#c767dc",
+            "size": 10
+          },
+          {
+            "name": "6급",
+            "color": "#c767dc",
+            "size": 30
+          },
+          {
+            "name": "7급",
+            "color": "#c767dc",
+            "size": 37
+          },
+          {
+            "name": "8급",
+            "color": "#c767dc",
+            "size": 21
+          },
+          {
+            "name": "9급",
+            "color": "#c767dc",
+            "size": 18
+          }
+        ]
+      },
+      {
+        "name": "별정직",
+        "color": "#a367dc",
+        "size": 1
+      },
+      {
+        "name": "기능직",
+        "color": "#8067dc",
+        "size": 0
+      },
+      {
+        "name": "대학회계직",
+        "color": "#6771dc",
+        "size": 101
+      },
+      {
+        "name": "교육전문직",
+        "color": "#6794dc",
+        "size": 0
+      },
+      {
+        "name": "계약직",
+        "color": "#67b7dc",
+        "size": 510
+      }
+    ]
+  }
 }
