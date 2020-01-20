@@ -76,7 +76,7 @@ function stackGraph(data) {
         totalBullet.dy = -20;
         totalBullet.label.text = "{valueY.total}";
         totalBullet.label.hideOversized = false;
-        totalBullet.label.fontSize = 18;
+        totalBullet.label.fontSize = 16;
         // totalBullet.label.background.fill = totalSeries.stroke;
         totalBullet.label.background.fillOpacity = 0.2;
         totalBullet.label.padding(5, 10, 5, 10);
