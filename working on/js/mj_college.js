@@ -100,8 +100,8 @@ function drawPyramid(_data) {
         maleSeries.strokeWidth = 3;
         maleSeries.dataFields.categoryY = "type";
         maleSeries.interpolationDuration = 1000;
-        //maleSeries.columns.template.tooltipText = "Males, age{categoryY}: {valueX} ({valueX.percent.formatNumber('#.0')}%)";
-        //maleSeries.sequencedInterpolation = true;
+        maleSeries.columns.template.tooltipText = "{type}의 남자는 {male}명({malerate}%)입니다.";
+        maleSeries.sequencedInterpolation = true;
 
         return chart;
     }
@@ -159,14 +159,14 @@ function drawPyramid(_data) {
         femaleSeries.fill = color;
         femaleSeries.stroke = menucondition;
         femaleSeries.strokeWidth = 3;
-        //femaleSeries.sequencedInterpolation = true;
-        //femaleSeries.columns.template.tooltipText = "Females, age{categoryY}: {valueX} ({valueX.percent.formatNumber('#.0')}%)";
+        femaleSeries.sequencedInterpolation = true;
+        femaleSeries.columns.template.tooltipText = "{type}의 여자는 {female}명({femalerate}%)입니다.";
         femaleSeries.dataFields.categoryY = "type";
 
         return chart;
     }
 
-    function createPie(data, menucondition) {
+    function createPie(data) {
         var chart = container.createChild(am4charts.PieChart);
         chart.width = am4core.percent(10);
         chart.height = 70;
@@ -181,7 +181,6 @@ function drawPyramid(_data) {
         pieSeries.labels.template.disabled = true;
         pieSeries.ticks.template.disabled = true;
         pieSeries.slices.template.propertyFields.fill = "color";
-        //pieSeries.slices.template.adapter.add("fill", function () { return color[1] });
         pieSeries.slices.template.stroke = "#ffffff";
 
         // chart.chartContainer.minHeight = 40;
