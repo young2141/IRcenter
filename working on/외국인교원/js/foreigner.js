@@ -1,12 +1,11 @@
-var selval1, selval2, total, dummyData1;
 function parse(callback) {
-    $.getJSON("../json/foreigner.json", json => {
+    $.getJSON("C:/Users/tkekd/OneDrive/바탕 화면/IR센터/json/foreigner.json", json => {
 
     });
 }
 am4core.ready(function () {
 
-    jQuery.getJSON("../json/foreigner.json", json => {
+    jQuery.getJSON("C:/Users/tkekd/OneDrive/바탕 화면/IR센터/json/foreigner.json", json => {
 
         // Themes begin
         am4core.useTheme(am4themes_frozen);

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/frozen.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="../js/foreigner4.js"></script>
+    <title>explore the data</title>
+    <style>
+        #chartdiv1, #chartdiv2 {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="radio" name="Gtype" id="pie1" checked="checked" onclick="Change(); drawChart();">교원구성별<br>
+        <input type="radio" name="Gtype" id="pie2" onclick="Change(); drawChart();">전공계열별<br><br>
+    </form>
+    <div id="summaryBox">
+        <h2><span id="P1">교원구성별 차트</span></h2>
+    </div>
+    <div id="chartdiv1"></div>
+    <div id="chartdiv2"></div>
+    <script>
+        pie1();
+    </script>
+    <script>
+
+        function Change() {
+            var temp = document.getElementById("pie1")
+            var Target1 = document.getElementById("P1")
+
+            if (temp.checked == true) {
+                Target1.innerHTML = "교원구성별 차트"
+            }
+            temp = document.getElementById("pie2")
+            if (temp.checked == true) {
+                Target1.innerHTML = "전공계열별 차트"
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
