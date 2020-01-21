@@ -2,91 +2,71 @@
   "2010": {
     "assistant": {
       "type": "조교",
-      "male": 105,
-      "female": 118,
-      "malerate": 47.08520179372197,
-      "femalerate": 52.91479820627803
+      "male": 88,
+      "female": 106
     }
   },
   "2011": {
     "assistant": {
       "type": "조교",
-      "male": 106,
-      "female": 117,
-      "malerate": 47.53363228699551,
-      "femalerate": 52.46636771300449
+      "male": 89,
+      "female": 106
     }
   },
   "2012": {
     "assistant": {
       "type": "조교",
-      "male": 101,
-      "female": 122,
-      "malerate": 45.2914798206278,
-      "femalerate": 54.7085201793722
+      "male": 84,
+      "female": 111
     }
   },
   "2013": {
     "assistant": {
       "type": "조교",
-      "male": 98,
-      "female": 118,
-      "malerate": 45.370370370370374,
-      "femalerate": 54.629629629629626
+      "male": 84,
+      "female": 112
     }
   },
   "2014": {
     "assistant": {
       "type": "조교",
-      "male": 99,
-      "female": 116,
-      "malerate": 46.04651162790697,
-      "femalerate": 53.95348837209303
+      "male": 85,
+      "female": 110
     }
   },
   "2015": {
     "assistant": {
       "type": "조교",
-      "male": 97,
-      "female": 118,
-      "malerate": 45.116279069767444,
-      "femalerate": 54.883720930232556
+      "male": 83,
+      "female": 112
     }
   },
   "2016": {
     "assistant": {
       "type": "조교",
-      "male": 95,
-      "female": 119,
-      "malerate": 44.39252336448598,
-      "femalerate": 55.60747663551402
+      "male": 81,
+      "female": 113
     }
   },
   "2017": {
     "assistant": {
       "type": "조교",
-      "male": 91,
-      "female": 123,
-      "malerate": 42.52336448598131,
-      "femalerate": 57.47663551401869
+      "male": 80,
+      "female": 115
     }
   },
   "2018": {
     "assistant": {
       "type": "조교",
-      "male": 85,
-      "female": 128,
-      "malerate": 39.906103286384976,
-      "femalerate": 60.093896713615024
+      "male": 75,
+      "female": 119
     }
   },
   "2019": {
     "assistant": {
       "type": "조교",
       "male": 86,
-      "female": 129,
-      "malerate": 40,
-      "femalerate": 60
+      "female": 129
     }
   }
 }

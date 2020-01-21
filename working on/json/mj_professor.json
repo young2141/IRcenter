@@ -2,301 +2,221 @@
   "2010": {
     "professor": {
       "type": "교수",
-      "male": 681,
-      "female": 98,
-      "malerate": 87.41976893453145,
-      "femalerate": 12.580231065468553
+      "male": 549,
+      "female": 51
     },
     "associate": {
       "type": "부교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 77.57009345794393,
-      "femalerate": 22.429906542056074
+      "male": 187,
+      "female": 32
     },
     "assistant": {
       "type": "조교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 75.40106951871658,
-      "femalerate": 24.598930481283418
+      "male": 123,
+      "female": 35
     },
     "none": {
-      "type": "비전임교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 64.74622770919068,
-      "femalerate": 35.25377229080932
+      "type": "비전임교원",
+      "male": 818,
+      "female": 437
     }
   },
   "2011": {
     "professor": {
       "type": "교수",
-      "male": 681,
-      "female": 98,
-      "malerate": 87.41976893453145,
-      "femalerate": 12.580231065468553
+      "male": 555,
+      "female": 51
     },
     "associate": {
       "type": "부교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 77.57009345794393,
-      "femalerate": 22.429906542056074
+      "male": 213,
+      "female": 42
     },
     "assistant": {
       "type": "조교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 75.40106951871658,
-      "femalerate": 24.598930481283418
+      "male": 92,
+      "female": 30
     },
     "none": {
-      "type": "비전임교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 64.74622770919068,
-      "femalerate": 35.25377229080932
+      "type": "비전임교원",
+      "male": 895,
+      "female": 536
     }
   },
   "2012": {
     "professor": {
       "type": "교수",
-      "male": 681,
-      "female": 98,
-      "malerate": 87.41976893453145,
-      "femalerate": 12.580231065468553
+      "male": 575,
+      "female": 56
     },
     "associate": {
       "type": "부교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 77.57009345794393,
-      "femalerate": 22.429906542056074
+      "male": 216,
+      "female": 49
     },
     "assistant": {
       "type": "조교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 75.40106951871658,
-      "femalerate": 24.598930481283418
+      "male": 89,
+      "female": 30
     },
     "none": {
-      "type": "비전임교수",
+      "type": "비전임교원",
       "male": 166,
-      "female": 48,
-      "malerate": 64.74622770919068,
-      "femalerate": 35.25377229080932
+      "female": 48
     }
   },
   "2013": {
     "professor": {
       "type": "교수",
-      "male": 681,
-      "female": 98,
-      "malerate": 87.41976893453145,
-      "femalerate": 12.580231065468553
+      "male": 595,
+      "female": 57
     },
     "associate": {
       "type": "부교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 77.57009345794393,
-      "femalerate": 22.429906542056074
+      "male": 205,
+      "female": 46
     },
     "assistant": {
       "type": "조교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 75.40106951871658,
-      "femalerate": 24.598930481283418
+      "male": 121,
+      "female": 37
     },
     "none": {
-      "type": "비전임교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 64.74622770919068,
-      "femalerate": 35.25377229080932
+      "type": "비전임교원",
+      "male": 980,
+      "female": 532
     }
   },
   "2014": {
     "professor": {
       "type": "교수",
-      "male": 681,
-      "female": 98,
-      "malerate": 87.41976893453145,
-      "femalerate": 12.580231065468553
+      "male": 612,
+      "female": 65
     },
     "associate": {
       "type": "부교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 77.57009345794393,
-      "femalerate": 22.429906542056074
+      "male": 188,
+      "female": 46
     },
     "assistant": {
       "type": "조교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 75.40106951871658,
-      "femalerate": 24.598930481283418
+      "male": 113,
+      "female": 41
     },
     "none": {
-      "type": "비전임교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 64.74622770919068,
-      "femalerate": 35.25377229080932
+      "type": "비전임교원",
+      "male": 930,
+      "female": 528
     }
   },
   "2015": {
     "professor": {
       "type": "교수",
-      "male": 681,
-      "female": 98,
-      "malerate": 87.41976893453145,
-      "femalerate": 12.580231065468553
+      "male": 631,
+      "female": 72
     },
     "associate": {
       "type": "부교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 77.57009345794393,
-      "femalerate": 22.429906542056074
+      "male": 170,
+      "female": 43
     },
     "assistant": {
       "type": "조교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 75.40106951871658,
-      "femalerate": 24.598930481283418
+      "male": 118,
+      "female": 44
     },
     "none": {
-      "type": "비전임교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 64.74622770919068,
-      "femalerate": 35.25377229080932
+      "type": "비전임교원",
+      "male": 949,
+      "female": 525
     }
   },
   "2016": {
     "professor": {
       "type": "교수",
-      "male": 681,
-      "female": 98,
-      "malerate": 87.41976893453145,
-      "femalerate": 12.580231065468553
+      "male": 648,
+      "female": 81
     },
     "associate": {
       "type": "부교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 77.57009345794393,
-      "femalerate": 22.429906542056074
+      "male": 149,
+      "female": 40
     },
     "assistant": {
       "type": "조교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 75.40106951871658,
-      "femalerate": 24.598930481283418
+      "male": 122,
+      "female": 38
     },
     "none": {
-      "type": "비전임교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 64.74622770919068,
-      "femalerate": 35.25377229080932
+      "type": "비전임교원",
+      "male": 866,
+      "female": 530
     }
   },
   "2017": {
     "professor": {
       "type": "교수",
-      "male": 681,
-      "female": 98,
-      "malerate": 87.41976893453145,
-      "femalerate": 12.580231065468553
+      "male": 647,
+      "female": 87
     },
     "associate": {
       "type": "부교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 77.57009345794393,
-      "femalerate": 22.429906542056074
+      "male": 151,
+      "female": 38
     },
     "assistant": {
       "type": "조교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 75.40106951871658,
-      "femalerate": 24.598930481283418
+      "male": 112,
+      "female": 40
     },
     "none": {
-      "type": "비전임교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 64.74622770919068,
-      "femalerate": 35.25377229080932
+      "type": "비전임교원",
+      "male": 926,
+      "female": 521
     }
   },
   "2018": {
     "professor": {
       "type": "교수",
-      "male": 681,
-      "female": 98,
-      "malerate": 87.41976893453145,
-      "femalerate": 12.580231065468553
+      "male": 643,
+      "female": 84
     },
     "associate": {
       "type": "부교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 77.57009345794393,
-      "femalerate": 22.429906542056074
+      "male": 157,
+      "female": 44
     },
     "assistant": {
       "type": "조교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 75.40106951871658,
-      "femalerate": 24.598930481283418
+      "male": 109,
+      "female": 42
     },
     "none": {
-      "type": "비전임교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 64.74622770919068,
-      "femalerate": 35.25377229080932
+      "type": "비전임교원",
+      "male": 912,
+      "female": 531
     }
   },
   "2019": {
     "professor": {
       "type": "교수",
-      "male": 681,
-      "female": 98,
-      "malerate": 87.41976893453145,
-      "femalerate": 12.580231065468553
+      "male": 632,
+      "female": 91
     },
     "associate": {
       "type": "부교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 77.57009345794393,
-      "femalerate": 22.429906542056074
+      "male": 151,
+      "female": 46
     },
     "assistant": {
       "type": "조교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 75.40106951871658,
-      "femalerate": 24.598930481283418
+      "male": 122,
+      "female": 43
     },
     "none": {
-      "type": "비전임교수",
-      "male": 166,
-      "female": 48,
-      "malerate": 64.74622770919068,
-      "femalerate": 35.25377229080932
+      "type": "비전임교원",
+      "male": 944,
+      "female": 514
     }
   }
 }
