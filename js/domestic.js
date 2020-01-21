@@ -265,15 +265,6 @@ function draw_map2(mode, mode2, data) {
                 max: 50
             });
 
-            var label = imageSeriesTemplate.createChild(am4core.Label);
-            if (mode == "파견")
-                label.text = "{파견}";
-            else
-                label.text = "{초청}";
-            label.fill = am4core.color("#000");
-            label.verticalCenter = "middle";
-            label.horizontalCenter = "middle";
-
             // set propertyfields
 
             imageSeriesTemplate.propertyFields.latitude = "latitude";

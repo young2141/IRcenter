@@ -224,15 +224,6 @@ function draw_map2(mode, mode2, data) {
             max: 50
         });
 
-        var label = imageSeriesTemplate.createChild(am4core.Label);
-        if (mode == "파견")
-            label.text = "{disfatch}";
-        else
-            label.text = "{invitation}";
-        label.fill = am4core.color("#000");
-        label.verticalCenter = "middle";
-        label.horizontalCenter = "middle";
-
         /*
         var label = imageSeriesTemplate.createChild(am4core.Label);
         if (mode == "파견")
