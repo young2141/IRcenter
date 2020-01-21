@@ -1,22 +1,28 @@
 function chart() {
-    $.getJSON("../../../json/mj_summary.json", jsonData => {
+    $.getJSON("../../../json/studentexp_domestic_company.json", jsonData => {
         var data = jsonData;
-        console.log(data)
-        drawCurved(data);
+        drawCurved("chartdiv1", data);
+    });
+    $.getJSON("../../../json/studentexp_domestic_student.json", jsonData => {
+        var data = jsonData;
+        drawCurved("chartdiv2", data);
     });
 }
 
-function drawCurved(_data) {
-    var typename = ["professor", "associateprofessor", "assistantprofessor", "teachingassistant", "concurrently", "invitation", "donate", "contract", "honor", "visist", "parttime"];
-    var typename_kr = ["교수", "부교수", "조교수", "조교", "겸임교수", "초빙교수", "기금교수", "계약교수", "명예교수", "방문교수", "시간강사"]
+function drawCurved(_div, _data) {
+    var typename = ["season_summer", "season_winter", "semester_summer", "semester_winter", "always_summer", "always_winter"];
+    var typename_kr = ["계절제(7주) 하계", "계절제(7주) 동계", "학기제(24주) 하계", "계절제(24주) 동계", "수시제(4주) 하계", "수시제(4주) 동계"]
     var color = {
-        "professor": "#ff0000", "associateprofessor": "#ff0000", "assistantprofessor": "#ff0000",
-        "teachingassistant": "#00ff00",
-        "concurrently": "#0000ff", "invitation": "#0000ff", "donate": "#0000ff", "contract": "#0000ff", "honor": "#0000ff", "visit": "#0000ff", "parttime": "#0000ff"
+        "season_summer": "#FE4459",
+        "season_winter": "#FCFF57",
+        "semester_summer": "#52A1FF",
+        "semester_winter": "#43E884",
+        "always_summer": "#E8A343",
+        "always_winter": "#26DE74"
     };
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
-        var chart = am4core.create(divchart1, am4charts.XYChart);
+        var chart = am4core.create(_div, am4charts.XYChart);
         chart.data = _data;
 
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());

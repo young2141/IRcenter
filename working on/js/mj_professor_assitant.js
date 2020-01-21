@@ -87,7 +87,7 @@ function drawPyramid(_data, flag) {
             maleChart.height = 70;
 
         maleChart.data = data;
-        maleChart.padding(20, 5, 2, 5);
+        maleChart.padding(2, 5, 2, 5);
 
         var maleCategoryAxis = maleChart.yAxes.push(new am4charts.CategoryAxis());
         maleCategoryAxis.dataFields.category = "type";
@@ -99,10 +99,9 @@ function drawPyramid(_data, flag) {
         var maleValueAxis = maleChart.xAxes.push(new am4charts.ValueAxis());
         maleValueAxis.renderer.inversed = true;
         maleValueAxis.min = 0;
-        maleValueAxis.max = 100;
+        maleValueAxis.max = 1000;
         maleValueAxis.strictMinMax = true;
         maleValueAxis.numberFormatter = new am4core.NumberFormatter();
-        maleValueAxis.numberFormatter.numberFormat = "#.#'%'";
 
         maleValueAxis.renderer.grid.template.disabled = true;
         maleValueAxis.renderer.baseGrid.disabled = true;
@@ -110,12 +109,12 @@ function drawPyramid(_data, flag) {
         maleValueAxis.cursorTooltipEnabled = false;
 
         var maleSeries = maleChart.series.push(new am4charts.ColumnSeries());
-        maleSeries.dataFields.valueX = "malerate";
+        maleSeries.dataFields.valueX = "male";
         maleSeries.fill = color;
         maleSeries.stroke = maleSeries.fill;
         maleSeries.dataFields.categoryY = "type";
         maleSeries.interpolationDuration = 1000;
-        maleSeries.columns.template.tooltipText = "{type}의 남자는 {male}명({malerate}%)입니다.";
+        maleSeries.columns.template.tooltipText = "{type}의 남자는 {male}명입니다.";
         maleSeries.sequencedInterpolation = true;
 
         return chart;
@@ -143,7 +142,7 @@ function drawPyramid(_data, flag) {
 
         femaleChart.data = data;
 
-        femaleChart.padding(20, 5, 2, 5);
+        femaleChart.padding(2, 5, 2, 5);
 
         var femaleCategoryAxis = femaleChart.yAxes.push(new am4charts.CategoryAxis());
         femaleCategoryAxis.dataFields.category = "type";
@@ -154,10 +153,9 @@ function drawPyramid(_data, flag) {
 
         var femaleValueAxis = femaleChart.xAxes.push(new am4charts.ValueAxis());
         femaleValueAxis.min = 0;
-        femaleValueAxis.max = 100;
+        femaleValueAxis.max = 1000;
         femaleValueAxis.strictMinMax = true;
         femaleValueAxis.numberFormatter = new am4core.NumberFormatter();
-        femaleValueAxis.numberFormatter.numberFormat = "#.#'%'";
 
         femaleValueAxis.renderer.grid.template.disabled = true;
         femaleValueAxis.renderer.baseGrid.disabled = true;
@@ -166,11 +164,11 @@ function drawPyramid(_data, flag) {
 
         // Create series
         var femaleSeries = femaleChart.series.push(new am4charts.ColumnSeries());
-        femaleSeries.dataFields.valueX = "femalerate";
+        femaleSeries.dataFields.valueX = "female";
         femaleSeries.fill = color;
         femaleSeries.stroke = femaleSeries.fill;
-        femaleSeries.sequencedInterpolation = true;
-        femaleSeries.columns.template.tooltipText = "{type}의 여자는 {female}명({femalerate}%)입니다.";
+        femaleSeries.sequencedInterpolation = false;
+        femaleSeries.columns.template.tooltipText = "{type}의 여자는 {female}명입니다.";
         femaleSeries.dataFields.categoryY = "type";
        
         return chart;
@@ -180,7 +178,7 @@ function drawPyramid(_data, flag) {
         var chart = container.createChild(am4charts.PieChart);
         chart.width = am4core.percent(10);
         chart.height = 70;
-        chart.padding(20, 5, 2, 5);
+        chart.padding(2, 5, 2, 5);
 
         chart.data = data;
 
@@ -202,7 +200,7 @@ function drawPyramid(_data, flag) {
 
     if (flag == "professor") {
         var typename = ["professor", "associate", "assistant", "none"];
-        var typename_kr = ["교수", "부교수", "조교수", "비전임교수"];
+        var typename_kr = ["교수", "부교수", "조교수", "비전임교원"];
         var flag = true;
         for (var i = 0; i < typename.length; i++) {
             if (i == typename.length - 1)
@@ -210,13 +208,13 @@ function drawPyramid(_data, flag) {
             createMale([_data[typename[i]]], "#0000ff", flag);
             createLabel(typename_kr[i]);
             createFemale([_data[typename[i]]], "#ffff00", flag);
-            createPie([{ "type": "male", "value": _data[typename[i]]["malerate"], "color": "#0000ff" }, { "type": "female", "value": _data[typename[i]]["femalerate"], "color": "#ffff00" }]);
+            createPie([{ "type": "male", "value": _data[typename[i]]["male"], "color": "#0000ff" }, { "type": "female", "value": _data[typename[i]]["female"], "color": "#ffff00" }]);
         }
     }
     else {
         createMale([_data["assistant"]], "#0000ff", false);
         createLabel("조교");
         createFemale([_data["assistant"]], "#ffff00", false);
-        createPie([{ "type": "male", "value": _data["assistant"]["malerate"], "color": "#0000ff" }, { "type": "female", "value": _data["assistant"]["femalerate"], "color": "#ffff00" }]);
+        createPie([{ "type": "male", "value": _data["assistant"]["male"], "color": "#0000ff" }, { "type": "female", "value": _data["assistant"]["female"], "color": "#ffff00" }]);
     }
 }
