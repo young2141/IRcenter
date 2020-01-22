@@ -19,7 +19,23 @@
 <style type="text/css">
 	@import url('../../../css/output_default.css');
 
-	#chartdiv {
+	.node circle {
+		fill: #fff;
+		stroke: steelblue;
+		stroke-width: 3px;
+	}
+
+	.node text {
+		font: 12px sans-serif;
+	}
+
+	.link {
+		fill: none;
+		stroke: #ccc;
+		stroke-width: 2px;
+	}
+
+	#chartdiv1 {
 		width: 1000px;
 		height: 500px;
 	}
@@ -61,11 +77,11 @@
 					<tbody>
 						<tr>
 							<td style="border-style: none; font-size : 30px">
-								<a href="학생활동_7_글챌.html">
+								<a href="학생활동_6_해외봉사.html">
 									<span id="black">◀</span>
 								</a>
 							</td>
-							<td style="background-color : #eeeeee">
+							<td>
 								<a href="학생활동_1_요약.html"><span id="black">요약</span></a>
 							</td>
 							<td>
@@ -83,11 +99,11 @@
 							<td>
 								<a href="학생활동_6_해외봉사.html"><span id="black">해외 봉사활동</span></a>
 							</td>
-							<td>
+							<td style="background-color : #eeeeee">
 								<a href="학생활동_7_글챌.html"><span id="black">Global Challenger<br> Program</span></a>
 							</td>
 							<td style="border-style: none; font-size : 30px">
-								<a href="학생활동_2_현장실습.html">
+								<a href="학생활동_1_요약.html">
 									<span style="color: black">▶</span>
 								</a>
 							</td>
@@ -102,36 +118,7 @@
 	<div id="TOP">
 
         <div class="legend" id="gotop" style="left:80%; top :40%">
-            <span style="font-size: 20px"><b>년도별 검색</b></span>
-            <br>
-
-            <input type=button value='◀' onclick=decrease()>
-            <input id="years" type=range min=2010 max=2018 step=1 value=2018 oninput=valuechange(parseInt(this.value))>
-            <input type=button value='▶' onclick=increase()>
-
-            <script>
-                function valuechange(value) {
-					document.getElementById('span1').innerHTML = (value);
-					document.getElementById('span2').innerHTML = (value);
-                    check();
-                }
-                function decrease() {
-                    current_value = document.getElementById('years').value
-                    console.log(current_value);
-                    document.getElementById('years').value -= 1
-                    valuechange(document.getElementById('years').value)
-                }
-                function increase() {
-                    current_value = document.getElementById('years').value
-                    console.log(current_value);
-                    document.getElementById('years').value++;
-                    valuechange(document.getElementById('years').value)
-                }
-            </script>
-
-            <br>
-            <div style="text-align: center; width: 180px"><span id="span1">2018</span></div>
-			</div>
+        </div>
 
 		<script>
 			var currentPosition = parseInt($("#gotop").css("top"));
@@ -152,10 +139,13 @@
 
 		<a href="../학생.html"><span id="black">이전 메뉴로 이동</a></span>
 		<div id="summaryBox">
-			<h2><span id="span2">2018</span>년도 학생활동 참여 인원</h2>
+			<h2><span id="P1">Global Challenge Program 참여 현황</span></h2>
 		</div>
 		<div id="unitBox">
 			(단위 : 명)
+		</div>
+		<div id="unitBox">
+			(단위 : 팀)
 		</div>
 		<div id="chartdiv" class="chartdiv"></div>
 

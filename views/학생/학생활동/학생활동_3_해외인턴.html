@@ -11,7 +11,6 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-	<script src="../../../js/professor_and_assistant_summary.js"></script>
 
 
 </head>
@@ -23,6 +22,15 @@
 		width: 1000px;
 		height: 500px;
 	}
+
+	#testVal {
+        visibility: hidden;
+        position: absolute;
+        height: 100px;
+        overflow-y: scroll;
+        border: 1px solid gray;
+        background: white;
+    }
 </style>
 
 <body>
@@ -61,17 +69,17 @@
 					<tbody>
 						<tr>
 							<td style="border-style: none; font-size : 30px">
-								<a href="학생활동_7_글챌.html">
+								<a href="학생활동_2_현장실습.html">
 									<span id="black">◀</span>
 								</a>
 							</td>
-							<td style="background-color : #eeeeee">
+							<td>
 								<a href="학생활동_1_요약.html"><span id="black">요약</span></a>
 							</td>
 							<td>
 								<a href="학생활동_2_현장실습.html"><span id="black">현장실습교육과정 실습</span></a>
 							</td>
-							<td>
+							<td style="background-color : #eeeeee">
 								<a href="학생활동_3_해외인턴.html"><span id="black">해외 인턴쉽</span></a>
 							</td>
 							<td>
@@ -87,7 +95,7 @@
 								<a href="학생활동_7_글챌.html"><span id="black">Global Challenger<br> Program</span></a>
 							</td>
 							<td style="border-style: none; font-size : 30px">
-								<a href="학생활동_2_현장실습.html">
+								<a href="학생활동_4_동아리.html">
 									<span style="color: black">▶</span>
 								</a>
 							</td>
@@ -102,11 +110,15 @@
 	<div id="TOP">
 
         <div class="legend" id="gotop" style="left:80%; top :40%">
-            <span style="font-size: 20px"><b>년도별 검색</b></span>
+            <span style="color:#ff0000; font-size: 20px;"> ■ </span> 계절제<br>
+            <span style="color:#ff0000; font-size: 20px;"> ■ </span> 학기제<br>
+			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 파견회사<br><br>
+			
+			<span style="font-size: 20px"><b>년도별 검색</b></span>
             <br>
 
             <input type=button value='◀' onclick=decrease()>
-            <input id="years" type=range min=2010 max=2018 step=1 value=2018 oninput=valuechange(parseInt(this.value))>
+            <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
             <input type=button value='▶' onclick=increase()>
 
             <script>
@@ -130,8 +142,23 @@
             </script>
 
             <br>
-            <div style="text-align: center; width: 180px"><span id="span1">2018</span></div>
-			</div>
+			<div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
+			<br>
+
+			<span style="font-size: 20px"><b>과정별 검색</b></span><br>
+
+			<div style="width : 200px; height: 30px; border-style: solid; border-width: 0.5px; border-color:darkgray; padding: 1px">
+				<span id="selectBox1" name="selectBox1" onClick="choiceSelectBox(this);" style="font-size: 15px">
+					(전체)&nbsp;
+					<span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
+				</span>
+				<div id="testVal" class="testVal">
+					<input type="checkbox" name="process" id="" checked="checked" onclick="">계절제<br>
+					<input type="checkbox" name="process" id="" checked="checked" onclick="">학기제<br>
+					<input type="checkbox" name="process" id="" checked="checked" onclick="">파견회사<br>
+				</div>
+			</div><br>
+        </div>
 
 		<script>
 			var currentPosition = parseInt($("#gotop").css("top"));
@@ -146,16 +173,48 @@
 					$("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
 			});
 
+			function choiceSelectBox(obj) {
+				var nWidth = parseInt(obj.offsetWidth);
+				var nHeight = parseInt(obj.offsetHeight);
+				var nLeft = obj.offsetLeft;
+				var nTop = obj.offsetTop + obj.offsetHeight + 2;
+
+				if (navigator.appName == "Microsoft Internet Explorer") {
+					nLeft += obj.offsetParent.offsetParent.offsetLeft + obj.offsetParent.offsetLeft;
+					nTop += obj.offsetParent.offsetParent.offsetTop + obj.offsetParent.offsetTop;
+				}
+
+				if ($("#testVal").css("visibility") == "hidden") {
+
+					$("#testVal").css("left", nLeft);
+					$("#testVal").css("top", nTop);
+					$("#testVal").css("padding-left", "0px");
+					$("#testVal").css("width", nWidth);
+					$("#testVal").css("visibility", "visible");
+
+				} else {
+					$("#testVal").css("visibility", "hidden");
+				}
+			}
+
 
 		</script>
 
 
 		<a href="../학생.html"><span id="black">이전 메뉴로 이동</a></span>
 		<div id="summaryBox">
-			<h2><span id="span2">2018</span>년도 학생활동 참여 인원</h2>
+			<h2><span id="P1">해외 인턴십 현황</span></h2>
 		</div>
 		<div id="unitBox">
-			(단위 : 명)
+			(단위 : 명, 개)
+		</div>
+		<div id="chartdiv" class="chartdiv"></div>
+
+		<div id="summaryBox">
+			<h2><span id="span2">2019</span>년도 해외 인턴십 현황</h2>
+		</div>
+		<div id="unitBox">
+			(단위 : 명, 개)
 		</div>
 		<div id="chartdiv" class="chartdiv"></div>
 

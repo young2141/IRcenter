@@ -11,8 +11,6 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-	<script src="../../../js/professor_and_assistant_summary.js"></script>
-
 
 </head>
 
@@ -20,9 +18,27 @@
 	@import url('../../../css/output_default.css');
 
 	#chartdiv {
-		width: 1000px;
+		width: 70%;
 		height: 500px;
 	}
+
+	#testVal {
+        visibility: hidden;
+        position: absolute;
+        height: 100px;
+        overflow-y: scroll;
+        border: 1px solid gray;
+        background: white;
+    }
+
+	#testVal2 {
+        visibility: hidden;
+        position: absolute;
+        height: 70px;
+        overflow-y: scroll;
+        border: 1px solid gray;
+        background: white;
+    }
 </style>
 
 <body>
@@ -61,14 +77,14 @@
 					<tbody>
 						<tr>
 							<td style="border-style: none; font-size : 30px">
-								<a href="학생활동_7_글챌.html">
+								<a href="학생활동_1_요약.html">
 									<span id="black">◀</span>
 								</a>
 							</td>
-							<td style="background-color : #eeeeee">
+							<td>
 								<a href="학생활동_1_요약.html"><span id="black">요약</span></a>
 							</td>
-							<td>
+							<td style="background-color : #eeeeee">
 								<a href="학생활동_2_현장실습.html"><span id="black">현장실습교육과정 실습</span></a>
 							</td>
 							<td>
@@ -87,7 +103,7 @@
 								<a href="학생활동_7_글챌.html"><span id="black">Global Challenger<br> Program</span></a>
 							</td>
 							<td style="border-style: none; font-size : 30px">
-								<a href="학생활동_2_현장실습.html">
+								<a href="학생활동_3_해외인턴.html">
 									<span style="color: black">▶</span>
 								</a>
 							</td>
@@ -102,36 +118,43 @@
 	<div id="TOP">
 
         <div class="legend" id="gotop" style="left:80%; top :40%">
-            <span style="font-size: 20px"><b>년도별 검색</b></span>
-            <br>
+			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 계절제(7주) 하계<br>
+			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 계절제(7주) 동계<br>
+			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 학기제(24주) 하계<br>
+			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 학기제(24주) 동계<br>
+			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 수시제(4주) 하계<br>
+			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 수시제(4주) 동계<br><br>
 
-            <input type=button value='◀' onclick=decrease()>
-            <input id="years" type=range min=2010 max=2018 step=1 value=2018 oninput=valuechange(parseInt(this.value))>
-            <input type=button value='▶' onclick=increase()>
+			<span style="font-size: 20px"><b>과정별 검색</b></span><br>
 
-            <script>
-                function valuechange(value) {
-					document.getElementById('span1').innerHTML = (value);
-					document.getElementById('span2').innerHTML = (value);
-                    check();
-                }
-                function decrease() {
-                    current_value = document.getElementById('years').value
-                    console.log(current_value);
-                    document.getElementById('years').value -= 1
-                    valuechange(document.getElementById('years').value)
-                }
-                function increase() {
-                    current_value = document.getElementById('years').value
-                    console.log(current_value);
-                    document.getElementById('years').value++;
-                    valuechange(document.getElementById('years').value)
-                }
-            </script>
+			<div style="width : 200px; height: 30px; border-style: solid; border-width: 0.5px; border-color:darkgray; padding: 1px">
+				<span id="selectBox1" name="selectBox1" onClick="choiceSelectBox(this);" style="font-size: 15px">
+					(전체)&nbsp;
+					<span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
+				</span>
+				<div id="testVal" class="testVal">
+					<input type="checkbox" name="process" id="" checked="checked" onclick="">계절별(7주)<br>
+					<input type="checkbox" name="process" id="" checked="checked" onclick="">학기제(24주)<br>
+					<input type="checkbox" name="process" id="" checked="checked" onclick="">수시제(4주)<br>
+				</div>
+			</div><br>
 
-            <br>
-            <div style="text-align: center; width: 180px"><span id="span1">2018</span></div>
+			
+			<span style="font-size: 20px"><b>실습 기간 검색</b></span><br>
+
+			<div style="width : 200px; height: 30px; border-style: solid; border-width: 0.5px; border-color:darkgray; padding: 1px">
+				<span id="selectBox1" name="selectBox1" onClick="choiceSelectBox2(this);" style="font-size: 15px">
+					(전체)&nbsp;
+					<span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
+				</span>
+				<div id="testVal2" class="testVal2">
+					<input type="checkbox" name="term" id="" checked="checked" onclick="">하계<br>
+					<input type="checkbox" name="term" id="" checked="checked" onclick="">동계<br>
+				</div>
 			</div>
+
+		
+        </div>
 
 		<script>
 			var currentPosition = parseInt($("#gotop").css("top"));
@@ -146,18 +169,75 @@
 					$("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
 			});
 
+			function choiceSelectBox(obj) {
+				var nWidth = parseInt(obj.offsetWidth);
+				var nHeight = parseInt(obj.offsetHeight);
+				var nLeft = obj.offsetLeft;
+				var nTop = obj.offsetTop + obj.offsetHeight + 2;
+
+				if (navigator.appName == "Microsoft Internet Explorer") {
+					nLeft += obj.offsetParent.offsetParent.offsetLeft + obj.offsetParent.offsetLeft;
+					nTop += obj.offsetParent.offsetParent.offsetTop + obj.offsetParent.offsetTop;
+				}
+
+				if ($("#testVal").css("visibility") == "hidden") {
+
+					$("#testVal").css("left", nLeft);
+					$("#testVal").css("top", nTop);
+					$("#testVal").css("padding-left", "0px");
+					$("#testVal").css("width", nWidth);
+					$("#testVal").css("visibility", "visible");
+
+				} else {
+					$("#testVal").css("visibility", "hidden");
+				}
+			}
+
+			function choiceSelectBox2(obj) {
+				var nWidth = parseInt(obj.offsetWidth);
+				var nHeight = parseInt(obj.offsetHeight);
+				var nLeft = obj.offsetLeft;
+				var nTop = obj.offsetTop + obj.offsetHeight + 2;
+
+				if (navigator.appName == "Microsoft Internet Explorer") {
+					nLeft += obj.offsetParent.offsetParent.offsetLeft + obj.offsetParent.offsetLeft;
+					nTop += obj.offsetParent.offsetParent.offsetTop + obj.offsetParent.offsetTop;
+				}
+
+				if ($("#testVal2").css("visibility") == "hidden") {
+
+					$("#testVal2").css("left", nLeft);
+					$("#testVal2").css("top", nTop);
+					$("#testVal2").css("padding-left", "0px");
+					$("#testVal2").css("width", nWidth);
+					$("#testVal2").css("visibility", "visible");
+
+				} else {
+					$("#testVal2").css("visibility", "hidden");
+				}
+			}
+
 
 		</script>
 
 
 		<a href="../학생.html"><span id="black">이전 메뉴로 이동</a></span>
+
 		<div id="summaryBox">
-			<h2><span id="span2">2018</span>년도 학생활동 참여 인원</h2>
+			<h2><span id="P1">현장실습기관 수</span></h2>
+		</div>
+		<div id="unitBox">
+			(단위 : 개)
+		</div>
+		<div id="chartdiv" class="chartdiv">그래프1</div>
+
+		<div id="summaryBox">
+			<h2><span id="P1">현장실습 학생 수</span></h2>
 		</div>
 		<div id="unitBox">
 			(단위 : 명)
 		</div>
-		<div id="chartdiv" class="chartdiv"></div>
+		<div id="chartdiv2" class="chartdiv">그래프2</div>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
