@@ -51,9 +51,9 @@ function bubble_map(data) {
     bullet.stroke = am4core.color("#ffffff");
     bullet.strokeOpacity = 0;
 
-    bullet.adapter.add("tooltipY", function(tooltipY, target) {
-      return -target.radius + 1;
-    });
+    // bullet.adapter.add("tooltipY", function(tooltipY, target) {
+    //   return -target.radius + 1;
+    // });
 
     series.heatRules.push({
       property: "radius",
@@ -64,7 +64,12 @@ function bubble_map(data) {
 
     bullet.hiddenState.properties.scale = 0.01;
     bullet.hiddenState.properties.opacity = 1;
+    bullet.adapter.add("fill", function(fill, target) {
+      if (!target.dataItem) return fill;
 
+      var values = target.dataItem.value;
+      return values > 0 ? am4core.color("skyblue") : am4core.color("white");
+    });
     var hoverState = bullet.states.create("hover");
     hoverState.properties.strokeOpacity = 1;
 
