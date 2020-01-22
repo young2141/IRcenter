@@ -48,7 +48,7 @@ function bubble_map(data) {
     bullet.tooltipText =
       "{prof}, {time}시간: {value.workingValue.formatNumber('#.')}명";
     bullet.strokeWidth = 3;
-    bullet.stroke = am4core.color("#ffffff");
+    //bullet.stroke = am4core.color("#ffffff");
     bullet.strokeOpacity = 0;
 
     bullet.adapter.add("tooltipY", function(tooltipY, target) {
@@ -64,7 +64,13 @@ function bubble_map(data) {
 
     bullet.hiddenState.properties.scale = 0.01;
     bullet.hiddenState.properties.opacity = 1;
+    bullet.adapter.add("fill", function(fill, target) {
+      if (!target.dataItem) return fill;
 
+      var values = target.dataItem.value;
+      console.log(values);
+      return values > 0 ? am4core.color("skyblue") : am4core.color("white");
+    });
     var hoverState = bullet.states.create("hover");
     hoverState.properties.strokeOpacity = 1;
 
