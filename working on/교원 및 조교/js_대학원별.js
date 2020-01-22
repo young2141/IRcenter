@@ -1,5 +1,5 @@
 function parse(callback) {
-    $.getJSON("professor.json", json => {
+    $.getJSON("professor1.json", json => {
         callback(json);
     });
 }
@@ -13,9 +13,17 @@ function drawChart() {
             
             // Create chart instance
             var chart = am4core.create("chartdiv", am4charts.XYChart);
+
+
+            var data=[]
+            for (var i = 0; i < json.length; i++) {
+                if(json[i].year==2019){
+                    data.push(json[i])
+                }
+            }
             
             // Add data
-            chart.data = json
+            chart.data = data
             
             chart.legend = new am4charts.Legend();
             chart.legend.position = "right";
