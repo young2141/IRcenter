@@ -11,7 +11,7 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
+    <script src="../../../js/studentexp_field_domestic.js"></script>
 </head>
 
 <style type="text/css">
@@ -118,12 +118,12 @@
 	<div id="TOP">
 
         <div class="legend" id="gotop" style="left:80%; top :40%">
-			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 계절제(7주) 하계<br>
-			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 계절제(7주) 동계<br>
-			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 학기제(24주) 하계<br>
-			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 학기제(24주) 동계<br>
-			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 수시제(4주) 하계<br>
-			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 수시제(4주) 동계<br><br>
+			<span style="color:#FE4459; font-size: 20px;"> ■ </span> 계절제(7주) 하계<br>
+			<span style="color:#FCFF57; font-size: 20px;"> ■ </span> 계절제(7주) 동계<br>
+			<span style="color:#52A1FF; font-size: 20px;"> ■ </span> 학기제(24주) 하계<br>
+			<span style="color:#43E884; font-size: 20px;"> ■ </span> 학기제(24주) 동계<br>
+			<span style="color:#E8A343; font-size: 20px;"> ■ </span> 수시제(4주) 하계<br>
+			<span style="color:#CC66CC; font-size: 20px;"> ■ </span> 수시제(4주) 동계<br><br>
 
 			<span style="font-size: 20px"><b>과정별 검색</b></span><br>
 
@@ -133,9 +133,9 @@
 					<span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
 				</span>
 				<div id="testVal" class="testVal">
-					<input type="checkbox" name="process" id="" checked="checked" onclick="">계절별(7주)<br>
-					<input type="checkbox" name="process" id="" checked="checked" onclick="">학기제(24주)<br>
-					<input type="checkbox" name="process" id="" checked="checked" onclick="">수시제(4주)<br>
+					<input type="checkbox" name="process" id="season" checked="checked" onclick="chart()" value="계절별(7주)">계절별(7주)<br>
+					<input type="checkbox" name="process" id="semester" checked="checked" onclick="chart()" value="학기제(24주)">학기제(24주)<br>
+					<input type="checkbox" name="process" id="always" checked="checked" onclick="chart()" value="수시제(4주)">수시제(4주)<br>
 				</div>
 			</div><br>
 
@@ -148,8 +148,8 @@
 					<span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
 				</span>
 				<div id="testVal2" class="testVal2">
-					<input type="checkbox" name="term" id="" checked="checked" onclick="">하계<br>
-					<input type="checkbox" name="term" id="" checked="checked" onclick="">동계<br>
+					<input type="checkbox" name="term" id="summer" checked="checked" onclick="chart()" value="하계">하계<br>
+					<input type="checkbox" name="term" id="winter" checked="checked" onclick="chart()" value="동계">동계<br>
 				</div>
 			</div>
 
@@ -229,7 +229,7 @@
 		<div id="unitBox">
 			(단위 : 개)
 		</div>
-		<div id="chartdiv" class="chartdiv">그래프1</div>
+		<div id="chartdiv1" class="chartdiv">그래프1</div>
 
 		<div id="summaryBox">
 			<h2><span id="P1">현장실습 학생 수</span></h2>
@@ -238,7 +238,7 @@
 			(단위 : 명)
 		</div>
 		<div id="chartdiv2" class="chartdiv">그래프2</div>
-
+        <script>chart()</script>
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
 

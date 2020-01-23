@@ -12,59 +12,7 @@
         });
     }   
 }
-/*
-function calrate(_data, flag, year) {
-    var result;
-    console.log("year :", year)
-    if (flag == "professor") {
-        result = {
-            "professor": {
-                "type": "교수",
-                "male": _data[0]["male"],
-                "female": _data[0]["female"],
-                "malerate": _data[0]["male"] * 100 / (_data[0]["male"] + _data[0]["female"]),
-                "femalerate": 100 - _data[0]["male"] * 100 / (_data[0]["male"] + _data[0]["female"])
-            }
-            ,
-            "associate": {
-                "type": "부교수",
-                "male": _data[1]["male"],
-                "female": _data[1]["female"],
-                "malerate": _data[1]["male"] * 100 / (_data[1]["male"] + _data[1]["female"]),
-                "femalerate": 100 - _data[1]["male"] * 100 / (_data[1]["male"] + _data[1]["female"])
-            },
-            "assistant": {
-                "type": "조교수",
-                "male": _data[1]["male"],
-                "female": _data[1]["female"],
-                "malerate": _data[2]["male"] * 100 / (_data[2]["male"] + _data[2]["female"]),
-                "femalerate": 100 - _data[2]["male"] * 100 / (_data[2]["male"] + _data[2]["female"])
-            },
-            "none": {
-                "type": "비전임교수",
-                "male": _data[1]["male"],
-                "female": _data[1]["female"],
-                "malerate": _data[3]["male"] * 100 / (_data[3]["male"] + _data[3]["female"]),
-                "femalerate": 100 - _data[3]["male"] * 100 / (_data[3]["male"] + _data[3]["female"])
-            }
-        }
-    }
-    else {
-        result = {
-            "assistant": {
-                "type": "조교",
-                "male": _data[0]["male"],
-                "female": _data[0]["female"],
-                "malerate": _data[0]["male"] * 100 / (_data[0]["male"] + _data[0]["female"]),
-                "femalerate": 100 - _data[0]["male"] * 100 / (_data[0]["male"] + _data[0]["female"])
-            }
-        }
-    }
 
-    console.log(JSON.stringify(result));
-    return result;
-}
-*/
 function drawPyramid(_data, flag) {
     // Themes begin
     am4core.useTheme(am4themes_animated);
@@ -99,23 +47,28 @@ function drawPyramid(_data, flag) {
         var maleValueAxis = maleChart.xAxes.push(new am4charts.ValueAxis());
         maleValueAxis.renderer.inversed = true;
         maleValueAxis.min = 0;
-        maleValueAxis.max = 1000;
+        maleValueAxis.max = 1500;
         maleValueAxis.strictMinMax = true;
-        maleValueAxis.numberFormatter = new am4core.NumberFormatter();
 
-        maleValueAxis.renderer.grid.template.disabled = true;
+        maleValueAxis.renderer.grid.template.disabled = true; //가운데줄
         maleValueAxis.renderer.baseGrid.disabled = true;
-        maleValueAxis.renderer.labels.template.disabled = flag;
-        maleValueAxis.cursorTooltipEnabled = false;
+        maleValueAxis.renderer.labels.template.disabled = flag; //valueaxis
+
+        //maleValueAxis.cursorTooltipEnabled = false;
 
         var maleSeries = maleChart.series.push(new am4charts.ColumnSeries());
         maleSeries.dataFields.valueX = "male";
         maleSeries.fill = color;
         maleSeries.stroke = maleSeries.fill;
         maleSeries.dataFields.categoryY = "type";
-        maleSeries.interpolationDuration = 1000;
+        maleSeries.interpolationDuration = 1300;
         maleSeries.columns.template.tooltipText = "{type}의 남자는 {male}명입니다.";
         maleSeries.sequencedInterpolation = true;
+
+        var maleserieslabel = maleSeries.bullets.push(new am4charts.LabelBullet());
+        maleserieslabel.label.text = "{valueX}";
+        maleserieslabel.label.truncate = false;
+        maleserieslabel.label.dx = -20;
 
         return chart;
     }
@@ -153,9 +106,9 @@ function drawPyramid(_data, flag) {
 
         var femaleValueAxis = femaleChart.xAxes.push(new am4charts.ValueAxis());
         femaleValueAxis.min = 0;
-        femaleValueAxis.max = 1000;
+        femaleValueAxis.max = 1500;
+        femaleValueAxis.baseInterval = 500;
         femaleValueAxis.strictMinMax = true;
-        femaleValueAxis.numberFormatter = new am4core.NumberFormatter();
 
         femaleValueAxis.renderer.grid.template.disabled = true;
         femaleValueAxis.renderer.baseGrid.disabled = true;
@@ -170,7 +123,12 @@ function drawPyramid(_data, flag) {
         femaleSeries.sequencedInterpolation = false;
         femaleSeries.columns.template.tooltipText = "{type}의 여자는 {female}명입니다.";
         femaleSeries.dataFields.categoryY = "type";
-       
+
+        var femaleserieslabel = femaleSeries.bullets.push(new am4charts.LabelBullet());
+        femaleserieslabel.label.text = "{valueX}";
+        femaleserieslabel.label.truncate = false;
+        femaleserieslabel.label.dx = 20;
+
         return chart;
     }
 

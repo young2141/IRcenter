@@ -1,0 +1,92 @@
+﻿[
+  {
+    "year": "2010",
+    "season_summer": 68,
+    "season_winter": 45,
+    "semester_summer": 37,
+    "semester_winter": 36,
+    "always_summer": 50,
+    "always_winter": 50
+  },
+  {
+    "year": "2011",
+    "season_summer": 83,
+    "season_winter": 54,
+    "semester_summer": 33,
+    "semester_winter": 36,
+    "always_summer": 40,
+    "always_winter": 33
+  },
+  {
+    "year": "2012",
+    "season_summer": 69,
+    "season_winter": 49,
+    "semester_summer": 34,
+    "semester_winter": 28,
+    "always_summer": 44,
+    "always_winter": 35
+  },
+  {
+    "year": "2013",
+    "season_summer": 68,
+    "season_winter": 51,
+    "semester_summer": 31,
+    "semester_winter": 45,
+    "always_summer": 57,
+    "always_winter":43
+  },
+  {
+    "year": "2014",
+    "season_summer": 86,
+    "season_winter": 39,
+    "semester_summer": 33,
+    "semester_winter": 31,
+    "always_summer": 60,
+    "always_winter": 30
+  },
+  {
+    "year": "2015",
+    "season_summer": 65,
+    "season_winter": 61,
+    "semester_summer": 32,
+    "semester_winter": 29,
+    "always_summer": 80,
+    "always_winter": 27
+  },
+  {
+    "year": "2016",
+    "season_summer": 59,
+    "season_winter": 36,
+    "semester_summer": 23,
+    "semester_winter": 19,
+    "always_summer": 80,
+    "always_winter": 58
+  },
+  {
+    "year": "2017",
+    "season_summer": 50,
+    "season_winter": 38,
+    "semester_summer": 17,
+    "semester_winter": 17,
+    "always_summer": 88,
+    "always_winter": 64
+  },
+  {
+    "year": "2018",
+    "season_summer": 42,
+    "season_winter": 42,
+    "semester_summer": 25,
+    "semester_winter": 21,
+    "always_summer": 90,
+    "always_winter":55
+  },
+  {
+    "year": "2019",
+    "season_summer": 42,
+    "season_winter": 42,
+    "semester_summer": 25,
+    "semester_winter": 21,
+    "always_summer": 90,
+    "always_winter": 55
+  }
+]

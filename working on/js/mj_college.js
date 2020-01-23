@@ -6,49 +6,6 @@
     });
 }
 
-/*
-function calrate(_data, year) {
-    var typename_kr = ["인문대학", "사회과학대학", "자연과학대학", "경상대학", "공과대학", "IT대학", "농업생명과학대학", "예술대학", "사범대학", "수의과대학", "생활과학대학",
-        "간호대학", "약학대학", "행정학부", "법학전문대학원", "의과대학", "치과대학", "부속기관"];
-
-    console.log("year : ", year);
-    var result = {
-        "humanities": makeInnerJson(0, typename_kr[0]),
-        "society": makeInnerJson(1, typename_kr[1]),
-        "science": makeInnerJson(2, typename_kr[2]),
-        "economy": makeInnerJson(3, typename_kr[3]),
-        "mechanic": makeInnerJson(4, typename_kr[4]),
-        "IT": makeInnerJson(5, typename_kr[5]),
-        "farm": makeInnerJson(6, typename_kr[6]),
-        "art": makeInnerJson(7, typename_kr[7]),
-        "teach": makeInnerJson(8, typename_kr[8]),
-        "pet": makeInnerJson(9, typename_kr[9]),
-        "life": makeInnerJson(10, typename_kr[10]),
-        "nurse": makeInnerJson(11, typename_kr[11]),
-        "medicine": makeInnerJson(12, typename_kr[12]),
-        "admin": makeInnerJson(13, typename_kr[13]),
-        "law": makeInnerJson(14, typename_kr[14]),
-        "medical": makeInnerJson(15, typename_kr[15]),
-        "dental": makeInnerJson(16, typename_kr[16]),
-        "etc": makeInnerJson(17, typename_kr[17]),
-    }
-
-    function makeInnerJson(index, val_kr) {
-        var temp = new Object();
-
-        temp.type = val_kr;
-        temp.male = _data[index]["male"];
-        temp.female = _data[index]["female"];
-        temp.malerate = _data[index]["male"] * 100 / (_data[index]["male"] + _data[index]["female"]);
-        temp.femalerate = 100 - (_data[index]["male"] * 100 / (_data[index]["male"] + _data[index]["female"]));
-
-        return temp;
-    }
-    console.log(JSON.stringify(result));
-    return result;
-}
-*/
-
 function drawPyramid(_data) {
     // Themes begin
     am4core.useTheme(am4themes_animated);
@@ -94,15 +51,20 @@ function drawPyramid(_data) {
         maleValueAxis.cursorTooltipEnabled = false;
 
         var maleSeries = maleChart.series.push(new am4charts.ColumnSeries());
-        maleSeries.dataFields.valueX = "malerate";
-        maleSeries.fill = color;
-        maleSeries.stroke = menucondition;
+        maleSeries.dataFields.valueX = "male";
+        maleSeries.fill = "#0000ff";
+        maleSeries.stroke = "#0000ff";
         maleSeries.strokeWidth = 3;
         maleSeries.dataFields.categoryY = "type";
         maleSeries.interpolationDuration = 1000;
-        maleSeries.columns.template.tooltipText = "{type}의 남자는 {male}명({malerate}%)입니다.";
+        maleSeries.columns.template.tooltipText = "{type}의 남자는 {male}명입니다.";
         maleSeries.sequencedInterpolation = true;
 
+        var maleserieslabel = maleSeries.bullets.push(new am4charts.LabelBullet());
+        maleserieslabel.label.text = "{valueX}";
+        maleserieslabel.label.truncate = false;
+        maleserieslabel.label.fill = menucondition;
+        maleserieslabel.label.dx = -20;
         return chart;
     }
 
@@ -155,14 +117,19 @@ function drawPyramid(_data) {
 
         // Create series
         var femaleSeries = femaleChart.series.push(new am4charts.ColumnSeries());
-        femaleSeries.dataFields.valueX = "femalerate";
-        femaleSeries.fill = color;
-        femaleSeries.stroke = menucondition;
+        femaleSeries.dataFields.valueX = "female";
+        femaleSeries.fill = "#ffff00";
+        femaleSeries.stroke = "#ffff00";
         femaleSeries.strokeWidth = 3;
         femaleSeries.sequencedInterpolation = true;
-        femaleSeries.columns.template.tooltipText = "{type}의 여자는 {female}명({femalerate}%)입니다.";
+        femaleSeries.columns.template.tooltipText = "{type}의 여자는 {female}명입니다.";
         femaleSeries.dataFields.categoryY = "type";
 
+        var femaleSerieslabel = femaleSeries.bullets.push(new am4charts.LabelBullet());
+        femaleSerieslabel.label.text = "{valueX}";
+        femaleSerieslabel.label.truncate = false;
+        femaleSerieslabel.label.fill = menucondition;
+        femaleSerieslabel.label.dx = 20;
         return chart;
     }
 
@@ -199,9 +166,9 @@ function drawPyramid(_data) {
         if (i == typename.length - 1)
             flag = false;
         if (cond == "전체") {
-            createMale([_data[typename[i]]], "#0000ff", flag, "#0000ff");
+            createMale([_data[typename[i]]], "#0000ff", flag, "#000000");
             createLabel(typename_kr[i], "#000000");
-            createFemale([_data[typename[i]]], "#ffff00", flag, "#ffff00");            
+            createFemale([_data[typename[i]]], "#ffff00", flag, "#000000");            
         }
         else {
             if (typename_kr[i] == cond) {
@@ -210,12 +177,12 @@ function drawPyramid(_data) {
                 createFemale([_data[typename[i]]], "#ffff00", flag, "#ff0000");
             }
             else {
-                createMale([_data[typename[i]]], "#0000ff", flag, "#0000ff");
+                createMale([_data[typename[i]]], "#0000ff", flag, "#000000");
                 createLabel(typename_kr[i], "#000000");
-                createFemale([_data[typename[i]]], "#ffff00", flag, "#ffff00");
+                createFemale([_data[typename[i]]], "#ffff00", flag, "#000000");
             }
         }
-        createPie([{ "type": "male", "value": _data[typename[i]]["malerate"], "color": "#0000ff" }, { "type": "female", "value": _data[typename[i]]["femalerate"], "color": "#ffff00" }]);
+        createPie([{ "type": "male", "value": _data[typename[i]]["male"], "color": "#0000ff" }, { "type": "female", "value": _data[typename[i]]["female"], "color": "#ffff00" }]);
     }
 
 }

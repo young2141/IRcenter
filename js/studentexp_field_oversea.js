@@ -1,8 +1,17 @@
-function chart() {
+var color = {
+    "season": "#FE4459",
+    "semester": "#52A1FF",
+    "dispatch": "#E8A343",
+};
+
+function chart1() {
     $.getJSON("../../../json/studentexp_oversea_current.json", jsonData => {
         var data = jsonData;
         drawCurved("chartdiv1", data);
     });
+}
+
+function chart2() {
     $.getJSON("../../../json/studentexp_oversea_by_year.json", jsonData => {
         var year = document.getElementById("years").value;
         var data = jsonData[year];
@@ -11,13 +20,19 @@ function chart() {
 }
 
 function drawCurved(_div, _data) {
-    var typename = ["season", "semester", "dispatch"];
-    var typename_kr = ["계절제", "학기제", "파견회사"]
-    var color = {
-        "season": "#FE4459",
-        "semester": "#52A1FF",
-        "dispatch": "#E8A343",
-    };
+    var typename = [];
+    var typename_kr = []
+
+    $("input[name=process]:checked").each(function () {
+        var data = $(this).val();
+        typename_kr.push(data);
+    });
+
+    $("input[name=process]:checked").each(function () {
+        var data = $(this).attr("id");
+        typename.push(data);
+    });
+
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
         var chart = am4core.create(_div, am4charts.XYChart);
@@ -30,6 +45,8 @@ function drawCurved(_div, _data) {
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 0;
+        valueAxis.max = 300;
+        valueAxis.strictMatrix = true;
         //valueAxis.max = 100.5;
 
         function CurvedcreateSeries(value, value_kr, clr) {
@@ -57,7 +74,18 @@ function drawCurved(_div, _data) {
 }
 
 function drawStacked(_div, _data) {
-    $("#chartdiv2").empty();
+    var typename = [];
+    var typename_kr = []
+
+    $("input[name=process]:checked").each(function () {
+        var data = $(this).val();
+        typename_kr.push(data);
+    });
+
+    $("input[name=process]:checked").each(function () {
+        var data = $(this).attr("id");
+        typename.push(data);
+    });
     am4core.useTheme(am4themes_animated);
 
     // Create chart instance
@@ -75,7 +103,8 @@ function drawStacked(_div, _data) {
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
     //valueAxis.renderer.inside = true;
     valueAxis.min = 0;
-    
+    valueAxis.max = 200;
+    valueAxis.strictMatrix = true;
     // Create series
     function createSeries(field, name, color) {
         // Set up series
@@ -102,7 +131,7 @@ function drawStacked(_div, _data) {
         return series;
     }
 
-    createSeries("season", "계절제", "#FE4459");
-    createSeries("semester", "학기제", "#52A1FF");
-    createSeries("dispatch", "파견회사", "#E8A343");
+    for (var i = 0; i < typename.length; i++) {
+        createSeries(typename[i], typename_kr[i], color[typename[i]]);
+    }
 }
