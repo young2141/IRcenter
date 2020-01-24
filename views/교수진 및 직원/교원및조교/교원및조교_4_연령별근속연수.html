@@ -195,7 +195,7 @@
         if (!target.dataItem) return fill;
 
         var values = target.dataItem.value;        
-        return values > 0 ? am4core.color("skyblue") : am4core.color("white");
+        return values > 0 && values != 250 ? am4core.color("skyblue") : am4core.color("white");
       });
     var hoverState = bullet.states.create("hover");
     hoverState.properties.strokeOpacity = 1;
@@ -204,7 +204,7 @@
           {
             "age": "25세이하",
             "prof": "교수",
-            "value": 0
+            "value": 250 // real data is 0
           },
 
           {
@@ -390,6 +390,7 @@
             "prof": "조교",
             "value": 3
           },
+          
         ]
       }); // end am4core.ready()
     </script>

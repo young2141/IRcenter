@@ -355,8 +355,8 @@
 		"time": "22이상",
 		"prof": "비전임교원",
 		"value": {
-			"second": 0,
-			"first": 0
+			"second": 550,
+			"first": 550
 		}
 	}
 ]
