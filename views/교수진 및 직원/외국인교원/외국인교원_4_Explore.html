@@ -11,15 +11,16 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
+	<script src="https://www.amcharts.com/lib/4/themes/frozen.js"></script>
+	<script src="../../../js/foreigner4.js"></script>
 
 </head>
 
 <style type="text/css">
 	@import url('../../../css/output_default.css');
-	#chartdiv {
-		width: 70%;
-		height: 500px;
+	#chartdiv1, #chartdiv2 {
+            width: 70%;
+            height: 500px;
 	}
 </style>
 
@@ -93,8 +94,8 @@
 		<div class="legend" id="gotop" style="left:80%; top :40%">
 			<span style="font-size: 20px"><b>차트 구분</b></span><br>
             <form>
-			<input type="radio" name="Gtype" value = "1" id="" checked="checked" onclick= "">교원 구성별<br>
-			<input type="radio" name="Gtype" value = "2" id="" onclick="">전공계열별<br><br>
+			<input type="radio" name="Gtype" value = "1" id="" checked="checked" onclick= " pie1()">교원 구성별<br>
+			<input type="radio" name="Gtype" value = "2" id="" onclick=" pie2()">전공계열별<br><br>
 			</form>
 			
 			<div id = "legend1">
@@ -112,6 +113,9 @@
 			</div>
 		</div>
 
+		<script>
+			pie1();
+		</script>
 		<script>
 			$('input[type = radio][name=Gtype]').on('click',function(){
 				var chkValue = $('input[type=radio][name=Gtype]:checked').val();
@@ -156,7 +160,7 @@
 		<div id="unitBox" style = "width: 70%">
 			(단위 : %)
 		</div>
-		<div id="chartdiv" class="chartdiv"></div>
+		<div id="chartdiv1"></div>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>

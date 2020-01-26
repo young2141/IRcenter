@@ -48,6 +48,10 @@ am4core.ready(function () {
         pieSeries.dataFields.value = "size";
         pieSeries.dataFields.category = "sector";
         pieSeries.slices.template.tooltipText = "[bold]{category}[/]: {value.percent.formatNumber('#.0')}%({value}명)";
+        pieSeries.colors.list = [
+            am4core.color("#ff0000"),
+            am4core.color("#FBFBEF")
+        ];
 
         pieSeries.slices.template.events.on("hit", function (ev) {
             var series = ev.target.dataItem.component;

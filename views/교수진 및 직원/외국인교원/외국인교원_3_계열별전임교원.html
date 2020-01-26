@@ -11,15 +11,52 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+	<script src="../../../js/foreigner3.js"></script>
 
 
 </head>
 
 <style type="text/css">
 	@import url('../../../css/output_default.css');
+/* 
 	#chartdiv {
 		width: 70%;
 		height: 500px;
+	} */
+
+	#chartdiv1 {
+		width: 70%;
+		height: 500px;
+	}
+
+	#chartdiv6 {
+		width: 70%;
+		height: 300px;
+	}
+
+	.chartdiv {
+		width: 70%;
+		height: 200px;
+	}
+
+	#chartdiv2 {
+		position: absolute;
+		top: 29rem;
+	}
+
+	#chartdiv3 {
+		position: absolute;
+		top: 43rem;
+	}
+
+	#chartdiv4 {
+		position: absolute;
+		top: 57rem;
+	}
+
+	#chartdiv5 {
+		position: absolute;
+		top: 71rem;
 	}
 </style>
 
@@ -92,17 +129,17 @@
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
 			<span style="font-size: 20px"><b>차트 종류</b></span><br>
-            <form>
-				<input type="radio" name="Gtype" id="stacked" checked="checked" onclick= "">누적 영역형<br>
-				<input type="radio" name="Gtype" id="multiples" onclick="">영역형<br><br>
+			<form>
+				<input type="radio" name="Gtype" id="stacked" checked="checked" onclick="drawChart();">누적 영역형<br>
+				<input type="radio" name="Gtype" id="multiples" onclick="drawChart();">영역형<br><br>
 			</form>
-				
-				<span style="color:#ff0000; font-size: 20px;"> ■ </span> 인문사회<br>
-				<span style="color:yellow; font-size: 20px;"> ■ </span> 자연과학<br>
-				<span style="color:green; font-size: 20px;"> ■ </span> 공학<br>
-				<span style="color:blue; font-size: 20px;"> ■ </span> 예체능<br><br>
-		</div>
 
+			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 인문사회<br>
+			<span style="color:yellow; font-size: 20px;"> ■ </span> 자연과학<br>
+			<span style="color:green; font-size: 20px;"> ■ </span> 공학<br>
+			<span style="color:blue; font-size: 20px;"> ■ </span> 예체능<br><br>
+		</div>
+		<script>stackedAreaChart();</script>
 		<script>
 			var currentPosition = parseInt($("#gotop").css("top"));
 			$(window).scroll(function () {
@@ -124,10 +161,15 @@
 		<div id="summaryBox">
 			<h2><span id="P1">전공계열별 외국인 전임교원 수</span></h2>
 		</div>
-		<div id="unitBox" style = "width: 70%">
+		<div id="unitBox" style="width: 70%">
 			(단위 : 명)
 		</div>
-		<div id="chartdiv" class="chartdiv"></div>
+		<div id="chartdiv1"></div>
+		<div class="chartdiv" id="chartdiv2"></div>
+		<div class="chartdiv" id="chartdiv3"></div>
+		<div class="chartdiv" id="chartdiv4"></div>
+		<div class="chartdiv" id="chartdiv5"></div>
+		<div class="chartdiv" id="chartdiv6"></div>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>

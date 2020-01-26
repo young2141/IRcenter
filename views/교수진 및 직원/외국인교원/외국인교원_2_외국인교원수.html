@@ -128,9 +128,9 @@
 			<span style="font-size: 20px"><b>차트 종류</b></span><br>
 			<form>
 
-				<input type="radio" name="Gtype" id="stacked" checked="checked" onclick="Change(); drawChart();">누적
+				<input type="radio" name="Gtype" id="stacked" checked="checked" onclick="drawChart();">누적
 				영역형<br>
-				<input type="radio" name="Gtype" id="multiples" onclick="Change(); drawChart();">영역형<br><br>
+				<input type="radio" name="Gtype" id="multiples" onclick="drawChart();">영역형<br><br>
 
 				<span style="color:#ff0000; font-size: 20px;"> ■ </span> 교수<br>
 				<span style="color:yellow; font-size: 20px;"> ■ </span> 부교수<br>
@@ -143,23 +143,7 @@
 
 
 		<script>stackedAreaChart();</script>
-		<script>
 
-			function Change() {
-				var temp = document.getElementById("stacked")
-				var Target1 = document.getElementById("P1")
-
-				if (temp.checked == true) {
-					Target1.innerHTML = "누적 영역형 차트"
-				}
-				temp = document.getElementById("multiples")
-				if (temp.checked == true) {
-					Target1.innerHTML = "영역형 차트"
-				}
-
-			}
-
-		</script>
 		<script>
 			var currentPosition = parseInt($("#gotop").css("top"));
 			$(window).scroll(function () {
