@@ -30,7 +30,7 @@ function stackedAreaChart() {
 
         var chart = am4core.create("chartdiv1", am4charts.XYChart);
 
-        jQuery.getJSON("../../../js/foreigner2.json", json => {
+        jQuery.getJSON("../../../json/foreigner2.json", json => {
             chartele(json);
         });
         function chartele(json) {
@@ -46,6 +46,7 @@ function stackedAreaChart() {
             count: 1
         }
         dateAxis.renderer.grid.template.location = 0;
+        dateAxis.renderer.minGridDistance = 30;
 
         // var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
         // categoryAxis.dataFields.category = "year";
@@ -138,7 +139,7 @@ function multiplesAreaChart() {
 
         var chart = am4core.create("chartdiv2", am4charts.XYChart);
 
-        jQuery.getJSON("../../../js/foreigner2.json", json => {
+        jQuery.getJSON("../../../json/foreigner2.json", json => {
             chartele(json);
         });
         function chartele(json) {
@@ -194,7 +195,7 @@ function multiplesAreaChart() {
 
         var chart = am4core.create("chartdiv3", am4charts.XYChart);
 
-        jQuery.getJSON("../../../js/foreigner2.json", json => {
+        jQuery.getJSON("../../../json/foreigner2.json", json => {
             chartele(json);
         });
         function chartele(json) {
@@ -245,7 +246,7 @@ function multiplesAreaChart() {
 
         var chart = am4core.create("chartdiv4", am4charts.XYChart);
 
-        jQuery.getJSON("../../../js/foreigner2.json", json => {
+        jQuery.getJSON("../../../json/foreigner2.json", json => {
             chartele(json);
         });
         function chartele(json) {
@@ -296,7 +297,7 @@ function multiplesAreaChart() {
 
         var chart = am4core.create("chartdiv5", am4charts.XYChart);
 
-        jQuery.getJSON("../../../js/foreigner2.json", json => {
+        jQuery.getJSON("../../../json/foreigner2.json", json => {
             chartele(json);
         });
         function chartele(json) {
