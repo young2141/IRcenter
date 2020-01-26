@@ -11,6 +11,8 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+	<script src="../../../js/groupstack.js"></script>
+	<script src="../../../js/grouptreemap.js"></script>
 
 
 </head>
@@ -133,6 +135,7 @@
             <input type=button value='▶' onclick=increase()>
 
             <script>
+				Treemap();
                 function valuechange(value) {
 					document.getElementById('span1').innerHTML = (value);
 					document.getElementById('span2').innerHTML = (value);
@@ -185,7 +188,7 @@
 		<div id="unitBox">
 			(단위 : 개)
 		</div>
-		<div id="chartdiv" class="chartdiv">그래프1</div>
+		<div id="chartdiv1" class="chartdiv">그래프1</div>
 
 		<div id="summaryBox">
 			<h2><span id="span2">2019</span>년도 학생 동아리 분야</h2>

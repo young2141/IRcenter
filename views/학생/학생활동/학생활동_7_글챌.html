@@ -12,6 +12,8 @@
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 	<script src="../../../js/professor_and_assistant_summary.js"></script>
+	<script src="../../../js/globalchallenger.js"></script>
+
 
 
 </head>
@@ -121,6 +123,7 @@
         </div>
 
 		<script>
+			Graph();
 			var currentPosition = parseInt($("#gotop").css("top"));
 			$(window).scroll(function () {
 				var position = $(window).scrollTop();

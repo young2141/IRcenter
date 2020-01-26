@@ -1,0 +1,52 @@
+[
+    {
+        "year": "2010",
+        "student": 362,
+        "team": 66
+    },
+    {
+        "year": "2011",
+        "student": 396,
+        "team": 74
+    },
+    {
+        "year": "2012",
+        "student": 385,
+        "team": 48
+    },
+    {
+        "year": "2013",
+        "student": 110,
+        "team": 18
+    },
+    {
+        "year": "2014",
+        "student": 89,
+        "team": 26
+    },
+    {
+        "year": "2015",
+        "student": 87,
+        "team": 26
+    },
+    {
+        "year": "2016",
+        "student": 30,
+        "team": 10
+    },
+    {
+        "year": "2017",
+        "student": 42,
+        "team": 14
+    },
+    {
+        "year": "2018",
+        "student": 9,
+        "team": 3
+    },
+    {
+        "year": "2019",
+        "student": 26,
+        "team": 9
+    }
+]
