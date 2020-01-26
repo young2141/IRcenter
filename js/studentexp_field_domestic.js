@@ -9,7 +9,7 @@ function chart() {
     });
 }
 
-function drawCurved(_div, _data) {   
+function drawCurved(_div, _data) {
     var typename = [];
     var typename_kr = []
     var color = {
@@ -36,7 +36,8 @@ function drawCurved(_div, _data) {
             typename.push(data1 + "_" + data2);
         });
     });
-   am4core.ready(function () {
+
+    am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
         var chart = am4core.create(_div, am4charts.XYChart);
         chart.data = _data;
@@ -48,7 +49,8 @@ function drawCurved(_div, _data) {
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 0;
-        //valueAxis.max = 100.5;
+        valueAxis.extraMax = 0.15;
+        valueAxis.strictMinMax = false;
 
         function CurvedcreateSeries(value, value_kr, clr) {
             var P1Cseries = chart.series.push(new am4charts.LineSeries());

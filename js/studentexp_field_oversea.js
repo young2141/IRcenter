@@ -45,7 +45,8 @@ function drawCurved(_div, _data) {
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 0;
-        valueAxis.max = 300;
+        valueAxis.extraMax = 0.15;
+        valueAxis.strictMinMax = false;
         valueAxis.strictMatrix = true;
         //valueAxis.max = 100.5;
 
@@ -103,8 +104,8 @@ function drawStacked(_div, _data) {
     var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
     //valueAxis.renderer.inside = true;
     valueAxis.min = 0;
-    valueAxis.max = 200;
-    valueAxis.strictMatrix = true;
+    valueAxis.extraMax = 0.15;
+    valueAxis.strictMinMax = false;
     // Create series
     function createSeries(field, name, color) {
         // Set up series
