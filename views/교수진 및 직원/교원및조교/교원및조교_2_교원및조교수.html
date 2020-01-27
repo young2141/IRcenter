@@ -139,7 +139,8 @@
                 function valuechange(value) {
 					document.getElementById('span1').innerHTML = (value);
 					document.getElementById('span2').innerHTML = (value);
-                    check();
+					// check();
+					changeInput("year", value);
                 }
                 function decrease() {
                     current_value = document.getElementById('years').value
