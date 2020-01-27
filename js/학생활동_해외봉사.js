@@ -28,6 +28,7 @@ function draw_graph(_year, _type, isupdate) {
         if (isupdate) {
             am4core.ready(function () {
                 // Themes begin
+                am4core.disposeAllCharts();
                 am4core.useTheme(am4themes_animated);
                 // Themes end
 
@@ -49,22 +50,27 @@ function draw_graph(_year, _type, isupdate) {
                 //x-axis for chart
                 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
                 categoryAxis.dataFields.category = "year";
-                categoryAxis.renderer.minGridDistance = 20;
+                categoryAxis.renderer.grid.template.location = 0;
+                categoryAxis.renderer.minGridDistance = 30;
                 // categoryAxis.title.text = "연도"
-                categoryAxis.renderer.grid.template.disabled = true;
-                // categoryAxis.dy = -20;
+                // categoryAxis.renderer.grid.template.disabled = true;
+                // categoryAxis.dy = 10;
                 // categoryAxis.width = am4core.percent(90);
 
                 //y-axis for chart
                 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-                valueAxis.min = min_value - (max_value - min_value) * 0.1
-                valueAxis.max = max_value + (max_value - min_value) * 0.1
-                valueAxis.renderer.inside = true;
+                valueAxis.min = 0;
+                valueAxis.extraMax = 0.15;
+                valueAxis.strictMinMax = false;
+                valueAxis.strictMatrix = true;
+                // valueAxis.min = min_value - (max_value - min_value) * 0.1
+                // valueAxis.max = max_value + (max_value - min_value) * 0.1
+                // valueAxis.renderer.inside = true;
                 // valueAxis.renderer.inversed = true;
-                valueAxis.renderer.grid.template.disabled = true;
-                valueAxis.renderer.baseGrid.disabled = true;
-                valueAxis.renderer.labels.template.disabled = true;
-                valueAxis.renderer.minGridDistance = 15;
+                // valueAxis.renderer.grid.template.disabled = true;
+                // valueAxis.renderer.baseGrid.disabled = true;
+                // valueAxis.renderer.labels.template.disabled = true;
+                // valueAxis.renderer.minGridDistance = 15;
 
                 // Create series
                 var series = chart.series.push(new am4charts.LineSeries());
