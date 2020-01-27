@@ -224,7 +224,7 @@
 
 			function create_select() {
 				parse(json => {
-					types = Object.keys(json[0])
+				    var types = Object.keys(json[0])
 
 					var type_select = document.getElementById("type_selectbar")
 					type_select.innerHTML = "<option name='' value='전체'>(전체)</option>"
@@ -246,8 +246,8 @@
     </script>
 
     <script>
-            create_select()
-            draw_graph(2019, "전체", true)
+        create_select()
+        draw_graph(2019, "전체", true)
     </script>
 
 </body>

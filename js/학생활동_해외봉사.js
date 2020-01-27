@@ -1,7 +1,7 @@
 ﻿var jdata
 
 function parse(callback) {
-    $.getJSON("community_service.json", json => {
+    $.getJSON("global_volunteer.json", json => {
         callback(json);
     });
 }
@@ -11,7 +11,7 @@ function draw_graph(_year, _type, isupdate) {
         /*
         var jdata = []
         var keys = Object.keys(json[0])
-        
+
         for (var i = 0; i < json.length; i++) {
             var data_temp = {}
             for (var j = 0; j < keys.length; j++) {
@@ -25,7 +25,6 @@ function draw_graph(_year, _type, isupdate) {
         // ------------------------------------------------------------------------------------------------------------------------------------------------------
         // draw_trend
         // ------------------------------------------------------------------------------------------------------------------------------------------------------
-
         if (isupdate) {
             am4core.ready(function () {
                 // Themes begin
@@ -58,8 +57,8 @@ function draw_graph(_year, _type, isupdate) {
 
                 //y-axis for chart
                 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-                valueAxis.min = min_value -(max_value -min_value) * 0.1
-                valueAxis.max = max_value +(max_value -min_value) * 0.1
+                valueAxis.min = min_value - (max_value - min_value) * 0.1
+                valueAxis.max = max_value + (max_value - min_value) * 0.1
                 valueAxis.renderer.inside = true;
                 // valueAxis.renderer.inversed = true;
                 valueAxis.renderer.grid.template.disabled = true;
@@ -84,7 +83,7 @@ function draw_graph(_year, _type, isupdate) {
                 });
                 */
 
-                bullet.tooltipText = "{categoryX}학년도 " + _type + " 봉사활동 인원은 [bold]{valueY}명[/]입니다.";
+                bullet.tooltipText = "{categoryX}학년도 " + _type + " 국가 봉사활동 인원은 [bold]{valueY}명[/]입니다.";
 
                 //scrollbars
                 /*
@@ -93,6 +92,7 @@ function draw_graph(_year, _type, isupdate) {
                 */
             }); // end am4core.ready()
         }
+
         // ------------------------------------------------------------------------------------------------------------------------------------------------------
         // draw_circle
         // ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -135,8 +135,6 @@ function draw_graph(_year, _type, isupdate) {
         dataset["children"] = children_array;
         // console.log(dataset)
         d3.select("#chartdiv2").select("svg").remove();
-
-
         var diameter = 900;
         var color = d3.scaleOrdinal(d3.schemeCategory20);
 
@@ -191,14 +189,14 @@ function draw_graph(_year, _type, isupdate) {
                 .attr("opacity", "1");
               div
                 .transition()
-                .duration("50")
+                .duration(50)
                 .style("opacity", 1);
               div
                 .html(
                   _year +
                     "학년도 " +
                     d.data.Name +
-                    " 봉사활동 인원은 " +
+                    " 국가 봉사활동 인원은 " +
                     d3.format(",")(d.data.Count) +
                     "명입니다."
                 )
