@@ -1,7 +1,7 @@
-var path = "../json/전임교원 산업체 경력 현황(도한).json";
+var path = "../../../json/전임교원 산업체 경력 현황.json";
 var data;
 var year = "2019";
-var majorclass = undefined;
+var majorclass = "(전체)";
 var color = {
     "경력없음": "#FE4459",
     "1년 미만": "#E8A343",
@@ -23,9 +23,9 @@ function loadJSON(path, success) {
     xhr.send();
 }
 
-function processDataForGraph(_data, majorclass) {
-    if (majorclass != undefined) {
-        _data = _data.filter(e => e["계열"] == majorclass);
+function processDataForGraph(_data, majorclass){
+    if(majorclass != "(전체)"){
+        _data = _data.filter(e => e["계열"] == majorclass)        ;
     }
 
     _data = _data.filter(e => e["연도"] == year);
@@ -49,14 +49,14 @@ function processDataForGraph(_data, majorclass) {
     graph_data = [];
 
     let total = 0;
-    Object.keys(statistic).map(key => { total += statistic[key]; });
+    Object.keys(statistic).map(key => {total += statistic[key];});
 
     Object.keys(statistic).map(key => {
         let obj = {};
         obj["type"] = key;
         obj["percent"] = statistic[key] / total;
         obj["value"] = statistic[key];
-        obj["color"] = am4core.color(color[key]);
+        obj["color"] = color[key];
         graph_data.push(obj);
     });
 
@@ -71,12 +71,14 @@ function init() {
     });
 }
 
-function changeInput(type, value) {
-    if (type == "year") {
+function changeInput(type, value){
+    if(type == "year"){
+        year = value;
         _data = data.slice(0);
         _data = processDataForGraph(_data, majorclass);
         drawChart(_data);
-    } else if (type == "majorclass") {
+    }else if(type == "majorclass"){
+        majorclass = value;
         _data = data.slice(0);
         _data = processDataForGraph(_data, majorclass);
         drawChart(_data);

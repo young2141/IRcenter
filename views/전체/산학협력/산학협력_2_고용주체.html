@@ -11,17 +11,15 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
-
-
+	<script src="../../../js/산학협력단 고용주체별 인력 현황.js"></script>
 </head>
 
 <style type="text/css">
 	@import url('../../../css/output_default.css');
 
-	#chartdiv {
-		width: 1000px;
-		height: 500px;
+	.chartdiv {
+		width: 100px;
+		height: 100px;
 	}
 </style>
 
@@ -87,43 +85,44 @@
 	<div id="TOP">
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
-			
+
 
 			<span style="color:#FE4459; font-size: 20px;">■</span> 2년 이하<br>
 			<span style="color:#E8A343; font-size: 20px;">■</span> 2년~4년이하<br>
 			<span style="color:#FCFF57; font-size: 20px;">■</span> 4년~6년이하<br>
 			<span style="color:#43E884; font-size: 20px;">■</span> 6년 초과<br><br>
 
-            <span style="font-size: 20px"><b>년도별 검색</b></span>
-            <br>
+			<span style="font-size: 20px"><b>년도별 검색</b></span>
+			<br>
 
-            <input type=button value='◀' onclick=decrease()>
-            <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
-            <input type=button value='▶' onclick=increase()>
+			<input type=button value='◀' onclick=decrease()>
+			<input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
+			<input type=button value='▶' onclick=increase()>
 
-            <script>
-                function valuechange(value) {
+			<script>
+				function valuechange(value) {
 					document.getElementById('span1').innerHTML = (value);
-					document.getElementById('span2').innerHTML = (value);
-                    check();
-                }
-                function decrease() {
-                    current_value = document.getElementById('years').value
-                    console.log(current_value);
-                    document.getElementById('years').value -= 1
-                    valuechange(document.getElementById('years').value)
-                }
-                function increase() {
-                    current_value = document.getElementById('years').value
-                    console.log(current_value);
-                    document.getElementById('years').value++;
-                    valuechange(document.getElementById('years').value)
-                }
-            </script>
+					changeInput(value);
+					// document.getElementById('span2').innerHTML = (value);
+					// check();
+				}
+				function decrease() {
+					current_value = document.getElementById('years').value
+					console.log(current_value);
+					document.getElementById('years').value -= 1
+					valuechange(document.getElementById('years').value)
+				}
+				function increase() {
+					current_value = document.getElementById('years').value
+					console.log(current_value);
+					document.getElementById('years').value++;
+					valuechange(document.getElementById('years').value)
+				}
+			</script>
 
-            <br>
-            <div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
-			</div>
+			<br>
+			<div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
+		</div>
 
 		<script>
 			var currentPosition = parseInt($("#gotop").css("top"));
@@ -149,7 +148,36 @@
 		<div id="unitBox">
 			(단위 : 년)
 		</div>
-		<div id="chartdiv" class="chartdiv"></div>
+
+		<table>
+			<tr align="center">
+				<td></td>
+				<td>겸직교원</td>
+				<td>정규직</td>
+				<td>무기계약직</td>
+				<td>기간계약직</td>
+				<td>기타</td>
+			</tr>
+			<tr align="center">
+				<td>대학소속직원</td>
+				<td><span id="chartdiv11" class="chartdiv"></td>
+				<td><span id="chartdiv12" class="chartdiv"></td>
+				<td><span id="chartdiv13" class="chartdiv"></td>
+				<td><span id="chartdiv14" class="chartdiv"></td>
+				<td><span id="chartdiv15" class="chartdiv"></td>
+			</tr>
+			<tr align="center">
+				<td>산학협력단<br>자체임용직원</td>
+				<td></td>
+				<td><span id="chartdiv22" class="chartdiv"></td>
+				<td><span id="chartdiv23" class="chartdiv"></td>
+				<td><span id="chartdiv24" class="chartdiv"></td>
+				<td><span id="chartdiv25" class="chartdiv"></td>
+			</tr>
+		</table>
+		<script>
+			init();
+		</script>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
