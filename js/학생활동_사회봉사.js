@@ -55,7 +55,6 @@ function draw_graph(_year, _type, isupdate) {
                 categoryAxis.renderer.minGridDistance = 30;
                 // categoryAxis.title.text = "연도"
                 // categoryAxis.renderer.grid.template.disabled = true;
-                categoryAxis.dy = 10;
                 // categoryAxis.width = am4core.percent(90);
 
                 //y-axis for chart
