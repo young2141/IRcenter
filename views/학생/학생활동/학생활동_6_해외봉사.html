@@ -119,42 +119,18 @@
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
 			<span style="font-size: 20px"><b>년도별 검색</b></span>
-            <br>
+			<br>
 
-            <input type=button value='◀' onclick=decrease()>
-            <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
-            <input type=button value='▶' onclick=increase()>
+			<input type=button value='◀' onclick=decrease()>
+			<input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
+			<input type=button value='▶' onclick=increase()>
 
-            <script>
-                function valuechange(value) {
-					document.getElementById('span1').innerHTML = (value);
-					document.getElementById('span2').innerHTML = (value);
-                    check();
-                }
-                function decrease() {
-                    current_value = document.getElementById('years').value
-                    console.log(current_value);
-                    document.getElementById('years').value -= 1
-                    valuechange(document.getElementById('years').value)
-                }
-                function increase() {
-                    current_value = document.getElementById('years').value
-                    console.log(current_value);
-                    document.getElementById('years').value++;
-                    valuechange(document.getElementById('years').value)
-                }
-            </script>
-
-            <br>
+			<br>
 			<div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
 			<br>
 
 			<span style="font-size: 20px"><b>국가별 검색</b></span><br>
-			<select id="" style="width : 200px; height: 30px">
-				<option value="" selected="selected">(전체)</option>
-				<option value=""></option>
-				<option value=""></option>
-			</select><br>
+			<select name="menu" id="type_selectbar" style="width : 200px; height: 30px"></select><br>
 
 		</div>
 
@@ -224,6 +200,67 @@
 
 		</div>
 	</div>
+
+	<script>
+
+		//년도별 검색 작동 함수
+		function valuechange(value) {
+			document.getElementById('span1').innerHTML = (value);
+			document.getElementById('span2').innerHTML = (value);
+			create_select();
+		}
+		function decrease() {
+			current_value = document.getElementById('years').value
+			//console.log(current_value);
+			document.getElementById('years').value -= 1
+			valuechange(document.getElementById('years').value)
+		}
+		function increase() {
+			current_value = document.getElementById('years').value
+			//console.log(current_value);
+			document.getElementById('years').value++;
+			valuechange(document.getElementById('years').value)
+		}
+
+		var types
+		var mod
+		
+		
+		function parse(callback) {
+			$.getJSON("../../../json/global_volunteer.json", json => {
+				callback(json);
+			});
+		}
+
+		
+		function create_select() {
+
+			mod = document.getElementById('years').value
+			parse(json => {
+				types = Object.keys(json[0]);//key값들 저장해놓은 배열
+				
+
+				var type_select = document.getElementById("type_selectbar")
+				type_select.innerHTML = ""
+
+				for (var i = 0; i < json.length; i++) {
+
+					if(mod == json[i].year)
+					{
+						for (var j = 0; j < types.length; j++) {
+							if (types[j] != "year" && json[i][types[j]] != 0 && types[j] != "전체")
+								type_select.innerHTML += "<option name='' value='" + types[j] + "'>" + types[j] + "</option>"
+						}
+					}
+				}
+			});
+
+		}
+	</script>
+
+	<script>
+		create_select()
+	</script>
 
 </body>
 
