@@ -18,7 +18,7 @@
 	@import url('../../../css/output_default.css');
 	#chartdiv1 {
 		width: 1000px;
-		height: 500px;
+		height: 400px;
 	}
 
     .node:hover {
@@ -118,7 +118,7 @@
         <div id="unitBox">
             (단위 : 명)
         </div>
-        <div id="chartdiv1" class="chartdiv"></div>
+        <div id="chartdiv1"></div>
 
         <div id="summaryBox">
             <h2><span id="span2">2019</span>년도 학생 사회봉사 참여 현황</h2>
@@ -126,11 +126,12 @@
         <div id="unitBox">
             (단위 : 명)
         </div>
-        <div id="chartdiv2" class="chartdiv" style="width: 1000%; margin-left: 200px"></div>
+        <div id="chartdiv2" style="width: 1000%; margin-left: 200px"></div>
         <div class="legend" id="gotop" style="left:80%; top :40%">
-            <span style="font-size: 20px"><b>년도별 검색</b></span>
-            <br>
+            <br><br>
             <form>
+                <span style="font-size: 20px"><b>년도별 검색</b></span>
+                <br>
                 <input type=button value='◀' onclick=decrease()>
                 <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
                 <input type=button value='▶' onclick=increase()>
@@ -139,7 +140,8 @@
 				function valuechange(value) {
 					document.getElementById('span1').innerHTML = (value);
 					document.getElementById('span2').innerHTML = (value);
-					check();
+
+					check(false)
 				}
 				function decrease() {
 					current_value = document.getElementById('years').value
@@ -160,7 +162,7 @@
                 <br>
 
                 <span style="font-size: 20px"><b>분야별 검색</b></span><br>
-                <select id="type_selectbar" style="width : 200px; height: 30px"></select><br>
+                <select name="menu" id="type_selectbar" style="width : 200px; height: 30px" onchange="check(true)"></select><br>
             </form>
         </div>
         <script>
@@ -235,11 +237,17 @@
 
 			}
 
+			function check(isupdate) {
+			    var year = Number(document.getElementById('years').value)
+			    var type = $("select[name=menu]").val();
+
+                draw_graph(year, type, isupdate)
+			}
     </script>
 
     <script>
             create_select()
-            draw_graph(2019, "전체")
+            draw_graph(2019, "전체", true)
     </script>
 
 </body>
