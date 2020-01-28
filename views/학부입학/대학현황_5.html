@@ -14,7 +14,10 @@
 			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 		<script src="../../js/4_line.js"></script>
 		<script src="../../js/4_layered.js"></script>
+		<script src="../../working on/js/table_지원모집입학.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+  		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
 	</head>
 
@@ -346,19 +349,19 @@
 			<br><br>
 			<form>
 
-				<input type="radio" name="admit" value="total" onclick="years1(); years2()"/>전체<br>
-				<input type="radio" name="admit" value="within" checked = "checked" onclick="years1(); years2()"/>정원내<br>
-				<input type="radio" name="admit" value="over" onclick="years1(); years2()"/>정원외<br>
+				<input type="radio" name="admit" value="total" onclick="years1(); years2(); years3()"/>전체<br>
+				<input type="radio" name="admit" value="within" checked = "checked" onclick="years1(); years2(); years3()"/>정원내<br>
+				<input type="radio" name="admit" value="over" onclick="years1(); years2(); years3()"/>정원외<br>
 				
 				<br><br>
 				
 				<span style="font-size: 20px"><b>계열별 검색</b></span><br>
-				<select name="college" style = "width : 200px; height: 30px" onchange="years1(); years2()">
-				<option value="전체" onselect="years1(); years2()">(전체)</option>
-				<option value="인문사회" onselect="years1(); years2()">인문사회</option>
-				<option value="자연과학" onselect="years1(); years2()">자연과학</option>
-				<option value="공학" onselect="years1(); years2()">공학</option>
-				<option value="예체능" onselect="years1(); years2()">예체능</option>
+				<select name="college" style = "width : 200px; height: 30px" onchange="years1(); years2(); years3()">
+				<option value="전체" onselect="years1(); years2(); years3()">(전체)</option>
+				<option value="인문사회" onselect="years1(); years2(); years3()">인문사회</option>
+				<option value="자연과학" onselect="years1(); years2(); years3()">자연과학</option>
+				<option value="공학" onselect="years1(); years2(); years3()">공학</option>
+				<option value="예체능" onselect="years1(); years2(); years3()">예체능</option>
 				</select>
 
 				<br><br>
@@ -409,13 +412,12 @@
 			(단위 : %)
 		</div>
 		<div id="chartdiv2-2" class="chartdiv"> 그래프 5-3</div>
-		
-		
+
+
 		<div id = "summaryBox">
 			<h2>학부입학 표</h2>
-		</div>
-			
-		<img src = "표.png" style = "width : 1025px; height: 800px; margin-bottom : 20px">
+		</div><br>
+		<div id="tablediv" style = "width : 1025px;"> 표</div>
 		
 		
 		<div id = "summaryBox" style = "font-size: 15px">
@@ -450,6 +452,7 @@
 		<script>
 		years1();
 		years2();
+		years3();
 		</script>
 
 
