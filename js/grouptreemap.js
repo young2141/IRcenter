@@ -6,7 +6,7 @@ function Treemap() {
             // Themes end
 
             // create chart
-            var chart = am4core.create("chartdiv2", am4charts.TreeMap);
+            var chart = am4core.create("chartdiv3", am4charts.TreeMap);
             chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
 
             var data = json;
@@ -36,10 +36,6 @@ function Treemap() {
             // }
             treeData.push(brandData);
             console.log(treeData);
-            var total = 0;
-            // for (var i = 0; i < treeData.length; i++) {
-            //     total = treeData[i]["학술"] + treeData[i]["취미"] + treeData[i]["체육"] + treeData[i]["종교"] + treeData[i]["봉사"];
-            // }
 
             chart.data = treeData;
 
@@ -59,7 +55,7 @@ function Treemap() {
 
             level1SeriesTemplate.tooltip.animationDuration = 0;
             level1SeriesTemplate.strokeOpacity = 1;
-            level1ColumnTemplate.tooltipText = "[bold]{name}[/]: [font-size:14px]{per}%({count}명)";
+            level1ColumnTemplate.tooltipText = "{name}: [font-size:14px bold]{per}%({count}명)[/]";
 
             level1ColumnTemplate.column.cornerRadius(0, 0, 0, 0)
             level1ColumnTemplate.fillOpacity = 1;
@@ -70,7 +66,7 @@ function Treemap() {
             bullet1.locationY = 0.5;
             bullet1.locationX = 0.5;
             // bullet1.label.text = "{name}";
-            bullet1.label.html = `<div style='font-size:16px;'><center><strong>{name}</strong> {per}%</center></div>`;
+            bullet1.label.html = `<div style='font-size:16px;'><center>{name}<strong> {per}%</strong></center></div>`;
 
 
             chart.maxLevels = 2;
