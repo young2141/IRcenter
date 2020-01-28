@@ -48,13 +48,9 @@ function processDataForGraph(_data, majorclass){
 
     graph_data = [];
 
-    let total = 0;
-    Object.keys(statistic).map(key => {total += statistic[key];});
-
     Object.keys(statistic).map(key => {
         let obj = {};
         obj["type"] = key;
-        obj["percent"] = statistic[key] / total;
         obj["value"] = statistic[key];
         obj["color"] = color[key];
         graph_data.push(obj);
@@ -95,7 +91,7 @@ function drawChart(data) {
         chart.data = data;
 
         var pieSeries = chart.series.push(new am4charts.PieSeries());
-        pieSeries.dataFields.value = "percent";
+        pieSeries.dataFields.value = "value";
         pieSeries.dataFields.category = "type";
         pieSeries.slices.template.propertyFields.fill = "color";
         pieSeries.slices.template.strokeWidth = 0;

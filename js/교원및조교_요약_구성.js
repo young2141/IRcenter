@@ -1,4 +1,6 @@
 var path = "../../../json/교원및조교_요약_연도별그래프.json";
+var data;
+var year = "2019";
 
 function loadJSON(path, success) {
     var xhr = new XMLHttpRequest();
@@ -13,16 +15,40 @@ function loadJSON(path, success) {
     xhr.send();
 }
 
-function makeDataToDrawGraph(data) {
+function makeDataToDrawGraph3(data) {
     var graph_data = [];
     var fulltime = ["교수", "부교수", "조교수", "전임강사"];
     var nonexecutive = ["겸임교수", "초빙교수", "기금교수", "계약교수", "명예교수", "방문교수", "시간강사", "외래강사"];
     var TA = "조교";
     var color = ["#ff0000", "#0000ff", "#00ff00"];
 
-    data = data.filter((e) => e["연도"] == "2019")[0];
+    data = data.filter((e) => e["연도"] == year)[0];
     delete data["연도"];
     var graph_data = [];
+
+    if (parseInt(year) > 2012) {
+        Object.keys(data).map(key => {
+            if (key == "전임강사") {
+                delete data[key];
+            }
+        });
+    }
+
+    if (parseInt(year) < 2017) {
+        Object.keys(data).map(key => {
+            if (key == "방문교수") {
+                delete data[key];
+            }
+        })
+    }
+
+    if (parseInt(year) > 2014) {
+        Object.keys(data).map(key => {
+            if (key == "외래강사") {
+                delete data[key];
+            }
+        })
+    }
 
     Object.keys(data).map(key => {
         // if(data[key] == 0) continue;
@@ -47,21 +73,29 @@ function makeDataToDrawGraph(data) {
     return graph_data;
 }
 
-function init() {
-    loadJSON(path, function (data) {
-        data = makeDataToDrawGraph(data);
-        drawChart(data);
+function init2() {
+    loadJSON(path, function (_data) {
+        data = _data.slice(0);
+        _data = makeDataToDrawGraph3(_data);
+        drawChart3(_data);
     });
 }
 
-function drawChart(data) {
+function changeInput(value) {
+    year = value;
+    let _data = data.slice(0);
+    _data = makeDataToDrawGraph3(_data);
+    drawChart3(_data);
+}
+
+function drawChart3(data) {
     am4core.ready(function () {
 
         // Themes begin
         am4core.useTheme(am4themes_animated);
         // Themes end
 
-        var chart1 = am4core.create("chartdiv1", am4charts.XYChart);
+        var chart1 = am4core.create("chartdiv3", am4charts.XYChart);
         chart1.data = data;
         chart1.title = "전임교원";
 
@@ -70,9 +104,11 @@ function drawChart(data) {
         categoryAxis1.renderer.minGridDistance = 20;
         // categoryAxis1.renderer.grid.template.disabled = true;
         categoryAxis1.renderer.labels.template.fontSize = 12;
+        categoryAxis1.renderer.grid.template.location = 0;
 
         var valueAxis1 = chart1.yAxes.push(new am4charts.ValueAxis());
         valueAxis1.max = 1000;
+        valueAxis1.renderer.grid.template.location = 0;
         // valueAxis1.renderer.grid.template.disabled = true;
 
         var series1 = chart1.series.push(new am4charts.ColumnSeries());
@@ -81,9 +117,9 @@ function drawChart(data) {
         series1.columns.template.width = 20;
         series1.columns.template.fill = "#ff0000";
 
-        
 
-        var chart2 = am4core.create("chartdiv2", am4charts.XYChart);
+
+        var chart2 = am4core.create("chartdiv4", am4charts.XYChart);
         chart2.data = data;
         chart2.title = "비전임교원";
 
@@ -92,10 +128,12 @@ function drawChart(data) {
         categoryAxis2.renderer.minGridDistance = 20;
         // categoryAxis2.renderer.grid.template.disabled = true;
         categoryAxis2.renderer.labels.template.fontSize = 12;
+        categoryAxis2.renderer.grid.template.location = 0;
 
         var valueAxis2 = chart2.yAxes.push(new am4charts.ValueAxis());
         valueAxis2.max = 1000;
         valueAxis2.renderer.labels.template.disabled = true;
+        valueAxis2.renderer.grid.template.location = 0;
         // valueAxis2.renderer.grid.template.disabled = true;
 
         var series2 = chart2.series.push(new am4charts.ColumnSeries());
@@ -106,7 +144,7 @@ function drawChart(data) {
 
 
 
-        var chart3 = am4core.create("chartdiv3", am4charts.XYChart);
+        var chart3 = am4core.create("chartdiv5", am4charts.XYChart);
         chart3.data = data;
         chart3.title = "조교";
 
@@ -115,11 +153,13 @@ function drawChart(data) {
         categoryAxis3.renderer.minGridDistance = 20;
         categoryAxis3.renderer.labels.template.fontSize = 12;
         // categoryAxis3.renderer.grid.template.disabled = true;
+        categoryAxis3.renderer.grid.template.location = 0;
 
         var valueAxis3 = chart3.yAxes.push(new am4charts.ValueAxis());
         valueAxis3.max = 1000;
         valueAxis3.renderer.labels.template.disabled = true;
         // valueAxis3.renderer.grid.template.disabled = true;
+        valueAxis3.renderer.grid.template.location = 0;
 
         var series3 = chart3.series.push(new am4charts.ColumnSeries());
         series3.dataFields.categoryX = "TA";
