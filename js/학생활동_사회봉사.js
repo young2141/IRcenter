@@ -79,7 +79,8 @@ function draw_graph(_year, _type, isupdate) {
                 series.strokeWidth = 4;
 
                 var bullet = series.bullets.push(new am4charts.CircleBullet());
-                bullet.circle.radius = 8;
+                bullet.circle.radius = 4;
+                bullet.circle.strokeWidth = 3;
                 /*
                 series.heatRules.push({
                     target: bullet.circle,
@@ -142,7 +143,7 @@ function draw_graph(_year, _type, isupdate) {
         d3.select("#chartdiv2").select("svg").remove();
 
 
-        var diameter = 900;
+        var diameter = 600;
         var color = d3.scaleOrdinal(d3.schemeCategory20);
 
         var bubble = d3

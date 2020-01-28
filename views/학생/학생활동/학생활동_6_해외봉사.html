@@ -131,7 +131,7 @@
         <div id="unitBox">
             (단위 : 명)
         </div>
-        <div id="chartdiv2" style="margin-left: 50px"></div>
+        <div id="chartdiv2" style="margin-left: 200px"></div>
 
         <div class="legend" id="gotop" style="left:80%; top :40%">
             <span style="font-size: 20px"><b>년도별 검색</b></span>
@@ -229,35 +229,42 @@
 		    parse(json => {
 		        var year = document.getElementById('years').value
 		        var type = $("select[name=menu]").val();
-				var types = Object.keys(json[0]);//key값들 저장해놓은 배열
+				var types = []
 				
 				var type_select = document.getElementById("type_selectbar")
 				type_select.innerHTML = "<option name='' value='전체'>(전체)</option>"
 
 				for (var i = 0; i < json.length; i++) {
-					if(year == json[i].year)
-					{
-						for (var j = 0; j < types.length; j++) {
-						    if (types[j] != "year" && (json[i][types[j]] != 0 || type == types[j]) && types[j] != "전체")
-						        type_select.innerHTML += "<option name='' value='" + types[j] + "'" + (type == types[j] ? "selected>" : ">") + types[j] + "</option>"    
-						}
-					}
+				    types = types.concat(Object.keys(json[i]))
 				}
-			});
+
+				types = Array.from(new Set(types))
+				types.sort()
+
+				ColorCode = new Object()
+
+				for (var i = 0; i < types.length; i++) {
+                    ColorCode[types[i]] = i
+				    if (types[i] != "전체" && types[i] != "year" && types[i] != "기타")
+                        type_select.innerHTML += "<option name='' value='"+types[i]+"'>"+types[i]+"</option>"
+				}
+
+				type_select.innerHTML += "<option name='' value='기타'>기타</option>"
+
+                return ColorCode
+		    });
 		}
 
 		function check(isupdate) {
 		    var year = Number(document.getElementById('years').value)
 		    var type = $("select[name=menu]").val();
 
-            create_select()
-		    draw_graph(year, type, isupdate)
+		    draw_graph(year, type, isupdate, false)
 		}
 	</script>
 
 	<script>
-        create_select()
-        draw_graph(2019, "전체", true)
+        draw_graph(2019, "전체", true, true)
 	</script>
 
 </body>

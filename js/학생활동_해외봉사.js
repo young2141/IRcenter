@@ -1,4 +1,6 @@
 ﻿var jdata
+var ColorCode
+var color
 
 function parse(callback) {
     $.getJSON("global_volunteer.json", json => {
@@ -6,8 +8,34 @@ function parse(callback) {
     });
 }
 
-function draw_graph(_year, _type, isupdate) {
+function draw_graph(_year, _type, isupdate, isfirst) {
     parse(json => {
+        if (isfirst) {
+            var year = document.getElementById('years').value
+            var type = $("select[name=menu]").val();
+            var types = []
+
+            var type_select = document.getElementById("type_selectbar")
+            type_select.innerHTML = "<option name='' value='전체'>(전체)</option>"
+
+            for (var i = 0; i < json.length; i++) {
+                types = types.concat(Object.keys(json[i]))
+            }
+
+            types = Array.from(new Set(types))
+            types.sort()
+
+            ColorCode = new Object()
+
+            for (var i = 0; i < types.length; i++) {
+                ColorCode[types[i]] = i
+                if (types[i] != "전체" && types[i] != "year" && types[i] != "기타")
+                    type_select.innerHTML += "<option name='' value='" + types[i] + "'>" + types[i] + "</option>"
+            }
+
+            type_select.innerHTML += "<option name='' value='기타'>기타</option>"
+        }
+        
         /*
         var jdata = []
         var keys = Object.keys(json[0])
@@ -79,7 +107,8 @@ function draw_graph(_year, _type, isupdate) {
                 series.strokeWidth = 4;
 
                 var bullet = series.bullets.push(new am4charts.CircleBullet());
-                bullet.circle.radius = 8;
+                bullet.circle.radius = 4;
+                bullet.circle.strokeWidth = 3;
                 /*
                 series.heatRules.push({
                     target: bullet.circle,
@@ -141,8 +170,9 @@ function draw_graph(_year, _type, isupdate) {
         dataset["children"] = children_array;
         // console.log(dataset)
         d3.select("#chartdiv2").select("svg").remove();
-        var diameter = 900;
-        var color = d3.scaleOrdinal(d3.schemeCategory20);
+        var diameter = 600;
+        if (isfirst)
+            color = d3.scaleOrdinal(d3.schemeCategory20);
 
         var bubble = d3
           .pack(dataset)
@@ -230,7 +260,8 @@ function draw_graph(_year, _type, isupdate) {
               return d.r;
           })
           .style("fill", function (d, i) {
-              return color(i);
+              // alert(d.data.Name + " : " + ColorCode[d.data.Name] + " / " + color(ColorCode[d.data.Name]))
+              return color(ColorCode[d.data.Name]);
           });
 
         node
