@@ -1,4 +1,4 @@
-function chart() {
+﻿function chart() {
     $.getJSON('../json/professor_by_age_current.json', (data1) => {
         bubble_map1(data1);
     });

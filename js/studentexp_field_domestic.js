@@ -65,7 +65,7 @@ function drawCurved(_div, _data) {
             bullet.tooltipText = "[#000 font-size: 15px]{categoryX}학년도 " + value_kr + "는 [bold]{valueY}명[] 입니다.";
 
             var circle = bullet.createChild(am4core.Circle);
-            circle.radius = 2;
+            circle.radius = 4;
             circle.fill = am4core.color(clr);
             circle.strokeWidth = 3;
 
