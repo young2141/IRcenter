@@ -8,11 +8,8 @@
 }
 
 function drawPyramid2(_data) {
-    // Themes begin
     am4core.useTheme(am4themes_animated);
-    // Themes end
-
-    // Create chart instance
+  
     var container = am4core.create("chartdiv2", am4core.Container);
     container.layout = "grid";
     container.fixedWidthGrid = false;
