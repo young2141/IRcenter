@@ -1,4 +1,4 @@
-function Treemap() {
+function  changegraph(brand) {
     am4core.ready(function () {
         jQuery.getJSON("../../../json/grouptreemap.json", json => {
             // Themes begin
@@ -11,8 +11,7 @@ function Treemap() {
 
             var data = json;
             var treeData = [];
-            // for (var brand in data) {
-            var brand = "2019";
+            var brand = document.getElementById('span1').innerHTML;
             var brandData = { name: brand, children: [] }
             var brandTotal = 0;
             for (var model in data[brand]) {
@@ -21,17 +20,20 @@ function Treemap() {
             // console.log(brandTotal);
             for (var model in data[brand]) {
                 if (model == "학술")
-                    brandData.children.push({ name: model, count: data[brand][model], color: "#c767dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model], color: "#dc67ce", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
                 else if (model == "취미")
-                    brandData.children.push({ name: model, count: data[brand][model], color: "#6771dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
-                else if (model == "봉사")
                     brandData.children.push({ name: model, count: data[brand][model], color: "#8067dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
-                else if (model == "체육")
-                    brandData.children.push({ name: model, count: data[brand][model], color: "#6794dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
-                else if (model == "종교")
+                else if (model == "봉사")
                     brandData.children.push({ name: model, count: data[brand][model], color: "#a367dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+                else if (model == "체육")
+                    brandData.children.push({ name: model, count: data[brand][model], color: "#6771dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+                else if (model == "종교")
+                    brandData.children.push({ name: model, count: data[brand][model], color: "#c767dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+                else if (model == "문예")
+                    brandData.children.push({ name: model, count: data[brand][model], color: "#6794dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
                 else
                     brandData.children.push({ name: model, count: data[brand][model], color: "#67b7dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+
             }
             // }
             treeData.push(brandData);
@@ -66,7 +68,7 @@ function Treemap() {
             bullet1.locationY = 0.5;
             bullet1.locationX = 0.5;
             // bullet1.label.text = "{name}";
-            bullet1.label.html = `<div style='font-size:16px;'><center>{name}<strong> {per}%</strong></center></div>`;
+            bullet1.label.html = `<div style='font-size:13px;'><center>{name}<strong> {per}%</strong></center></div>`;
 
 
             chart.maxLevels = 2;

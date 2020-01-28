@@ -156,9 +156,9 @@
             <span style="font-size: 20px"><b>년도별 검색</b></span>
 			<br>
 
-			<input type=button value='◀' onclick="decrease(), changegraph()">
+			<input type=button value='◀' onclick="decrease(), changedata()">
 			<input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput="valuechange(parseInt(this.value))"onchange="changegraph(this.value)" >
-			<input type=button value='▶' onclick="increase(), changegraph()">
+			<input type=button value='▶' onclick="increase(), changedata()">
 
 			<script>
 				function valuechange(value) {
