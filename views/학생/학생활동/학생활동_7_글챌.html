@@ -37,7 +37,7 @@
 		stroke-width: 2px;
 	}
 
-	#chartdiv1 {
+	.chartdiv {
 		width: 1000px;
 		height: 500px;
 	}
@@ -123,7 +123,8 @@
         </div>
 
 		<script>
-			Graph();
+			lineGraph();
+			stackGraph();
 			var currentPosition = parseInt($("#gotop").css("top"));
 			$(window).scroll(function () {
 				var position = $(window).scrollTop();
@@ -147,10 +148,11 @@
 		<div id="unitBox">
 			(단위 : 명)
 		</div>
+		<div id="chartdiv1" class="chartdiv"></div>
 		<div id="unitBox">
 			(단위 : 팀)
 		</div>
-		<div id="chartdiv" class="chartdiv"></div>
+		<div id="chartdiv2" class="chartdiv"></div>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
