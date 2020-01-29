@@ -12,6 +12,7 @@
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script src="https://d3js.org/d3.v4.min"></script>
+	<script src="../../../js/교원및조교_7_Explore.js"></script>
 
 
 </head>
@@ -116,9 +117,11 @@
 	<div id="TOP">
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
-			<span style="color:#ff0000; font-size: 20px;"> ■ </span> 전임교원<br>
-			<span style="color:#0000ff; font-size: 20px;"> ■ </span> 비전임교원<br>
-			<span style="color:#00ff00; font-size: 20px;"> ■ </span> 조교<br><br>
+			<div id="div_color">
+				<span id="color_fulltime" style="color:#ff0000; font-size: 20px;"> ■ </span> 전임교원<br>
+				<span id="color_nonexecutive" style="color:#0000ff; font-size: 20px;"> ■ </span> 비전임교원<br>
+				<span id="color_TA" style="color:#00ff00; font-size: 20px;"> ■ </span> 조교<br><br>
+			</div>
 
 			<span style="font-size: 20px"><b>대학(원)별 검색</b></span>
 			<br>
