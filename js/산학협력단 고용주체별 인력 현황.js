@@ -91,8 +91,9 @@ function drawPieChart(_data, id, total) {
     pieSeries.labels.template.disabled = true;
 
     let label = chart.createChild(am4core.Label);
-    label.text = '(' + total.toString() + ')';
+    label.text = '(' + total.toString() + '명)';
     label.align = "right";
+    label.fontSize = "20px";
 }
 
 function drawChart(_data) {
