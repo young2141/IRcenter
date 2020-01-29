@@ -43,10 +43,9 @@ function drawHeight(data) {
         series.columns.template.strokeWidth = 0;
         //series.columns.template.stroke = am4core.color(_valueY_RGB); //색상
         //series.columns.template.fill = am4core.color(_valueY_RGB); // 색상
-
+        //series.tooltipText = "[#000 bold]" + condname_kr[cond1] + "[]\n" + "[#000]{year}학년도 " + condname_kr[cond2] + "의 전임교원 1인당 학생수는[#000 bold]{valueY}명[#000] 입니다.";
         var bullet = series.bullets.push(new am4charts.Bullet());
         bullet.fill = am4core.color("#fff"); // tooltips grab fill from parent by default
-        bullet.tooltipText = "[#000 bold]" + condname_kr[cond1] + "[]\n" + "[#000]{year}학년도 " + condname_kr[cond2] + "의 전임교원 1인당 학생수는[#000 bold]{valueY}명[#000] 입니다.";
     }); // end iter callback function
 }
 
