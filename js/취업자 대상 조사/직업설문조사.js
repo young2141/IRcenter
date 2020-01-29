@@ -64,8 +64,8 @@ function drawChart1_1() {
         xAxis.renderer.grid.template.disabled = true;
         xAxis.renderer.ticks.template.disabled = false;
         xAxis.renderer.ticks.template.strokeOpacity = 0.8;
-        xAxis.renderer.ticks.template.length = height - 220;
-        xAxis.renderer.ticks.template.dy = height - 250;
+        xAxis.renderer.ticks.template.length = height - 190;
+        xAxis.renderer.ticks.template.dy = height - 213;
         xAxis.renderer.ticks.template.location = 0;
         xAxis.title.text = "인턴쉽 횟수";
 

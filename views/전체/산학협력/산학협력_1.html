@@ -87,55 +87,61 @@
 	<div id="TOP">
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
-			
 
-			<span style="color:#FE4459; font-size: 20px;">■</span> 경력없음<br>
-			<span style="color:#E8A343; font-size: 20px;">■</span> 1년미만<br>
-			<span style="color:#FCFF57; font-size: 20px;">■</span> 1년~3년미만<br>
-			<span style="color:#43E884; font-size: 20px;">■</span> 3년~5년미만<br>
-			<span style="color:#52A1FF; font-size: 20px;">■</span> 5년 이상<br>
+
+			<div id="div_color">
+				<span style="color:#FE4459; font-size: 20px;">■</span> 경력없음<br>
+				<span style="color:#E8A343; font-size: 20px;">■</span> 1년미만<br>
+				<span style="color:#FCFF57; font-size: 20px;">■</span> 1년~3년미만<br>
+				<span style="color:#43E884; font-size: 20px;">■</span> 3년~5년미만<br>
+
+				<span style="color:#52A1FF; font-size: 20px;">■</span> 5년 이상<br>
+
+				<span style="color:#52A1FF; font-size: 20px;">■</span> 5년~10년미만<br>
+				<span style="color:#52A1FF; font-size: 20px;">■</span> 10년 이상<br>
+			</div>
 
 			<span style="font-size: 20px"><b>계열별 검색</b></span><br>
-				<select name="" style = "width : 200px; height: 30px" onchange="changeInput('majorclass', this.value)">
+			<select name="" style="width : 200px; height: 30px" onchange="changeInput('majorclass', this.value)">
 				<option value="전체">(전체)</option>
 				<option value="인문사회">인문사회</option>
 				<option value="자연과학">자연과학</option>
 				<option value="공학">공학</option>
 				<option value="예체능">예체능</option>
-				</select>
+			</select>
 			<br><br>
 
-            <span style="font-size: 20px"><b>년도별 검색</b></span>
-            <br>
+			<span style="font-size: 20px"><b>년도별 검색</b></span>
+			<br>
 
-            <input type=button value='◀' onclick=decrease()>
-            <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
-            <input type=button value='▶' onclick=increase()>
+			<input type=button value='◀' onclick=decrease()>
+			<input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
+			<input type=button value='▶' onclick=increase()>
 
-            <script>
-                function valuechange(value) {
+			<script>
+				function valuechange(value) {
 					document.getElementById('span1').innerHTML = (value);
 					// document.getElementById('span2').innerHTML = (value);
 					changeInput("year", value);
-                    // check();
-                }
-                function decrease() {
-                    current_value = document.getElementById('years').value
-                    console.log(current_value);
-                    document.getElementById('years').value -= 1
-                    valuechange(document.getElementById('years').value)
-                }
-                function increase() {
-                    current_value = document.getElementById('years').value
-                    console.log(current_value);
-                    document.getElementById('years').value++;
-                    valuechange(document.getElementById('years').value)
-                }
-            </script>
+					// check();
+				}
+				function decrease() {
+					current_value = document.getElementById('years').value
+					console.log(current_value);
+					document.getElementById('years').value -= 1
+					valuechange(document.getElementById('years').value)
+				}
+				function increase() {
+					current_value = document.getElementById('years').value
+					console.log(current_value);
+					document.getElementById('years').value++;
+					valuechange(document.getElementById('years').value)
+				}
+			</script>
 
-            <br>
-            <div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
-			</div>
+			<br>
+			<div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
+		</div>
 
 		<script>
 			var currentPosition = parseInt($("#gotop").css("top"));
@@ -163,9 +169,9 @@
 		</div>
 		<div id="chartdiv" class="chartdiv"></div>
 
-        <script>
-            init();
-        </script>
+		<script>
+			init();
+		</script>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>

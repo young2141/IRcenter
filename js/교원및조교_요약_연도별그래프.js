@@ -1,5 +1,10 @@
 var path = "../../../json/교원및조교_요약_연도별그래프.json";
 var data;
+var color = {
+    "전임교원": undefined,
+    "비전임교원": undefined,
+    "조교": undefined
+}
 
 function loadJSON(path, success) {
     var xhr = new XMLHttpRequest();
@@ -52,8 +57,19 @@ function makeDataToDrawGraph1(data) {
     return graph_data;
 }
 
+function getColors(){
+    var color_fulltime = document.getElementById("color_fulltime");
+    var color_nonexecutive = document.getElementById("color_nonexecutive");
+    var color_TA = document.getElementById("color_TA");
+
+    color["전임교원"] = window.getComputedStyle(color_fulltime).color;
+    color["비전임교원"] = window.getComputedStyle(color_nonexecutive).color;
+    color["조교"] = window.getComputedStyle(color_TA).color;
+}
+
 function init1() {
     loadJSON(path, function (_data) {
+        getColors();
         data = _data.slice(0);
         _data = makeDataToDrawGraph1(_data);
         drawChart1(_data);
@@ -153,8 +169,8 @@ function drawChart2(data) {
 
 
         //색 변경
-        series3.columns.template.fill = am4core.color("#00ff00");
-        series2.columns.template.fill = am4core.color("#0000ff");
-        series1.columns.template.fill = am4core.color("#ff0000");
+        series3.columns.template.fill = am4core.color(color["조교"]);
+        series2.columns.template.fill = am4core.color(color["비전임교원"]);
+        series1.columns.template.fill = am4core.color(color["전임교원"]);
     });
 }
