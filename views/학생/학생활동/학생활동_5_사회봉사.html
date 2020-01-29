@@ -241,13 +241,13 @@
 			    var year = Number(document.getElementById('years').value)
 			    var type = $("select[name=menu]").val();
 
-                draw_graph(year, type, isupdate)
+                draw_graph(year, type, isupdate, false)
 			}
     </script>
 
     <script>
         create_select()
-        draw_graph(2019, "전체", true)
+        draw_graph(2019, "전체", true, true)
     </script>
 
 </body>

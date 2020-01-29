@@ -1,4 +1,6 @@
 ﻿var jdata
+var ColorCode
+var color
 
 function parse(callback) {
     $.getJSON("community_service.json", json => {
@@ -6,8 +8,23 @@ function parse(callback) {
     });
 }
 
-function draw_graph(_year, _type, isupdate) {
+function draw_graph(_year, _type, isupdate, isfirst) {
     parse(json => {
+        if (isfirst) {
+            var types = Object.keys(json[0])
+
+            var type_select = document.getElementById("type_selectbar")
+            type_select.innerHTML = "<option name='' value='전체'>(전체)</option>"
+
+            ColorCode = new Object()
+
+            for (var i = 0; i < types.length; i++) {
+                ColorCode[types[i]] = i
+                if (types[i] != "전체" && types[i] != "year")
+                    type_select.innerHTML += "<option name='' value='" + types[i] + "'>" + types[i] + "</option>"
+            }
+        }
+
         /*
         var jdata = []
         var keys = Object.keys(json[0])
@@ -61,8 +78,10 @@ function draw_graph(_year, _type, isupdate) {
                 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
                 valueAxis.min = 0;
                 valueAxis.extraMax = 0.15;
-                valueAxis.strictMinMax = false;
-                valueAxis.strictMatrix = true;
+                console.log(max_value * 1.15)
+                console.log(am4charts.AxisTick.length)
+                // valueAxis.strictMinMax = true;
+                // valueAxis.strictMatrix = true;
                 // valueAxis.min = min_value -(max_value -min_value) * 0.1
                 // valueAxis.max = max_value +(max_value -min_value) * 0.1
                 // valueAxis.renderer.inside = true;
@@ -72,11 +91,18 @@ function draw_graph(_year, _type, isupdate) {
                 // valueAxis.renderer.labels.template.disabled = true;
                 // valueAxis.renderer.minGridDistance = 15;
 
+                if (min_value > max_value * 0.25){
+                    var axisBreak = valueAxis.axisBreaks.create();
+                    axisBreak.startValue = min_value*0.05;
+                    axisBreak.endValue = min_value*0.75;
+                    axisBreak.breakSize = 0.08;
+                }
+
                 // Create series
                 var series = chart.series.push(new am4charts.LineSeries());
                 series.dataFields.categoryX = "year"
                 series.dataFields.valueY = _type
-                series.strokeWidth = 4;
+                series.strokeWidth = 3;
 
                 var bullet = series.bullets.push(new am4charts.CircleBullet());
                 bullet.circle.radius = 4;
@@ -143,8 +169,9 @@ function draw_graph(_year, _type, isupdate) {
         d3.select("#chartdiv2").select("svg").remove();
 
 
-        var diameter = 600;
-        var color = d3.scaleOrdinal(d3.schemeCategory20);
+        var diameter = 650;
+        if (isfirst)
+            color = d3.scaleOrdinal(d3.schemeCategory20);
 
         var bubble = d3
           .pack(dataset)
@@ -232,7 +259,7 @@ function draw_graph(_year, _type, isupdate) {
               return d.r;
           })
           .style("fill", function (d, i) {
-              return color(i);
+              return color(ColorCode[d.data.Name]);
           });
 
         node

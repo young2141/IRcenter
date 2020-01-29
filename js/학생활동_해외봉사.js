@@ -104,7 +104,7 @@ function draw_graph(_year, _type, isupdate, isfirst) {
                 var series = chart.series.push(new am4charts.LineSeries());
                 series.dataFields.categoryX = "year"
                 series.dataFields.valueY = _type
-                series.strokeWidth = 4;
+                series.strokeWidth = 3;
 
                 var bullet = series.bullets.push(new am4charts.CircleBullet());
                 bullet.circle.radius = 4;
@@ -170,7 +170,7 @@ function draw_graph(_year, _type, isupdate, isfirst) {
         dataset["children"] = children_array;
         // console.log(dataset)
         d3.select("#chartdiv2").select("svg").remove();
-        var diameter = 600;
+        var diameter = 650;
         if (isfirst)
             color = d3.scaleOrdinal(d3.schemeCategory20);
 
