@@ -29,7 +29,7 @@ function bubble_map1(data) {
     rank.push(numdata[sz - 1]);
     //legend생성
     var doc = document.getElementById("legend1");
-    doc.innerHTML = "[근속연수별현황]<br>";
+    doc.innerHTML = "[강의시간별현황]<br>";
     prof = {};
     for (i = 0; i < data.length; i++) {
       if (data[i]["time"] == "1미만") continue;
@@ -62,7 +62,7 @@ function bubble_map1(data) {
         key +
         " 평균 강의시간: " +
         Math.round(prof[key]["total_age"] / prof[key]["ppl"]) +
-        "<br>";
+        "시간<br>";
     }
     am4core.useTheme(am4themes_animated);
 
@@ -95,7 +95,7 @@ function bubble_map1(data) {
 
     var bullet = series.bullets.push(new am4core.Circle());
     bullet.tooltipText =
-      "{prof}, {time}: {value.workingValue.formatNumber('#.')}명";
+      "{prof}, {time}시간: {value.workingValue.formatNumber('#.')}명";
     bullet.strokeWidth = 3;
     bullet.adapter.add("radius", function(radius, target) {
       var values = target.dataItem.value,
