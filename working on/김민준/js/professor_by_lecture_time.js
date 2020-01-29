@@ -96,15 +96,15 @@ function bubble_map1(data) {
         bullet.adapter.add('fill', function (fill, target) {
             var X = target.dataItem.categoryX;
             if (X == "25세이하" || X == "26~30")
-                return "#00FF00";
+                return chart.colors.getIndex(0);
             else if (X == "31~35" || X == "36~40")
-                return "#00EE00";
+                return chart.colors.getIndex(1);
             else if (X == "41~45" || X == "46~50")
-                return "#00DD00";
+                return chart.colors.getIndex(2);
             else if (X == "51~55" || X == "56~60")
-                return "#00CC00";
+                return chart.colors.getIndex(3);
             else
-                return "#00BB00";
+                return chart.colors.getIndex(4);
         });
         bullet.stroke = "#ffffff";
     }
@@ -200,15 +200,15 @@ function bubble_map2(data) {
         bullet.adapter.add('fill', function (fill, target) {
             var X = target.dataItem.categoryX;
             if (X == "1미만" || X == "1~3")
-                return "#00FF00";
+                return chart.colors.getIndex(0);
             else if (X == "4~6" || X == "7~9")
-                return "#00EE00";
+                return chart.colors.getIndex(1);
             else if (X == "10~12" || X == "13~15")
-                return "#00DD00";
+                return chart.colors.getIndex(2);
             else if (X == "16~18" || X == "19~21")
-                return "#00CC00";
+                return chart.colors.getIndex(3);
             else
-                return "#00BB00";
+                return chart.colors.getIndex(4);
         });
         bullet.stroke = "#ffffff";
     });
