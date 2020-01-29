@@ -12,7 +12,7 @@
 function bubble_map1(data) {
     $("#legend1").empty();
     var numdata = [];
-    var rad = [5, 13, 21, 29, 37, 45];
+    //var rad = [5, 13, 21, 29, 37, 45];
     var rank = [0];
     var sz = 0;
     for (i = 0; i < data.length; i++) {
@@ -33,7 +33,7 @@ function bubble_map1(data) {
     var doc = document.getElementById("legend1");
     doc.innerHTML = "[연령별현황]<br>"
     for (i = 1; i <= 5; i++) {
-        doc.innerHTML += "(반지름이 " + rad[i] + "인 원 그림) " + rank[i] + "명<br>";
+        doc.innerHTML += "(반지름이 " + Math.round(10 + 40 * rank[i] / numdata[sz - 1],2) + "인 원 그림) " + rank[i] + "명<br>";
     }
     am4core.useTheme(am4themes_animated);
 
@@ -80,6 +80,7 @@ function bubble_map1(data) {
             var values = target.dataItem.value;
             if (values == 0)
                 return 0;
+            /*
             else if (rank[0] < values && values < rank[1])
                 return rad[0] + (rad[1] - rad[0]) * ((values - rank[0]) / (rank[1] - rank[0]));
             else if (rank[1] <= values && values < rank[2])
@@ -92,6 +93,8 @@ function bubble_map1(data) {
                 return rad[4] + (rad[5] - rad[4]) * ((values - rank[4]) / (rank[5] - rank[4]));
             else if (rank[5] <= values)
                 return rad[5];
+                */
+            return 10 + 40 * values / numdata[sz - 1];
         });
         bullet.adapter.add('fill', function (fill, target) {
             var X = target.dataItem.categoryX;
@@ -110,13 +113,16 @@ function bubble_map1(data) {
     }
 
     function chrateLabel() {
-        var label = container.createChild(am4core.Label);
-        label.width = am4core.percent(15);
+        var label1 = container.createChild(am4core.Label);
+        label1.width = am4core.percent(15);
 
-        label.text = "27\n11\n113\n"
+        label1.dx = document.getElementById("chartdiv1").offsetWidth * 0.875;
+        label1.dy = document.getElementById("chartdiv1").offsetHeigth * 0.125;
+        console.log(label1.dx, label1.dy);
+        label1.text = "11"; 
     }
     createBubble1();
-    //chrateLabel();
+    chrateLabel();
 }
 
 function bubble_map2(data) {
@@ -145,7 +151,7 @@ function bubble_map2(data) {
         var doc = document.getElementById("legend2");
         doc.innerHTML = "[연령별현황]<br>"
         for (i = 1; i <= 5; i++) {
-            doc.innerHTML += "(반지름이 " + rad[i] + "인 원) " + rank[i] + "명<br>";
+            doc.innerHTML += "(반지름이 " + Math.round(10 + 40 * rank[i] / numdata[sz - 1], 2) + "인 원 그림) " + rank[i] + "명<br>";
         }
         am4core.useTheme(am4themes_animated);
 
@@ -184,6 +190,7 @@ function bubble_map2(data) {
             var values = target.dataItem.value, r;
             if (values == 0)
                 return 0;
+            /*
             else if (rank[0] < values && values < rank[1])
                 return rad[0] + (rad[1] - rad[0]) * ((values - rank[0]) / (rank[1] - rank[0]));
             else if (rank[1] <= values && values < rank[2])
@@ -196,6 +203,9 @@ function bubble_map2(data) {
                 return rad[4] + (rad[5] - rad[4]) * ((values - rank[4]) / (rank[5] - rank[4]));
             else if (rank[5] <= values)
                 return rad[5];
+            */
+            else
+                return 10 + 40 * values / numdata[sz - 1];
         });
         bullet.adapter.add('fill', function (fill, target) {
             var X = target.dataItem.categoryX;
