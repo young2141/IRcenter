@@ -48,10 +48,9 @@ function bubble_map1(data) {
   }
   for (var key in prof) {
     doc.innerHTML +=
-      key +
-      " 평균 연령: " +
-      Math.round(prof[key]["total_age"] / prof[key]["ppl"]) +
-      "<br>";
+      String(Math.round(prof[key]["total_age"] / prof[key]["ppl"])).fontsize(
+        20
+      ) + "<br>";
   }
   //for (i = 1; i <= 5; i++) {
   //doc.innerHTML +=

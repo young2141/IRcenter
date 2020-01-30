@@ -171,7 +171,7 @@ function bubble_map2(data) {
   rank.push(numdata[sz - 1]);
   //legend생성
   var doc = document.getElementById("legend2");
-  doc.innerHTML = "[근속연수별 현황]<br>";
+  doc.innerHTML = "근속연수 평균<br><br>";
   prof = {};
   for (i = 0; i < data.length; i++) {
     if (prof[data[i]["prof"]] == undefined) {
@@ -199,10 +199,9 @@ function bubble_map2(data) {
   }
   for (var key in prof) {
     doc.innerHTML +=
-      key +
-      " 평균 근속연수: " +
-      Math.round(prof[key]["total_age"] / prof[key]["ppl"]) +
-      "년<br>";
+      String(Math.round(prof[key]["total_age"] / prof[key]["ppl"])).fontsize(
+        25
+      ) + "년<br><br>";
   }
   //for (i = 1; i <= 5; i++) {
   //doc.innerHTML +=

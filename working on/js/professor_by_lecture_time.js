@@ -29,7 +29,9 @@ function bubble_map1(data) {
     rank.push(numdata[sz - 1]);
     //legend생성
     var doc = document.getElementById("legend1");
-    doc.innerHTML = "[강의시간별현황]<br>";
+    doc.style.textAlign = "center";
+    doc.style.alignItems = "bottom";
+    doc.innerHTML = "평균 강의시간<br><br>";
     prof = {};
     for (i = 0; i < data.length; i++) {
       if (data[i]["time"] == "1미만") continue;
@@ -56,14 +58,13 @@ function bubble_map1(data) {
         }
       }
     }
-    console.log(prof);
     for (var key in prof) {
       doc.innerHTML +=
-        key +
-        " 평균 강의시간: " +
-        Math.round(prof[key]["total_age"] / prof[key]["ppl"]) +
-        "시간<br>";
+        String(Math.round(prof[key]["total_age"] / prof[key]["ppl"])).fontsize(
+          25
+        ) + "시간<br><br>";
     }
+
     am4core.useTheme(am4themes_animated);
 
     var chart = am4core.create("chartdiv1", am4charts.XYChart);

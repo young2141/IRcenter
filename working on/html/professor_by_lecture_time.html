@@ -1,4 +1,4 @@
-<html>
+    <html>
 
 <head>
     <meta charset="utf-8">
@@ -34,11 +34,20 @@
         stroke: #ccc;
         stroke-width: 2px;
     }
-
+#bodyBox{
+    width :1500px;
+}
     #chartdiv1 {
         width: 1000px;
         height: 500px;
+        float:left;
     }
+    #legend1{
+        width : 200px;
+        float:left;
+    }
+    
+
 </style>
 
 <body>
@@ -68,7 +77,6 @@
             추가적인 정보를 보기 위해서 각 대시보드 페이지 위에 나타나는 메뉴박스들을 클릭하세요.<br>
         </div>
 
-        <center>
             <div id="tableBox">
                 <table cellspacing="0" cellpadding="0">
                     <tbody>
@@ -111,13 +119,11 @@
             <hr style="border-color: black">
 
     </div>
-    </center>
 
+            
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
-            <div id="legend1"></div>
-            <br><br>
-            <div id="legend2"></div>
+            
             <span style="font-size: 20px"><b>분기별 검색</b></span><br>
             <input checked="checked" name="semester" type="radio" value="first" onchange="chart()"/>상반기<br />
             <input name="semester" type="radio" value="second" onchange="chart()"/>하반기<br />
@@ -145,6 +151,8 @@
             (단위 : 세)
         </div>
         <div id="chartdiv1" class="chartdiv">그래프 1</div>
+        <div id="legend1"></div>
+        <img src="../professor_by_lecture_time.png" id="img" width="200px" height="200px">
 
         <div id="summaryBox">
 
