@@ -1,18 +1,16 @@
 function chart() {
     $.getJSON("../../../json/professor_and_assistant_summary.json", jsonData => {
-        var data = jsonData;
-        console.log(data)
-        drawCurved(data);
+        drawCurved(jsonData);
     });
 }
 
 function drawCurved(_data) {
-    var typename = ["professor", "associateprofessor", "assistantprofessor", "teachingassistant", "concurrently", "invitation", "donate", "contract", "honor", "visist", "parttime"];
-    var typename_kr = ["교수", "부교수", "조교수", "조교", "겸임교수", "초빙교수", "기금교수", "계약교수", "명예교수", "방문교수", "시간강사"]
+    var typename = ["professor", "associateprofessor", "assistantprofessor", "teachingassistant", "concurrently", "invitation", "parttime", "etc"];
+    var typename_kr = ["교수", "부교수", "조교수", "조교", "겸임교수", "초빙교수", "시간강사", "기타"]
     var color = {
         "professor": "#ff0000", "associateprofessor": "#ff0000", "assistantprofessor": "#ff0000",
         "teachingassistant": "#00ff00",
-        "concurrently": "#0000ff", "invitation": "#0000ff", "donate": "#0000ff", "contract": "#0000ff", "honor": "#0000ff", "visit": "#0000ff", "parttime": "#0000ff"
+        "concurrently": "#0000ff", "invitation": "#0000ff", "parttime": "#0000ff", "etc": "#0000ff"
     };
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
@@ -26,7 +24,8 @@ function drawCurved(_data) {
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 0;
-        //valueAxis.max = 100.5;
+        valueAxis.extraMax = 0.15;
+        valueAxis.strictMatrix = false;
 
         function CurvedcreateSeries(value, value_kr, clr) {
             var P1Cseries = chart.series.push(new am4charts.LineSeries());
