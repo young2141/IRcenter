@@ -8,11 +8,17 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<!--
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script src="https://d3js.org/d3.v4.min"></script>
 	<script src="../../../js/4-3.js"></script>
+	-->
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	<script src="../../../js/js_계열별.js"></script>
+	<script src="../../../js/js_대학원별.js"></script>
+	<script>drawChart(2019);drawChart2(2019)</script>
 
 
 </head>
@@ -132,6 +138,8 @@
 
             <script>
                 function valuechange(value) {
+					drawChart(value)
+					drawChart2(value)
 					document.getElementById('span1').innerHTML = (value);
                     check();
                 }
@@ -146,7 +154,7 @@
                     console.log(current_value);
                     document.getElementById('years').value++;
                     valuechange(document.getElementById('years').value)
-                }
+				}
             </script>
 
             <br>

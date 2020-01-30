@@ -17,7 +17,7 @@ function drawChart() {
         var chart = am4core.create("chartdiv", am4charts.XYChart);
         
         // Add data
-        chart.data = json
+        
         var max=0
         for(var i=0;i<json.length;i++){
             if(json[i].비용>max){
@@ -25,6 +25,8 @@ function drawChart() {
             }
             json[i].dif = json[i].dif/2
         }
+        chart.data = json
+
         // Create axes
         var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "year";
@@ -35,9 +37,10 @@ function drawChart() {
         categoryAxis.renderer.cellEndLocation = 0.9;
         
         var  valueAxis = chart.xAxes.push(new am4charts.ValueAxis()); 
-        valueAxis.renderer.opposite = true;
+        //valueAxis.renderer.opposite = true;
         //valueAxis.logarithmic = true;
         valueAxis.max = max*1.15; 
+        //valueAxis.renderer.minGridDistance = 100;
         
         // Create series
         function createSeries(field, name,color) {

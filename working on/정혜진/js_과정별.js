@@ -28,7 +28,8 @@ function drawChart() {
         // Create value axis
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         //valueAxis.title.text = "Place taken";
-        valueAxis.renderer.minLabelPosition = 0.01;
+        //valueAxis.renderer.minLabelPosition = 0.01;
+        valueAxis.min = 0;
         
 
         function P1CurvedcreateSeries(value, clr) {
@@ -62,6 +63,11 @@ function drawChart() {
         P1CurvedcreateSeries("학사", "#FE4459"); // 전체
         P1CurvedcreateSeries("석사", "#FCFF57"); // 자연과학
         P1CurvedcreateSeries("박사", "#52A1FF"); // 예체능
+
+        var axisBreak = valueAxis.axisBreaks.create();
+            axisBreak.startValue = 6;
+            axisBreak.endValue = 18;
+            axisBreak.breakSize = 0.01;
         
         
         // Add legend
