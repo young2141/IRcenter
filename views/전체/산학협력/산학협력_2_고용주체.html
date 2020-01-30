@@ -11,7 +11,7 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-	<script src="../../../js/산학협력단 고용주체별 인력 현황.js"></script>
+	<script src="../../../js/산학협력단 인력현황.js"></script>
 </head>
 
 <style type="text/css">
@@ -21,6 +21,37 @@
 		width: 130px;
 		height: 130px;
 	}
+
+	.chartdiv2 {
+		vertical-align: middle;
+		width: 300px;
+		height: 100px;
+		position: absolute;
+		left: 50px;
+		top: 0px
+	}
+
+	.text{
+		vertical-align: middle;
+		position: absolute;
+		padding-left : 10px;
+	}
+
+	.triangle{
+		display: block;
+		width: 0;
+		height: 0;
+		/* margin-right: 200px; */
+		border-top: 20px solid transparent;
+		border-right: 20px solid #000000;
+		border-bottom: 20px solid transparent;
+		border-left: 20px solid transparent;
+		position: relative;
+	}
+
+	/* table {
+		height: 600px;
+	} */
 </style>
 
 <body>
@@ -122,6 +153,10 @@
 
 			<br>
 			<div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
+
+			<div id="legend">
+
+			</div>
 		</div>
 
 		<script>
@@ -155,16 +190,16 @@
 				<td>겸직교원</td>
 				<td>정규직</td>
 				<td>무기계약직</td>
-				<td>기간계약직</td>
+				<td>기간제계약직</td>
 				<td>기타</td>
 			</tr>
 			<tr align="center">
 				<td>대학<br>소속직원</td>
-				<td><span id="chartdiv11" class="chartdiv"></td>
-				<td><span id="chartdiv12" class="chartdiv"></td>
-				<td><span id="chartdiv13" class="chartdiv"></td>
-				<td><span id="chartdiv14" class="chartdiv"></td>
-				<td><span id="chartdiv15" class="chartdiv"></td>
+				<td id="cell11" onclick="clickTabelCell(id)"><span id="chartdiv11" class="chartdiv"></td>
+				<td id="cell12" onclick="clickTabelCell(id)"><span id="chartdiv12" class="chartdiv"></td>
+				<td id="cell13" onclick="clickTabelCell(id)"><span id="chartdiv13" class="chartdiv"></td onclick="clickTabelCell(this.value)">
+				<td id="cell14" onclick="clickTabelCell(id)"><span id="chartdiv14" class="chartdiv"></td onclick="clickTabelCell(this.value)">
+				<td id="cell15" onclick="clickTabelCell(id)"><span id="chartdiv15" class="chartdiv"></td onclick="clickTabelCell(this.value)">
 			</tr>
 			<tr align="center">
 				<td>산학<br>협력단<br>자체<br>임용직원</td>
@@ -174,12 +209,21 @@
 					<line x1="0" y1="0" x2="100%" y2="150px"
 					style="stroke:rgb(0,0,0); stroke-width:2"></line>
 				</svg></td>
-				<td><span id="chartdiv22" class="chartdiv"></td>
-				<td><span id="chartdiv23" class="chartdiv"></td>
-				<td><span id="chartdiv24" class="chartdiv"></td>
-				<td><span id="chartdiv25" class="chartdiv"></td>
+				<td id="cell22" onclick="clickTabelCell(id)" value="chartdiv22"><span id="chartdiv22" class="chartdiv"></td onclick="clickTabelCell(this.value)">
+				<td id="cell23" onclick="clickTabelCell(id)" value="chartdiv23"><span id="chartdiv23" class="chartdiv"></td onclick="clickTabelCell(this.value)">
+				<td id="cell24" onclick="clickTabelCell(id)" value="chartdiv24"><span id="chartdiv24" class="chartdiv"></td onclick="clickTabelCell(this.value)">
+				<td id="cell25" onclick="clickTabelCell(id)" value="chartdiv25"><span id="chartdiv25" class="chartdiv"></td onclick="clickTabelCell(this.value)">
 			</tr>
 		</table>
+
+		<br><br>		
+		<div id="detail_table" style="position: relative;">
+
+		</div>
+		<div id="all_person"></div>
+
+		
+
 		<script>
 			init();
 		</script>
