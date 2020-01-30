@@ -34,7 +34,7 @@ am4core.ready(function () {
             if (name == "전체")
                 lineSeries.strokeDasharray = "lineDash";
             else
-                lineSeries.strokeDasharray = "5,5";
+                lineSeries.strokeDasharray = "2,2";
             lineSeries.tooltip.label.textAlign = "middle";
             // lineSeries.strokeDasharray = "5,5";
 
