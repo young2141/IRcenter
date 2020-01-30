@@ -28,6 +28,8 @@ parse(json => {
         series1.stacked = true;
         series1.name = "admin/tech Service";
         series1.columns.template.fill = am4core.color("#FCD12A");
+        series1.columns.template.tooltipText = "[bold]신규채용+복직[/]\n[font-size:14px]{valueY}명";
+
 
         var series2 = chart.series.push(new am4charts.ColumnSeries());
         series2.dataFields.categoryX = "year";
@@ -36,6 +38,8 @@ parse(json => {
         series2.stacked = true;
         series2.columns.template.fill = am4core.color("#000080");
         series2.columns.template.fillOpacity = 0.7;
+        series2.columns.template.tooltipText = "[bold]휴직+퇴직[/]\n[font-size:14px]{valueY}명";
+
 
 
         var series3 = chart.series.push(new am4charts.LineSeries());
@@ -44,6 +48,7 @@ parse(json => {
         series3.strokeWidth = 4;
         series3.name = "Net Difference";
         series3.stroke = am4core.color("#58641D");
+        
     
     });
 });
