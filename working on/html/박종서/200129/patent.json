@@ -1,0 +1,112 @@
+[
+  {
+    "year": "2010",
+    "domestic": {
+      "apply": 298.0,
+      "registration": 102.0
+    },
+    "foreign": {
+      "apply": 45.0,
+      "registration": 6.0
+    }
+  },
+  {
+    "year": "2011",
+    "domestic": {
+      "apply": 349.0,
+      "registration": 193.0
+    },
+    "foreign": {
+      "apply": 60.0,
+      "registration": 8.0
+    }
+  },
+  {
+    "year": "2012",
+    "domestic": {
+      "apply": 325.0,
+      "registration": 216.0
+    },
+    "foreign": {
+      "apply": 68.0,
+      "registration": 8.0
+    }
+  },
+  {
+    "year": "2013",
+    "domestic": {
+      "apply": 489.0,
+      "registration": 334.0
+    },
+    "foreign": {
+      "apply": 93.0,
+      "registration": 17.0
+    }
+  },
+  {
+    "year": "2014",
+    "domestic": {
+      "apply": 534.0,
+      "registration": 340.0
+    },
+    "foreign": {
+      "apply": 113.0,
+      "registration": 20.0
+    }
+  },
+  {
+    "year": "2015",
+    "domestic": {
+      "apply": 377.0,
+      "registration": 328.0
+    },
+    "foreign": {
+      "apply": 113.0,
+      "registration": 32.0
+    }
+  },
+  {
+    "year": "2016",
+    "domestic": {
+      "apply": 409.0,
+      "registration": 328.0
+    },
+    "foreign": {
+      "apply": 101.0,
+      "registration": 30.0
+    }
+  },
+  {
+    "year": "2017",
+    "domestic": {
+      "apply": 373.0,
+      "registration": 308.0
+    },
+    "foreign": {
+      "apply": 100.0,
+      "registration": 49.0
+    }
+  },
+  {
+    "year": "2018",
+    "domestic": {
+      "apply": 377.0,
+      "registration": 254.0
+    },
+    "foreign": {
+      "apply": 107.0,
+      "registration": 37.0
+    }
+  },
+  {
+    "year": "2019",
+    "domestic": {
+      "apply": 377.0,
+      "registration": 254.0
+    },
+    "foreign": {
+      "apply": 107.0,
+      "registration": 37.0
+    }
+  }
+]
