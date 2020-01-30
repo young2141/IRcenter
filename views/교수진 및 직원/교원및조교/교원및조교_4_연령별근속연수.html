@@ -38,7 +38,26 @@
         #chartdiv1 {
             width: 1000px;
             height: 500px;
+            float :left
         }
+        
+        #chartdiv2 {
+            width: 1000px;
+            height: 500px;
+            float :left
+        }
+        #legend1{
+        width : 200px;
+        float:left;
+    }
+    #legend2{
+        width : 200px;
+        float:left;
+        position: relative;
+        top :20%;
+        
+    }
+
     </style>
     
     <body>
@@ -115,9 +134,7 @@
     
         <div id="TOP">
             <div class="legend" id="gotop" style="left:80%; top :40%">
-                <div id="legend1"></div>
-                <br><br>
-                <div id="legend2"></div>
+                
                 <!-- <span style="font-size: 20px"><b>분기별 검색</b></span><br>
                 <input checked="checked" name="semester" type="radio" value="first" onchange="chart()"/>상반기<br />
                 <input name="semester" type="radio" value="second" onchange="chart()"/>하반기<br /> -->
@@ -145,15 +162,17 @@
                 (단위 : 세)
             </div>
             <div id="chartdiv1" class="chartdiv">그래프 1</div>
-    
+            <div id="legend1"></div>
+            <img src="../../../etc/img/proffesor_bubble.png" id="img1" width="300px" height="250px" vspace="100px">
             <div id="summaryBox">
                 <h2><span id="P1">근속연수별 현황</span></h2>
             </div>
             <div id="unitBox">
                 (단위 : 명)
             </div>
-            <div id="chartdiv2" class="chartdiv">그래프 2</div>
-    
+            <div id="chartdiv2" class="chartdiv">그래프 2</div>         
+            <div id="legend2"></div>
+            <img src="../../../etc/img/proffesor_bubble.png" id="img2" width="300px" height="250px"vspace="100px">
             <script>chart()</script>
     
             <div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">

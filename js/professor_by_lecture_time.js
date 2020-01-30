@@ -32,7 +32,9 @@ function bubble_map1(data) {
   rank.push(numdata[sz - 1]);
   //legend생성
   var doc = document.getElementById("legend1");
-  doc.innerHTML = "[연령별현황]<br>";
+  doc.innerHTML = "평균 연령<br><br>";
+  doc.style.textAlign = "center";
+  doc.style.alignItems = "bottom";
   prof = {};
   for (i = 0; i < data.length; i++) {
     if (prof[data[i]["prof"]] == undefined) {
@@ -48,10 +50,9 @@ function bubble_map1(data) {
   }
   for (var key in prof) {
     doc.innerHTML +=
-      key +
-      " 평균 연령: " +
-      Math.round(prof[key]["total_age"] / prof[key]["ppl"]) +
-      "세<br>";
+      String(Math.round(prof[key]["total_age"] / prof[key]["ppl"])).fontsize(
+        25
+      ) + "세<br><br><br>";
   }
   //for (i = 1; i <= 5; i++) {
   //doc.innerHTML +=
@@ -171,7 +172,9 @@ function bubble_map2(data) {
   rank.push(numdata[sz - 1]);
   //legend생성
   var doc = document.getElementById("legend2");
-  doc.innerHTML = "근속연수 평균<br><br>";
+  doc.innerHTML = "평균 근속연수<br><br><br>";
+  doc.style.textAlign = "center";
+  doc.style.alignItems = "bottom";
   prof = {};
   for (i = 0; i < data.length; i++) {
     if (prof[data[i]["prof"]] == undefined) {
