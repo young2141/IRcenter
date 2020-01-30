@@ -45,12 +45,14 @@ function drawChart2(value) {
             valueAxis.extraMax = 0.1;
             
             // Create series
-            function createSeries(field, name) {
+            function createSeries(field, name,color) {
                 var series = chart.series.push(new am4charts.ColumnSeries());
                 series.dataFields.valueX = field;
                 series.dataFields.categoryY = "colledge";
                 series.stacked = true;
                 series.name = name;
+                series.columns.template.stroke = am4core.color(color);
+                series.columns.template.fill = am4core.color(color);
 
                 series.columns.template.width = am4core.percent(60);
                 series.columns.template.tooltipText = "[bold]{name}[/]\n[font-size:14px]{valueX}명";
@@ -63,10 +65,10 @@ function drawChart2(value) {
                 labelBullet.label.fill = am4core.color("#fff");
             }
             
-            createSeries("교수", "교수");
-            createSeries("부교수", "부교수");
-            createSeries("조교수", "조교수");
-            createSeries("조교", "조교");
+            createSeries("교수", "교수","red");
+            createSeries("부교수", "부교수","blue");
+            createSeries("조교수", "조교수","green");
+            createSeries("조교", "조교","yellow");
 
             var totalSeries = chart.series.push(new am4charts.ColumnSeries());
             totalSeries.dataFields.valueX = "none";
