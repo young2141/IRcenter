@@ -1,5 +1,5 @@
 function parse(callback) {
-    $.getJSON("6.json", json => {
+    $.getJSON("../../../json/공동연구_3.json", json => {
         callback(json);
     });
 }
@@ -13,11 +13,9 @@ parse(json => {
         // Themes end
         
             // Create chart instance
-        var chart = am4core.create("chartdiv", am4charts.XYChart);
-        chart.width = am4core.percent(100);
-        chart.height = am4core.percent(100);
-        // Add data
+        var chart = am4core.create("chartdiv3", am4charts.XYChart);
         
+        // Add data
         chart.data = json
 
         // Create axes
@@ -26,8 +24,8 @@ parse(json => {
         categoryAxis.numberFormatter.numberFormat = "#";
         categoryAxis.renderer.inversed = true;
         categoryAxis.renderer.grid.template.location = 0;
-        //categoryAxis.renderer.cellStartLocation = 0.1;
-        //categoryAxis.renderer.cellEndLocation = 0.9;
+        categoryAxis.renderer.cellStartLocation = 0.1;
+        categoryAxis.renderer.cellEndLocation = 0.9;
         
         var  valueAxis = chart.xAxes.push(new am4charts.ValueAxis()); 
         //valueAxis.renderer.opposite = true;
@@ -43,16 +41,24 @@ parse(json => {
             series.dataFields.categoryY = "name";
             series.name = name;
             series.columns.template.tooltipText = "{name}: [bold]{valueX}[/] 천원";
-            series.columns.template.height = am4core.percent(40);
+            series.columns.template.height = am4core.percent(100);
             series.sequencedInterpolation = true;
             series.columns.template.stroke = am4core.color(color);
             series.columns.template.fill = am4core.color(color);
+        
+            // var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+            // valueLabel.label.text = "{valueX}";
+            // valueLabel.label.horizontalCenter = "left";
+            // valueLabel.label.dx = 10;
+            // valueLabel.label.hideOversized = false;
+            // valueLabel.label.truncate = false;
             
         
             
         }
         
-        createSeries("수익", "실비자산 사용료 수익","red");
+        createSeries("비용", "연구 장비 비용","red");
+        createSeries("수익", "실비자산 사용료 수익","blue");
         
         }); // end am4core.ready()
     

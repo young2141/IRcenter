@@ -15,6 +15,7 @@ function drawChart(value) {
             var chart = am4core.create("chartdiv1", am4charts.XYChart);
             chart.width = am4core.percent(100);
             chart.height = am4core.percent(100);
+            chart.maskBullets = false;
 
             var data=[]
             for (var i = 0; i < json.length; i++) {
@@ -63,11 +64,6 @@ function drawChart(value) {
                 // labelBullet.label.fill = am4core.color("#fff");
                 return series;
             }
-            
-            createSeries("교수", "교수","red");
-            createSeries("부교수", "부교수","blue");
-            createSeries("조교수", "조교수","green");
-            createSeries("조교", "조교","yellow");
 
             var totalSeries = chart.series.push(new am4charts.ColumnSeries());
             totalSeries.dataFields.valueY = "none";
@@ -81,9 +77,17 @@ function drawChart(value) {
             totalBullet.label.text = "{valueY.total}";
             totalBullet.label.hideOversized = false;
             totalBullet.label.fontSize = 16;
-            totalBullet.label.background.fill = totalSeries.stroke;
+            // totalBullet.label.background.fill = totalSeries.stroke;
             totalBullet.label.background.fillOpacity = 0.2;
             totalBullet.label.padding(5, 10, 5, 10);
+            
+            createSeries("교수", "교수","red");
+            createSeries("부교수", "부교수","blue");
+            createSeries("조교수", "조교수","green");
+            createSeries("조교", "조교","yellow");
+
+            
+
             }); // end am4core.ready()
 
 
