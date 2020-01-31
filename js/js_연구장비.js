@@ -1,11 +1,10 @@
 function parse(callback) {
-    $.getJSON("공동연구.json", json => {
+    $.getJSON("../../../json/공동연구_1.json", json => {
         callback(json);
     });
 }
 
-function drawChart() {
-    parse(json => {
+parse(json => {
 
     am4core.ready(function() {
 
@@ -93,5 +92,3 @@ function drawChart() {
 
 
     });
-    
-}
