@@ -1,5 +1,7 @@
 var path = "../../../json/전체교원 대비 전임교원 현황.json";
+var path2 = "../../../json/professor_and_assistant_assistant.json";
 var data;
+var data2;
 var year = "2019";
 var university = "(전체)";
 var sex = "(전체)";
@@ -8,6 +10,7 @@ var color = {
     "비전임교원": undefined,
     "조교": undefined
 }
+var peopleForUnversity = {};
 
 function loadJSON(path, success) {
     var xhr = new XMLHttpRequest();
@@ -44,7 +47,10 @@ function fillSelectUniversity() {
     select_university.appendChild(option);
     select_university.appendChild(br);
 
+    peopleForUnversity = {};
     for (let i = 0; i < universities.length; ++i) {
+        peopleForUnversity[universities[i]] = 0;
+
         let option = document.createElement("option");
         option.setAttribute("value", universities[i]);
         option.innerHTML = universities[i];
@@ -60,6 +66,16 @@ function makeDataToDrawGraph(_data) {
     let TA = "조교";
 
     _data = _data.filter((e) => e["연도"] == year);
+
+    for (let i = 0; i < _data.length; ++i) {
+        Object.keys(_data[i]).map(key => {
+            if (key != "연도" && key != "단과대학" && key != "학과") {
+                peopleForUnversity[_data[i]["단과대학"]] += _data[i][key];
+            }
+        });
+    }
+    // console.log(peopleForUnversity);
+
     if (university != "(전체)") {
         _data = _data.filter(e => e["단과대학"] == university);
     }
@@ -82,11 +98,28 @@ function makeDataToDrawGraph(_data) {
         });
     }
 
+    let graph_data = [];
+
+    let TA_data = data2[year];
+    let obj = {};
+    obj["TA"] = TA;
+
     if (sex != "(전체)") {
         _data2 = _data2.filter(e => e["sex"] == sex);
+        if (sex == "남") {
+            obj["value"] = TA_data["assistant"]["male"];
+        } else {
+            obj["value"] = TA_data["assistant"]["female"];
+        }
+    } else {
+        obj["value"] = TA_data["assistant"]["male"] + TA_data["assistant"]["female"];
     }
-
-    let graph_data = [];
+    if(university != "(전체)"){
+        let total = 0;
+        Object.keys(peopleForUnversity).map(key => total += peopleForUnversity[key])
+        obj["value"] = parseInt(obj["value"] * (peopleForUnversity[university]/ total));
+    }
+    graph_data.push(obj);
 
     for (let i = 0; i < fulltime.length; ++i) {
         if (parseInt(year) > 2012 && i == 3) continue;
@@ -114,6 +147,7 @@ function makeDataToDrawGraph(_data) {
         graph_data.push(obj);
     }
 
+
     return graph_data;
 }
 
@@ -128,6 +162,10 @@ function getColors() {
 }
 
 function init() {
+    loadJSON(path2, function (_data) {
+        data2 = _data;
+    });
+
     loadJSON(path, function (_data) {
         getColors();
         data = _data.slice(0);
@@ -152,10 +190,14 @@ function changeInput(type, value) {
     drawChart(_data);
 }
 
-
-
 function drawChart(data) {
     am4core.ready(function () {
+        let max = 0;
+        for (let i = 0; i < data.length; ++i) {
+            max = max > data[i]["value"] ? max : data[i]["value"];
+        }
+        max += parseInt(max * 0.15);
+
 
         // Themes begin
         am4core.useTheme(am4themes_animated);
@@ -173,17 +215,17 @@ function drawChart(data) {
         categoryAxis1.renderer.grid.template.location = 0;
 
         var valueAxis1 = chart1.yAxes.push(new am4charts.ValueAxis());
-        valueAxis1.max = 1000;
+        valueAxis1.max = max;
+        valueAxis1.min = 0;
         valueAxis1.renderer.grid.template.location = 0;
+        valueAxis1.renderer.grid.template.minGridDistance = 100;
         // valueAxis1.renderer.grid.template.disabled = true;
 
         var series1 = chart1.series.push(new am4charts.ColumnSeries());
         series1.dataFields.categoryX = "fulltime";
-        series1.dataFields.valueY = "valueForFulltime";
+        series1.dataFields.valueY = "value";
         series1.columns.template.width = 20;
         series1.columns.template.fill = "#ff0000";
-
-
 
         var chart2 = am4core.create("chartdiv2", am4charts.XYChart);
         chart2.data = data;
@@ -197,14 +239,16 @@ function drawChart(data) {
         categoryAxis2.renderer.grid.template.location = 0;
 
         var valueAxis2 = chart2.yAxes.push(new am4charts.ValueAxis());
-        valueAxis2.max = 1000;
+        valueAxis2.max = max;
+        valueAxis2.min = 0;
         valueAxis2.renderer.labels.template.disabled = true;
         valueAxis2.renderer.grid.template.location = 0;
+        valueAxis2.renderer.grid.template.minGridDistance = 100;
         // valueAxis2.renderer.grid.template.disabled = true;
 
         var series2 = chart2.series.push(new am4charts.ColumnSeries());
         series2.dataFields.categoryX = "nonexecutive";
-        series2.dataFields.valueY = "valueForNonexecutive";
+        series2.dataFields.valueY = "value";
         series2.columns.template.width = 20;
         series2.columns.template.fill = "#00ff00";
 
@@ -222,14 +266,16 @@ function drawChart(data) {
         categoryAxis3.renderer.grid.template.location = 0;
 
         var valueAxis3 = chart3.yAxes.push(new am4charts.ValueAxis());
-        valueAxis3.max = 1000;
+        valueAxis3.max = max;
+        valueAxis3.min = 0;
         valueAxis3.renderer.labels.template.disabled = true;
         // valueAxis3.renderer.grid.template.disabled = true;
         valueAxis3.renderer.grid.template.location = 0;
+        valueAxis3.renderer.grid.template.minGridDistance = 100;
 
         var series3 = chart3.series.push(new am4charts.ColumnSeries());
         series3.dataFields.categoryX = "TA";
-        series3.dataFields.valueY = "valueForTA";
+        series3.dataFields.valueY = "value";
         series3.columns.template.width = 20;
         series3.columns.template.fill = "#0000ff";
     });
