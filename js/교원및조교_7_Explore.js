@@ -1,6 +1,8 @@
-var path = "../../../json/교원및조교_요약_연도별그래프.json";
+var path = "../../../json/전체교원 대비 전임교원 현황.json";
 var data;
 var year = "2019";
+var university = "(전체)";
+var sex = "(전체)";
 var color = {
     "전임교원": undefined,
     "비전임교원": undefined,
@@ -20,64 +22,102 @@ function loadJSON(path, success) {
     xhr.send();
 }
 
-function makeDataToDrawGraph3(data) {
-    var graph_data = [];
-    var fulltime = ["교수", "부교수", "조교수", "전임강사"];
-    var nonexecutive = ["겸임교수", "초빙교수", "기금교수", "계약교수", "명예교수", "방문교수", "시간강사", "외래강사"];
-    var TA = "조교";
+function fillSelectUniversity() {
+    let _data = data.slice(0).filter(e => e["연도"] == year);
+    let universities = [];
+    for (let i = 0; i < _data.length; ++i) {
+        if (!universities.includes(_data[i]["단과대학"])) {
+            universities.push(_data[i]["단과대학"]);
+        }
+    }
 
-    data = data.filter((e) => e["연도"] == year)[0];
-    delete data["연도"];
-    var graph_data = [];
+    let select_university = document.getElementById("select_university");
 
-    if (parseInt(year) > 2012) {
-        Object.keys(data).map(key => {
-            if (key == "전임강사") {
-                delete data[key];
+    while (select_university.firstChild) {
+        select_university.firstChild.remove();
+    }
+
+    let option = document.createElement("option");
+    option.setAttribute("value", "(전체)");
+    option.innerHTML = "(전체)";
+    let br = document.createElement("br");
+    select_university.appendChild(option);
+    select_university.appendChild(br);
+
+    for (let i = 0; i < universities.length; ++i) {
+        let option = document.createElement("option");
+        option.setAttribute("value", universities[i]);
+        option.innerHTML = universities[i];
+        let br = document.createElement("br");
+        select_university.appendChild(option);
+        select_university.appendChild(br);
+    }
+}
+
+function makeDataToDrawGraph(_data) {
+    let fulltime = ["교수", "부교수", "조교수", "전임강사"];
+    let nonexecutive = ["겸임교원", "초빙교원", "시간강사", "강사", "기타비전임"];
+    let TA = "조교";
+
+    _data = _data.filter((e) => e["연도"] == year);
+    if (university != "(전체)") {
+        _data = _data.filter(e => e["단과대학"] == university);
+    }
+
+    let _data2 = [];
+    for (let i = 0; i < _data.length; ++i) {
+        Object.keys(_data[i]).map(key => {
+            if (key != "연도" && key != "단과대학" && key != "학과") {
+                let obj = {};
+                let keywords = key.split('_');
+                if (fulltime.includes(keywords[0])) {
+                    obj["type"] = keywords[0];
+                } else if (nonexecutive.includes(keywords[0])) {
+                    obj["type"] = keywords[0];
+                }
+                obj["sex"] = keywords[1];
+                obj["value"] = _data[i][key];
+                _data2.push(obj);
             }
         });
     }
 
-    if (parseInt(year) < 2017) {
-        Object.keys(data).map(key => {
-            if (key == "방문교수") {
-                delete data[key];
-            }
-        })
+    if (sex != "(전체)") {
+        _data2 = _data2.filter(e => e["sex"] == sex);
     }
 
-    if (parseInt(year) > 2014) {
-        Object.keys(data).map(key => {
-            if (key == "외래강사") {
-                delete data[key];
-            }
-        })
-    }
+    let graph_data = [];
 
-    Object.keys(data).map(key => {
-        // if(data[key] == 0) continue;
+    for (let i = 0; i < fulltime.length; ++i) {
+        if (parseInt(year) > 2012 && i == 3) continue;
+
+        temp = _data2.filter(e => e["type"] == fulltime[i]);
         let obj = {};
-        // obj["prof_class"] = key;
-        // obj["value"] = data[key];
-        if (fulltime.includes(key)) {
-            obj["fulltime"] = key;
-            obj["valueForFulltime"] = data[key];
-            obj["color"] = color[key];
-        } else if (nonexecutive.includes(key)) {
-            obj["nonexecutive"] = key;
-            obj["valueForNonexecutive"] = data[key];
-            obj["color"] = color[key];
-        } else if (TA == key) {
-            obj["TA"] = key;
-            obj["valueForTA"] = data[key];
-            obj["color"] = color[key];
+        obj["fulltime"] = fulltime[i];
+        obj["value"] = 0;
+        for (let j = 0; j < temp.length; ++j) {
+            obj["value"] += temp[j]["value"];
         }
         graph_data.push(obj);
-    })
+    }
+
+    for (let i = 0; i < nonexecutive.length; ++i) {
+        if (parseInt(year) < 2019 && i == 3) continue;
+
+        temp = _data2.filter(e => e["type"] == nonexecutive[i]);
+        let obj = {};
+        obj["nonexecutive"] = nonexecutive[i];
+        obj["value"] = 0;
+        for (let j = 0; j < temp.length; ++j) {
+            obj["value"] += temp[j]["value"];
+        }
+        graph_data.push(obj);
+    }
+
     return graph_data;
 }
 
-function getColors(){
+function getColors() {
     var color_fulltime = document.getElementById("color_fulltime");
     var color_nonexecutive = document.getElementById("color_nonexecutive");
     var color_TA = document.getElementById("color_TA");
@@ -87,32 +127,41 @@ function getColors(){
     color["조교"] = window.getComputedStyle(color_TA).color;
 }
 
-function init2() {
+function init() {
     loadJSON(path, function (_data) {
         getColors();
         data = _data.slice(0);
-        _data = makeDataToDrawGraph3(_data);
-        drawChart3(_data);
+        fillSelectUniversity(_data);
+        _data = makeDataToDrawGraph(_data);
+        drawChart(_data);
     });
 }
 
-function changeInput(value) {
-    year = value;
+function changeInput(type, value) {
+    if (type == "year") {
+        year = value;
+        fillSelectUniversity();
+    } else if (type == "sex") {
+        sex = value
+    } else if (type == "university") {
+        university = value;
+    }
+
     let _data = data.slice(0);
-    _data = makeDataToDrawGraph3(_data);
-    drawChart3(_data);
+    _data = makeDataToDrawGraph(_data);
+    drawChart(_data);
 }
 
 
 
-function drawChart3(data) {
+function drawChart(data) {
     am4core.ready(function () {
 
         // Themes begin
         am4core.useTheme(am4themes_animated);
         // Themes end
 
-        var chart1 = am4core.create("chartdiv3", am4charts.XYChart);
+        var chart1 = am4core.create("chartdiv1", am4charts.XYChart);
         chart1.data = data;
         chart1.title = "전임교원";
 
@@ -136,7 +185,7 @@ function drawChart3(data) {
 
 
 
-        var chart2 = am4core.create("chartdiv4", am4charts.XYChart);
+        var chart2 = am4core.create("chartdiv2", am4charts.XYChart);
         chart2.data = data;
         chart2.title = "비전임교원";
 
@@ -161,7 +210,7 @@ function drawChart3(data) {
 
 
 
-        var chart3 = am4core.create("chartdiv5", am4charts.XYChart);
+        var chart3 = am4core.create("chartdiv3", am4charts.XYChart);
         chart3.data = data;
         chart3.title = "조교";
 

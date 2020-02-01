@@ -11,7 +11,6 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script src="https://d3js.org/d3.v4.min"></script>
 	<script src="../../../js/교원및조교_7_Explore.js"></script>
 
 
@@ -125,20 +124,17 @@
 
 			<span style="font-size: 20px"><b>대학(원)별 검색</b></span>
 			<br>
-			<select id="" onchange="" style="width : 200px; height: 30px">
-				<option name="" value="">(전체)</option>
-				<option name="" value=""></option>
-				<option name="" value=""></option>
+			<select id="select_university" onchange="changeInput('university', this.value)" style="width : 200px; height: 30px">
 			</select>
 			<br><br>
 
 			
 			<span style="font-size: 20px"><b>성별 검색</b></span>
 			<br>
-			<select id="sex_selectbar" onchange="call()" style="width : 200px; height: 30px">
-                <option name="sex" value="all">(전체)</option>
-                <option name="sex" value="male">남자</option>
-                <option name="sex" value="female">여자</option>
+			<select id="select_sex" onchange="changeInput('sex', this.value)" style="width : 200px; height: 30px">
+                <option name="sex" value="(전체)">(전체)</option>
+                <option name="sex" value="남">남자</option>
+                <option name="sex" value="여">여자</option>
             </select>
 			<br><br>
 			
@@ -153,8 +149,8 @@
             <script>
                 function valuechange(value) {
 					document.getElementById('span1').innerHTML = (value);
-					document.getElementById('span2').innerHTML = (value);
-                    check();
+					changeInput('year', value);
+                    // check();
                 }
                 function decrease() {
                     current_value = document.getElementById('years').value
@@ -198,7 +194,16 @@
 		<div id="unitBox">
 			(단위 : 명)
 		</div>
-		<div id="chartdiv" class="chartdiv">그래프 1</div>
+		<div>
+			<div id="chartdiv1" style="width: 350px; height: 500px; float: left;">그래프 1</div>
+			<div id="chartdiv2" style="width: 550px; height: 500px; float: left;">그래프 2</div>
+			<div id="chartdiv3" style="width: 100px; height: 500px; float: left;">그래프 3</div>
+			<div style="clear:both"></div>
+		</div>
+
+		<script>
+			init();
+		</script>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
