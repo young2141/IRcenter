@@ -1,5 +1,7 @@
-var path = "../../../json/교원및조교_요약_연도별그래프.json";
+var path = "../../../json/교원및조교_연도별교원현황.json";
+var path2 = "../../../json/professor_and_assistant_assistant.json";
 var data;
+var data2;
 var color = {
     "전임교원": undefined,
     "비전임교원": undefined,
@@ -22,7 +24,7 @@ function loadJSON(path, success) {
 function makeDataToDrawGraph1(data) {
     var graph_data = [];
     var fulltime = ["교수", "부교수", "조교수", "전임강사"];
-    var nonexecutive = ["겸임교수", "초빙교수", "기금교수", "계약교수", "명예교수", "방문교수", "시간강사", "외래강사"];
+    var nonexecutive = ["겸임교원", "초빙교원", "시간강사", "기타비전임"];
     var TA = "조교";
 
     data.forEach(e => {
@@ -37,22 +39,11 @@ function makeDataToDrawGraph1(data) {
                 obj["전임교원"] += e[key];
             } else if (nonexecutive.includes(key)) {
                 obj["비전임교원"] += e[key];
-            } else if (TA == key) {
-                obj["조교"] += e[key];
             }
-        })
+        });
+        obj["조교"] = data2[e["연도"]]["assistant"]["male"]+ data2[e["연도"]]["assistant"]["female"];
         graph_data.push(obj);
     });
-
-    graph_data.forEach((e, i) => {
-        let total = e["전임교원"] + e["비전임교원"] + e["조교"];
-        let fulltime = parseInt(e["전임교원"] / total * 100);
-        let nonexecutive = parseInt(e["비전임교원"] / total * 100);
-        let TA = 100 - (fulltime + nonexecutive);
-        graph_data[i]["전임교원"] = fulltime;
-        graph_data[i]["비전임교원"] = nonexecutive;
-        graph_data[i]["조교"] = TA;
-    })
 
     return graph_data;
 }
@@ -68,6 +59,9 @@ function getColors(){
 }
 
 function init1() {
+    loadJSON(path2, function (_data) {
+        data2 = _data
+    });
     loadJSON(path, function (_data) {
         getColors();
         data = _data.slice(0);
@@ -99,6 +93,7 @@ function drawChart1(data) {
         series1.dataFields.valueY = "전임교원";
         series1.stacked = true;
         series1.name = "전임교원";
+        series1.tooltipText = "{전임교원}";
         
 
         var series2 = chart.series.push(new am4charts.ColumnSeries());
@@ -106,6 +101,7 @@ function drawChart1(data) {
         series2.dataFields.valueY = "비전임교원";
         series2.name = "비전임교원";
         series2.stacked = true;
+        series2.tooltipText = "{비전임교원}";
         
 
         var series3 = chart.series.push(new am4charts.ColumnSeries());
@@ -113,6 +109,7 @@ function drawChart1(data) {
         series3.dataFields.valueY = "조교";
         series3.name = "조교";
         series3.stacked = true;
+        series3.tooltipText = "{조교}";
 
 
         var series4 = chart.series.push(new am4charts.LineSeries());
@@ -120,7 +117,7 @@ function drawChart1(data) {
         series4.dataFields.valueY = "전임교원";
         series4.strokeWidth = 4;
         series4.name = "전임교수 꺾은선";
-
+        series4.tooltipText = "{전임교원}";
 
         //색 변경
         series3.columns.template.fill = am4core.color("#00ff00");
@@ -152,6 +149,7 @@ function drawChart2(data) {
         series1.dataFields.valueY = "전임교원";
         series1.stacked = true;
         series1.name = "전임교원";
+        series1.tooltipText = "{전임교원}";
         
 
         var series2 = chart.series.push(new am4charts.ColumnSeries());
@@ -159,14 +157,14 @@ function drawChart2(data) {
         series2.dataFields.valueY = "비전임교원";
         series2.name = "비전임교원";
         series2.stacked = true;
-        
+        series2.tooltipText = "{비전임교원}";
 
         var series3 = chart.series.push(new am4charts.ColumnSeries());
         series3.dataFields.categoryX = "연도";
         series3.dataFields.valueY = "조교";
         series3.name = "조교";
         series3.stacked = true;
-
+        series3.tooltip.tooltipText = "{조교}";
 
         //색 변경
         series3.columns.template.fill = am4core.color(color["조교"]);

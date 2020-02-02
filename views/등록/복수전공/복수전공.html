@@ -14,10 +14,11 @@
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 
         <style>
-            .row{
+            .row {
                 font-size: 12px;
             }
-            .column{
+
+            .column {
                 font-size: 12px;
             }
         </style>
@@ -85,13 +86,14 @@
 
                     <span style="font-size: 20px"><b>정렬 조건</b></span><br>
                     <select name="menu" id="order" style="width : 200px; height: 30px">
-                        <option value="name" selected = "selected">전공이름순</option>
+                        <option value="name" selected="selected">전공이름순</option>
                         <option value="group">계열별</option>
                         <option value="count">빈도순</option>
                     </select><br><br>
 
                     <span style="font-size: 20px"><b>학기별 검색</b></span><br>
-                    <select name="menu" id="termyear" style="width : 200px; height: 30px" onchange="selectSelectbox(id, this.value)">
+                    <select name="menu" id="termyear" style="width : 200px; height: 30px"
+                        onchange="selectSelectbox(id, this.value)">
                         <option value="2019 2" selected>2019 2학기</option>
                         <option value="2019 1">2019 1학기</option>
                         <option value="2018 2">2018 2학기</option>
@@ -113,7 +115,7 @@
                         <option value="2010 2">2010 2학기</option>
                         <option value="2010 1">2010 1학기</option>
                     </select><br><br>
-                    
+
                 </div>
 
 
@@ -135,10 +137,10 @@
                 });
 
             </script>
-
+            <div id="chartdiv2" style="height: 1000px; width: 1000px"></div>
             <div id="chartdiv" style="height: 1000px; width: 1000px"></div>
-            <div id="chartdiv2" style="height: 1500px; width: 1500px"></div>
-            
+
+
 
             <div id="summaryBox" style="font-size: 15px">
                 <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>

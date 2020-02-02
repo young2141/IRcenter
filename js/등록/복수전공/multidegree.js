@@ -15,10 +15,11 @@ function getColorsByDvisions() {
 
 function init() {
     getColorsByDvisions();
-    d3_drawChart();
+    d3_drawChart("#chartdiv2");
+    d3_drawChart("#chartdiv");
 }
 
-function d3_drawChart() {
+function d3_drawChart(id) {
     d3.json(path + filename, function (data) {
         var innerW = d3.min([window.innerWidth * 0.4, 600]);
         var margin = { top: innerW * 0.35, right: 0, bottom: 10, left: innerW * 0.35 },
@@ -28,7 +29,7 @@ function d3_drawChart() {
         var x = d3.scaleBand().range([0, width]);
         var c = d3.scaleOrdinal().range(["#E8A343", "#FCFF57", "#43E884", "#52A1FF"]);
 
-        var svg = d3.select("#chartdiv").append("svg")
+        var svg = d3.select(id).append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .attr("id", "some")
@@ -52,11 +53,15 @@ function d3_drawChart() {
         var edges = [];
         var n;
         var isAll = false;
-        document.getElementsByName("data_range").forEach(e => {
-            if (e.checked && e.getAttribute("value") == "all") {
-                isAll = true;
-            }
-        });
+
+        if (id == "#chartdiv2") {
+            isAll = true;
+        }
+        // document.getElementsByName("data_range").forEach(e => {
+        //     if (e.checked && e.getAttribute("value") == "all") {
+        //         isAll = true;
+        //     }
+        // });
 
         svg.append("rect")
             .attr("class", "background")
@@ -132,37 +137,39 @@ function d3_drawChart() {
                 .text(function (d) { return d.x == d.y ? "" : d.z + "복수전공"; });
         }
 
-        d3.select("#order").on("change", function () {
-            // clearTimeout(timeout);
-            let idx = this.selectedIndex
-            order(this.options[idx].getAttribute("value"));
-            updateMatrix(matrix);
-        });
-
-        d3.select("#termyear").on("change", function () {
-            let idx = document.getElementById("termyear").selectedIndex;
-            termyear = document.getElementById("termyear").options[idx].getAttribute("value");
-            all_nodes = data["nodes"].slice(0);
-            all_edges = data["edges"].filter(element => element["termyear"] === termyear).slice(0);
-            createNetwork();
-            updateMatrix(matrix);
-        });
-
-        d3.selectAll("input[name='data_range']").on("change", function () {
-            all_edges = data["edges"].filter(element => element["termyear"] === termyear);
-            document.getElementsByName("data_range").forEach(function (e, i) {
-                if (e.checked) {
-                    if (e.getAttribute("value") == "all") {
-                        isAll = true;
-                    } else {
-                        isAll = false;
-                    }
-                }
+        if (!isAll) {
+            d3.select("#order").on("change", function () {
+                // clearTimeout(timeout);
+                let idx = this.selectedIndex
+                order(this.options[idx].getAttribute("value"));
+                updateMatrix(matrix);
             });
 
-            createNetwork();
-            updateMatrix(matrix);
-        });
+            d3.select("#termyear").on("change", function () {
+                let idx = document.getElementById("termyear").selectedIndex;
+                termyear = document.getElementById("termyear").options[idx].getAttribute("value");
+                all_nodes = data["nodes"].slice(0);
+                all_edges = data["edges"].filter(element => element["termyear"] === termyear).slice(0);
+                createNetwork();
+                updateMatrix(matrix);
+            });
+        }
+
+        // d3.selectAll("input[name='data_range']").on("change", function () {
+        //     all_edges = data["edges"].filter(element => element["termyear"] === termyear);
+        //     document.getElementsByName("data_range").forEach(function (e, i) {
+        //         if (e.checked) {
+        //             if (e.getAttribute("value") == "all") {
+        //                 isAll = true;
+        //             } else {
+        //                 isAll = false;
+        //             }
+        //         }
+        //     });
+
+        //     createNetwork();
+        //     updateMatrix(matrix);
+        // });
 
         function order(value) {
             x.domain(orders[value]);
@@ -290,6 +297,52 @@ function d3_drawChart() {
                 matrix[edge.source][edge.source].z += edge.weight;
                 matrix[edge.target][edge.target].z += edge.weight;
             });
+            if(isAll){
+                // if (isAll && document.getElementById("order").selectedIndex == 2) {
+                    var timeout = setTimeout(function () {
+                        svg.selectAll("svg text").style("font-size", x.bandwidth() - 2);
+                        order("count");
+    
+                        svg.append("line")
+                            .attr("x1", function (d) {
+                                return x.bandwidth() * 43;
+                            })
+                            .attr("x2", function (d) {
+                                return x.bandwidth() * 43;
+                            })
+                            .attr("y1", 0)
+                            .attr("y2", function (d) {
+                                return x.bandwidth() * 43;
+                            })
+                            .style("opacity", 0)
+                            .attr("class", "subset")
+                            .style("stroke-width", 3)
+                            .style("stroke", "orange")
+                            .attr("id", "xaxis-line");
+    
+                        svg.append("line")
+                            .attr("x1", 0)
+                            .attr("x2", function (d) {
+                                return x.bandwidth() * 43;
+                            })
+                            .attr("y1", function (d) {
+                                return x.bandwidth() * 43;
+                            })
+                            .attr("y2", function (d) {
+                                return x.bandwidth() * 43;
+                            })
+                            .style("opacity", 0)
+                            .attr("class", "subset")
+                            .style("stroke-width", 3)
+                            .style("stroke", "orange")
+                            .attr("id", "yaxis-line");
+    
+                        svg.selectAll("line.subset").transition().duration(2000).style("opacity", 1);
+                    }, 1000);
+                } else {
+                    d3.select("#xaxis-line").remove();
+                    d3.select("#yaxis-line").remove();
+                }
         } // end
 
         function updateMatrix(matrix) {
@@ -427,51 +480,52 @@ function d3_drawChart() {
             function key(d) { return d.x; }
 
             // order(d3.select("#order").property("value"));
-            if (isAll && document.getElementById("order").selectedIndex == 2) {
-                var timeout = setTimeout(function () {
-                    svg.selectAll("svg text").style("font-size", x.bandwidth() - 2);
-                    order("count");
+            // if(isAll){
+            // // if (isAll && document.getElementById("order").selectedIndex == 2) {
+            //     var timeout = setTimeout(function () {
+            //         svg.selectAll("svg text").style("font-size", x.bandwidth() - 2);
+            //         order("count");
 
-                    svg.append("line")
-                        .attr("x1", function (d) {
-                            return x.bandwidth() * 43;
-                        })
-                        .attr("x2", function (d) {
-                            return x.bandwidth() * 43;
-                        })
-                        .attr("y1", 0)
-                        .attr("y2", function (d) {
-                            return x.bandwidth() * 43;
-                        })
-                        .style("opacity", 0)
-                        .attr("class", "subset")
-                        .style("stroke-width", 3)
-                        .style("stroke", "orange")
-                        .attr("id", "xaxis-line");
+            //         svg.append("line")
+            //             .attr("x1", function (d) {
+            //                 return x.bandwidth() * 43;
+            //             })
+            //             .attr("x2", function (d) {
+            //                 return x.bandwidth() * 43;
+            //             })
+            //             .attr("y1", 0)
+            //             .attr("y2", function (d) {
+            //                 return x.bandwidth() * 43;
+            //             })
+            //             .style("opacity", 0)
+            //             .attr("class", "subset")
+            //             .style("stroke-width", 3)
+            //             .style("stroke", "orange")
+            //             .attr("id", "xaxis-line");
 
-                    svg.append("line")
-                        .attr("x1", 0)
-                        .attr("x2", function (d) {
-                            return x.bandwidth() * 43;
-                        })
-                        .attr("y1", function (d) {
-                            return x.bandwidth() * 43;
-                        })
-                        .attr("y2", function (d) {
-                            return x.bandwidth() * 43;
-                        })
-                        .style("opacity", 0)
-                        .attr("class", "subset")
-                        .style("stroke-width", 3)
-                        .style("stroke", "orange")
-                        .attr("id", "yaxis-line");
+            //         svg.append("line")
+            //             .attr("x1", 0)
+            //             .attr("x2", function (d) {
+            //                 return x.bandwidth() * 43;
+            //             })
+            //             .attr("y1", function (d) {
+            //                 return x.bandwidth() * 43;
+            //             })
+            //             .attr("y2", function (d) {
+            //                 return x.bandwidth() * 43;
+            //             })
+            //             .style("opacity", 0)
+            //             .attr("class", "subset")
+            //             .style("stroke-width", 3)
+            //             .style("stroke", "orange")
+            //             .attr("id", "yaxis-line");
 
-                    svg.selectAll("line.subset").transition().duration(2000).style("opacity", 1);
-                }, 1000);
-            } else {
-                d3.select("#xaxis-line").remove();
-                d3.select("#yaxis-line").remove();
-            }
+            //         svg.selectAll("line.subset").transition().duration(2000).style("opacity", 1);
+            //     }, 1000);
+            // } else {
+            //     d3.select("#xaxis-line").remove();
+            //     d3.select("#yaxis-line").remove();
+            // }
 
         } //updateMatrix
 

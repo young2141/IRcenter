@@ -74,7 +74,6 @@ function makeDataToDrawGraph(_data) {
             }
         });
     }
-    // console.log(peopleForUnversity);
 
     if (university != "(전체)") {
         _data = _data.filter(e => e["단과대학"] == university);
@@ -210,7 +209,6 @@ function drawChart(data) {
         var categoryAxis1 = chart1.xAxes.push(new am4charts.CategoryAxis());
         categoryAxis1.dataFields.category = "fulltime";
         categoryAxis1.renderer.minGridDistance = 20;
-        // categoryAxis1.renderer.grid.template.disabled = true;
         categoryAxis1.renderer.labels.template.fontSize = 12;
         categoryAxis1.renderer.grid.template.location = 0;
 
@@ -219,13 +217,11 @@ function drawChart(data) {
         valueAxis1.min = 0;
         valueAxis1.renderer.grid.template.location = 0;
         valueAxis1.renderer.grid.template.minGridDistance = 100;
-        // valueAxis1.renderer.grid.template.disabled = true;
 
         var series1 = chart1.series.push(new am4charts.ColumnSeries());
         series1.dataFields.categoryX = "fulltime";
         series1.dataFields.valueY = "value";
         series1.columns.template.width = 20;
-        series1.columns.template.fill = "#ff0000";
 
         var chart2 = am4core.create("chartdiv2", am4charts.XYChart);
         chart2.data = data;
@@ -234,7 +230,6 @@ function drawChart(data) {
         var categoryAxis2 = chart2.xAxes.push(new am4charts.CategoryAxis());
         categoryAxis2.dataFields.category = "nonexecutive";
         categoryAxis2.renderer.minGridDistance = 20;
-        // categoryAxis2.renderer.grid.template.disabled = true;
         categoryAxis2.renderer.labels.template.fontSize = 12;
         categoryAxis2.renderer.grid.template.location = 0;
 
@@ -244,13 +239,11 @@ function drawChart(data) {
         valueAxis2.renderer.labels.template.disabled = true;
         valueAxis2.renderer.grid.template.location = 0;
         valueAxis2.renderer.grid.template.minGridDistance = 100;
-        // valueAxis2.renderer.grid.template.disabled = true;
 
         var series2 = chart2.series.push(new am4charts.ColumnSeries());
         series2.dataFields.categoryX = "nonexecutive";
         series2.dataFields.valueY = "value";
         series2.columns.template.width = 20;
-        series2.columns.template.fill = "#00ff00";
 
 
 
@@ -262,14 +255,12 @@ function drawChart(data) {
         categoryAxis3.dataFields.category = "TA";
         categoryAxis3.renderer.minGridDistance = 20;
         categoryAxis3.renderer.labels.template.fontSize = 12;
-        // categoryAxis3.renderer.grid.template.disabled = true;
         categoryAxis3.renderer.grid.template.location = 0;
 
         var valueAxis3 = chart3.yAxes.push(new am4charts.ValueAxis());
         valueAxis3.max = max;
         valueAxis3.min = 0;
         valueAxis3.renderer.labels.template.disabled = true;
-        // valueAxis3.renderer.grid.template.disabled = true;
         valueAxis3.renderer.grid.template.location = 0;
         valueAxis3.renderer.grid.template.minGridDistance = 100;
 
@@ -277,6 +268,9 @@ function drawChart(data) {
         series3.dataFields.categoryX = "TA";
         series3.dataFields.valueY = "value";
         series3.columns.template.width = 20;
-        series3.columns.template.fill = "#0000ff";
+
+        series3.columns.template.fill = am4core.color(color["조교"]);
+        series2.columns.template.fill = am4core.color(color["비전임교원"]);
+        series1.columns.template.fill = am4core.color(color["전임교원"]);
     });
 }
