@@ -1,4 +1,4 @@
-function parse1(callback) {
+function parse(callback) {
     $.getJSON("../../../json/4-1.json", json => {
         callback(json);
     });
@@ -86,7 +86,7 @@ function call() {
     var Select = document.getElementById("sex_selectbar");
     var sex = Select.options[Select.selectedIndex].value;
 
-    parse1(json => {
+    parse(json => {
         data = [];
         for (var i = 0; i < json.length; i++) {
             yearly_data = {};
@@ -101,118 +101,74 @@ function call() {
         stackGraph(data);
     });
 }
-function parse2(callback) {
-    $.getJSON("../../../json/4-2.json", json => {
-        callback(json);
+
+function Piechart(brand) {
+    jQuery.getJSON("../../../json/4-2.json", json => {
+
+        am4core.ready(function () {
+
+            // Themes begin
+            am4core.useTheme(am4themes_animated);
+            // Themes end
+
+            // Create chart instance
+            var chart = am4core.create("chartdiv2", am4charts.PieChart);
+
+            brand = document.getElementById('span1').innerHTML;
+            dummyData = [];
+            data = {};
+            for (var key in json[brand]) {
+                if (key == "일반직") {
+                    dummyData.push({ name: "일반직", field: json[brand][key] });
+                }
+                else if (key == "기술직") {
+                    dummyData.push({ name: "기술직", field: json[brand][key] });
+                }
+                else if (key == "별정직") {
+                    dummyData.push({ name: "별정직", field: json[brand][key] });
+                }
+                else if (key == "기능직") {
+                    dummyData.push({ name: "기능직", field: json[brand][key] });
+                }
+                else if (key == "대학회계직") {
+                    dummyData.push({ name: "대학회계직", field: json[brand][key] });
+                }
+                else if (key == "교육전문직") {
+                    dummyData.push({ name: "교육전문직", field: json[brand][key] });
+                }
+                else if (key == "계약직") {
+                    dummyData.push({ name: "계약직", field: json[brand][key] });
+                }
+            }
+            dummyData.push(data);
+            // console.log(json);
+            console.log(dummyData);
+
+            // Add data
+            chart.data = dummyData;
+
+            // Add and configure Series
+            var pieSeries = chart.series.push(new am4charts.PieSeries());
+            pieSeries.dataFields.value = "field";
+            pieSeries.dataFields.category = "name";
+            pieSeries.slices.template.stroke = am4core.color("#fff");
+            pieSeries.slices.template.strokeWidth = 2;
+            pieSeries.slices.template.strokeOpacity = 1;
+            pieSeries.colors.list = [
+                am4core.color("#dc67ce"),
+                am4core.color("#c767dc"),
+                am4core.color("#a367dc"),
+                am4core.color("#8067dc"),
+                am4core.color("#6771dc"),
+                am4core.color("#6794dc"),
+                am4core.color("#67b7dc"),
+            ];
+
+            // This creates initial animation
+            pieSeries.hiddenState.properties.opacity = 1;
+            pieSeries.hiddenState.properties.endAngle = -90;
+            pieSeries.hiddenState.properties.startAngle = -90;
+
+        }); // end am4core.ready()
     });
 }
-parse2(json => {
-    am4core.ready(function () {
-
-        // Themes begin
-        am4core.useTheme(am4themes_animated);
-        // Themes end
-
-        // Create chart instance
-        var chart = am4core.create("chartdiv2", am4charts.PieChart);
-
-        // var year;
-        // var treeData=[];
-        // var brandData={};
-        // for(var i=0;i<json.length;i++){
-        //     for(var name in json["year"][i])
-        // }
-        
-        // brandData[]
-        // json
-
-        // Add data
-        chart.data = json;
-
-        var pieSeries = chart.series.push(new am4charts.PieSeries());
-        pieSeries.dataFields.value = "field";
-        pieSeries.dataFields.category = "name";
-        pieSeries.slices.template.stroke = am4core.color("#fff");
-        pieSeries.slices.template.strokeWidth = 2;
-        pieSeries.slices.template.tooltipText = "[bold]{category}[/]: {value.percent.formatNumber('#.0')}%({value}명)";
-        pieSeries.slices.template.strokeOpacity = 1;
-        pieSeries.colors.list = [
-            am4core.color("#dc67ce"),
-            am4core.color("#c767dc"),
-            am4core.color("#a367dc"),
-            am4core.color("#8067dc"),
-            am4core.color("#6771dc"),
-            am4core.color("#6794dc"),
-            am4core.color("#67b7dc"),
-        ];
-
-        // This creates initial animation
-        pieSeries.hiddenState.properties.opacity = 1;
-        pieSeries.hiddenState.properties.endAngle = -90;
-        pieSeries.hiddenState.properties.startAngle = -90;
-
-        pieSeries.slices.template.events.on("hit", function (ev) {
-            var series = ev.target.dataItem.component;
-            series.slices.each(function (item) {
-                if (item.isActive && item != ev.target) {
-                    item.isActive = false;
-                }
-            })
-        });
-
-        // var grouper = pieSeries.plugins.push(new am4plugins_sliceGrouper.SliceGrouper());
-        // grouper.clickBehavior = "zoom";
-        // grouper.threshold = 15;
-    }); // end am4core.ready()}
-
-})
-// function changegraph() {
-//     am4core.ready(function () {
-
-//         // Themes begin
-//         am4core.useTheme(am4themes_animated);
-//         // Themes end
-
-//         // Create chart instance
-//         var chart = am4core.create("chartdiv2", am4charts.PieChart);
-
-//         // Add data
-//         chart.data = json;
-
-//         var pieSeries = chart.series.push(new am4charts.PieSeries());
-//         pieSeries.dataFields.value = "field";
-//         pieSeries.dataFields.category = "name";
-//         pieSeries.slices.template.stroke = am4core.color("#fff");
-//         pieSeries.slices.template.strokeWidth = 2;
-//         pieSeries.slices.template.tooltipText = "[bold]{category}[/]: {value.percent.formatNumber('#.0')}%({value}명)";
-//         pieSeries.slices.template.strokeOpacity = 1;
-//         pieSeries.colors.list = [
-//             am4core.color("#dc67ce"),
-//             am4core.color("#c767dc"),
-//             am4core.color("#a367dc"),
-//             am4core.color("#8067dc"),
-//             am4core.color("#6771dc"),
-//             am4core.color("#6794dc"),
-//             am4core.color("#67b7dc"),
-//         ];
-
-//         // This creates initial animation
-//         pieSeries.hiddenState.properties.opacity = 1;
-//         pieSeries.hiddenState.properties.endAngle = -90;
-//         pieSeries.hiddenState.properties.startAngle = -90;
-
-//         pieSeries.slices.template.events.on("hit", function (ev) {
-//             var series = ev.target.dataItem.component;
-//             series.slices.each(function (item) {
-//                 if (item.isActive && item != ev.target) {
-//                     item.isActive = false;
-//                 }
-//             })
-//         });
-
-//         // var grouper = pieSeries.plugins.push(new am4plugins_sliceGrouper.SliceGrouper());
-//         // grouper.clickBehavior = "zoom";
-//         // grouper.threshold = 15;
-//     }); // end am4core.ready()}
-
-// }

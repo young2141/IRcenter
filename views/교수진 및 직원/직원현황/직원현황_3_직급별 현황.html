@@ -5,15 +5,13 @@
     <title>경북대학교 IR센터</title>
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://www.amcharts.com/lib/4/core.js"></script>
     <script src="https://www.amcharts.com/lib/4/charts.js"></script>
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://www.amcharts.com/lib/4/plugins/sliceGrouper.js"></script>
     <script src="../../../js/직급별직원수.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> -->
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="../../../js/sunburst_rank.js"></script>
@@ -156,11 +154,12 @@
             <span style="font-size: 20px"><b>년도별 검색</b></span>
             <br>
 
-            <input type=button value='◀' onclick="decrease(),changegraph()">
-            <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput="valuechange(parseInt(this.value))" onchange="changegraph(this.value)">
-            <input type=button value='▶' onclick="increase(),changegraph()">
+            <input type=button value='◀' onclick="decrease(),Piechart()">
+            <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput="valuechange(parseInt(this.value))" onchange="Piechart(this.value)">
+            <input type=button value='▶' onclick="increase(),Piechart()">
 
             <script>
+                Piechart();
                 function valuechange(value) {
                     document.getElementById('span1').innerHTML = (value);
                     drawSunburst();
