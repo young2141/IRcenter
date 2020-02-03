@@ -130,7 +130,11 @@ function drawSankey(_data) {
         nodeTemplate.readerTitle = "Click to show/hide or drag to rearrange";
         nodeTemplate.showSystemTooltip = true;
         nodeTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer
-    
+
+        nodeTemplate.adapter.add("fill", function (fill, target) {
+            console.log(target.dataItem);
+            return target.dataItem.color;
+        })
     }); // end am4core.ready()
 }
 
