@@ -86,8 +86,8 @@
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
 
-			<input type="radio" onclick="change('전체')" name="type" value="파견" checked> 파견<br>
-			<input type="radio" onclick="change('전체')" name="type" value="초청"> 초청<br><br>
+			<input type="radio" onclick="change('전체'), valueChange()" name="type" value="파견" checked = "checked" id = "pa"> 파견<br>
+			<input type="radio" onclick="change('전체'), valueChange()" name="type" value="초청" id = "cho"> 초청<br><br>
 			<form id="coll">
 				<span style="font-size: 20px"> <b>대학명 검색</b> </span><br>
                 <input type="text" id="university_search_text" list="university_selectbar">
@@ -156,10 +156,22 @@
 		</script>
 
 		<div id="summaryBox">
-			<h2><span id="P1">국내대학</span></h2>
+			<h2>학생교류 국내대학</h2>
+			2018학년도 경북대학교 학생들은 총 17개 타 국내대학<span id = "P1">으로</span> <span id = "P2">파견</span>되었고, <span id = "P3">파견</span>된 경북대학교 학생은 총 <span id = "V1">432</span>명 입니다.
 		</div>
 
+		
+
 		<div id="chartdiv1" class="chartdiv"></div>
+
+		<div id="summaryBox">
+			<h2>국내대학 학생 교류 현황</h2>
+			<!--<span id = "S1">2018학년도 <span id = "P4">파견</span>된 국내대학 중 제주대학교로 <span id = "P5">파견</span>된 학생의 비중이 40.5%(175명)으로 가장 많았고,
+			서울대학교 13.1%, 부산대학교 9.02%, 전남대학교 8.79%, 한국종합예술학교 6.01% 순으로 많습니다.</span>-->
+			<span id = "S1">
+			2018학년도 파견된 국내대학 중 제주대학교로 파견된 학생의 비중이 40.5%(175명)으로 가장 많았고, 서울대학교 (13.1%), 부산대학교 (9.02%), 전남대학교 (8.79%), 한국종합예술학교 (6.01%) 순으로 많습니다.
+			</span>
+		</div>
         <div id="chartdiv2" class="chartdiv"></div>
 		<script>
             change('전체')
@@ -195,6 +207,43 @@
 
 		</div>
 	</div>
+
+	<script>
+		function valueChange() {
+			var temp = document.getElementById("pa")
+			var Target1 = document.getElementById("P1")
+			var Target2 = document.getElementById("P2")
+			var Target3 = document.getElementById("P3")
+			var Target4 = document.getElementById("P4")
+			var Target5 = document.getElementById("P5")
+			var Target6 = document.getElementById("S1")
+			var vTarget1 = document.getElementById("V1")
+
+			if (temp.checked == true) {//파견일 경우
+				Target1.innerHTML = "으로"
+				Target2.innerHTML = "파견"
+				Target3.innerHTML = "파견"
+				//Target4.innerHTML = "파견"
+				//Target5.innerHTML = "파견"
+				Target6.innerHTML = "2018학년도 파견된 국내대학 중 제주대학교로 파견된 학생의 비중이 40.5%(175명)으로 가장 많았고, 서울대학교(13.1%), 부산대학교(9.02%), 전남대학교(8.79%), 한국종합예술학교(6.01%) 순으로 많습니다."
+				
+			}
+			temp = document.getElementById("cho")
+
+			if (temp.checked == true) {//초청일 경우
+				Target1.innerHTML = "에서"
+				Target2.innerHTML = "초청"
+				Target3.innerHTML = "초청"
+				//Target4.innerHTML = "초청"
+				//Target5.innerHTML = "초청"
+				Target6.innerHTML = "2018학년도 초청된 국내대학 중 영남대학교로 초청된 학생의 비중이 24.5%(73명)으로 가장 많았고, 울산과학기술원(12.7%), 전남대학교(12.1%), 부산대학교와 계명대학교(6.39%), 금오공과대학교와 안동대학교(5.72%) 순으로 많습니다."
+				vTarget1.innerHTML = "297"
+
+			}
+
+		}
+
+	</script>
 
 </body>
 
