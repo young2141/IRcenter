@@ -10,11 +10,11 @@ function years3() {
         depth = 4;
     }
     for (var year = start; year <= end; year++) {
-      parsing1(year, condition1, condition2, data, depth, start, end);
+      parsing3(year, condition1, condition2, data, depth, start, end);
     }
   }
 
-  function parsing1(_year, _condition1, _condition2, _data, _depth, _start, _end) {
+  function parsing3(_year, _condition1, _condition2, _data, _depth, _start, _end) {
     var filename =
       "4page_" + String(_year) + "_colleage_" + _condition1 + ".json";
     var temp = { year: String(_year) };

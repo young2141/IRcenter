@@ -71,7 +71,7 @@ function drawBoxplotChart(_data, _year) {
     medianaSeries.dataFields.valueY = "avg";
     medianaSeries.dataFields.categoryX = "category";
     medianaSeries.strokeWidth = 2;
-    medianaSeries.stroke = am4core.color("#fff");
+    medianaSeries.stroke = am4core.color("#ff0000");
 
     var topSeries = chart.series.push(new am4charts.StepLineSeries());
     topSeries.noRisers = true;
