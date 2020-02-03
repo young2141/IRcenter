@@ -1,5 +1,26 @@
 ﻿[
   {
+    "year": 1946,
+    "graduate_male": 1869,
+    "graduate_female": 1549,
+    "undergraduate_male": 5867,
+    "undergraduate_female": 4661
+  },
+  {
+    "year": 1947,
+    "graduate_male": 1869,
+    "graduate_female": 1549,
+    "undergraduate_male": 5867,
+    "undergraduate_female": 4661
+  },
+  {
+    "year": 1948,
+    "graduate_male": 1869,
+    "graduate_female": 1549,
+    "undergraduate_male": 5867,
+    "undergraduate_female": 4661
+  },
+  {
     "year": 1949,
     "graduate_male": 1869,
     "graduate_female": 1549,
@@ -438,7 +459,7 @@
     "graduate_male": 2451,
     "graduate_female": 1909,
     "undergraduate_male": 20205,
-    "undergraduate_female":10794
+    "undergraduate_female": 10794
   },
   {
     "year": 2012,

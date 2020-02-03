@@ -1,6 +1,6 @@
 ﻿// set the dimensions and margins of the graph
 var margin = { top: 10, right: 230, bottom: 100, left: 50 },
-    width = 1000 - margin.left - margin.right,
+    width = 1200 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
 var colorArray12 = ['#FE4459', '#FCFF57', '#006400', '#E8A343', '#43E884', '#46FFFF', '#0078FF', '#3D0099', '#F261AA', '#030066', '#990085', '#A6A6A6']
@@ -164,9 +164,9 @@ function stackedAreaChart() {
             }
         }) + 500;
         var stackedData = d3.stack()
-            .keys(keys)
+            .keys(keys.reverse())
             (data)
-        drawAreaChart(svg, data, stackedData, keys, cls, max_val, height, "");
+        drawAreaChart(svg, data, stackedData, keys, cls.reverse(), max_val, height, "");
     });
 }
 
@@ -284,7 +284,7 @@ function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h, key_value)
 
     var xAxis = svg.append("g")
         .attr("transform", "translate(0," + h + ")") 
-        .call(d3.axisBottom(x).tickValues([1949, 1960, 1970, 1980, 1990, 2000, 2010, 2019,]).tickFormat(d3.format("d")))
+        .call(d3.axisBottom(x).tickValues([1946, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2019,]).tickFormat(d3.format("d")))
 
     // Add Y axis
     var y = d3.scaleLinear()
