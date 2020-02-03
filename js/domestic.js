@@ -107,9 +107,9 @@ function draw_map(input_mode, mode2) {
                 imageSeriesTemplate.nonScaling = true;
                 imageSeriesTemplate.alwaysShowTooltip = mode2 != "전체"
                 if (mode == "파견")
-                    imageSeriesTemplate.tooltipText = "{title}의 파견 인원은 {파견}명입니다.";
+                    imageSeriesTemplate.tooltipText = "{title}";
                 else
-                    imageSeriesTemplate.tooltipText = "{title}의 초청 인원은 {초청}명입니다.";
+                    imageSeriesTemplate.tooltipText = "{title}";
                 imageSeriesTemplate.fill = am4core.color("#000");
                 imageSeriesTemplate.setStateOnChildren = true;
                 imageSeriesTemplate.states.create("hover");
@@ -278,9 +278,9 @@ function draw_map2(mode, mode2, data) {
             imageSeriesTemplate.alwaysShowTooltip = mode2 != "전체"
             imageSeriesTemplate.nonScaling = true;
             if (mode == "파견")
-                imageSeriesTemplate.tooltipText = "{title}의 파견 인원은 {파견}명입니다.";
+                imageSeriesTemplate.tooltipText = "{title}의 파견된 학생은 {파견}명입니다.";
             else
-                imageSeriesTemplate.tooltipText = "{title}의 초청 인원은 {초청}명입니다.";
+                imageSeriesTemplate.tooltipText = "{title}의 초청된 학생은 {초청}명입니다.";
             imageSeriesTemplate.fill = am4core.color("#000");
             imageSeriesTemplate.setStateOnChildren = true;
             imageSeriesTemplate.states.create("hover");
