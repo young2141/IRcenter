@@ -8,7 +8,7 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="../../../js/area_chart_v3.js"></script>
 
 
@@ -87,17 +87,23 @@
 
             <span style="font-size: 20px"><b>차트 종류</b></span><br>
             <form>
-                <input type = "radio" id = "stacked" name = "Gtype" onclick = "drawChart(mode)" checked="checked">누적 영역형<br>
-                <input type = "radio" id = "multiples" name = "Gtype" onclick = "drawChart(mode)">영역형<br><br>
+                <input type="radio" id="stacked" name="Gtype" onclick="drawChart(mode)" checked="checked">누적 영역형<br>
+                <input type="radio" id="multiples" name="Gtype" onclick="drawChart(mode)">영역형<br><br>
             </form>
 
 
-            <span style="color:#FE4459; font-size: 20px;" onmouseover="mouseOver('graduate_doctor')" onmouseleave="    mouseLeave()">■</span> 졸업생 박사<br>
-            <span style="color:#E8A343; font-size: 20px;" onmouseover="mouseOver('graduate_master')" onmouseleave="    mouseLeave()">■</span> 졸업생 석사<br>
-            <span style="color:#FCFF57; font-size: 20px;" onmouseover="mouseOver('graduate_college')" onmouseleave="    mouseLeave()">■</span> 졸업생 학사<br>
-            <span style="color:#43E884; font-size: 20px;" onmouseover="mouseOver('undergraduate_doctor')" onmouseleave="    mouseLeave()">■</span> 재적생 박사<br>
-            <span style="color:#006400; font-size: 20px;" onmouseover="mouseOver('undergraduate_master')" onmouseleave="    mouseLeave()">■</span> 재적생 석사<br>
-            <span style="color:#46FFFF; font-size: 20px;" onmouseover="mouseOver('undergraduate_college')" onmouseleave="    mouseLeave()">■</span> 재적생 학사<br>
+            <span style="color:#FE4459; font-size: 20px;" onmouseover="mouseOver('graduate_doctor')"
+                onmouseleave="    mouseLeave()">■</span> 졸업생 박사<br>
+            <span style="color:#E8A343; font-size: 20px;" onmouseover="mouseOver('graduate_master')"
+                onmouseleave="    mouseLeave()">■</span> 졸업생 석사<br>
+            <span style="color:#FCFF57; font-size: 20px;" onmouseover="mouseOver('graduate_college')"
+                onmouseleave="    mouseLeave()">■</span> 졸업생 학사<br>
+            <span style="color:#43E884; font-size: 20px;" onmouseover="mouseOver('undergraduate_doctor')"
+                onmouseleave="    mouseLeave()">■</span> 재적생 박사<br>
+            <span style="color:#006400; font-size: 20px;" onmouseover="mouseOver('undergraduate_master')"
+                onmouseleave="    mouseLeave()">■</span> 재적생 석사<br>
+            <span style="color:#46FFFF; font-size: 20px;" onmouseover="mouseOver('undergraduate_college')"
+                onmouseleave="    mouseLeave()">■</span> 재적생 학사<br>
             <br><br>
 
 
@@ -118,18 +124,28 @@
         </script>
 
         <div id="summaryBox">
-            <h2><span id = "chartTypeBox">누적 영역형 차트</span></h2>
+            <h2>학생 등록 현황</span>
+            (<span id="chartTypeBox">누적 영역형 차트</span>)</h2>
+            1946년에 경북대학교 캠퍼스에서 처음 수업에 들어간 이후부터, 경북대학교의 총 등록인원을 학위과정(학사, 석사, 박사)과 학생 구분(졸업생, 재적생)에 따라 나타냅니다.
+            <br><br>
+            라디오버튼을 활용하여 데이터의 다양한 정보들을 확인해보세요.<br><br>
         </div>
         <div id="unitBox">
             (단위 : 명)
         </div>
         <div id="divchart1" style="width:800px"></div>
-        <div id="divchart2" style="width:800px" onmouseover="mouseOver('graduate_doctor')" onmouseleave="    mouseLeave()"></div>
-        <div id="divchart3" style="width:800px" onmouseover="mouseOver('graduate_master')" onmouseleave="    mouseLeave()"></div>
-        <div id="divchart4" style="width:800px" onmouseover="mouseOver('graduate_college')" onmouseleave="    mouseLeave()"></div>
-        <div id="divchart5" style="width:800px" onmouseover="mouseOver('undergraduate_doctor')" onmouseleave="    mouseLeave()"></div>
-        <div id="divchart6" style="width:800px" onmouseover="mouseOver('undergraduate_master')" onmouseleave="    mouseLeave()"></div>
-        <div id="divchart7" style="width:800px" onmouseover="mouseOver('undergraduate_college')" onmouseleave="    mouseLeave()"></div>
+        <div id="divchart2" style="width:800px" onmouseover="mouseOver('graduate_doctor')"
+            onmouseleave="    mouseLeave()"></div>
+        <div id="divchart3" style="width:800px" onmouseover="mouseOver('graduate_master')"
+            onmouseleave="    mouseLeave()"></div>
+        <div id="divchart4" style="width:800px" onmouseover="mouseOver('graduate_college')"
+            onmouseleave="    mouseLeave()"></div>
+        <div id="divchart5" style="width:800px" onmouseover="mouseOver('undergraduate_doctor')"
+            onmouseleave="    mouseLeave()"></div>
+        <div id="divchart6" style="width:800px" onmouseover="mouseOver('undergraduate_master')"
+            onmouseleave="    mouseLeave()"></div>
+        <div id="divchart7" style="width:800px" onmouseover="mouseOver('undergraduate_college')"
+            onmouseleave="    mouseLeave()"></div>
         <br>
 
 
