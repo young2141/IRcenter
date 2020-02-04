@@ -117,7 +117,7 @@ function drawChart(input) {
     //get the proper data for selection(options: degree, gender, class of major)
     var data = getProperDataForSelection(input)
 
-    chartdiv.style.height = "700px";
+    //chartdiv.style.height = "700px";
     //chart
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
@@ -129,7 +129,7 @@ function drawChart(input) {
         categoryAxis.dataFields.category = "major";
         categoryAxis.renderer.minGridDistance = 10;
         categoryAxis.renderer.inversed = true;
-        categoryAxis.fontSize = 12;
+        categoryAxis.fontSize = 15;
 
         var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
         valueAxis.max = 120;
