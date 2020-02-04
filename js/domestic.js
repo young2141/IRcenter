@@ -251,10 +251,10 @@ function draw_map2(mode, mode2, data) {
             // define template
             var imageSeriesTemplate = imageSeries.mapImages.template;
             var circle = imageSeriesTemplate.createChild(am4core.Circle);
-            circle.fillOpacity = 0.5;
-            circle.fill = chart.colors.getIndex(0).brighten(-0.1);
+            circle.fillOpacity = 0.7;
+            circle.fill = "#798ae4"
             circle.strokeWidth = 1;
-            circle.stroke = am4core.color("#fff");
+            circle.stroke = am4core.color("#3f51b5");
             circle.verticalCenter = "middle";
             circle.horizontalCenter = "middle";
 
