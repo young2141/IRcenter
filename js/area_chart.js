@@ -94,7 +94,7 @@ function stackedAreaChart() {
     d3.json("../../../json/area_chart_data.json", function (data) {
         var max_val = d3.max(data, function (d) {
             return d["undergraduate_male"] + d["undergraduate_female"] + d["graduate_male"] + d["graduate_female"];
-        });
+        })*1.15;
         max_val += (5000 - (max_val % 5000))
         var stackedData = d3.stack()
             .keys(keys.reverse())
