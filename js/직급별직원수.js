@@ -1,5 +1,10 @@
-function parse(callback) {
+function parse1(callback) {
     $.getJSON("../../../json/4-1.json", json => {
+        callback(json);
+    });
+}
+function parse2(callback) {
+    $.getJSON("../../../json/4-2.json", json => {
         callback(json);
     });
 }
@@ -27,7 +32,7 @@ function stackGraph(data) {
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 0;
-        valueAxis.extraMax = 0.1;
+        valueAxis.extraMax = 0.15;
         valueAxis.calculateTotals = true;
 
         // Create series
@@ -86,7 +91,7 @@ function call() {
     var Select = document.getElementById("sex_selectbar");
     var sex = Select.options[Select.selectedIndex].value;
 
-    parse(json => {
+    parse1(json => {
         data = [];
         for (var i = 0; i < json.length; i++) {
             yearly_data = {};
@@ -100,9 +105,22 @@ function call() {
         }
         stackGraph(data);
     });
+    parse2(json => {
+        data = [];
+        // for (var i = 0; i < json.length; i++) {
+        yearly_data = {};
+        year = document.getElementById('span1').innerHTML;
+        for (var key in json[year]) {
+            yearly_data[key] = json[year][key][sex];
+        }
+        data.push(yearly_data);
+        console.log(yearly_data);
+        // }
+        Piechart(data);
+    });
 }
 
-function Piechart(brand) {
+function Piechart(data) {
     jQuery.getJSON("../../../json/4-2.json", json => {
 
         am4core.ready(function () {
@@ -114,33 +132,33 @@ function Piechart(brand) {
             // Create chart instance
             var chart = am4core.create("chartdiv2", am4charts.PieChart);
 
+            console.log(data);
             brand = document.getElementById('span1').innerHTML;
             dummyData = [];
             data = {};
-            for (var key in json[brand]) {
+            for (var key in data[brand]) {
                 if (key == "일반직") {
-                    dummyData.push({ name: "일반직", field: json[brand][key] });
+                    dummyData.push({ name: "일반직", field: data[brand][key] });
                 }
                 else if (key == "기술직") {
-                    dummyData.push({ name: "기술직", field: json[brand][key] });
+                    dummyData.push({ name: "기술직", field: data[brand][key] });
                 }
                 else if (key == "별정직") {
-                    dummyData.push({ name: "별정직", field: json[brand][key] });
+                    dummyData.push({ name: "별정직", field: data[brand][key] });
                 }
                 else if (key == "기능직") {
-                    dummyData.push({ name: "기능직", field: json[brand][key] });
+                    dummyData.push({ name: "기능직", field: data[brand][key] });
                 }
                 else if (key == "대학회계직") {
-                    dummyData.push({ name: "대학회계직", field: json[brand][key] });
+                    dummyData.push({ name: "대학회계직", field: data[brand][key] });
                 }
                 else if (key == "교육전문직") {
-                    dummyData.push({ name: "교육전문직", field: json[brand][key] });
+                    dummyData.push({ name: "교육전문직", field: data[brand][key] });
                 }
                 else if (key == "계약직") {
                     dummyData.push({ name: "계약직", field: json[brand][key] });
                 }
             }
-            dummyData.push(data);
             // console.log(json);
             console.log(dummyData);
 

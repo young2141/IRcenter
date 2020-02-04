@@ -37,14 +37,12 @@ function stackedAreaChart() {
         }
 
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 40;
+        dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
         dateAxis.endLocation = 0.5;
-        dateAxis.baseInterval = {
-            timeUnit: "year",
-            count: 1
-        }
-        dateAxis.renderer.grid.template.location = 0;
+        dateAxis.renderer.grid.template.location = 0.5;
+        dateAxis.renderer.labels.template.location = 0.46;
+        dateAxis.renderer.minLabelPosition = -0.5;
 
         // var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
         // categoryAxis.dataFields.category = "year";
@@ -53,7 +51,7 @@ function stackedAreaChart() {
         
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.tooltip.disabled = true;
-        valueAxis.extraMax = 0.1;
+        valueAxis.extraMax = 0.15;
         valueAxis.renderer.minGridDistance = 40;
 
         var series = chart.series.push(new am4charts.LineSeries());
@@ -145,20 +143,18 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
-        chart.dateFormatter.inputDateFormat = "yyyy";
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 60;
+        dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
         dateAxis.endLocation = 0.5;
-        dateAxis.baseInterval = {
-            timeUnit: "year",
-            count: 1
-        }
+        dateAxis.renderer.grid.template.location = 0.5;
+        dateAxis.renderer.labels.template.location = 0.46;
+        dateAxis.renderer.minLabelPosition = -0.5;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.tooltip.disabled = true;
+        valueAxis.extraMax = 0.15;
         valueAxis.max = 10;
-        valueAxis.renderer.minGridDistance = 30;
 
         var series = chart.series.push(new am4charts.LineSeries());
         series.dataFields.dateX = "year";
@@ -201,19 +197,18 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
-        chart.dateFormatter.inputDateFormat = "yyyy";
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 60;
+        dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
         dateAxis.endLocation = 0.5;
-        dateAxis.baseInterval = {
-            timeUnit: "year",
-            count: 1
-        }
+        dateAxis.renderer.grid.template.location = 0.5;
+        dateAxis.renderer.labels.template.location = 0.46;
+        dateAxis.renderer.minLabelPosition = -0.5;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.tooltip.disabled = true;
         valueAxis.max = 10;
+        valueAxis.extraMax = 0.15;
         valueAxis.renderer.minGridDistance = 30;
 
         var series = chart.series.push(new am4charts.LineSeries());
@@ -252,19 +247,18 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
-        chart.dateFormatter.inputDateFormat = "yyyy";
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 60;
+        dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
         dateAxis.endLocation = 0.5;
-        dateAxis.baseInterval = {
-            timeUnit: "year",
-            count: 1
-        }
+        dateAxis.renderer.grid.template.location = 0.5;
+        dateAxis.renderer.labels.template.location = 0.46;
+        dateAxis.renderer.minLabelPosition = -0.5;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.tooltip.disabled = true;
         valueAxis.max = 10;
+        valueAxis.extraMax = 0.15;
         valueAxis.renderer.minGridDistance = 30;
 
         var series = chart.series.push(new am4charts.LineSeries());
@@ -303,19 +297,18 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
-        chart.dateFormatter.inputDateFormat = "yyyy";
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 60;
+        dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
         dateAxis.endLocation = 0.5;
-        dateAxis.baseInterval = {
-            timeUnit: "year",
-            count: 1
-        }
+        dateAxis.renderer.grid.template.location = 0.5;
+        dateAxis.renderer.labels.template.location = 0.46;
+        dateAxis.renderer.minLabelPosition = -0.5;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.tooltip.disabled = true;
         valueAxis.max = 10;
+        valueAxis.extraMax = 0.15;
         valueAxis.renderer.minGridDistance = 30;
 
         var series = chart.series.push(new am4charts.LineSeries());

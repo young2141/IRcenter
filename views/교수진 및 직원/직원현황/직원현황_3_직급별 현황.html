@@ -154,9 +154,9 @@
             <span style="font-size: 20px"><b>년도별 검색</b></span>
             <br>
 
-            <input type=button value='◀' onclick="decrease(),Piechart()">
-            <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput="valuechange(parseInt(this.value))" onchange="Piechart(this.value)">
-            <input type=button value='▶' onclick="increase(),Piechart()">
+            <input type=button value='◀' onclick="decrease(),call()">
+            <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput="valuechange(parseInt(this.value))" onchange="call(this.value)">
+            <input type=button value='▶' onclick="increase(),call()">
 
             <script>
                 Piechart();

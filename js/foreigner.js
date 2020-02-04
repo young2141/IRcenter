@@ -50,7 +50,7 @@ am4core.ready(function () {
         pieSeries.slices.template.tooltipText = "[bold]{category}[/]: {value.percent.formatNumber('#.0')}%({value}명)";
         pieSeries.colors.list = [
             am4core.color("#ff0000"),
-            am4core.color("#FBFBEF")
+            am4core.color("rgb(247, 247, 136)")
         ];
 
         pieSeries.slices.template.events.on("hit", function (ev) {

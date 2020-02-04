@@ -90,7 +90,7 @@ function pie1(data) {
                 am4core.color("#FFFF00"),
                 am4core.color("#088A29"),
                 am4core.color("#0040FF"),
-                am4core.color("#FBFBEF")
+                am4core.color("rgb(247, 247, 136)")
             ];
             pieSeries.slices.template.events.on("hit", function (ev) {
                 var series = ev.target.dataItem.component;
@@ -179,7 +179,7 @@ function pie2() {
                 am4core.color("#FFFF00"),
                 am4core.color("#088A29"),
                 am4core.color("#0040FF"),
-                am4core.color("#FBFBEF")
+                am4core.color("rgb(247, 247, 136)")
             ];
 
             pieSeries.slices.template.events.on("hit", function (ev) {

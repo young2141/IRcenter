@@ -27,7 +27,7 @@ function stackGraph(data) {
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.min = 0;
-        valueAxis.extraMax = 0.1;
+        valueAxis.extraMax = 0.15;
         valueAxis.calculateTotals = true;
 
         // Create series
