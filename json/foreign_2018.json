@@ -1,0 +1,1843 @@
+[
+	{
+		"university": "마샬대학",
+		"disfatch": "-",
+		"invitation": "-　",
+		"latitude": 38.4235,
+		"longitude": -82.4286
+	},
+	{
+		"university": "랜더대학",
+		"disfatch": 6.0,
+		"invitation": 1.0,
+		"latitude": 34.2003,
+		"longitude": -82.1739
+	},
+	{
+		"university": "럿거스캄덴대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 39.9476,
+		"longitude": -75.1318
+	},
+	{
+		"university": "모어헤드주립대학",
+		"disfatch": 1.0,
+		"invitation": 3.0,
+		"latitude": 38.1886,
+		"longitude": -83.4402
+	},
+	{
+		"university": "오클라호마대학",
+		"disfatch": 20.0,
+		"invitation": 4.0,
+		"latitude": 35.2047,
+		"longitude": -97.4562
+	},
+	{
+		"university": "오클라호마주립대",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 36.127,
+		"longitude": -97.0824
+	},
+	{
+		"university": "캘리포니아롱비치주립대학",
+		"disfatch": 2.0,
+		"invitation": 5.0,
+		"latitude": 33.7838,
+		"longitude": -118.1228
+	},
+	{
+		"university": "캘리포니아리버사이드주립대학",
+		"disfatch": 4.0,
+		"invitation": "　-",
+		"latitude": 33.9737,
+		"longitude": -117.3368
+	},
+	{
+		"university": "캘리포니아대학데이비스캠퍼스",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 38.5382,
+		"longitude": -121.7704
+	},
+	{
+		"university": "텍사스달라스대학",
+		"disfatch": 1.0,
+		"invitation": "　-",
+		"latitude": 29.6687,
+		"longitude": -101.948
+	},
+	{
+		"university": "오스틴피주립대학",
+		"disfatch": 7.0,
+		"invitation": 2.0,
+		"latitude": 36.5349,
+		"longitude": -87.3636
+	},
+	{
+		"university": "뉴욕오스웨고주립대학",
+		"disfatch": 8.0,
+		"invitation": 1.0,
+		"latitude": 43.4513,
+		"longitude": -76.5512
+	},
+	{
+		"university": "웨스턴워싱턴대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 48.7342,
+		"longitude": -122.4953
+	},
+	{
+		"university": "인디아나펜실베니아대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 40.614,
+		"longitude": -79.1702
+	},
+	{
+		"university": "메다이대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 42.9286,
+		"longitude": -78.8647
+	},
+	{
+		"university": "텍사스오스틴주립대학 ",
+		"disfatch": 2.0,
+		"invitation": "　-",
+		"latitude": 30.2849,
+		"longitude": -97.7428
+	},
+	{
+		"university": "브릿지워터주립대학",
+		"disfatch": 4.0,
+		"invitation": "　-",
+		"latitude": 41.9876,
+		"longitude": -70.9753
+	},
+	{
+		"university": "콜럼비아미주리대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 38.9403,
+		"longitude": -92.3364
+	},
+	{
+		"university": "사우스다코타대학",
+		"disfatch": 1.0,
+		"invitation": "　-",
+		"latitude": 44.9964,
+		"longitude": -101.2446
+	},
+	{
+		"university": "산호세주립대학",
+		"disfatch": 29.0,
+		"invitation": "　-",
+		"latitude": 37.3351,
+		"longitude": -121.8898
+	},
+	{
+		"university": "위버주립대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 41.1915,
+		"longitude": -111.9518
+	},
+	{
+		"university": "퍼듀대학교",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 40.4237,
+		"longitude": -86.9299
+	},
+	{
+		"university": "콜럼버스주립대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 32.5019,
+		"longitude": -84.9502
+	},
+	{
+		"university": "노던아이오와대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 42.2671,
+		"longitude": -93.1798
+	},
+	{
+		"university": "위스콘신대학화이트워터",
+		"disfatch": "-",
+		"invitation": 2.0,
+		"latitude": 42.7446,
+		"longitude": -89.1797
+	},
+	{
+		"university": "메사추세츠대학Amherst",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 42.3867,
+		"longitude": -72.5388
+	},
+	{
+		"university": "미주리대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 38.9403,
+		"longitude": -92.3364
+	},
+	{
+		"university": "캘리포니아몬테레이베이주립대학",
+		"disfatch": 7.0,
+		"invitation": "　-",
+		"latitude": 36.6516,
+		"longitude": -121.8065
+	},
+	{
+		"university": "더피플대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 34.1462,
+		"longitude": -118.1467
+	},
+	{
+		"university": "게르첸사범대학",
+		"disfatch": 4.0,
+		"invitation": 3.0,
+		"latitude": 59.9339,
+		"longitude": 30.3201
+	},
+	{
+		"university": "크라스노다르대학(쿠반)",
+		"disfatch": "-",
+		"invitation": "-　",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "쿠반국립대학",
+		"disfatch": 6.0,
+		"invitation": 9.0,
+		"latitude": 45.02,
+		"longitude": 39.0305
+	},
+	{
+		"university": "블라디보스톡경제대학",
+		"disfatch": 5.0,
+		"invitation": 4.0,
+		"latitude": 43.1255,
+		"longitude": 131.9052
+	},
+	{
+		"university": "노보시비리스크경제경영대학",
+		"disfatch": 2.0,
+		"invitation": 1.0,
+		"latitude": 55.0344,
+		"longitude": 82.9293
+	},
+	{
+		"university": "막심고리키문학대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 55.763,
+		"longitude": 37.6024
+	},
+	{
+		"university": "상트페테르부르크국립대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 59.9426,
+		"longitude": 30.2989
+	},
+	{
+		"university": "옴스크국립사범대학",
+		"disfatch": "-",
+		"invitation": 3.0,
+		"latitude": 54.9908,
+		"longitude": 73.3577
+	},
+	{
+		"university": "상트페테르부르크경제대학",
+		"disfatch": 2.0,
+		"invitation": 3.0,
+		"latitude": 59.8964,
+		"longitude": 30.4087
+	},
+	{
+		"university": "상트페테르부르크공과대학",
+		"disfatch": 5.0,
+		"invitation": 3.0,
+		"latitude": 60.0087,
+		"longitude": 30.3724
+	},
+	{
+		"university": "상트페테르부르크전기공학대학",
+		"disfatch": 6.0,
+		"invitation": "　-",
+		"latitude": 59.9723,
+		"longitude": 30.3225
+	},
+	{
+		"university": "극동연방대학",
+		"disfatch": 16.0,
+		"invitation": "　-",
+		"latitude": 43.0249,
+		"longitude": 131.8937
+	},
+	{
+		"university": "모스크바대학교",
+		"disfatch": 25.0,
+		"invitation": "　-",
+		"latitude": 55.7039,
+		"longitude": 37.5288
+	},
+	{
+		"university": "청도대학",
+		"disfatch": 5.0,
+		"invitation": 8.0,
+		"latitude": 35.0733,
+		"longitude": 120.4281
+	},
+	{
+		"university": "하얼빈공업대학",
+		"disfatch": 9.0,
+		"invitation": "　-",
+		"latitude": 45.7472,
+		"longitude": 126.6335
+	},
+	{
+		"university": "남개대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "남경농업대학 ",
+		"disfatch": 14.0,
+		"invitation": 17.0,
+		"latitude": 32.0337,
+		"longitude": 118.8425
+	},
+	{
+		"university": "섬서사범대학",
+		"disfatch": 17.0,
+		"invitation": 15.0,
+		"latitude": 34.1588,
+		"longitude": 108.8935
+	},
+	{
+		"university": "정주대학",
+		"disfatch": 2.0,
+		"invitation": "　-",
+		"latitude": 34.808,
+		"longitude": 113.5356
+	},
+	{
+		"university": "중국인민대학",
+		"disfatch": 5.0,
+		"invitation": 2.0,
+		"latitude": 39.9696,
+		"longitude": 116.31
+	},
+	{
+		"university": "난주대학",
+		"disfatch": 6.0,
+		"invitation": 5.0,
+		"latitude": 36.0477,
+		"longitude": 103.8587
+	},
+	{
+		"university": "산동대학위해분교",
+		"disfatch": 11.0,
+		"invitation": 4.0,
+		"latitude": 37.53,
+		"longitude": 122.607
+	},
+	{
+		"university": "길림대학",
+		"disfatch": 1.0,
+		"invitation": 1.0,
+		"latitude": 44.0895,
+		"longitude": 124.7362
+	},
+	{
+		"university": "연변과학기술대학",
+		"disfatch": "-",
+		"invitation": 2.0,
+		"latitude": 42.9271,
+		"longitude": 129.5348
+	},
+	{
+		"university": "화북전력대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 40.09,
+		"longitude": 116.3098
+	},
+	{
+		"university": "닝보공정학원",
+		"disfatch": "-",
+		"invitation": 2.0,
+		"latitude": 29.9099,
+		"longitude": 121.6143
+	},
+	{
+		"university": "연변대학교",
+		"disfatch": 1.0,
+		"invitation": 2.0,
+		"latitude": 42.9081,
+		"longitude": 129.4925
+	},
+	{
+		"university": "남경대학",
+		"disfatch": 2.0,
+		"invitation": "　-",
+		"latitude": 32.0569,
+		"longitude": 118.779
+	},
+	{
+		"university": "충칭과학기술대학",
+		"disfatch": 2.0,
+		"invitation": 4.0,
+		"latitude": 29.6015,
+		"longitude": 106.327
+	},
+	{
+		"university": "북경대학",
+		"disfatch": 1.0,
+		"invitation": 1.0,
+		"latitude": 39.9869,
+		"longitude": 116.2971
+	},
+	{
+		"university": "북경우전대학",
+		"disfatch": 8.0,
+		"invitation": "　-",
+		"latitude": 39.9627,
+		"longitude": 116.3556
+	},
+	{
+		"university": "충칭대",
+		"disfatch": 12.0,
+		"invitation": 13.0,
+		"latitude": 29.5651,
+		"longitude": 106.468
+	},
+	{
+		"university": "후베이 폴리테크닉대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "선얏센대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 23.0966,
+		"longitude": 113.2988
+	},
+	{
+		"university": "연산대학",
+		"disfatch": "-",
+		"invitation": 3.0,
+		"latitude": 39.9054,
+		"longitude": 119.5397
+	},
+	{
+		"university": "장안대학",
+		"disfatch": 3.0,
+		"invitation": 3.0,
+		"latitude": 34.2318,
+		"longitude": 108.9564
+	},
+	{
+		"university": "하문대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 24.4373,
+		"longitude": 118.0891
+	},
+	{
+		"university": "절강외국어대학",
+		"disfatch": "-",
+		"invitation": 10.0,
+		"latitude": 29.9687,
+		"longitude": 120.5985
+	},
+	{
+		"university": "무한대학",
+		"disfatch": 1.0,
+		"invitation": "　-",
+		"latitude": 30.5847,
+		"longitude": 114.162
+	},
+	{
+		"university": "강소대학",
+		"disfatch": 5.0,
+		"invitation": "　-",
+		"latitude": 31.8331,
+		"longitude": 117.2785
+	},
+	{
+		"university": "교토대학",
+		"disfatch": 6.0,
+		"invitation": 1.0,
+		"latitude": 35.0262,
+		"longitude": 135.772
+	},
+	{
+		"university": "히로시마대학",
+		"disfatch": 2.0,
+		"invitation": 3.0,
+		"latitude": 34.402,
+		"longitude": 132.7116
+	},
+	{
+		"university": "히로시마시티대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "히로시마시립대학",
+		"disfatch": 20.0,
+		"invitation": "　-",
+		"latitude": 34.4388,
+		"longitude": 132.4144
+	},
+	{
+		"university": "도호쿠대학",
+		"disfatch": 2.0,
+		"invitation": "　-",
+		"latitude": 38.2538,
+		"longitude": 140.8718
+	},
+	{
+		"university": "도쿠시마대학",
+		"disfatch": 4.0,
+		"invitation": 5.0,
+		"latitude": 34.0698,
+		"longitude": 134.5575
+	},
+	{
+		"university": "히로사키대학",
+		"disfatch": 10.0,
+		"invitation": 3.0,
+		"latitude": 40.5883,
+		"longitude": 140.4702
+	},
+	{
+		"university": "나가사키대학",
+		"disfatch": 2.0,
+		"invitation": "-",
+		"latitude": 32.7852,
+		"longitude": 129.8609
+	},
+	{
+		"university": "시마네대학",
+		"disfatch": 1.0,
+		"invitation": "-",
+		"latitude": 35.4864,
+		"longitude": 133.0659
+	},
+	{
+		"university": "규슈대학",
+		"disfatch": 4.0,
+		"invitation": "-",
+		"latitude": 33.6266,
+		"longitude": 130.4228
+	},
+	{
+		"university": "학습원대학",
+		"disfatch": 2.0,
+		"invitation": 1.0,
+		"latitude": 35.7186,
+		"longitude": 139.7071
+	},
+	{
+		"university": "우쯔노미야대학",
+		"disfatch": 1.0,
+		"invitation": 1.0,
+		"latitude": 36.5482,
+		"longitude": 139.9107
+	},
+	{
+		"university": "시즈오카대학",
+		"disfatch": 4.0,
+		"invitation": "-",
+		"latitude": 34.9635,
+		"longitude": 138.4308
+	},
+	{
+		"university": "도야마대학",
+		"disfatch": 7.0,
+		"invitation": 2.0,
+		"latitude": 36.6943,
+		"longitude": 137.1847
+	},
+	{
+		"university": "오차노미즈대학",
+		"disfatch": 1.0,
+		"invitation": "-",
+		"latitude": 35.7187,
+		"longitude": 139.7299
+	},
+	{
+		"university": "와카야마대학",
+		"disfatch": 4.0,
+		"invitation": 9.0,
+		"latitude": 34.2659,
+		"longitude": 135.1494
+	},
+	{
+		"university": "간사이대학",
+		"disfatch": 3.0,
+		"invitation": 9.0,
+		"latitude": 34.7723,
+		"longitude": 135.5072
+	},
+	{
+		"university": "도쿄외국어대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 35.6744,
+		"longitude": 139.5182
+	},
+	{
+		"university": "동경농업대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 35.6412,
+		"longitude": 139.6297
+	},
+	{
+		"university": "동경가정대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 35.7061,
+		"longitude": 139.4901
+	},
+	{
+		"university": "신슈대학",
+		"disfatch": "-",
+		"invitation": "-",
+		"latitude": 36.25,
+		"longitude": 137.9766
+	},
+	{
+		"university": "후쿠이대학",
+		"disfatch": 1.0,
+		"invitation": "-",
+		"latitude": 36.089,
+		"longitude": 136.1665
+	},
+	{
+		"university": "필리핀대학",
+		"disfatch": 1.0,
+		"invitation": 6.0,
+		"latitude": 30.5652,
+		"longitude": 101.3922
+	},
+	{
+		"university": "앤티크대학",
+		"disfatch": "-",
+		"invitation": "-",
+		"latitude": 10.7914,
+		"longitude": 122.0006
+	},
+	{
+		"university": "라살대학",
+		"disfatch": "-",
+		"invitation": "-",
+		"latitude": 10.6786,
+		"longitude": 122.9537
+	},
+	{
+		"university": "홀리엔젤대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 15.1326,
+		"longitude": 120.5877
+	},
+	{
+		"university": "산어거스틴대학",
+		"disfatch": "-",
+		"invitation": "-",
+		"latitude": 10.6809,
+		"longitude": 122.9572
+	},
+	{
+		"university": "홍콩영남대학",
+		"disfatch": 1.0,
+		"invitation": "-",
+		"latitude": 22.4118,
+		"longitude": 113.972
+	},
+	{
+		"university": "홍콩중문대학",
+		"disfatch": "-",
+		"invitation": "-",
+		"latitude": 22.4196,
+		"longitude": 114.198
+	},
+	{
+		"university": "홍콩침례대학",
+		"disfatch": "-",
+		"invitation": "-",
+		"latitude": 22.3386,
+		"longitude": 114.1731
+	},
+	{
+		"university": "대만청화대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 24.7961,
+		"longitude": 120.9944
+	},
+	{
+		"university": "대만정의대학",
+		"disfatch": "-",
+		"invitation": "",
+		"latitude": 24.2258,
+		"longitude": 120.575
+	},
+	{
+		"university": "국립정치대학",
+		"disfatch": 4.0,
+		"invitation": 4.0,
+		"latitude": 24.9861,
+		"longitude": 121.5749
+	},
+	{
+		"university": "국립윈린과학기술대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 25.0277,
+		"longitude": 121.5205
+	},
+	{
+		"university": "중국문화대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 25.1359,
+		"longitude": 121.5367
+	},
+	{
+		"university": "까오슝사범대학",
+		"disfatch": "-",
+		"invitation": 7.0,
+		"latitude": 22.6258,
+		"longitude": 120.3185
+	},
+	{
+		"university": "대만타이페이경영대학",
+		"disfatch": "-",
+		"invitation": 13.0,
+		"latitude": 25.0173,
+		"longitude": 121.5375
+	},
+	{
+		"university": "실천대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 25.0843,
+		"longitude": 121.5436
+	},
+	{
+		"university": "중정국립대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 23.5633,
+		"longitude": 120.4706
+	},
+	{
+		"university": "정치대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "말레야대학",
+		"disfatch": 6.0,
+		"invitation": "　-",
+		"latitude": 3.1209,
+		"longitude": 101.6516
+	},
+	{
+		"university": "스윈번사라왁캠퍼스",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 1.5322,
+		"longitude": 110.355
+	},
+	{
+		"university": "HELP대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 3.1519,
+		"longitude": 101.6689
+	},
+	{
+		"university": "말레야사라왁대학",
+		"disfatch": "-",
+		"invitation": 14.0,
+		"latitude": 1.4649,
+		"longitude": 110.4246
+	},
+	{
+		"university": "말레이시아 케방산 국립대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 3.1714,
+		"longitude": 101.1925
+	},
+	{
+		"university": "노썸브리아대학",
+		"disfatch": 5.0,
+		"invitation": 6.0,
+		"latitude": 53.2276,
+		"longitude": -3.0802
+	},
+	{
+		"university": "에딘버러대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "리버풀대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "울버햄튼대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "글로스터셔대학교",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "퀸즈랜드대학 ",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "퀸즈랜드공과대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": -27.4773,
+		"longitude": 153.0262
+	},
+	{
+		"university": "에디슨코완대학",
+		"disfatch": 1.0,
+		"invitation": 1.0,
+		"latitude": -31.8355,
+		"longitude": 115.7506
+	},
+	{
+		"university": "라로셸대학",
+		"disfatch": 2.0,
+		"invitation": 5.0,
+		"latitude": 46.1476,
+		"longitude": -1.1571
+	},
+	{
+		"university": "IPAG경영대학",
+		"disfatch": 9.0,
+		"invitation": 4.0,
+		"latitude": 48.8545,
+		"longitude": 2.329
+	},
+	{
+		"university": "ECE파리공과대학",
+		"disfatch": "-",
+		"invitation": 37.0,
+		"latitude": 48.8505,
+		"longitude": 2.2874
+	},
+	{
+		"university": "ESSCA",
+		"disfatch": 21.0,
+		"invitation": 4.0,
+		"latitude": 47.4769,
+		"longitude": -0.06
+	},
+	{
+		"university": "ICN경영대학",
+		"disfatch": 5.0,
+		"invitation": 1.0,
+		"latitude": 48.6738,
+		"longitude": 6.1685
+	},
+	{
+		"university": "INP툴르즈대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 43.5554,
+		"longitude": 1.4951
+	},
+	{
+		"university": "INSEEC",
+		"disfatch": "-",
+		"invitation": 3.0,
+		"latitude": 48.8766,
+		"longitude": 2.3702
+	},
+	{
+		"university": "ESME Sudria",
+		"disfatch": 3.0,
+		"invitation": 11.0,
+		"latitude": 48.8141,
+		"longitude": 2.3929
+	},
+	{
+		"university": "버건디경영대학",
+		"disfatch": 3.0,
+		"invitation": 4.0,
+		"latitude": 47.3279,
+		"longitude": 5.0393
+	},
+	{
+		"university": "ECE리옹",
+		"disfatch": 1.0,
+		"invitation": 1.0,
+		"latitude": 45.7518,
+		"longitude": 4.8402
+	},
+	{
+		"university": "ECE보르도",
+		"disfatch": 1.0,
+		"invitation": 1.0,
+		"latitude": 45.751,
+		"longitude": 4.8381
+	},
+	{
+		"university": "ECE파리",
+		"disfatch": 4.0,
+		"invitation": "　-",
+		"latitude": 48.8523,
+		"longitude": 2.2823
+	},
+	{
+		"university": "오덴시아비지니스스쿨",
+		"disfatch": 5.0,
+		"invitation": "　-",
+		"latitude": 47.2468,
+		"longitude": -1.5552
+	},
+	{
+		"university": "툴루즈비지니스스쿨",
+		"disfatch": 2.0,
+		"invitation": 1.0,
+		"latitude": 43.6095,
+		"longitude": 1.4308
+	},
+	{
+		"university": "파리7대학",
+		"disfatch": 1.0,
+		"invitation": "　-",
+		"latitude": 48.8277,
+		"longitude": 2.38
+	},
+	{
+		"university": "INP - ENSIACET",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "리옹카톨릭대학",
+		"disfatch": 30.0,
+		"invitation": "　-",
+		"latitude": 45.7516,
+		"longitude": 4.8265
+	},
+	{
+		"university": "몬테레이대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 25.661,
+		"longitude": -100.4904
+	},
+	{
+		"university": "몬테레이공과대학",
+		"disfatch": 6.0,
+		"invitation": "　-",
+		"latitude": 25.6515,
+		"longitude": -100.2917
+	},
+	{
+		"university": "시우다드후아레스 자치대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "마부르크대학",
+		"disfatch": 12.0,
+		"invitation": "　-",
+		"latitude": 50.8106,
+		"longitude": 8.7719
+	},
+	{
+		"university": "함부르크대학",
+		"disfatch": 7.0,
+		"invitation": 3.0,
+		"latitude": 53.5665,
+		"longitude": 9.9824
+	},
+	{
+		"university": "보쿰대학",
+		"disfatch": 31.0,
+		"invitation": 2.0,
+		"latitude": 51.4456,
+		"longitude": 7.2594
+	},
+	{
+		"university": "본응용과학대학",
+		"disfatch": 4.0,
+		"invitation": 3.0,
+		"latitude": 50.7797,
+		"longitude": 7.1801
+	},
+	{
+		"university": "하일브론응용과학대학",
+		"disfatch": 12.0,
+		"invitation": 10.0,
+		"latitude": 49.1359,
+		"longitude": 9.2004
+	},
+	{
+		"university": "노르트하우젠대학",
+		"disfatch": 1.0,
+		"invitation": 5.0,
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "캠튼응용과학대학",
+		"disfatch": 3.0,
+		"invitation": "　-",
+		"latitude": 47.7144,
+		"longitude": 10.312
+	},
+	{
+		"university": "울름응용과학대학",
+		"disfatch": 4.0,
+		"invitation": 1.0,
+		"latitude": 48.4089,
+		"longitude": 9.9952
+	},
+	{
+		"university": "담슈타트응용과학대학",
+		"disfatch": 8.0,
+		"invitation": 1.0,
+		"latitude": 49.8672,
+		"longitude": 8.6359
+	},
+	{
+		"university": "노르트하우젠응용과학대학",
+		"disfatch": 5.0,
+		"invitation": "　-",
+		"latitude": 51.4979,
+		"longitude": 10.8073
+	},
+	{
+		"university": "윈즈하임대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "하일브론대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "쾰른대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 50.9281,
+		"longitude": 6.9266
+	},
+	{
+		"university": "라드분트대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "마부르크대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "베를린공과대학",
+		"disfatch": 9.0,
+		"invitation": "　-",
+		"latitude": 52.5125,
+		"longitude": 13.3247
+	},
+	{
+		"university": "베를린자유대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 52.4543,
+		"longitude": 13.2912
+	},
+	{
+		"university": "뮌헨공과대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 48.1496,
+		"longitude": 11.5656
+	},
+	{
+		"university": "달하우지대학",
+		"disfatch": 3.0,
+		"invitation": 3.0,
+		"latitude": 44.6365,
+		"longitude": -63.5938
+	},
+	{
+		"university": "레이크해드대학",
+		"disfatch": 2.0,
+		"invitation": "　-",
+		"latitude": 48.4211,
+		"longitude": -89.2628
+	},
+	{
+		"university": "뉴브런즈윅대학",
+		"disfatch": "-",
+		"invitation": 3.0,
+		"latitude": 46.4425,
+		"longitude": -68.5893
+	},
+	{
+		"university": "나이아가라대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 43.0152,
+		"longitude": -79.2662
+	},
+	{
+		"university": "빅토리아대학",
+		"disfatch": 14.0,
+		"invitation": "　-",
+		"latitude": 48.4634,
+		"longitude": -123.3138
+	},
+	{
+		"university": "컨커디어대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 45.4945,
+		"longitude": -73.5795
+	},
+	{
+		"university": "캐네디언 메노니트 대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 45.4945,
+		"longitude": -73.5795
+	},
+	{
+		"university": "알고마대학",
+		"disfatch": 1.0,
+		"invitation": 1.0,
+		"latitude": 46.5015,
+		"longitude": -84.29
+	},
+	{
+		"university": "바르샤바대학",
+		"disfatch": 17.0,
+		"invitation": 11.0,
+		"latitude": 52.2403,
+		"longitude": 21.0164
+	},
+	{
+		"university": "바르샤바공과대학",
+		"disfatch": 14.0,
+		"invitation": 11.0,
+		"latitude": 52.2212,
+		"longitude": 21.0058
+	},
+	{
+		"university": "바르샤바경제대학",
+		"disfatch": 3.0,
+		"invitation": 2.0,
+		"latitude": 52.2088,
+		"longitude": 21.0064
+	},
+	{
+		"university": "그댄스크대학",
+		"disfatch": "-",
+		"invitation": 5.0,
+		"latitude": 54.3961,
+		"longitude": 18.5721
+	},
+	{
+		"university": "카토비체경제대학",
+		"disfatch": 4.0,
+		"invitation": 1.0,
+		"latitude": 50.2584,
+		"longitude": 19.0425
+	},
+	{
+		"university": "브로츠와프공과대학",
+		"disfatch": 3.0,
+		"invitation": 3.0,
+		"latitude": 51.1022,
+		"longitude": 17.0093
+	},
+	{
+		"university": "크라코우공과대학",
+		"disfatch": 5.0,
+		"invitation": "　-",
+		"latitude": 50.0723,
+		"longitude": 19.9417
+	},
+	{
+		"university": "아반스응용과학대학",
+		"disfatch": 6.0,
+		"invitation": 9.0,
+		"latitude": 51.6885,
+		"longitude": 5.2844
+	},
+	{
+		"university": "윈즈하임응용과학대학",
+		"disfatch": 9.0,
+		"invitation": 3.0,
+		"latitude": 52.4995,
+		"longitude": 6.0778
+	},
+	{
+		"university": "유트렉대학",
+		"disfatch": 12.0,
+		"invitation": "　-",
+		"latitude": 52.0901,
+		"longitude": 5.1204
+	},
+	{
+		"university": "트벤테대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 52.2397,
+		"longitude": 6.8477
+	},
+	{
+		"university": "그로닝엔대학",
+		"disfatch": "-",
+		"invitation": 3.0,
+		"latitude": 53.2192,
+		"longitude": 6.5607
+	},
+	{
+		"university": "와겐닝엔대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 51.9845,
+		"longitude": 5.6635
+	},
+	{
+		"university": "류블리아나대학",
+		"disfatch": 18.0,
+		"invitation": 8.0,
+		"latitude": 46.0491,
+		"longitude": 14.5019
+	},
+	{
+		"university": "몬스대학",
+		"disfatch": 2.0,
+		"invitation": "　-",
+		"latitude": 50.4614,
+		"longitude": 3.9487
+	},
+	{
+		"university": "자그레브대학",
+		"disfatch": 4.0,
+		"invitation": "　-",
+		"latitude": 45.8036,
+		"longitude": 15.9649
+	},
+	{
+		"university": "헬싱키메트로폴리아대학",
+		"disfatch": 21.0,
+		"invitation": 7.0,
+		"latitude": 60.1631,
+		"longitude": 24.929
+	},
+	{
+		"university": "JAMK응용과학대학",
+		"disfatch": 10.0,
+		"invitation": 1.0,
+		"latitude": 62.2513,
+		"longitude": 25.7411
+	},
+	{
+		"university": "동핀란드대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 62.2342,
+		"longitude": 24.3308
+	},
+	{
+		"university": "오울루응용과학대학",
+		"disfatch": 4.0,
+		"invitation": "　-",
+		"latitude": 65.0299,
+		"longitude": 25.4237
+	},
+	{
+		"university": "빌니우스대학",
+		"disfatch": 8.0,
+		"invitation": 2.0,
+		"latitude": 54.6825,
+		"longitude": 25.2854
+	},
+	{
+		"university": "빌니우스공과대학",
+		"disfatch": 9.0,
+		"invitation": 3.0,
+		"latitude": 54.7224,
+		"longitude": 25.3354
+	},
+	{
+		"university": "ISM경영경제대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 54.6748,
+		"longitude": 25.2861
+	},
+	{
+		"university": "몽골국제대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 47.9138,
+		"longitude": 106.9722
+	},
+	{
+		"university": "몽골과학기술대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 47.922,
+		"longitude": 106.9221
+	},
+	{
+		"university": "앙코르 대학",
+		"disfatch": 18.0,
+		"invitation": "　-",
+		"latitude": 13.35,
+		"longitude": 103.8902
+	},
+	{
+		"university": "부다페스트기술경제대학",
+		"disfatch": 7.0,
+		"invitation": "　-",
+		"latitude": 47.4813,
+		"longitude": 19.0532
+	},
+	{
+		"university": "페치대학",
+		"disfatch": 5.0,
+		"invitation": "　-",
+		"latitude": 46.0741,
+		"longitude": 18.2202
+	},
+	{
+		"university": "FHS응용과학대학",
+		"disfatch": 2.0,
+		"invitation": "　-",
+		"latitude": 47.4202,
+		"longitude": 9.3558
+	},
+	{
+		"university": "말라달렌대학",
+		"disfatch": 3.0,
+		"invitation": 1.0,
+		"latitude": 59.6186,
+		"longitude": 16.5382
+	},
+	{
+		"university": "더블린시티대학",
+		"disfatch": 7.0,
+		"invitation": "　-",
+		"latitude": 53.3691,
+		"longitude": -6.3927
+	},
+	{
+		"university": "더블린공과대학",
+		"disfatch": 12.0,
+		"invitation": 6.0,
+		"latitude": 53.3475,
+		"longitude": -6.2941
+	},
+	{
+		"university": "도큐즈에이럴대학",
+		"disfatch": "-",
+		"invitation": 5.0,
+		"latitude": 38.4306,
+		"longitude": 27.1347
+	},
+	{
+		"university": "이스탄불에이딘대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 41.0012,
+		"longitude": 28.4517
+	},
+	{
+		"university": "아나돌루대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 39.7912,
+		"longitude": 30.4969
+	},
+	{
+		"university": "앙카라대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "일디림베야지트대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 39.9621,
+		"longitude": 32.8407
+	},
+	{
+		"university": "리가공과대학",
+		"disfatch": 9.0,
+		"invitation": 1.0,
+		"latitude": 56.9472,
+		"longitude": 24.1029
+	},
+	{
+		"university": "라트비아대학",
+		"disfatch": 4.0,
+		"invitation": "　-",
+		"latitude": 56.9508,
+		"longitude": 24.1141
+	},
+	{
+		"university": "다우가우필스대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 55.871,
+		"longitude": 26.5037
+	},
+	{
+		"university": "탈린공과대학",
+		"disfatch": 2.0,
+		"invitation": 1.0,
+		"latitude": 59.3959,
+		"longitude": 24.6688
+	},
+	{
+		"university": "탈린대학",
+		"disfatch": 8.0,
+		"invitation": "　-",
+		"latitude": 59.4173,
+		"longitude": 24.6511
+	},
+	{
+		"university": "IMC크램스대학",
+		"disfatch": 4.0,
+		"invitation": "　-",
+		"latitude": 48.4087,
+		"longitude": 15.5858
+	},
+	{
+		"university": "짤츠부르크대학",
+		"disfatch": 3.0,
+		"invitation": "　-",
+		"latitude": 47.7903,
+		"longitude": 13.0356
+	},
+	{
+		"university": "테헤란 대학교",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 35.7022,
+		"longitude": 51.3935
+	},
+	{
+		"university": "인도네시아대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": -6.3984,
+		"longitude": 103.9662
+	},
+	{
+		"university": "젬버폴리테크닉대학",
+		"disfatch": "-",
+		"invitation": 11.0,
+		"latitude": -8.1594,
+		"longitude": 113.7224
+	},
+	{
+		"university": "가자마다대학",
+		"disfatch": 17.0,
+		"invitation": 4.0,
+		"latitude": -7.7713,
+		"longitude": 110.3753
+	},
+	{
+		"university": "체코공과대학",
+		"disfatch": 4.0,
+		"invitation": 4.0,
+		"latitude": 50.103,
+		"longitude": 14.389
+	},
+	{
+		"university": "토마스베타대학",
+		"disfatch": 3.0,
+		"invitation": "　-",
+		"latitude": 49.2239,
+		"longitude": 17.6592
+	},
+	{
+		"university": "VSB오스트라바기술대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 49.8336,
+		"longitude": 18.1614
+	},
+	{
+		"university": "찰스대학",
+		"disfatch": 4.0,
+		"invitation": "　-",
+		"latitude": 50.0871,
+		"longitude": 14.4234
+	},
+	{
+		"university": "UCAM",
+		"disfatch": 12.0,
+		"invitation": "　-",
+		"latitude": 37.9914,
+		"longitude": -1.1876
+	},
+	{
+		"university": "레온대학",
+		"disfatch": 2.0,
+		"invitation": "　-",
+		"latitude": 42.5998,
+		"longitude": -5.6073
+	},
+	{
+		"university": "비고대학",
+		"disfatch": 4.0,
+		"invitation": 1.0,
+		"latitude": 42.1697,
+		"longitude": -8.6867
+	},
+	{
+		"university": "예이다대학",
+		"disfatch": 6.0,
+		"invitation": "　-",
+		"latitude": 41.6216,
+		"longitude": 0.5912
+	},
+	{
+		"university": "바르셀로나대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 41.3866,
+		"longitude": 2.1617
+	},
+	{
+		"university": "아순시온 카톨릭 대학교",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": -25.3237,
+		"longitude": -57.6364
+	},
+	{
+		"university": "ISCTE 리스본대학",
+		"disfatch": 4.0,
+		"invitation": 2.0,
+		"latitude": 38.7486,
+		"longitude": -9.1544
+	},
+	{
+		"university": "카포스카리대학",
+		"disfatch": 10.0,
+		"invitation": 5.0,
+		"latitude": 45.4345,
+		"longitude": 12.3263
+	},
+	{
+		"university": "페데리코2대학",
+		"disfatch": "-",
+		"invitation": 2.0,
+		"latitude": 40.8454,
+		"longitude": 14.2556
+	},
+	{
+		"university": "파도바대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "IIT MADRAS",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 12.9947,
+		"longitude": 80.2157
+	},
+	{
+		"university": "크라이스트대학",
+		"disfatch": 18.0,
+		"invitation": 8.0,
+		"latitude": 12.9344,
+		"longitude": 77.6038
+	},
+	{
+		"university": "유라시안국립대학",
+		"disfatch": "-",
+		"invitation": 6.0,
+		"latitude": 51.1579,
+		"longitude": 71.4652
+	},
+	{
+		"university": "카자흐스탄 아브라이 콴 국제 관계 및 세계 언어 대학교",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 43.2436,
+		"longitude": 76.9204
+	},
+	{
+		"university": "카자흐스탄농업대학",
+		"disfatch": 17.0,
+		"invitation": "　-",
+		"latitude": 43.2419,
+		"longitude": 76.9506
+	},
+	{
+		"university": "그리스아메리칸컬리지",
+		"disfatch": 4.0,
+		"invitation": 1.0,
+		"latitude": 38.0036,
+		"longitude": 23.8281
+	},
+	{
+		"university": "난양공과대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 1.3483,
+		"longitude": 103.6809
+	},
+	{
+		"university": "PSB아카데미",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 1.2907,
+		"longitude": 103.8567
+	},
+	{
+		"university": "타마삿대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 13.7574,
+		"longitude": 100.4877
+	},
+	{
+		"university": "마이돌대학",
+		"disfatch": "-",
+		"invitation": 2.0,
+		"latitude": 13.7574,
+		"longitude": 100.4199
+	},
+	{
+		"university": "마하사라캄 대학교",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 16.1954,
+		"longitude": 103.1906
+	},
+	{
+		"university": "매파루앙대학",
+		"disfatch": "-",
+		"invitation": 2.0,
+		"latitude": 20.0449,
+		"longitude": 99.8921
+	},
+	{
+		"university": "스리나카린위랏대학",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 13.7461,
+		"longitude": 100.5627
+	},
+	{
+		"university": "르이라차팟대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "베네수엘라 중앙 대학교",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 10.4883,
+		"longitude": -66.8913
+	},
+	{
+		"university": "타이뉴엔농업대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "타이뉴엔공과대학",
+		"disfatch": "-",
+		"invitation": 8.0,
+		"latitude": 21.5506,
+		"longitude": 105.8448
+	},
+	{
+		"university": "호찌민 베트남 국립대학교",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": 10.8272,
+		"longitude": 106.6769
+	},
+	{
+		"university": "하노이 대학",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 21.0216,
+		"longitude": 105.7268
+	},
+	{
+		"university": "후에외국어대학",
+		"disfatch": 17.0,
+		"invitation": "　-",
+		"latitude": 16.4431,
+		"longitude": 107.5995
+	},
+	{
+		"university": "유라시아대학",
+		"disfatch": 18.0,
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "키르기스스탄 국립농업대학",
+		"disfatch": 1.0,
+		"invitation": "-",
+		"latitude": 42.8823,
+		"longitude": 74.5849
+	},
+	{
+		"university": "타지키스탄 교육대학교",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "Obafemi Awolowo University",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 7.5165,
+		"longitude": 4.5263
+	},
+	{
+		"university": "University of Ilorin",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": 8.4856,
+		"longitude": 4.4596
+	},
+	{
+		"university": "University of Rwanda",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": -1.6284,
+		"longitude": 29.9181
+	},
+	{
+		"university": "Wollega University",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "Addis Ababa University",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "Uganda Christian University",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "Makerere University",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "Kumi University",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": "",
+		"longitude": ""
+	},
+	{
+		"university": "Kenyatta University",
+		"disfatch": "-",
+		"invitation": "　-",
+		"latitude": -1.1766,
+		"longitude": 36.9342
+	},
+	{
+		"university": "나이로비 대학 건설환경학교",
+		"disfatch": "-",
+		"invitation": 1.0,
+		"latitude": -1.2798,
+		"longitude": 36.8103
+	}
+]
