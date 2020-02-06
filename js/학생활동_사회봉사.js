@@ -76,10 +76,10 @@ function draw_graph(_year, _type, isupdate, isfirst) {
 
                 //y-axis for chart
                 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-                valueAxis.min = 0;
                 valueAxis.extraMax = 0.15;
-                console.log(max_value * 1.15)
-                console.log(am4charts.AxisTick.length)
+                valueAxis.extraMin = 0.15;
+                //console.log(max_value * 1.15)
+                //console.log(am4charts.AxisTick.length)
                 // valueAxis.strictMinMax = true;
                 // valueAxis.strictMatrix = true;
                 // valueAxis.min = min_value -(max_value -min_value) * 0.1
@@ -91,12 +91,14 @@ function draw_graph(_year, _type, isupdate, isfirst) {
                 // valueAxis.renderer.labels.template.disabled = true;
                 // valueAxis.renderer.minGridDistance = 15;
 
+                /*
                 if (min_value > max_value * 0.25){
                     var axisBreak = valueAxis.axisBreaks.create();
                     axisBreak.startValue = min_value*0.05;
                     axisBreak.endValue = min_value*0.75;
                     axisBreak.breakSize = 0.08;
                 }
+                */
 
                 // Create series
                 var series = chart.series.push(new am4charts.LineSeries());
