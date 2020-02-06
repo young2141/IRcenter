@@ -55,7 +55,16 @@ function drawSunburst() {
 
         // Turn the data into a d3 hierarchy and calculate the sums.
         var root = d3.hierarchy(json)
-            .sum(function (d) { return d.size; })
+            .sum(function (d) {
+                var sex = document.getElementById("sex_selectbar");
+                var cond = sex.options[sex.selectedIndex].value;
+
+                if (cond == "all")
+                    return d.male + d.female;
+                else if (cond == "male")
+                    return d.male;
+                else
+                    return d.female; })
         //.sort(function (a, b) { return b.value - a.value; });
 
         // For efficiency, filter nodes to keep only those large enough to see.
@@ -100,7 +109,7 @@ function drawSunburst() {
         updateBreadcrumbs(sequenceArray, percentageString);
 
         d3.select("#percentage")
-            .html(d.value + "명<br>" + percentageString)
+            .html(d.value + "명<br><br>  " + percentageString)
 
         d3.select("#explanation")
             .style("visibility", "");
@@ -210,44 +219,4 @@ function drawSunburst() {
         d3.select("#trail")
             .style("visibility", "");
     }
-
-    function buildHierarchy(csv) {
-        var root = { "name": "root", "children": [] };
-        for (var i = 0; i < csv.length; i++) {
-            var sequence = csv[i][0];
-            var size = +csv[i][1];
-            if (isNaN(size)) { // e.g. if this is a header row
-                continue;
-            }
-            var parts = sequence.split("-");
-            var currentNode = root;
-            for (var j = 0; j < parts.length; j++) {
-                var children = currentNode["children"];
-                var nodeName = parts[j];
-                var childNode;
-                if (j + 1 < parts.length) {
-                    // Not yet at the end of the sequence; move down the tree.
-                    var foundChild = false;
-                    for (var k = 0; k < children.length; k++) {
-                        if (children[k]["name"] == nodeName) {
-                            childNode = children[k];
-                            foundChild = true;
-                            break;
-                        }
-                    }
-                    // If we don't already have a child node for this branch, create it.
-                    if (!foundChild) {
-                        childNode = { "name": nodeName, "children": [] };
-                        children.push(childNode);
-                    }
-                    currentNode = childNode;
-                } else {
-                    // Reached the end of the sequence; create a leaf node.
-                    childNode = { "name": nodeName, "size": size };
-                    children.push(childNode);
-                }
-            }
-        }
-        return root;
-    };
 }

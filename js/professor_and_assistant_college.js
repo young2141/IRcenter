@@ -52,8 +52,8 @@ function drawPyramid2(_data) {
 
         var maleSeries = maleChart.series.push(new am4charts.ColumnSeries());
         maleSeries.dataFields.valueX = "male";
-        maleSeries.fill = "#0000ff";
-        maleSeries.stroke = "#0000ff";
+        maleSeries.fill = color;
+        maleSeries.stroke = color;
         maleSeries.strokeWidth = 3;
         maleSeries.dataFields.categoryY = "type";
         maleSeries.interpolationDuration = 1000;
@@ -61,7 +61,7 @@ function drawPyramid2(_data) {
         maleSeries.sequencedInterpolation = true;
 
         var maleSerieslabel = maleSeries.bullets.push(new am4charts.LabelBullet());
-        maleSerieslabel.label.text = "{valueX}명";
+        maleSerieslabel.label.text = "{valueX}  ";
         maleSerieslabel.label.truncate = false;
         maleSerieslabel.label.fill = menucondition;
         if (menucondition == "#ff0000") {
@@ -126,15 +126,15 @@ function drawPyramid2(_data) {
         // Create series
         var femaleSeries = femaleChart.series.push(new am4charts.ColumnSeries());
         femaleSeries.dataFields.valueX = "female";
-        femaleSeries.fill = "#ffff00";
-        femaleSeries.stroke = "#ffff00";
+        femaleSeries.fill = color;
+        femaleSeries.stroke = color;
         femaleSeries.strokeWidth = 3;
         femaleSeries.sequencedInterpolation = true;
         femaleSeries.columns.template.tooltipText = "{type}의 여자는 {female}명입니다.";
         femaleSeries.dataFields.categoryY = "type";
 
         var femaleSerieslabel = femaleSeries.bullets.push(new am4charts.LabelBullet());
-        femaleSerieslabel.label.text = "{valueX}명";
+        femaleSerieslabel.label.text = "  {valueX}";
         femaleSerieslabel.label.truncate = false;
         femaleSerieslabel.label.fill = menucondition;
         if (menucondition == "#ff0000") {
@@ -207,23 +207,23 @@ function drawPyramid2(_data) {
         if (i == typename.length - 1)
             flag = false;
         if (cond == "전체") {
-            createMale2([_data[typename[i]]], "#0000ff", flag, "#000000");
+            createMale2([_data[typename[i]]], "#dc67ce", flag, "#000000");
             createLabel2(typename[i], typename_kr[i], "#000000");
-            createFemale2([_data[typename[i]]], "#ffff00", flag, "#000000");            
+            createFemale2([_data[typename[i]]], "#c767dc", flag, "#000000");            
         }
         else {
             if (typename_kr[i] == cond) {
-                createMale2([_data[typename[i]]], "#0000ff", flag, "#ff0000");
+                createMale2([_data[typename[i]]], "#dc67ce", flag, "#ff0000");
                 createLabel2(typename[i],typename_kr[i], "#ff0000");
-                createFemale2([_data[typename[i]]], "#ffff00", flag, "#ff0000");
+                createFemale2([_data[typename[i]]], "#c767dc", flag, "#ff0000");
             }
             else {
-                createMale2([_data[typename[i]]], "#0000ff", flag, "#000000");
+                createMale2([_data[typename[i]]], "#dc67ce", flag, "#000000");
                 createLabel2(typename[i],typename_kr[i], "#000000");
-                createFemale2([_data[typename[i]]], "#ffff00", flag, "#000000");
+                createFemale2([_data[typename[i]]], "#c767dc", flag, "#000000");
             }
         }
-        createPie2([{ "type": "male", "value": _data[typename[i]]["male"], "color": "#0000ff" }, { "type": "female", "value": _data[typename[i]]["female"], "color": "#ffff00" }]);
+        createPie2([{ "type": "male", "value": _data[typename[i]]["male"], "color": "#dc67ce" }, { "type": "female", "value": _data[typename[i]]["female"], "color": "#c767dc" }]);
     }
     createBottom2();
 }
