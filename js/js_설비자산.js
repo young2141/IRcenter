@@ -23,16 +23,17 @@ parse(json => {
         // Create axes
         var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "name";
-        categoryAxis.numberFormatter.numberFormat = "#";
+        categoryAxis.numberFormatter.numberFormat = "#,###";
         categoryAxis.renderer.inversed = true;
         categoryAxis.renderer.grid.template.location = 0;
-        //categoryAxis.renderer.cellStartLocation = 0.1;
-        //categoryAxis.renderer.cellEndLocation = 0.9;
+        categoryAxis.renderer.cellStartLocation = 0.1;
+        categoryAxis.renderer.cellEndLocation = 0.9;
         
         var  valueAxis = chart.xAxes.push(new am4charts.ValueAxis()); 
         //valueAxis.renderer.opposite = true;
         //valueAxis.logarithmic = true;
         valueAxis.extraMax = 0.1;
+        valueAxis.min=0
         valueAxis.renderer.minGridDistance = 80;
         
 
@@ -47,6 +48,14 @@ parse(json => {
             series.sequencedInterpolation = true;
             series.columns.template.stroke = am4core.color(color);
             series.columns.template.fill = am4core.color(color);
+
+            var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+            valueLabel.label.text = "{valueX}";
+            valueLabel.label.horizontalCenter = "left";
+            valueLabel.label.dx = 10;
+            valueLabel.label.hideOversized = false;
+            valueLabel.label.truncate = false;
+            //valueLabel.label.isMeasured = false;
             
         
             
