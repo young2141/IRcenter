@@ -14,11 +14,13 @@ parse(json => {
         
             // Create chart instance
         var chart = am4core.create("chartdiv", am4charts.XYChart);
-        
+        chart.width = am4core.percent(90);
+        chart.height = am4core.percent(100);
         // Add data
         
         var max=0
         for(var i=0;i<json.length;i++){
+            json[i].year = json[i].year.toString()
             if(json[i].비용>max){
                 max = json[i].비용
             }
@@ -29,7 +31,6 @@ parse(json => {
         // Create axes
         var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "year";
-        categoryAxis.numberFormatter.numberFormat = "#";
         categoryAxis.renderer.inversed = true;
         categoryAxis.renderer.grid.template.location = 0;
         categoryAxis.renderer.cellStartLocation = 0.1;
@@ -38,7 +39,8 @@ parse(json => {
         var  valueAxis = chart.xAxes.push(new am4charts.ValueAxis()); 
         //valueAxis.renderer.opposite = true;
         //valueAxis.logarithmic = true;
-        valueAxis.max = max*1.15; 
+        valueAxis.extraMax = 0.168;
+        valueAxis.numberFormatter.numberFormat = "#,###";
         //valueAxis.renderer.minGridDistance = 100;
         
         // Create series

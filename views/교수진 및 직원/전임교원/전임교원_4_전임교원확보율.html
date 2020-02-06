@@ -4,11 +4,18 @@
     <meta charset="utf-8">
     <title>경북대학교 IR센터</title>
 
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>    
+    <script src="../../../js/js_학생,교원법정정원 수.js"></script>
+    <script src="../../../js/js_전임교원 확보율.js"></script>
+    <script>drawChart("학생정원");drawChart2("학생정원");</script>
 </head>
 
 <style type="text/css">
@@ -95,8 +102,8 @@
 
         <div class="legend" id="gotop" style="left:80%; top :40%">
             <form>
-                <input type="radio" id="" name="Gtype" onclick="" checked="checked">학생정원 기준<br>
-                <input type="radio" id="" name="Gtype" onclick="">재학생 기준<br><br>
+                <input type="radio" id="" value="학생정원"name="Gtype" onclick=cclick(this.value) checked="checked">학생정원 기준<br>
+                <input type="radio" id="" value="재학생" name="Gtype" onclick=cclick(this.value)>재학생 기준<br><br>
             </form>
             <span style="color:#ff0000; font-size: 20px;"> ■ </span> 학생<br>
             <span style="color:#ff0000; font-size: 20px;"> ■ </span> 교원법정 정원<br><br>
@@ -116,6 +123,12 @@
             });
 
 
+        </script>
+        <script>
+            function cclick(value) {
+                drawChart(value);
+                drawChart2(value);
+            }
         </script>
 
 
