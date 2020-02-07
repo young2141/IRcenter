@@ -14,10 +14,11 @@
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 
         <style>
-            .row{
+            .row {
                 font-size: 12px;
             }
-            .column{
+
+            .column {
                 font-size: 12px;
             }
         </style>
@@ -43,18 +44,42 @@
             </form>
         </div>
 
+        <a href="../등록.html" style="float: right; margin: 3%; color: black;">이전 페이지로</a><br>
+
 
         <div class="bodyBox">
 
 
-            <div id="titleBox">
+            <div id="titleBox" style = "margin-right: 20%">
                 <span id="titleFont"><b>복수전공</b></span>
+                <br><br>
+
+                아래 차트는 <span id = "blue">2019학년도 1학기 학생들의 복수전공 조합</span>을 나타냅니다. 경북대학교 복수전공은 학생이 재학 중 2개 이상의 학과(부·전공)를 이수하고 졸업을 인정받는
+                것입니다.<br><br>
+
+                행렬의 측면과 상단은 학과 이름순으로 나열됩니다. 셀 위로 마우스를 가져가면 해당하는 학과에 복수전공을 한 학생의 수가 나타납니다. 셀 색상은 본전공 학과 계열과 타전공 학과 계열의
+                동일여부, 분류계열에 따라 달라집니다. 범례에 나타난 인문사회, 자연과학, 공학, 예체능 색상을 가진 셀은 같은 계열로 복수전공 했음을 의미합니다. 또한, 셀 색상이 어두울수록 복수전공한 학생의
+                수가 많음을 의미합니다.<br><br>
+
+                예를 들어, 2019학년도 1학기 가정관리학과 학생들은 공업교육과, 과학교육학부 지구과학교육전공, 노어문학과, 보건학과, 수의학과, 식품공학부 식품응용공학전공, 약학과,
+                일어일문학과, 한문학과에서 복수전공을 하고 있습니다. 가정관리학과와 과학교육학부 지구과학교육전공에서 복수전공한 조합은 동일한 인문사회계열로 주황색으로 나타납니다. 또한, 가정관리학과와
+                노어노문학과에서 복수전공한 학생의 수는 12명입니다. 가정관리학과와 약학과에서 복수전공한 학생의 수, 6명보다 많으므로 셀 색상이 더 어둡게 표현됩니다.<br><br>
+
+                이제 전공을 <span id = "blue">계열별로 정렬</span>해보세요. <span id = "blue">같은 색의 전공은 다른 색의 전공보다 복수전공할 가능성이 높습니다.</span><br><br>
+
+                이제 전공을 <span id = "blue">빈도순으로 정렬</span>해보세요. 복수전공 조합 수가 가장 많은 셀이 왼쪽 상단에 표시됩니다. <span id = "blue">2019학년도 1학기, 복수전공한 학생들의 비중이 가정교육과에서 가장 높고, 컴퓨터학부 전공, 생명과학부 생명공학전공, 간호학과, 불어불문학과 순으로 높습니다.</span><br>
             </div>
+
+
 
         </div>
 
+
+
         <div id="TOP">
-            <div class="legend" id="gotop" style="left:80%; top :30%">
+
+
+            <div class="legend" id="gotop" style="left:80%; top :70%">
 
 
                 <!-- 
@@ -67,7 +92,6 @@
 
 
                 <div id="colors">
-                    <span style="font-size: 20px"><b>계열별 색상</b></span><br>
                     <span id="color_hs" value="#E8A343" style="color:#E8A343; font-size: 20px;">■ </span>인문사회<br>
                     <span id="color_ns" value="#FCFF57" style="color:#FCFF57; font-size: 20px;">■ </span>자연과학<br>
                     <span id="color_en" value="#43E884" style="color:#43E884; font-size: 20px;">■ </span>공학<br>
@@ -80,41 +104,39 @@
                     sel_sbs; select, search by semester
                  -->
                 <div>
-                    <span style="font-size: 20px"><b>데이터 범위</b></span><br>
-                    <input type="radio" name="data_range" value="part" checked> 부분<br>
-                    <input type="radio" name="data_range" value="all"> 전체<br><br>
 
                     <span style="font-size: 20px"><b>정렬 조건</b></span><br>
                     <select name="menu" id="order" style="width : 200px; height: 30px">
-                        <option value="name" selected = "selected">전공이름순</option>
+                        <option value="name" selected="selected">전공이름순</option>
                         <option value="group">계열별</option>
                         <option value="count">빈도순</option>
                     </select><br><br>
 
                     <span style="font-size: 20px"><b>학기별 검색</b></span><br>
-                    <select name="menu" id="termyear" style="width : 200px; height: 30px" onchange="selectSelectbox(id, this.value)">
+                    <select name="menu" id="termyear" style="width : 200px; height: 30px"
+                        onchange="selectSelectbox(id, this.value)">
                         <option value="2019 2" selected>2019 2학기</option>
-                        <option value="2019 1">2019 1학기</option>
-                        <option value="2018 2">2018 2학기</option>
-                        <option value="2018 1">2018 1학기</option>
-                        <option value="2017 2">2017 2학기</option>
-                        <option value="2017 1">2017 1학기</option>
-                        <option value="2016 2">2016 2학기</option>
-                        <option value="2016 1">2016 1학기</option>
-                        <option value="2015 2">2015 2학기</option>
-                        <option value="2015 1">2015 1학기</option>
-                        <option value="2014 2">2014 2학기</option>
-                        <option value="2014 1">2014 1학기</option>
-                        <option value="2013 2">2013 2학기</option>
-                        <option value="2013 1">2013 1학기</option>
-                        <option value="2012 2">2012 2학기</option>
-                        <option value="2012 1">2012 1학기</option>
-                        <option value="2011 2">2011 2학기</option>
-                        <option value="2011 1">2011 1학기</option>
-                        <option value="2010 2">2010 2학기</option>
-                        <option value="2010 1">2010 1학기</option>
+                        <option value="2019 1">2019학년도 1학기</option>
+                        <option value="2018 2">2018학년도 2학기</option>
+                        <option value="2018 1">2018학년도 1학기</option>
+                        <option value="2017 2">2017학년도 2학기</option>
+                        <option value="2017 1">2017학년도 1학기</option>
+                        <option value="2016 2">2016학년도 2학기</option>
+                        <option value="2016 1">2016학년도 1학기</option>
+                        <option value="2015 2">2015학년도 2학기</option>
+                        <option value="2015 1">2015학년도 1학기</option>
+                        <option value="2014 2">2014학년도 2학기</option>
+                        <option value="2014 1">2014학년도 1학기</option>
+                        <option value="2013 2">2013학년도 2학기</option>
+                        <option value="2013 1">2013학년도 1학기</option>
+                        <option value="2012 2">2012학년도 2학기</option>
+                        <option value="2012 1">2012학년도 1학기</option>
+                        <option value="2011 2">2011학년도 2학기</option>
+                        <option value="2011 1">2011학년도 1학기</option>
+                        <option value="2010 2">2010학년도 2학기</option>
+                        <option value="2010 1">2010학년도 1학기</option>
                     </select><br><br>
-                    
+
                 </div>
 
 
@@ -136,10 +158,16 @@
                 });
 
             </script>
-
             <div id="chartdiv" style="height: 1000px; width: 1000px"></div>
-            <div id="chartdiv2" style="height: 1500px; width: 1500px"></div>
+
+            <div id="titleBox" style = "margin-right: 20%">
             
+                아래 차트는 2019학년도 1학기 경북대학교 모든 학과의 복수전공 조합을 나타냅니다. <span id = "blue">주황색 테두리로 표시된 영역은 복수전공 조합이 많은 50개 학과를 나타내며,</span> 위 차트에서 표시된 복수전공 주요 조합을 반영합니다.
+
+            </div>
+            <div id="chartdiv2" style="height: 1000px; width: 1000px"></div>
+
+
 
             <div id="summaryBox" style="font-size: 15px">
                 <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>

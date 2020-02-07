@@ -1,0 +1,162 @@
+﻿{
+  "student": [
+    {
+      "grade": "1~1.5",
+      "apply": 894,
+      "pass": 832,
+      "admission": 723
+    },
+    {
+      "grade": "1.5~2",
+      "apply": 1500,
+      "pass": 1426,
+      "admission": 193
+    },
+    {
+      "grade": "2~2.5",
+      "apply": 2500,
+      "pass": 1446,
+      "admission": 0
+    },
+    {
+      "grade": "2.5~3",
+      "apply": 2300,
+      "pass": 0,
+      "admission": 0
+    },
+    {
+      "grade": "3~3.5",
+      "apply": 1380,
+      "pass": 0,
+      "admission": 0
+    }
+  ],
+  "nonsul": [
+    {
+      "grade": "1~1.5",
+      "apply": 1265,
+      "pass": 1156,
+      "admission": 756
+    },
+    {
+      "grade": "1.5~2",
+      "apply": 2562,
+      "pass": 2326,
+      "admission": 54
+    },
+    {
+      "grade": "2~2.5",
+      "apply": 6000,
+      "pass": 3661,
+      "admission": 0
+    },
+    {
+      "grade": "2.5~3",
+      "apply": 5684,
+      "pass": 0,
+      "admission": 0
+    },
+    {
+      "grade": "3~3.5",
+      "apply": 6651,
+      "pass": 0,
+      "admission": 0
+    }
+  ],
+  "normal": [
+    {
+      "grade": "1~1.5",
+      "apply": 1682,
+      "pass": 0,
+      "admission": 645
+    },
+    {
+      "grade": "1.5~2",
+      "apply": 2456,
+      "pass": 0,
+      "admission": 111
+    },
+    {
+      "grade": "2~2.5",
+      "apply": 2726,
+      "pass": 0,
+      "admission": 0
+    },
+    {
+      "grade": "2.5~3",
+      "apply": 1254,
+      "pass": 0,
+      "admission": 0
+    },
+    {
+      "grade": "3~3.5",
+      "apply": 1331,
+      "pass": 0,
+      "admission": 0
+    }
+  ],
+  "farmfish": [
+    {
+      "grade": "1~1.5",
+      "apply": 165,
+      "pass": 0,
+      "admission": 89
+    },
+    {
+      "grade": "1.5~2",
+      "apply": 326,
+      "pass": 0,
+      "admission": 35
+    },
+    {
+      "grade": "2~2.5",
+      "apply": 356,
+      "pass": 0,
+      "admission": 31
+    },
+    {
+      "grade": "2.5~3",
+      "apply": 254,
+      "pass": 0,
+      "admission": 6
+    },
+    {
+      "grade": "3~3.5",
+      "apply": 64,
+      "pass": 0,
+      "admission": 0
+    }
+  ],
+  "jeongsi": [
+    {
+      "grade": "1~1.5",
+      "apply": 1200,
+      "pass": 0,
+      "admission": 869
+    },
+    {
+      "grade": "1.5~2",
+      "apply": 1755,
+      "pass": 0,
+      "admission": 545
+    },
+    {
+      "grade": "2~2.5",
+      "apply": 1659,
+      "pass": 0,
+      "admission": 356
+    },
+    {
+      "grade": "2.5~3",
+      "apply": 1465,
+      "pass": 0,
+      "admission": 165
+    },
+    {
+      "grade": "3~3.5",
+      "apply": 1533,
+      "pass": 0,
+      "admission": 0
+    }
+  ]
+}

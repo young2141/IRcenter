@@ -1,0 +1,112 @@
+﻿[
+  {
+    "year": "2010",
+    "professor": 606,
+    "associateprofessor": 239,
+    "assistantprofessor": 173,
+    "teachingassistant": 215,
+    "concurrently": 61,
+    "invitation": 181,
+    "parttime": 817,
+    "etc": 292
+  },
+  {
+    "year": "2011",
+    "professor": 610,
+    "associateprofessor": 271,
+    "assistantprofessor": 135,
+    "teachingassistant": 215,
+    "concurrently": 62,
+    "invitation": 199,
+    "parttime": 982,
+    "etc": 317
+  },
+  {
+    "year": "2012",
+    "professor": 634,
+    "associateprofessor": 276,
+    "assistantprofessor": 155,
+    "teachingassistant": 215,
+    "concurrently": 37,
+    "invitation": 192,
+    "parttime": 874,
+    "etc": 356
+  },
+  {
+    "year": "2013",
+    "professor": 717,
+    "associateprofessor": 282,
+    "assistantprofessor": 262,
+    "teachingassistant": 147,
+    "concurrently": 41,
+    "invitation": 189,
+    "parttime": 996,
+    "etc": 429
+  },
+  {
+    "year": "2014",
+    "professor": 749,
+    "associateprofessor": 264,
+    "assistantprofessor": 229,
+    "teachingassistant": 215,
+    "concurrently": 55,
+    "invitation": 206,
+    "parttime": 920,
+    "etc": 438
+  },
+  {
+    "year": "2015",
+    "professor": 767,
+    "associateprofessor": 241,
+    "assistantprofessor": 231,
+    "teachingassistant": 215,
+    "concurrently": 45,
+    "invitation": 211,
+    "parttime": 913,
+    "etc": 475
+  },
+  {
+    "year": "2016",
+    "professor": 796,
+    "associateprofessor": 233,
+    "assistantprofessor": 233,
+    "teachingassistant": 214,
+    "concurrently": 39,
+    "invitation": 198,
+    "parttime": 872,
+    "etc": 429
+  },
+  {
+    "year": "2017",
+    "professor": 797,
+    "associateprofessor": 235,
+    "assistantprofessor": 238,
+    "teachingassistant": 214,
+    "concurrently": 39,
+    "invitation": 214,
+    "parttime": 929,
+    "etc": 533
+  },
+  {
+    "year": "2018",
+    "professor": 794,
+    "associateprofessor": 256,
+    "assistantprofessor": 232,
+    "teachingassistant": 213,
+    "concurrently": 34,
+    "invitation": 214,
+    "parttime": 884,
+    "etc": 582
+  },
+  {
+    "year": "2019",
+    "professor": 793,
+    "associateprofessor": 258,
+    "assistantprofessor": 261,
+    "teachingassistant": 215,
+    "concurrently": 39,
+    "invitation": 214,
+    "parttime": 865,
+    "etc": 623
+  }
+]

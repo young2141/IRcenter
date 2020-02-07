@@ -1,0 +1,62 @@
+[
+	{
+		"year": "2010",
+		"admin/tech": 37.0,
+		"exp/mng/acc": -26.0,
+		"difference": 11.0
+	},
+	{
+		"year": "2011",
+		"admin/tech": 47.0,
+		"exp/mng/acc": -30.0,
+		"difference": 17.0
+	},
+	{
+		"year": "2012",
+		"admin/tech": 67.0,
+		"exp/mng/acc": -36.0,
+		"difference": 31.0
+	},
+	{
+		"year": "2013",
+		"admin/tech": 51.0,
+		"exp/mng/acc": -45.0,
+		"difference": 6.0
+	},
+	{
+		"year": "2014",
+		"admin/tech": 46.0,
+		"exp/mng/acc": -39.0,
+		"difference": 7.0
+	},
+	{
+		"year": "2015",
+		"admin/tech": 38.0,
+		"exp/mng/acc": -41.0,
+		"difference": -3.0
+	},
+	{
+		"year": "2016",
+		"admin/tech": 38.0,
+		"exp/mng/acc": -40.0,
+		"difference": -2.0
+	},
+	{
+		"year": "2017",
+		"admin/tech": 38.0,
+		"exp/mng/acc": -46.0,
+		"difference": -8.0
+	},
+	{
+		"year": "2018",
+		"admin/tech": 63.0,
+		"exp/mng/acc": -62.0,
+		"difference": 1.0
+	},
+	{
+		"year": "2019",
+		"admin/tech": 59.0,
+		"exp/mng/acc": -56.0,
+		"difference": 3.0
+	}
+]

@@ -1,4 +1,4 @@
-<!DOCUTYPE html>
+﻿<!DOCUTYPE html>
 <html>
 
 <head>
@@ -13,9 +13,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-	
-	
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
 
 </head>
 
@@ -51,9 +50,10 @@
 
 
         <div id="titleBox">
-            <span id="titleFont"><b>100명의 학부생</b></span><br><br>
-            만약 캠퍼스에 100명의 학부생만 있다면, 그 중 여자는 몇 명일까요? 몇 명의 학생이 조기졸업을 했을까요?<br>
-            <br>아래 차트는 경북대학교 캠퍼스 내에 학부생이 100명만 있다고 가정한 후, 각 특성 내에 있는 학생들의 분포를 나타냅니다.<br>
+            <span id="titleFont"><b>학부생 100명</b></span><br><br>
+            만약 캠퍼스에 100명의 학부생만 있다면, 그 중 여자는 몇 명일까요? 몇 명의 학생이 조기졸업을 했을까요?<br><br>
+
+            아래 차트는 <span id="blue">경북대학교 캠퍼스 내에 100명의 학부생만 있다고 가정한 후,</span> 각 특성 내에 있는 학생들의 분포를 나타냅니다.<br>
             차트 아래의 버튼을 클릭하여 다양한 정보들을 확인해보세요.
             <br>
         </div>
@@ -63,30 +63,30 @@
 
     <div id="TOP">
         <center>
-		<div id="chart"></div>
-		<form>
-		<div id = "btn-div">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "여자" value = "여자" onclick="onClick(this.id)">
-		<input type = "button" style = "width:130; height: 30px; margin : 10px" id = "거주지" value = "거주지(대구, 경북)" onclick="onClick(this.id)">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "조기졸업" value = "조기졸업" onclick="onClick(this.id)"><br>
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "남자" value = "남자" onclick="onClick(this.id)">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "거주지2" value = "거주지(기타)" onclick="onClick(this.id)">
-		<input type = "button" style = "width:130; height: 30px; margin : 10px" id = "복수전공" value = "복수전공 이수 졸업" onclick="onClick(this.id)"><br>
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
-		<input type = "button" style = "width:130; height: 30px; margin : 10px" id = "부전공" value = "부전공 이수 졸업" onclick="onClick(this.id)"><br>
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px; opacity: 0" value = "none">
-		<input type = "button" style = "width: 130px; height: 30px; margin : 10px" id = "대학원진학" value = "대학원진학" onclick="onClick(this.id)">
-		</div>
-		</form>
-		<script src="../../../js/data.js"></script>
-        <script src="../../../js/100_student.js"></script>
+            <div id="chart"></div>
+            <form>
+                <div id="btn-div">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="여자" value="여자" onclick="onClick(this.id)">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="내국인" value="내국인" onclick="onClick(this.id)">
+                    <input type="button" style="width:130; height: 30px; margin : 10px" id="거주지" value="거주지(대구, 경북)" onclick="onClick(this.id)">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="조기졸업" value="조기졸업" onclick="onClick(this.id)"><br>
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="남자" value="남자" onclick="onClick(this.id)">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="외국인" value="외국인" onclick="onClick(this.id)">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="거주지2" value="거주지(기타)" onclick="onClick(this.id)">
+                    <input type="button" style="width:130; height: 30px; margin : 10px" id="복수전공" value="복수전공 이수 졸업" onclick="onClick(this.id)"><br>
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width:130; height: 30px; margin : 10px" id="부전공" value="부전공 이수 졸업" onclick="onClick(this.id)"><br>
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="대학원진학" value="대학원진학" onclick="onClick(this.id)">
+                </div>
+            </form>
+
+
         </center>
-		
-		
-		
-		
 
         <div id="summaryBox" style="font-size: 15px">
             <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
@@ -102,7 +102,7 @@
         </div>
 
     </div>
-
+    <script src="../../../js/100_student.js"></script>
     <div class="bottomframe">
         <div class="inbottomframe"></div>
         <div class="inbottomframe"></div>

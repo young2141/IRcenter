@@ -1,0 +1,68 @@
+<!DOCUTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>경북대학교 IR센터</title>
+        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+        <script src="../js/전임교원 산업체 경력 현황(도한).js"></script>
+
+    </head>
+
+    <body>
+
+        <span style="font-size: 20px"><b>전공별 검색</b></span><br>
+        <select id="select_major_class" onchange="changeInput('majorclass', this.value)" name="menu"
+            style="width : 200px; height: 30px">
+            <option value="all" selected="selected">(전체)</option>
+            //HS: Humanities and Social Sciences
+            <option value="인문사회">인문사회</option>
+            //NS: Natural Science
+            <option value="자연과학">자연과학</option>
+            //EN: ENgineering
+            <option value="공학">공학</option>
+            //AMP: Art, Music, Physical
+            <option value="예체능">예체능</option>
+        </select><br><br>
+
+        </form>
+
+        <span style="font-size: 20px"><b>년도별 검색</b></span>
+        <br>
+
+        <input type=button value='◀' onclick=decrease()>
+        <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
+        <input type=button value='▶' onclick=increase()>
+        
+
+        <script>
+            function valuechange(value) {
+                changeInput("year", value);
+            }
+            function decrease() {
+                current_value = document.getElementById('years').value
+                console.log(current_value);
+                document.getElementById('years').value -= 1
+                valuechange(document.getElementById('years').value)
+            }
+            function increase() {
+                current_value = document.getElementById('years').value
+                console.log(current_value);
+                document.getElementById('years').value++;
+                valuechange(document.getElementById('years').value)
+            }
+        </script>
+
+
+
+
+        <div id="chartdiv" style="width: 700px; height: 350px">연도별 그래프</div>
+        <script>
+            init();
+        </script>
+
+    </body>
+
+    </html>

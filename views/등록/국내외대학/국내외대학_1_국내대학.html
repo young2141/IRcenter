@@ -1,23 +1,28 @@
-<html>
+﻿<html>
 
 <head>
-	<meta charset="utf-8">
-	<title>경북대학교 IR센터</title>
+    <meta charset="utf-8">
+    <title>경북대학교 IR센터</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script src="https://www.amcharts.com/lib/4/core.js"></script>
-	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-	<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.js"
-		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-	<script src="../../../working on/js/staffheadcount_sharedservice.js"></script>
-	<script src="../js/domestic.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="../../../working on/js/staffheadcount_sharedservice.js"></script>
+    <script src="../../../js/domestic.js"></script>
 
 </head>
 
 <style type="text/css">
 	@import url('../../../css/output_default.css');
+
+    .chartdiv {
+        width: 1000px;
+        height: 500px;
+    }
 </style>
 
 <body>
@@ -81,44 +86,62 @@
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
 
-			<span style="font-size: 20px"><b>구분</b></span><br>
-			<input type="radio" onclick="patch()" name="type" value="patch" checked> 파견<br>
-			<input type="radio" onclick="invite()" name="type" value="invite"> 초청<br><br>
+			<input type="radio" onclick="change('전체')" name="type" value="파견" checked = "checked" id = "pa"> 파견<br>
+			<input type="radio" onclick="change('전체')" name="type" value="초청" id = "cho"> 초청<br><br>
 			<form id="coll">
 				<span style="font-size: 20px"> <b>대학명 검색</b> </span><br>
-				<select id="sex_selectbar" onchange="change()" style="width : 200px; height: 30px">
-					<option value=""></option>
-					<option name="" value="">강원대학교</option>
-					<option name="" value="">경상대학교</option>
-					<option name="" value="">금오공과대학교</option>
-					<option name="" value="">영남대학교</option>
-					<option name="" value="">부산대학교</option>
-					<option name="" value="">부경대학교</option>
-					<option name="" value="">서울대학교</option>
-					<option name="" value="">안동대학교</option>
-					<option name="" value="">전남대학교</option>
-					<option name="" value="">전북대학교</option>
-					<option name="" value="">제주대학교</option>
-					<option name="" value="">창원대학교</option>
-					<option name="" value="">충남대학교</option>
-					<option name="" value="">충북대학교</option>
-					<option name="" value="">한국교원대학교</option>
-					<option name="" value="">숙명여자대학교</option>
-					<option name="" value="">대구외국어대학교</option>
-					<option name="" value="">대구교육대학교</option>
-					<option name="" value="">대구대학교</option>
-					<option name="" value="">한국종합예술학교</option>
-					<option name="" value="">과학기술연합대학원대학교</option>
-					<option name="" value="">계명대학교</option>
-					<option name="" value="">한동대학교</option>
-					<option name="" value="">울산과학기술원</option>
-					<option name="" value="">울산대학교</option>
-				</select>
+                <input type="text" id="university_search_text" list="university_selectbar">
+                <input type="button" onclick="change('')" value="검색">
+                <datalist id="university_selectbar" style="width : 200px; height: 30px">
+                    <option value='전체'>(전체)</option>
+                    <option name="" value="강원대학교">강원대학교</option>
+                    <option name="" value="경상대학교">경상대학교</option>
+                    <option name="" value="계명대학교">계명대학교</option>
+                    <option name="" value="과학기술연합대학원대학교">과학기술연합대학원대학교</option>
+                    <option name="" value="금오공과대학교">금오공과대학교</option>
+                    <option name="" value="대구교육대학교">대구교육대학교</option>
+                    <option name="" value="대구대학교">대구대학교</option>
+                    <option name="" value="대구외국어대학교">대구외국어대학교</option>
+                    <option name="" value="부경대학교">부경대학교</option>
+                    <option name="" value="부산대학교">부산대학교</option>
+                    <option name="" value="서울대학교">서울대학교</option>
+                    <option name="" value="숙명여자대학교">숙명여자대학교</option>
+                    <option name="" value="안동대학교">안동대학교</option>
+                    <option name="" value="영남대학교">영남대학교</option>
+                    <option name="" value="울산과학기술원">울산과학기술원</option>
+                    <option name="" value="울산대학교">울산대학교</option>
+                    <option name="" value="전남대학교">전남대학교</option>
+                    <option name="" value="전북대학교">전북대학교</option>
+                    <option name="" value="제주대학교">제주대학교</option>
+                    <option name="" value="창원대학교">창원대학교</option>
+                    <option name="" value="충남대학교">충남대학교</option>
+                    <option name="" value="충북대학교">충북대학교</option>
+                    <option name="" value="한국교원대학교">한국교원대학교</option>
+                    <option name="" value="한국종합예술학교">한국종합예술학교</option>
+                    <option name="" value="한동대학교">한동대학교</option>
+                </datalist>
 			</form>
 
 		</div>
 
 		<script>
+			function change(search) {
+				var found = null;
+				var type = document.getElementsByName("type");
+				for (var i = 0; i < type.length; i++) {
+					if (type[i].checked == true) {
+						found = type[i];
+					}
+
+				}
+                if (search == "")
+				    search = document.getElementById("university_search_text").value
+				document.getElementById("university_search_text").value = ""
+				draw_map(found.value, search)
+				// draw_map(found.value)
+
+			}
+
 			var currentPosition = parseInt($("#gotop").css("top"));
 			$(window).scroll(function () {
 				var position = $(window).scrollTop();
@@ -132,9 +155,22 @@
 			});
 		</script>
 
-		<div id="chartdiv" class="chartdiv">그래프 1</div>
+		<div id="summaryBox">
+			<h2>학생교류 국내대학</h2>
+            <span id="stats_result1"></span>
+		</div>
+
+		
+
+		<div id="chartdiv1" class="chartdiv"></div>
+
+		<div id="summaryBox">
+			<h2>국내대학 학생 교류 현황</h2>
+            <span id="stats_result2"></span>
+		</div>
+        <div id="chartdiv2" class="chartdiv"></div>
 		<script>
-			change();
+            change('전체')
 		</script>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
@@ -167,6 +203,43 @@
 
 		</div>
 	</div>
+
+	<script>
+		function valueChange() {
+			var temp = document.getElementById("pa")
+			var Target1 = document.getElementById("P1")
+			var Target2 = document.getElementById("P2")
+			var Target3 = document.getElementById("P3")
+			var Target4 = document.getElementById("P4")
+			var Target5 = document.getElementById("P5")
+			var Target6 = document.getElementById("S1")
+			var vTarget1 = document.getElementById("V1")
+
+			if (temp.checked == true) {//파견일 경우
+				Target1.innerHTML = "으로"
+				Target2.innerHTML = "파견"
+				Target3.innerHTML = "파견"
+				//Target4.innerHTML = "파견"
+				//Target5.innerHTML = "파견"
+				Target6.innerHTML = "2018학년도 파견된 국내대학 중 제주대학교로 파견된 학생의 비중이 40.5%(175명)으로 가장 많았고, 서울대학교(13.1%), 부산대학교(9.02%), 전남대학교(8.79%), 한국종합예술학교(6.01%) 순으로 많습니다."
+				
+			}
+			temp = document.getElementById("cho")
+
+			if (temp.checked == true) {//초청일 경우
+				Target1.innerHTML = "에서"
+				Target2.innerHTML = "초청"
+				Target3.innerHTML = "초청"
+				//Target4.innerHTML = "초청"
+				//Target5.innerHTML = "초청"
+				Target6.innerHTML = "2018학년도 초청된 국내대학 중 영남대학교로 초청된 학생의 비중이 24.5%(73명)으로 가장 많았고, 울산과학기술원(12.7%), 전남대학교(12.1%), 부산대학교와 계명대학교(6.39%), 금오공과대학교와 안동대학교(5.72%) 순으로 많습니다."
+				vTarget1.innerHTML = "297"
+
+			}
+
+		}
+
+	</script>
 
 </body>
 

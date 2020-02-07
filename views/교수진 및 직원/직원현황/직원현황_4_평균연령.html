@@ -5,41 +5,38 @@
 	<title>경북대학교 IR센터</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-3.4.1.js"
-		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-	<script src="../../../js/4-1.js"></script>
-	<!-- <script src="../../../js/4-2.js"></script> -->
-	<!-- <script src="https://code.jquery.com/jquery-3.4.1.js"
-		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> -->
+	<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="../../../js/column(도영_평균연령).js"></script>
 
 </head>
 
 <style type="text/css">
 	@import url('../../../css/output_default.css');
 
-	.node circle {
-		fill: #fff;
-		stroke: steelblue;
-		stroke-width: 3px;
+
+	.chartdiv11 {
+		width: 500px;
+		height: 200px;
 	}
 
-	.node text {
-		font: 12px sans-serif;
-	}
-
-	.link {
-		fill: none;
-		stroke: #ccc;
-		stroke-width: 2px;
-	}
-
-	.chartdiv {
+	.chartdiv22 {
 		width: 1000px;
+		height: 600px;
+		display: inline-block;
+		border-style: solid;
+		margin: 10px;
+		padding: 10px;
+		border-color: white;
+	}
+
+	.chartdiv33 {
+		width: 500px;
 		height: 500px;
 	}
 </style>
@@ -112,23 +109,6 @@
 
 	<div id="TOP">
 
-		<div class="legend" id="gotop" style="left:80%; top :40%">
-			<span style="font-size: 20px"> <b>성별 검색</b> </span><br />
-			<select id="sex_selectbar" onchange="call()" style="width : 200px; height: 30px">
-				<option name="sex" value="all">(전체)</option>
-				<option name="sex" value="male">남자</option>
-				<option name="sex" value="female">여자</option>
-			</select>
-			<br><br>
-
-			<span style="color:#dc67ce; font-size: 20px;"> ■ </span> 일반직<br>
-			<span style="color:#c767dc; font-size: 20px;"> ■ </span> 기술직<br>
-			<span style="color:#a367dc; font-size: 20px;"> ■ </span> 별정직<br>
-			<span style="color:#8067dc; font-size: 20px;"> ■ </span> 기능직<br>
-			<span style="color:#6771dc; font-size: 20px;"> ■ </span> 대학회계직<br>
-			<span style="color:#6794dc; font-size: 20px;"> ■ </span> 교육전문직<br>
-			<span style="color:#67b7dc; font-size: 20px;"> ■ </span> 계약직<br>
-		</div>
 
 		<script>
 			var currentPosition = parseInt($("#gotop").css("top"));
@@ -143,7 +123,6 @@
 					$("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
 			});
 
-			call();
 
 		</script>
 
@@ -153,7 +132,7 @@
 			<br>
 
 			<input type=button value='◀' onclick=decrease()>
-			<input id="years" type=range min=2010 max=2015 step=1 value=2015 oninput=valuechange(parseInt(this.value))>
+			<input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
 			<input type=button value='▶' onclick=increase()>
 
 			<script>
@@ -185,26 +164,32 @@
 				<option id="T1" value="전산직">전산직</option>
 				<option id="T1" value="전문경력관">전문경력관</option>
 				<option id="T1" value="관리운영직">관리운영직</option>
+				<option id="T1" value="대학회계직">대학회계직</option>
+
 			</select><br><br>
 
 		</form>
 
-		<div id="summaryBox">
-			<h2><span id="P1">행정직</span> 평균연령</h2>
+		<div id="summaryBox" style = "font-size: 30px; width: 800px" >
+			<b><span id="P1">행정직</span> 평균연령</b>
+			<b><span style = "float: right"><span id = "P2">행정직</span> 평균근속연수<span></b>
 		</div>
-		<div id="unitBox">
-			(단위 : 세)
-		</div>
-		<div id="chartdiv1" class="chartdiv">그래프 1</div>
 
-		<div id="summaryBox">
-			<h2><span id="P2">행정직</span> 평균근속연수</h2>
+		<div id="summaryBox" style = "font-size: 15px; width: 1000px" >
+			<span style = "float: left; margin-left: 400px">(단위 : 세)</span>
+			<span style = "float: right">(단위 : 년)<span>
 		</div>
-		<div id="unitBox">
-			(단위 : 년)
-		</div>
-		<div id="chartdiv2" class="chartdiv">그래프 2</div>
+		
+		<div class="chartdiv11" id="chartdiv1"></div>
+		<div class="chartdiv11" id="chartdiv2"></div>
+		<div class="chartdiv11" id="chartdiv3"></div>
+		<div class="chartdiv11" id="chartdiv4"></div>
+		<div class="chartdiv11" id="chartdiv5"></div>
+		<div class="chartdiv11" id="chartdiv6"></div>
 
+		<!--<div id="chartdiv2" class="chartdiv">그래프 2</div>-->
+
+		<br>
 
 		<div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
 			<b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
@@ -229,40 +214,39 @@
 			var Target1 = document.getElementById("P1");
 			var Target2 = document.getElementById("P2");
 
-			if (val == '행정직')
-			{
+			if (val == '행정직') {
 				Target1.innerHTML = "행정직";
 				Target2.innerHTML = "행정직";
 			}
 
-			if (val == '사서직')
-			{
+			if (val == '사서직') {
 				Target1.innerHTML = "사서직";
 				Target2.innerHTML = "사서직";
 			}
 
-			if (val == '기술직')
-			{
+			if (val == '기술직') {
 				Target1.innerHTML = "기술직";
 				Target2.innerHTML = "기술직";
 			}
 
-			if (val == '전산직')
-			{
+			if (val == '전산직') {
 				Target1.innerHTML = "전산직";
 				Target2.innerHTML = "전산직";
 			}
 
-			if (val == '전문경력관')
-			{
+			if (val == '전문경력관') {
 				Target1.innerHTML = "전문경력관";
 				Target2.innerHTML = "전문경력관";
 			}
 
-			if (val == '관리운영직')
-			{
+			if (val == '관리운영직') {
 				Target1.innerHTML = "관리운영직";
 				Target2.innerHTML = "관리운영직";
+			}
+
+			if (val == '대학회계직') {
+				Target1.innerHTML = "대학회계직";
+				Target2.innerHTML = "대학회계직";
 			}
 
 

@@ -38,15 +38,15 @@ function makeDataToDrawGraph(data) {
         graph_data.push(obj);
     });
 
-    graph_data.forEach((e, i) => {
-        let total = e["전임교원"] + e["비전임교원"] + e["조교"];
-        let fulltime = parseInt(e["전임교원"] / total * 100);
-        let nonexecutive = parseInt(e["비전임교원"] / total * 100);
-        let TA = 100 - (fulltime + nonexecutive);
-        graph_data[i]["전임교원"] = fulltime;
-        graph_data[i]["비전임교원"] = nonexecutive;
-        graph_data[i]["조교"] = TA;
-    })
+    // graph_data.forEach((e, i) => {
+    //     let total = e["전임교원"] + e["비전임교원"] + e["조교"];
+    //     let fulltime = parseInt(e["전임교원"] / total * 100);
+    //     let nonexecutive = parseInt(e["비전임교원"] / total * 100);
+    //     let TA = 100 - (fulltime + nonexecutive);
+    //     graph_data[i]["전임교원"] = fulltime;
+    //     graph_data[i]["비전임교원"] = nonexecutive;
+    //     graph_data[i]["조교"] = TA;
+    // })
 
     return graph_data;
 }
@@ -102,10 +102,10 @@ function drawChart(data) {
         series4.name = "전임교수 꺾은선";
 
 
-        //색 변경
-        series3.columns.template.fill = am4core.color("#00ff00");
-        series2.columns.template.fill = am4core.color("#0000ff");
-        series1.columns.template.fill = am4core.color("#ff0000");
-        series4.stroke = am4core.color("#58641D");
+        // //색 변경
+        // series3.columns.template.fill = am4core.color("#00ff00");
+        // series2.columns.template.fill = am4core.color("#0000ff");
+        // series1.columns.template.fill = am4core.color("#ff0000");
+        // series4.stroke = am4core.color("#58641D");
     });
 }

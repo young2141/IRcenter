@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="../js/fulltime_teacher.js"></script>
+</head>
+<body>
+    <div id="TOP">
+        <div class="legend" id="gotop" style="left:80%; top :40%">
+            <input type="radio" name="chk_info" value="limit" checked="checked" onclick="chart2()">학생정원기준<br></input>
+            <input type="radio" name="chk_info" value="student" onclick="chart2()">재학생기준<br><br></input>
+
+            <span style="font-size: 20px"><b>계열별 검색</b></span>
+            <br>
+            <select name="menu" onchange="chart2()" style="width : 200px; height: 30px">
+                <option value="all" selected="selected">(전체)</option>
+                <option value="society">인문사회계열</option>
+                <option value="science">자연과학계열</option>
+                <option value="tech">공학계열</option>
+                <option value="medical">의학계열</option>
+                <option value="artphysical">예체능계열</option>
+            </select>
+            <br><br>
+        </div>
+
+        <script>
+            var currentPosition = parseInt($("#gotop").css("top"));
+            $(window).scroll(function () {
+                var position = $(window).scrollTop();
+
+                if (position > 750)
+                    $("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
+                else if (position < 300)
+                    $("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
+                else
+                    $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
+            });
+
+        </script>
+        <h1>전임교원 확보율</h1>
+        <div id="chartdiv2" style="width:70%; height:600px;"></div>
+        <script>chart2()</script>
+    </div>
+</body>

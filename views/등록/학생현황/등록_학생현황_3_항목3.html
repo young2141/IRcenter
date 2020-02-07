@@ -8,7 +8,7 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="../../../js/area_chart_v2.js"></script>
 
 
@@ -85,30 +85,30 @@
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
             <span style="font-size: 20px"><b>차트 종류</b></span><br>
-            <form>             
-                <input type="radio" name="Gtype" id="stacked" checked="checked" onclick= "drawChart(mode)">누적 영역형<br>
-                <input type="radio" name="Gtype" id="multiples" onclick= "drawChart(mode)">영역형<br><br>
+            <form>
+                <input type="radio" name="Gtype" id="stacked" checked="checked" onclick="drawChart(mode)">누적 영역형<br>
+                <input type="radio" name="Gtype" id="multiples" onclick="drawChart(mode)">영역형<br><br>
 
-                
+
                 <span style="font-size: 20px"><b>학생 구분 검색</b></span><br>
-                <select id="grad" onchange = "drawChart(mode)" style="width : 200px; height: 30px">
-                    <option name = "grad" value = "all" selected = "selected">(전체)</option>
-                    <option name = "grad" value = "graduate" >졸업생</option>
-                    <option name = "grad" value = "undergraduate">재적생</option>
-                    
-                    
+                <select id="grad" onchange="drawChart(mode)" style="width : 200px; height: 30px">
+                    <option name="grad" value="all" selected="selected">(전체)</option>
+                    <option name="grad" value="graduate">졸업생</option>
+                    <option name="grad" value="undergraduate">재적생</option>
+
+
                 </select><br><br>
 
                 <!--<input type="radio" name="grad" id="all" checked="checked" onclick="drawChart()">전체<br>
                 <input type="radio" name="grad" id="graduate" onclick="drawChart()">졸업<br>
                 <input type="radio" name="grad" id="undergraduate" onclick="drawChart()">재적<br><br>-->
 
-                
+
                 <span style="font-size: 20px"><b>성별 검색</b></span><br>
-                <select id="gender" onchange = "drawChart(mode)" style="width : 200px; height: 30px">
-                    <option name = "gender" value = "all" selected = "selected">(전체)</option>
-                    <option name = "gender" value = "male">남자</option>
-                    <option name = "gender" value = "female">여자</option>
+                <select id="gender" onchange="drawChart(mode)" style="width : 200px; height: 30px">
+                    <option name="gender" value="all" selected="selected">(전체)</option>
+                    <option name="gender" value="male">남자</option>
+                    <option name="gender" value="female">여자</option>
                 </select><br><br>
 
                 <!--<input type="radio" name="gender" id="all" checked="checked" onclick="drawChart()">전체<br>
@@ -116,10 +116,14 @@
                 <input type="radio" name="gender" id="female" onclick="drawChart()">여자<br><br>-->
 
             </form>
-            <span style="color:#FE4459; font-size: 20px;" onmouseover="mouseOver('graduate_male' + mode)" onmouseleave="    mouseLeave()">■</span> 졸업생 남자<br>
-            <span style="color:#E8A343; font-size: 20px;" onmouseover="mouseOver('graduate_female' + mode)" onmouseleave="    mouseLeave()">■</span> 졸업생 여자<br>
-            <span style="color:#FCFF57; font-size: 20px;" onmouseover="mouseOver('undergraduate_male' + mode)" onmouseleave="    mouseLeave()">■</span> 재적생 남자<br>
-            <span style="color:#43E884; font-size: 20px;" onmouseover="mouseOver('undergraduate_female' + mode)" onmouseleave="    mouseLeave()">■</span> 재적생 여자<br>
+            <span style="color:#FE4459; font-size: 20px;" onmouseover="mouseOver('graduate_male' + mode)"
+                onmouseleave="    mouseLeave()">■</span> 졸업생 남자<br>
+            <span style="color:#E8A343; font-size: 20px;" onmouseover="mouseOver('graduate_female' + mode)"
+                onmouseleave="    mouseLeave()">■</span> 졸업생 여자<br>
+            <span style="color:#FCFF57; font-size: 20px;" onmouseover="mouseOver('undergraduate_male' + mode)"
+                onmouseleave="    mouseLeave()">■</span> 재적생 남자<br>
+            <span style="color:#43E884; font-size: 20px;" onmouseover="mouseOver('undergraduate_female' + mode)"
+                onmouseleave="    mouseLeave()">■</span> 재적생 여자<br>
             <br><br>
 
         </div>
@@ -139,7 +143,11 @@
         </script>
 
         <div id="summaryBox">
-            <h2><span id = "chartTypeBox">누적 영역형 차트</span></h2>
+            <h2>석사과정 등록 현황</h2>
+
+            1946년에 경북대학교 캠퍼스에서 처음 수업에 들어간 이후부터, 석사과정을 등록한 학생들을 학생 구분(졸업생, 재적생), 성별(남자, 여자)에 따라 나타냅니다.<br><br>
+
+            선택항목과 라디오버튼을 활용하여 데이터의 다양한 정보들을 확인해보세요.<br><br>
 
         </div>
         <div id="unitBox">

@@ -159,7 +159,8 @@
         </script>
 
         <div id="summaryBox">
-            <h2><span id="chartTypeBox">누적 영역형 차트</span></h2>
+            <h2>Explore the data</h2>
+            선택항목과 라디오버튼을 활용하여 데이터의 다양한 정보들을 확인해보세요.<br><br>
 
         </div>
         <div id="unitBox">
@@ -167,7 +168,7 @@
         </div>
 
 
-        <div id ="divchartmaster" style="width:1000px; height: 70%; overflow:scroll">
+        <div id ="divchartmaster" style="width:1000px; height: 73%; overflow:scroll">
             <div id="divchart1"></div>
             <div id="divchart2" onmouseover="mouseOver('graduate_male_doctor')" onmouseleave="mouseLeave()"></div>
             <div id="divchart3" onmouseover="mouseOver('graduate_female_doctor')" onmouseleave="mouseLeave()"></div>
@@ -195,7 +196,7 @@
         <span id="color" style="color:#F261AA; font-size: 20px;" onmouseover="mouseOver('undergraduate_male_college')" onmouseleave="mouseLeave()">■</span> 재적생 학사 남자
         <span id="color" style="color:#A6A6A6; font-size: 20px;" onmouseover="mouseOver('undergraduate_female_college')" onmouseleave="mouseLeave()">■</span> 재적생 학사 여자
 
-
+        <br><br><br>
 
         <div id="summaryBox" style="font-size: 15px">
             <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
@@ -214,20 +215,6 @@
     </div>
 
     <script>
-        function Change() {
-            var temp = document.getElementById("stacked")
-            var Target1 = document.getElementById("P1")
-
-            if (temp.checked == true) {
-                Target1.innerHTML = "누적 영역형 차트"
-            }
-            temp = document.getElementById("multiples")
-            if (temp.checked == true) {
-                Target1.innerHTML = "영역형 차트"
-            }
-
-        }
-
         function choiceSelectBox(obj) {
             var nWidth = parseInt(obj.offsetWidth);
             var nHeight = parseInt(obj.offsetHeight);

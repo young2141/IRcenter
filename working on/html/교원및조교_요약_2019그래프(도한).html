@@ -5,6 +5,18 @@
         <meta charset="utf-8">
         <title>경북대학교 IR센터</title>
 
+        <style>
+            .chartdiv {
+			height: 350px;
+			display: inline-block;
+			border-style: none;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			margin-right: 20px;
+			padding-left : 20px;
+		}
+        </style>
+
         <script src="https://www.amcharts.com/lib/4/core.js"></script>
         <script src="https://www.amcharts.com/lib/4/charts.js"></script>
         <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
@@ -13,7 +25,9 @@
     </head>
 
     <body>
-        <div id="chartdiv" style="width: 700px; height: 350px"></div>
+        <div id="chartdiv1" style ="width: 300px" class="chartdiv"></div>
+        <div id="chartdiv2" style ="width: 450px" class="chartdiv"></div>
+        <div id="chartdiv3" style ="width: 50px" class="chartdiv"></div>
         <script>
             init();
         </script>

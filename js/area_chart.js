@@ -1,6 +1,6 @@
 ﻿// set the dimensions and margins of the graph
 var margin = { top: 10, right: 230, bottom: 100, left: 50 },
-    width = 1000 - margin.left - margin.right,
+    width = 1200 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
 function drawChart() {
@@ -94,12 +94,13 @@ function stackedAreaChart() {
     d3.json("../../../json/area_chart_data.json", function (data) {
         var max_val = d3.max(data, function (d) {
             return d["undergraduate_male"] + d["undergraduate_female"] + d["graduate_male"] + d["graduate_female"];
-        });
+        })*1.15;
         max_val += (5000 - (max_val % 5000))
         var stackedData = d3.stack()
-            .keys(keys)
+            .keys(keys.reverse())
             (data)
-        drawAreaChart(svg, data, stackedData, keys, cls, max_val, height, max_val / 5000);
+        console.log(stackedData);
+        drawAreaChart(svg, data, stackedData, keys, cls.reverse(), max_val, height, max_val / 5000);
     });
 }
 
@@ -225,7 +226,7 @@ function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h, tick) {
 
     var xAxis = svg.append("g")
         .attr("transform", "translate(0," + h + ")") 
-        .call(d3.axisBottom(x).tickValues([1949, 1960, 1970, 1980, 1990, 2000, 2010, 2019,]).tickFormat(d3.format("d")))
+        .call(d3.axisBottom(x).tickValues([1946, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2019,]))
 
     // Add Y axis
     var y = d3.scaleLinear()

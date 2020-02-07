@@ -20,19 +20,19 @@ function drawBullet() {
     container2.layout = "vertical";
 
 
-    createBulletChart(container1, "평균연령", "solid", { "category": "행정직", "value": { "9": 32, "8": 33, "7": 42, "6": 47, "5": 54, "4": 57, "고위공무원": 61 } });
-    createBulletChart(container1, "평균연령", "solid", { "category": "사서직", "value": { "9": 30, "8": 31, "7": 34, "6": 52, "5": 57, "4": 60 } });
-    createBulletChart(container1, "평균연령", "solid", { "category": "기술직", "value": { "9": 35, "8": 41, "7": 47, "6": 49, "5": 58, "4": 59 } });
-    createBulletChart(container1, "평균연령", "solid", { "category": "전산직", "value": { "8": 40, "7": 41, "6": 53, "5": 57 } });
-    createBulletChart(container1, "평균연령", "solid", { "category": "전문경력관", "value": { "7": 56 } });
-    createBulletChart(container1, "평균연령", "solid", { "category": "관리운영", "value": { "8": 52, "7": 54, "6": 57 } });
+    createBulletChart(container1, "평균연령", { "category": "행정직", "value": { "9": 32, "8": 33, "7": 42, "6": 47, "5": 54, "4": 57, "고위공무원": 61 } });
+    createBulletChart(container1, "평균연령", { "category": "사서직", "value": { "9": 30, "8": 31, "7": 34, "6": 52, "5": 57, "4": 60 } });
+    createBulletChart(container1, "평균연령", { "category": "기술직", "value": { "9": 35, "8": 41, "7": 47, "6": 49, "5": 58, "4": 59 } });
+    createBulletChart(container1, "평균연령", { "category": "전산직", "value": { "8": 40, "7": 41, "6": 53, "5": 57 } });
+    createBulletChart(container1, "평균연령", { "category": "전문경력관", "value": { "7": 56 } });
+    createBulletChart(container1, "평균연령", { "category": "관리운영", "value": { "8": 52, "7": 54, "6": 57 } });
 
-    createBulletChart(container2, "평균근속년수", "solid", { "category": "행정직", "value": { "9": 2, "8": 5, "7": 13, "6": 19, "5": 29, "4": 32, "고위공무원": 25 } });
-    createBulletChart(container2, "평균근속년수", "solid", { "category": "사서직", "value": { "9": 3, "8": 6, "7": 12, "6": 28, "5": 33, "4": 37 } });
-    createBulletChart(container2, "평균근속년수", "solid", { "category": "기술직", "value": { "9": 2, "8": 7, "7": 16, "6": 20, "5": 32, "4": 39 } });
-    createBulletChart(container2, "평균근속년수", "solid", { "category": "전산직", "value": { "8": 8, "7": 9, "5": 13, "6": 25 } });
-    createBulletChart(container2, "평균근속년수", "solid", { "category": "전문경력관", "value": { "7": 14 } });
-    createBulletChart(container2, "평균근속년수", "solid", { "category": "관리운영", "value": { "8": 12, "7": 27, "6": 29 } });
+    createBulletChart(container2, "평균근속년수", { "category": "행정직", "value": { "9": 2, "8": 5, "7": 13, "6": 19, "5": 29, "4": 32, "고위공무원": 25 } });
+    createBulletChart(container2, "평균근속년수", { "category": "사서직", "value": { "9": 3, "8": 6, "7": 12, "6": 28, "5": 33, "4": 37 } });
+    createBulletChart(container2, "평균근속년수", { "category": "기술직", "value": { "9": 2, "8": 7, "7": 16, "6": 20, "5": 32, "4": 39 } });
+    createBulletChart(container2, "평균근속년수", { "category": "전산직", "value": { "8": 8, "7": 9, "5": 13, "6": 25 } });
+    createBulletChart(container2, "평균근속년수", { "category": "전문경력관", "value": { "7": 14 } });
+    createBulletChart(container2, "평균근속년수", { "category": "관리운영", "value": { "8": 12, "7": 27, "6": 29 } });
 
     /* Create ranges */
     function createRange(axis, from, to, color, type, category, level, value) {
@@ -52,7 +52,7 @@ function drawBullet() {
     }
 
     /* Create bullet chart with specified color type for background */
-    function createBulletChart(parent, dataType, colorType, data) {
+    function createBulletChart(parent, dataType, data) {
       var colors = {
         "9": "#19d228",
         "8": "#b4dd1e",
@@ -81,15 +81,13 @@ function drawBullet() {
       }
 
       //data["value"]["start"] = minVal - 2;
-      data["value"]["end"] = maxVal + 2;
+      //data["value"]["end"] = maxVal + 2;
 
       keys = Object.keys(data["value"]);
-
       keys.sort(function (a, b) {
         return data["value"][a] - data["value"][b];
-      })
+      });
 
-      console.log(data["value"], keys)
       // data["value"]["end"] = data["value"][keys[keys.length - 1]] + 2;
       // keys.push("end");
 
@@ -102,7 +100,7 @@ function drawBullet() {
       /* Add data */
       chart.data = [{
         "category": data["category"],
-        "value": (s / (keys.length - 1)).toFixed(1)
+        "value": (s / (keys.length)).toFixed(1)
         //"target": (s / keys.length + 5).toFixed(1)
       }];
 
@@ -117,35 +115,20 @@ function drawBullet() {
       valueAxis.renderer.grid.template.disabled = true;
       // valueAxis.min = data["value"]["start"];
       valueAxis.min = minVal;
-      valueAxis.max = data["value"]["end"];
+      valueAxis.max = maxVal;//data["value"]["end"];
       valueAxis.strictMinMax = true; // 세로 가로 간격맞추기
       valueAxis.numberFormatter.numberFormat = "#";
       valueAxis.renderer.baseGrid.disabled = true;
 
-      /* 
-        In order to create separate background colors for each range of values, 
-        you have to create multiple axisRange objects each with their own fill color 
-      */
-      if (colorType === "solid") {
-        var start, end;
-        for (var i = 0; i < keys.length; i++) {
-          start = data["value"][keys[i]];
-          end = data["value"][keys[i + 1]];
-          createRange(valueAxis, start, end, am4core.color(colors[keys[i]]), dataType, data["category"], keys[i], data["value"][keys[i]]);
-        }
+
+      var start, end;
+      for (var i = 0; i < keys.length; i++) {
+        start = data["value"][keys[i]];
+        end = data["value"][keys[i + 1]];
+        createRange(valueAxis, start, end, am4core.color(colors[keys[i]]), dataType, data["category"], keys[i], data["value"][keys[i]]);
+        console.log(i);
       }
-      /*
-        In order to create a gradient background, only one axisRange object is needed
-        and a gradient object can be assigned to the axisRange's fill property. 
-      */
-      else if (colorType === "gradient") {
-        var gradient = new am4core.LinearGradient();
-        for (var i = 0; i < 5; ++i) {
-          // add each color that makes up the gradient
-          gradient.addColor(am4core.color(colors[i]));
-        }
-        //createRange(valueAxis, 0, 100, gradient);
-      }
+
 
       /* Create series */
       var series = chart.series.push(new am4charts.ColumnSeries());
@@ -158,16 +141,6 @@ function drawBullet() {
       series.columns.template.height = am4core.percent(25);
       if (dataType == "평균연령") series.tooltipText = "{category}의 평균 연령은 {value}세 입니다."
       else series.tooltipText = "{category}의 평균 근속연수는 {value}년 입니다."
-
-      // var series2 = chart.series.push(new am4charts.StepLineSeries());
-      // series2.dataFields.valueX = "target";
-      // series2.dataFields.categoryY = "category";
-      // series2.strokeWidth = 3;
-      // series2.noRisers = true;
-      // series2.startLocation = 0.15;
-      // series2.endLocation = 0.85;
-      // series2.tooltipText = "{valueX}"
-      // series2.stroke = am4core.color("#000");
 
       chart.cursor = new am4charts.XYCursor()
       chart.cursor.lineX.disabled = true;

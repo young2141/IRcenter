@@ -73,6 +73,7 @@ function drawChart(){
         series1.stacked = true;
         series1.name = "admin/tech Service";
         series1.columns.template.fill = am4core.color("#FCD12A");
+        series1.color.template.tooltipText = "hi";
 
         var series2 = chart.series.push(new am4charts.ColumnSeries());
         series2.dataFields.categoryX = "year";
@@ -81,7 +82,6 @@ function drawChart(){
         series2.stacked = true;
         series2.columns.template.fill = am4core.color("#000080");
         series2.columns.template.fillOpacity = 0.7;
-
 
         var series3 = chart.series.push(new am4charts.LineSeries());
         series3.dataFields.categoryX = "year";

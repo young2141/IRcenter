@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="../../../js/4-3.js"></script>
-
+    <script src="../../../js/treemap.js"></script>
+    <script src="../../../js/sunburst_department.js"></script>
 
 </head>
 
@@ -56,6 +57,8 @@
         top: 260px;
         left: 350px;
         width: 170px;
+        font-size: 30px;
+        font-weight: bold;
         text-align: center;
         color: #666;
         z-index: -1;
@@ -131,13 +134,7 @@
     <div id="TOP">
 
         <div class="legend" id="gotop" style="left:80%; top :40%">
-            <span style="font-size: 20px"> <b>성별 검색</b> </span><br />
-            <select id="sex_selectbar" onchange="call()" style="width : 200px; height: 30px">
-                <option name="sex" value="all">(전체)</option>
-                <option name="sex" value="male">남자</option>
-                <option name="sex" value="female">여자</option>
-            </select>
-            <br><br>
+
             <span style="color:#dc67ce; font-size: 20px;"> ■ </span> 본부<br>
             <span style="color:#c767dc; font-size: 20px;"> ■ </span> 행정지원부 <br>
             <span style="color:#a367dc; font-size: 20px;"> ■ </span> 대학(원)<br>
@@ -145,6 +142,46 @@
             <span style="color:#6771dc; font-size: 20px;"> ■ </span> 지원 및 연구시설<br>
             <span style="color:#6794dc; font-size: 20px;"> ■ </span> 부속시설<br>
             <span style="color:#67b7dc; font-size: 20px;"> ■ </span> 부설학교<br>
+
+            <br>
+
+            <span style="font-size: 20px"> <b>성별 검색</b> </span><br />
+            <select id="sex_selectbar" onchange="call(); drawSunburst();" style="width : 200px; height: 30px">
+                <option name="sex" value="all">(전체)</option>
+                <option name="sex" value="male">남자</option>
+                <option name="sex" value="female">여자</option>
+            </select>
+            <br><br>
+
+            <span style="font-size: 20px"><b>년도별 검색</b></span>
+			<br>
+
+			<input type=button value='◀' onclick="decrease(), changedata()">
+			<input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput="valuechange(parseInt(this.value))"onchange="changegraph(this.value)" >
+			<input type=button value='▶' onclick="increase(), changedata()">
+
+			<script>
+				function valuechange(value) {
+                    document.getElementById('span1').innerHTML = (value);
+                    drawSunburst();
+				}
+				function decrease() {
+					current_value = document.getElementById('years').value
+					console.log(current_value);
+					document.getElementById('years').value -= 1
+					valuechange(document.getElementById('years').value)
+				}
+				function increase() {
+					current_value = document.getElementById('years').value
+					console.log(current_value);
+					document.getElementById('years').value++;
+					valuechange(document.getElementById('years').value)
+				}
+            </script>
+            
+            <br>
+			<div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
+
         </div>
 
         <script>
@@ -159,6 +196,13 @@
                     $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
             });
             call();
+            // call2();
+            stackGraph();
+            function changedata(){
+                span = document.getElementById('span1').innerHTML;
+                console.log(span);
+                changegraph(span)
+            }
         </script>
 
 
@@ -174,16 +218,16 @@
             <h2><span id="P1">2019년도 기관별 직원 비율</span></h2>
         </div>
         <div id="unitBox">
-            (단위 : 명, %)
+            (단위 : %)
         </div>
         <div id="chartdiv2" class="chartdiv">그래프 2</div>
         <div id="sequence"></div>
-        <div id="chartdiv3" class="chartdiv">
+        <div id="chartdiv3" class="chartdiv" style = "margin-left: 5%">
             <div id="explanation" style="visibility: hidden;">
                 <span id="percentage"></span><br />
             </div>
         </div>
-        <script src="../../../js/sunburst_department.js"></script>
+        <script>drawSunburst()</script>
         <div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
             <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
 

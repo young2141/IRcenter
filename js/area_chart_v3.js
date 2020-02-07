@@ -1,6 +1,6 @@
 ﻿// set the dimensions and margins of the graph
 var margin = { top: 10, right: 230, bottom: 100, left: 50 },
-    width = 1000 - margin.left - margin.right,
+    width = 1200 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
 var colorArray12 = ['#FE4459', '#FCFF57', '#006400', '#E8A343', '#43E884', '#46FFFF', '#0078FF', '#3D0099', '#F261AA', '#030066', '#990085', '#A6A6A6']
@@ -16,14 +16,12 @@ var draw_mode
 
 function drawChart(mode) {
     draw_mode = mode
-    var chartTypeBox = document.getElementById("chartTypeBox")
     var divChartMaster = document.getElementById("divchartmaster")
     d3.selectAll("svg").remove();
     if ($(":input:radio[name='Gtype']:checked").attr('id') == 'stacked') {
         isStack = true
         if (draw_mode == 'explore')
             divChartMaster.style = "width:1000px"
-        chartTypeBox.innerHTML = "누적 영역형 차트"
         height = 600 - margin.top - margin.bottom;
         stackedAreaChart()
     }
@@ -31,7 +29,6 @@ function drawChart(mode) {
         isStack = false
         if (draw_mode == 'explore')
             divChartMaster.style = "width:1000px; height: 70%; overflow:scroll"
-        chartTypeBox.innerHTML = "영역형 차트"
         multiplesAreaChart("")
     }
 }
@@ -162,11 +159,12 @@ function stackedAreaChart() {
                     d["undergraduate_master"] +
                     d["undergraduate_college"]
             }
-        }) + 500;
+        }) * 1.15;
+        max_val += (5000 - (max_val % 5000))
         var stackedData = d3.stack()
-            .keys(keys)
+            .keys(keys.reverse())
             (data)
-        drawAreaChart(svg, data, stackedData, keys, cls, max_val, height, "");
+        drawAreaChart(svg, data, stackedData, keys, cls.reverse(), max_val, height, "", max_val/5000);
     });
 }
 
@@ -175,24 +173,41 @@ function prevmultiplechart(cnt, svgarr, keys, colors, key_value) {
     var max_array = [];
 
     d3.json("../../../json/area_chart_data_v2.json", function (data) {
+        var max_val_temp = 0;
         var max_val = 0;
+        var tick_val = 0;
         for (var i = 0; i < cnt; i++) {
             max_array[i] = d3.max(data, function (d) {
                 return d[keys[i]];
             });
             
             
-            if (max_array[i] > max_val)
-                max_val = max_array[i]
+            if (max_array[i] > max_val_temp)
+                max_val_temp = max_array[i]
         }
 
-        max_val += 1000
+        
 
         for (var i = 0; i < cnt; i++) {
             var stackedData = d3.stack()
                 .keys([keys[i]])
                 (data)
-            drawAreaChart(svgarr[i], data, stackedData, [keys[i]], [colors[i]], key_value == keys[i] ? max_array[i] : max_val, h, key_value);
+            
+            max_val = (key_value == keys[i] ? max_array[i] : max_val_temp)
+            if (max_val > 20000)
+                tick_val = 5000
+            else if (max_val > 10000)
+                tick_val = 2000
+            else if (max_val > 5000)
+                tick_val = 1000
+            else if (max_val > 1000)
+                tick_val = 500
+            else
+                tick_val = 100
+
+            max_val *= 1.15;
+            max_val += (tick_val - (max_val % tick_val))
+            drawAreaChart(svgarr[i], data, stackedData, [keys[i]], [colors[i]], max_val, h, key_value, max_val/tick_val);
         }
     });
 }
@@ -269,7 +284,7 @@ function multiplesAreaChart(key_value) {
     prevmultiplechart(check_cnt, svg_arr, keyArrayMult, colorArrayMult, key_value);
 }
 
-function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h, key_value) {
+function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h, key_value, tick) {
     var color = d3.scaleOrdinal()
         .domain(keys)
         .range(cls) //key 순서대로 색상 결정
@@ -284,7 +299,7 @@ function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h, key_value)
 
     var xAxis = svg.append("g")
         .attr("transform", "translate(0," + h + ")") 
-        .call(d3.axisBottom(x).tickValues([1949, 1960, 1970, 1980, 1990, 2000, 2010, 2019,]).tickFormat(d3.format("d")))
+        .call(d3.axisBottom(x).tickValues([1946, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2019,]).tickFormat(d3.format("d")))
 
     // Add Y axis
     var y = d3.scaleLinear()
@@ -292,7 +307,7 @@ function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h, key_value)
         .range([h, 0]);
 
     svg.append("g")
-        .call(d3.axisLeft(y).ticks(5))
+        .call(d3.axisLeft(y).ticks(tick))
 
     // Create the scatter variable: where both the circles and the brush take place
     var areaChart = svg.append('g')

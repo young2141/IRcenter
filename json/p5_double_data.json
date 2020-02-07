@@ -1,0 +1,472 @@
+﻿{
+  "2010": [
+    {
+      "city": "대구",
+      "apply": 17532,
+      "admission": 2884
+    },
+    {
+      "city": "경북",
+      "apply": 6086,
+      "admission": 854
+    },
+    {
+      "city": "경남",
+      "apply": 3652,
+      "admission": 457
+    },
+    {
+      "city": "부산",
+      "apply": 1954,
+      "admission": 260
+    },
+    {
+      "city": "울산",
+      "apply": 1830,
+      "admission": 198
+    },
+    {
+      "city": "서울",
+      "apply": 747,
+      "admission": 104
+    },
+    {
+      "city": "경기",
+      "apply": 789,
+      "admission": 111
+    },
+    {
+      "city": "충북",
+      "apply": 851,
+      "admission": 144
+    },
+    {
+      "city": "기타",
+      "apply": 1752,
+      "admission": 201
+    }
+  ],
+  "2011": [
+    {
+      "city": "대구",
+      "apply": 17778,
+      "admission": 2617
+    },
+    {
+      "city": "경북",
+      "apply": 6227,
+      "admission": 927
+    },
+    {
+      "city": "경남",
+      "apply": 3811,
+      "admission": 494
+    },
+    {
+      "city": "부산",
+      "apply": 2336,
+      "admission": 338
+    },
+    {
+      "city": "울산",
+      "apply": 1851,
+      "admission": 194
+    },
+    {
+      "city": "서울",
+      "apply": 619,
+      "admission": 94
+    },
+    {
+      "city": "경기",
+      "apply": 894,
+      "admission": 144
+    },
+    {
+      "city": "충북",
+      "apply": 629,
+      "admission": 136
+    },
+    {
+      "city": "기타",
+      "apply": 1923,
+      "admission": 228
+    }
+  ],
+  "2012": [
+    {
+      "city": "대구",
+      "apply": 20541,
+      "admission": 2544
+    },
+    {
+      "city": "경북",
+      "apply": 7845,
+      "admission": 940
+    },
+    {
+      "city": "경남",
+      "apply": 5333,
+      "admission": 573
+    },
+    {
+      "city": "부산",
+      "apply": 3052,
+      "admission": 361
+    },
+    {
+      "city": "울산",
+      "apply": 2167,
+      "admission": 221
+    },
+    {
+      "city": "서울",
+      "apply": 944,
+      "admission": 100
+    },
+    {
+      "city": "경기",
+      "apply": 1338,
+      "admission": 139
+    },
+    {
+      "city": "충북",
+      "apply": 974,
+      "admission": 138
+    },
+    {
+      "city": "기타",
+      "apply": 2867,
+      "admission": 258
+    }
+  ],
+  "2013": [
+    {
+      "city": "대구",
+      "apply": 22333,
+      "admission": 2737
+    },
+    {
+      "city": "경북",
+      "apply": 8115,
+      "admission": 913
+    },
+    {
+      "city": "경남",
+      "apply": 5329,
+      "admission": 475
+    },
+    {
+      "city": "부산",
+      "apply": 3166,
+      "admission": 288
+    },
+    {
+      "city": "울산",
+      "apply": 1951,
+      "admission": 173
+    },
+    {
+      "city": "서울",
+      "apply": 861,
+      "admission": 100
+    },
+    {
+      "city": "경기",
+      "apply": 1185,
+      "admission": 135
+    },
+    {
+      "city": "충북",
+      "apply": 904,
+      "admission": 111
+    },
+    {
+      "city": "기타",
+      "apply": 2360,
+      "admission": 231
+    }
+  ],
+  "2014": [
+    {
+      "city": "대구",
+      "apply": 21430,
+      "admission": 2708
+    },
+    {
+      "city": "경북",
+      "apply": 7472,
+      "admission": 900
+    },
+    {
+      "city": "경남",
+      "apply": 4632,
+      "admission": 475
+    },
+    {
+      "city": "부산",
+      "apply": 2884,
+      "admission": 272
+    },
+    {
+      "city": "울산",
+      "apply": 1809,
+      "admission": 200
+    },
+    {
+      "city": "서울",
+      "apply": 861,
+      "admission": 98
+    },
+    {
+      "city": "경기",
+      "apply": 1126,
+      "admission": 154
+    },
+    {
+      "city": "충북",
+      "apply": 771,
+      "admission": 95
+    },
+    {
+      "city": "기타",
+      "apply": 2132,
+      "admission": 235
+    }
+  ],
+  "2015": [
+    {
+      "city": "대구",
+      "apply": 22451,
+      "admission": 2469
+    },
+    {
+      "city": "경북",
+      "apply": 8013,
+      "admission": 930
+    },
+    {
+      "city": "경남",
+      "apply": 6071,
+      "admission": 555
+    },
+    {
+      "city": "부산",
+      "apply": 4633,
+      "admission": 413
+    },
+    {
+      "city": "울산",
+      "apply": 2218,
+      "admission": 213
+    },
+    {
+      "city": "서울",
+      "apply": 1606,
+      "admission": 134
+    },
+    {
+      "city": "경기",
+      "apply": 1789,
+      "admission": 163
+    },
+    {
+      "city": "충북",
+      "apply": 848,
+      "admission": 91
+    },
+    {
+      "city": "기타",
+      "apply": 3033,
+      "admission": 251
+    }
+  ],
+  "2016": [
+    {
+      "city": "대구",
+      "apply": 21916,
+      "admission": 2402
+    },
+    {
+      "city": "경북",
+      "apply": 8164,
+      "admission": 854
+    },
+    {
+      "city": "경남",
+      "apply": 6284,
+      "admission": 540
+    },
+    {
+      "city": "부산",
+      "apply": 5301,
+      "admission": 339
+    },
+    {
+      "city": "울산",
+      "apply": 2396,
+      "admission": 233
+    },
+    {
+      "city": "서울",
+      "apply": 1766,
+      "admission": 112
+    },
+    {
+      "city": "경기",
+      "apply": 1972,
+      "admission": 161
+    },
+    {
+      "city": "충북",
+      "apply": 804,
+      "admission": 75
+    },
+    {
+      "city": "기타",
+      "apply": 3555,
+      "admission": 263
+    }
+  ],
+  "2017": [
+    {
+      "city": "대구",
+      "apply": 21099,
+      "admission": 2294
+    },
+    {
+      "city": "경북",
+      "apply": 7937,
+      "admission": 832
+    },
+    {
+      "city": "경남",
+      "apply": 6449,
+      "admission": 503
+    },
+    {
+      "city": "부산",
+      "apply": 5622,
+      "admission": 376
+    },
+    {
+      "city": "울산",
+      "apply": 2533,
+      "admission": 216
+    },
+    {
+      "city": "서울",
+      "apply": 1781,
+      "admission": 122
+    },
+    {
+      "city": "경기",
+      "apply": 2116,
+      "admission": 172
+    },
+    {
+      "city": "충북",
+      "apply": 778,
+      "admission": 80
+    },
+    {
+      "city": "기타",
+      "apply": 3553,
+      "admission": 262
+    }
+  ],
+  "2018": [
+    {
+      "city": "대구",
+      "apply": 20396,
+      "admission": 2204
+    },
+    {
+      "city": "경북",
+      "apply": 7845,
+      "admission": 809
+    },
+    {
+      "city": "경남",
+      "apply": 6920,
+      "admission": 508
+    },
+    {
+      "city": "부산",
+      "apply": 6540,
+      "admission": 378
+    },
+    {
+      "city": "울산",
+      "apply": 2698,
+      "admission": 202
+    },
+    {
+      "city": "서울",
+      "apply": 2952,
+      "admission": 160
+    },
+    {
+      "city": "경기",
+      "apply": 3481,
+      "admission": 217
+    },
+    {
+      "city": "충북",
+      "apply": 1053,
+      "admission": 84
+    },
+    {
+      "city": "기타",
+      "apply": 4884,
+      "admission": 303
+    }
+  ],
+  "2019": [
+    {
+      "city": "대구",
+      "apply": 19338,
+      "admission": 2153
+    },
+    {
+      "city": "경북",
+      "apply": 7081,
+      "admission": 733
+    },
+    {
+      "city": "경남",
+      "apply": 6325,
+      "admission": 516
+    },
+    {
+      "city": "부산",
+      "apply": 6484,
+      "admission": 394
+    },
+    {
+      "city": "울산",
+      "apply": 2515,
+      "admission": 253
+    },
+    {
+      "city": "서울",
+      "apply": 2904,
+      "admission": 180
+    },
+    {
+      "city": "경기",
+      "apply": 3351,
+      "admission": 249
+    },
+    {
+      "city": "충북",
+      "apply": 902,
+      "admission": 82
+    },
+    {
+      "city": "기타",
+      "apply": 4932,
+      "admission": 357
+    }
+  ]
+}

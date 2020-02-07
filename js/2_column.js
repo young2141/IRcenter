@@ -40,7 +40,7 @@ async function drawColumnChart(_data, _cnt, _year) {
     chart.data = _data;
 
     var tit = chart.titles.create();
-    tit.text = String(_year) + "년";
+    tit.text = String(_year) + "학년도";
     tit.marginBottom = 10;
     tit.fontSize = 15;
     tit.paddingLeft = 50;

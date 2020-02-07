@@ -103,86 +103,147 @@ function initMoving(target, position, topLimit, btmLimit) {
     });
 }
 
-function control(v) {
-    conditions = v;
-    var clr;
-    if (v == "All") {
-        clr = "#ff00ff";
-        conditions_kr = "전체";
-    }
-    else if (v == "Male") {
-        clr = "#00ffff";
-        conditions_kr = "남자";
-    }
-    else {
-        clr = "#ffff00";
-        conditions_kr = "여자";
-    }
-    chart1("bachelor", clr);
-    chart1("master", clr);
-    chart1("PhD", clr);
-    chart2("top_bachelor_graduates.json");
-    chart2("top_master_phd_graduates.json");
-}
-
-function chart1(type, clr) {
-    result = [];
-    var valueY = type;
-    var valueY_RGB = clr;
-    $.getJSON(
-        "../../json/result_summary_num_by_graduate_" + conditions + ".json",
-        result => {
-            if (type == "bachelor") {
-                var title = "학사";
-                var divName = "chartdiv1";
-            } else if (type == "master") {
-                var title = "석사";
-                var divName = "chartdiv2";
-            } else {
-                var title = "박사";
-                var divName = "chartdiv3";
-            }
-
-            P6drawBoxGraph_height(result, divName, valueY, valueY_RGB, title, currentYear, conditions_kr);
-        }
-    );
-}
-
-function chart2(filename) {
-    var result = [];
-    var _fileName = filename;
-    var valueY = ["major"];
-    var cnt = valueY.length;
-
-    $.getJSON("../../json/result_summary_" + _fileName, jsonData => {
-        result = jsonData;
-        result = result.reverse();
-        if (filename == "top_bachelor_graduates.json") {
-            var title = "학사";
-            var divName = "chartdiv4";
-        } else {
-            var title = "석사 및 박사";
-            var divName = "chartdiv5";
-        }
-        var valueY_RGB = "#ff00ff";
-        var categoryX = "value";
-        console.log(conditions);
-        P6drawBoxGraph_width(
-            result,
-            divName,
-            conditions,
-            valueY,
-            valueY_RGB,
-            title,
-            currentYear, conditions_kr
-        );
+function chart1() {
+    $.getJSON("../../json/result_summary_num_by_graduate.json", jsonData => {
+        P6drawBoxGraph_height(jsonData);
     });
 }
 
-function loading() {
-    chart1("bachelor", "#ff00ff");
-    chart1("master", "#ff00ff");
-    chart1("PhD", "#ff00ff");
-    chart2("top_bachelor_graduates.json");
-    chart2("top_master_phd_graduates.json");
+function chart2() {
+    $.getJSON("../../json/result_summary_top_graudate.json", jsonData => {
+        P6drawBoxGraph_width(jsonData);
+    });
+}
+
+function P6drawBoxGraph_height(_data) {
+    var _ckr = $("input:radio[name='mf']:checked").val();
+    var value, clr, value_kr;
+
+    if (_ckr == "전체") { value = "All"; clr = "#ff00ff"; }
+    else if (_ckr == "남자") { value = "Male"; clr = "#0000ff"; }
+    else if (_ckr == "여자") { value = "Female"; clr = "#ffff00"; }
+
+    am4core.useTheme(am4themes_animated);
+
+    var container = am4core.create("chartdiv1", am4core.Container);
+    container.layout = "grid";
+    container.fixedWidthGrid = false;
+    container.width = am4core.percent(100);
+    container.height = am4core.percent(100);
+
+    function createChild(_data, value) {
+        if (value == "bachelor") value_kr = "학사과정";
+        else if (value == "master") value_kr = "석사과정";
+        else if (value == "PhD") value_kr = "박사과정";
+
+        var bhchart = container.createChild(am4charts.XYChart);
+        bhchart.height = am4core.percent(33);
+        bhchart.data = _data;
+
+        var title = bhchart.titles.create();
+        title.text = value_kr;
+        title.fontSize = 20;
+        title.fontWeight = "bold";
+        title.dy = -10;
+        title.textAlign = "middle";
+
+        var bhcategoryAxis = bhchart.xAxes.push(new am4charts.CategoryAxis());
+        bhcategoryAxis.dataFields.category = "year";
+        bhcategoryAxis.renderer.grid.template.location = 0;
+        bhcategoryAxis.renderer.minGridDistance = 30;
+
+        var bhvalueAxis = bhchart.yAxes.push(new am4charts.ValueAxis());
+        bhvalueAxis.min = 0;
+        bhvalueAxis.max = 7000;
+
+        var bhseries = bhchart.series.push(new am4charts.ColumnSeries());
+        bhseries.dataFields.valueY = value;
+        bhseries.dataFields.categoryX = "year";
+        bhseries.columns.template.strokeWidth = 0;
+        bhseries.columns.template.stroke = am4core.color(clr);
+        bhseries.columns.template.fill = am4core.color(clr);
+
+        bhseries.columns.template.strokeWidth = 0;
+        bhseries.columns.template.stroke = clr; //색상
+        bhseries.columns.template.fill = clr // 색상
+        bhseries.tooltip.getFillFromObject = false;
+        if (_ckr != "전체")
+            bhseries.columns.template.tooltipText = "[#000 font-size: 15px]{year}학년도 " + _ckr + " " + value_kr + " 학위수여자는 [#000 bold]{valueY}명[#000] 입니다.";
+        else
+            bhseries.columns.template.tooltipText = "[#000 font-size: 15px]{year}학년도 " + value_kr + " 학위수여자는 [#000 bold]{valueY}명[#000] 입니다.";
+
+        var bhserieslabel = bhseries.bullets.push(new am4charts.LabelBullet());
+        bhserieslabel.label.text = "{valueY}";
+        bhserieslabel.label.dy = -10;
+    }
+
+    createChild(_data[value], "bachelor")
+    createChild(_data[value], "master")
+    createChild(_data[value], "PhD")
+}
+
+function P6drawBoxGraph_width(_data) {
+    var _ckr = $("input:radio[name='mf']:checked").val();
+    var value, clr;
+
+    if (_ckr == "전체") { value = "All"; clr = "#ff00ff"; }
+    else if (_ckr == "남자") { value = "Male"; clr = "#0000ff"; }
+    else if (_ckr == "여자") { value = "Female"; clr = "#ffff00"; }
+
+    am4core.useTheme(am4themes_animated);
+
+    var container = am4core.create("chartdiv2", am4core.Container);
+    container.layout = "grid";
+    container.fixedWidthGrid = false;
+    container.width = am4core.percent(100);
+    container.height = am4core.percent(100);
+
+    function drawChild(_data, _title) {
+        console.log(value);
+        var bwchart = container.createChild(am4charts.XYChart);
+        bwchart.width = am4core.percent(50);
+        bwchart.data = _data;
+
+        var scaleTitle = bwchart.titles.create();
+        scaleTitle.text = _title;
+        scaleTitle.fontSize = 20;
+        scaleTitle.fontWeight = "bold";
+        scaleTitle.dy = -5;
+        scaleTitle.dx = 70;
+
+        // Create axes :
+        var categoryAxis = bwchart.yAxes.push(new am4charts.CategoryAxis());
+        categoryAxis.dataFields.category = "major";
+        categoryAxis.renderer.grid.template.opacity = 0;
+        categoryAxis.renderer.inversed = true;
+
+        var valueAxis = bwchart.xAxes.push(new am4charts.ValueAxis());
+        valueAxis.renderer.ticks.template.strokeOpacity = 0.5;
+        valueAxis.min = 0;
+        valueAxis.strictMinMax = true;
+
+        if (_title == "학사과정")
+            valueAxis.max = 600;
+        else
+            valueAxis.max = 100;
+
+        valueAxis.renderer.baseGrid.disabled = true;
+        valueAxis.renderer.minGridDistance = 40;
+
+        var bwseries = bwchart.series.push(new am4charts.ColumnSeries());
+        bwseries.dataFields.valueX = value;
+        bwseries.dataFields.categoryY = "major";
+        bwseries.stroke = clr;
+        bwseries.fill = clr;
+
+        bwseries.columns.template.strokeWidth = 0;
+        bwseries.tooltip.getFillFromObject = false;
+        if (_ckr != "전체")
+            bwseries.columns.template.tooltipText = "[#000 font-size: 15px]2018학년도 {categoryY} " + _ckr + " " + _title + " 학위수여자는 [#000 bold]{valueX}명[#000] 입니다.";
+        else
+            bwseries.columns.template.tooltipText = "[#000 font-size: 15px]2018학년도 {categoryY} " + _title + " 학위수여자는 [#000 bold]{valueX}명[#000] 입니다.";
+    }
+
+    drawChild(_data["bachelor"], "학사과정")
+    drawChild(_data["phdmaster"], "석박사과정")
 }

@@ -24,7 +24,7 @@
     @import url('../../css/output_default.css');
     .chartdiv11 {
         width: 1000px;
-        height: 200px;
+        height: 700px;
     }
     .chartdiv22 {
         width: 1000px;
@@ -42,7 +42,7 @@
     }
 </style>
 
-<body onload="loading()">
+<body>
     <div class="box1" id="wrapper">
         <form class>
             <br>
@@ -119,14 +119,14 @@
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
-           
+
             <form>
 
                 <span style="font-size: 20px"><b>성별 검색</b></span><br>
 
-                <input type="radio" name="성별" value="All" checked="checked" onclick="control(this.value)" />전체<br>
-                <input type="radio" name="성별" value="Male" onclick="control(this.value)" />남자<br>
-                <input type="radio" name="성별" value="Female" onclick="control(this.value)" />여자<br>
+                <input type="radio" name="mf" value="전체" checked="checked" onclick="chart1(); chart2();" />전체<br>
+                <input type="radio" name="mf" value="남자" onclick="chart1(); chart2();" />남자<br>
+                <input type="radio" name="mf" value="여자" onclick="chart1(); chart2();" />여자<br>
 
             </form>
 
@@ -148,28 +148,23 @@
 
         <div id="summaryBox">
             <h2>학위수여</h2>
-          
+
         </div>
-		<div id = "unitBox">
-		(단위 : 명)
-		</div>
+        <div id="unitBox">
+            (단위 : 명)
+        </div>
         <div id="chartdiv1" class="chartdiv11"> 그래프 1-1</div>
-        <div id="chartdiv2" class="chartdiv11"> 그래프 1-2</div>
-        <div id="chartdiv3" class="chartdiv11"> 그래프 1-3</div>
-
-
         <br>
         <div id="summaryBox">
             <h2>2018학년도에 학위수여자가 가장 많았던 10개 전공</h2>
-         
+
         </div>
-		<div id = "unitBox">
-		(단위 : 명)
-		</div>
-        <div id="chartdiv10" class="chartdiv22">
-            <div id="chartdiv4" class="chartdiv33" style="float:left"> 그래프 2-1</div>
-            <div id="chartdiv5" class="chartdiv33" style="float:right"> 그래프 2-2</div>
+        <div id="unitBox">
+            (단위 : 명)
         </div>
+        <div id="chartdiv2" class="chartdiv22">            
+        </div>
+        <script>chart1(); chart2();</script>
         <br>
 
 

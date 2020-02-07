@@ -1,0 +1,38 @@
+[
+	{
+		"sector": "교수",
+		"size": 3
+    },
+    {
+		"sector": "부교수",
+		"size": 14
+    },
+    {
+		"sector": "조교수",
+		"size": 7
+    },
+    {
+		"sector": "비전임교원",
+		"size": 51
+	},
+	{
+		"sector": "내국인",
+		"size": 1102
+    },
+    {
+		"sector": "인문사회",
+		"size": 8
+    },
+    {
+		"sector": "자연과학",
+		"size": 8
+    },
+    {
+		"sector": "공학",
+		"size": 8
+    },
+    {
+		"sector": "예체능",
+		"size": 0
+	}
+]
