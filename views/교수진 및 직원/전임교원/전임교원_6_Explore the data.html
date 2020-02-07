@@ -1,14 +1,19 @@
-<html>
+﻿<html>
 
 <head>
     <meta charset="utf-8">
     <title>경북대학교 IR센터</title>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="../../../js/전임교원_explore.js"></script>
+
 </head>
 
 <style type="text/css">
@@ -104,8 +109,8 @@
         <div class="legend" id="gotop" style="left:80%; top :40%">
             <span style="font-size: 20px"><b>차트 종류</b></span><br>
             <form>
-                <input type="radio" id="" name="Gtype" onclick="" checked="checked">학생정원 기준<br>
-                <input type="radio" id="" name="Gtype" onclick="">재학생 기준<br><br>
+                <input type="radio" id="" name="Gtype" onclick="change('학생정원기준')" checked="checked">학생정원 기준<br>
+                <input type="radio" id="" name="Gtype" onclick="change('재학생기준')">재학생 기준<br><br>
             </form>
             <span style="color:#ff0000; font-size: 20px;"> ■ </span> 학생<br>
             <span style="color:#ff0000; font-size: 20px;"> ■ </span> 전임교원<br>
@@ -118,11 +123,11 @@
                     <span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
                 </span>
                 <div id="testVal" class="testVal">
-                    <input type="checkbox" name="process" id="" checked="checked" onclick="" value="인문사회">인문사회<br>
-                    <input type="checkbox" name="process" id="" checked="checked" onclick="" value="자연과학">자연과학<br>
-                    <input type="checkbox" name="process" id="" checked="checked" onclick="" value="공학">공학<br>
-                    <input type="checkbox" name="process" id="" checked="checked" onclick="" value="예체능">예체능<br>
-                    <input type="checkbox" name="process" id="" checked="checked" onclick="" value="의학">의학<br>
+                    <input type="checkbox" name="process" id="" checked="checked" onclick="change(0)" value="인문사회">인문사회<br>
+                    <input type="checkbox" name="process" id="" checked="checked" onclick="change(0)" value="자연과학">자연과학<br>
+                    <input type="checkbox" name="process" id="" checked="checked" onclick="change(0)" value="공학">공학<br>
+                    <input type="checkbox" name="process" id="" checked="checked" onclick="change(0)" value="예체능">예체능<br>
+                    <input type="checkbox" name="process" id="" checked="checked" onclick="change(0)" value="의학">의학<br>
                 </div>
             </div><br>
         </div>
@@ -225,6 +230,32 @@
 
         </div>
     </div>
+
+    <script>
+        var input_sort = "학생정원기준"
+        var input_sorts = ["인문사회", "자연과학", "공학", "예체능", "의학"]
+        var check_boxes = document.getElementsByName("process")
+
+        function change(key) {
+            if (key == 0) {
+                input_sorts = []
+
+                for (var i = 0; i < check_boxes.length; i++) {
+                    if (check_boxes[i].checked)
+                        input_sorts.push(check_boxes[i].value)
+                }
+            }
+            else
+                input_sort = key
+
+            am4core.disposeAllCharts()
+            draw_graph(input_sort, "수", input_sorts)
+            draw_graph(input_sort, "1인당학생수", input_sorts)
+            draw_graph(input_sort, "확보율", input_sorts)
+        }
+
+        change(input_sort)
+    </script>
 
 </body>
 
