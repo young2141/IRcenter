@@ -159,8 +159,7 @@
         </script>
 
         <div id="summaryBox">
-            <h2>Explore the data
-            (<span id="chartTypeBox">누적 영역형 차트</span>)</h2>
+            <h2>Explore the data</h2>
             선택항목과 라디오버튼을 활용하여 데이터의 다양한 정보들을 확인해보세요.<br><br>
 
         </div>
@@ -216,20 +215,6 @@
     </div>
 
     <script>
-        function Change() {
-            var temp = document.getElementById("stacked")
-            var Target1 = document.getElementById("P1")
-
-            if (temp.checked == true) {
-                Target1.innerHTML = "누적 영역형 차트"
-            }
-            temp = document.getElementById("multiples")
-            if (temp.checked == true) {
-                Target1.innerHTML = "영역형 차트"
-            }
-
-        }
-
         function choiceSelectBox(obj) {
             var nWidth = parseInt(obj.offsetWidth);
             var nHeight = parseInt(obj.offsetHeight);

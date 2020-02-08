@@ -103,9 +103,9 @@
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
 
-            <input type="radio" name="type" value="파견" checked="checked" onclick="change('전체'), valueChange()" id="pa">
+            <input type="radio" name="type" value="파견" checked="checked" onclick="change('전체')" id="pa">
             파견<br>
-            <input type="radio" name="type" value="초청" onclick="change('전체'), valueChange()" id="cho"> 초청<br><br>
+            <input type="radio" name="type" value="초청" onclick="change('전체')" id="cho"> 초청<br><br>
 
             <span style="font-size: 20px"> <b>대학명 검색</b> </span><br>
             <input type="text" id="university_search_text" list="university_selectbar">
@@ -413,16 +413,13 @@
 
         <div id="summaryBox">
             <h2>학생교류 국외대학</h2>
-            2018학년도 경북대학교 학생들은 총 <span id="V1">257</span>개 타 국외대학<span id="P1">으로</span> <span id="P2">파견</span>되었고,
-            <span id="P3">파견</span>된 경북대학교 학생은 총 <span id="V2">943</span>명입니다.
+            <span id="stats_result1"></span>
         </div>
         <div id="chartdiv1" class="chartdiv"></div>
 
         <div id="summaryBox">
             <h2>국외대학 학생 교류 현황</h2>
-            <!--2018학년도 <span id="P4">파견</span>된 국내대학 중 <span id="U1">제주대학교</span>로 <span id="P5">파견</span>된 학생의 비중이 <span
-                id="PV1"></span>%(<span id="V3"></span>)으로 가장 많았고,
-            서울대학교 13.1%, 부산대학교 9.02%, 전남대학교 8.79%, 한국종합예술학교 6.01% 순으로 많습니다.-->
+            <span id="stats_result2"></span>
         </div>
 
         <div id="chartdiv2" class="chartdiv"></div>

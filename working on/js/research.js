@@ -15,10 +15,11 @@ am4core.ready(function () {
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "year";
         categoryAxis.renderer.minGridDistance = 30;
+        categoryAxis.renderer.grid.template.location = 0;
 
         /* Create value axis */
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-        valueAxis.extraMax = 0.1;
+        valueAxis.extraMax = 0.15;
 
         chart.data = data;
 

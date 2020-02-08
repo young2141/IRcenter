@@ -174,17 +174,17 @@ function drawChart(input) {
         LabelBullet.label.truncate = false;
         LabelBullet.label.wrap = false;
         LabelBullet.label.dx = 45;
-        LabelBullet.label.fontSize = 12;
+        LabelBullet.label.fontSize = 13;
 
         if (level["gender"] == "man") {
             series2.columns.template.tooltipText = "2019학년도 {categoryY} 학생\n총 {total_headcount}명 중 남자는 {man}명으로, {valueX}%를 차지합니다.";
             series2.fill = am4core.color("#DB4455");
-            LabelBullet.label.text = "{man_percent}%  n = {man}";
+            LabelBullet.label.text = "  {man_percent}%  n = {man}";
         }
         else {
             series2.columns.template.tooltipText = "2019학년도 {categoryY} 학생\n총 {total_headcount}명 중 여자는 {woman}명으로, {valueX}%를 차지합니다.";
             series2.fill = am4core.color("#4B89DC");
-            LabelBullet.label.text = "{woman_percent}%  n = {woman}";
+            LabelBullet.label.text = "  {woman_percent}%  n = {woman}";
         }
     });
 }

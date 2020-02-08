@@ -44,7 +44,6 @@ function drawSunburst() {
 
     // Main function to draw and set up the visualization, once we have the data.
     function createVisualization(json) {
-
         // Basic setup of page elements.
         initializeBreadcrumbTrail();
         //drawLegend(); - 레전드
@@ -58,7 +57,17 @@ function drawSunburst() {
 
         // Turn the data into a d3 hierarchy and calculate the sums.
         var root = d3.hierarchy(json)
-            .sum(function (d) { return d.size; })
+            .sum(function (d) {
+                var sex = document.getElementById("sex_selectbar");
+                var cond = sex.options[sex.selectedIndex].value;
+
+                if (cond == "all")
+                    return d.male + d.female;
+                else if (cond == "male")
+                    return d.male;
+                else
+                    return d.female;
+            })
         //.sort(function (a, b) { return b.value - a.value; });
 
         // For efficiency, filter nodes to keep only those large enough to see.
@@ -103,7 +112,7 @@ function drawSunburst() {
         updateBreadcrumbs(sequenceArray, percentageString);
 
         d3.select("#percentage")
-            .html(d.value + "명<br>" + percentageString)
+            .html(d.value + "명<br><br>" + percentageString)
 
         d3.select("#explanation")
             .style("visibility", "");

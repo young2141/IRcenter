@@ -1,3 +1,28 @@
+var color1 = {
+    "인문대학": "#FFD8D8",
+    "사회과학대학": "#F15F5F",
+    "자연과학대학": "#FAE0D4",
+    "경상대학": "#F29661",
+    "공과대학": "#FAECC5",
+    "IT대학": "#F2CB61",
+    "농업생명과학대학": "#FAF4C0",
+    "예술대학": "#E5D85C",
+    "사범대학": "#34F7BA",
+    "의과대학": "#BCE55C",
+    "치과대학": "#CEF279",
+    "수의과대학": "#9FC93C",
+    "생활과학대학": "#B7F0B1",
+    "간호대학": "#47C8CE",
+    "약학대학": "#B2EBF4",
+    "글로벌인재학부": "#5CD1E5",
+    "행정학부": "#D9E5FF",
+    "법과대학": "#6699FF",
+    "자율전공부": "#DAD9FF",
+    "No Degree": "#6B66FF"
+};
+
+var color2=[]
+
 function parse(callback) {
     $.getJSON("../../../working on/json/doyeong_sankey_dumy.json", json => {
         var data = []
@@ -16,6 +41,8 @@ function parse(callback) {
 
     });
 }
+
+
 
 
 parse(json => {
@@ -115,6 +142,8 @@ parse(json => {
             chart.titles.template.textAlign = "left";
             chart.titles.template.isMeasured = false;
             chart.titles.create().text = title;
+            chart.dataFields.fromName = "category";
+
             
         
             chart.padding(0, 0, 0, 0);
@@ -196,7 +225,12 @@ parse(json => {
             series.strokeWidth = 0;
             series.fillOpacity = 0.5;
             series.columns.template.propertyFields.fillOpacity = "opacity";
-            series.columns.template.fill = color;
+            series.columns.template.fill = "color";
+            series.columns.template.adapter.add("fill", function(fill, target) {
+                clr = color1[target.dataItem.categoryY];
+                color2.push(clr)
+                return am4core.color(clr);
+            });
         
             return chart;
         }
@@ -223,7 +257,8 @@ parse(json => {
             }
             var temp = {}
             temp["category"] = json[i].from
-            temp["value"] = Math.floor(tovalue/fromvalue*100)               
+            temp["value"] = Math.floor(tovalue/fromvalue*100)  
+            temp["color"] =   color1[(json[i].from).trim()];          
             data.push(temp)
 
             var check=0
@@ -248,8 +283,9 @@ parse(json => {
             
         }
         createColumn("",data,colors.getIndex(1));
-        for(var d=0 ;d<data.length;d++){
-            if(d>=data.length-1){
+        for(var d=data.length-1 ;d>=0;d--){
+            if(d<=0){
+                console.log(data[d].category+"는 "+data[d].color)
                 createLine2("", [
                     { "category": "'06", "value": 57 },
                     { "category": "'07", "value": 27 },
@@ -261,7 +297,7 @@ parse(json => {
                     { "category": "'13", "value": 42 },
                     { "category": "'14", "value": 59,},
                     { "category": "'15", "value": 70,}
-                ], colors.getIndex(d));
+                ], data[d].color);
             }
             else{
                 createLine("", [
@@ -275,7 +311,7 @@ parse(json => {
                     { "category": "'13", "value": 42 },
                     { "category": "'14", "value": 59,},
                     { "category": "'15", "value": 70,}
-                ], colors.getIndex(d));
+                ], data[d].color);
             }
             
         }

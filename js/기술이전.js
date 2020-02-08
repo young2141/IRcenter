@@ -38,7 +38,7 @@ function draw_graph(_gptype, _valueY, _width) {
 
             //y-axis for chart
             var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.min = 0;
+            valueAxis.extraMin = 0.15;
             valueAxis.extraMax = 0.15;
             valueAxis.strictMinMax = false;
             valueAxis.strictMatrix = true;
@@ -82,9 +82,9 @@ function draw_graph(_gptype, _valueY, _width) {
                 });
                 */
 
-                bullet.tooltipText = "{categoryX}학년도 기술이전 수입료는 [bold]{valueY.formatNumber('#,###')}원[/]입니다.";
-                chart.numberFormatter.numberFormat = '#,###'
-                series.tooltip.label.adapter.add("text", function (text, target) {
+                bullet.tooltipText = "{categoryX}학년도 기술이전 수입료는 [bold]{valueY.formatNumber('#,###')} 천원[/]입니다.";
+                //chart.numberFormatter.numberFormat = '#,###'
+                /*series.tooltip.label.adapter.add("text", function (text, target) {
                     if (target.dataItem) {
                         return target.dataItem.categoryX + "학년도 기술이전 수입료는 [bold]" + (target.dataItem.valueY * 1000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원[/]입니다.";
                     }
@@ -92,6 +92,7 @@ function draw_graph(_gptype, _valueY, _width) {
                         return "";
                     }
                 });
+                */
             }
 
             //scrollbars

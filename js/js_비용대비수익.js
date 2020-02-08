@@ -14,14 +14,16 @@ parse(json => {
         
             // Create chart instance
         var chart = am4core.create("chartdiv3", am4charts.XYChart);
-        
+        chart.width = am4core.percent(92);
+        chart.height = am4core.percent(100);
+
         // Add data
         chart.data = json
 
         // Create axes
         var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "name";
-        categoryAxis.numberFormatter.numberFormat = "#";
+        categoryAxis.numberFormatter.numberFormat = "#,###";
         categoryAxis.renderer.inversed = true;
         categoryAxis.renderer.grid.template.location = 0;
         categoryAxis.renderer.cellStartLocation = 0.1;
@@ -31,7 +33,7 @@ parse(json => {
         //valueAxis.renderer.opposite = true;
         //valueAxis.logarithmic = true;
         valueAxis.extraMax = 0.1;
-        valueAxis.renderer.minGridDistance = 80;
+        valueAxis.renderer.minGridDistance = 90;
         
 
         // Create series
@@ -46,12 +48,12 @@ parse(json => {
             series.columns.template.stroke = am4core.color(color);
             series.columns.template.fill = am4core.color(color);
         
-            // var valueLabel = series.bullets.push(new am4charts.LabelBullet());
-            // valueLabel.label.text = "{valueX}";
-            // valueLabel.label.horizontalCenter = "left";
-            // valueLabel.label.dx = 10;
-            // valueLabel.label.hideOversized = false;
-            // valueLabel.label.truncate = false;
+            var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+            valueLabel.label.text = "{valueX}";
+            valueLabel.label.horizontalCenter = "left";
+            valueLabel.label.dx = 10;
+            valueLabel.label.hideOversized = false;
+            valueLabel.label.truncate = false;
             
         
             

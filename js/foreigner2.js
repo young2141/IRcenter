@@ -38,35 +38,20 @@ function stackedAreaChart() {
         }
 
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 40;
+        dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
         dateAxis.endLocation = 0.5;
-        dateAxis.baseInterval = {
-            timeUnit: "year",
-            count: 1
-        }
-        dateAxis.renderer.grid.template.location = 0;
-        dateAxis.renderer.minGridDistance = 30;
+        dateAxis.renderer.grid.template.location = 0.5;
+        dateAxis.renderer.labels.template.location = 0.46;
+        dateAxis.renderer.minLabelPosition = -0.5;
 
-        // var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-        // categoryAxis.dataFields.category = "year";
-        // categoryAxis.renderer.grid.template.location = 0;
-        // categoryAxis.renderer.minGridDistance = 40;
-        
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-        valueAxis.tooltip.disabled = true;
-        valueAxis.extraMax = 0.1;
+        valueAxis.extraMax = 0.15;
 
         var series = chart.series.push(new am4charts.LineSeries());
         series.dataFields.dateX = "year";
         series.name = "비전임교원";
         series.dataFields.valueY = "비전임교원";
-        series.tooltipHTML = "<span style='font-size:14px; color:#000000;'><b>{name}</b>: {valueY.value}명</span>";
-        series.tooltipText = "[#000]{valueY.value}[/]";
-        series.tooltip.background.fill = am4core.color("#FFF");
-        series.tooltip.getStrokeFromObject = true;
-        series.tooltip.background.strokeWidth = 3;
-        series.tooltip.getFillFromObject = false;
         series.fillOpacity = 1;
         series.fill = am4core.color("#0000FF");
         series.stroke = am4core.color("#0000FF")
@@ -77,12 +62,6 @@ function stackedAreaChart() {
         series2.name = "조교수";
         series2.dataFields.dateX = "year";
         series2.dataFields.valueY = "조교수";
-        series.tooltipHTML = "<span style='font-size:14px; color:#000000;'><b>{name}</b>: {valueY.value}명</span>";
-        series2.tooltipText = "[#000]{valueY.value}[/]";
-        series2.tooltip.background.fill = am4core.color("#FFF");
-        series2.tooltip.getFillFromObject = false;
-        series2.tooltip.getStrokeFromObject = true;
-        series2.tooltip.background.strokeWidth = 3;
         series2.sequencedInterpolation = true;
         series2.fillOpacity = 1;
         series2.fill = am4core.color("#008000");
@@ -93,12 +72,6 @@ function stackedAreaChart() {
         series3.name = "부교수";
         series3.dataFields.dateX = "year";
         series3.dataFields.valueY = "부교수";
-        series.tooltipHTML = "<span style='font-size:14px; color:#000000;'><b>{name}</b>: {valueY.value}명</span>";
-        series3.tooltipText = "[#000]{valueY.value}[/]";
-        series3.tooltip.background.fill = am4core.color("#FFF");
-        series3.tooltip.getFillFromObject = false;
-        series3.tooltip.getStrokeFromObject = true;
-        series3.tooltip.background.strokeWidth = 3;
         series3.sequencedInterpolation = true;
         series3.fillOpacity = 1;
         series3.fill = am4core.color("#FFFF00");
@@ -110,12 +83,6 @@ function stackedAreaChart() {
         series4.name = "교수";
         series4.dataFields.dateX = "year";
         series4.dataFields.valueY = "교수";
-        series.tooltipHTML = "<span style='font-size:14px; color:#000000;'><b>{name}</b>: {valueY.value}명</span>";
-        series4.tooltipText = "[#000]{valueY.value}[/]";
-        series4.tooltip.background.fill = am4core.color("#FFF");
-        series4.tooltip.getFillFromObject = false;
-        series4.tooltip.getStrokeFromObject = true;
-        series4.tooltip.background.strokeWidth = 3;
         series4.sequencedInterpolation = true;
         series4.fillOpacity = 1;
         series4.fill = am4core.color("#FF0000");
@@ -146,19 +113,18 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
-        chart.dateFormatter.inputDateFormat = "yyyy";
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 60;
+        dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
         dateAxis.endLocation = 0.5;
-        dateAxis.baseInterval = {
-            timeUnit: "year",
-            count: 1
-        }
+        dateAxis.renderer.grid.template.location = 0.5;
+        dateAxis.renderer.labels.template.location = 0.46;
+        dateAxis.renderer.minLabelPosition = -0.5;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.tooltip.disabled = true;
         valueAxis.max = 60;
+        valueAxis.extraMax = 0.15;
         valueAxis.renderer.minGridDistance = 30;
 
         var series = chart.series.push(new am4charts.LineSeries());
@@ -202,19 +168,18 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
-        chart.dateFormatter.inputDateFormat = "yyyy";
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 60;
+        dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
         dateAxis.endLocation = 0.5;
-        dateAxis.baseInterval = {
-            timeUnit: "year",
-            count: 1
-        }
+        dateAxis.renderer.grid.template.location = 0.5;
+        dateAxis.renderer.labels.template.location = 0.46;
+        dateAxis.renderer.minLabelPosition = -0.5;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.tooltip.disabled = true;
         valueAxis.max = 60;
+        valueAxis.extraMax = 0.15;
         valueAxis.renderer.minGridDistance = 30;
 
         var series = chart.series.push(new am4charts.LineSeries());
@@ -253,19 +218,18 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
-        chart.dateFormatter.inputDateFormat = "yyyy";
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 60;
+        dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
         dateAxis.endLocation = 0.5;
-        dateAxis.baseInterval = {
-            timeUnit: "year",
-            count: 1
-        }
+        dateAxis.renderer.grid.template.location = 0.5;
+        dateAxis.renderer.labels.template.location = 0.46;
+        dateAxis.renderer.minLabelPosition = -0.5;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.tooltip.disabled = true;
         valueAxis.max = 60;
+        valueAxis.extraMax = 0.15;
         valueAxis.renderer.minGridDistance = 30;
 
         var series = chart.series.push(new am4charts.LineSeries());
@@ -304,19 +268,18 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
-        chart.dateFormatter.inputDateFormat = "yyyy";
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-        dateAxis.renderer.minGridDistance = 60;
+        dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
         dateAxis.endLocation = 0.5;
-        dateAxis.baseInterval = {
-            timeUnit: "year",
-            count: 1
-        }
+        dateAxis.renderer.grid.template.location = 0.5;
+        dateAxis.renderer.labels.template.location = 0.46;
+        dateAxis.renderer.minLabelPosition = -0.5;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.tooltip.disabled = true;
         valueAxis.max = 60;
+        valueAxis.extraMax = 0.15;
         valueAxis.renderer.minGridDistance = 30;
 
         var series = chart.series.push(new am4charts.LineSeries());

@@ -88,9 +88,9 @@
             <span style="font-size: 20px"><b>차트 종류</b></span><br>
             <form>
 
-                <input type="radio" name="Gtype" id="stacked" checked="checked" onclick="Change(); drawChart();">누적
+                <input type="radio" name="Gtype" id="stacked" checked="checked" onclick="drawChart();">누적
                 영역형<br>
-                <input type="radio" name="Gtype" id="multiples" onclick="Change(); drawChart();">영역형<br><br>
+                <input type="radio" name="Gtype" id="multiples" onclick="drawChart();">영역형<br><br>
 
                 <span style="font-size: 20px"><b>학생 구분 검색</b></span><br>
                 <select name="grad" id='test' onchange="drawChart()" style="width : 200px; height: 30px">
@@ -136,7 +136,7 @@
         </script>
 
         <div id="summaryBox">
-            <h2>학부과정 등록 현황 <span id="P1">(누적 영역형 차트)</span></h2>
+            <h2>학부과정 등록 현황</h2>
             1946년에 경북대학교 캠퍼스에서 처음 수업에 들어간 이후부터, 학부과정을 등록한 학생들을 학생 구분(졸업생, 재적생), 성별(남자, 여자)에 따라 나타냅니다.
             <br><br>
             선택항목과 라디오버튼을 활용하여 데이터의 다양한 정보들을 확인해보세요.
@@ -184,22 +184,6 @@
         </div>
     </div>
     <script>drawChart()</script>
-    <script>
-        function Change() {
-            var temp = document.getElementById("stacked")
-            var Target1 = document.getElementById("P1")
-
-            if (temp.checked == true) {
-                Target1.innerHTML = "(누적 영역형 차트)"
-            }
-            temp = document.getElementById("multiples")
-            if (temp.checked == true) {
-                Target1.innerHTML = "(영역형 차트)"
-            }
-
-        }
-
-    </script>
 </body>
 
 </html>

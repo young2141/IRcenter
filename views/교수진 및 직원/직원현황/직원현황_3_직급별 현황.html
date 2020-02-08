@@ -144,7 +144,7 @@
             <br>
 
             <span style="font-size: 20px"> <b>성별 검색</b> </span><br />
-            <select id="sex_selectbar" onchange="call()" style="width : 200px; height: 30px">
+            <select id="sex_selectbar" onchange="call(); drawSunburst();" style="width : 200px; height: 30px">
                 <option name="sex" value="all">(전체)</option>
                 <option name="sex" value="male">남자</option>
                 <option name="sex" value="female">여자</option>
@@ -154,9 +154,9 @@
             <span style="font-size: 20px"><b>년도별 검색</b></span>
             <br>
 
-            <input type=button value='◀' onclick="decrease(),Piechart()">
-            <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput="valuechange(parseInt(this.value))" onchange="Piechart(this.value)">
-            <input type=button value='▶' onclick="increase(),Piechart()">
+            <input type=button value='◀' onclick="decrease(),call()">
+            <input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput="valuechange(parseInt(this.value))" onchange="call(this.value)">
+            <input type=button value='▶' onclick="increase(),call()">
 
             <script>
                 Piechart();

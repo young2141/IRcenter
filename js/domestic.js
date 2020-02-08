@@ -4,17 +4,52 @@ var chart
 var universities
 var key_dict = {}
 
+var target_year = 2018 // json 파일이 업데이트 될 때, 함께 수정
+
 function parse(callback) {
-    $.getJSON("../../../json/domestic.json", json => {
+    $.getJSON("../../../json/domestic_" + target_year + ".json", json => {
         callback(json);
     });
 }
+
+function get_stats(_json, mode) {
+    var result_area1 = document.getElementById("stats_result1")
+    var result_area2 = document.getElementById("stats_result2")
+
+    _json.sort((a, b) =>
+        (a[mode] > b[mode] && a[mode].toString().trim() != "-") ? -1 : (a[mode].toString().trim() != "-" ? ((b[mode] > a[mode] && b[mode].toString().trim() != "-") ? 1 : (b[mode].toString().trim() == "-" ? -1 : 0)) : 1)
+        );
+
+    var total_univ = 0
+    var total_stud = 0
+    for (var i = 0; i < _json.length; i++) {
+        if (_json[i][mode].toString().trim() == "-") continue
+        total_univ++
+        total_stud += Number(_json[i][mode])
+    }
+
+    result_area1.innerHTML = target_year + "학년도 경북대학교 학생들은 총 " + total_univ + "개 타 국내대학" + (mode == "초청" ? "에서 " : "으로 ") + mode + "되었고, " + mode + "된 경북대학교 학생은 총 " + total_stud + "명입니다."
+    result_area2.innerHTML = target_year + "학년도 " + mode + "된 국내대학 중 " + _json[0].title + "(으)로 " + mode + "된 학생의 비중이 " + get_percent(0) + "%(" + _json[0][mode] + "명)로 가장 많았고, "
+    result_area2.innerHTML += _json[1].title + " " + get_percent(1) + "%, " + _json[2].title + " " + get_percent(2) + "%, " + _json[3].title + " " + get_percent(3) + "%, " + _json[4].title + " " + get_percent(4) + "% 순으로 많습니다."
+    // 2018학년도 경북대학교 학생들은 총 257개 타 국외대학으로 파견되었고,
+    // 파견된 경북대학교 학생은 총 943명입니다.
+
+    //2018학년도 파견된 국내대학 중 제주대학교로 파견된 학생의 비중이 30%(250명)으로 가장 많았고,
+    //        서울대학교 13.1%, 부산대학교 9.02%, 전남대학교 8.79%, 한국종합예술학교 6.01% 순으로 많습니다.
+
+    function get_percent(index) {
+        return (_json[index][mode] * 100 / total_stud).toFixed(2)
+    }
+}
+
 function draw_map(input_mode, mode2) {
     parse(json => {
         universities = json;
 
         mode = input_mode;
         // mode2 = $("#university_selectbar option:selected").val();
+
+        get_stats(json, mode)
 
         am4core.ready(function () {
             am4core.disposeAllCharts();
@@ -251,10 +286,10 @@ function draw_map2(mode, mode2, data) {
             // define template
             var imageSeriesTemplate = imageSeries.mapImages.template;
             var circle = imageSeriesTemplate.createChild(am4core.Circle);
-            circle.fillOpacity = 0.5;
-            circle.fill = chart.colors.getIndex(0).brighten(-0.1);
+            circle.fillOpacity = 0.7;
+            circle.fill = "#798ae4"
             circle.strokeWidth = 1;
-            circle.stroke = am4core.color("#fff");
+            circle.stroke = am4core.color("#3f51b5");
             circle.verticalCenter = "middle";
             circle.horizontalCenter = "middle";
 

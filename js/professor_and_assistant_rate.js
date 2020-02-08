@@ -77,7 +77,7 @@ function drawPyramid1(_data, flag) {
         maleSeries.sequencedInterpolation = true;
 
         var maleserieslabel = maleSeries.bullets.push(new am4charts.LabelBullet());
-        maleserieslabel.label.text = "{valueX}명";
+        maleserieslabel.label.text = "{valueX}  ";
         maleserieslabel.label.truncate = false;
         maleserieslabel.label.dx = -25;
 
@@ -140,7 +140,7 @@ function drawPyramid1(_data, flag) {
         femaleSeries.dataFields.categoryY = "type";
 
         var femaleserieslabel = femaleSeries.bullets.push(new am4charts.LabelBullet());
-        femaleserieslabel.label.text = "{valueX}명";
+        femaleserieslabel.label.text = "  {valueX}";
         femaleserieslabel.label.truncate = false;
         femaleserieslabel.label.dx = 25;
 
@@ -207,17 +207,17 @@ function drawPyramid1(_data, flag) {
         for (var i = 0; i < typename.length; i++) {
             if (i == typename.length - 1)
                 flag = false;
-            createMale1([_data[typename[i]]], "#0000ff", flag);
+            createMale1([_data[typename[i]]], "#dc67ce", flag);
             createLabel1(typename_kr[i]);
-            createFemale1([_data[typename[i]]], "#ffff00", flag);
-            createPie1([{ "type": "male", "value": _data[typename[i]]["male"], "color": "#0000ff" }, { "type": "female", "value": _data[typename[i]]["female"], "color": "#ffff00" }]);
+            createFemale1([_data[typename[i]]], "#c767dc", flag);
+            createPie1([{ "type": "male", "value": _data[typename[i]]["male"], "color": "#dc67ce" }, { "type": "female", "value": _data[typename[i]]["female"], "color": "#c767dc" }]);
         }
     }
     else {
-        createMale1([_data["assistant"]], "#0000ff", false);
+        createMale1([_data["assistant"]], "#dc67ce", false);
         createLabel1("조교");
-        createFemale1([_data["assistant"]], "#ffff00", false);
-        createPie1([{ "type": "male", "value": _data["assistant"]["male"], "color": "#0000ff" }, { "type": "female", "value": _data["assistant"]["female"], "color": "#ffff00" }]);
+        createFemale1([_data["assistant"]], "#c767dc", false);
+        createPie1([{ "type": "male", "value": _data["assistant"]["male"], "color": "#dc67ce" }, { "type": "female", "value": _data["assistant"]["female"], "color": "#c767dc" }]);
     }
     createBottom1();
 }
