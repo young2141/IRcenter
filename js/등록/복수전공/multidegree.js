@@ -37,7 +37,7 @@ function d3_drawChart(id) {
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         var explainer = d3.select("svg#some").append("foreignObject")
-            .attr("width", 200)
+            .attr("width", 500)
             .attr("height", 200)
             .attr("transform", "translate(0,20)")
             .append("xhtml:text")
@@ -95,6 +95,7 @@ function d3_drawChart(id) {
             .attr("dy", ".32em")
             .attr("text-anchor", "end")
             .text(function (d, i) { return nodes[i].name.replace(/&amp;/g, '&'); })
+            .style("fill", function(d,i) {return color[d[i].x]; })
             .style("font-size", function (d, i) { return x.bandwidth() - 2 + "px"; })
             .on("mouseover", mouseover_row)
             .on("mouseout", mouseout_row);
@@ -113,6 +114,7 @@ function d3_drawChart(id) {
             .attr("y", x.bandwidth() / 2)
             .attr("dy", ".32em")
             .attr("text-anchor", "start")
+            .style("fill", function(d,i) { return color[d[i].y]; })
             .text(function (d, i) { return nodes[i].name.replace(/&amp;/g, '&'); })
             .style("font-size", x.bandwidth() - 2 + "px")
             .on("mouseover", mouseover_col)
@@ -155,25 +157,25 @@ function d3_drawChart(id) {
             });
         }
 
-        // d3.selectAll("input[name='data_range']").on("change", function () {
-        //     all_edges = data["edges"].filter(element => element["termyear"] === termyear);
-        //     document.getElementsByName("data_range").forEach(function (e, i) {
-        //         if (e.checked) {
-        //             if (e.getAttribute("value") == "all") {
-        //                 isAll = true;
-        //             } else {
-        //                 isAll = false;
-        //             }
-        //         }
-        //     });
+        d3.selectAll("input[name='data_range']").on("change", function () {
+            all_edges = data["edges"].filter(element => element["termyear"] === termyear);
+            document.getElementsByName("data_range").forEach(function (e, i) {
+                if (e.checked) {
+                    if (e.getAttribute("value") == "all") {
+                        isAll = true;
+                    } else {
+                        isAll = false;
+                    }
+                }
+            });
 
-        //     createNetwork();
-        //     updateMatrix(matrix);
-        // });
+            createNetwork();
+            updateMatrix(matrix);
+        });
 
         function order(value) {
             x.domain(orders[value]);
-            var t = svg.transition().duration(1000);
+            var t = svg.transition().duration(3000);
 
             t.selectAll(".row")
                 .delay(function (d, i) { return x(i) * 5; })
@@ -188,8 +190,11 @@ function d3_drawChart(id) {
         }
 
         function mouseover_row(p) {
+            console.log(p);
             d3.selectAll("rect.cell").filter(function (d) {
+                if(d.z>1){
                 return d.y == p[0].y && d.x != d.y;
+                }
             }).style('stroke-width', 3).style('stroke', 'yellow');
         }
 
@@ -200,12 +205,16 @@ function d3_drawChart(id) {
         }
 
         function mouseover_col(p) {
+            console.log(p);
             d3.selectAll("rect.cell").filter(function (d) {
+                if(d.z > 1){
                 return d.x == p[0].y && d.x != d.y;
+                }
             }).style('stroke-width', 3).style('stroke', 'yellow');
         }
 
         function mouseout_col(p) {
+            // console.log(p);
             d3.selectAll("rect.cell").filter(function (d) {
                 return d.x == p[0].y && d.x != d.y;
             }).style('stroke-width', 0);
@@ -297,52 +306,52 @@ function d3_drawChart(id) {
                 matrix[edge.source][edge.source].z += edge.weight;
                 matrix[edge.target][edge.target].z += edge.weight;
             });
-            if(isAll){
+            if (isAll) {
                 // if (isAll && document.getElementById("order").selectedIndex == 2) {
-                    var timeout = setTimeout(function () {
-                        svg.selectAll("svg text").style("font-size", x.bandwidth() - 2);
-                        order("count");
-    
-                        svg.append("line")
-                            .attr("x1", function (d) {
-                                return x.bandwidth() * 43;
-                            })
-                            .attr("x2", function (d) {
-                                return x.bandwidth() * 43;
-                            })
-                            .attr("y1", 0)
-                            .attr("y2", function (d) {
-                                return x.bandwidth() * 43;
-                            })
-                            .style("opacity", 0)
-                            .attr("class", "subset")
-                            .style("stroke-width", 3)
-                            .style("stroke", "orange")
-                            .attr("id", "xaxis-line");
-    
-                        svg.append("line")
-                            .attr("x1", 0)
-                            .attr("x2", function (d) {
-                                return x.bandwidth() * 43;
-                            })
-                            .attr("y1", function (d) {
-                                return x.bandwidth() * 43;
-                            })
-                            .attr("y2", function (d) {
-                                return x.bandwidth() * 43;
-                            })
-                            .style("opacity", 0)
-                            .attr("class", "subset")
-                            .style("stroke-width", 3)
-                            .style("stroke", "orange")
-                            .attr("id", "yaxis-line");
-    
-                        svg.selectAll("line.subset").transition().duration(2000).style("opacity", 1);
-                    }, 1000);
-                } else {
-                    d3.select("#xaxis-line").remove();
-                    d3.select("#yaxis-line").remove();
-                }
+                var timeout = setTimeout(function () {
+                    svg.selectAll("svg text").style("font-size", x.bandwidth() - 2);
+                    order("count");
+
+                    svg.append("line")
+                        .attr("x1", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .attr("x2", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .attr("y1", 0)
+                        .attr("y2", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .style("opacity", 0)
+                        .attr("class", "subset")
+                        .style("stroke-width", 3)
+                        .style("stroke", "orange")
+                        .attr("id", "xaxis-line");
+
+                    svg.append("line")
+                        .attr("x1", 0)
+                        .attr("x2", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .attr("y1", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .attr("y2", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .style("opacity", 0)
+                        .attr("class", "subset")
+                        .style("stroke-width", 3)
+                        .style("stroke", "orange")
+                        .attr("id", "yaxis-line");
+
+                    svg.selectAll("line.subset").transition().duration(2000).style("opacity", 1);
+                }, 1000);
+            } else {
+                d3.select("#xaxis-line").remove();
+                d3.select("#yaxis-line").remove();
+            }
         } // end
 
         function updateMatrix(matrix) {
@@ -463,7 +472,7 @@ function d3_drawChart(id) {
             }
 
             // set up the transition to last a total of 3 seconds
-            var t = svg.transition().duration(1000);
+            var t = svg.transition().duration(3000);
 
             // have each row and column move after a delay that is a function of the index of its location
             t.selectAll(".row")
@@ -479,53 +488,53 @@ function d3_drawChart(id) {
 
             function key(d) { return d.x; }
 
-            // order(d3.select("#order").property("value"));
-            // if(isAll){
-            // // if (isAll && document.getElementById("order").selectedIndex == 2) {
-            //     var timeout = setTimeout(function () {
-            //         svg.selectAll("svg text").style("font-size", x.bandwidth() - 2);
-            //         order("count");
+            order(d3.select("#order").property("value"));
+            if (isAll) {
+                // if (isAll && document.getElementById("order").selectedIndex == 2) {
+                var timeout = setTimeout(function () {
+                    svg.selectAll("svg text").style("font-size", x.bandwidth() - 2);
+                    order("count");
 
-            //         svg.append("line")
-            //             .attr("x1", function (d) {
-            //                 return x.bandwidth() * 43;
-            //             })
-            //             .attr("x2", function (d) {
-            //                 return x.bandwidth() * 43;
-            //             })
-            //             .attr("y1", 0)
-            //             .attr("y2", function (d) {
-            //                 return x.bandwidth() * 43;
-            //             })
-            //             .style("opacity", 0)
-            //             .attr("class", "subset")
-            //             .style("stroke-width", 3)
-            //             .style("stroke", "orange")
-            //             .attr("id", "xaxis-line");
+                    svg.append("line")
+                        .attr("x1", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .attr("x2", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .attr("y1", 0)
+                        .attr("y2", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .style("opacity", 0)
+                        .attr("class", "subset")
+                        .style("stroke-width", 3)
+                        .style("stroke", "orange")
+                        .attr("id", "xaxis-line");
 
-            //         svg.append("line")
-            //             .attr("x1", 0)
-            //             .attr("x2", function (d) {
-            //                 return x.bandwidth() * 43;
-            //             })
-            //             .attr("y1", function (d) {
-            //                 return x.bandwidth() * 43;
-            //             })
-            //             .attr("y2", function (d) {
-            //                 return x.bandwidth() * 43;
-            //             })
-            //             .style("opacity", 0)
-            //             .attr("class", "subset")
-            //             .style("stroke-width", 3)
-            //             .style("stroke", "orange")
-            //             .attr("id", "yaxis-line");
+                    svg.append("line")
+                        .attr("x1", 0)
+                        .attr("x2", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .attr("y1", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .attr("y2", function (d) {
+                            return x.bandwidth() * 43;
+                        })
+                        .style("opacity", 0)
+                        .attr("class", "subset")
+                        .style("stroke-width", 3)
+                        .style("stroke", "orange")
+                        .attr("id", "yaxis-line");
 
-            //         svg.selectAll("line.subset").transition().duration(2000).style("opacity", 1);
-            //     }, 1000);
-            // } else {
-            //     d3.select("#xaxis-line").remove();
-            //     d3.select("#yaxis-line").remove();
-            // }
+                    svg.selectAll("line.subset").transition().duration(2000).style("opacity", 1);
+                }, 1000);
+            } else {
+                d3.select("#xaxis-line").remove();
+                d3.select("#yaxis-line").remove();
+            }
 
         } //updateMatrix
 

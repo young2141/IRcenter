@@ -40,6 +40,17 @@ var manSize = {
     "50": 22
 };
 var legendValue = [1, 5, 10, 30, 50];
+var h2String = {
+    "cell11": "대학소속직원 겸직교원 고용주체별 인력현황",
+    "cell12": "대학소속직원 정규직 고용주체별 인력현황",
+    "cell13": "대학소속직원 무기계약직 고용주체별 인력현황",
+    "cell14": "대학소속직원 기간제계약직 고용주체별 인력현황",
+    "cell15": "대학소속직원 기타 고용주체별 인력현황",
+    "cell22": "산학협력단체임용직원 정규직 인력현황",
+    "cell23": "산학협력단체임용직원 무기계약직 인력현황",
+    "cell24": "산학협력단체임용직원 기간제계약직 인력현황",
+    "cell25": "산학협력단체임용직원 기타 인력현황"
+};
 
 function loadJSON(path, success) {
     var xhr = new XMLHttpRequest();
@@ -270,6 +281,15 @@ function processDataForGraph2(_data, type) {
 
 
 function clickTabelCell(id) {
+    let summaryBox = document.getElementById("summaryBox2");
+    while(summaryBox.firstChild){
+        summaryBox.firstChild.remove();
+    }
+    let h2 = document.createElement("h2");
+    h2.innerHTML = h2String[id];
+    summaryBox.appendChild(h2);
+
+
     if (parseInt(year) < 2012) {
         return;
     } else {
