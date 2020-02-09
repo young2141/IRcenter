@@ -13,19 +13,20 @@
         <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-        <script src="../../../js/grad_1_curved.js"></script>
-        <script src="../../../js/grad_1_graph.js"></script>
+        <script src="../../../js/doyeong_early_graduation.js"></script>
         <script src="../../../js/doyeong_graduation_status_pie.js"></script>
-
-
     </head>
 
     <style type="text/css">
         @import url('../../../css/output_default.css');
 
         .chartdiv11 {
-            width: 1000px;
-            height: 200px;
+            width: 230px;
+            height: 450px;
+            display: inline-block;
+            margin-top: 20px;
+			margin-bottom: 20px;
+			margin-right: -60px;
         }
 
         .chartdiv22 {
@@ -44,7 +45,7 @@
         }
     </style>
 
-    <body onload="loading()">
+    <body onload="parsingColumn(); parsingPie();">
         <div class="box1" id="wrapper">
             <form class>
                 <br>
@@ -76,21 +77,19 @@
                     <tbody>
                         <tr>
                             <td style="border-style: none; font-size : 30px">
-                                <a href="졸업생현황_7_Explore.html">
+                                <a href="졸업생현황_5_졸업현황.html">
                                     <span id="black">◀</span>
                                 </a>
                             </td>
-                            <td style="background-color : #eeeeee">
-                                <a href="졸업생현황_1_요약.html"><span id="black"><b>요약</b></span></a>
+                            <td>
+                                <a href="졸업생현황_1_요약.html"><span id="black">요약</span></a>
                             </td>
                             <td>
                                 <a href="졸업생현황_2_졸업.html"><span id="black">졸업</span></a>
                             </td>
                             <td>
                                 <a href="졸업생현황_3_진학.html">
-                                    <span id="black">
-                                        진학
-                                    </span>
+                                    <span id="black">진학</span>
                                 </a>
                             </td>
                             <td>
@@ -100,22 +99,22 @@
                             <td>
                                 <a href="졸업생현황_5_졸업현황.html"><span id="black">입학년도로 보는<br>졸업현황</span></a>
                             </td>
-
-                            <td>
-
-                                <a href="졸업생현황_6_조기졸업.html"><span id="black" style="font-size: 13px">조기졸업자
-                                        및<br>복수전공/부전공이수<br> 졸업자 현황</span></a>
+                            
+                            <td style="background-color : #eeeeee">
+                                <a href="졸업생현황_6_조기졸업.html"><span id="black" style="font-size: 13px"><b>조기졸업자
+                                            및<br>복수전공/부전공이수<br> 졸업자 현황</b></span></a>
                             </td>
-
                             <td>
                                 <a href="졸업생현황_7_Explore.html"><span id="black">Explore the data</span></a>
                             </td>
 
                             <td style="border-style: none; font-size : 30px">
-                                <a href="졸업생현황_2_졸업.html">
+                                <a href="졸업생현황_7_Explore.html">
                                     <span style="color: black">▶</span>
                                 </a>
                             </td>
+
+
                         </tr>
                     </tbody>
                 </table>
@@ -127,22 +126,41 @@
         <div id="TOP">
             <div class="legend" id="gotop" style="left:80%; top :40%">
 
-                <b>[2018학년도 졸업생 현황]</b><br>
+                <form>
+                    <span style="font-size: 20px"><b>년도별 검색</b></span>
+                    <br>
+
+                    <input type=button value='◀' onclick=decrease()>
+                    <input id="years" type=range min=2014 max=2019 step=1 value=2019
+                        oninput=valuechange(parseInt(this.value))>
+                    <input type=button value='▶' onclick=increase()>
+                    <script>
+                        function valuechange(value) {
+                            document.getElementById('span1').innerHTML = (value - 4) + "~" + (value);
+                            parsingColumn();
+                        }
+                        function decrease() {
+                            current_value = document.getElementById('years').value
+                            document.getElementById('years').value--;
+                            valuechange(document.getElementById('years').value)
+                        }
+                        function increase() {
+                            document.getElementById('years').value++;
+                            current_value = document.getElementById('years').value
+                            valuechange(document.getElementById('years').value)
+                        }
+                    </script>
+                    <br>
+                    <div style="text-align: center; width: 180px"><span id="span1">2015~2019</span></div>
+                </form>
+                <br>
+
                 <span style = "color: #ff3d00; font-size: 15px" value="#fcd12a">■</span> 진학<br>
                 <span style = "color: #ef5350; font-size: 15px" value="#6794dc">■</span> 취업자<br>
                 <span style = "color: #ff7f27; font-size: 15px" value="#6794dc">■</span> 입대자<br>
                 <span style = "color: #ffc102; font-size: 15px" value="#6794dc">■</span> 외국인유학생<br>
                 <span style = "color: #fdf5bc; font-size: 15px" value="#6794dc">■</span> 기타/미상<br>
-                <span style = "color: #f2fdbc; font-size: 15px" value="#6794dc">■</span> 취업불가능자/제외인정자<br><br>
-
-                <b>[진학률, 취업률]</b><br>
-                <span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
-                <span style="color:#E8A343; font-size: 20px;">■</span> 인문사회<br>
-                <span style="color:#FCFF57; font-size: 20px;">■</span> 자연과학<br>
-                <span style="color:#43E884; font-size: 20px;">■</span> 공학<br>
-                <span style="color:#52A1FF; font-size: 20px;">■</span> 예체능<br>
-                <br><br>
-
+                <span style = "color: #f2fdbc; font-size: 15px" value="#6794dc">■</span> 취업불가능자/제외인정자<br>
 
 
             </div>
@@ -159,9 +177,24 @@
                         $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
                 });
 
-                //parsingPie();
-
             </script>
+
+            <div id="summaryBox">
+                <h2>조기졸업자 및 복수전공/부전공 이수 졸업자 현황</h2>
+
+            </div>
+            <div id="unitBox">
+                (단위 : 명)
+            </div>
+
+            <br>
+
+            <div class="chartdiv11" id="chartdiv1"></div>
+            <div class="chartdiv11" id="chartdiv2"></div>
+            <div class="chartdiv11" id="chartdiv3"></div>
+            <div class="chartdiv11" id="chartdiv4"></div>
+            <div class="chartdiv11" id="chartdiv5"></div>
+
 
             <div id="summaryBox">
                 <h2>2018학년도 졸업생 현황</h2>
@@ -171,25 +204,6 @@
                 (단위 : %)
             </div>
             <div class="chartdiv22" id="chartdiv"></div>
-
-            <div id="summaryBox">
-                <h2>진학률</h2>
-            </div>
-            <div id="unitBox">
-                (단위 : %)
-            </div>
-            <div id="divchart1" class="chartdiv">그래프 1-1</div>
-
-            <div id="summaryBox">
-                <h2>취업률</h2>
-            </div>
-            <div id="unitBox">
-                (단위 : %)
-            </div>
-            <div id="divchart2" class="chartdiv">그래프 1-2</div>
-
-            <br>
-
 
 
             <div id="summaryBox" style="font-size: 15px">
