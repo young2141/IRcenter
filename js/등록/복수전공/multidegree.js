@@ -2,9 +2,16 @@ const path = "../../../json/등록/복수전공/";
 var filename = "multidegree.json";
 var chart;
 var color = {};
+var division = {
+    "인문사회": 0,
+    "자연과학": 1,
+    "공학": 2,
+    "예체능": 3
+};
 
 function getColorsByDvisions() {
     let colors = document.getElementById("colors");
+    color["0"] = "C6C6DD";
     color["1"] = colors.children.color_hs.getAttribute("value");
     color["2"] = colors.children.color_ns.getAttribute("value");
     color["3"] = colors.children.color_en.getAttribute("value");
@@ -21,14 +28,17 @@ function init() {
 
 function d3_drawChart(id) {
     d3.json(path + filename, function (data) {
+        var isAll = id == "#chartdiv" ? false : true;
+        data.nodes.forEach(e => e.group = division[e.group]);
+
         var innerW = d3.min([window.innerWidth * 0.4, 600]);
         var margin = { top: innerW * 0.35, right: 0, bottom: 10, left: innerW * 0.35 },
             width = innerW,
             height = width;
 
         var x = d3.scaleBand().range([0, width]);
-        var c = d3.scaleOrdinal().range(["#E8A343", "#FCFF57", "#43E884", "#52A1FF"]);
 
+        //draw
         var svg = d3.select(id).append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
@@ -36,12 +46,13 @@ function d3_drawChart(id) {
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+        var linklabel = isAll? "#linklabel2" : "#linklabel1";
         var explainer = d3.select("svg#some").append("foreignObject")
             .attr("width", 500)
             .attr("height", 200)
             .attr("transform", "translate(0,20)")
             .append("xhtml:text")
-            .attr("id", "linklabel")
+            .attr("id", linklabel.substr(1, linklabel.length))
             .html("");
 
         var termyear = document.getElementById("termyear").options[(document.getElementById("termyear").selectedIndex)].getAttribute("value");
@@ -52,16 +63,7 @@ function d3_drawChart(id) {
         var nodes = [];
         var edges = [];
         var n;
-        var isAll = false;
-
-        if (id == "#chartdiv2") {
-            isAll = true;
-        }
-        // document.getElementsByName("data_range").forEach(e => {
-        //     if (e.checked && e.getAttribute("value") == "all") {
-        //         isAll = true;
-        //     }
-        // });
+        
 
         svg.append("rect")
             .attr("class", "background")
@@ -95,7 +97,7 @@ function d3_drawChart(id) {
             .attr("dy", ".32em")
             .attr("text-anchor", "end")
             .text(function (d, i) { return nodes[i].name.replace(/&amp;/g, '&'); })
-            .style("fill", function(d,i) {return color[d[i].x]; })
+            .style("fill", function (d, i) { return color[nodes[d[i].x].group + 1]; })
             .style("font-size", function (d, i) { return x.bandwidth() - 2 + "px"; })
             .on("mouseover", mouseover_row)
             .on("mouseout", mouseout_row);
@@ -114,7 +116,7 @@ function d3_drawChart(id) {
             .attr("y", x.bandwidth() / 2)
             .attr("dy", ".32em")
             .attr("text-anchor", "start")
-            .style("fill", function(d,i) { return color[d[i].y]; })
+            .style("fill", function (d, i) { return color[nodes[d[i].y].group + 1]; })
             .text(function (d, i) { return nodes[i].name.replace(/&amp;/g, '&'); })
             .style("font-size", x.bandwidth() - 2 + "px")
             .on("mouseover", mouseover_col)
@@ -122,17 +124,15 @@ function d3_drawChart(id) {
 
         function row(row) {
             var cell = d3.select(this).selectAll(".cell")
-                .data(row.filter(function (d) {
-                    // console.log(d);
-                    return d.z;
-                }))
+                .data(row)
+                // .data(row.filter(function (d) { return d.z; }))
                 .enter().append("rect")
                 .attr("class", "cell")
                 .attr("x", function (d) { return x(d.x); })
                 .attr("width", x.bandwidth() - 1)
                 .attr("height", x.bandwidth() - 1)
-                .style("fill", function (d) { return d.z == 1 ? "C6C6DD" : d.x == d.y ? "#FFF" : nodes[d.x].group == nodes[d.y].group ? c(nodes[d.x].group) : "#808080"; })
-                .style("fill-opacity", function (d) { return d.z == 1 ? 0.6 : d.z < 10 + 1 ? 0.4 : d.z <= 20 + 1 ? 0.7 : 1; })
+                .style("fill", function (d) { return d.x == d.y ? "#FFF" : d.z == 0 ? color["0"] : nodes[d.x].group == nodes[d.y].group ? color[nodes[d.x].group + 1] : color["5"]; })
+                .style("fill-opacity", function (d) { return d.z == 0 ? 0.6 : d.z < 10 ? 0.4 : d.z <= 20 ? 0.7 : 1; })
                 .on("mouseover", mouseover)
                 .on("mouseout", mouseout)
                 .append("title")
@@ -157,22 +157,6 @@ function d3_drawChart(id) {
             });
         }
 
-        d3.selectAll("input[name='data_range']").on("change", function () {
-            all_edges = data["edges"].filter(element => element["termyear"] === termyear);
-            document.getElementsByName("data_range").forEach(function (e, i) {
-                if (e.checked) {
-                    if (e.getAttribute("value") == "all") {
-                        isAll = true;
-                    } else {
-                        isAll = false;
-                    }
-                }
-            });
-
-            createNetwork();
-            updateMatrix(matrix);
-        });
-
         function order(value) {
             x.domain(orders[value]);
             var t = svg.transition().duration(3000);
@@ -190,37 +174,30 @@ function d3_drawChart(id) {
         }
 
         function mouseover_row(p) {
-            console.log(p);
-            d3.selectAll("rect.cell").filter(function (d) {
-                if(d.z>1){
-                return d.y == p[0].y && d.x != d.y;
-                }
-            }).style('stroke-width', 3).style('stroke', 'yellow');
-        }
+            var activeCells = d3.selectAll("rect.cell").filter(function(d) { 
+              return d.z && d.y == p[0].y && d.x != d.y ;  
+            }).style('stroke-width',3).style('stroke','yellow');
+          }
 
-        function mouseout_row(p) {
-            d3.selectAll("rect.cell").filter(function (d) {
-                return d.y == p[0].y && d.x != d.y;
-            }).style('stroke-width', 0);
-        }
+          function mouseout_row(p) {
+            d3.selectAll("rect.cell").filter(function(d) { 
+              return d.z && d.y == p[0].y && d.x != d.y ; 
+            }).style('stroke-width',0);
+          }
 
-        function mouseover_col(p) {
-            console.log(p);
-            d3.selectAll("rect.cell").filter(function (d) {
-                if(d.z > 1){
-                return d.x == p[0].y && d.x != d.y;
-                }
-            }).style('stroke-width', 3).style('stroke', 'yellow');
-        }
+          function mouseover_col(p) {
+            var activeCells = d3.selectAll("rect.cell").filter(function(d) { 
+              return d.z && d.x == p[0].y && d.x != d.y ; 
+            }).style('stroke-width',3).style('stroke','yellow');
+          }
 
-        function mouseout_col(p) {
-            // console.log(p);
-            d3.selectAll("rect.cell").filter(function (d) {
-                return d.x == p[0].y && d.x != d.y;
-            }).style('stroke-width', 0);
-        }
+          function mouseout_col(p) {
+            d3.selectAll("rect.cell").filter(function(d) { 
+              return d.z && d.x == p[0].y && d.x != d.y ; 
+            }).style('stroke-width',0);
+          }
 
-        function mouseover(p) {
+          function mouseover(p) {
             var rowtext = d3.selectAll(".row text").filter(function (d, i) { return i == p.y; }),
                 coltext = d3.selectAll(".column text").filter(function (d, i) { return i == p.x; });
 
@@ -228,17 +205,39 @@ function d3_drawChart(id) {
             d3.selectAll(".column text").classed("active", function (d, i) { return i == p.x; });
 
             if (rowtext.text() === coltext.text()) {
-                d3.select("#linklabel").html(rowtext.text() + ' 복수전공 인원' + '<br><span style="font-size: 18pt;">' + (p.z - 1) + "</span> 명");
+                d3.select(linklabel).html(rowtext.text() + ' 복수전공 인원' + '<br><span style="font-size: 18pt;">' + (p.z) + "</span> 명");
             }
             else {
-                d3.select("#linklabel").html(rowtext.text() + ' | ' + coltext.text() + '<br><span style="font-size: 18pt;"> ' + (p.z - 1) + "</span> 명");
+                d3.select(linklabel).html(rowtext.text() + ' | ' + coltext.text() + '<br><span style="font-size: 18pt;"> ' + (p.z) + "</span> 명");
             }
         }
 
-        function mouseout() {
+          function mouseover_all(p) {
+            var rowtext =  d3.selectAll(".row text").filter(function(d, i) { return i == p.y; }),
+                coltext =  d3.selectAll(".column text").filter(function(d, i) { return i == p.x; });
+
+            d3.selectAll(".row text").classed("active", function(d, i) { 
+                console.log(p);
+                console.log(d);
+                console.log(i);
+              return i == p.y; 
+            });
+            d3.selectAll(".column text").classed("active", function(d, i) { 
+              return i == p.x; 
+            });
+
+            if(rowtext.text() === coltext.text()) {
+               d3.select(linklabel).html(rowtext.text() + '<br>is involved in approximately <span style="font-size: 18pt;">' + p.z  + "</span> multiple majors (" + pctFormat(nodes[p.x].pct) + ")");
+                }
+            else { 
+              d3.select(linklabel).html(rowtext.text() + ' | ' + coltext.text()   +  '<br><br><span style="font-size: 18pt;"> ' + p.z  + "</span> multiple majors");
+                }
+          }
+
+          function mouseout() {
             d3.selectAll("text").classed("active", false);
-            d3.select("#linklabel").html("");
-        }
+            d3.select(linklabel).html("");
+          }
 
         // take the data output and turn it into a network.
         function createNetwork() {
@@ -287,7 +286,6 @@ function d3_drawChart(id) {
                 }
 
                 edges = all_edges.filter(e => e.source in nodeHash && e.target in nodeHash);
-
             }
 
             n = nodes.length;
@@ -296,7 +294,7 @@ function d3_drawChart(id) {
 
             // Compute index per node.
             nodes.forEach(function (node, i) {
-                matrix[i] = d3.range(n).map(function (j) { return { x: j, y: i, z: 1 }; });
+                matrix[i] = d3.range(n).map(function (j) { return { x: j, y: i, z: 0 }; });
             });
 
             // Convert edges to a matrix; count major occurrences.
@@ -446,15 +444,19 @@ function d3_drawChart(id) {
             newcols.append("line")
                 .attr("x1", -width);
 
+            // svg.selectAll("g.column text")
+            //     .on("mouseover", mouseover_col)
+            //     .on("mouseout", mouseout_col);
+
 
             // create the actual colored square cells and color them according to their group.
             function row(row) {
                 var cell = d3.select(this).selectAll(".cell")
-                    .data(row.filter(function (d) { return d.z; }))
+                    .data(row)
                     .attr("width", x.bandwidth() - 1)
                     .attr("height", x.bandwidth() - 1)
-                    .style("fill", function (d) { return d.z == 1 ? "C6C6DD" : d.x == d.y ? "#FFF" : nodes[d.x].group == nodes[d.y].group ? c(nodes[d.x].group) : "#808080"; })
-                    .style("fill-opacity", function (d) { return d.z == 1 ? 0.6 : d.z < 10 + 1 ? 0.4 : d.z <= 20 + 1 ? 0.7 : 1; })
+                    .style("fill", function (d) { return d.x == d.y ? "#FFF" : d.z == 0 ? color["0"] : nodes[d.x].group == nodes[d.y].group ? color[nodes[d.x].group + 1] : color["5"]; })
+                    .style("fill-opacity", function (d) { return d.z == 0 ? 0.6 : d.z < 10 ? 0.4 : d.z <= 20 ? 0.7 : 1; })
                     .on("mouseover", mouseover)
                     .on("mouseout", mouseout)
 
@@ -462,8 +464,8 @@ function d3_drawChart(id) {
                     .attr("class", "cell")
                     .attr("width", x.bandwidth() - 1)
                     .attr("height", x.bandwidth() - 1)
-                    .style("fill", function (d) { return d.z == 1 ? "C6C6DD" : d.x == d.y ? "#FFF" : nodes[d.x].group == nodes[d.y].group ? c(nodes[d.x].group) : "#808080"; })
-                    .style("fill-opacity", function (d) { return d.z == 1 ? 0.6 : d.z < 10 + 1 ? 0.4 : d.z <= 20 + 1 ? 0.7 : 1; })
+                    .style("fill", function (d) { return d.x == d.y ? "#FFF" : d.z == 0 ? color["0"] : nodes[d.x].group == nodes[d.y].group ? color[nodes[d.x].group + 1] : color["5"]; })
+                    .style("fill-opacity", function (d) { return d.z == 0 ? 0.6 : d.z < 10 ? 0.4 : d.z <= 20 ? 0.7 : 1; })
                     .on("mouseover", mouseover)
                     .on("mouseout", mouseout)
                     .append("title")

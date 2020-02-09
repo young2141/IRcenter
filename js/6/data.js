@@ -33,20 +33,7 @@ const folder_path = "../../json/6/";
 //     프로그램 시작과 동시에 raw data 읽기 시작
 /////////////////////////////////////////////////////////*/
 
-function loadJSON(path) {
-    let xhr = new XMLHttpRequest();
-    let data;
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-            if (xhr.response.length > 0 || xhr.status == 200) {
-                data = JSON.parse(xhr.responseText);
-            }
-        }
-    }
-    xhr.open("GET", path, false);
-    xhr.send();
-    return data;
-}
+
 
 function getData() {
     for (let year = 2010; year < 2020; ++year) {

@@ -9,6 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="../../../js/전임교원_2_교원대비전임교원.js"></script>
 </head>
 
 <style type="text/css">
@@ -94,10 +99,12 @@
     <div id="TOP">
 
         <div class="legend" id="gotop" style="left:80%; top :40%">
-            <span style="color:#ff0000; font-size: 20px;"> ■ </span> 전임교원<br>
-            <span style="color:#ff0000; font-size: 20px;"> ■ </span> 비전임교원<br>
-            <span style="color:#ff0000; font-size: 20px;"> ■ </span> 조교<br><br>
-        </div>
+            <div id="div_color">
+                <span id="color_fulltime" style="color:#ff0000; font-size: 20px;"> ■ </span> 전임교원<br>
+                <span id="color_nonexecutive" style="color:#0000ff; font-size: 20px;"> ■ </span> 비전임교원<br>
+                <span id="color_TA" style="color:#00ff00; font-size: 20px;"> ■ </span> 조교<br><br>
+            </div></div>
+        
 
         <script>
             var currentPosition = parseInt($("#gotop").css("top"));
@@ -123,7 +130,8 @@
         <div id="unitBox" style="width: 70%">
             (단위 : 명, %)
         </div>
-        <div id="chartdiv1" class="chartdiv"></div>
+        <div id="chartdiv" class="chartdiv"></div>
+        <script>init();</script>
         <div id="summaryBox" style="font-size: 15px; line-height: 2; margin: 10; width: 1000px">
             <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
 

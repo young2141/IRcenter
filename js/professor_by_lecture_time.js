@@ -9,7 +9,7 @@ function chart() {
 }
 
 function bubble_map1(data) {
-  $("#legend1").empty();
+  $("#legend11").empty();
   var numdata = [];
   //var rad = [5, 13, 21, 29, 37, 45];
   var rank = [0];
@@ -20,7 +20,7 @@ function bubble_map1(data) {
       ++sz;
     }
   }
-  numdata = numdata.sort(function(a, b) {
+  numdata = numdata.sort(function (a, b) {
     return a - b;
   }); //정렬
   for (i = 0.2; i < 1; i += 0.2) {
@@ -31,8 +31,8 @@ function bubble_map1(data) {
   }
   rank.push(numdata[sz - 1]);
   //legend생성
-  var doc = document.getElementById("legend1");
-  doc.innerHTML = "평균 연령<br><br>";
+  var doc = document.getElementById("legend11");
+  doc.innerHTML = "<b>평균 연령</b><br><br>";
   doc.style.textAlign = "center";
   doc.style.alignItems = "bottom";
   prof = {};
@@ -104,7 +104,7 @@ function bubble_map1(data) {
     bullet.tooltipText =
       "{prof}, {age}세: {value.workingValue.formatNumber('#.')}명";
     bullet.strokeWidth = 3;
-    bullet.adapter.add("radius", function(radius, target) {
+    bullet.adapter.add("radius", function (radius, target) {
       var values = target.dataItem.value;
       if (values == 0) return 0;
       /*
@@ -123,7 +123,7 @@ function bubble_map1(data) {
 				  */
       return 10 + (40 * values) / numdata[sz - 1];
     });
-    bullet.adapter.add("fill", function(fill, target) {
+    bullet.adapter.add("fill", function (fill, target) {
       var X = target.dataItem.categoryX;
       if (X == "25세이하" || X == "26~30") return chart.colors.getIndex(0);
       else if (X == "31~35" || X == "36~40") return chart.colors.getIndex(1);
@@ -145,6 +145,7 @@ function bubble_map1(data) {
   }
   createBubble1();
   chrateLabel();
+  drawLegend("legend12", numdata, sz);
 }
 
 function bubble_map2(data) {
@@ -160,7 +161,7 @@ function bubble_map2(data) {
       ++sz;
     }
   }
-  numdata = numdata.sort(function(a, b) {
+  numdata = numdata.sort(function (a, b) {
     return a - b;
   }); //정렬
   for (i = 0.2; i < 1; i += 0.2) {
@@ -171,8 +172,8 @@ function bubble_map2(data) {
   }
   rank.push(numdata[sz - 1]);
   //legend생성
-  var doc = document.getElementById("legend2");
-  doc.innerHTML = "평균 근속연수<br><br><br>";
+  var doc = document.getElementById("legend21");
+  doc.innerHTML = "<b>평균 근속연수</b><br><br>";
   doc.style.textAlign = "center";
   doc.style.alignItems = "bottom";
   prof = {};
@@ -204,7 +205,7 @@ function bubble_map2(data) {
     doc.innerHTML +=
       String(Math.round(prof[key]["total_age"] / prof[key]["ppl"])).fontsize(
         25
-      ) + "년<br><br>";
+      ) + "년<br><br><br>";
   }
   //for (i = 1; i <= 5; i++) {
   //doc.innerHTML +=
@@ -256,7 +257,7 @@ function bubble_map2(data) {
     bullet.tooltipText =
       "{prof}, {year}년: {value.workingValue.formatNumber('#.')}명";
     bullet.strokeWidth = 3;
-    bullet.adapter.add("radius", function(radius, target) {
+    bullet.adapter.add("radius", function (radius, target) {
       var values = target.dataItem.value;
       if (values == 0) return 0;
       /*
@@ -275,7 +276,7 @@ function bubble_map2(data) {
 				  */
       return 10 + (40 * values) / numdata[sz - 1];
     });
-    bullet.adapter.add("fill", function(fill, target) {
+    bullet.adapter.add("fill", function (fill, target) {
       var X = target.dataItem.categoryX;
       if (X == "0~5" || X == "6~10") return chart.colors.getIndex(0);
       else if (X == "11~15" || X == "16~20") return chart.colors.getIndex(1);
@@ -298,4 +299,93 @@ function bubble_map2(data) {
   }
   createBubble1();
   chrateLabel();
+  drawLegend("legend22", numdata, sz);
+}
+
+
+function drawLegend(legendid, numdata, sz) {
+  var element = document.getElementById(legendid);
+  element.style.textAlign = "center";
+  var b = document.createElement("b");
+  b.innerHTML = "원 크기별 인원수<br>";
+  element.appendChild(b);
+
+  var chartdiv = document.createElement("div");
+  am4core.ready(function () {
+
+    // Themes begin
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+
+    var chart = am4core.create(chartdiv, am4charts.XYChart);
+    chart.maskBullets = false;
+    chart.data = [
+      {
+        "value": 50,
+        "categoryX": "x1",
+        "categoryY": "50",
+        "dy": -20
+      },
+      {
+        "value": 100,
+        "categoryX": "x1",
+        "categoryY": "100",
+        "dy": -45
+      },
+      {
+        "value": 200,
+        "categoryX": "x1",
+        "categoryY": "200",
+        "dy": -55
+      },
+      {
+        "value": 300,
+        "categoryX": "x1",
+        "categoryY": "300",
+        "dy": -30
+      }
+    ];
+
+    var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+
+    yAxis.dataFields.category = "categoryY";
+    yAxis.renderer.minGridDistance = 10;
+    xAxis.renderer.minGridDistance = 10;
+    xAxis.dataFields.category = "categoryX";
+
+    xAxis.renderer.grid.template.disabled = true;
+    yAxis.renderer.grid.template.disabled = true;
+    xAxis.renderer.axisFills.template.disabled = true;
+    yAxis.renderer.axisFills.template.disabled = true;
+    yAxis.renderer.ticks.template.disabled = true;
+    xAxis.renderer.ticks.template.disabled = true;
+    xAxis.renderer.labels.template.disabled = true;
+
+    yAxis.renderer.inversed = true;
+    //label 위치 변경을 원할 시 chart.data 부분의 dy 값을 조정
+    yAxis.renderer.labels.template.propertyFields.dy = "dy";
+
+    //font 변경
+    yAxis.renderer.labels.template.dx = -10;
+    yAxis.renderer.labels.template.fontSize = 25;
+    yAxis.renderer.labels.template.fontWeight = "bold";
+
+    var series = chart.series.push(new am4charts.ColumnSeries());
+    series.dataFields.categoryY = "categoryY";
+    series.dataFields.categoryX = "categoryX";
+    series.dataFields.value = "value";
+    series.columns.template.disabled = true;
+    series.sequencedInterpolation = true;
+
+    var bullet = series.bullets.push(new am4core.Circle());
+    bullet.strokeWidth = 3;
+    //bullet 위치 변경을 원할 시 chart.data 부분의 dy 값을 조정
+    bullet.propertyFields.dy = "dy";
+    bullet.adapter.add("radius", function(radius, target) {
+      var value = target.dataItem.value;
+      return 10 + (40 * value) / numdata[sz - 1];
+    });
+  });
+  element.appendChild(chartdiv);
 }

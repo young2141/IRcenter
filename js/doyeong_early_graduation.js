@@ -73,7 +73,7 @@ function drawColumn(_data, _N, _year) {
         // });
 
         var columnTemplate = series.columns.template;
-        columnTemplate.strokeWidth = 2;
+        // columnTemplate.strokeWidth = 2;
         columnTemplate.strokeOpacity = 1;
 
         var title = chart.titles.create();

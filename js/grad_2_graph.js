@@ -46,7 +46,7 @@ function bar_graph(data, college) {
     series.columns.template.fillOpacity = 0.8;
 
     var columnTemplate = series.columns.template;
-    columnTemplate.strokeWidth = 2;
+    // columnTemplate.strokeWidth = 2;
     columnTemplate.strokeOpacity = 1;
   }); // end am4core.ready()
 }
@@ -90,7 +90,7 @@ function line_graph(data, college) {
 
     // Add simple bullet
     var bullet = series.bullets.push(new am4charts.CircleBullet());
-    bullet.circle.strokeWidth = 15;
+    // bullet.circle.strokeWidth = 15;
     bullet.fill = am4core.color("#00a686");
     bullet.tooltipText =
       "{categoryX} " + college + " 평균 졸업소요시간: {valueY}년";

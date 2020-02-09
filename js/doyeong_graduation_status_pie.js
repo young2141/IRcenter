@@ -60,7 +60,7 @@ function createSeries(_chart) {
     var pieSeries = _chart.series.push(new am4charts.PieSeries());
     pieSeries.dataFields.value = "value";
     pieSeries.dataFields.category = "category";
-    pieSeries.slices.template.strokeWidth = 2;
+    // pieSeries.slices.template.strokeWidth = 2;
     pieSeries.slices.template.strokeOpacity = 1;
     pieSeries.slices.template.stroke = am4core.color("#ffffff");
     pieSeries.tooltip.getFillFromObject = false;

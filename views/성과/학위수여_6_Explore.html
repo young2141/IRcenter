@@ -12,9 +12,9 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script src="../../js/6/chart.js"></script>
-	<script src="../../js/6/data.js"></script>
-	<script src="../../js/6/inputTags.js"></script>
+	<script src="../../js/학위수여_6_Explore.js"></script>
+	<!-- <script src="../../js/6/data.js"></script>
+	<script src="../../js/6/inputTags.js"></script> -->
 	<style>
 		.multiselect {
 			width: 200px;
@@ -144,22 +144,21 @@
 			<br><br>
 			<form>
 				<span style="font-size: 20px"><b>학위수준별 검색</b></span><br>
-				<select id="select_degree" onchange="clickFormSelection('select', id, this.value)"
+				<select id="select_degree" onchange="onClickListernerForSelect(id, this.value)"
 					style="width : 200px; height: 30px">
-					<option value="bachelor" selected="selected">학사</option>
-					<option value="master">석사</option>
-					<option value="phd">박사</option>
+					<option value="학사" selected="selected">학사</option>
+					<option value="석사">석사</option>
+					<option value="박사">박사</option>
 				</select>
 				<br><br>
 
 				<span style="font-size: 20px"><b>계열별 검색</b></span><br>
-				<select id="select_major_class" onchange="clickFormSelection('select', id, this.value)"
+				<select id="select_division" onchange="onClickListernerForSelect(id, this.value)"
 					style="width : 200px; height: 30px">
-					<!--option value="all" selected="selected">(전체)</option-->
-					<option value="인문사회계열" selected="selected">인문사회</option>
-					<option value="자연과학계열">자연과학</option>
-					<option value="공학계열">공학</option>
-					<option value="예체능계열">예체능</option>
+					<option value="인문사회" selected="selected">인문사회</option>
+					<option value="자연과학">자연과학</option>
+					<option value="공학">공학</option>
+					<option value="예체능">예체능</option>
 				</select><br><br>
 
 				<div class="multiselect">
@@ -179,9 +178,9 @@
 				<span style="font-size: 20px"><b>성별 검색</b></span><br>
 				<select id="select_gender" onchange="clickFormSelection('select', id, this.value)"
 					style="width : 200px; height: 30px">
-					<option value="all" selected="selected">(전체)</option>
-					<option value="male">남자</option>
-					<option value="female">여자</option>
+					<option value="(전체)" selected="selected">(전체)</option>
+					<option value="남자">남자</option>
+					<option value="여자">여자</option>
 				</select>
 
 				<br><br>
@@ -208,7 +207,7 @@
 		</script>
 
 		<script>
-			programStart();
+			init();
 		</script>
 		<br>
 

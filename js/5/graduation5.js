@@ -130,9 +130,12 @@ function drawChart(input) {
         categoryAxis.renderer.minGridDistance = 10;
         categoryAxis.renderer.inversed = true;
         categoryAxis.fontSize = 15;
+        categoryAxis.renderer.grid.template.location = 0;
 
         var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
         valueAxis.max = 120;
+        valueAxis.renderer.grid.template.location = 0;
+        
         var series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.categoryY = "major";
         series.dataFields.valueX = level["gender"] + "_percent";
@@ -174,7 +177,7 @@ function drawChart(input) {
         LabelBullet.label.truncate = false;
         LabelBullet.label.wrap = false;
         LabelBullet.label.dx = 45;
-        LabelBullet.label.fontSize = 13;
+        // LabelBullet.label.fontSize = 13;
 
         if (level["gender"] == "man") {
             series2.columns.template.tooltipText = "2019학년도 {categoryY} 학생\n총 {total_headcount}명 중 남자는 {man}명으로, {valueX}%를 차지합니다.";

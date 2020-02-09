@@ -209,7 +209,6 @@ function drawChart(data) {
         var categoryAxis1 = chart1.xAxes.push(new am4charts.CategoryAxis());
         categoryAxis1.dataFields.category = "fulltime";
         categoryAxis1.renderer.minGridDistance = 20;
-        categoryAxis1.renderer.labels.template.fontSize = 12;
         categoryAxis1.renderer.grid.template.location = 0;
 
         var valueAxis1 = chart1.yAxes.push(new am4charts.ValueAxis());
@@ -221,7 +220,6 @@ function drawChart(data) {
         var series1 = chart1.series.push(new am4charts.ColumnSeries());
         series1.dataFields.categoryX = "fulltime";
         series1.dataFields.valueY = "value";
-        series1.columns.template.width = 20;
 
         var chart2 = am4core.create("chartdiv2", am4charts.XYChart);
         chart2.data = data;
@@ -230,7 +228,6 @@ function drawChart(data) {
         var categoryAxis2 = chart2.xAxes.push(new am4charts.CategoryAxis());
         categoryAxis2.dataFields.category = "nonexecutive";
         categoryAxis2.renderer.minGridDistance = 20;
-        categoryAxis2.renderer.labels.template.fontSize = 12;
         categoryAxis2.renderer.grid.template.location = 0;
 
         var valueAxis2 = chart2.yAxes.push(new am4charts.ValueAxis());
@@ -243,7 +240,6 @@ function drawChart(data) {
         var series2 = chart2.series.push(new am4charts.ColumnSeries());
         series2.dataFields.categoryX = "nonexecutive";
         series2.dataFields.valueY = "value";
-        series2.columns.template.width = 20;
 
 
 
@@ -254,7 +250,6 @@ function drawChart(data) {
         var categoryAxis3 = chart3.xAxes.push(new am4charts.CategoryAxis());
         categoryAxis3.dataFields.category = "TA";
         categoryAxis3.renderer.minGridDistance = 20;
-        categoryAxis3.renderer.labels.template.fontSize = 12;
         categoryAxis3.renderer.grid.template.location = 0;
 
         var valueAxis3 = chart3.yAxes.push(new am4charts.ValueAxis());
@@ -267,7 +262,6 @@ function drawChart(data) {
         var series3 = chart3.series.push(new am4charts.ColumnSeries());
         series3.dataFields.categoryX = "TA";
         series3.dataFields.valueY = "value";
-        series3.columns.template.width = 20;
 
         series3.columns.template.fill = am4core.color(color["조교"]);
         series2.columns.template.fill = am4core.color(color["비전임교원"]);

@@ -34,7 +34,7 @@ function line_graph(data, div, chartName, college, sex, color) {
     var series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.valueY = "rate";
     series.dataFields.categoryX = "year";
-    series.strokeWidth = 2;
+    // series.strokeWidth = 2;
     series.yAxis = valueAxis;
     series.tooltip.pointerOrientation = "vertical";
     series.tensionX = 1; // 직선으로 만들어줌
@@ -53,7 +53,7 @@ function line_graph(data, div, chartName, college, sex, color) {
     else if (college == "mech") college = "공학계열의";
     else college = "전체";
 
-    bullet.circle.strokeWidth = 15;
+    // bullet.circle.strokeWidth = 15;
     bullet.fill = am4core.color(color);
     bullet.tooltipText = college + " " + sex + " " + chartName + ": {valueY}%";
   }); // end am4core.ready()

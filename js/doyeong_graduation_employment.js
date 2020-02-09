@@ -54,7 +54,7 @@ function drawColumn(_data) {
     series.columns.template.fillOpacity = 0.8;
 
     var columnTemplate = series.columns.template;
-    columnTemplate.strokeWidth = 2;
+    // columnTemplate.strokeWidth = 2;
     columnTemplate.strokeOpacity = 1;
   }); // end am4core.ready()
 }
@@ -93,8 +93,8 @@ function drawLine(_data) {
     series.tooltip.pointerOrientation = "vertical";
 
     var bullet = series.bullets.push(new am4charts.CircleBullet());
-    bullet.circle.strokeWidth = 15;
-    bullet.fill = am4core.color("#fff");
+    // bullet.circle.strokeWidth = 15;
+    // bullet.fill = am4core.color("#fff");
     bullet.tooltipText = "[#000]{category}학년도 취업률 : [bold]{value}%[/]";
   }); // end am4core.ready()
 }
