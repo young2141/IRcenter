@@ -55,11 +55,6 @@
 
 <style type="text/css">
 	@import url('../../css/output_default.css');
-
-	#chartdiv {
-		width: 80%;
-		height: 1000px;
-	}
 </style>
 
 <body>
@@ -135,8 +130,8 @@
 			<h2>Explore the data</h2>
 
 		</div>
-		<div style="height: 800px; width: 1200px; overflow:scroll">
-		<div id="chartdiv1" class="chartdiv" style="height: 1500px"> 그래프 4-1</div>
+		<div style="height: 800px; width: 1100px; overflow:scroll">
+		<div id="chartdiv" style="width: 1000px; height: 2000px"> 그래프 1</div>
 		</div>
 
 		<div class="legend" id="gotop" style="left:80%; top :40%">
@@ -176,11 +171,11 @@
 				<br>
 
 				<span style="font-size: 20px"><b>성별 검색</b></span><br>
-				<select id="select_gender" onchange="clickFormSelection('select', id, this.value)"
+				<select id="select_gender" onchange="onClickListernerForSelect(id, this.value)"
 					style="width : 200px; height: 30px">
 					<option value="(전체)" selected="selected">(전체)</option>
-					<option value="남자">남자</option>
-					<option value="여자">여자</option>
+					<option value="남">남자</option>
+					<option value="여">여자</option>
 				</select>
 
 				<br><br>
