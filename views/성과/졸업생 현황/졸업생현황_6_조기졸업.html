@@ -13,16 +13,20 @@
         <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-        <script src="../../../js/grad_6_graph.js"></script>
-
+        <script src="../../../js/doyeong_early_graduation.js"></script>
+        <script src="../../../js/doyeong_graduation_status_pie.js"></script>
     </head>
 
     <style type="text/css">
         @import url('../../../css/output_default.css');
 
         .chartdiv11 {
-            width: 1000px;
+            width: 230px;
             height: 450px;
+            display: inline-block;
+            margin-top: 20px;
+			margin-bottom: 20px;
+			margin-right: -60px;
         }
 
         .chartdiv22 {
@@ -41,7 +45,7 @@
         }
     </style>
 
-    <body >
+    <body onload="parsingColumn(); parsingPie();">
         <div class="box1" id="wrapper">
             <form class>
                 <br>
@@ -95,21 +99,22 @@
                             <td>
                                 <a href="졸업생현황_5_졸업현황.html"><span id="black">입학년도로 보는<br>졸업현황</span></a>
                             </td>
-
+                            
                             <td style="background-color : #eeeeee">
-                                <a href="졸업생현황_6_Explore.html"><span id="black"><b>Explore the data</b></span></a>
+                                <a href="졸업생현황_6_조기졸업.html"><span id="black" style="font-size: 13px"><b>조기졸업자
+                                            및<br>복수전공/부전공이수<br> 졸업자 현황</b></span></a>
                             </td>
-
                             <td>
-                                <a href="졸업생현황_7_조기졸업.html"><span id="black" style="font-size: 13px">조기졸업자
-                                        및<br>복수전공/부전공이수<br> 졸업자 현황</span></a>
+                                <a href="졸업생현황_7_Explore.html"><span id="black">Explore the data</span></a>
                             </td>
 
                             <td style="border-style: none; font-size : 30px">
-                                <a href="졸업생현황_7_조기졸업.html">
+                                <a href="졸업생현황_7_Explore.html">
                                     <span style="color: black">▶</span>
                                 </a>
                             </td>
+
+
                         </tr>
                     </tbody>
                 </table>
@@ -121,24 +126,41 @@
         <div id="TOP">
             <div class="legend" id="gotop" style="left:80%; top :40%">
 
-                <span style="font-size: 20px"><b>계열별 검색</b></span><br>
-                <select id="college" name="menu" onchange="call()" style="width : 200px; height: 30px">
-                    <option value="all">(전체)</option>
-                    <option value="society">인문사회</option>
-                    <option value="science">자연과학</option>
-                    <option value="mech">공학</option>
-                    <option value="artphysical">예체능</option>
-                </select>
+                <form>
+                    <span style="font-size: 20px"><b>년도별 검색</b></span>
+                    <br>
 
-                <br><br>
+                    <input type=button value='◀' onclick=decrease()>
+                    <input id="years" type=range min=2014 max=2019 step=1 value=2019
+                        oninput=valuechange(parseInt(this.value))>
+                    <input type=button value='▶' onclick=increase()>
+                    <script>
+                        function valuechange(value) {
+                            document.getElementById('span1').innerHTML = (value - 4) + "~" + (value);
+                            parsingColumn();
+                        }
+                        function decrease() {
+                            current_value = document.getElementById('years').value
+                            document.getElementById('years').value--;
+                            valuechange(document.getElementById('years').value)
+                        }
+                        function increase() {
+                            document.getElementById('years').value++;
+                            current_value = document.getElementById('years').value
+                            valuechange(document.getElementById('years').value)
+                        }
+                    </script>
+                    <br>
+                    <div style="text-align: center; width: 180px"><span id="span1">2015~2019</span></div>
+                </form>
+                <br>
 
-                <span style="font-size: 20px"><b>성별 검색</b></span><br>
-                <select id="sex" name="menu" onchange="call()" style="width : 200px; height: 30px">
-                    <option value="all">(전체)</option>
-                    <option value="male">남자</option>
-                    <option value="female">여자</option>
-                    <br><br>
-                </select>
+                <span style = "color: #ff3d00; font-size: 15px" value="#fcd12a">■</span> 진학<br>
+                <span style = "color: #ef5350; font-size: 15px" value="#6794dc">■</span> 취업자<br>
+                <span style = "color: #ff7f27; font-size: 15px" value="#6794dc">■</span> 입대자<br>
+                <span style = "color: #ffc102; font-size: 15px" value="#6794dc">■</span> 외국인유학생<br>
+                <span style = "color: #fdf5bc; font-size: 15px" value="#6794dc">■</span> 기타/미상<br>
+                <span style = "color: #f2fdbc; font-size: 15px" value="#6794dc">■</span> 취업불가능자/제외인정자<br>
 
 
             </div>
@@ -158,33 +180,30 @@
             </script>
 
             <div id="summaryBox">
-                <h2>진학률</h2>
+                <h2>조기졸업자 및 복수전공/부전공 이수 졸업자 현황</h2>
+
             </div>
             <div id="unitBox">
-                (단위 : %)
+                (단위 : 명)
             </div>
-            <div id="chartdiv1" class="chartdiv11"></div>
-
-            <div id="summaryBox">
-                <h2>취업률</h2>
-            </div>
-            <div id="unitBox">
-                (단위 : %)
-            </div>
-            <div id="chartdiv2" class="chartdiv11"></div>
-
-            <div id="summaryBox">
-                    <h2>입학년도로 보는 졸업현황</h2>
-            </div>
-            <div id="unitBox" style="width: 1000px;" >
-                (단위 : %)
-            </div>
-            <div id="chartdiv3" style="width:1000px; height:500px;"></div>
-            <script>
-                call();
-            </script>
 
             <br>
+
+            <div class="chartdiv11" id="chartdiv1"></div>
+            <div class="chartdiv11" id="chartdiv2"></div>
+            <div class="chartdiv11" id="chartdiv3"></div>
+            <div class="chartdiv11" id="chartdiv4"></div>
+            <div class="chartdiv11" id="chartdiv5"></div>
+
+
+            <div id="summaryBox">
+                <h2>2018학년도 졸업생 현황</h2>
+
+            </div>
+            <div id="unitBox">
+                (단위 : %)
+            </div>
+            <div class="chartdiv22" id="chartdiv"></div>
 
 
             <div id="summaryBox" style="font-size: 15px">

@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
         <script src="../../../js/grad_1_curved.js"></script>
         <script src="../../../js/grad_1_graph.js"></script>
+        <script src="../../../js/doyeong_graduation_status_pie.js"></script>
 
 
     </head>
@@ -75,7 +76,7 @@
                     <tbody>
                         <tr>
                             <td style="border-style: none; font-size : 30px">
-                                <a href="졸업생현황_7_조기졸업.html">
+                                <a href="졸업생현황_7_Explore.html">
                                     <span id="black">◀</span>
                                 </a>
                             </td>
@@ -101,12 +102,13 @@
                             </td>
 
                             <td>
-                                <a href="졸업생현황_6_Explore.html"><span id="black">Explore the data</span></a>
+
+                                <a href="졸업생현황_6_조기졸업.html"><span id="black" style="font-size: 13px">조기졸업자
+                                        및<br>복수전공/부전공이수<br> 졸업자 현황</span></a>
                             </td>
 
                             <td>
-                                <a href="졸업생현황_7_조기졸업.html"><span id="black" style="font-size: 13px">조기졸업자
-                                        및<br>복수전공/부전공이수<br> 졸업자 현황</span></a>
+                                <a href="졸업생현황_7_Explore.html"><span id="black">Explore the data</span></a>
                             </td>
 
                             <td style="border-style: none; font-size : 30px">
@@ -125,12 +127,23 @@
         <div id="TOP">
             <div class="legend" id="gotop" style="left:80%; top :40%">
 
+                <b>[2018학년도 졸업생 현황]</b><br>
+                <span style = "color: #ff3d00; font-size: 15px" value="#fcd12a">■</span> 진학<br>
+                <span style = "color: #ef5350; font-size: 15px" value="#6794dc">■</span> 취업자<br>
+                <span style = "color: #ff7f27; font-size: 15px" value="#6794dc">■</span> 입대자<br>
+                <span style = "color: #ffc102; font-size: 15px" value="#6794dc">■</span> 외국인유학생<br>
+                <span style = "color: #fdf5bc; font-size: 15px" value="#6794dc">■</span> 기타/미상<br>
+                <span style = "color: #f2fdbc; font-size: 15px" value="#6794dc">■</span> 취업불가능자/제외인정자<br><br>
+
+                <b>[진학률, 취업률]</b><br>
                 <span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
                 <span style="color:#E8A343; font-size: 20px;">■</span> 인문사회<br>
                 <span style="color:#FCFF57; font-size: 20px;">■</span> 자연과학<br>
                 <span style="color:#43E884; font-size: 20px;">■</span> 공학<br>
                 <span style="color:#52A1FF; font-size: 20px;">■</span> 예체능<br>
                 <br><br>
+
+
 
             </div>
             <script>
@@ -146,7 +159,18 @@
                         $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
                 });
 
+                //parsingPie();
+
             </script>
+
+            <div id="summaryBox">
+                <h2>2018학년도 졸업생 현황</h2>
+
+            </div>
+            <div id="unitBox">
+                (단위 : %)
+            </div>
+            <div class="chartdiv22" id="chartdiv"></div>
 
             <div id="summaryBox">
                 <h2>진학률</h2>
@@ -165,8 +189,8 @@
             <div id="divchart2" class="chartdiv">그래프 1-2</div>
 
             <br>
-            
-            
+
+
 
             <div id="summaryBox" style="font-size: 15px">
                 <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
