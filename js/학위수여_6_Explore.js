@@ -5,7 +5,8 @@ var data = [];
 var majors = [],
     year_for_major = {},
     division_for_major = {},
-    displayed_major = [];
+    displayed_major = [],
+    num_major_for_division = {};
 
 //데이터 분류를 위한 변수들
 var degree = "학사",
@@ -57,7 +58,7 @@ function onClickListernerForSelect(name, value) {
             displayed_major = [];
             createCheckboxes();
             _data = makeDataForGraph(_data);
-            drawChart(_data);
+            resetChart(_data);
             break;
     }
 }
@@ -173,12 +174,6 @@ function selectCheckbox(event) {
             }
         }
     }
-
-    // //위를 기준으로 다시 그래프 데이터를 만들어주고 그려준다.
-    // let _data = data.slice(0);
-    // //처리 결과 데이터
-    // _data = makeDataForGraph(_data);
-    // drawChart(_data);
 }
 
 /*////////////////////////////////////////////////////////
@@ -245,6 +240,7 @@ function checkDivisionLength() {
     var max_len = 0;
     for (let i = 0; i < len.length; ++i) {
         max_len = max_len > len[i] ? max_len : len[i];
+        num_major_for_division[divisions[i]] = len[i];
     }
 
     chart.length = max_len;
@@ -265,9 +261,9 @@ function makeDataForGraph(_data) {
         })
 
         let obj = {};
-        obj["연도"] = e["연도"];
-        obj["전공"] = e["전공"];
-        obj[e["전공"]] = value;
+        obj["year"] = e["연도"];
+        obj["major"] = e["전공"];
+        obj["value"] = value;
         max = max > value ? max : value;
         return obj;
     });
@@ -281,69 +277,12 @@ function init() {
         checkDivisionLength();
         createCheckboxes();
         _data = makeDataForGraph(_data);
-        drawChart(_data);
+        initChart();
+        resetChart(_data);
     });
 }
 
-function createChart(_data) {
-    chart[i] = container.createChild(am4charts.XYChart);
-    chart[i].data = chart_data;
-    chart[i].width = am4core.percent(95);
-    chart[i].height = chart_height;
-    chart[i].paddingBottom = 0;
-    chart[i].paddingTop = 0;
-
-    if (i == 0) {
-        chart[i].paddingTop = 1;
-        chart[i].height = chart_height + 1;
-    }
-
-    let xAxis = chart[i].xAxes.push(new am4charts.CategoryAxis());
-    xAxis.dataFields.category = "연도";
-    xAxis.renderer.grid.template.location = 0;
-    xAxis.renderer.minGridDistance = 1;
-    xAxis.renderer.labels.template.disabled = true;
-
-    if (i == displayed_major.length - 1) {
-        xAxis.renderer.labels.template.disabled = false;
-        chart[i].height = chart_height + 40;
-    }
-
-    let yAxis = chart[i].yAxes.push(new am4charts.ValueAxis());
-    yAxis.renderer.grid.template.location = 0;
-    yAxis.renderer.labels.template.disabled = true;
-    yAxis.min = 0;
-    yAxis.max = max + 10;
-
-    yAxis.title.text = displayed_major[i];
-    yAxis.title.rotation = 0;
-    yAxis.title.maxWidth = 180;
-    yAxis.title.wrap = true;
-    yAxis.title.width = 180;
-
-    let comment = "{categoryX}학년도 {major}\n" + gender + " " + degree + " 학위수여자는 {valueY}명입니다."
-    if (gender == "(전체)") {
-        comment = "{categoryX}학년도 {major}\n" + degree + " 학위수여자는 {valueY}명입니다."
-    }
-
-    let series = chart[i].series.push(new am4charts.ColumnSeries());
-    series.dataFields.categoryX = "연도";
-    series.dataFields.valueY = displayed_major[i];
-    series.columns.template.tooltipText = comment;
-    series.tooltip.getFillFromObject = false;
-    series.tooltip.autoTextColor = false;
-    series.tooltip.background.fill = am4core.color("#FFFFFF");
-    series.tooltip.label.fill = am4core.color("#000000");
-    // (2019)학년도 (전자공학부) (남자) (학사) 학위수여자는 ( )명입니다
-
-    var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-    labelBullet.label.text = "{valueY}";
-    labelBullet.label.fondSize = 8;
-    labelBullet.label.minGridDistance = 5;
-    labelBullet.label.dy = -10;
-}
-
-function drawChart(_data) {
+function initChart() {
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
 
@@ -356,25 +295,19 @@ function drawChart(_data) {
         container.layout = "vertical";
         container.autoMargins = false;
 
-        for (let i = 0; i < displayed_major.length; ++i) {
-            let chart_data = _data.filter(e => e["전공"] == displayed_major[i]);
+        for (let i = 0; i < chart.length; ++i) {
             chart[i] = container.createChild(am4charts.XYChart);
-            chart[i].data = chart_data;
             chart[i].width = am4core.percent(95);
             chart[i].height = chart_height;
             chart[i].paddingBottom = 0;
             chart[i].paddingTop = 1;
+            chart[i].disabled = true;
 
             let xAxis = chart[i].xAxes.push(new am4charts.CategoryAxis());
-            xAxis.dataFields.category = "연도";
+            xAxis.dataFields.category = "year";
             xAxis.renderer.grid.template.location = 0;
-            xAxis.renderer.minGridDistance = 1;
             xAxis.renderer.labels.template.disabled = true;
-
-            if (i == displayed_major.length - 1) {
-                xAxis.renderer.labels.template.disabled = false;
-                chart[i].height = chart_height + 40;
-            }
+            // xAxis.renderer.grid.template.minGridDistance = 10;
 
             let yAxis = chart[i].yAxes.push(new am4charts.ValueAxis());
             yAxis.renderer.grid.template.location = 0;
@@ -382,21 +315,14 @@ function drawChart(_data) {
             yAxis.min = 0;
             yAxis.max = max + 10;
 
-            yAxis.title.text = displayed_major[i];
             yAxis.title.rotation = 0;
             yAxis.title.maxWidth = 180;
             yAxis.title.wrap = true;
             yAxis.title.width = 180;
 
-            let comment = "{categoryX}학년도 {major}\n" + gender + " " + degree + " 학위수여자는 {valueY}명입니다."
-            if (gender == "(전체)") {
-                comment = "{categoryX}학년도 {major}\n" + degree + " 학위수여자는 {valueY}명입니다."
-            }
-
             let series = chart[i].series.push(new am4charts.ColumnSeries());
-            series.dataFields.categoryX = "연도";
-            series.dataFields.valueY = displayed_major[i];
-            series.columns.template.tooltipText = comment;
+            series.dataFields.categoryX = "year";
+            series.dataFields.valueY = "value";
             series.tooltip.getFillFromObject = false;
             series.tooltip.autoTextColor = false;
             series.tooltip.background.fill = am4core.color("#FFFFFF");
@@ -416,5 +342,41 @@ function reloadGraph(_data) {
     for (let i = 0; i < displayed_major.length; ++i) {
         let chart_data = _data.filter(e => e["전공"] == displayed_major[i]);
         chart[i].data = chart_data;
+    }
+}
+
+function resetChart(_data) {
+    chartdiv = document.getElementById("chartdiv");
+    chartdiv.style.height = displayed_major.length * chart_height + 30;
+    container.height = displayed_major.length * chart_height + 30;
+
+    for (let i = 0; i < chart.length; ++i) {
+        chart[i].disabled = true;
+    }
+
+    var len_major = num_major_for_division[division];
+    for (let i = 0; i < len_major; ++i) {
+        let chart_data = _data.filter(e => e["major"] == displayed_major[i]);
+        chart[i].data = chart_data;
+        chart[i].height = chart_height;
+        chart[i].disabled = false;
+
+        let xAxis = chart[i].xAxes._values[0];
+        let yAxis = chart[i].yAxes._values[0];
+        let series = chart[i].series._values[0];
+
+        xAxis.renderer.labels.template.disabled = true;
+        if (i == displayed_major.length - 1) {
+            chart[i].height = chart_height + 30;
+            xAxis.renderer.labels.template.disabled = false;
+        }
+
+        let comment = "{year}학년도 {major}\n" + gender + " " + degree + " 학위수여자는 {value}명입니다."
+        if (gender == "(전체)") {
+            comment = "{year}학년도 {major}\n" + degree + " 학위수여자는 {value}명입니다."
+        }
+       
+        yAxis.title.text = displayed_major[i];
+        series.columns.template.tooltipText = comment;
     }
 }
