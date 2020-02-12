@@ -66,6 +66,10 @@ function drawChart2(value) {
 
         P1CurvedcreateSeries("확보율", "#FE4459"); // 전체
         
+        var axisBreak = valueAxis.axisBreaks.create();
+            axisBreak.startValue = 10;
+            axisBreak.endValue = 65;
+            axisBreak.breakSize = 0.01;
         
         }); // end am4core.ready()
 
