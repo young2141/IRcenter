@@ -226,7 +226,7 @@ function drawAreaChart(svg, data, stackedData, keys, cls, max_val, h, tick) {
 
     var xAxis = svg.append("g")
         .attr("transform", "translate(0," + h + ")") 
-        .call(d3.axisBottom(x).tickValues([1946, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2019,]))
+        .call(d3.axisBottom(x).tickValues([1946, 1950, 1960, 1970, 1980, 1990, 2000, 2010, 2019,]).tickFormat(d3.format("d")))
 
     // Add Y axis
     var y = d3.scaleLinear()
