@@ -20,6 +20,7 @@ var color1 = {
     "자율전공부": "#DAD9FF",
     "No Degree": "#6B66FF"
 };
+
 function parsing() {
     var filename = "doyeong_sankey_dumy.json";
 

@@ -10,8 +10,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-queue/2.0.3/d3-queue.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        <!-- <script src="../../../js/등록/복수전공/test.js"></script> -->
-        <script src="../../../js/등록/복수전공/multidegree.js"></script>
+        <script src="../../../js/복수전공.js"></script>
+        <!-- <script src="../../../js/등록/복수전공/multidegree.js"></script> -->
         <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 
         <style>
@@ -114,8 +114,7 @@
                     </select><br><br>
 
                     <span style="font-size: 20px"><b>학기별 검색</b></span><br>
-                    <select name="menu" id="termyear" style="width : 200px; height: 30px"
-                        onchange="selectSelectbox(id, this.value)">
+                    <select name="menu" id="termyear" style="width : 200px; height: 30px">
                         <option value="2019 2" selected>2019학년도 2학기</option>
                         <option value="2019 1">2019학년도 1학기</option>
                         <option value="2018 2">2018학년도 2학기</option>
@@ -151,22 +150,22 @@
                 $(window).scroll(function () {
                     var position = $(window).scrollTop();
                     if (position > 500)
-                        $("#gotop").stop().animate({ "top": position + currentPosition - 20 + "px" }, 1000);
+                        $("#gotop").stop().animate({ "top": position + currentPosition - 250 + "px" }, 1000);
                     else if (position < 300)
-                        $("#gotop").stop().animate({ "top": position + currentPosition - 50 + "px" }, 1000);
+                        $("#gotop").stop().animate({ "top": position + currentPosition + 200 + "px" }, 1000);
                     else
                         $("#gotop").stop().animate({ "top": position + currentPosition - 100 + "px" }, 1000);
                 });
 
             </script>
-            <div id="chartdiv" style="height: 1000px; width: 1000px"></div>
+            <div id="chartdiv" class="chart" style="height: 1000px; width: 1000px"></div>
 
             <div id="titleBox" style = "margin-right: 30%">
             
                 아래 차트는 2019학년도 1학기 경북대학교 모든 학과의 복수전공 조합을 나타냅니다. <span id = "blue">주황색 테두리로 표시된 영역은 복수전공 조합이 많은 50개 학과를 나타내며,</span> 위 차트에서 표시된 복수전공 주요 조합을 반영합니다.
 
             </div>
-            <div id="chartdiv2" style="height: 1000px; width: 1000px"></div>
+            <div id="chartdiv2" class="chart" style="height: 1000px; width: 1000px"></div>
 
 
 

@@ -295,13 +295,21 @@ function initChart() {
         container.layout = "vertical";
         container.autoMargins = false;
 
+        // let dump_data = {
+        //     "year": "0",
+        //     "major": "dump",
+        //     "value": 0
+        // };
+
         for (let i = 0; i < chart.length; ++i) {
             chart[i] = container.createChild(am4charts.XYChart);
             chart[i].width = am4core.percent(95);
             chart[i].height = chart_height;
+            // chart[i].data = dump_data;
             chart[i].paddingBottom = 0;
             chart[i].paddingTop = 1;
             chart[i].disabled = true;
+            
 
             let xAxis = chart[i].xAxes.push(new am4charts.CategoryAxis());
             xAxis.dataFields.category = "year";
@@ -312,8 +320,8 @@ function initChart() {
             let yAxis = chart[i].yAxes.push(new am4charts.ValueAxis());
             yAxis.renderer.grid.template.location = 0;
             yAxis.renderer.labels.template.disabled = true;
-            yAxis.min = 0;
-            yAxis.max = max + 10;
+            // yAxis.min = 0;
+            // yAxis.max = max + 10;
 
             yAxis.title.rotation = 0;
             yAxis.title.maxWidth = 180;
@@ -364,6 +372,7 @@ function resetChart(_data) {
         let xAxis = chart[i].xAxes._values[0];
         let yAxis = chart[i].yAxes._values[0];
         let series = chart[i].series._values[0];
+        // series.appeared = true;
 
         xAxis.renderer.labels.template.disabled = true;
         if (i == displayed_major.length - 1) {
@@ -376,7 +385,10 @@ function resetChart(_data) {
             comment = "{year}학년도 {major}\n" + degree + " 학위수여자는 {value}명입니다."
         }
        
+        // series.dataFields.categoryX = "year";
+        // series.dataFields.valueY = "value";
         yAxis.title.text = displayed_major[i];
         series.columns.template.tooltipText = comment;
+        // console.log(series.columns.template.tooltipText);
     }
 }

@@ -170,7 +170,7 @@ function d3_drawChart() {
 
         row2.append("text")
             .attr("x", -6)
-            .attr("y", x.bandwidth() / 2)
+            .attr("y", x2.bandwidth() / 2)
             .attr("dy", ".32em")
             .attr("text-anchor", "end")
             .text(function (d, i) { return nodes2[i].name.replace(/&amp;/g, '&'); })
@@ -185,10 +185,10 @@ function d3_drawChart() {
             .attr("class", "column")
             .attr("transform", function (d, i) { return "translate(" + x2(i) + ")rotate(-90)"; });
 
-        column.append("line")
+        column2.append("line")
             .attr("x1", -width);
 
-        column.append("text")
+        column2.append("text")
             .attr("x", 6)
             .attr("y", x2.bandwidth() / 2)
             .attr("dy", ".32em")
@@ -222,7 +222,7 @@ function d3_drawChart() {
                 // .data(row.filter(function (d) { return d.z; }))
                 .enter().append("rect")
                 .attr("class", "cell")
-                .attr("x", function (d) { return x(d.x); })
+                .attr("x", function (d) { return x2(d.x); })
                 .attr("width", x2.bandwidth() - 1)
                 .attr("height", x2.bandwidth() - 1)
                 .style("fill", function (d) { return d.x == d.y ? "#FFF" : d.z == 0 ? color["0"] : nodes2[d.x].group == nodes2[d.y].group ? color[nodes2[d.x].group + 1] : color["5"]; })
@@ -238,8 +238,8 @@ function d3_drawChart() {
             // clearTimeout(timeout);
             let idx = this.selectedIndex
             order(this.options[idx].getAttribute("value"));
-            updateMatrix(matrix, true);
-            updateMatrix(matrix2, false);
+            updateMatrix(matrix);
+            updateMatrix2(matrix2);
         });
 
         d3.select("#termyear").on("change", function () {
@@ -248,16 +248,16 @@ function d3_drawChart() {
             all_nodes = data["nodes"].slice(0);
             all_edges = data["edges"].filter(element => element["termyear"] === termyear).slice(0);
             createNetwork();
-            updateMatrix(matrix, true);
-            updateMatrix(matrix2, false);
+            updateMatrix(matrix);
+            updateMatrix2(matrix2);
         });
         // }
 
         function order(value) {
             x.domain(orders[value]);
-            x2.domain(orders[value]);
+            // x2.domain(orders[value]);
             var t = svg.transition().duration(3000);
-            var t2 = svg.transition().duration(3000);
+            // var t2 = svg2.transition().duration(3000);
 
             t.selectAll(".row")
                 .delay(function (d, i) { return x(i) * 5; })
@@ -269,15 +269,20 @@ function d3_drawChart() {
             t.selectAll(".column")
                 .delay(function (d, i) { return x(i) * 5; })
                 .attr("transform", function (d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
+        }
 
-            t2.selectAll(".row")
+        function order2(value) {
+            x2.domain(orders[value]);
+            var t = svg2.transition().duration(3000);
+
+            t.selectAll(".row")
                 .delay(function (d, i) { return x2(i) * 5; })
                 .attr("transform", function (d, i) { return "translate(0," + x2(i) + ")"; })
                 .selectAll(".cell")
                 .delay(function (d) { return x2(d.x) * 5; })
                 .attr("x", function (d) { return x2(d.x); });
 
-            t2.selectAll(".column")
+            t.selectAll(".column")
                 .delay(function (d, i) { return x2(i) * 5; })
                 .attr("transform", function (d, i) { return "translate(" + x2(i) + ")rotate(-90)"; });
         }
@@ -431,36 +436,31 @@ function d3_drawChart() {
             });
         } // end
 
-        function updateMatrix(matrix, where) {
-            let sz = where ? n : n2;
-            let nd = where ? nodes : nodes2;
-            let temp_x = where ? x : x2;
-            let temp_svg = where ? svg : svg2;
-            let temp_row = where ? row : row2;
-
+        function updateMatrix(matrix) {
             orders = {};
+
             // Precompute the orders.
             orders = {
-                name: d3.range(sz).sort(function (a, b) { return d3.ascending(nd[a].name, nd[b].name); }),
-                count: d3.range(sz).sort(function (a, b) { return nd[b].count - nd[a].count; }),
-                group: d3.range(sz).sort(function (a, b) { return nd[a].group - nd[b].group; })
+                name: d3.range(n).sort(function (a, b) { return d3.ascending(nodes[a].name, nodes[b].name); }),
+                count: d3.range(n).sort(function (a, b) { return nodes[b].count - nodes[a].count; }),
+                group: d3.range(n).sort(function (a, b) { return nodes[a].group - nodes[b].group; })
             };
 
             // use the current sort selection
-            temp_x.domain(orders[d3.select("#order").property("value")]);
+            x.domain(orders[d3.select("#order").property("value")]);
 
-            var rows = temp_svg.selectAll("g.row")
+            var rows = svg.selectAll("g.row")
                 .data(matrix)
-                .each(temp_row);
+                .each(row);
 
             rows.select("text")
                 .attr("x", -6)
                 .attr("y", x.bandwidth() / 2)
                 .attr("dy", ".32em")
                 .attr("text-anchor", "end")
-                .style("font-size", function (d, i) { return temp_x.bandwidth() - 2 + "px"; })
+                .style("font-size", function (d, i) { return x.bandwidth() - 2 + "px"; })
                 .text(function (d, i) {
-                    return nd[i].name.replace(/&amp;/g, '&');
+                    return nodes[i].name.replace(/&amp;/g, '&');
                 });
 
             rows.select("line")
@@ -480,9 +480,9 @@ function d3_drawChart() {
                 .attr("y", x.bandwidth() / 2)
                 .attr("dy", ".32em")
                 .attr("text-anchor", "end")
-                .style("font-size", temp_x.bandwidth() - 2 + "px")
+                .style("font-size", x.bandwidth() - 2 + "px")
                 .text(function (d, i) {
-                    return nd[i].name.replace(/&amp;/g, '&');
+                    return nodes[i].name.replace(/&amp;/g, '&');
                 });
 
             rows.exit().remove();
@@ -502,32 +502,31 @@ function d3_drawChart() {
 
             columns.select("text")
                 .attr("x", 6)
-                .attr("y", temp_x.bandwidth() / 2)
+                .attr("y", x.bandwidth() / 2)
                 .attr("dy", ".32em")
                 .attr("text-anchor", "start")
-                .text(function (d, i) { return nd[i].name.replace(/&amp;/g, '&'); })
-                .style("font-size", function (d, i) { return temp_x.bandwidth() * 0.9 + "px"; })
+                .text(function (d, i) { return nodes[i].name.replace(/&amp;/g, '&'); })
+                .style("font-size", function (d, i) { return x.bandwidth() * 0.9 + "px"; })
                 .on("mouseover", mouseover_col)
                 .on("mouseout", mouseout_col);
 
             var newcols = columns.enter()
                 .append("g")
                 .attr("class", "column")
-                .attr("transform", function (d, i) { return "translate(" + temp_x(i) + ")rotate(-90)"; });
+                .attr("transform", function (d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
 
             newcols.append("text")
                 .attr("x", 6)
                 .attr("y", x.bandwidth() / 2)
                 .attr("dy", ".32em")
                 .attr("text-anchor", "start")
-                .text(function (d, i) { return nd[i].name.replace(/&amp;/g, '&'); })
-                .style("font-size", function (d, i) { return temp_x.bandwidth() * 0.9 + "px"; })
+                .text(function (d, i) { return nodes[i].name.replace(/&amp;/g, '&'); })
+                .style("font-size", function (d, i) { return x.bandwidth() * 0.9 + "px"; })
                 .on("mouseover", mouseover_col)
                 .on("mouseout", mouseout_col);
 
             newcols.append("line")
                 .attr("x1", -width);
-
 
             // create the actual colored square cells and color them according to their group.
             function row(row) {
@@ -553,24 +552,6 @@ function d3_drawChart() {
                 cell.exit().remove();
             }
 
-            function row2(row) {
-                var cell = d3.select(this).selectAll(".cell")
-                    .data(row)
-                    // .data(row.filter(function (d) { return d.z; }))
-                    .enter().append("rect")
-                    .attr("class", "cell")
-                    .attr("x", function (d) { return x(d.x); })
-                    .attr("width", x2.bandwidth() - 1)
-                    .attr("height", x2.bandwidth() - 1)
-                    .style("fill", function (d) { return d.x == d.y ? "#FFF" : d.z == 0 ? color["0"] : nodes2[d.x].group == nodes2[d.y].group ? color[nodes2[d.x].group + 1] : color["5"]; })
-                    .style("fill-opacity", function (d) { return d.z == 0 ? 0.6 : d.z < 10 ? 0.4 : d.z <= 20 ? 0.7 : 1; })
-                    .on("mouseover", mouseover2)
-                    .on("mouseout", mouseout2)
-                    .append("title")
-                    .text(function (d) { return d.x == d.y ? "" : d.z + "복수전공"; });
-            }
-    
-
             // set up the transition to last a total of 3 seconds
             var t = svg.transition().duration(3000);
 
@@ -589,21 +570,162 @@ function d3_drawChart() {
             function key(d) { return d.x; }
 
             order(d3.select("#order").property("value"));
-            if (!where && document.getElementById("order").selectedIndex == 2) {
-                var timeout = setTimeout(function () {
-                    svg.selectAll("svg text").style("font-size", x.bandwidth() - 2);
-                    order("count");
+        } //updateMatrix
 
-                    svg.append("line")
+        function updateMatrix2(matrix) {
+            orders = {};
+
+            // Precompute the orders.
+            orders = {
+                name: d3.range(n2).sort(function (a, b) { return d3.ascending(nodes2[a].name, nodes2[b].name); }),
+                count: d3.range(n2).sort(function (a, b) { return nodes2[b].count - nodes2[a].count; }),
+                group: d3.range(n2).sort(function (a, b) { return nodes2[a].group - nodes2[b].group; })
+            };
+
+            // use the current sort selection
+            x2.domain(orders[d3.select("#order").property("value")]);
+
+            var rows = svg2.selectAll("g.row")
+                .data(matrix)
+                .each(row);
+
+            rows.select("text")
+                .attr("x", -6)
+                .attr("y", x2.bandwidth() / 2)
+                .attr("dy", ".32em")
+                .attr("text-anchor", "end")
+                .style("font-size", function (d, i) { return x2.bandwidth() - 2 + "px"; })
+                .text(function (d, i) {
+                    return nodes2[i].name.replace(/&amp;/g, '&');
+                });
+
+            rows.select("line")
+                .attr("x2", width);
+
+            var newrows = rows.enter()
+                .append("g")
+                .attr("class", "row")
+                .each(row);
+
+
+            newrows.append("line")
+                .attr("x2", width);
+
+            newrows.append("text")
+                .attr("x", -6)
+                .attr("y", x2.bandwidth() / 2)
+                .attr("dy", ".32em")
+                .attr("text-anchor", "end")
+                .style("font-size", x2.bandwidth() - 2 + "px")
+                .text(function (d, i) {
+                    return nodes2[i].name.replace(/&amp;/g, '&');
+                });
+
+            rows.exit().remove();
+
+            svg.selectAll("g.row text")
+                .on("mouseover", mouseover_row)
+                .on("mouseout", mouseout_row);
+
+            // each column is also a group containing a line and some text, both rotated -90 degrees
+            var columns = svg2.selectAll("g.column")
+                .data(matrix)
+
+            columns.exit().remove();
+
+            columns.select("line")
+                .attr("x1", -width);
+
+            columns.select("text")
+                .attr("x", 6)
+                .attr("y", x2.bandwidth() / 2)
+                .attr("dy", ".32em")
+                .attr("text-anchor", "start")
+                .text(function (d, i) { return nodes2[i].name.replace(/&amp;/g, '&'); })
+                .style("font-size", function (d, i) { return x2.bandwidth() * 0.9 + "px"; })
+                .on("mouseover", mouseover_col)
+                .on("mouseout", mouseout_col);
+
+            var newcols = columns.enter()
+                .append("g")
+                .attr("class", "column")
+                .attr("transform", function (d, i) { return "translate(" + x2(i) + ")rotate(-90)"; });
+
+            newcols.append("text")
+                .attr("x", 6)
+                .attr("y", x2.bandwidth() / 2)
+                .attr("dy", ".32em")
+                .attr("text-anchor", "start")
+                .text(function (d, i) { return nodes2[i].name.replace(/&amp;/g, '&'); })
+                .style("font-size", function (d, i) { return x2.bandwidth() * 0.9 + "px"; })
+                .on("mouseover", mouseover_col)
+                .on("mouseout", mouseout_col);
+
+            newcols.append("line")
+                .attr("x1", -width);
+
+            // svg.selectAll("g.column text")
+            //     .on("mouseover", mouseover_col)
+            //     .on("mouseout", mouseout_col);
+
+
+            // create the actual colored square cells and color them according to their group.
+            function row(row) {
+                var cell = d3.select(this).selectAll(".cell")
+                    .data(row)
+                    .attr("width", x2.bandwidth() - 1)
+                    .attr("height", x2.bandwidth() - 1)
+                    .style("fill", function (d) { return d.x == d.y ? "#FFF" : d.z == 0 ? color["0"] : nodes2[d.x].group == nodes2[d.y].group ? color[nodes2[d.x].group + 1] : color["5"]; })
+                    .style("fill-opacity", function (d) { return d.z == 0 ? 0.6 : d.z < 10 ? 0.4 : d.z <= 20 ? 0.7 : 1; })
+                    .on("mouseover", mouseover2)
+                    .on("mouseout", mouseout2)
+
+                cell.enter().append("rect")
+                    .attr("class", "cell")
+                    .attr("width", x2.bandwidth() - 1)
+                    .attr("height", x2.bandwidth() - 1)
+                    .style("fill", function (d) { return d.x == d.y ? "#FFF" : d.z == 0 ? color["0"] : nodes2[d.x].group == nodes2[d.y].group ? color[nodes2[d.x].group + 1] : color["5"]; })
+                    .style("fill-opacity", function (d) { return d.z == 0 ? 0.6 : d.z < 10 ? 0.4 : d.z <= 20 ? 0.7 : 1; })
+                    .on("mouseover", mouseover2)
+                    .on("mouseout", mouseout2)
+                    .append("title")
+
+                cell.exit().remove();
+            }
+
+            // set up the transition to last a total of 3 seconds
+            var t = svg2.transition().duration(3000);
+
+            // have each row and column move after a delay that is a function of the index of its location
+            t.selectAll(".row")
+                .delay(function (d, i) { return x2(i) * 5; })
+                .attr("transform", function (d, i) { return "translate(0," + x2(i) + ")"; })
+                .selectAll(".cell")
+                .delay(function (d) { return x2(d.x) * 5; })
+                .attr("x", function (d) { return x2(d.x); });
+
+            t.selectAll(".column")
+                .delay(function (d, i) { return x2(i) * 5; })
+                .attr("transform", function (d, i) { return "translate(" + x2(i) + ")rotate(-90)"; });
+
+            function key(d) { return d.x; }
+
+            order2(d3.select("#order").property("value"));
+            if (document.getElementById("order").selectedIndex == 2) {
+                var timeout = setTimeout(function () {
+                    svg2.selectAll("svg text").style("font-size", x2.bandwidth() - 2);
+                    order2("count");
+
+                    svg2.append("line")
                         .attr("x1", function (d) {
-                            return x.bandwidth() * 43;
+                            return x2.bandwidth() * 43;
                         })
                         .attr("x2", function (d) {
-                            return x.bandwidth() * 43;
+                            return x2.bandwidth() * 43;
                         })
                         .attr("y1", 0)
                         .attr("y2", function (d) {
-                            return x.bandwidth() * 43;
+                            return x2.bandwidth() * 43;
                         })
                         .style("opacity", 0)
                         .attr("class", "subset")
@@ -611,16 +733,16 @@ function d3_drawChart() {
                         .style("stroke", "orange")
                         .attr("id", "xaxis-line");
 
-                    svg.append("line")
+                    svg2.append("line")
                         .attr("x1", 0)
                         .attr("x2", function (d) {
-                            return x.bandwidth() * 43;
+                            return x2.bandwidth() * 43;
                         })
                         .attr("y1", function (d) {
-                            return x.bandwidth() * 43;
+                            return x2.bandwidth() * 43;
                         })
                         .attr("y2", function (d) {
-                            return x.bandwidth() * 43;
+                            return x2.bandwidth() * 43;
                         })
                         .style("opacity", 0)
                         .attr("class", "subset")
@@ -628,12 +750,13 @@ function d3_drawChart() {
                         .style("stroke", "orange")
                         .attr("id", "yaxis-line");
 
-                    svg.selectAll("line.subset").transition().duration(2000).style("opacity", 1);
+                    svg2.selectAll("line.subset").transition().duration(2000).style("opacity", 1);
                 }, 1000);
             } else {
                 d3.select("#xaxis-line").remove();
                 d3.select("#yaxis-line").remove();
             }
+
         } //updateMatrix
 
     });
