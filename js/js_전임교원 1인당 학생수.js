@@ -49,7 +49,7 @@ function parse(callback) {
                 series.dataFields.valueY = field;
                 series.dataFields.categoryX = "year";
                 series.name = name;
-                series.columns.template.tooltipText = "{year} {name}: [bold]{valueY}[/]명";
+                series.columns.template.tooltipText = "{catecoryX} {name}: [bold]{valueY}[/]명";
                 series.columns.template.height = am4core.percent(40);
                 series.sequencedInterpolation = true;
                 series.columns.template.stroke = am4core.color(color);
@@ -58,8 +58,10 @@ function parse(callback) {
             
                 
             }
+
             
             createSeries("학생수", "학생수","red");
+            
         }); // end am4core.ready()
     
 

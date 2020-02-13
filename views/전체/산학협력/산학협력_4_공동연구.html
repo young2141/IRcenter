@@ -11,11 +11,12 @@
 	<script src="https://www.amcharts.com/lib/4/core.js"></script>
 	<script src="https://www.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-	<script src="../../../js/전임교원 산업체 경력 현황.js"></script>
+	<!-- <script src="../../../js/전임교원 산업체 경력 현황.js"></script> -->
 	<script src="../../../js/js_비용대비수익.js"></script>
 	<script src="../../../js/js_사용료수익.js"></script>
 	<script src="../../../js/js_설비자산.js"></script>
 	<script src="../../../js/js_연구장비.js"></script>
+	<script>drawChart("2018");drawChart2("2018");drawChart3("2018");</script>
 
 </head>
 
@@ -116,6 +117,9 @@
 
 			<script>
 				function valuechange(value) {
+					drawChart(value)
+					drawChart2(value)
+					drawChart3(value)
 					document.getElementById('span1').innerHTML = (value);
 					document.getElementById('span2').innerHTML = (value);
 					document.getElementById('span3').innerHTML = (value);
@@ -174,8 +178,8 @@
 		<div id="unitBox">
 			(단위 : 천원)
 		</div>
-		<div id="chartdiv2" style = "float: left; height: 500px; width: 30%; background-color: green;"></div>
-		<div id="chartdiv3" style = "float: right; height: 500px; width: 30%; margin-right: 30%; background-color: yellow;"></div>
+		<div id="chartdiv2" style = "float: left; height: 500px; width: 30%;"></div>
+		<div id="chartdiv3" style = "float: right; height: 500px; width: 30%; margin-right: 30%;"></div>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 		<div id="summaryBox">

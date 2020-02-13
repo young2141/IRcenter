@@ -1,17 +1,164 @@
 [
 	{
+		"year": 2018.0,
 		"type": "대학회계",
-		"value": 379032440.0,
+		"value": 379032.44,
 		"color": "red"
 	},
 	{
+		"year": 2018.0,
 		"type": "산단회계",
-		"value": 956517757.0,
+		"value": 956517.757,
 		"color": "blue"
 	},
 	{
+		"year": 2018.0,
 		"type": "기타",
-		"value": 105615000.0,
+		"value": 105615.0,
+		"color": "green"
+	},
+	{
+		"year": 2017.0,
+		"type": "대학회계",
+		"value": 413704.0,
+		"color": "red"
+	},
+	{
+		"year": 2017.0,
+		"type": "산단회계",
+		"value": 1086984.0,
+		"color": "blue"
+	},
+	{
+		"year": 2017.0,
+		"type": "기타",
+		"value": 0.0,
+		"color": "green"
+	},
+	{
+		"year": 2016.0,
+		"type": "대학회계",
+		"value": 323328.0,
+		"color": "red"
+	},
+	{
+		"year": 2016.0,
+		"type": "산단회계",
+		"value": 826745.0,
+		"color": "blue"
+	},
+	{
+		"year": 2016.0,
+		"type": "기타",
+		"value": 30000.0,
+		"color": "green"
+	},
+	{
+		"year": 2015.0,
+		"type": "일반회계",
+		"value": 674334.0,
+		"color": "red"
+	},
+	{
+		"year": 2015.0,
+		"type": "산단회계",
+		"value": 707435.0,
+		"color": "blue"
+	},
+	{
+		"year": 2015.0,
+		"type": "기타",
+		"value": 30000.0,
+		"color": "green"
+	},
+	{
+		"year": 2014.0,
+		"type": "일반회계",
+		"value": 580485.0,
+		"color": "red"
+	},
+	{
+		"year": 2014.0,
+		"type": "산단회계",
+		"value": 822983.0,
+		"color": "blue"
+	},
+	{
+		"year": 2014.0,
+		"type": "기타",
+		"value": 30000.0,
+		"color": "green"
+	},
+	{
+		"year": 2013.0,
+		"type": "일반회계",
+		"value": 476965.0,
+		"color": "red"
+	},
+	{
+		"year": 2013.0,
+		"type": "산단회계",
+		"value": 869425.0,
+		"color": "blue"
+	},
+	{
+		"year": 2013.0,
+		"type": "기타",
+		"value": 17500.0,
+		"color": "green"
+	},
+	{
+		"year": 2012.0,
+		"type": "대학회계",
+		"value": 522886.0,
+		"color": "red"
+	},
+	{
+		"year": 2012.0,
+		"type": "산단회계",
+		"value": 863378.0,
+		"color": "blue"
+	},
+	{
+		"year": 2012.0,
+		"type": "기타",
+		"value": 37500.0,
+		"color": "green"
+	},
+	{
+		"year": 2011.0,
+		"type": "대학회계",
+		"value": 522886.0,
+		"color": "red"
+	},
+	{
+		"year": 2011.0,
+		"type": "산단회계",
+		"value": 863378.0,
+		"color": "blue"
+	},
+	{
+		"year": 2011.0,
+		"type": "기타",
+		"value": 37500.0,
+		"color": "green"
+	},
+	{
+		"year": 2010.0,
+		"type": "대학회계",
+		"value": 522886.0,
+		"color": "red"
+	},
+	{
+		"year": 2010.0,
+		"type": "산단회계",
+		"value": 863378.0,
+		"color": "blue"
+	},
+	{
+		"year": 2010.0,
+		"type": "기타",
+		"value": 37500.0,
 		"color": "green"
 	}
 ]

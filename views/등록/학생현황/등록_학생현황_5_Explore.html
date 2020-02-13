@@ -10,6 +10,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="../../../js/area_chart_v3.js"></script>
+    <script src="../../../working on/js/table_학사석사박사등록.js"></script>
+
 
 
 </head>
@@ -101,9 +103,9 @@
                 <input type="radio" name="Gtype" id="multiples" onclick="drawChart(mode)">영역형<br><br>
 
                 <span style="font-size: 20px"><b>학생 구분 검색</b></span><br>
-                <select id="grad" onchange="drawChart(mode)" style="width : 200px; height: 30px">
+                <select id="grad" onchange="drawChart(mode); years();" style="width : 200px; height: 30px">
                     <option name="grad" value="all" selected="selected">(전체)</option>
-                    <option name="grad" value="graduate">졸업생</option>
+                    <option name="grad" value="graduate" ; years();>졸업생</option>
                     <option name="grad" value="undergraduate">재적생</option>
 
 
@@ -130,7 +132,7 @@
 
 
                 <span style="font-size: 20px"><b>성별 검색</b></span><br>
-                <select id="gender" onchange="drawChart(mode)" style="width : 200px; height: 30px">
+                <select id="gender" onchange="drawChart(mode); years()" style="width : 200px; height: 30px">
                     <option name="gender" value="all" selected="selected">(전체)</option>
                     <option name="gender" value="male">남자</option>
                     <option name="gender" value="female">여자</option>
@@ -159,8 +161,7 @@
         </script>
 
         <div id="summaryBox">
-            <h2>Explore the data</h2>
-            선택항목과 라디오버튼을 활용하여 데이터의 다양한 정보들을 확인해보세요.<br><br>
+            <h2><span id="chartTypeBox">누적 영역형 차트</span></h2>
 
         </div>
         <div id="unitBox">
@@ -168,7 +169,8 @@
         </div>
 
 
-        <div id ="divchartmaster" style="width:1000px; height: 73%; overflow:scroll">
+
+        <div id ="divchartmaster" style="width:1000px; height: 70%; overflow:scroll">
             <div id="divchart1"></div>
             <div id="divchart2" onmouseover="mouseOver('graduate_male_doctor')" onmouseleave="mouseLeave()"></div>
             <div id="divchart3" onmouseover="mouseOver('graduate_female_doctor')" onmouseleave="mouseLeave()"></div>
@@ -196,7 +198,15 @@
         <span id="color" style="color:#F261AA; font-size: 20px;" onmouseover="mouseOver('undergraduate_male_college')" onmouseleave="mouseLeave()">■</span> 재적생 학사 남자
         <span id="color" style="color:#A6A6A6; font-size: 20px;" onmouseover="mouseOver('undergraduate_female_college')" onmouseleave="mouseLeave()">■</span> 재적생 학사 여자
 
-        <br><br><br>
+        <br><br>
+		<div id = "summaryBox">
+			<h2>학생현황 표</h2>
+		</div><br>
+        <div id="tablediv"> 표</div>
+        
+        <script>
+            years();
+        </script>
 
         <div id="summaryBox" style="font-size: 15px">
             <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
@@ -215,6 +225,20 @@
     </div>
 
     <script>
+        function Change() {
+            var temp = document.getElementById("stacked")
+            var Target1 = document.getElementById("P1")
+
+            if (temp.checked == true) {
+                Target1.innerHTML = "누적 영역형 차트"
+            }
+            temp = document.getElementById("multiples")
+            if (temp.checked == true) {
+                Target1.innerHTML = "영역형 차트"
+            }
+
+        }
+
         function choiceSelectBox(obj) {
             var nWidth = parseInt(obj.offsetWidth);
             var nHeight = parseInt(obj.offsetHeight);

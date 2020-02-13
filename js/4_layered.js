@@ -78,8 +78,9 @@ function createSeries(_chart, value, ko, percent, rgb, type) {
     series.columns.template.width = am4core.percent(percent);
     series.columns.template.stroke = am4core.color(rgb); // color
     series.columns.template.fill = am4core.color(rgb); // color
-    series.tooltip.getFillFromObject = false;
-    series.tooltip.label.fill = am4core.color("#000000");
+    //series.tooltip.getFillFromObject = false;
+    //series.tooltip.label.fill = am4core.color("#000000");
+
     if (type == "within")
         if (ko == "모집인원")
             series.tooltipText =
@@ -94,7 +95,7 @@ function createSeries(_chart, value, ko, percent, rgb, type) {
         else
             series.tooltipText =
                 "[#000]{year}년도 " + "정원외 " + ko + "은 [bold]{valueY}명[] 입니다.";
-    else if (ko == "모집인원")
+    else if (ko == "전체")
         series.tooltipText =
             "[#000]{year}년도 " + "전체 " + ko + "은 [bold]{valueY}명[] 입니다.";
     else
