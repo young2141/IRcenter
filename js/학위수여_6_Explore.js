@@ -58,7 +58,8 @@ function onClickListernerForSelect(name, value) {
             displayed_major = [];
             createCheckboxes();
             _data = makeDataForGraph(_data);
-            resetChart(_data);
+            drawChart(_data);
+            // resetChart(_data);
             break;
     }
 }
@@ -277,12 +278,12 @@ function init() {
         checkDivisionLength();
         createCheckboxes();
         _data = makeDataForGraph(_data);
-        initChart();
-        resetChart(_data);
+        drawChart(_data);
+        // resetChart(_data);
     });
 }
 
-function initChart() {
+function drawChart(_data) {
     am4core.ready(function () {
         am4core.useTheme(am4themes_animated);
 
@@ -301,28 +302,30 @@ function initChart() {
         //     "value": 0
         // };
 
-        for (let i = 0; i < chart.length; ++i) {
+        for (let i = 0; i < displayed_major.length; ++i) {
+            let chart_data = _data.filter(e => e["major"] == displayed_major[i]);
             chart[i] = container.createChild(am4charts.XYChart);
             chart[i].width = am4core.percent(95);
             chart[i].height = chart_height;
-            // chart[i].data = dump_data;
+            chart[i].data = chart_data;
             chart[i].paddingBottom = 0;
             chart[i].paddingTop = 1;
-            chart[i].disabled = true;
+            // chart[i].disabled = true;
             
 
             let xAxis = chart[i].xAxes.push(new am4charts.CategoryAxis());
             xAxis.dataFields.category = "year";
             xAxis.renderer.grid.template.location = 0;
             xAxis.renderer.labels.template.disabled = true;
-            // xAxis.renderer.grid.template.minGridDistance = 10;
+            xAxis.renderer.grid.template.minGridDistance = 10;
 
             let yAxis = chart[i].yAxes.push(new am4charts.ValueAxis());
             yAxis.renderer.grid.template.location = 0;
             yAxis.renderer.labels.template.disabled = true;
-            // yAxis.min = 0;
-            // yAxis.max = max + 10;
+            yAxis.min = 0;
+            yAxis.max = max + 10;
 
+            yAxis.title.text = displayed_major[i];
             yAxis.title.rotation = 0;
             yAxis.title.maxWidth = 180;
             yAxis.title.wrap = true;
@@ -348,7 +351,7 @@ function initChart() {
 
 function reloadGraph(_data) {
     for (let i = 0; i < displayed_major.length; ++i) {
-        let chart_data = _data.filter(e => e["전공"] == displayed_major[i]);
+        let chart_data = _data.filter(e => e["major"] == displayed_major[i]);
         chart[i].data = chart_data;
     }
 }
