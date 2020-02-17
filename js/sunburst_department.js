@@ -88,7 +88,6 @@ function drawSunburst() {
 
         // Add the mouseleave handler to the bounding circle.
         d3.select("#container").on("mouseleave", mouseleave);
-
         // Get total size of the tree = value of root node from partition.
         totalSize = path.datum().value;
     };
