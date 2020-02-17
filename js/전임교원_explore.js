@@ -95,6 +95,8 @@ function draw_graph(_sort1, _sort2, _sorts) {
             }
             */
 
+            var span_legend = document.getElementsByName("span_legend")
+            var index = 0
             // Create series
             function createSeries(name) {
                 if (_sort2 == "수") {
@@ -112,13 +114,19 @@ function draw_graph(_sort1, _sort2, _sorts) {
                     series.columns.template.width = am4core.percent(100);
                     series.columns.template.tooltipText = "{categoryX}학년도 " + _sort1 + " " + name.slice(_sort1.length + 1) + " 수는 [bold]{valueY}명 [/]입니다.";
 
-                    // Add label
-                    /*
+                    series.columns.template.stroke = am4core.color(span_legend[index].style.color)
+                    series.columns.template.fill = am4core.color(span_legend[index++].style.color)
+
                     var labelBullet = series.bullets.push(new am4charts.LabelBullet());
                     labelBullet.label.text = "{valueY}";
-                    labelBullet.locationY = 0.5;
-                    // labelBullet.label.hideOversized = true;
-                    */
+                    labelBullet.label.fontSize = 16;
+                    labelBullet.label.rotation = 270
+                    labelBullet.label.truncate = false;
+                    // labelBullet.label.hideOversized = false;
+                    labelBullet.label.horizontalCenter = "center"
+                    labelBullet.label.verticalCenter = "middle"
+                    labelBullet.label.dy = -2
+
 
                     // return series;
                 }
