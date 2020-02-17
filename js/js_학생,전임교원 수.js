@@ -22,6 +22,7 @@ function drawChart(value) {
             var data=[]
             for (var i = 0; i < json.length; i++) {
                 if(json[i].기준==value){
+                    json[i].year=json[i].year.toString()
                     data.push(json[i])
                 }
             }
@@ -31,7 +32,7 @@ function drawChart(value) {
             // Create axes
             var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
             categoryAxis.dataFields.category = "year";
-            categoryAxis.numberFormatter.numberFormat = "#";
+            categoryAxis.numberFormatter.numberFormat = "#,###";
             categoryAxis.renderer.grid.template.location = 0;
             categoryAxis.renderer.minGridDistance = 20;
             
@@ -51,6 +52,21 @@ function drawChart(value) {
                 series.sequencedInterpolation = true;
                 series.columns.template.stroke = am4core.color(color);
                 series.columns.template.fill = am4core.color(color);
+
+
+
+                var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+                valueLabel.label.text = "{valueY}";
+                valueLabel.label.hideOversized = false;
+                if(field=="학생"){
+                    valueLabel.label.padding(5, 10, 5, 20);
+                }
+                else{
+                    valueLabel.label.padding(5, 20, 5, 20);
+                }
+                valueLabel.dy = -15;
+                //valueLabel.label.inside = true;
+                valueLabel.label.truncate = false;
                 
             
                 
