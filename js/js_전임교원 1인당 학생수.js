@@ -56,6 +56,13 @@ function parse(callback) {
                 series.columns.template.fill = am4core.color(color);
                 
             
+                var valueLabel = series.bullets.push(new am4charts.LabelBullet());
+                valueLabel.label.text = "{valueY}";
+                valueLabel.label.hideOversized = false;
+                valueLabel.label.padding(5, 20, 5, 20);
+                valueLabel.dy = -15;
+                //valueLabel.label.inside = true;
+                valueLabel.label.truncate = false;
                 
             }
 
