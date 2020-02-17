@@ -39,7 +39,7 @@ function drawChart2(value) {
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         //valueAxis.title.text = "Place taken";
         //valueAxis.renderer.minLabelPosition = 0.01;
-        valueAxis.min = 0;
+        valueAxis.extraMin = 0.15;
         valueAxis.extraMax = 0.15
         
 
@@ -66,10 +66,10 @@ function drawChart2(value) {
 
         P1CurvedcreateSeries("확보율", "#FE4459"); // 전체
         
-        var axisBreak = valueAxis.axisBreaks.create();
-            axisBreak.startValue = 10;
-            axisBreak.endValue = 65;
-            axisBreak.breakSize = 0.01;
+        // var axisBreak = valueAxis.axisBreaks.create();
+        //     axisBreak.startValue = 10;
+        //     axisBreak.endValue = 65;
+        //     axisBreak.breakSize = 0.01;
         
         }); // end am4core.ready()
 
