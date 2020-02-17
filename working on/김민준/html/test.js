@@ -1,17 +1,17 @@
 ﻿// Dimensions of sunburst.
-var width = 850;
+var width = 750;
 var height = 600;
 var radius = Math.min(width, height) / 2;
 
 function drawSunburst() {
     // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
     var b = {
-        w: 140, h: 30, s: 3, t: 10
+        w: 75, h: 30, s: 3, t: 10
     };
     // Total size of all segments; we set this later, after loading the data.
     var totalSize = 0;
 
-    var vis = d3.select("#chartdiv2").append("svg:svg")
+    var vis = d3.select("#chart").append("svg:svg")
         .attr("width", width)
         .attr("height", height)
         .append("svg:g")
@@ -20,7 +20,7 @@ function drawSunburst() {
 
     var partition = d3.layout.partition()
         .size([2 * Math.PI, radius * radius])
-        .value(function (d) {return d.male + d.female; });
+        .value(function (d) { console.log(d); return d.male + d.female; });
 
     var arc = d3.svg.arc()
         .startAngle(function (d) { return d.x; })
@@ -33,6 +33,7 @@ function drawSunburst() {
         initializeBreadcrumbTrail();
         createVisualization(json["2019"])
     });
+
 
     // Main function to draw and set up the visualization, once we have the data.
     function createVisualization(json) {
@@ -57,13 +58,14 @@ function drawSunburst() {
             .attr("display", function (d) { return d.depth ? null : "none"; })
             .attr("d", arc)
             .attr("fill-rule", "evenodd")
-            .style("fill", function (d) { return d.color })
+            .style("fill", function (d) {return d.color })
             .style("opacity", 1)
             .on("mouseover", mouseover)
             .on("click", click);
 
         // Add the mouseleave handler to the bounding circle.
         d3.select("#container").on("mouseleave", mouseleave);
+        console.log(path)
         // Get total size of the tree = value of root node from partition.
         totalSize = path.node().__data__.value;
     };
@@ -89,7 +91,7 @@ function drawSunburst() {
             .on("click", click)
             .each(stash)
             .transition()
-            //.duration(300)
+            .duration(750)
             .attrTween("d", arcTween);
 
         // Get total size of the tree = value of root node from partition.
@@ -106,7 +108,7 @@ function drawSunburst() {
         }
 
         d3.select("#percentage")
-            .html(d.value + "명<br><br>" + percentageString)
+            .text(percentageString);
 
         d3.select("#explanation")
             .style("visibility", "");
