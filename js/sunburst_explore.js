@@ -1,10 +1,14 @@
-﻿// Dimensions of sunburst.
+﻿//d3.v3버전으로 작성된 코드임.. 
 var width = 850;
 var height = 600;
 var radius = Math.min(width, height) / 2;
+var prevData = [];
 
 function drawSunburst() {
-    // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
+    d3.select("#chartdiv2").select("svg").remove();
+    $("#sequence").empty();
+
+    var year = String(document.getElementById("years").value);
     var b = {
         w: 140, h: 30, s: 3, t: 10
     };
@@ -20,7 +24,18 @@ function drawSunburst() {
 
     var partition = d3.layout.partition()
         .size([2 * Math.PI, radius * radius])
-        .value(function (d) {return d.male + d.female; });
+        .value(function (d) {
+            var sex = document.getElementById("sex_selectbar");
+            var cond = sex.options[sex.selectedIndex].value;
+
+            if (cond == "all")
+                return d.male + d.female;
+            else if (cond == "male")
+                return d.male;
+            else
+                return d.female;
+        })
+        .sort(null);
 
     var arc = d3.svg.arc()
         .startAngle(function (d) { return d.x; })
@@ -28,10 +43,9 @@ function drawSunburst() {
         .innerRadius(function (d) { return Math.sqrt(d.y); })
         .outerRadius(function (d) { return Math.sqrt(d.y + d.dy); });
 
-    d3.json("../../../json/sunburst_department.json", function (error, json) {
-        if (error) throw error;
+    d3.json("../../../json/sunburst_explore.json", function (json) {
         initializeBreadcrumbTrail();
-        createVisualization(json["2019"])
+        createVisualization(json[year])
     });
 
     // Main function to draw and set up the visualization, once we have the data.
@@ -54,23 +68,27 @@ function drawSunburst() {
         var path = vis.data([json]).selectAll("path")
             .data(nodes)
             .enter().append("svg:path")
-            .attr("display", function (d) { return d.depth ? null : "none"; })
+            .attr("display", function (d) {return d.depth ? null : "none"; })
             .attr("d", arc)
             .attr("fill-rule", "evenodd")
-            .style("fill", function (d) { return d.color })
+            .style("fill", function (d) { return d.color; })
             .style("opacity", 1)
             .on("mouseover", mouseover)
-            .on("click", click);
-
+            .on("click", click)
+            .each(stash)
+            .transition()
+            .attrTween("d", arcTween);
         // Add the mouseleave handler to the bounding circle.
         d3.select("#container").on("mouseleave", mouseleave);
+        d3.select("#prevSunburst").on("click", prev);
         // Get total size of the tree = value of root node from partition.
         totalSize = path.node().__data__.value;
     };
 
     function click(d) {
-        console.log(d);
+        if (d.hasOwnProperty("children") == false) return; //맨 마지막 단계에서 안끝나도록 막음.
         d3.select("#container").selectAll("path").remove();
+        prevData = d;
 
         var nodes = partition.nodes(d)
             .filter(function (d) {
@@ -89,7 +107,38 @@ function drawSunburst() {
             .on("click", click)
             .each(stash)
             .transition()
-            //.duration(300)
+            .attrTween("d", arcTween);
+
+        // Get total size of the tree = value of root node from partition.
+        totalSize = path.node().__data__.value;
+    }
+
+    function prev() {
+        if (prevData.empty || prevData.parent == null) {
+            alert("처음입니다.")
+            return;
+        }
+        prevData = prevData.parent;
+        //if (p.hasOwnProperty("children") == false) return; //맨 마지막 단계에서 안끝나도록 막음.
+        d3.select("#container").selectAll("path").remove();
+
+        var nodes = partition.nodes(prevData)
+            .filter(function (d) {
+                return (d.dx > 0.005); // 0.005 radians = 0.29 degrees
+            });
+
+        var path = vis.data([prevData]).selectAll("path")
+            .data(nodes)
+            .enter().append("svg:path")
+            .attr("display", function (d) { return d.depth ? null : "none"; })
+            .attr("d", arc)
+            .attr("fill-rule", "evenodd")
+            .style("fill", function (d) { return d.color; })
+            .style("opacity", 1)
+            .on("mouseover", mouseover)
+            .on("click", click)
+            .each(stash)
+            .transition()
             .attrTween("d", arcTween);
 
         // Get total size of the tree = value of root node from partition.
@@ -98,7 +147,6 @@ function drawSunburst() {
 
     // Fade all but the current sequence, and show it in the breadcrumb trail.
     function mouseover(d) {
-
         var percentage = (100 * d.value / totalSize).toPrecision(3);
         var percentageString = percentage + "%";
         if (percentage < 0.1) {
@@ -149,8 +197,6 @@ function drawSunburst() {
             .style("visibility", "hidden");
     }
 
-    // Given a node in a partition layout, return an array of all of its ancestor
-    // nodes, highest first, but excluding the root.
     function getAncestors(node) {
         var path = [];
         var current = node;
@@ -161,6 +207,15 @@ function drawSunburst() {
         return path;
     }
 
+    function getParents(node) {
+        var path = [];
+        var current = node;
+        while (current != null) {
+            path.unshift(current);
+            current = current.parent;
+        }
+        return path;
+    }
     function initializeBreadcrumbTrail() {
         // Add the svg area.
         var trail = d3.select("#sequence").append("svg:svg")

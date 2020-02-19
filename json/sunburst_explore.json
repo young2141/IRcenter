@@ -1,0 +1,6231 @@
+﻿{
+  "2010": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "본부",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "교무처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "교무과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              },
+              {
+                "name": "학사과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "학생처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "학생과",
+                "color": "#dc67ce",
+                "male": 12,
+                "female": 8
+              }
+            ]
+          },
+          {
+            "name": "기획처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "기획과",
+                "color": "#dc67ce",
+                "male": 9,
+                "female": 7
+              }
+            ]
+          },
+          {
+            "name": "사무국",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "총무과",
+                "color": "#dc67ce",
+                "male": 30,
+                "female": 27
+              },
+              {
+                "name": "경리과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 6
+              },
+              {
+                "name": "시설과",
+                "color": "#dc67ce",
+                "male": 18,
+                "female": 14
+              },
+              {
+                "name": "예비군연대",
+                "color": "#dc67ce",
+                "male": 3,
+                "female": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "대학(원)",
+        "color": "#a367dc",
+        "children": [
+          {
+            "name": "인문대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 2
+          },
+          {
+            "name": "사회과학대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 2
+          },
+          {
+            "name": "자연과학대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 3
+          },
+          {
+            "name": "경상대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "법과대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 4
+          },
+          {
+            "name": "공과대학",
+            "color": "#a367dc",
+            "male": 9,
+            "female": 1
+          },
+          {
+            "name": "IT대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 1
+          },
+          {
+            "name": "농업생명과학대학",
+            "color": "#a367dc",
+            "male": 7,
+            "female": 3
+          },
+          {
+            "name": "예술대학",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 4
+          },
+          {
+            "name": "사범대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "의학전문대학원",
+            "color": "#a367dc",
+            "male": 14,
+            "female": 4
+          },
+          {
+            "name": "치의학전문대학원",
+            "color": "#a367dc",
+            "male": 7,
+            "female": 3
+          },
+          {
+            "name": "수의과대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "생활과학대학",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 2
+          },
+          {
+            "name": "간호대학",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 4
+          },
+          {
+            "name": "자율전공부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "글로벌인재학부",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 1
+          },
+
+          {
+            "name": "전자전기컴퓨터학부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "대학원",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 0
+          }
+        ]
+      },
+      {
+        "name": "교육기본시설",
+        "color": "#8067dc",
+        "children": [
+          {
+            "name": "도서관",
+            "color": "#8067dc",
+            "male": 25,
+            "female": 20
+          }
+        ]
+      },
+      {
+        "name": "지원 및 연구시설",
+        "color": "#6771dc",
+        "children": [
+          {
+            "name": "정보전산원",
+            "color": "#6771dc",
+            "male": 10,
+            "female": 7
+          },
+          {
+            "name": "생활관",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "산학협력지원단",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "산학연구지원과",
+                "color": "#6771dc",
+                "male": 10,
+                "female": 3
+              },
+              {
+                "name": "산학협력과",
+                "color": "#6771dc",
+                "male": 5,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "입학관리본부",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "입학과",
+                "color": "#6771dc",
+                "male": 4,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "국제교류원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "기초교육원",
+            "color": "#6771dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "출판부",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "수련원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "연구소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "기타",
+            "color": "#6771dc",
+            "male": 9,
+            "female": 7
+          }
+        ]
+      },
+      {
+        "name": "부속시설",
+        "color": "#6794dc",
+        "children": [
+          {
+            "name": "박물관",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 1
+          },
+          {
+            "name": "미술관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "농생대부속 실험실습장",
+            "color": "#6794dc",
+            "children": [
+              {
+                "name": "농업과학부",
+                "color": "#6794dc",
+                "male": 3,
+                "female": 2
+              },
+              {
+                "name": "산림과학부",
+                "color": "#6794dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "동물과학부",
+                "color": "#6794dc",
+                "male": 1,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "동물병원",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "부속공장",
+            "color": "#6794dc",
+            "male": 2,
+            "female": 0
+          }
+        ]
+      },
+      {
+        "name": "부설학교",
+        "color": "#67b7dc",
+        "children": [
+          {
+            "name": "초등학교",
+            "color": "#67b7dc",
+            "male": 1,
+            "female": 2
+          },
+          {
+            "name": "중학교",
+            "color": "#67b7dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "고등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          }
+        ]
+      }
+    ]
+  },
+  "2011": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "본부",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "교무처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "교무과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 4
+              },
+              {
+                "name": "학사과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 5
+              }
+            ]
+          },
+          {
+            "name": "학생처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "학생과",
+                "color": "#dc67ce",
+                "male": 11,
+                "female": 10
+              }
+            ]
+          },
+          {
+            "name": "기획처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "기획과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 5
+              }
+            ]
+          },
+          {
+            "name": "대외협력처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "대외협력과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 3
+              },
+              {
+                "name": "홍보과",
+                "color": "#dc67ce",
+                "male": 3,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "사무국",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "총무과",
+                "color": "#dc67ce",
+                "male": 21,
+                "female": 20
+              },
+              {
+                "name": "재무과",
+                "color": "#dc67ce",
+                "male": 8,
+                "female": 6
+              },
+              {
+                "name": "시설과",
+                "color": "#dc67ce",
+                "male": 20,
+                "female": 13
+              },
+              {
+                "name": "예비군연대",
+                "color": "#dc67ce",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "행정지원부",
+        "color": "#c767dc",
+        "male": 12,
+        "female": 10
+      },
+      {
+        "name": "대학(원)",
+        "color": "#a367dc",
+        "children": [
+          {
+            "name": "인문대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "사회과학대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 2
+          },
+          {
+            "name": "자연과학대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "경상대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "법학전문대학원, 행정학부",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "공과대학",
+            "color": "#a367dc",
+            "male": 9,
+            "female": 2
+          },
+          {
+            "name": "IT대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "농업생명과학대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "예술대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "사범대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "수의과대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "생활과학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "간호대학",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 4
+          },
+          {
+            "name": "약학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "생태환경대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "이공대학, 보건복지학부",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "글로벌인재학부",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "자율전공부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "전자전기컴퓨터학부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "대학원",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "의학전문대학원",
+            "color": "#a367dc",
+            "male": 12,
+            "female": 6
+          },
+          {
+            "name": "치의학전문대학원",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          }
+        ]
+      },
+      {
+        "name": "교육기본시설",
+        "color": "#8067dc",
+        "children": [
+          {
+            "name": "도서관",
+            "color": "#8067dc",
+            "male": 24,
+            "female": 20
+          },
+          {
+            "name": "도서관 분관",
+            "color": "#8067dc",
+            "male": 3,
+            "female": 3
+          }
+        ]
+      },
+      {
+        "name": "지원 및 연구시설",
+        "color": "#6771dc",
+        "children": [
+          {
+            "name": "정보전산원",
+            "color": "#6771dc",
+            "male": 10,
+            "female": 8
+          },
+          {
+            "name": "정보전산원 분원",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "생활관",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "생활관 분관",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "산학협력지원단",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "산학연구지원과",
+                "color": "#6771dc",
+                "male": 7,
+                "female": 5
+              },
+              {
+                "name": "산학협력과",
+                "color": "#6771dc",
+                "male": 6,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "산학협력지원단분단",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "입학관리본부",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "입학과",
+                "color": "#6771dc",
+                "male": 3,
+                "female": 3
+              }
+            ]
+          },
+          {
+            "name": "국제교류원",
+            "color": "#6771dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "보건진료소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "공동실험실습관",
+            "color": "#6771dc",
+            "male": 3,
+            "female": 0
+          },
+          {
+            "name": "신문방송사",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "어학교육원",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "기초교육원",
+            "color": "#6771dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "출판부",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "수련원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+
+          {
+            "name": "체육진흥센터",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 0
+          },
+          {
+            "name": "연구소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "기타",
+            "color": "#6771dc",
+            "male": 3,
+            "female": 3
+          }
+        ]
+      },
+      {
+        "name": "부속시설",
+        "color": "#6794dc",
+        "children": [
+          {
+            "name": "박물관",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "자연사 박물관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "미술관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "농생대부속 실험실습장",
+            "color": "#6794dc",
+            "children": [
+              {
+                "name": "농업과학부",
+                "color": "#6794dc",
+                "male": 3,
+                "female": 1
+              },
+              {
+                "name": "산림과학부",
+                "color": "#6794dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "동물과학부",
+                "color": "#6794dc",
+                "male": 2,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "생태환경대학 부속농장",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "동물병원",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "부속공장",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 1
+          }
+        ]
+      },
+      {
+        "name": "부설학교",
+        "color": "#67b7dc",
+        "children": [
+          {
+            "name": "초등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "중학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 0
+          },
+          {
+            "name": "고등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          }
+        ]
+      }
+    ]
+  },
+  "2012": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "본부",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "교무처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "교무과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              },
+              {
+                "name": "학사과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 5
+              }
+            ]
+          },
+          {
+            "name": "학생처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "학생과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 5
+              }
+            ]
+          },
+          {
+            "name": "기획처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "기획조정과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "대외협력처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "대외협력과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 4
+              },
+              {
+                "name": "홍보과",
+                "color": "#dc67ce",
+                "male": 2,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "산학연구처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "산학협력과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 4
+              },
+              {
+                "name": "연구진흥과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 6
+              }
+            ]
+          },
+          {
+            "name": "사무국",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "총무과",
+                "color": "#dc67ce",
+                "male": 3,
+                "female": 21
+              },
+              {
+                "name": "재무과",
+                "color": "#dc67ce",
+                "male": 8,
+                "female": 7
+              },
+              {
+                "name": "시설과",
+                "color": "#dc67ce",
+                "male": 2,
+                "female": 12
+              },
+              {
+                "name": "예비군연대",
+                "color": "#dc67ce",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "행정지원부",
+        "color": "#c767dc",
+        "male": 11,
+        "female": 10
+      },
+      {
+        "name": "대학(원)",
+        "color": "#a367dc",
+        "children": [
+          {
+            "name": "인문대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "사회과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          5,
+          {
+            "name": "자연과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "경상대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "법학전문대학원, 행정학부",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "공과대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "IT대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "농업생명과학대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "예술대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "사범대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "수의과대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "생활과학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "간호대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "약학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "생태환경대학",
+            "color": "#a367dc",
+            "male": 7,
+            "female": 6
+          },
+          {
+            "name": "과학기술대학, 보건복지학부",
+            "color": "#a367dc",
+            "male": 7,
+            "female": 4
+          },
+          {
+            "name": "글로벌인재학부",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "대학원",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "의학전문대학원",
+            "color": "#a367dc",
+            "male": 10,
+            "female": 10
+          },
+          {
+            "name": "치의학전문대학원",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          }
+        ]
+      },
+      {
+        "name": "교육기본시설",
+        "color": "#8067dc",
+        "children": [
+          {
+            "name": "도서관",
+            "color": "#8067dc",
+            "male": 21,
+            "female": 20
+          },
+          {
+            "name": "도서관 분관",
+            "color": "#8067dc",
+            "male": 3,
+            "female": 3
+          }
+        ]
+      },
+      {
+        "name": "지원 및 연구시설",
+        "color": "#6771dc",
+        "children": [
+          {
+            "name": "산학협력지원단",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "산학협력과",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "산학연구지원과",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "산학협력지원단분단",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "입학본부",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "입학과",
+                "color": "#6771dc",
+                "male": 3,
+                "female": 3
+              }
+            ]
+          },
+          {
+            "name": "국제교류원",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "국제교류과",
+                "color": "#6771dc",
+                "male": 4,
+                "female": 3
+              }
+            ]
+          },
+          {
+            "name": "인재개발원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "재정관리실",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "정보전산원",
+            "color": "#6771dc",
+            "male": 10,
+            "female": 8
+          },
+          {
+            "name": "생활관",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "생활관 분관",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "보건진료소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "공동실험실습관",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "신문방송사",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "어학교육원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "기초교육원",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+
+          {
+            "name": "수련원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+
+          {
+            "name": "체육진흥센터",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "연구소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "기타",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 3
+          }
+        ]
+      },
+      {
+        "name": "부속시설",
+        "color": "#6794dc",
+        "children": [
+          {
+            "name": "박물관",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "자연사 박물관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "미술관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "농생대 부속실험실습장",
+            "color": "#6794dc",
+            "children": [
+              {
+                "name": "농업과학부",
+                "color": "#6794dc",
+                "male": 3,
+                "female": 2
+              },
+              {
+                "name": "산림과학부",
+                "color": "#6794dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "동물과학부",
+                "color": "#6794dc",
+                "male": 1,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "생태환경대학 부속농장",
+            "color": "#6794dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "동물병원",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "부속공장",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 1
+          }
+        ]
+      },
+      {
+        "name": "부설학교",
+        "color": "#67b7dc",
+        "children": [
+          {
+            "name": "초등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "중학교",
+            "color": "#67b7dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "고등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          }
+        ]
+      }
+    ]
+  },
+  "2013": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "본부",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "교무처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "교무과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 6
+              },
+              {
+                "name": "학사과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 5
+              }
+            ]
+          },
+          {
+            "name": "학생처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "학생과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 5
+              }
+            ]
+          },
+          {
+            "name": "기획처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "기획조정과",
+                "color": "#dc67ce",
+                "male": 10,
+                "female": 8
+              }
+            ]
+          },
+          {
+            "name": "대외협력처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "대외협력과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              },
+              {
+                "name": "홍보과",
+                "color": "#dc67ce",
+                "male": 2,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "산학연구처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "산학협력과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 4
+              },
+              {
+                "name": "연구진흥과",
+                "color": "#dc67ce",
+                "male": 4,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "사무국",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "총무과",
+                "color": "#dc67ce",
+                "male": 23,
+                "female": 23
+              },
+              {
+                "name": "재무과",
+                "color": "#dc67ce",
+                "male": 8,
+                "female": 7
+              },
+              {
+                "name": "시설과",
+                "color": "#dc67ce",
+                "male": 20,
+                "female": 10
+              },
+              {
+                "name": "예비군연대",
+                "color": "#dc67ce",
+                "male": 1,
+                "female": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "행정지원부",
+        "color": "#c767dc",
+        "male": 11,
+        "female": 11
+      },
+      {
+        "name": "대학(원)",
+        "color": "#a367dc",
+        "children": [
+          {
+            "name": "인문대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "사회과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          5,
+          {
+            "name": "자연과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "경상대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "법학전문대학원, 행정학부",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "공과대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "IT대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "농업생명과학대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "예술대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "사범대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "수의과대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "생활과학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "간호대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "약학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "생태환경대학",
+            "color": "#a367dc",
+            "male": 7,
+            "female": 4
+          },
+          {
+            "name": "축산대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "과학기술대학, 보건복지학부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "과학기술대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "글로벌인재학부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "대학원",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "의학전문대학원",
+            "color": "#a367dc",
+            "male": 10,
+            "female": 7
+          },
+          {
+            "name": "치의학전문대학원",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          }
+        ]
+      },
+      {
+        "name": "교육기본시설",
+        "color": "#8067dc",
+        "children": [
+          {
+            "name": "도서관",
+            "color": "#8067dc",
+            "male": 25,
+            "female": 15
+          },
+          {
+            "name": "도서관 분관",
+            "color": "#8067dc",
+            "male": 3,
+            "female": 3
+          }
+        ]
+      },
+      {
+        "name": "지원 및 연구시설",
+        "color": "#6771dc",
+        "children": [
+          {
+            "name": "산학협력지원단",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "산학협력과",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "산학연구지원과",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "산학협력지원단분단",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "입학본부",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "입학과",
+                "color": "#6771dc",
+                "male": 3,
+                "female": 3
+              }
+            ]
+          },
+          {
+            "name": "국제교류처",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "국제교류원",
+                "color": "#6771dc",
+                "male": 4,
+                "female": 3
+              }
+            ]
+          },
+          {
+            "name": "인재개발원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "재정관리실",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "정보전산원",
+            "color": "#6771dc",
+            "male": 8,
+            "female": 7
+          },
+          {
+            "name": "생활관",
+            "color": "#6771dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "생활관 분관",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "보건진료소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "공동실험실습관",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "신문방송사",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "어학교육원",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "기초교육원",
+            "color": "#6771dc",
+            "male": 3,
+            "female": 2
+          },
+
+          {
+            "name": "수련원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+
+          {
+            "name": "체육진흥센터",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "연구소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "기타",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 4
+          }
+        ]
+      },
+      {
+        "name": "부속시설",
+        "color": "#6794dc",
+        "children": [
+          {
+            "name": "박물관",
+            "color": "#6794dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "자연사 박물관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "미술관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "농업생명과학대학 부속실험실습장",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "생태환경대학 부속농장",
+            "color": "#6794dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "동물병원",
+            "color": "#6794dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "부속공장",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 1
+          }
+        ]
+      },
+      {
+        "name": "부설학교",
+        "color": "#67b7dc",
+        "children": [
+          {
+            "name": "초등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "중학교",
+            "color": "#67b7dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "고등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          }
+        ]
+      }
+    ]
+  },
+  "2014": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "본부",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "교무처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "교무과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              },
+              {
+                "name": "학사과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "학생처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "학생과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 5
+              }
+            ]
+          },
+          {
+            "name": "기획처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "기획조정과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "대외협력처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "대외협력과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              },
+              {
+                "name": "홍보과",
+                "color": "#dc67ce",
+                "male": 2,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "산학연구처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "산학협력과",
+                "color": "#dc67ce",
+                "male": 4,
+                "female": 3
+              },
+              {
+                "name": "연구진흥과",
+                "color": "#dc67ce",
+                "male": 4,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "사무국",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "총무과",
+                "color": "#dc67ce",
+                "male": 22,
+                "female": 22
+              },
+              {
+                "name": "재무과",
+                "color": "#dc67ce",
+                "male": 8,
+                "female": 6
+              },
+              {
+                "name": "시설과",
+                "color": "#dc67ce",
+                "male": 20,
+                "female": 12
+              },
+              {
+                "name": "예비군연대",
+                "color": "#dc67ce",
+                "male": 1,
+                "female": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "행정지원부",
+        "color": "#c767dc",
+        "male": 11,
+        "female": 11
+      },
+      {
+        "name": "대학(원)",
+        "color": "#a367dc",
+        "children": [
+          {
+            "name": "인문대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "사회과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          5,
+          {
+            "name": "자연과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "경상대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "법학전문대학원, 행정학부",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "공과대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "IT대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "농업생명과학대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "예술대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "사범대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "수의과대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "생활과학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "간호대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "약학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "생태환경대학",
+            "color": "#a367dc",
+            "male": 7,
+            "female": 4
+          },
+          {
+            "name": "축산대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "과학기술대학, 보건복지학부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "과학기술대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "글로벌인재학부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "의학전문대학원",
+            "color": "#a367dc",
+            "male": 11,
+            "female": 8
+          },
+          {
+            "name": "치의학전문대학원",
+            "color": "#a367dc",
+            "male": 7,
+            "female": 5
+          }
+        ]
+      },
+      {
+        "name": "교육기본시설",
+        "color": "#8067dc",
+        "children": [
+          {
+            "name": "도서관",
+            "color": "#8067dc",
+            "male": 25,
+            "female": 15
+          },
+          {
+            "name": "도서관 분관",
+            "color": "#8067dc",
+            "male": 3,
+            "female": 3
+          }
+        ]
+      },
+      {
+        "name": "지원 및 연구시설",
+        "color": "#6771dc",
+        "children": [
+          {
+            "name": "입학본부",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "입학과",
+                "color": "#6771dc",
+                "male": 4,
+                "female": 3
+              },
+              {
+                "name": "입학전형실",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "국제교류원",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "인재개발원",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "대학원정책실",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "재정관리실",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "정보전산원",
+            "color": "#6771dc",
+            "male": 10,
+            "female": 7
+          },
+          {
+            "name": "생활관",
+            "color": "#6771dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "생활관 분관",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "보건진료소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "공동실험실습관",
+            "color": "#6771dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "신문방송사",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "어학교육원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "기초교육원",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 4
+          },
+
+          {
+            "name": "수련원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+
+          {
+            "name": "체육진흥센터",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "연구소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "기타",
+            "color": "#6771dc",
+            "male": 5,
+            "female": 4
+          }
+        ]
+      },
+      {
+        "name": "부속시설",
+        "color": "#6794dc",
+        "children": [
+          {
+            "name": "박물관",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "자연사 박물관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "미술관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "농업생명과학대학 부속실험실습장",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "동물병원",
+            "color": "#6794dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "부속공장",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 1
+          }
+        ]
+      },
+      {
+        "name": "부설학교",
+        "color": "#67b7dc",
+        "children": [
+          {
+            "name": "초등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "중학교",
+            "color": "#67b7dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "고등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 2
+          }
+        ]
+      }
+    ]
+  },
+  "2015": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "본부",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "교무처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "교무과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              },
+              {
+                "name": "학사과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "학생처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "학생과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "기획처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "기획조정과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "대외협력처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "대외협력과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 4
+              },
+              {
+                "name": "홍보과",
+                "color": "#dc67ce",
+                "male": 2,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "산학연구처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "산학협력과",
+                "color": "#dc67ce",
+                "male": 4,
+                "female": 3
+              },
+              {
+                "name": "연구진흥과",
+                "color": "#dc67ce",
+                "male": 4,
+                "female": 3
+              }
+            ]
+          },
+          {
+            "name": "사무국",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "사무국",
+                "color": "#dc67ce",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "총무과",
+                "color": "#dc67ce",
+                "male": 25,
+                "female": 12
+              },
+              {
+                "name": "재무과",
+                "color": "#dc67ce",
+                "male": 8,
+                "female": 6
+              },
+              {
+                "name": "시설과",
+                "color": "#dc67ce",
+                "male": 20,
+                "female": 12
+              },
+              {
+                "name": "예비군연대",
+                "color": "#dc67ce",
+                "male": 1,
+                "female": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "경북대학교(공로연수, 육아휴직 등)",
+        "color": "#ff00ff",
+        "male": 16,
+        "female": 16
+      },
+      {
+        "name": "행정지원부",
+        "color": "#c767dc",
+        "male": 10,
+        "female": 7
+      },
+      {
+        "name": "대학(원)",
+        "color": "#a367dc",
+        "children": [
+          {
+            "name": "인문대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "사회과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          5,
+          {
+            "name": "자연과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "경상대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "법학전문대학원, 행정학부",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "공과대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "IT대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "농업생명과학대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "예술대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "사범대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "수의과대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "생활과학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "간호대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "약학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "생태환경대학",
+            "color": "#a367dc",
+            "male": 7,
+            "female": 6
+          },
+          {
+            "name": "축산대학",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "과학기술대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "글로벌인재학부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "의학전문대학원",
+            "color": "#a367dc",
+            "male": 10,
+            "female": 8
+          },
+          {
+            "name": "치의학전문대학원",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          }
+        ]
+      },
+      {
+        "name": "교육기본시설",
+        "color": "#8067dc",
+        "children": [
+          {
+            "name": "도서관",
+            "color": "#8067dc",
+            "male": 12,
+            "female": 25
+          },
+          {
+            "name": "도서관 분관",
+            "color": "#8067dc",
+            "male": 3,
+            "female": 3
+          }
+        ]
+      },
+      {
+        "name": "지원 및 연구시설",
+        "color": "#6771dc",
+        "children": [
+          {
+            "name": "입학본부",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "입학과",
+                "color": "#6771dc",
+                "male": 4,
+                "female": 4
+              },
+              {
+                "name": "입학전형실",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              }
+
+            ]
+          },
+          {
+            "name": "국제교류원",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "인재개발원",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "대학원정책실",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "재정관리실",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "정보전산원",
+            "color": "#6771dc",
+            "male": 8,
+            "female": 7
+          },
+          {
+            "name": "생활관",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "생활관 분관",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "보건진료소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "공동실험실습관",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "신문방송사",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "어학교육원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "기초교육원",
+            "color": "#6771dc",
+            "male": 6,
+            "female": 4
+          },
+
+          {
+            "name": "수련원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+
+          {
+            "name": "체육진흥센터",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+
+          {
+            "name": "평생교육원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "환경과학기술연구소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "기타",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 4
+          }
+        ]
+      },
+      {
+        "name": "부속시설",
+        "color": "#6794dc",
+        "children": [
+          {
+            "name": "박물관",
+            "color": "#6794dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "자연사 박물관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "미술관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "농업생명과학대학 부속실험실습장",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "동물병원",
+            "color": "#6794dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "부속공장",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 1
+          }
+        ]
+      },
+      {
+        "name": "부설학교",
+        "color": "#67b7dc",
+        "children": [
+          {
+            "name": "초등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "중학교",
+            "color": "#67b7dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "고등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          }
+        ]
+      }
+    ]
+  },
+  "2016": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "본부",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "교무처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "교무과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              },
+              {
+                "name": "학사과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "학생처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "학생과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "기획처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "기획조정과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "대외협력처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "대외협력과",
+                "color": "#dc67ce",
+                "male": 4,
+                "female": 4
+              },
+              {
+                "name": "홍보과",
+                "color": "#dc67ce",
+                "male": 3,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "산학연구처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "연구진흥과",
+                "color": "#dc67ce",
+                "male": 3,
+                "female": 3
+              },
+              {
+                "name": "산학협력과",
+                "color": "#dc67ce",
+                "male": 3,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "사무국",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "사무국",
+                "color": "#dc67ce",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "총무과",
+                "color": "#dc67ce",
+                "male": 22,
+                "female": 14
+              },
+              {
+                "name": "재무과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 6
+              },
+              {
+                "name": "시설과",
+                "color": "#dc67ce",
+                "male": 25,
+                "female": 8
+              },
+              {
+                "name": "예비군연대",
+                "color": "#dc67ce",
+                "male": 1,
+                "female": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "경북대학교(공로연수, 육아휴직 등)",
+        "color": "#ff00ff",
+        "male": 22,
+        "female": 16
+      },
+      {
+        "name": "행정지원부",
+        "color": "#c767dc",
+        "male": 10,
+        "female": 7
+      },
+      {
+        "name": "대학(원)",
+        "color": "#a367dc",
+        "children": [
+          {
+            "name": "인문대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "사회과학대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          5,
+          {
+            "name": "자연과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "경상대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "법학전문대학원, 행정학부",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "공과대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "IT대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "농업생명과학대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "예술대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "사범대학",
+            "color": "#a367dc",
+            "male": 6,
+            "female": 4
+          },
+          {
+            "name": "수의과대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "생활과학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "간호대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "약학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "생태환경대학",
+            "color": "#a367dc",
+            "male": 8,
+            "female": 6
+          },
+          {
+            "name": "축산대학",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "과학기술대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "글로벌인재학부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "의학전문대학원",
+            "color": "#a367dc",
+            "male": 10,
+            "female": 7
+          },
+          {
+            "name": "치의학전문대학원",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          }
+        ]
+      },
+      {
+        "name": "교육기본시설",
+        "color": "#8067dc",
+        "children": [
+          {
+            "name": "도서관",
+            "color": "#8067dc",
+            "male": 22,
+            "female": 16
+          },
+          {
+            "name": "도서관 분관",
+            "color": "#8067dc",
+            "male": 3,
+            "female": 3
+          }
+        ]
+      },
+      {
+        "name": "지원 및 연구시설",
+        "color": "#6771dc",
+        "children": [
+          {
+            "name": "입학본부",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "입학과",
+                "color": "#6771dc",
+                "male": 4,
+                "female": 4
+              },
+              {
+                "name": "입학전형실",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              }
+
+            ]
+          },
+          {
+            "name": "국제교류원",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "인재개발원",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "대학원정책실",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "재정관리실",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "정보전산원",
+            "color": "#6771dc",
+            "male": 8,
+            "female": 6
+          },
+          {
+            "name": "생활관",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "생활관 분관",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "보건진료소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "공동실험실습관",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "신문방송사",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "어학교육원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "기초교육원",
+            "color": "#6771dc",
+            "male": 5,
+            "female": 4
+          },
+
+          {
+            "name": "수련원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+
+          {
+            "name": "체육진흥센터",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+
+          {
+            "name": "평생교육원",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "환경과학기술연구소",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "기타",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 4
+          }
+        ]
+      },
+      {
+        "name": "부속시설",
+        "color": "#6794dc",
+        "children": [
+          {
+            "name": "박물관",
+            "color": "#6794dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "자연사 박물관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "미술관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "농업생명과학대학 부속실험실습장",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "동물병원",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "부속공장",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 1
+          }
+        ]
+      },
+      {
+        "name": "부설학교",
+        "color": "#67b7dc",
+        "children": [
+          {
+            "name": "초등학교",
+            "color": "#67b7dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "중학교",
+            "color": "#67b7dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "고등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          }
+        ]
+      }
+    ]
+  },
+  "2017": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "본부",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "교무처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "교무과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              },
+              {
+                "name": "학사과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "학생처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "학생과",
+                "color": "#dc67ce",
+                "male": 7,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "기획처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "기획조정과",
+                "color": "#dc67ce",
+                "male": 6,
+                "female": 4
+              },
+              {
+                "name": "재정관리과",
+                "color": "#dc67ce",
+                "male": 3,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "연구산학처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "연구진흥과",
+                "color": "#dc67ce",
+                "male": 4,
+                "female": 3
+              },
+              {
+                "name": "산학협력과",
+                "color": "#dc67ce",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "국제교류처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "국제교류과",
+                "color": "#dc67ce",
+                "male": 3,
+                "female": 3
+              },
+              {
+                "name": "유학생지원담당관",
+                "color": "#dc67ce",
+                "male": 2,
+                "female": 1
+
+              }
+            ]
+          },
+          {
+            "name": "사무국",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "사무국",
+                "color": "#dc67ce",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "총무과",
+                "color": "#dc67ce",
+                "male": 22,
+                "female": 17
+              },
+              {
+                "name": "재무과",
+                "color": "#dc67ce",
+                "male": 8,
+                "female": 6
+              },
+              {
+                "name": "시설과",
+                "color": "#dc67ce",
+                "male": 20,
+                "female": 12
+              },
+              {
+                "name": "예비군연대",
+                "color": "#dc67ce",
+                "male": 1,
+                "female": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "경북대학교(공로연수, 육아휴직 등)",
+        "color": "#ff00ff",
+        "male": 22,
+        "female": 18
+      },
+      {
+        "name": "행정지원부",
+        "color": "#c767dc",
+        "male": 10,
+        "female": 7
+      },
+      {
+        "name": "대학(원)",
+        "color": "#a367dc",
+        "children": [
+          {
+            "name": "인문대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "사회과학대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 3
+          },
+          5,
+          {
+            "name": "자연과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "경상대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 2
+          },
+          {
+            "name": "법학전문대학원, 행정학부",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "공과대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "IT대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "농업생명과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "예술대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "사범대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 4
+          },
+          {
+            "name": "수의과대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "생활과학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "간호대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "약학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "생태환경대학",
+            "color": "#a367dc",
+            "male": 7,
+            "female": 5
+          },
+          {
+            "name": "축산대학",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "과학기술대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 3
+          },
+          {
+            "name": "글로벌인재학부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "의과대학",
+            "color": "#a367dc",
+            "male": 10,
+            "female": 8
+          },
+          {
+            "name": "치과대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          }
+        ]
+      },
+      {
+        "name": "교육기본시설",
+        "color": "#8067dc",
+        "children": [
+          {
+            "name": "도서관",
+            "color": "#8067dc",
+            "male": 18,
+            "female": 18
+          },
+          {
+            "name": "도서관 분관",
+            "color": "#8067dc",
+            "male": 3,
+            "female": 2
+          }
+        ]
+      },
+      {
+        "name": "지원 및 연구시설",
+        "color": "#6771dc",
+        "children": [
+          {
+            "name": "입학본부",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "입학과",
+                "color": "#6771dc",
+                "male": 4,
+                "female": 4
+              }
+
+            ]
+          },
+          {
+            "name": "대외협력홍보실",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "대외협력홍보과",
+                "color": "#6771dc",
+                "male": 4,
+                "female": 3
+              }
+            ]
+          },
+          {
+            "name": "인재개발원",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "대학원정책실",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "산학협력선도대학(LINC)사업단",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "기초교육원",
+            "color": "#6771dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "정보전산원",
+            "color": "#6771dc",
+            "male": 8,
+            "female": 7
+          },
+          {
+            "name": "생활관",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "생활관 분관",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "보건진료소",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "공동실험실습관",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "신문방송사",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "외국어교육원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "출판부",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "수련원",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "국제농업훈련원",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "체육진흥센터",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "법률상담소",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "평생교육원",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "환경과학기술연구소",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "기타",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 3
+          }
+        ]
+      },
+      {
+        "name": "부속시설",
+        "color": "#6794dc",
+        "children": [
+          {
+            "name": "박물관",
+            "color": "#6794dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "자연사 박물관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "미술관",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "농업생명과학대학 부속실험실습장",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 3
+          },
+          {
+            "name": "동물병원",
+            "color": "#6794dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "부속공장",
+            "color": "#6794dc",
+            "male": 1,
+            "female": 1
+          }
+        ]
+      },
+      {
+        "name": "부설학교",
+        "color": "#67b7dc",
+        "children": [
+          {
+            "name": "초등학교",
+            "color": "#67b7dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "중학교",
+            "color": "#67b7dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "고등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          }
+        ]
+      }
+    ]
+  },
+  "2018": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "본부",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "교무처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "교무과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 5
+              },
+              {
+                "name": "학사과",
+                "color": "#dc67ce",
+                "male": 3,
+                "female": 6
+              }
+            ]
+          },
+          {
+            "name": "학생처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "학생과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 6
+              }
+            ]
+          },
+          {
+            "name": "기획처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "기획조정과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 4
+              },
+              {
+                "name": "재정관리과",
+                "color": "#dc67ce",
+                "male": 4,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "연구산학처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "연구진흥과",
+                "color": "#dc67ce",
+                "male": 3,
+                "female": 4
+              },
+              {
+                "name": "산학협력과",
+                "color": "#dc67ce",
+                "male": 3,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "국제교류처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "국제교류과",
+                "color": "#dc67ce",
+                "male": 2,
+                "female": 3
+              },
+              {
+                "name": "유학생지원담당관",
+                "color": "#dc67ce",
+                "male": 0,
+                "female": 0
+
+              }
+            ]
+          },
+          {
+            "name": "사무국",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "사무국",
+                "color": "#dc67ce",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "총무과",
+                "color": "#dc67ce",
+                "male": 29,
+                "female": 15
+              },
+              {
+                "name": "재무과",
+                "color": "#dc67ce",
+                "male": 5,
+                "female": 7
+              },
+              {
+                "name": "시설과",
+                "color": "#dc67ce",
+                "male": 30,
+                "female": 2
+              },
+              {
+                "name": "예비군연대",
+                "color": "#dc67ce",
+                "male": 1,
+                "female": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "경북대학교(공로연수, 육아휴직 등)",
+        "color": "#ff00ff",
+        "male": 16,
+        "female": 21
+      },
+      {
+        "name": "행정지원부",
+        "color": "#c767dc",
+        "male": 13,
+        "female": 3
+      },
+      {
+        "name": "대학(원)",
+        "color": "#a367dc",
+        "children": [
+          {
+            "name": "인문대학",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 5
+          },
+          {
+            "name": "사회과학대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 3
+          },
+          {
+            "name": "자연과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "경상대학",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 5
+          },
+          {
+            "name": "법학전문대학원, 행정학부",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 5
+          },
+          {
+            "name": "공과대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "IT대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "농업생명과학대학",
+            "color": "#a367dc",
+            "male": 4,
+            "female": 5
+          },
+          {
+            "name": "예술대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "사범대학",
+            "color": "#a367dc",
+            "male": 2,
+            "female": 8
+          },
+          {
+            "name": "수의과대학",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 2
+          },
+          {
+            "name": "생활과학대학",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 2
+          },
+          {
+            "name": "간호대학",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 3
+          },
+          {
+            "name": "약학대학",
+            "color": "#a367dc",
+            "male": 1,
+            "female": 3
+          },
+          {
+            "name": "생태환경대학",
+            "color": "#a367dc",
+            "male": 7,
+            "female": 3
+          },
+          {
+            "name": "축산대학",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "과학기술대학",
+            "color": "#a367dc",
+            "male": 3,
+            "female": 4
+          },
+          {
+            "name": "글로벌인재학부",
+            "color": "#a367dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "의과대학",
+            "color": "#a367dc",
+            "male": 13,
+            "female": 2
+          },
+          {
+            "name": "치과대학",
+            "color": "#a367dc",
+            "male": 5,
+            "female": 3
+          }
+        ]
+      },
+      {
+        "name": "교육기본시설",
+        "color": "#8067dc",
+        "children": [
+          {
+            "name": "도서관",
+            "color": "#8067dc",
+            "male": 9,
+            "female": 26
+          },
+          {
+            "name": "도서관 분관",
+            "color": "#8067dc",
+            "male": 3,
+            "female": 2
+          }
+        ]
+      },
+      {
+        "name": "지원 및 연구시설",
+        "color": "#6771dc",
+        "children": [
+          {
+            "name": "입학본부",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "입학과",
+                "color": "#6771dc",
+                "male": 4,
+                "female": 4
+              }
+            ]
+          },
+          {
+            "name": "대외협력홍보실",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "대외협력홍보과",
+                "color": "#6771dc",
+                "male": 5,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "인재개발원",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 2
+          },
+          {
+            "name": "교육혁신정책실",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "통합교육지원본부",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "교육개발본부",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 7
+          },
+          {
+            "name": "정보전산원",
+            "color": "#6771dc",
+            "male": 10,
+            "female": 5
+          },
+          {
+            "name": "생활관",
+            "color": "#6771dc",
+            "male": 3,
+            "female": 1
+          },
+          {
+            "name": "생활관 분관",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 2
+          },
+          {
+            "name": "보건진료소",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 2
+          },
+          {
+            "name": "공동실험실습관",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "신문방송사",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 1
+          },
+          {
+            "name": "외국어교육원",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 1
+          },
+          {
+            "name": "출판부",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "수련원",
+            "color": "#6771dc",
+            "male": 2,
+            "female": 0
+          },
+          {
+            "name": "국제농업훈련원",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "체육진흥센터",
+            "color": "#6771dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "평생교육원",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "기타",
+            "color": "#6771dc",
+            "male": 4,
+            "female": 2
+          }
+        ]
+      },
+      {
+        "name": "부속시설",
+        "color": "#6794dc",
+        "children": [
+          {
+            "name": "박물관",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 0
+          },
+          {
+            "name": "자연사 박물관",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 0
+          },
+          {
+            "name": "미술관",
+            "color": "#6794dc",
+            "male": 0,
+            "female": 1
+          },
+          {
+            "name": "농업생명과학대학 부속실험실습장",
+            "color": "#6794dc",
+            "male": 5,
+            "female": 0
+          },
+          {
+            "name": "동물병원",
+            "color": "#6794dc",
+            "male": 3,
+            "female": 1
+          },
+          {
+            "name": "부속공장",
+            "color": "#6794dc",
+            "male": 2,
+            "female": 0
+          }
+        ]
+      },
+      {
+        "name": "부설학교",
+        "color": "#67b7dc",
+        "children": [
+          {
+            "name": "초등학교",
+            "color": "#67b7dc",
+            "male": 1,
+            "female": 1
+          },
+          {
+            "name": "중학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 0
+          },
+          {
+            "name": "고등학교",
+            "color": "#67b7dc",
+            "male": 2,
+            "female": 1
+          }
+        ]
+      }
+    ]
+  },
+  "2019": {
+    "name": "root",
+    "color": "#ffffff",
+    "children": [
+      {
+        "name": "본부",
+        "color": "#dc67ce",
+        "children": [
+          {
+            "name": "교무처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "교무과",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#dc67ce",
+                    "male": 3,
+                    "female": 3
+                  },
+                  {
+                    "name": "전문경력직",
+                    "color": "#dc67ce",
+                    "male": 0,
+                    "female": 0
+                  },
+                  {
+                    "name": "대학회계직",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  }
+                ]
+              },
+              {
+                "name": "학사과",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#dc67ce",
+                    "male": 2,
+                    "female": 2
+                  },
+                  {
+                    "name": "대학회계직",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "학생처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "학생과",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#dc67ce",
+                    "male": 3,
+                    "female": 2
+                  },
+                  {
+                    "name": "대학회계직",
+                    "color": "#dc67ce",
+                    "male": 3,
+                    "female": 2
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "기획처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "기획조정과",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#dc67ce",
+                    "male": 3,
+                    "female": 2
+                  },
+                  {
+                    "name": "대학회계직",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  }
+                ]
+              },
+              {
+                "name": "재정관리과",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#dc67ce",
+                    "male": 2,
+                    "female": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "연구산학처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "연구진흥과",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#dc67ce",
+                    "male": 2,
+                    "female": 1
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  }
+                ]
+              },
+              {
+                "name": "산학협력과",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "국제교류처",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "국제교류과",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "대학회계직",
+                    "color": "#dc67ce",
+                    "male": 2,
+                    "female": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "사무국",
+            "color": "#dc67ce",
+            "children": [
+              {
+                "name": "사무국",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "고위공무원",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  }
+                ]
+              },
+              {
+                "name": "총무과",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#dc67ce",
+                    "male": 4,
+                    "female": 4
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#dc67ce",
+                    "male": 12,
+                    "female": 11
+                  },
+                  {
+                    "name": "관리운영직",
+                    "color": "#dc67ce",
+                    "male": 2,
+                    "female": 1
+                  },
+                  {
+                    "name": "대학회계직",
+                    "color": "#dc67ce",
+                    "male": 5,
+                    "female": 4
+                  }
+                ]
+              },
+              {
+                "name": "재무과",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 1
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#dc67ce",
+                    "male": 5,
+                    "female": 4
+                  },
+                  {
+                    "name": "대학회계직",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  }
+                ]
+              },
+              {
+                "name": "시설과",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#dc67ce",
+                    "male": 2,
+                    "female": 1
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#dc67ce",
+                    "male": 5,
+                    "female": 5
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#dc67ce",
+                    "male": 10,
+                    "female": 9
+                  },
+                  {
+                    "name": "관리운영직",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "대학회계직",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  }
+                ]
+              },
+              {
+                "name": "예비군연대",
+                "color": "#dc67ce",
+                "children": [
+                  {
+                    "name": "전문경력직",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "대학회계직",
+                    "color": "#dc67ce",
+                    "male": 1,
+                    "female": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "행정지원부",
+        "color": "#c767dc",
+        "children": [
+          {
+            "name": "4~5급",
+            "color": "#c767dc",
+            "male": 1,
+            "female": 0
+          },
+          {
+            "name": "6급",
+            "color": "#c767dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "7~9급",
+            "color": "#c767dc",
+            "male": 4,
+            "female": 4
+          },
+          {
+            "name": "관리운영직",
+            "color": "#c767dc",
+            "male": 2,
+            "female": 1
+          },
+          {
+            "name": "대학회계직",
+            "color": "#c767dc",
+            "male": 1,
+            "female": 1
+          }
+        ]
+      },
+      {
+        "name": "대학(원)",
+        "color": "#a367dc",
+        "children": [
+          {
+            "name": "인문대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 0,
+                "female": 1
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "사회과학대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "자연과학대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "경상대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "법학전문대학원, 행정학부",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "공과대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "IT대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "농업생명과학대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 3,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "예술대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "사범대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              },
+              {
+                "name": "관리운영직",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "수의과대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 0,
+                "female": 1
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "생활과학대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "간호대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 3,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "약학대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "생태환경대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 3,
+                "female": 2
+              },
+              {
+                "name": "관리운영직",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "과학기술대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "의과대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 3,
+                "female": 3
+              },
+              {
+                "name": "관리운영직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "치과대학",
+            "color": "#a367dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "7~9급",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#a367dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#a367dc",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "교육기본시설",
+        "color": "#8067dc",
+        "children": [
+          {
+            "name": "도서관",
+            "color": "#8067dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#8067dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#8067dc",
+                "male": 10,
+                "female": 9
+              },
+              {
+                "name": "7~9급",
+                "color": "#8067dc",
+                "male": 6,
+                "female": 5
+              },
+              {
+                "name": "관리운영직",
+                "color": "#8067dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#8067dc",
+                "male": 2,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "도서관 분관",
+            "color": "#8067dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#8067dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#8067dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "7~9급",
+                "color": "#8067dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "관리운영직",
+                "color": "#8067dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#8067dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "지원 및 연구시설",
+        "color": "#6771dc",
+        "children": [
+          {
+            "name": "입학본부",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "입학과",
+                "color": "#6771dc",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#6771dc",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#6771dc",
+                    "male": 2,
+                    "female": 1
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#6771dc",
+                    "male": 2,
+                    "female": 1
+                  },
+                  {
+                    "name": "관리운영직",
+                    "color": "#6771dc",
+                    "male": 0,
+                    "female": 0
+                  },
+                  {
+                    "name": "대학회계직",
+                    "color": "#6771dc",
+                    "male": 1,
+                    "female": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "대외협력홍보실",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "대외협력홍보과",
+                "color": "#6771dc",
+                "children": [
+                  {
+                    "name": "4~5급",
+                    "color": "#6771dc",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "6급",
+                    "color": "#6771dc",
+                    "male": 2,
+                    "female": 0
+                  },
+                  {
+                    "name": "7~9급",
+                    "color": "#6771dc",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "관리운영직",
+                    "color": "#6771dc",
+                    "male": 1,
+                    "female": 0
+                  },
+                  {
+                    "name": "대학회계직",
+                    "color": "#6771dc",
+                    "male": 1,
+                    "female": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "인재개발원",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "교육혁신정책실",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "통합교육지원본부",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "교육개발본부",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 3,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "정보전산원",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 3,
+                "female": 2
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 2,
+                "female": 1
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 2,
+                "female": 2
+              }
+            ]
+          },
+          {
+            "name": "생활관",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 2,
+                "female": 1
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "생활관 분관",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "보건진료소",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "공동실험실습관",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "신문방송사",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "외국어교육원",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "출판부",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "수련원",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "국제농업훈련원",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "체육진흥센터",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "평생교육원",
+            "color": "#6771dc",
+            "male": 0,
+            "female": 0
+          },
+          {
+            "name": "기타",
+            "color": "#6771dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6771dc",
+                "male": 2,
+                "female": 2
+              },
+              {
+                "name": "7~9급",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6771dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6771dc",
+                "male": 1,
+                "female": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "부속시설",
+        "color": "#6794dc",
+        "children": [
+          {
+            "name": "박물관",
+            "color": "#6794dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6794dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "7~9급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "자연사 박물관",
+            "color": "#6794dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6794dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "7~9급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "미술관",
+            "color": "#6794dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6794dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "농업생명과학대학 부속실험실습장",
+            "color": "#6794dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6794dc",
+                "male": 2,
+                "female": 1
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6794dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 1
+              }
+            ]
+          },
+          {
+            "name": "동물병원",
+            "color": "#6794dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6794dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "7~9급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "부속공장",
+            "color": "#6794dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#6794dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "관리운영직",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#6794dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "부설학교",
+        "color": "#67b7dc",
+        "children": [
+          {
+            "name": "초등학교",
+            "color": "#67b7dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#67b7dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#67b7dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#67b7dc",
+                "male": 0,
+                "female": 1
+              },
+              {
+                "name": "관리운영직",
+                "color": "#67b7dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#67b7dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "중학교",
+            "color": "#67b7dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#67b7dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#67b7dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#67b7dc",
+                "male": 0,
+                "female": 1
+              },
+              {
+                "name": "관리운영직",
+                "color": "#67b7dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#67b7dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          },
+          {
+            "name": "고등학교",
+            "color": "#67b7dc",
+            "children": [
+              {
+                "name": "4~5급",
+                "color": "#67b7dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "6급",
+                "color": "#67b7dc",
+                "male": 1,
+                "female": 0
+              },
+              {
+                "name": "7~9급",
+                "color": "#67b7dc",
+                "male": 1,
+                "female": 1
+              },
+              {
+                "name": "관리운영직",
+                "color": "#67b7dc",
+                "male": 0,
+                "female": 0
+              },
+              {
+                "name": "대학회계직",
+                "color": "#67b7dc",
+                "male": 0,
+                "female": 0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
