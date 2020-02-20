@@ -1,0 +1,87 @@
+[
+	{
+		"college": "간호대학",
+		"value": 4493.0,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "경상대학",
+		"value": 3518.0,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "공과대학",
+		"value": 4676.0,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "과학기술대학",
+		"value": 4643.03,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "농업생명과학대학",
+		"value": 4289.15,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "법과대학",
+		"value": 3518.0,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "사범대학",
+		"value": 3922.12,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "사회과학대학",
+		"value": 3649.0,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "생태환경대학",
+		"value": 4225.91,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "생활과학대학",
+		"value": 4371.0,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "수의과대학",
+		"value": 5331.0,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "약학대학",
+		"value": 6403.0,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "예술대학",
+		"value": 4864.0,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "인문대학",
+		"value": 3581.64,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "자연과학대학",
+		"value": 4393.07,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "축산대학",
+		"value": 4371.0,
+		"allAvg": 4407.35
+	},
+	{
+		"college": "IT대학",
+		"value": 4676.0,
+		"allAvg": 4407.35
+	}
+]

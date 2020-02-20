@@ -1,0 +1,77 @@
+[
+	{
+		"college": "간호대학",
+		"value": 4904.17,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "경상대학",
+		"value": 3739.0,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "공과대학",
+		"value": 4965.78,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "농업생명과학대학",
+		"value": 4574.62,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "법과대학",
+		"value": 3739.4,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "사범대학",
+		"value": 4154.59,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "사회과학대학",
+		"value": 3797.11,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "생활과학대학",
+		"value": 4645.25,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "수의과대학",
+		"value": 5669.0,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "예술대학",
+		"value": 5211.18,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "의과대학",
+		"value": 5669.0,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "인문대학",
+		"value": 3796.93,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "자연과학대학",
+		"value": 4660.67,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "치과대학",
+		"value": 5669.0,
+		"allAvg": 4677.91
+	},
+	{
+		"college": "IT대학",
+		"value": 4973.0,
+		"allAvg": 4677.91
+	}
+]
