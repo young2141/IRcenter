@@ -8,7 +8,6 @@ function drawSunburst() {
     d3.select("#chartdiv2").select("svg").remove();
     $("#sequence").empty();
 
-    var year = String(document.getElementById("years").value);
     var b = {
         w: 140, h: 30, s: 3, t: 10
     };
@@ -44,6 +43,8 @@ function drawSunburst() {
         .outerRadius(function (d) { return Math.sqrt(d.y + d.dy); });
 
     d3.json("../../../json/sunburst_explore.json", function (json) {
+        var year = String(document.getElementById("years").value);
+        console.log(year);
         initializeBreadcrumbTrail();
         createVisualization(json[year])
     });
