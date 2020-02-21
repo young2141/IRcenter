@@ -17,7 +17,6 @@ function stackGraph(data) {
 
         // Add data
         chart.data = data;
-        // console.log(chart.data);
 
         // Create axes
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -45,6 +44,7 @@ function stackGraph(data) {
 
             // Configure columns
             series.columns.template.width = am4core.percent(60);
+            series.tooltip.label.textAlign = "middle";
             series.columns.template.tooltipText = "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
 
             // Add label

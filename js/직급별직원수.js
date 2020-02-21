@@ -50,6 +50,7 @@ function stackGraph(data) {
 
             // Configure columns
             series.columns.template.width = am4core.percent(60);
+            series.tooltip.label.textAlign = "middle";
             series.columns.template.tooltipText = "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
 
             // Add label

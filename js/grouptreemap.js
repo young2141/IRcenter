@@ -60,8 +60,9 @@ function  changegraph(brand) {
             level1ColumnTemplate.tooltipText = "{name}: [font-size:14px bold]{per}%({count}명)[/]";
 
             level1ColumnTemplate.column.cornerRadius(0, 0, 0, 0)
+            level1SeriesTemplate.tooltip.pointerOrientation = "vertical";
+            level1SeriesTemplate.tooltip.dy = -25;
             level1ColumnTemplate.fillOpacity = 1;
-            level1ColumnTemplate.strokeWidth = 4;
             level1ColumnTemplate.stroke = bgColor;
 
             var bullet1 = level1SeriesTemplate.bullets.push(new am4charts.LabelBullet());

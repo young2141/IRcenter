@@ -2,51 +2,61 @@
     {
         "year": "2010",
         "student": 362,
-        "team": 66
+        "team": 66,
+        "none":0
     },
     {
         "year": "2011",
         "student": 396,
-        "team": 74
+        "team": 74,
+        "none":0
     },
     {
         "year": "2012",
         "student": 385,
-        "team": 48
+        "team": 48,
+        "none":0
     },
     {
         "year": "2013",
         "student": 110,
-        "team": 18
+        "team": 18,
+        "none":0
     },
     {
         "year": "2014",
         "student": 89,
-        "team": 26
+        "team": 26,
+        "none":0
     },
     {
         "year": "2015",
         "student": 87,
-        "team": 26
+        "team": 26,
+        "none":0
     },
     {
         "year": "2016",
         "student": 30,
-        "team": 10
+        "team": 10,
+        "none":0
     },
     {
         "year": "2017",
         "student": 42,
-        "team": 14
+        "team": 14,
+        "none":0
     },
     {
         "year": "2018",
         "student": 9,
-        "team": 3
+        "team": 3,
+        "none":0
     },
     {
         "year": "2019",
         "student": 26,
-        "team": 9
+        "team": 9,
+        "none":0
     }
 ]
