@@ -73,12 +73,9 @@ function pie1(data) {
             dummyData1.push(data);
             console.log(dummyData1);
 
-
-            label.text = "{dummyData.0.per}%";
             label.dummyData = dummyData1;
+            label.text = "{dummyData.0.per}%";
             console.log(label.dummyData);
-
-
 
             // Add and configure Series
             var pieSeries = chart.series.push(new am4charts.PieSeries());
@@ -191,6 +188,9 @@ function pie2() {
                 series.slices.each(function (item) {
                     if (item.isActive && item != ev.target) {
                         item.isActive = false;
+                    }
+                    if(item.isActive){
+                        label.text = "{item.value.percent.formatNumber('#.0')}%";
                     }
                 })
             });

@@ -45,7 +45,7 @@ am4core.ready(function () {
 
         // Add and configure Series
         var pieSeries = chart.series.push(new am4charts.PieSeries());
-        var span_legend = document.getElementsByName("span_legend")
+        var span_legend = document.getElementsByName("span_legend");
         pieSeries.dataFields.value = "size";
         pieSeries.dataFields.category = "sector";
         pieSeries.slices.template.tooltipText = "[bold]{category}[/]: {value.percent.formatNumber('#.0')}%({value}명)";
