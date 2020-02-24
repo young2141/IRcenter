@@ -38,7 +38,8 @@ function draw() {
       var series = chart.series.push(new am4charts.ColumnSeries());
       series.dataFields.valueX = "tuition";
       series.dataFields.categoryY = "major";
-      series.columns.template.tooltipText = "{categoryY}: [bold]{valueX}[/]";
+      series.columns.template.tooltipText =
+        "{categoryY}: [bold]{valueX}[/]천원";
       series.columns.template.strokeWidth = 0;
       series.dataFields.valueX.min = 0;
       //   series.columns.template.adapter.add("fill", function(fill, target) {
