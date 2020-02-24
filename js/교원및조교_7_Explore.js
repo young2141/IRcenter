@@ -11,6 +11,7 @@ var color = {
     "조교": undefined
 }
 var peopleForUnversity = {};
+var chart1, chart2, chart3;
 
 function loadJSON(path, success) {
     var xhr = new XMLHttpRequest();
@@ -101,7 +102,8 @@ function makeDataToDrawGraph(_data) {
 
     let TA_data = data2[year];
     let obj = {};
-    obj["TA"] = TA;
+    obj["type"] = TA;
+    obj["category"] = TA;
 
     if (sex != "(전체)") {
         _data2 = _data2.filter(e => e["sex"] == sex);
@@ -113,10 +115,10 @@ function makeDataToDrawGraph(_data) {
     } else {
         obj["value"] = TA_data["assistant"]["male"] + TA_data["assistant"]["female"];
     }
-    if(university != "(전체)"){
+    if (university != "(전체)") {
         let total = 0;
         Object.keys(peopleForUnversity).map(key => total += peopleForUnversity[key])
-        obj["value"] = parseInt(obj["value"] * (peopleForUnversity[university]/ total));
+        obj["value"] = parseInt(obj["value"] * (peopleForUnversity[university] / total));
     }
     graph_data.push(obj);
 
@@ -125,7 +127,8 @@ function makeDataToDrawGraph(_data) {
 
         temp = _data2.filter(e => e["type"] == fulltime[i]);
         let obj = {};
-        obj["fulltime"] = fulltime[i];
+        obj["type"] = "전임교원";
+        obj["category"] = fulltime[i];
         obj["value"] = 0;
         for (let j = 0; j < temp.length; ++j) {
             obj["value"] += temp[j]["value"];
@@ -138,7 +141,8 @@ function makeDataToDrawGraph(_data) {
 
         temp = _data2.filter(e => e["type"] == nonexecutive[i]);
         let obj = {};
-        obj["nonexecutive"] = nonexecutive[i];
+        obj["type"] = "비전임교원";
+        obj["category"] = nonexecutive[i];
         obj["value"] = 0;
         for (let j = 0; j < temp.length; ++j) {
             obj["value"] += temp[j]["value"];
@@ -186,7 +190,7 @@ function changeInput(type, value) {
 
     let _data = data.slice(0);
     _data = makeDataToDrawGraph(_data);
-    drawChart(_data);
+    reloadChart(_data);
 }
 
 function drawChart(data) {
@@ -196,37 +200,33 @@ function drawChart(data) {
             max = max > data[i]["value"] ? max : data[i]["value"];
         }
         max += parseInt(max * 0.15);
-
-
-        // Themes begin
         am4core.useTheme(am4themes_animated);
-        // Themes end
 
-        var chart1 = am4core.create("chartdiv1", am4charts.XYChart);
-        chart1.data = data;
+        chart1 = am4core.create("chartdiv1", am4charts.XYChart);
+        chart1.data = data.filter(e => e["type"] == "전임교원");
         chart1.title = "전임교원";
 
         var categoryAxis1 = chart1.xAxes.push(new am4charts.CategoryAxis());
-        categoryAxis1.dataFields.category = "fulltime";
+        categoryAxis1.dataFields.category = "category";
         categoryAxis1.renderer.minGridDistance = 20;
         categoryAxis1.renderer.grid.template.location = 0;
 
         var valueAxis1 = chart1.yAxes.push(new am4charts.ValueAxis());
         valueAxis1.max = max;
         valueAxis1.min = 0;
+        valueAxis1.renderer.grid.template.disabled = true;
         valueAxis1.renderer.grid.template.location = 0;
-        valueAxis1.renderer.grid.template.minGridDistance = 100;
 
         var series1 = chart1.series.push(new am4charts.ColumnSeries());
-        series1.dataFields.categoryX = "fulltime";
+        series1.dataFields.categoryX = "category";
         series1.dataFields.valueY = "value";
 
-        var chart2 = am4core.create("chartdiv2", am4charts.XYChart);
-        chart2.data = data;
+        chart2 = am4core.create("chartdiv2", am4charts.XYChart);
+        chart2.data = data.filter(e => e["type"] == "비전임교원");
         chart2.title = "비전임교원";
 
         var categoryAxis2 = chart2.xAxes.push(new am4charts.CategoryAxis());
-        categoryAxis2.dataFields.category = "nonexecutive";
+        categoryAxis2.dataFields.category = "category";
         categoryAxis2.renderer.minGridDistance = 20;
         categoryAxis2.renderer.grid.template.location = 0;
 
@@ -234,21 +234,20 @@ function drawChart(data) {
         valueAxis2.max = max;
         valueAxis2.min = 0;
         valueAxis2.renderer.labels.template.disabled = true;
-        valueAxis2.renderer.grid.template.location = 0;
-        valueAxis2.renderer.grid.template.minGridDistance = 100;
+        valueAxis2.renderer.grid.template.disabled = true;
 
         var series2 = chart2.series.push(new am4charts.ColumnSeries());
-        series2.dataFields.categoryX = "nonexecutive";
+        series2.dataFields.categoryX = "category";
         series2.dataFields.valueY = "value";
 
 
 
-        var chart3 = am4core.create("chartdiv3", am4charts.XYChart);
-        chart3.data = data;
+        chart3 = am4core.create("chartdiv3", am4charts.XYChart);
+        chart3.data = data.filter(e => e["type"] == "조교");
         chart3.title = "조교";
 
         var categoryAxis3 = chart3.xAxes.push(new am4charts.CategoryAxis());
-        categoryAxis3.dataFields.category = "TA";
+        categoryAxis3.dataFields.category = "category";
         categoryAxis3.renderer.minGridDistance = 20;
         categoryAxis3.renderer.grid.template.location = 0;
 
@@ -256,15 +255,55 @@ function drawChart(data) {
         valueAxis3.max = max;
         valueAxis3.min = 0;
         valueAxis3.renderer.labels.template.disabled = true;
-        valueAxis3.renderer.grid.template.location = 0;
-        valueAxis3.renderer.grid.template.minGridDistance = 100;
+        valueAxis3.renderer.grid.template.disabled = true;
 
         var series3 = chart3.series.push(new am4charts.ColumnSeries());
-        series3.dataFields.categoryX = "TA";
+        series3.dataFields.categoryX = "category";
         series3.dataFields.valueY = "value";
 
         series3.columns.template.fill = am4core.color(color["조교"]);
         series2.columns.template.fill = am4core.color(color["비전임교원"]);
         series1.columns.template.fill = am4core.color(color["전임교원"]);
+
+        var len1 = chart1.data.length;
+        var len2 = chart2.data.length;
+        var len3 = chart3.data.length;
+        var total = len1 + len2 + len3;
+
+        var div2 = document.getElementById("chartdiv1");
+        div2.style.width = Math.round(960 * len1 / total + 40).toString() + "px";
+        var div3 = document.getElementById("chartdiv2");
+        div3.style.width = Math.round(960 * len2 / total).toString() + "px";
+        var div4 = document.getElementById("chartdiv3");
+        div4.style.width = Math.round(960 * len3 / total).toString() + "px"
+
+        function createAxisRange(valueAxis) {
+            for (let value = 0; value <= max + 99; value += 100) {
+                let range = valueAxis.axisRanges.create();
+                range.value = value;
+            }
+        }
+
+        createAxisRange(valueAxis1);
+        createAxisRange(valueAxis2);
+        createAxisRange(valueAxis3);
     });
+}
+
+function reloadChart(data) {
+    chart1.data = data.filter(e => e["type"] == "전임교원");
+    chart2.data = data.filter(e => e["type"] == "비전임교원");
+    chart3.data = data.filter(e => e["type"] == "조교");
+
+    var len1 = chart1.data.length;
+    var len2 = chart2.data.length;
+    var len3 = chart3.data.length;
+    var total = len1 + len2 + len3;
+
+    var div1 = document.getElementById("chartdiv1");
+    div2.style.width = Math.round(960 * len1 / total + 40).toString() + "px";
+    var div2 = document.getElementById("chartdiv2");
+    div3.style.width = Math.round(960 * len2 / total).toString() + "px";
+    var div3 = document.getElementById("chartdiv3");
+    div4.style.width = Math.round(960 * len3 / total).toString() + "px";
 }

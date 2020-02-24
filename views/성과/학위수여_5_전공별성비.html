@@ -13,10 +13,7 @@
 		<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.4.1.js"
 			integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-		<script src="https://www.amcharts.com/lib/4/core.js"></script>
-		<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-		<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-		<script src="../../js/5/graduation5.js"></script>
+		<script src="../../js/학위수여_5_전공별성비.js"></script>
 		<style>
 			@import url('../../css/output_default.css');
 
@@ -127,48 +124,48 @@
 			<div id="summaryBox">
 				<h2>전공별 학위 수여 <span id="P1">남자</span>비율</h2>
 			</div>
-			<div id="unitBox" style = "width: 80%">
+			<div id="unitBox" style="width: 80%">
 				(단위 : %)
 			</div>
 			<div id="chartdiv"> 그래프 4-1</div>
 
-			<div class="legend" id="gotop" style="left:80%; top :40%">
+			<div class="legend" id="gotop" style="left:80%; top :50%">
 
 				<br><br>
 				<form>
-					<span style = "color: 6fa1e3">■</span> 남자<br>
-					<span style = "color: db4455">■</span> 여자<br><br>
+					<div id="div_color">
+						<span id="color_man" value="6fa1e3" style="color: 6fa1e3">■</span> 남자<br>
+						<span id="color_woman" value="db4455" style="color: db4455">■</span> 여자<br><br>
+					</div>
 
 					<span style="font-size: 20px"><b>학위수준별 검색</b></span>
 					<br>
 
-					<input type="radio" name="radio_degree" id="bachelor" onclick="clickFormSelection(type, name, id)"
-						checked="checked">
-					<label for='bachelor'>학사</label><br>
-					<input type="radio" name="radio_degree" id="master" onclick="clickFormSelection(type, name, id)">
-					<label for='masters'>석사</label><br>
-					<input type="radio" name="radio_degree" id="phd" onclick="clickFormSelection(type, name, id)">
-					<label for='phd'>박사</label><br><br>
+					<input type="radio" name="학위" id="학사"" onclick=" onClickListerner(name, id)" checked="checked">
+					<label for='학사'>학사</label><br>
+					<input type="radio" name="학위" id="석사"" onclick=" onClickListerner(name, id)">
+					<label for='석사'>석사</label><br>
+					<input type="radio" name="학위" id="박사" onclick="onClickListerner(name, id)">
+					<label for='박사'>박사</label><br><br>
 
 					<span style="font-size: 20px"><b>성별 검색</b></span><br>
-					<select id="select_gender" onchange="clickFormSelection('select', id, this.value), Change()" name="menu"
+					<select id="성별" onchange="onClickListerner(id, this.value), Change()" name="menu"
 						style="width : 200px; height: 30px">
-						<option value="man" id="T1" selected="selected">남자</option>
-						<option value="woman" id="T2">여자</option>
+						<option value="남자" selected="selected">남자</option>
+						<option value="여자">여자</option>
 					</select><br><br>
 
-					<span style="font-size: 20px"><b>전공별 검색</b></span><br>
-					<select id="select_major_class" onchange="clickFormSelection('select', id, this.value)" name="menu"
-						style="width : 200px; height: 30px">
-						<option value="all" selected="selected">(전체)</option>
+					<span style="font-size: 20px"><b>계열별 검색</b></span><br>
+					<select id="계열" onchange="onClickListerner(id, this.value)" style="width : 200px; height: 30px">
+						<option value="(전체)" selected="selected">(전체)</option>
 						//HS: Humanities and Social Sciences
-						<option value="인문사회계열">인문사회</option>
+						<option value="인문사회">인문사회</option>
 						//NS: Natural Science
-						<option value="자연과학계열">자연과학</option>
+						<option value="자연과학">자연과학</option>
 						//EN: ENgineering
-						<option value="공학계열">공학</option>
+						<option value="공학">공학</option>
 						//AMP: Art, Music, Physical
-						<option value="예체능계열">예체능</option>
+						<option value="예체능">예체능</option>
 					</select><br><br>
 
 				</form>
@@ -177,13 +174,10 @@
 				var currentPosition = parseInt($("#gotop").css("top"));
 				$(window).scroll(function () {
 					var position = $(window).scrollTop();
-
-					if (position > 750)
-						$("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
-					else if (position < 300)
-						$("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
-					else
+					if (position < 300)
 						$("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
+					else
+						$("#gotop").stop().animate({ "top": position + currentPosition - 250 + "px" }, 1000);
 				});
 
 			</script>
@@ -192,36 +186,17 @@
 				function Change() {
 					val = $("#select_gender option:selected").val();
 					var Target1 = document.getElementById("P1");
-					if(val == 'woman')
+					if (val == 'woman')
 						Target1.innerHTML = "여자";
 
-					if(val == 'man')
+					if (val == 'man')
 						Target1.innerHTML = "남자";
 				}
 			</script>
 
 
 			<script>
-				//path of data file
-				const path = "../../json/5/2019_graduation.json";
-
-				//the variable in graduation5.js
-				//option value of selection
-				//degree: degree level. default: bachelor
-				level["degree"] = getIdCheckedRadio("radio_degree");
-				//gender: default: all
-				level["gender"] = getIdSelectedCheckbox("select_gender");
-				//dep_class: class of major, for example, natural science, engineering, ...
-				//           default: all
-				level["major_class"] = getIdSelectedCheckbox("select_major_class");
-				//num_selected: how many major show in columns
-				//              default: 50
-				level["num_selected"] = "50";
-
-				//load json file to 'data'
-				var data;
-				loadJSON(path);
-
+				init();
 			</script>
 
 			<br>

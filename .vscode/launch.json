@@ -11,20 +11,7 @@
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}",
             "runtimeArgs": ["--disable-web-security"],
-            // "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\views\\성과\\취업자 대상 조사\\취업자 대상 조사.html"
-            // "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\views\\등록\\직업설문조사.html"
-            // "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\views\\성과\\학위수여_6_Explore.html"
-            // "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\working on\\김도한\\html1.html"
-            "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\views\\등록\\복수전공\\복수전공.html"
-            // "file": "C:\\Users\\Administrator\\git\\IRcenter\\working on\\test.html"
-            // "file": "C:\\Users\\Administrator\\git\\IRcenter\\working on\\html\\산학협력단 고용주체별 인력 현황(도한).html"
-            // "file": "C:\\Users\\Administrator\\git\\IRcenter\\working on\\html\\전임교원 산업체 경력 현황(도한).html"
-            // "file": "C:\\Users\\Administrator\\git\\IRcenter\\views\\전체\\산학협력\\산학협력_1.html"
-            // "file": "C:\\Users\\Administrator\\git\\IRcenter\\views\\전체\\산학협력\\산학협력_2_고용주체.html"
-            // "file": "C:\\Users\\Administrator\\git\\IRcenter\\views\\입학\\100명학부생\\100명_1_100.html"
-            // "file": "C:\\Users\\Administrator\\git\\IRcenter\\views\\성과\\취업자 대상 조사\\취업자 대상 조사.html"
-            // "file": "C:\\Users\\Administrator\\git\\IRcenter\\views\\교수진 및 직원\\교원및조교\\교원및조교_2_교원및조교수.html"
-            // "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\working on\\PCG\\partitioned_column_graph.html"
-        }
+            "file": "C:\\Users\\sphis\\git\\IRcenter\\IRcenter\\views\\첫화면.html"
+            // "file": "C:\\Users\\Administrator\\git\\IRcenter\\views\\첫화면.html"
     ]
 }

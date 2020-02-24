@@ -30,7 +30,7 @@ function d3_drawChart() {
         data.nodes.forEach(e => e.group = division[e.group]);
 
         var innerW = d3.min([window.innerWidth * 0.4, 600]);
-        var margin = { top: innerW * 0.35, right: 0, bottom: 10, left: innerW * 0.35 },
+        var margin = { top: innerW * 0.42, right: 0, bottom: 10, left: innerW * 0.42 },
             width = innerW,
             height = width;
 
