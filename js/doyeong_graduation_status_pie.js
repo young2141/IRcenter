@@ -1,11 +1,41 @@
 function parsingPie() {
-    var year = parseInt($('#years').val())// string 타입
+    var year = 2018;// string 타입
     var filename = "doyeong_graduation_status_pie.json";
     $.getJSON("../../../json/" + filename, (jsonData) => {
-        var cnt = 0;
-        var num = 5;
-        while (cnt < 1) {
-            for (var i = 0; i < jsonData.length; i++) {
+        for (var i = 0; i < jsonData.length; i++) {
+            if (String(year) == jsonData[i]["category"]) {
+                var data = [
+                    {
+                        "category": "진학",
+                        "value": jsonData[i]["enter"]
+                    },
+                    {
+                        "category": "취업자",
+                        "value": jsonData[i]["employment"]
+                    },
+                    {
+                        "category": "입대자",
+                        "value": jsonData[i]["millitary"]
+                    },
+                    {
+                        "category": "외국인유학생",
+                        "value": jsonData[i]["foreign"]
+                    },
+                    {
+                        "category": "기타/미상",
+                        "value": jsonData[i]["etc"]
+                    },
+                    {
+                        "category": "취업불가능자/제외인정자",
+                        "value": jsonData[i]["exception"]
+                    }
+                ];
+                drawPie(data);
+                break;
+            }
+        }
+        /* while (cnt < 1) {
+            for (var i = 0; i < 1; i++) {
                 if (String(year) == jsonData[i]["category"]) {
                     var data = [
                         {
@@ -33,13 +63,14 @@ function parsingPie() {
                             "value": jsonData[i]["exception"]
                         }
                     ];
-                    drawPie(data);
+                    //drawPie(data);
                     cnt++;
                     break;
                 }
             }
-        }
+        } */
     })
+
 }
 
 function drawPie(_data) {
@@ -83,3 +114,5 @@ function createSeries(_chart) {
         return new am4core.color(color);
     });
 }
+
+parsingPie();
