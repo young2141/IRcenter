@@ -6,7 +6,7 @@ import re
 from pprint import pprint
 
 
-for year in range(2015, 2017):
+for year in range(2014, 2015):
     outj = []
     atom = {}
     with xlrd.open_workbook(r'C:\workspace\IRcenter\etc\tuition_parser\tuition/'+str(year)+'.xls') as wb:
@@ -23,6 +23,8 @@ for year in range(2015, 2017):
                     break
                 name += m
             if tuition == 0:
+                continue
+            if tuition == '0':
                 continue
             if name in atom:
                 atom[name] = max(atom[name], tuition)
