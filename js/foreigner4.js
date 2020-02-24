@@ -73,23 +73,22 @@ function pie1(data) {
             dummyData1.push(data);
             console.log(dummyData1);
 
-
-            label.text = "{dummyData.0.per}%";
             label.dummyData = dummyData1;
+            label.text = "{dummyData.0.per}%";
             console.log(label.dummyData);
-
-
 
             // Add and configure Series
             var pieSeries = chart.series.push(new am4charts.PieSeries());
+            var span_legend = document.getElementsByName("span_legend");
+
             pieSeries.dataFields.value = "size";
             pieSeries.dataFields.category = "sector";
             pieSeries.slices.template.tooltipText = "[bold]{category}[/]: {value.percent.formatNumber('#.0')}%({value}명)";
             pieSeries.colors.list = [
-                am4core.color("#ff0000"),
-                am4core.color("#FFFF00"),
-                am4core.color("#088A29"),
-                am4core.color("#0040FF"),
+                am4core.color(span_legend[0].style.color),
+                am4core.color(span_legend[1].style.color),
+                am4core.color(span_legend[2].style.color),
+                am4core.color(span_legend[3].style.color),
                 am4core.color("rgb(247, 247, 136)")
             ];
             pieSeries.slices.template.events.on("hit", function (ev) {
@@ -170,15 +169,17 @@ function pie2() {
 
 
             // Add and configure Series
+            var span_legend1 = document.getElementsByName("span_legend1");
+
             var pieSeries = chart.series.push(new am4charts.PieSeries());
             pieSeries.dataFields.value = "size";
             pieSeries.dataFields.category = "sector";
             pieSeries.slices.template.tooltipText = "[bold]{category}[/]: {value.percent.formatNumber('#.0')}%({value}명)";
             pieSeries.colors.list = [
-                am4core.color("#ff0000"),
-                am4core.color("#FFFF00"),
-                am4core.color("#088A29"),
-                am4core.color("#0040FF"),
+                am4core.color(span_legend1[0].style.color),
+                am4core.color(span_legend1[1].style.color),
+                am4core.color(span_legend1[2].style.color),
+                am4core.color(span_legend1[3].style.color),
                 am4core.color("rgb(247, 247, 136)")
             ];
 
@@ -187,6 +188,9 @@ function pie2() {
                 series.slices.each(function (item) {
                     if (item.isActive && item != ev.target) {
                         item.isActive = false;
+                    }
+                    if(item.isActive){
+                        label.text = "{item.value.percent.formatNumber('#.0')}%";
                     }
                 })
             });

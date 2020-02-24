@@ -45,12 +45,13 @@ am4core.ready(function () {
 
         // Add and configure Series
         var pieSeries = chart.series.push(new am4charts.PieSeries());
+        var span_legend = document.getElementsByName("span_legend");
         pieSeries.dataFields.value = "size";
         pieSeries.dataFields.category = "sector";
         pieSeries.slices.template.tooltipText = "[bold]{category}[/]: {value.percent.formatNumber('#.0')}%({value}명)";
         pieSeries.colors.list = [
-            am4core.color("#ff0000"),
-            am4core.color("rgb(247, 247, 136)")
+            am4core.color(span_legend[0].style.color),
+            am4core.color(span_legend[1].style.color)
         ];
 
         pieSeries.slices.template.events.on("hit", function (ev) {

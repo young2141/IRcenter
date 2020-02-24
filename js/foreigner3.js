@@ -36,6 +36,8 @@ function stackedAreaChart() {
             chart.data = json;
         }
 
+        var span_legend = document.getElementsByName("span_legend");
+
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
         dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
@@ -143,6 +145,8 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
+        var span_legend = document.getElementsByName("span_legend");
+
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
         dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
@@ -162,15 +166,15 @@ function multiplesAreaChart() {
         series.dataFields.valueY = "인문사회";
         series.tooltipHTML = "<span style='font-size:14px; color:#000000;'><b>{name}</b>: {valueY.value}명</span>";
         series.tooltipText = "[#000]{valueY.value}[/]";
-        series.tooltip.background.fill = am4core.color("#FFF");
+        series.tooltip.background.fill = am4core.color(span_legend[0].style.color);
         // series.tooltip.stroke = am4core.color("FF0000")
         series.tooltip.background.strokeWidth = 1;
         series.tooltip.getStrokeFromObject = false;
         series.tooltip.stroke = am4core.color("#000000");
         series.tooltip.getFillFromObject = true;
         series.fillOpacity = 1;
-        series.fill = am4core.color("#FF0000");
-        series.stroke = am4core.color("#FF0000");
+        series.fill = am4core.color(span_legend[0].style.color);
+        series.stroke = am4core.color(span_legend[0].style.color);
         series.strokeWidth = 3;
         series.stacked = true;
 
@@ -197,6 +201,8 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
+        var span_legend = document.getElementsByName("span_legend");
+
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
         dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
@@ -217,12 +223,12 @@ function multiplesAreaChart() {
         series.dataFields.valueY = "자연과학";
         series.tooltipHTML = "<span style='font-size:14px; color:#000000;'><b>{name}</b>: {valueY.value}명</span>";
         series.tooltipText = "[#000]{valueY.value}[/]";
-        series.tooltip.background.fill = am4core.color("#FFF");
+        series.tooltip.background.fill = am4core.color(span_legend[1].style.color);
         series.tooltip.getStrokeFromObject = false;
         series.tooltip.background.strokeWidth = 1;
         series.tooltip.getFillFromObject = true;
         series.fillOpacity = 1;
-        series.fill = am4core.color("#FFFF00");
+        series.fill = am4core.color(span_legend[1].style.color);
         series.strokeWidth = 0;
         series.stacked = true;
 
@@ -247,6 +253,8 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
+        var span_legend = document.getElementsByName("span_legend");
+
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
         dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
@@ -267,12 +275,12 @@ function multiplesAreaChart() {
         series.dataFields.valueY = "공학";
         series.tooltipHTML = "<span style='font-size:14px; color:#ffffff;'><b>{name}</b>: {valueY.value}명</span>";
         series.tooltipText = "[#000]{valueY.value}[/]";
-        series.tooltip.background.fill = am4core.color("#FFF");
+        series.tooltip.background.fill = am4core.color(span_legend[2].style.color);
         series.tooltip.getStrokeFromObject = false;
         series.tooltip.background.strokeWidth = 1;
         series.tooltip.getFillFromObject = true;
         series.fillOpacity = 1;
-        series.fill = am4core.color("#008000");
+        series.fill = am4core.color(span_legend[2].style.color);
         series.strokeWidth = 0;
         series.stacked = true;
 
@@ -297,6 +305,8 @@ function multiplesAreaChart() {
             chart.data = json;
         }
 
+        var span_legend = document.getElementsByName("span_legend");
+
         var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
         dateAxis.renderer.minGridDistance = 30;
         dateAxis.startLocation = 0.5;
@@ -317,12 +327,12 @@ function multiplesAreaChart() {
         series.dataFields.valueY = "예체능";
         series.tooltipHTML = "<span style='font-size:14px; color:#ffffff;'><b>{name}</b>: {valueY.value}명</span>";
         series.tooltipText = "[#000]{valueY.value}[/]";
-        series.tooltip.background.fill = am4core.color("#FFF");
+        series.tooltip.background.fill = am4core.color(span_legend[3].style.color);
         series.tooltip.getStrokeFromObject = false;
         series.tooltip.background.strokeWidth = 1;
         series.tooltip.getFillFromObject = true;
         series.fillOpacity = 1;
-        series.fill = am4core.color("#0000FF");
+        series.fill = am4core.color(span_legend[3].style.color);
         series.strokeWidth = 0;
         series.stacked = true;
 

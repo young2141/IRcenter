@@ -1,0 +1,299 @@
+[
+	{
+		"year": "2010",
+		"overall": {
+			"rank": "601-800",
+			"score": 18.7
+		},
+		"teaching": {
+			"rank": "601-800",
+			"score": 20.0
+		},
+		"research": {
+			"rank": "601-800",
+			"score": 28.0
+		},
+		"citations": {
+			"rank": "601-800",
+			"score": 26.0
+		},
+		"industry income": {
+			"rank": "601-800",
+			"score": 22.0
+		},
+		"international outlook": {
+			"rank": "601-800",
+			"score": 21.1
+		}
+	},
+	{
+		"year": "2011",
+		"overall": {
+			"rank": "601-800",
+			"score": 19.0
+		},
+		"teaching": {
+			"rank": "601-800",
+			"score": 20.0
+		},
+		"research": {
+			"rank": "601-800",
+			"score": 21.0
+		},
+		"citations": {
+			"rank": "601-800",
+			"score": 30.0
+		},
+		"industry income": {
+			"rank": "601-800",
+			"score": 19.0
+		},
+		"international outlook": {
+			"rank": "601-800",
+			"score": 19.2
+		}
+	},
+	{
+		"year": "2012",
+		"overall": {
+			"rank": "601-800",
+			"score": 21.0
+		},
+		"teaching": {
+			"rank": "601-800",
+			"score": 22.1
+		},
+		"research": {
+			"rank": "601-800",
+			"score": 23.0
+		},
+		"citations": {
+			"rank": "601-800",
+			"score": 18.0
+		},
+		"industry income": {
+			"rank": "601-800",
+			"score": 19.9
+		},
+		"international outlook": {
+			"rank": "601-800",
+			"score": 22.8
+		}
+	},
+	{
+		"year": "2013",
+		"overall": {
+			"rank": "801-1000",
+			"score": 23.9
+		},
+		"teaching": {
+			"rank": "801-1000",
+			"score": 23.0
+		},
+		"research": {
+			"rank": "801-1000",
+			"score": 22.0
+		},
+		"citations": {
+			"rank": "801-1000",
+			"score": 21.0
+		},
+		"industry income": {
+			"rank": "801-1000",
+			"score": 25.0
+		},
+		"international outlook": {
+			"rank": "801-1000",
+			"score": 23.4
+		}
+	},
+	{
+		"year": "2014",
+		"overall": {
+			"rank": "801-1000",
+			"score": 24.5
+		},
+		"teaching": {
+			"rank": "801-1000",
+			"score": 24.8
+		},
+		"research": {
+			"rank": "801-1000",
+			"score": 20.0
+		},
+		"citations": {
+			"rank": "801-1000",
+			"score": 22.0
+		},
+		"industry income": {
+			"rank": "801-1000",
+			"score": 26.0
+		},
+		"international outlook": {
+			"rank": "801-1000",
+			"score": 25.8
+		}
+	},
+	{
+		"year": "2015",
+		"overall": {
+			"rank": "801-1000",
+			"score": 24.4
+		},
+		"teaching": {
+			"rank": "801-1000",
+			"score": 25.2
+		},
+		"research": {
+			"rank": "801-1000",
+			"score": 26.7
+		},
+		"citations": {
+			"rank": "801-1000",
+			"score": 28.9
+		},
+		"industry income": {
+			"rank": "801-1000",
+			"score": 21.0
+		},
+		"international outlook": {
+			"rank": "801-1000",
+			"score": 20.0
+		}
+	},
+	{
+		"year": "2016",
+		"overall": {
+			"rank": "601-800",
+			"score": 21.1
+		},
+		"teaching": {
+			"rank": "601-800",
+			"score": 21.1
+		},
+		"research": {
+			"rank": "601-800",
+			"score": 16.0
+		},
+		"citations": {
+			"rank": "601-800",
+			"score": 18.1
+		},
+		"industry income": {
+			"rank": "601-800",
+			"score": 34.9
+		},
+		"international outlook": {
+			"rank": "601-800",
+			"score": 21.7
+		}
+	},
+	{
+		"year": "2017",
+		"overall": {
+			"rank": "601-800",
+			"score": 19.2
+		},
+		"teaching": {
+			"rank": "601-800",
+			"score": 19.2
+		},
+		"research": {
+			"rank": "601-800",
+			"score": 17.9
+		},
+		"citations": {
+			"rank": "601-800",
+			"score": 21.4
+		},
+		"industry income": {
+			"rank": "601-800",
+			"score": 39.6
+		},
+		"international outlook": {
+			"rank": "601-800",
+			"score": 23.4
+		}
+	},
+	{
+		"year": "2018",
+		"overall": {
+			"rank": "601-800",
+			"score": 22.1
+		},
+		"teaching": {
+			"rank": "601-800",
+			"score": 22.1
+		},
+		"research": {
+			"rank": "601-800",
+			"score": 19.6
+		},
+		"citations": {
+			"rank": "601-800",
+			"score": 22.9
+		},
+		"industry income": {
+			"rank": "601-800",
+			"score": 39.0
+		},
+		"international outlook": {
+			"rank": "601-800",
+			"score": 24.5
+		}
+	},
+	{
+		"year": "2019",
+		"overall": {
+			"rank": "801-1000",
+			"score": 23.9
+		},
+		"teaching": {
+			"rank": "801-1000",
+			"score": 23.9
+		},
+		"research": {
+			"rank": "801-1000",
+			"score": 25.6
+		},
+		"citations": {
+			"rank": "801-1000",
+			"score": 25.1
+		},
+		"industry income": {
+			"rank": "801-1000",
+			"score": 42.2
+		},
+		"international outlook": {
+			"rank": "801-1000",
+			"score": 26.7
+		}
+	},
+	{
+		"year": "2020",
+		"overall": {
+			"rank": "801-1000",
+			"score": 24.5
+		},
+		"teaching": {
+			"rank": "801-1000",
+			"score": 24.5
+		},
+		"research": {
+			"rank": "801-1000",
+			"score": 28.0
+		},
+		"citations": {
+			"rank": "801-1000",
+			"score": 25.0
+		},
+		"industry income": {
+			"rank": "801-1000",
+			"score": 43.4
+		},
+		"international outlook": {
+			"rank": "801-1000",
+			"score": 29.3
+		}
+	}
+]

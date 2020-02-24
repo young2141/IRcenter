@@ -146,7 +146,7 @@
             <br>
 
             <span style="font-size: 20px"> <b>성별 검색</b> </span><br />
-            <select id="sex_selectbar" onchange="call(); drawSunburst();" style="width : 200px; height: 30px">
+            <select id="sex_selectbar" onchange="call(),changegraph(); drawSunburst();" style="width : 200px; height: 30px">
                 <option name="sex" value="all">(전체)</option>
                 <option name="sex" value="male">남자</option>
                 <option name="sex" value="female">여자</option>
@@ -156,9 +156,9 @@
             <span style="font-size: 20px"><b>년도별 검색</b></span>
 			<br>
 
-			<input type=button value='◀' onclick="decrease(), changedata()">
-			<input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput="valuechange(parseInt(this.value))"onchange="changegraph(this.value)" >
-			<input type=button value='▶' onclick="increase(), changedata()">
+			<input type=button value='◀' onclick="decrease(), changegraph()">
+			<input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput="valuechange(parseInt(this.value))"onchange="changegraph()" >
+			<input type=button value='▶' onclick="increase(), changegraph()">
 
 			<script>
 				function valuechange(value) {
@@ -196,7 +196,7 @@
                     $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
             });
             call();
-            // call2();
+            changegraph();
             stackGraph();
             function changedata(){
                 span = document.getElementById('span1').innerHTML;

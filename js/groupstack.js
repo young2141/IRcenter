@@ -20,6 +20,7 @@ function lineGraph() {
 
             var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
             valueAxis.min = 0;
+            valueAxis.extraMax = 0.15;
 
             // axis break
             var axisBreak = valueAxis.axisBreaks.create();
@@ -180,6 +181,8 @@ function stackGraph() {
 
             var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
             valueAxis.min = 0;
+            valueAxis.extraMax = 0.15;
+            valueAxis.calculateTotals = true;
 
             // Create series
             function createSeries(field, name) {
@@ -199,12 +202,6 @@ function stackGraph() {
                 series.tooltip.label.textAlign = "middle";
                 series.columns.template.tooltipText = "[#fff font-size: 15px]{categoryX}년\n{name}:[/][#fff font-size: 15px bold] {valueY}개[/]";
 
-                // Add label
-                var labelBullet = series.bullets.push(new am4charts.LabelBullet());
-                labelBullet.label.text = "[font-size:10px]{valueY}[/]";
-                labelBullet.locationY = 0.5;
-                // labelBullet.label.hideOversized = true;
-
                 return series;
             }
 
@@ -215,6 +212,23 @@ function stackGraph() {
             createSeries("봉사", "봉사");
             createSeries("종교", "종교");
             createSeries("학술", "학술");
+
+            // Create series for total
+            var totalSeries = chart.series.push(new am4charts.ColumnSeries());
+            totalSeries.dataFields.valueY = "none";
+            totalSeries.dataFields.categoryX = "year";
+            totalSeries.stacked = true;
+            totalSeries.hiddenInLegend = true;
+            totalSeries.columns.template.strokeOpacity = 0;
+
+            var totalBullet = totalSeries.bullets.push(new am4charts.LabelBullet());
+            totalBullet.dy = -20;
+            totalBullet.label.text = "{valueY.total}";
+            totalBullet.label.hideOversized = false;
+            totalBullet.label.fontSize = 16;
+            // totalBullet.label.background.fill = totalSeries.stroke;
+            totalBullet.label.background.fillOpacity = 0.2;
+            totalBullet.label.padding(5, 10, 5, 10);
         }); // end am4core.ready()
     })
 }

@@ -20,7 +20,7 @@ function lineGraph(json) {
 
             /* Create value axis */
             var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.extraMax = 0.1;
+            valueAxis.extraMax = 0.15;
 
             /* Create series */
             var lineSeries = chart.series.push(new am4charts.LineSeries());
@@ -66,7 +66,8 @@ function stackGraph(json) {
 
             /* Create value axis */
             var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-            valueAxis.extraMax = 0.1;
+            valueAxis.extraMax = 0.15;
+            valueAxis.calculateTotals = true;
 
             /* Create series */
             var columnSeries = chart.series.push(new am4charts.ColumnSeries());
@@ -82,6 +83,23 @@ function stackGraph(json) {
             columnSeries.tooltip.label.textAlign = "middle";
 
             chart.data = data;
+
+            // Create series for total
+            var totalSeries = chart.series.push(new am4charts.ColumnSeries());
+            totalSeries.dataFields.valueY = "none";
+            totalSeries.dataFields.categoryX = "year";
+            totalSeries.stacked = true;
+            totalSeries.hiddenInLegend = true;
+            totalSeries.columns.template.strokeOpacity = 0;
+
+            var totalBullet = totalSeries.bullets.push(new am4charts.LabelBullet());
+            totalBullet.dy = -20;
+            totalBullet.label.text = "{valueY.total}";
+            totalBullet.label.hideOversized = false;
+            totalBullet.label.fontSize = 16;
+            // totalBullet.label.background.fill = totalSeries.stroke;
+            totalBullet.label.background.fillOpacity = 0.2;
+            totalBullet.label.padding(5, 10, 5, 10);
         });
     }); // end am4core.ready()
 }
