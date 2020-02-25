@@ -30,8 +30,8 @@ function draw(_data) {
     // Create line series
     var lineSeries = chart.series.push(new am4charts.LineSeries());
     lineSeries.name = "all average";
-    lineSeries.dataFields.valueX = "all";
-    lineSeries.dataFields.categoryY = "year";
+    lineSeries.dataFields.valueX = "avg";
+    lineSeries.dataFields.categoryY = "college";
 
     lineSeries.stroke = am4core.color("#fdd400");
     lineSeries.strokeWidth = 3;

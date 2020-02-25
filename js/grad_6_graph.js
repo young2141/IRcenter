@@ -5,7 +5,7 @@ function parse(callback, filename) {
 }
 
 function line_graph(data, div, chartName, college, sex, color) {
-  am4core.ready(function() {
+  am4core.ready(function () {
     // Themes begin
     am4core.useTheme(am4themes_animated);
     // Themes end
@@ -60,7 +60,7 @@ function line_graph(data, div, chartName, college, sex, color) {
 }
 
 function stackGraph(data, show) {
-  am4core.ready(function() {
+  am4core.ready(function () {
     // Themes begin
     am4core.useTheme(am4themes_animated);
     // Themes end
@@ -102,7 +102,7 @@ function stackGraph(data, show) {
     bullet1.interactionsEnabled = true;
     bullet1.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
     bullet1.locationY = 0.5;
-    bullet1.label.adapter.add("textOutput", function(text, target) {
+    bullet1.label.adapter.add("textOutput", function (text, target) {
       // Hide labels with 0 value
       if (target.dataItem && parseInt(target.dataItem.valueY) < show) {
         return "";
@@ -126,7 +126,7 @@ function stackGraph(data, show) {
     bullet2.interactionsEnabled = false;
     bullet2.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
     bullet2.locationY = 0.5;
-    bullet2.label.adapter.add("textOutput", function(text, target) {
+    bullet2.label.adapter.add("textOutput", function (text, target) {
       // Hide labels with 0 value
       if (target.dataItem && parseInt(target.dataItem.valueY) < show) {
         return "";
@@ -150,7 +150,7 @@ function stackGraph(data, show) {
     bullet3.interactionsEnabled = false;
     bullet3.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
     bullet3.locationY = 0.5;
-    bullet3.label.adapter.add("textOutput", function(text, target) {
+    bullet3.label.adapter.add("textOutput", function (text, target) {
       // Hide labels with 0 value
       if (target.dataItem && parseInt(target.dataItem.valueY) < show) {
         return "";
@@ -174,7 +174,7 @@ function stackGraph(data, show) {
     bullet4.interactionsEnabled = false;
     bullet4.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
     bullet4.locationY = 0.5;
-    bullet4.label.adapter.add("textOutput", function(text, target) {
+    bullet4.label.adapter.add("textOutput", function (text, target) {
       // Hide labels with 0 value
       if (target.dataItem && parseInt(target.dataItem.valueY) < show) {
         return "";
@@ -198,7 +198,7 @@ function stackGraph(data, show) {
     bullet5.interactionsEnabled = false;
     bullet5.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
     bullet5.locationY = 0.5;
-    bullet5.label.adapter.add("textOutput", function(text, target) {
+    bullet5.label.adapter.add("textOutput", function (text, target) {
       if (target.dataItem && parseInt(target.dataItem.valueY) < show) {
         return "";
       }
@@ -221,7 +221,7 @@ function stackGraph(data, show) {
     bullet6.interactionsEnabled = false;
     bullet6.label.text = "{valueY.totalPercent.formatNumber('#.')}%";
     bullet6.locationY = 0.5;
-    bullet6.label.adapter.add("textOutput", function(text, target) {
+    bullet6.label.adapter.add("textOutput", function (text, target) {
       // Hide labels with 0 value
       if (target.dataItem && parseInt(target.dataItem.valueY) < show) {
         return "";

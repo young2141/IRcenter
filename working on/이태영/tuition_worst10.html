@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>경북대학교 IR센터</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="./tuition_worst10.js"></script>
+  </head>
+
+  <body>
+    <div id="TOP">
+
+      <span style="font-size: 20px"><b>년도별 검색</b></span>
+      <br>
+
+      <input type=button value='◀' onclick=decrease()>
+      <input id="years" type=range min=2010 max=2019 step=1 value=2019
+        oninput=valuechange(parseInt(this.value))>
+      <input type=button value='▶' onclick=increase()>
+
+      <script>
+        function valuechange(value) {
+          document.getElementById('span1').innerHTML = (value);
+          draw();
+        }
+        function decrease() {
+          current_value = document.getElementById('years').value
+          console.log(current_value);
+          document.getElementById('years').value--;
+          valuechange(document.getElementById('years').value)
+        }
+        function increase() {
+          current_value = document.getElementById('years').value
+          console.log(current_value);
+          document.getElementById('years').value++;
+          valuechange(document.getElementById('years').value)
+        }
+      </script>
+      <br>
+      <div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
+      <br><br>
+      </div>
+      <div id="chartdiv"></div>
+      <script>
+        draw();
+      </script>
+    </div>
+
+  </body>
+</html>
