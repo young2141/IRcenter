@@ -45,6 +45,28 @@ function stackGraph(data) {
             // Configure columns
             series.columns.template.width = am4core.percent(60);
             series.tooltip.label.textAlign = "middle";
+            var span_legend = document.getElementsByName("span_legend");
+            if (name == "본부"){
+                series.fill = am4core.color(span_legend[0].style.color);
+            }
+            else if (name == "행정지원부"){
+                series.fill = am4core.color(span_legend[1].style.color);
+            }
+            else if (name == "대학(원)"){
+                series.fill = am4core.color(span_legend[2].style.color);
+            }
+            else if (name == "교육기본시설"){
+                series.fill = am4core.color(span_legend[3].style.color);
+            }
+            else if (name == "지원 및 연구시설"){
+                series.fill = am4core.color(span_legend[4].style.color);
+            }
+            else if(name == "부속시설"){
+                series.fill = am4core.color(span_legend[5].style.color);
+            }
+            else{
+                series.fill = am4core.color(span_legend[6].style.color);
+            }
             series.columns.template.tooltipText = "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
 
             // Add label

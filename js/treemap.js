@@ -21,21 +21,22 @@ function changegraph() {
                 brandTotal += data[brand][model][gender];
             }
 
+            var span_legend = document.getElementsByName("span_legend");
             for (var model in data[brand]) {
                 if (model == "본부")
-                    brandData.children.push({ name: model, count: data[brand][model][gender], color: "#dc67ce", per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model][gender], color: am4core.color(span_legend[0].style.color), per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
                 else if (model == "부설학교")
-                    brandData.children.push({ name: model, count: data[brand][model][gender], color: "#67b7dc", per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model][gender], color: am4core.color(span_legend[6].style.color), per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
                 else if (model == "행정지원부")
-                    brandData.children.push({ name: model, count: data[brand][model][gender], color: "#c767dc", per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model][gender], color: am4core.color(span_legend[1].style.color), per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
                 else if (model == "대학(원)")
-                    brandData.children.push({ name: model, count: data[brand][model][gender], color: "#a367dc", per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model][gender], color: am4core.color(span_legend[2].style.color), per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
                 else if (model == "교육기본시설")
-                    brandData.children.push({ name: model, count: data[brand][model][gender], color: "#8067dc", per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model][gender], color: am4core.color(span_legend[3].style.color), per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
                 else if (model == "지원 및 연구시설")
-                    brandData.children.push({ name: model, count: data[brand][model][gender], color: "#6771dc", per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model][gender], color: am4core.color(span_legend[4].style.color), per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
                 else if (model == "부속시설")
-                    brandData.children.push({ name: model, count: data[brand][model][gender], color: "#6794dc", per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model][gender], color: am4core.color(span_legend[5].style.color), per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
                 else
                     brandData.children.push({ name: model, count: data[brand][model][gender], color: "#ff00ff", per: (data[brand][model][gender] / brandTotal * 100).toFixed(1) });
             }

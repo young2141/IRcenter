@@ -18,21 +18,22 @@ function  changegraph(brand) {
                 brandTotal += data[brand][model];
             }
             // console.log(brandTotal);
+            var span_legend = document.getElementsByName("span_legend");
             for (var model in data[brand]) {
                 if (model == "학술")
-                    brandData.children.push({ name: model, count: data[brand][model], color: "#dc67ce", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model], color: am4core.color(span_legend[1].style.color), per: (data[brand][model] / brandTotal * 100).toFixed(1) });
                 else if (model == "취미")
-                    brandData.children.push({ name: model, count: data[brand][model], color: "#8067dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model], color: am4core.color(span_legend[4].style.color), per: (data[brand][model] / brandTotal * 100).toFixed(1) });
                 else if (model == "봉사")
-                    brandData.children.push({ name: model, count: data[brand][model], color: "#a367dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model], color: am4core.color(span_legend[3].style.color), per: (data[brand][model] / brandTotal * 100).toFixed(1) });
                 else if (model == "체육")
-                    brandData.children.push({ name: model, count: data[brand][model], color: "#6771dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model], color: am4core.color(span_legend[5].style.color), per: (data[brand][model] / brandTotal * 100).toFixed(1) });
                 else if (model == "종교")
-                    brandData.children.push({ name: model, count: data[brand][model], color: "#c767dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model], color: am4core.color(span_legend[2].style.color), per: (data[brand][model] / brandTotal * 100).toFixed(1) });
                 else if (model == "문예")
-                    brandData.children.push({ name: model, count: data[brand][model], color: "#6794dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
-                else
-                    brandData.children.push({ name: model, count: data[brand][model], color: "#67b7dc", per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+                    brandData.children.push({ name: model, count: data[brand][model], color: am4core.color(span_legend[6].style.color), per: (data[brand][model] / brandTotal * 100).toFixed(1) });
+                else if (model == "사회")
+                    brandData.children.push({ name: model, count: data[brand][model], color: am4core.color(span_legend[7].style.color), per: (data[brand][model] / brandTotal * 100).toFixed(1) });
 
             }
             // }

@@ -50,6 +50,28 @@ function stackGraph(data) {
 
             // Configure columns
             series.columns.template.width = am4core.percent(60);
+            var span_legend = document.getElementsByName("span_legend");
+            if (name == "일반직"){
+                series.fill = am4core.color(span_legend[0].style.color);
+            }
+            else if (name == "기술직"){
+                series.fill = am4core.color(span_legend[1].style.color);
+            }
+            else if (name == "별정직"){
+                series.fill = am4core.color(span_legend[2].style.color);
+            }
+            else if (name == "기능직"){
+                series.fill = am4core.color(span_legend[3].style.color);
+            }
+            else if (name == "대학회계직"){
+                series.fill = am4core.color(span_legend[4].style.color);
+            }
+            else if(name == "교육전문직"){
+                series.fill = am4core.color(span_legend[5].style.color);
+            }
+            else{
+                series.fill = am4core.color(span_legend[6].style.color);
+            }
             series.tooltip.label.textAlign = "middle";
             series.columns.template.tooltipText = "[bold]{name}[/]\n[font-size:14px]{categoryX}년: {valueY}명";
 
@@ -167,14 +189,15 @@ function Piechart(data) {
         pieSeries.slices.template.stroke = am4core.color("#fff");
         pieSeries.slices.template.strokeWidth = 2;
         pieSeries.slices.template.strokeOpacity = 1;
+        var span_legend = document.getElementsByName("span_legend");
         pieSeries.colors.list = [
-            am4core.color("#dc67ce"),
-            am4core.color("#c767dc"),
-            am4core.color("#a367dc"),
-            am4core.color("#8067dc"),
-            am4core.color("#6771dc"),
-            am4core.color("#6794dc"),
-            am4core.color("#67b7dc"),
+            am4core.color(span_legend[0].style.color),
+            am4core.color(span_legend[1].style.color),
+            am4core.color(span_legend[2].style.color),
+            am4core.color(span_legend[3].style.color),
+            am4core.color(span_legend[4].style.color),
+            am4core.color(span_legend[5].style.color),
+            am4core.color(span_legend[6].style.color)
         ];
 
         // This creates initial animation
