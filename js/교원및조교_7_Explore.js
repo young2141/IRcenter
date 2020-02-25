@@ -301,9 +301,9 @@ function reloadChart(data) {
     var total = len1 + len2 + len3;
 
     var div1 = document.getElementById("chartdiv1");
-    div2.style.width = Math.round(960 * len1 / total + 40).toString() + "px";
+    div1.style.width = Math.round(960 * len1 / total + 40).toString() + "px";
     var div2 = document.getElementById("chartdiv2");
-    div3.style.width = Math.round(960 * len2 / total).toString() + "px";
+    div2.style.width = Math.round(960 * len2 / total).toString() + "px";
     var div3 = document.getElementById("chartdiv3");
-    div4.style.width = Math.round(960 * len3 / total).toString() + "px";
+    div3.style.width = Math.round(960 * len3 / total).toString() + "px";
 }
