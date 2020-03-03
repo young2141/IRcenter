@@ -1,6 +1,6 @@
 function parsing() {
   var year = "2019";
-  $.getJSON("../json/4번_등록금(도영)/" + year + "년도_등록금_데이터4.json", (jsonData) => {
+  $.getJSON("../../../working on/json/4번_등록금(도영)/" + year + "년도_등록금_데이터4.json", (jsonData) => {
     draw(jsonData);
   })
 }
