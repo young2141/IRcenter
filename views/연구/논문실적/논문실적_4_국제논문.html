@@ -9,11 +9,8 @@
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
     <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="../../../js/연구실적_4_국제논문.js"></script>
 
 </head>
 
@@ -106,10 +103,8 @@
 
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
-
-
-            <span style="color:#FE4459; font-size: 20px;">■</span> SCI급/SCOPUS학술지<br>
-            <span style="color:#52A1FF; font-size: 20px;">■</span> 기타국제발간일반학술지<br><br>
+            <span style="color:#FE4459; font-size: 20px;" name="span_legend">■</span> SCI급/SCOPUS학술지<br>
+            <span style="color:#52A1FF; font-size: 20px;" name="span_legend">■</span> 기타국제발간일반학술지<br><br>
 
             <span style="font-size: 20px"><b>계열별 검색</b></span><br>
 
@@ -120,18 +115,17 @@
                     <span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
                 </span>
                 <div id="testVal" class="testVal">
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">인문사회<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">인문사회<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">자연과학<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">공학<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">예체능<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">의학<br>
+                    <input type="checkbox" name="affiliation" id="" checked="checked" onclick="check()" value="인문사회계열">인문사회<br>
+                    <input type="checkbox" name="affiliation" id="" checked="checked" onclick="check()" value="자연과학계열">자연과학<br>
+                    <input type="checkbox" name="affiliation" id="" checked="checked" onclick="check()" value="공학계열">공학<br>
+                    <input type="checkbox" name="affiliation" id="" checked="checked" onclick="check()" value="예체능계열">예체능<br>
+                    <input type="checkbox" name="affiliation" id="" checked="checked" onclick="check()" value="의학계열">의학<br>
                 </div>
             </div><br>
 
             <span style="font-size: 20px"><b>성별 검색</b></span><br>
-            <select id="gender" name="성별" onchange="parsing()" style="width : 200px; height: 30px">
-                <option name="성별" value="All" selected="selected" onclick="parsing()">(전체)</option>
+            <select id="gender" name="성별" onchange="check()" style="width : 200px; height: 30px">
+                <option name="성별" value="All" selected="selected">(전체)</option>
                 <option name="성별" value="Male">남자</option>
                 <option name="성별" value="Female">여자</option>
                 <br><br>
@@ -229,6 +223,25 @@
     </div>
 
     <script>
+        var target = document.getElementById("gender")
+
+        function check() {
+            var affiliations = document.getElementsByName("affiliation")
+            var affiliation_selected = []
+
+            for (var i = 0; i < affiliations.length; i++) {
+                if (affiliations[i].checked) {
+                    affiliation_selected.push(affiliations[i].value)
+                }
+            }
+
+            var sex_selected = target.options[target.selectedIndex].text
+
+            draw_graph("", affiliation_selected, sex_selected)
+            draw_graph("_1인당", affiliation_selected, sex_selected)
+        }
+
+        check()
     </script>
 
 </body>

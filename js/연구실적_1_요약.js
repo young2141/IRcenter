@@ -96,6 +96,10 @@
                 valueAxis.extraMax = 0.15;
                 // valueAxis.extraMin = 0.15;
 
+                var span_legend = document.getElementsByName("span_legend_" + _sort1)
+                // console.log(span_legend_all.id)
+                var index = 0
+
                 // Create series
                 function createSeries(name, message) {
                     var series = chart.series.push(new am4charts.LineSeries());
@@ -112,23 +116,20 @@
                     bullet.tooltipText = "{categoryX}학년도 " + message + "은 [bold]{valueY}" + (_sort1 == "논문" ? "편" : "권") + "[/]입니다.";
 
                     series.strokeDasharray = ["dotted"];
-                    if (name.indexOf("전체") != -1) {
-                        /*
-                        series.stroke = am4core.color(span_legend_all.style.color)
-                        bullet.circle.stroke = am4core.color(span_legend_all.style.color)
-                        bullet.circle.fill = am4core.color(span_legend_all.style.color)
-                        bullet.fill = am4core.color(span_legend_all.style.color)
-                        */
-                    }
-                    else {
-                        /*
-                        series.stroke = am4core.color(span_legend[index].style.color)
-                        bullet.circle.stroke = am4core.color(span_legend[index].style.color)
-                        bullet.circle.fill = am4core.color(span_legend[index].style.color)
-                        bullet.fill = am4core.color(span_legend[index++].style.color)
-                        */
+                    if (name.indexOf("전체") == -1)
                         series.strokeDasharray = "2, 2";
-                    }
+
+                    series.stroke = am4core.color(span_legend[index].style.color)
+                    bullet.circle.stroke = am4core.color(span_legend[index].style.color)
+                    bullet.circle.fill = am4core.color(span_legend[index].style.color)
+                    bullet.fill = am4core.color(span_legend[index++].style.color)
+
+                    /*
+                    series.stroke = am4core.color(span_legend_all.style.color)
+                    bullet.circle.stroke = am4core.color(span_legend_all.style.color)
+                    bullet.circle.fill = am4core.color(span_legend_all.style.color)
+                    bullet.fill = am4core.color(span_legend_all.style.color)
+                    */
                 }
 
                 if (_sort1 == "논문") {

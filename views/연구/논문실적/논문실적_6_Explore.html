@@ -9,11 +9,8 @@
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
     <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="../../../js/연구실적_6_Explore.js"></script>
 
 </head>
 
@@ -26,10 +23,11 @@
         padding-bottom: 40px;
     }
 
-    #testVal {
+    .testVal {
         visibility: hidden;
         position: absolute;
         height: 180px;
+        overflow-x: visible;
         overflow-y: scroll;
         border: 1px solid gray;
         background: white;
@@ -107,46 +105,62 @@
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
+            <b>[논문 실적]</b><br>
+            <span style="color:#FE4459; font-size: 20px;" name="span_legend_논문">■</span> 전체<br>
+            <span style="color:#E8A343; font-size: 20px;" name="span_legend_논문">■</span> 연구재단등재지(후보포함)<br>
+            <span style="color:#FCFF57; font-size: 20px;" name="span_legend_논문">■</span> 기타국내발간일반학술지<br>
+            <span style="color:#43E884; font-size: 20px;" name="span_legend_논문">■</span> SCI급/SCOPUS학술지<br>
+            <span style="color:#52A1FF; font-size: 20px;" name="span_legend_논문">■</span> 기타국제발간일반학술지<br><br>
 
-            <span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
-            <span style="color:#E8A343; font-size: 20px;">■</span> 연구재단등재지<br>
-            <span style="color:#FCFF57; font-size: 20px;">■</span> 기타국내발간일반학술지<br>
-            <span style="color:#43E884; font-size: 20px;">■</span> SCI급/SCOPUS학술지<br>
-            <span style="color:#52A1FF; font-size: 20px;">■</span> 기타국제발간일반학술지<br><br>
+            <b>[저ㆍ역서 실적]</b><br>
+            <span style="color:#FE4459; font-size: 20px;" name="span_legend_저·역서">■</span> 전체<br>
+            <span style="color:#E8A343; font-size: 20px;" name="span_legend_저·역서">■</span> 저서<br>
+            <span style="color:#FCFF57; font-size: 20px;" name="span_legend_저·역서">■</span> 역서<br><br>
 
             <span style="font-size: 20px"><b>계열별 검색</b></span><br>
 
-            <div
-                style="width : 200px; height: 30px; border-style: solid; border-width: 0.5px; border-color:darkgray; padding: 1px">
-                <span id="selectBox1" name="selectBox1" onClick="choiceSelectBox(this);" style="font-size: 15px">
+            <div style="width : 200px; height: 30px; border-style: solid; border-width: 0.5px; border-color:darkgray; padding: 1px">
+                <span id="selectBox1" name="selectBox1" onClick="choiceSelectBox(this, 0);" style="font-size: 15px">
                     (전체)&nbsp;
                     <span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
                 </span>
-                <div id="testVal" class="testVal">
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">인문사회<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">인문사회<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">자연과학<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">공학<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">예체능<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">의학<br>
+                <div id="testVal0" class="testVal">
+                    <input type="checkbox" name="affiliation" id="" checked="checked" onclick="check_affiliation()" value="인문사회계열">인문사회<br>
+                    <input type="checkbox" name="affiliation" id="" checked="checked" onclick="check_affiliation()" value="자연과학계열">자연과학<br>
+                    <input type="checkbox" name="affiliation" id="" checked="checked" onclick="check_affiliation()" value="공학계열">공학<br>
+                    <input type="checkbox" name="affiliation" id="" checked="checked" onclick="check_affiliation()" value="예체능계열">예체능<br>
+                    <input type="checkbox" name="affiliation" id="" checked="checked" onclick="check_affiliation()" value="의학계열">의학<br>
                 </div>
             </div><br>
 
             <span style="font-size: 20px"><b>전공별 검색</b></span><br>
-            <select id="" name="" onchange="" style="width : 200px; height: 30px">
-                <option name="" value="" selected="selected" onclick="">(전체)</option>
-            </select><br><br>
+
+            <div style="width : 200px; height: 30px; border-style: solid; border-width: 0.5px; border-color:darkgray; padding: 1px">
+                <span id="selectBox2" name="selectBox2" onClick="choiceSelectBox(this, 1);" style="font-size: 15px">
+                    (전체)&nbsp;
+                    <span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
+                </span>
+
+                <div id="testVal1" class="testVal">
+                </div>
+
+                <!--
+        <select id="" name="" onchange="" style="width : 200px; height: 30px">
+            <option name="" value="" selected="selected" onclick="">(전체)</option>
+        </select><br><br>
+        -->
+            </div><br>
 
             <span style="font-size: 20px"><b>성별 검색</b></span><br>
-            <select id="gender" name="성별" onchange="parsing()" style="width : 200px; height: 30px">
-                <option name="성별" value="All" selected="selected" onclick="parsing()">(전체)</option>
+            <select id="gender" name="성별" onchange="check()" style="width : 200px; height: 30px">
+                <option name="성별" value="All" selected="selected">(전체)</option>
                 <option name="성별" value="Male">남자</option>
                 <option name="성별" value="Female">여자</option>
             </select>
 
 
         </div>
-        <script>
+            <script>
             var currentPosition = parseInt($("#gotop").css("top"));
             $(window).scroll(function () {
                 var position = $(window).scrollTop();
@@ -159,7 +173,7 @@
                     $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
             });
 
-            function choiceSelectBox(obj) {
+            function choiceSelectBox(obj, index_temp) {
                 var nWidth = parseInt(obj.offsetWidth);
                 var nHeight = parseInt(obj.offsetHeight);
                 var nLeft = obj.offsetLeft;
@@ -170,72 +184,75 @@
                     nTop += obj.offsetParent.offsetParent.offsetTop + obj.offsetParent.offsetTop;
                 }
 
-                if ($("#testVal").css("visibility") == "hidden") {
+                if ($("#testVal" + index_temp).css("visibility") == "hidden") {
 
-                    $("#testVal").css("left", nLeft);
-                    $("#testVal").css("top", nTop);
-                    $("#testVal").css("padding-left", "0px");
-                    $("#testVal").css("width", nWidth);
-                    $("#testVal").css("visibility", "visible");
+                    $("#testVal" + index_temp).css("left", nLeft);
+                    $("#testVal" + index_temp).css("top", nTop);
+                    $("#testVal" + index_temp).css("padding-left", "0px");
+                    $("#testVal" + index_temp).css("width", nWidth);
+                    $("#testVal" + index_temp).css("visibility", "visible");
+
+                    if ($("#testVal" + (1-index_temp)).css("visibility") != "hidden")
+                        $("#testVal" + (1-index_temp)).css("visibility", "hidden");
 
                 } else {
-                    $("#testVal").css("visibility", "hidden");
+                    $("#testVal" + index_temp).css("visibility", "hidden");
                 }
             }
 
-        </script>
+            </script>
 
-        <a href="../연구.html"><span id="black">이전 메뉴로 이동</a></span>
-        <div id="summaryBox">
-            <h2>논문 실적</h2>
+            <a href="../연구.html"><span id="black">이전 메뉴로 이동</a></span>
+            <div id="summaryBox">
+                <h2>논문 실적</h2>
+            </div>
+            <div id="unitBox">
+                (단위 : 편)
+            </div>
+            <div class="chartdiv" id="chartdiv1"></div>
+
+            <div id="summaryBox">
+                <h2>전임교원 1인당 논문 실적</h2>
+            </div>
+            <div id="unitBox">
+                (단위 : 편)
+            </div>
+            <div class="chartdiv" id="chartdiv2"></div>
+
+            <div id="summaryBox">
+                <h2>저ㆍ역서 실적</h2>
+            </div>
+            <div id="unitBox">
+                (단위 : 권)
+            </div>
+            <div class="chartdiv" id="chartdiv3"></div>
+
+            <div id="summaryBox">
+                <h2>전임교원 1인당 저ㆍ역서 실적</h2>
+            </div>
+            <div id="unitBox">
+                (단위 : 권)
+            </div>
+            <div class="chartdiv" id="chartdiv4"></div>
+
+
+
+
+            <div id="summaryBox" style="font-size: 15px">
+                <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
+
+                <b>출처 및 방법론</b><br>
+                - 이 대시보드에 표시된 가장 최근 연도의 데이터는 해당 지원주기가 끝날 때까지(당해년도의 3월초부터 이듬해 2월말) 예비적인 것으로 간주해야합니다.<br>
+
+                <b>사용 가능한 다른 데이터에 대한 참고사항</b><br>
+                - 경북대학교 입학정보 홈페이지에서는 학부 입학 전형 일정 및 절차, 선발기준 및 방법에 대한 광범위한 정보를 제공합니다.<br>
+                - 경북대학교 입학정보 홈페이지에서는 2020년도 경북대학교 대학입학전형 안내 동영상을 다음
+                링크(https://www.youtube.com/watch?v=xuArJ6qPbMM&feature=youtu.be)에서 제공합니다.<br>
+
+                <br><br>
+            </div>
+
         </div>
-        <div id="unitBox">
-            (단위 : 편)
-        </div>
-        <div class="chartdiv" id="chartdiv1"></div>
-
-        <div id="summaryBox">
-            <h2>전임교원 1인당 논문 실적</h2>
-        </div>
-        <div id="unitBox">
-            (단위 : 편)
-        </div>
-        <div class="chartdiv" id="chartdiv2"></div>
-
-        <div id="summaryBox">
-            <h2>저ㆍ역서 실적</h2>
-        </div>
-        <div id="unitBox">
-            (단위 : 권)
-        </div>
-        <div class="chartdiv" id="chartdiv3"></div>
-
-        <div id="summaryBox">
-            <h2>전임교원 1인당 저ㆍ역서 실적</h2>
-        </div>
-        <div id="unitBox">
-            (단위 : 권)
-        </div>
-        <div class="chartdiv" id="chartdiv2"></div>
-
-
-
-
-        <div id="summaryBox" style="font-size: 15px">
-            <b>이 데이터를 여기에서 다운로드하십시오</b> (최종 업데이트 날짜 : 2019년 O월 O일)<br>
-
-            <b>출처 및 방법론</b><br>
-            - 이 대시보드에 표시된 가장 최근 연도의 데이터는 해당 지원주기가 끝날 때까지(당해년도의 3월초부터 이듬해 2월말) 예비적인 것으로 간주해야합니다.<br>
-
-            <b>사용 가능한 다른 데이터에 대한 참고사항</b><br>
-            - 경북대학교 입학정보 홈페이지에서는 학부 입학 전형 일정 및 절차, 선발기준 및 방법에 대한 광범위한 정보를 제공합니다.<br>
-            - 경북대학교 입학정보 홈페이지에서는 2020년도 경북대학교 대학입학전형 안내 동영상을 다음
-            링크(https://www.youtube.com/watch?v=xuArJ6qPbMM&feature=youtu.be)에서 제공합니다.<br>
-
-            <br><br>
-        </div>
-
-    </div>
 
     <div class="bottomframe">
         <div class="inbottomframe"></div>
@@ -252,6 +269,79 @@
     </div>
 
     <script>
+        var target = document.getElementById("gender")
+        var affiliations = document.getElementsByName("affiliation")
+        var majors_area = document.getElementById("testVal1")
+
+        function check_affiliation() {
+            var affiliation_selected = []
+
+            majors_area.innerHTML = "<input type='checkbox' name='' id='major_all' checked='checked' onclick='check_all()'>(전체)<br>"
+            
+            for (var i = 0; i < affiliations.length; i++) {
+                if (affiliations[i].checked) {
+                    affiliation_selected.push(affiliations[i].value)
+                }
+            }
+
+            parse1(json1 => {
+                parse2(json2 => {
+                    var majors = Object.keys(json2[0]["전임교원_남자"])
+                    majors.sort()
+
+                    var count = 0
+
+                    for (var j = 0; j < majors.length; j++) {
+                        if ($.inArray(json1[majors[j]], affiliation_selected) != -1) {
+                            majors_area.innerHTML += "<input type='checkbox' name='major' id='' checked='checked' onclick='check()' value=" + majors[j] + ">" + majors[j] + "<br>"
+                            count++
+                        }
+                    }
+
+                    if (count == 0) {
+                        majors_area.innerHTML = ""
+                    }
+                    
+                    check()
+                })
+            })
+        }
+
+        function check_all() {
+            var major_all = document.getElementById("major_all")
+            var major_list = document.getElementsByName("major")
+            
+            var temp = !major_list[0].checked
+
+            for (var i = 0; i < major_list.length; i++) {
+                major_list[i].checked = temp
+            }
+
+            check()
+        }
+
+        function check() {
+            var major_all = document.getElementById("major_all")
+            var major_list = document.getElementsByName("major")
+            var major_selected = []
+
+            for (var i = 0; i < major_list.length; i++) {
+                if (major_list[i].checked) {
+                    major_selected.push(major_list[i].value)
+                }
+            }
+            
+            major_all.checked = major_list.length == major_selected.length
+
+            var sex_selected = target.options[target.selectedIndex].text
+
+            draw_graph("논문", "", major_selected, sex_selected)
+            draw_graph("논문", "_1인당", major_selected, sex_selected)
+            draw_graph("저·역서", "", major_selected, sex_selected)
+            draw_graph("저·역서", "_1인당", major_selected, sex_selected)
+        }
+
+        check_affiliation()
     </script>
 
 </body>
