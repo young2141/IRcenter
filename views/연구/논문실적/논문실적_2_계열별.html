@@ -7,10 +7,10 @@
     <script src="https://www.amcharts.com/lib/4/core.js"></script>
     <script src="https://www.amcharts.com/lib/4/charts.js"></script>
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
-    <script src="../../../js/연구실적_1_요약.js"></script>
+    <script src="../../../js/연구실적_2_계열별.js"></script>
 
 
 </head>
@@ -66,14 +66,14 @@
                     <tbody>
                         <tr>
                             <td style="border-style: none; font-size : 30px">
-                                <a href="논문실적_6_Explore.html">
+                                <a href="논문실적_1_요약.html">
                                     <span id="black">◀</span>
                                 </a>
                             </td>
-                            <td style="background-color : #eeeeee">
+                            <td>
                                 <a href="논문실적_1_요약.html"><span id="black">요약</span></a>
                             </td>
-                            <td>
+                            <td style="background-color : #eeeeee">
                                 <a href="논문실적_2_계열별.html"><span id="black">계열별 논문 및 저ㆍ역서</span></a>
                             </td>
                             <td>
@@ -89,7 +89,7 @@
                                 <a href="논문실적_6_Explore.html"><span id="black">Explore the data</span></a>
                             </td>
                             <td style="border-style: none; font-size : 30px">
-                                <a href="논문실적_2_계열별.html">
+                                <a href="논문실적_3_국내논문.html">
                                     <span style="color: black">▶</span>
                                 </a>
                             </td>
@@ -105,17 +105,14 @@
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
-            <b>[논문 실적]</b><br>
-            <span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
-            <span style="color:#E8A343; font-size: 20px;">■</span> 연구재단등재지<br>
-            <span style="color:#FCFF57; font-size: 20px;">■</span> 기타국내발간일반학술지<br>
-            <span style="color:#43E884; font-size: 20px;">■</span> SCI급/SCOPUS학술지<br>
-            <span style="color:#52A1FF; font-size: 20px;">■</span> 기타국제발간일반학술지<br><br>
 
-            <b>[저ㆍ역서 실적]</b><br>
             <span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
-            <span style="color:#E8A343; font-size: 20px;">■</span> 저서<br>
-            <span style="color:#FCFF57; font-size: 20px;">■</span> 역서<br>
+            <span style="color:#E8A343; font-size: 20px;">■</span> 인문사회<br>
+            <span style="color:#FCFF57; font-size: 20px;">■</span> 자연과학<br>
+            <span style="color:#43E884; font-size: 20px;">■</span> 공학<br>
+            <span style="color:#52A1FF; font-size: 20px;">■</span> 예체능<br>
+            <span style="color: navy; font-size: 20px;">■</span> 의학<br><br>
+
 
 
         </div>
@@ -133,39 +130,39 @@
             });
 
             function choiceSelectBox(obj) {
-                var nWidth = parseInt(obj.offsetWidth);
-                var nHeight = parseInt(obj.offsetHeight);
-                var nLeft = obj.offsetLeft;
-                var nTop = obj.offsetTop + obj.offsetHeight + 2;
+            var nWidth = parseInt(obj.offsetWidth);
+            var nHeight = parseInt(obj.offsetHeight);
+            var nLeft = obj.offsetLeft;
+            var nTop = obj.offsetTop + obj.offsetHeight + 2;
 
-                if (navigator.appName == "Microsoft Internet Explorer") {
-                    nLeft += obj.offsetParent.offsetParent.offsetLeft + obj.offsetParent.offsetLeft;
-                    nTop += obj.offsetParent.offsetParent.offsetTop + obj.offsetParent.offsetTop;
-                }
-
-                if ($("#testVal").css("visibility") == "hidden") {
-
-                    $("#testVal").css("left", nLeft);
-                    $("#testVal").css("top", nTop);
-                    $("#testVal").css("padding-left", "0px");
-                    $("#testVal").css("width", nWidth);
-                    $("#testVal").css("visibility", "visible");
-
-                } else {
-                    $("#testVal").css("visibility", "hidden");
-                }
+            if (navigator.appName == "Microsoft Internet Explorer") {
+                nLeft += obj.offsetParent.offsetParent.offsetLeft + obj.offsetParent.offsetLeft;
+                nTop += obj.offsetParent.offsetParent.offsetTop + obj.offsetParent.offsetTop;
             }
+
+            if ($("#testVal").css("visibility") == "hidden") {
+
+                $("#testVal").css("left", nLeft);
+                $("#testVal").css("top", nTop);
+                $("#testVal").css("padding-left", "0px");
+                $("#testVal").css("width", nWidth);
+                $("#testVal").css("visibility", "visible");
+
+            } else {
+                $("#testVal").css("visibility", "hidden");
+            }
+        }
 
         </script>
 
         <a href="../연구.html"><span id="black">이전 메뉴로 이동</a></span>
         <div id="summaryBox">
-            <h2>논문 실적</h2>
+            <h2>논문 실적 　　　　　　　　　　　국내/국제 총합</h2>
         </div>
         <div class="chartdiv" id="chartdiv1"></div>
 
         <div id="summaryBox">
-            <h2>저ㆍ역서 실적</h2>
+            <h2>저ㆍ역서 실적 　　　　　　　　　저ㆍ역서 총합</h2>
         </div>
         <div class="chartdiv" id="chartdiv2"></div>
 

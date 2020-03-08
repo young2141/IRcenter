@@ -7,10 +7,12 @@
     <script src="https://www.amcharts.com/lib/4/core.js"></script>
     <script src="https://www.amcharts.com/lib/4/charts.js"></script>
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
-    <script src="../../../js/연구실적_1_요약.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
 
 </head>
@@ -66,11 +68,11 @@
                     <tbody>
                         <tr>
                             <td style="border-style: none; font-size : 30px">
-                                <a href="논문실적_6_Explore.html">
+                                <a href="논문실적_5_저역서.html">
                                     <span id="black">◀</span>
                                 </a>
                             </td>
-                            <td style="background-color : #eeeeee">
+                            <td>
                                 <a href="논문실적_1_요약.html"><span id="black">요약</span></a>
                             </td>
                             <td>
@@ -85,11 +87,11 @@
                             <td>
                                 <a href="논문실적_5_저역서.html"><span id="black">저ㆍ역서</span></a>
                             </td>
-                            <td>
+                            <td style="background-color : #eeeeee">
                                 <a href="논문실적_6_Explore.html"><span id="black">Explore the data</span></a>
                             </td>
                             <td style="border-style: none; font-size : 30px">
-                                <a href="논문실적_2_계열별.html">
+                                <a href="논문실적_1_요약.html">
                                     <span style="color: black">▶</span>
                                 </a>
                             </td>
@@ -105,17 +107,42 @@
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
-            <b>[논문 실적]</b><br>
+
             <span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
             <span style="color:#E8A343; font-size: 20px;">■</span> 연구재단등재지<br>
             <span style="color:#FCFF57; font-size: 20px;">■</span> 기타국내발간일반학술지<br>
             <span style="color:#43E884; font-size: 20px;">■</span> SCI급/SCOPUS학술지<br>
             <span style="color:#52A1FF; font-size: 20px;">■</span> 기타국제발간일반학술지<br><br>
 
-            <b>[저ㆍ역서 실적]</b><br>
-            <span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
-            <span style="color:#E8A343; font-size: 20px;">■</span> 저서<br>
-            <span style="color:#FCFF57; font-size: 20px;">■</span> 역서<br>
+            <span style="font-size: 20px"><b>계열별 검색</b></span><br>
+
+            <div
+                style="width : 200px; height: 30px; border-style: solid; border-width: 0.5px; border-color:darkgray; padding: 1px">
+                <span id="selectBox1" name="selectBox1" onClick="choiceSelectBox(this);" style="font-size: 15px">
+                    (전체)&nbsp;
+                    <span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
+                </span>
+                <div id="testVal" class="testVal">
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">인문사회<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">인문사회<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">자연과학<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">공학<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">예체능<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">의학<br>
+                </div>
+            </div><br>
+
+            <span style="font-size: 20px"><b>전공별 검색</b></span><br>
+            <select id="" name="" onchange="" style="width : 200px; height: 30px">
+                <option name="" value="" selected="selected" onclick="">(전체)</option>
+            </select><br><br>
+
+            <span style="font-size: 20px"><b>성별 검색</b></span><br>
+            <select id="gender" name="성별" onchange="parsing()" style="width : 200px; height: 30px">
+                <option name="성별" value="All" selected="selected" onclick="parsing()">(전체)</option>
+                <option name="성별" value="Male">남자</option>
+                <option name="성별" value="Female">여자</option>
+            </select>
 
 
         </div>
@@ -162,10 +189,32 @@
         <div id="summaryBox">
             <h2>논문 실적</h2>
         </div>
+        <div id="unitBox">
+            (단위 : 편)
+        </div>
         <div class="chartdiv" id="chartdiv1"></div>
 
         <div id="summaryBox">
+            <h2>전임교원 1인당 논문 실적</h2>
+        </div>
+        <div id="unitBox">
+            (단위 : 편)
+        </div>
+        <div class="chartdiv" id="chartdiv2"></div>
+
+        <div id="summaryBox">
             <h2>저ㆍ역서 실적</h2>
+        </div>
+        <div id="unitBox">
+            (단위 : 권)
+        </div>
+        <div class="chartdiv" id="chartdiv3"></div>
+
+        <div id="summaryBox">
+            <h2>전임교원 1인당 저ㆍ역서 실적</h2>
+        </div>
+        <div id="unitBox">
+            (단위 : 권)
         </div>
         <div class="chartdiv" id="chartdiv2"></div>
 
