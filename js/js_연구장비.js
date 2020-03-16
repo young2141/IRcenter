@@ -67,7 +67,7 @@ parse(json => {
         }
         
         createSeries("비용", "연구 장비 비용","red");
-        createSeries("수익", "실비자산 사용료 수익","blue");
+        createSeries("수익", "설비자산 사용료 수익","blue");
 
         
         var lineSeries = chart.series.push(new am4charts.LineSeries());
