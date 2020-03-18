@@ -13,7 +13,7 @@
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script src="../../../js/js_직원변동현황.js"></script>
-	<script>drawChart("행정기술")</script>
+
 </head>
 
 <style type="text/css">
@@ -116,13 +116,7 @@
 			<span style="color:#FCD12A; font-size: 20px;"> ■ </span> 신규채용+전입<br>
 			<span style="color:#000080; font-size: 20px;"> ■ </span> 전출+퇴직<br><br>
 
-			<span style="font-size: 20px"> <b>직종별</b> </span><br />
-            <select id="job_selectbar" onchange="Change(this.value)" style="width : 200px; height: 30px">
-                <option name="job" value="행정기술">행정기술</option>
-                <option name="job" value="전문경력관">전문경력관</option>
-				<option name="job" value="관리운영직">관리운영직</option>
-				<option name="job" value="대학회계직">대학회계직</option>
-            </select>
+			
             <br><br>
 		</div>
 	
@@ -168,13 +162,7 @@
 
 	</div>
 
-	<script>
-		function Change(value) {
-			drawChart(value)
-
-
-		}
-	</script>
+	
 
 	<div class="bottomframe">
 		<div class="inbottomframe"></div>

@@ -27,25 +27,25 @@ let data = [
         "category": "내국인",
         "subcategory": "내국인",
         "position": "left",
-        "percentage": 62
+        "percentage": 90
     },
     {
         "category": "내국인",
         "subcategory": "그 외",
         "position": "right",
-        "percentage": 38
+        "percentage": 10
     },
     {
         "category": "외국인",
         "subcategory": "외국인",
         "position": "left",
-        "percentage": 38
+        "percentage": 10
     },
     {
         "category": "외국인",
         "subcategory": "그 외",
         "position": "right",
-        "percentage": 62
+        "percentage": 90
     },
     {
         "category": "본부",
