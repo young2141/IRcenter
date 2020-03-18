@@ -13,6 +13,7 @@
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 	<script src="../../../js/js_직원변동현황.js"></script>
+	<script>drawChart("행정기술")</script>
 </head>
 
 <style type="text/css">
@@ -116,7 +117,7 @@
 			<span style="color:#000080; font-size: 20px;"> ■ </span> 전출+퇴직<br><br>
 
 			<span style="font-size: 20px"> <b>직종별</b> </span><br />
-            <select id="job_selectbar" onchange="call(),changegraph(); drawSunburst();" style="width : 200px; height: 30px">
+            <select id="job_selectbar" onchange="Change(this.value)" style="width : 200px; height: 30px">
                 <option name="job" value="행정기술">행정기술</option>
                 <option name="job" value="전문경력관">전문경력관</option>
 				<option name="job" value="관리운영직">관리운영직</option>
@@ -168,45 +169,8 @@
 	</div>
 
 	<script>
-		function Change() {
-			val = $("#select_gender option:selected").val();
-			var Target1 = document.getElementById("P1");
-			var Target2 = document.getElementById("P2");
-
-			if (val == '행정직') {
-				Target1.innerHTML = "행정직";
-				Target2.innerHTML = "행정직";
-			}
-
-			if (val == '사서직') {
-				Target1.innerHTML = "사서직";
-				Target2.innerHTML = "사서직";
-			}
-
-			if (val == '기술직') {
-				Target1.innerHTML = "기술직";
-				Target2.innerHTML = "기술직";
-			}
-
-			if (val == '전산직') {
-				Target1.innerHTML = "전산직";
-				Target2.innerHTML = "전산직";
-			}
-
-			if (val == '전문경력관') {
-				Target1.innerHTML = "전문경력관";
-				Target2.innerHTML = "전문경력관";
-			}
-
-			if (val == '관리운영직') {
-				Target1.innerHTML = "관리운영직";
-				Target2.innerHTML = "관리운영직";
-			}
-
-			if (val == '대학회계직') {
-				Target1.innerHTML = "대학회계직";
-				Target2.innerHTML = "대학회계직";
-			}
+		function Change(value) {
+			drawChart(value)
 
 
 		}
