@@ -11,12 +11,21 @@
 	<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-	<script src="../../../working on/js/staffheadcount_sharedservice.js"></script>
+	<!-- <script src="../../../working on/js/staffheadcount_sharedservice.js"></script> -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	
 
 </head>
 
 <style type="text/css">
 	@import url('../../../css/output_default.css');
+	#chart {
+        text-align: center;
+        margin: auto;
+    }
+    .labels {
+        text-anchor: middle;
+    }
 </style>
 
 <body>
@@ -69,6 +78,9 @@
 								<a href="직원현황_4_평균연령.html"><span id="black">평균연령 및 평균근속연수</span></a>
 							</td>
 							<td>
+								<a href="직원현황_6_변동현황.html"><span id="black">변동현황</span></a>
+							</td>
+							<td>
 								<a href="직원현황_5_Explore.html"><span id="black">Explore the data</span></a>
 							</td>
 							<td style="border-style: none; font-size : 30px">
@@ -85,9 +97,67 @@
 	</div>
 	</center>
 
-	<div id="TOP">
 
-		<div id="chartdiv" style="width: 1000px; height: 750px"></div>
+	<div class="bodyBox">
+
+
+        <div id="titleBox">
+            <span id="titleFont"><b>직원 100명</b></span><br><br>
+            만약 캠퍼스에 100명의 직원만 있다면, 그 중 여자는 몇 명일까요? 몇 명의 직원이 어느 기관에 있을까요?<br><br>
+
+            아래 차트는 <span id="blue">경북대학교 캠퍼스 내에 100명의 직원만 있다고 가정한 후,</span> 각 특성 내에 있는 직원들의 분포를 나타냅니다.<br>
+            차트 아래의 버튼을 클릭하여 다양한 정보들을 확인해보세요.
+            <br>
+        </div>
+
+    </div>
+
+
+    <div id="TOP">
+        <center>
+            <div id="chart"></div>
+            <form>
+                <div id="btn-div">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="여자" value="여자" onclick="onClick(this.id)">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="내국인" value="내국인" onclick="onClick(this.id)">
+                    <input type="button" style="width:130; height: 30px; margin : 10px" id="본부" value="본부" onclick="onClick(this.id)">
+					<input type="button" style="width: 130px; height: 30px; margin : 10px" id="일반직" value="일반직" onclick="onClick(this.id)">
+					<br>
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="남자" value="남자" onclick="onClick(this.id)">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="외국인" value="외국인" onclick="onClick(this.id)">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="행정지원부" value="행정지원부" onclick="onClick(this.id)">
+					<input type="button" style="width:130; height: 30px; margin : 10px" id="기술직" value="기술직" onclick="onClick(this.id)">
+					<br>
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="대학(원)" value="대학(원)" onclick="onClick(this.id)">
+					<input type="button" style="width:130; height: 30px; margin : 10px" id="별정직" value="별정직" onclick="onClick(this.id)">
+					<br>
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="교육기본시설" value="교육기본시설" onclick="onClick(this.id)">
+					<input type="button" style="width: 130px; height: 30px; margin : 10px" id="기능직" value="기능직" onclick="onClick(this.id)">
+					<br>
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="지원 및 연구시설" value="지원 및 연구시설" onclick="onClick(this.id)">
+					<input type="button" style="width: 130px; height: 30px; margin : 10px" id="대학회계직" value="대학회계직" onclick="onClick(this.id)">
+					<br>
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="부속시설" value="부속시설" onclick="onClick(this.id)">
+					<input type="button" style="width: 130px; height: 30px; margin : 10px" id="교육전문직" value="교육전문직" onclick="onClick(this.id)">
+					<br>
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px; opacity: 0" value="none">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="부설학교" value="부설학교" onclick="onClick(this.id)">
+                    <input type="button" style="width: 130px; height: 30px; margin : 10px" id="계약직" value="계약직" onclick="onClick(this.id)">
+                </div>
+            </form>
+
+	<!-- <div id="TOP"> -->
+
+		
 		<script>
 			//drawChart();
 		</script>
@@ -110,6 +180,7 @@
 	</div>
 
 	<div class="bottomframe">
+		<script src="../../../js/100_teacher.js"></script>
 		<div class="inbottomframe"></div>
 		<div class="inbottomframe"></div>
 		<div class="inbottomframe">
