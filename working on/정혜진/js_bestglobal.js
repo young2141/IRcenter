@@ -1,5 +1,5 @@
 function parse(callback) {
-    $.getJSON("professor4.json", json => {
+    $.getJSON("best_global.json", json => {
         callback(json);
     });
 }
@@ -22,6 +22,7 @@ function drawChart() {
                 if(json[i].분류=="world"){
                     var temp = {}
                     temp["year"] = json[i].year.toString()
+                    //if(json[i].year=="2020")
                     temp["Rworld"] = json[i].Rworld
                     data.push(temp)
                 }
@@ -34,12 +35,14 @@ function drawChart() {
         categoryAxis.dataFields.category = "year";
         categoryAxis.renderer.minGridDistance = 30;
         categoryAxis.renderer.grid.template.location = 0;
+        categoryAxis.renderer.inversed = true;
         
         // Create value axis
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         //valueAxis.title.text = "Place taken";
         //valueAxis.renderer.minLabelPosition = 0.01;
-        valueAxis.min = 0;
+        valueAxis.extraMin = 0.15;
+        valueAxis.extraMax = 0.15;
         
 
         function P1CurvedcreateSeries(value, clr) {
@@ -71,8 +74,7 @@ function drawChart() {
 
 
         
-        // Add legend
-        chart.legend = new am4charts.Legend();
+    
         
         }); // end am4core.ready()
 

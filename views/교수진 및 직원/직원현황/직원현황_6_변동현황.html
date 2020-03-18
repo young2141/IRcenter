@@ -12,8 +12,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
-	<script src="../../../js/column(도영_평균연령).js"></script>
-
+	<script src="../../../js/js_직원변동현황.js"></script>
 </head>
 
 <style type="text/css">
@@ -74,7 +73,7 @@
 					<tbody>
 						<tr>
 							<td style="border-style: none; font-size : 30px">
-								<a href="직원현황_3_직급별 현황.html">
+								<a href="직원현황_4_평균연령.html">
 									<span id="black">◀</span>
 								</a>
 							</td>
@@ -85,19 +84,19 @@
 								<a href="직원현황_2_기관별.html"><span id="black">기관별 현황</span></a>
 							</td>
 							<td>
-								<a href="직원현황_3_직급별 현황.html"><span id="black">직종별 현황</span></a>
-							</td>
-							<td style="background-color : #eeeeee">
-								<a href="직원현황_4_평균연령.html"><span id="black"><b>평균연령 및 평균근속연수</b></span></a>
+								<a href="직원현황_3_직급별 현황.html"><span id="black">직급별 현황</span></a>
 							</td>
 							<td>
-								<a href="직원현황_6_변동현황.html"><span id="black">변동현황</span></a>
+								<a href="직원현황_4_평균연령.html"><span id="black">평균연령 및 평균근속연수</span></a>
+							</td>
+							<td style="background-color : #eeeeee">
+								<a href="직원현황_6_변동현황.html"><span id="black"><b>변동현황</b></span></a>
 							</td>
 							<td>
 								<a href="직원현황_5_Explore.html"><span id="black">Explore the data</span></a>
 							</td>
 							<td style="border-style: none; font-size : 30px">
-								<a href="직원현황_6_변동현황.html">
+								<a href="직원현황_5_Explore.html">
 									<span style="color: black">▶</span>
 								</a>
 							</td>
@@ -112,50 +111,20 @@
 
 	<div id="TOP">
 
+		<div class="legend" id="gotop" style="left:80%; top :40%">
+			<span style="color:#FCD12A; font-size: 20px;"> ■ </span> 신규채용+전입<br>
+			<span style="color:#000080; font-size: 20px;"> ■ </span> 전출+퇴직<br><br>
 
-		<script>
-			var currentPosition = parseInt($("#gotop").css("top"));
-			$(window).scroll(function () {
-				var position = $(window).scrollTop();
-
-				if (position > 750)
-					$("#gotop").stop().animate({ "top": position + currentPosition - 300 + "px" }, 1000);
-				else if (position < 300)
-					$("#gotop").stop().animate({ "top": position + currentPosition + 40 + "px" }, 1000);
-				else
-					$("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
-			});
-
-
-		</script>
-
-		<form class="legend" id="gotop" style="left:80%; top :40%">
-
-			<span style="font-size: 20px"><b>년도별 검색</b></span>
-			<br>
-
-			<input type=button value='◀' onclick=decrease()>
-			<input id="years" type=range min=2010 max=2019 step=1 value=2019 oninput=valuechange(parseInt(this.value))>
-			<input type=button value='▶' onclick=increase()>
-
-			<script>
-				function valuechange(value) {
-					document.getElementById('span1').innerHTML = (value);
-					check();
-				}
-				function decrease() {
-					current_value = document.getElementById('years').value
-					console.log(current_value);
-					document.getElementById('years').value -= 1
-					valuechange(document.getElementById('years').value)
-				}
-				function increase() {
-					current_value = document.getElementById('years').value
-					console.log(current_value);
-					document.getElementById('years').value++;
-					valuechange(document.getElementById('years').value)
-				}
-			</script>
+			<span style="font-size: 20px"> <b>직종별</b> </span><br />
+            <select id="job_selectbar" onchange="call(),changegraph(); drawSunburst();" style="width : 200px; height: 30px">
+                <option name="job" value="행정기술">행정기술</option>
+                <option name="job" value="전문경력관">전문경력관</option>
+				<option name="job" value="관리운영직">관리운영직</option>
+				<option name="job" value="대학회계직">대학회계직</option>
+            </select>
+            <br><br>
+		</div>
+	
 			<script>
 				var currentPosition = parseInt($("#gotop").css("top"));
 				$(window).scroll(function () {
@@ -169,44 +138,15 @@
 						$("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
 				});
 	
-				call();
-	
 			</script>
-			<br>
-			<div style="text-align: center; width: 180px"><span id="span1">2019</span></div>
 
-			<span style="font-size: 20px"><b>직급별 검색</b></span><br>
-			<select id="select_gender" onchange="Change()" name="menu" style="width : 200px; height: 30px">
-				<option id="T1" value="행정직" selected="selected">행정직</option>
-				<option id="T1" value="사서직">사서직</option>
-				<option id="T1" value="기술직">기술직</option>
-				<option id="T1" value="전산직">전산직</option>
-				<option id="T1" value="전문경력관">전문경력관</option>
-				<option id="T1" value="관리운영직">관리운영직</option>
-				<option id="T1" value="대학회계직">대학회계직</option>
-
-			</select><br><br>
-
-		</form>
-
-		<div id="summaryBox" style = "font-size: 30px; width: 800px" >
-			<b><span id="P1">행정직</span> 평균연령</b>
-			<b><span style = "float: right"><span id = "P2">행정직</span> 평균근속연수<span></b>
+		<div id="summaryBox">
+			<h2><span id="P1">변동현황</span></h2>
 		</div>
-
-		<div id="summaryBox" style = "font-size: 15px; width: 1000px" >
-			<span style = "float: left; margin-left: 400px">(단위 : 세)</span>
-			<span style = "float: right">(단위 : 년)<span>
+		<div id="unitBox">
+			(단위 : 명)
 		</div>
-		
-		<div class="chartdiv11" id="chartdiv1"></div>
-		<div class="chartdiv11" id="chartdiv2"></div>
-		<div class="chartdiv11" id="chartdiv3"></div>
-		<div class="chartdiv11" id="chartdiv4"></div>
-		<div class="chartdiv11" id="chartdiv5"></div>
-		<div class="chartdiv11" id="chartdiv6"></div>
-
-		<!--<div id="chartdiv2" class="chartdiv">그래프 2</div>-->
+		<div id="chartdiv" class="chartdiv">그래프 1</div>
 
 		<br>
 
