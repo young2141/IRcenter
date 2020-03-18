@@ -3,122 +3,219 @@ let data = [
         "category": "여자",
         "subcategory": "여자",
         "position": "left",
-        "percentage": 38
+        "percentage": 55
     },
     {
         "category": "여자",
         "subcategory": "그 외",
         "position": "right",
-        "percentage": 62
+        "percentage": 45
     },
     {
         "category": "남자",
         "subcategory": "남자",
         "position": "left",
-        "percentage": 62
+        "percentage": 55
     },
     {
         "category": "남자",
         "subcategory": "그 외",
         "position": "right",
-        "percentage": 38
-    },
-    {
-        "category": "일반직",
-        "subcategory": "일반직",
-        "position": "left",
-        "percentage": 62
-    },
-    {
-        "category": "일반직",
-        "subcategory": "그 외",
-        "position": "right",
-        "percentage": 38
-    },
-    {
-        "category": "거주지2",
-        "subcategory": "거주지(기타)",
-        "position": "left",
-        "percentage": 38
-    },
-    {
-        "category": "거주지2",
-        "subcategory": "그 외",
-        "position": "right",
-        "percentage": 62
-    },
-    {
-        "category": "조기졸업",
-        "subcategory": "조기졸업",
-        "position": "left",
-        "percentage": 1
-    },
-    {
-        "category": "조기졸업",
-        "subcategory": "그 외",
-        "position": "right",
-        "percentage": 99
-    },
-    {
-        "category": "복수전공",
-        "subcategory": "복수전공 이수 졸업",
-        "position": "left",
-        "percentage": 8
-    },
-    {
-        "category": "복수전공",
-        "subcategory": "그 외",
-        "position": "right",
-        "percentage": 92
-    },
-    {
-        "category": "부전공",
-        "subcategory": "부전공 이수 졸업",
-        "position": "left",
-        "percentage": 16
-    },
-    {
-        "category": "부전공",
-        "subcategory": "그 외",
-        "position": "right",
-        "percentage": 84
-    },
-    {
-        "category": "대학원진학",
-        "subcategory": "대학원진학",
-        "position": "left",
-        "percentage": 9
-    },
-    {
-        "category": "대학원진학",
-        "subcategory": "그 외",
-        "position": "right",
-        "percentage": 91
+        "percentage": 45
     },
     {
         "category": "내국인",
         "subcategory": "내국인",
         "position": "left",
-        "percentage": 96
+        "percentage": 62
     },
     {
         "category": "내국인",
         "subcategory": "그 외",
         "position": "right",
-        "percentage": 4
+        "percentage": 38
     },
     {
         "category": "외국인",
         "subcategory": "외국인",
         "position": "left",
-        "percentage": 4
+        "percentage": 38
     },
     {
         "category": "외국인",
         "subcategory": "그 외",
         "position": "right",
+        "percentage": 62
+    },
+    {
+        "category": "본부",
+        "subcategory": "본부",
+        "position": "left",
+        "percentage": 37
+    },
+    {
+        "category": "본부",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 63
+    },
+    {
+        "category": "행정지원부",
+        "subcategory": "행정지원부",
+        "position": "left",
+        "percentage": 4
+    },
+    {
+        "category": "행정지원부",
+        "subcategory": "그 외",
+        "position": "right",
         "percentage": 96
+    },
+    {
+        "category": "대학(원)",
+        "subcategory": "대학(원)",
+        "position": "left",
+        "percentage": 29
+    },
+    {
+        "category": "대학(원)",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 71
+    },
+    {
+        "category": "교육기본시설",
+        "subcategory": "교육기본시설",
+        "position": "left",
+        "percentage": 9
+    },
+    {
+        "category": "교육기본시설",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 91
+    },
+    {
+        "category": "지원 및 연구시설",
+        "subcategory": "지원 및 연구시설",
+        "position": "left",
+        "percentage": 16
+    },
+    {
+        "category": "지원 및 연구시설",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 84
+    },
+    {
+        "category": "부속시설",
+        "subcategory": "부속시설",
+        "position": "left",
+        "percentage": 4
+    },
+    {
+        "category": "부속시설",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 96
+    },
+    {
+        "category": "부설학교",
+        "subcategory": "부설학교",
+        "position": "left",
+        "percentage": 2
+    },
+    {
+        "category": "부설학교",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 98
+    },
+    {
+        "category": "일반직",
+        "subcategory": "일반직",
+        "position": "left",
+        "percentage": 25
+    },
+    {
+        "category": "일반직",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 75
+    },
+    {
+        "category": "기술직",
+        "subcategory": "기술직",
+        "position": "left",
+        "percentage": 12
+    },
+    {
+        "category": "기술직",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 88
+    },
+    {
+        "category": "별정직",
+        "subcategory": "별정직",
+        "position": "left",
+        "percentage": 0.1
+    },
+    {
+        "category": "별정직",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 99.9
+    },
+    {
+        "category": "기능직",
+        "subcategory": "기능직",
+        "position": "left",
+        "percentage": 0
+    },
+    {
+        "category": "기능직",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 100
+    },
+    {
+        "category": "대학회계직",
+        "subcategory": "대학회계직",
+        "position": "left",
+        "percentage": 10
+    },
+    {
+        "category": "대학회계직",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 90
+    },
+    {
+        "category": "교육전문직",
+        "subcategory": "교육전문직",
+        "position": "left",
+        "percentage": 0
+    },
+    {
+        "category": "교육전문직",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 0
+    },
+    {
+        "category": "계약직",
+        "subcategory": "계약직",
+        "position": "left",
+        "percentage": 52
+    },
+    {
+        "category": "계약직",
+        "subcategory": "그 외",
+        "position": "right",
+        "percentage": 48
     }
+
 ]
 
 let peopleIcons = [
