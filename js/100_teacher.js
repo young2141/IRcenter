@@ -3,25 +3,25 @@ let data = [
         "category": "여자",
         "subcategory": "여자",
         "position": "left",
-        "percentage": 55
+        "percentage": 47
     },
     {
         "category": "여자",
         "subcategory": "그 외",
         "position": "right",
-        "percentage": 45
+        "percentage": 53
     },
     {
         "category": "남자",
         "subcategory": "남자",
         "position": "left",
-        "percentage": 55
+        "percentage": 53
     },
     {
         "category": "남자",
         "subcategory": "그 외",
         "position": "right",
-        "percentage": 45
+        "percentage": 47
     },
     {
         "category": "내국인",
