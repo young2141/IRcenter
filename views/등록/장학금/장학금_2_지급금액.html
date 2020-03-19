@@ -70,14 +70,14 @@
                     <tbody>
                         <tr>
                             <td style="border-style: none; font-size : 30px">
-                                <a href="장학금_5_Explore.html">
+                                <a href="장학금_1_요약.html">
                                     <span id="black">◀</span>
                                 </a>
                             </td>
-                            <td style="background-color : #eeeeee">
+                            <td>
                                 <a href="장학금_1_요약.html"><span id="black">요약</span></a>
                             </td>
-                            <td>
+                            <td style="background-color : #eeeeee">
                                 <a href="장학금_2_지급금액.html"><span id="black">장학금 지급 금액</span></a>
                             </td>
                             <td>
@@ -90,7 +90,7 @@
                                 <a href="장학금_5_Explore.html"><span id="black">Explore the data</span></a>
                             </td>
                             <td style="border-style: none; font-size : 30px">
-                                <a href="장학금_2_지급금액.html">
+                                <a href="장학금_3_수혜율.html">
                                     <span style="color: black">▶</span>
                                 </a>
                             </td>
@@ -107,17 +107,48 @@
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
 
-            <input type = "radio" name = "sem">1학기<br>
-            <input type = "radio" name = "sem">2학기<br><br>
-            
+            <input type="radio" name="sem">1학기<br>
+            <input type="radio" name="sem">2학기<br><br>
 
-            
-            <span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
+
+
+            <!--<span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
             <span style="color:#E8A343; font-size: 20px;">■</span> 인문사회<br>
             <span style="color:#FCFF57; font-size: 20px;">■</span> 자연과학<br>
             <span style="color:#43E884; font-size: 20px;">■</span> 공학<br>
             <span style="color:#52A1FF; font-size: 20px;">■</span> 예체능<br>
-            <span style="color: navy; font-size: 20px;">■</span> 의학<br><br>
+            <span style="color: navy; font-size: 20px;">■</span> 의학<br><br>-->
+
+            <span style="font-size: 20px"><b>계열별 검색</b></span><br>
+            <select id="college" name="menu" onchange="" style="width : 200px; height: 30px">
+                <option value="all">(전체)</option>
+                <option value="society">인문사회</option>
+                <option value="science">자연과학</option>
+                <option value="mech">공학</option>
+                <option value="artphysical">예체능</option>
+                <option value="medicine">의학</option>
+            </select><br><br>
+
+            <span style="font-size: 20px"><b>장학금 종류 검색</b></span><br>
+
+            <div
+                style="width : 200px; height: 30px; border-style: solid; border-width: 0.5px; border-color:darkgray; padding: 1px">
+                <span id="selectBox1" name="selectBox1" onClick="choiceSelectBox(this);" style="font-size: 15px">
+                    (전체)&nbsp;
+                    <span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
+                </span>
+                <div id="testVal" class="testVal">
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">성적우수장학금<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">저소득층장학금<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">근로장학금<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">교직원장학금<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">외국인전형<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">기타<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">국가<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">지방자치단체<br>
+                    <input type="checkbox" name="" id="" checked="checked" onclick="">사설 및 기타<br>
+                </div>
+            </div>
 
         </div>
         <script>
@@ -133,13 +164,35 @@
                     $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
             });
 
+            function choiceSelectBox(obj) {
+                var nWidth = parseInt(obj.offsetWidth);
+                var nHeight = parseInt(obj.offsetHeight);
+                var nLeft = obj.offsetLeft;
+                var nTop = obj.offsetTop + obj.offsetHeight + 2;
 
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    nLeft += obj.offsetParent.offsetParent.offsetLeft + obj.offsetParent.offsetLeft;
+                    nTop += obj.offsetParent.offsetParent.offsetTop + obj.offsetParent.offsetTop;
+                }
+
+                if ($("#testVal").css("visibility") == "hidden") {
+
+                    $("#testVal").css("left", nLeft);
+                    $("#testVal").css("top", nTop);
+                    $("#testVal").css("padding-left", "0px");
+                    $("#testVal").css("width", nWidth);
+                    $("#testVal").css("visibility", "visible");
+
+                } else {
+                    $("#testVal").css("visibility", "hidden");
+                }
+            }
 
         </script>
 
         <a href="../등록.html"><span id="black">이전 메뉴로 이동</a></span>
         <div id="summaryBox">
-            <h2>재학생 1인당 장학금</h2>
+            <h2>장학금 지급 현황</h2>
         </div>
         <div id="unitBox">
             (단위 : 천 원)
@@ -147,10 +200,10 @@
         <div class="chartdiv" id="chartdiv1"></div>
 
         <div id="summaryBox">
-            <h2>장학금 수혜율</h2>
+            <h2>재학생 1인당 장학금</h2>
         </div>
         <div id="unitBox">
-            (단위 : %)
+            (단위 : 천 원)
         </div>
         <div class="chartdiv" id="chartdiv2"></div>
 

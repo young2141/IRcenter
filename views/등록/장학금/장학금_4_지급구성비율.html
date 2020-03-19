@@ -17,15 +17,17 @@
     @import url('../../../css/output_default.css');
 
     .chartdiv11 {
-        width: 1000px;
-        height: 160%;
+        width: 470px;
+        height: 450px;
         padding-bottom: 40px;
     }
 
     .chartdiv22 {
-        width: 1000px;
-        height: 160%;
+        width: 35%;
+        height: 50%;
         padding-bottom: 40px;
+        margin-left: 40%;
+        background-color: navy;
     }
 
     #testVal {
@@ -70,11 +72,11 @@
                     <tbody>
                         <tr>
                             <td style="border-style: none; font-size : 30px">
-                                <a href="장학금_5_Explore.html">
+                                <a href="장학금_3_수혜율.html">
                                     <span id="black">◀</span>
                                 </a>
                             </td>
-                            <td style="background-color : #eeeeee">
+                            <td>
                                 <a href="장학금_1_요약.html"><span id="black">요약</span></a>
                             </td>
                             <td>
@@ -83,14 +85,14 @@
                             <td>
                                 <a href="장학금_3_수혜율.html"><span id="black">장학금 수혜율</span></a>
                             </td>
-                            <td>
+                            <td style="background-color : #eeeeee">
                                 <a href="장학금_4_지급구성비율.html"><span id="black">지급 구성 비율</span></a>
                             </td>
                             <td>
                                 <a href="장학금_5_Explore.html"><span id="black">Explore the data</span></a>
                             </td>
                             <td style="border-style: none; font-size : 30px">
-                                <a href="장학금_2_지급금액.html">
+                                <a href="장학금_5_Explore.html">
                                     <span style="color: black">▶</span>
                                 </a>
                             </td>
@@ -106,18 +108,40 @@
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
+            <span style="font-size: 20px"><b>학기별 검색</b></span><br>
+            <select name="menu" id="termyear" style="width : 200px; height: 30px">
+                <option value="2019 2" selected>2019학년도 2학기</option>
+                <option value="2019 1">2019학년도 1학기</option>
+                <option value="2018 2">2018학년도 2학기</option>
+                <option value="2018 1">2018학년도 1학기</option>
+                <option value="2017 2">2017학년도 2학기</option>
+                <option value="2017 1">2017학년도 1학기</option>
+                <option value="2016 2">2016학년도 2학기</option>
+                <option value="2016 1">2016학년도 1학기</option>
+                <option value="2015 2">2015학년도 2학기</option>
+                <option value="2015 1">2015학년도 1학기</option>
+                <option value="2014 2">2014학년도 2학기</option>
+                <option value="2014 1">2014학년도 1학기</option>
+                <option value="2013 2">2013학년도 2학기</option>
+                <option value="2013 1">2013학년도 1학기</option>
+                <option value="2012 2">2012학년도 2학기</option>
+                <option value="2012 1">2012학년도 1학기</option>
+                <option value="2011 2">2011학년도 2학기</option>
+                <option value="2011 1">2011학년도 1학기</option>
+                <option value="2010 2">2010학년도 2학기</option>
+                <option value="2010 1">2010학년도 1학기</option>
+            </select><br><br>
 
-            <input type = "radio" name = "sem">1학기<br>
-            <input type = "radio" name = "sem">2학기<br><br>
-            
 
-            
-            <span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
-            <span style="color:#E8A343; font-size: 20px;">■</span> 인문사회<br>
-            <span style="color:#FCFF57; font-size: 20px;">■</span> 자연과학<br>
-            <span style="color:#43E884; font-size: 20px;">■</span> 공학<br>
-            <span style="color:#52A1FF; font-size: 20px;">■</span> 예체능<br>
-            <span style="color: navy; font-size: 20px;">■</span> 의학<br><br>
+            <span style="font-size: 20px"><b>계열별 검색</b></span><br>
+            <select id="college" name="menu" onchange="" style="width : 200px; height: 30px">
+                <option value="all">(전체)</option>
+                <option value="society">인문사회</option>
+                <option value="science">자연과학</option>
+                <option value="mech">공학</option>
+                <option value="artphysical">예체능</option>
+                <option value="medicine">의학</option>
+            </select>
 
         </div>
         <script>
@@ -133,27 +157,75 @@
                     $("#gotop").stop().animate({ "top": position + currentPosition + "px" }, 1000);
             });
 
+            function choiceSelectBox(obj) {
+                var nWidth = parseInt(obj.offsetWidth);
+                var nHeight = parseInt(obj.offsetHeight);
+                var nLeft = obj.offsetLeft;
+                var nTop = obj.offsetTop + obj.offsetHeight + 2;
 
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    nLeft += obj.offsetParent.offsetParent.offsetLeft + obj.offsetParent.offsetLeft;
+                    nTop += obj.offsetParent.offsetParent.offsetTop + obj.offsetParent.offsetTop;
+                }
+
+                if ($("#testVal").css("visibility") == "hidden") {
+
+                    $("#testVal").css("left", nLeft);
+                    $("#testVal").css("top", nTop);
+                    $("#testVal").css("padding-left", "0px");
+                    $("#testVal").css("width", nWidth);
+                    $("#testVal").css("visibility", "visible");
+
+                } else {
+                    $("#testVal").css("visibility", "hidden");
+                }
+            }
 
         </script>
 
         <a href="../등록.html"><span id="black">이전 메뉴로 이동</a></span>
         <div id="summaryBox">
-            <h2>재학생 1인당 장학금</h2>
-        </div>
-        <div id="unitBox">
-            (단위 : 천 원)
-        </div>
-        <div class="chartdiv" id="chartdiv1"></div>
-
-        <div id="summaryBox">
-            <h2>장학금 수혜율</h2>
+            <h2>장학금 지급 구성 비율</h2>
         </div>
         <div id="unitBox">
             (단위 : %)
         </div>
-        <div class="chartdiv" id="chartdiv2"></div>
+        <div class="chartdiv" id="chartdiv1"></div>
 
+
+        <table cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td>
+                        <div id="summaryBox" style = "width: 450px">
+                            <h2>교내장학금 지급 구성 비율 </h2>
+                        </div>
+                        <div id="unitBox" style = "width: 470px">
+                            (단위 : %)
+                        </div>
+                    </td>
+                    <td>
+                        <div id="summaryBox" style = "width: 450px">
+                            <h2>교외장학금 지급 구성 비율 </h2>
+                        </div>
+                        <div id="unitBox" style = "width: 470px">
+                            (단위 : %)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style = "height: 500px; width: 450px">
+                        <div class="chartdiv11" id="chartdiv2"></div>
+                    </td>
+                    <td style = "height: 500px; width: 450px">
+                        <div class="chartdiv11" id="chartdiv3"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <br>
 
 
 
