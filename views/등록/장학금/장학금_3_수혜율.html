@@ -9,7 +9,8 @@
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
     <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="../../../js/장학금_3_장학금수혜율.js"></script>
 
 </head>
 
@@ -106,17 +107,14 @@
     <div id="TOP">
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
+            <input type="radio" name="sem" checked="checked" value="1st" onclick="check()">1학기<br>
+            <input type="radio" name="sem" value="2nd" onclick="check()">2학기<br><br>
 
-            <input type="radio" name="sem">1학기<br>
-            <input type="radio" name="sem">2학기<br><br>
-
-
-
-            <span style="color:#FE4459; font-size: 20px;">■</span> 재학생<br>
-            <span style="color: navy; font-size: 20px;">■</span> 수혜인원<br><br>
+            <span style="color:#FE4459; font-size: 20px;" name="span_legend">■</span> 재학생<br>
+            <span style="color: navy; font-size: 20px;" name="span_legend">■</span> 수혜인원<br><br>
 
             <span style="font-size: 20px"><b>계열별 검색</b></span><br>
-            <select id="college" name="menu" onchange="" style="width : 200px; height: 30px">
+            <select id="affiliation" name="menu" onchange="check()" style="width : 200px; height: 30px">
                 <option value="all">(전체)</option>
                 <option value="society">인문사회</option>
                 <option value="science">자연과학</option>
@@ -216,6 +214,19 @@
     </div>
 
     <script>
+        var rad_sem = document.getElementsByName("sem")
+        var target = document.getElementById("affiliation")
+
+        function check() {
+            var semester_selected = rad_sem[0].checked ? rad_sem[0].value : rad_sem[1].value
+
+            var affiliation_selected = target.options[target.selectedIndex].text
+
+            draw_graph(1, semester_selected, affiliation_selected)
+            draw_graph(2, semester_selected, affiliation_selected)
+        }
+
+        check()
     </script>
 
 </body>
