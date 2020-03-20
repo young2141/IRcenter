@@ -9,7 +9,8 @@
     <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
     <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="../../../js/장학금_4_지급구성비율.js"></script>
 
 </head>
 
@@ -109,7 +110,7 @@
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
             <span style="font-size: 20px"><b>학기별 검색</b></span><br>
-            <select name="menu" id="termyear" style="width : 200px; height: 30px">
+            <select name="menu" id="sem" style="width : 200px; height: 30px" onchange="check()">
                 <option value="2019 2" selected>2019학년도 2학기</option>
                 <option value="2019 1">2019학년도 1학기</option>
                 <option value="2018 2">2018학년도 2학기</option>
@@ -134,7 +135,7 @@
 
 
             <span style="font-size: 20px"><b>계열별 검색</b></span><br>
-            <select id="college" name="menu" onchange="" style="width : 200px; height: 30px">
+            <select id="affiliation" name="menu" onchange="check()" style="width : 200px; height: 30px">
                 <option value="all">(전체)</option>
                 <option value="society">인문사회</option>
                 <option value="science">자연과학</option>
@@ -260,6 +261,22 @@
     </div>
 
     <script>
+        var target_sem = document.getElementById("sem")
+        var target_aff = document.getElementById("affiliation")
+
+        function check() {
+            var str_temp = target_sem.options[target_sem.selectedIndex].text
+            var year_selected = str_temp.substr(0, 4)
+            var semester_selected = (str_temp.substr(8, 1) == "1" ? "1st" : "2nd")
+
+            var affiliation_selected = target_aff.options[target_aff.selectedIndex].text
+
+            draw_graph(1, year_selected, semester_selected, affiliation_selected)
+            draw_graph(2, year_selected, semester_selected, affiliation_selected)
+            draw_graph(3, year_selected, semester_selected, affiliation_selected)
+        }
+
+        check()
     </script>
 
 </body>
