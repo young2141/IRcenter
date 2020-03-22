@@ -10,7 +10,9 @@
     <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
+    <script src="../../../js/js_재학생 1인당 장학금.js"></script>
+    <script src="../../../js/js_장학금 수혜율.js"></script>
+    <script>drawChart("1st");drawChart2("1st")</script>
 </head>
 
 <style type="text/css">
@@ -107,12 +109,11 @@
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
 
-            <input type = "radio" name = "sem">1학기<br>
-            <input type = "radio" name = "sem">2학기<br><br>
-            
+            <input type="radio" name="sem" checked="checked" value="1st" onclick="drawChart(this.value),drawChart2(this.value)">1학기<br>
+            <input type="radio" name="sem" value="2nd" onclick="drawChart(this.value),drawChart2(this.value)">2학기<br><br>
 
             
-            <span style="color:#FE4459; font-size: 20px;">■</span> 전체<br>
+            <span style="color:#fe4459; font-size: 20px;">■</span> 전체<br>
             <span style="color:#E8A343; font-size: 20px;">■</span> 인문사회<br>
             <span style="color:#FCFF57; font-size: 20px;">■</span> 자연과학<br>
             <span style="color:#43E884; font-size: 20px;">■</span> 공학<br>
@@ -152,7 +153,7 @@
         <div id="unitBox">
             (단위 : %)
         </div>
-        <div class="chartdiv" id="chartdiv2"></div>
+        <div class="chartdiv" id="chartdiv"></div>
 
 
 
@@ -188,6 +189,9 @@
     </div>
 
     <script>
+        function check() {
+        
+        }
     </script>
 
 </body>
