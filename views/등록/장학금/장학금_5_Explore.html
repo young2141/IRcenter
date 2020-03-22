@@ -10,7 +10,8 @@
     <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
+    <script src="../../../js/js_explore장학생수.js"></script>
+    <script src="../../../js/js_explore재학생 1인당 장학금.js"></script>
 </head>
 
 <style type="text/css">
@@ -110,52 +111,54 @@
         <div class="legend" id="gotop" style="left:80%; top :40%">
 
             <span style="font-size: 20px"><b>학기별 검색</b></span><br>
-            <select name="menu" id="termyear" style="width : 200px; height: 30px">
-                <option value="2019 2" selected>2019학년도 2학기</option>
-                <option value="2019 1">2019학년도 1학기</option>
-                <option value="2018 2">2018학년도 2학기</option>
-                <option value="2018 1">2018학년도 1학기</option>
-                <option value="2017 2">2017학년도 2학기</option>
-                <option value="2017 1">2017학년도 1학기</option>
-                <option value="2016 2">2016학년도 2학기</option>
-                <option value="2016 1">2016학년도 1학기</option>
-                <option value="2015 2">2015학년도 2학기</option>
-                <option value="2015 1">2015학년도 1학기</option>
-                <option value="2014 2">2014학년도 2학기</option>
-                <option value="2014 1">2014학년도 1학기</option>
-                <option value="2013 2">2013학년도 2학기</option>
-                <option value="2013 1">2013학년도 1학기</option>
-                <option value="2012 2">2012학년도 2학기</option>
-                <option value="2012 1">2012학년도 1학기</option>
-                <option value="2011 2">2011학년도 2학기</option>
-                <option value="2011 1">2011학년도 1학기</option>
-                <option value="2010 2">2010학년도 2학기</option>
-                <option value="2010 1">2010학년도 1학기</option>
+            <select name="menu2" id="sem" onchange = "check()" style="width : 200px; height: 30px">
+                <option value="2019 2nd" selected>2019학년도 2학기</option>
+                <option value="2019 1st">2019학년도 1학기</option>
+                <option value="2018 2nd">2018학년도 2학기</option>
+                <option value="2018 1st">2018학년도 1학기</option>
+                <option value="2017 2nd">2017학년도 2학기</option>
+                <option value="2017 1st">2017학년도 1학기</option>
+                <option value="2016 2nd">2016학년도 2학기</option>
+                <option value="2016 1st">2016학년도 1학기</option>
+                <option value="2015 2nd">2015학년도 2학기</option>
+                <option value="2015 1st">2015학년도 1학기</option>
+                <option value="2014 2nd">2014학년도 2학기</option>
+                <option value="2014 1st">2014학년도 1학기</option>
+                <option value="2013 2nd">2013학년도 2학기</option>
+                <option value="2013 1st">2013학년도 1학기</option>
+                <option value="2012 2nd">2012학년도 2학기</option>
+                <option value="2012 1st">2012학년도 1학기</option>
+                <option value="2011 2nd">2011학년도 2학기</option>
+                <option value="2011 1st">2011학년도 1학기</option>
+                <option value="2010 2nd">2010학년도 2학기</option>
+                <option value="2010 1st">2010학년도 1학기</option>
             </select><br><br>
 
 
             <span style="font-size: 20px"><b>대학(원)별 검색</b></span>
             <br>
-            <select name="menu" onchange="chart2()" style="width : 200px; height: 30px">
+            <select name="menu"id = "affiliation" onchange="check()" style="width : 200px; height: 30px">
                 <option value="전체" selected="selected">(전체)</option>
-                <option value="인문대학">인문대학</option>
-                <option value="사회과학대학">사회과학대학</option>
-                <option value="자연과학대학">자연과학대학</option>
+                <option value="간호대학">간호대학</option>
                 <option value="경상대학">경상대학</option>
                 <option value="공과대학">공과대학</option>
-                <option value="IT대학">IT대학</option>
+                <option value="과학기술대학">과학기술대학</option>
                 <option value="농업생명과학대학">농업생명과학대학</option>
-                <option value="예술대학">예술대학</option>
-                <option value="사범대학">사범대학</option>
+                <option value="법과대학">법과대학</option>
+                <option value="사회과학대학">사회과학대학</option>
+                <option value="생태환경대학">생태환경대학</option>
+                <option value="생활과학대학">생활과학대학</option>
                 <option value="수의과대학">수의과대학</option>
                 <option value="생활과학대학">생활과학대학</option>
                 <option value="간호대학">간호대학</option>
                 <option value="약학대학">약학대학</option>
-                <option value="행정학부">행정학부</option>
-                <option value="법학전문대학원">법학전문대학원</option>
+                <option value="예술대학">예술대학</option>
                 <option value="의과대학">의과대학</option>
+                <option value="인문대학">인문대학</option>
+                <option value="자연과학대학">자연과학대학</option>
                 <option value="치과대학">치과대학</option>
-                <option value="부속기관">부속기관</option>
+                <option value="IT대학">IT대학</option>
+                <option value="단과대구분없음">단과대구분없음</option>
             </select>
             <br><br>
             <span style="font-size: 20px"><b>장학금 종류 검색</b></span><br>
@@ -167,15 +170,15 @@
                     <span style="font-size: 10px">　　　　　　　　　　　　　　&nbsp;▼</span>
                 </span>
                 <div id="testVal" class="testVal">
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">성적우수장학금<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">저소득층장학금<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">근로장학금<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">교직원장학금<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">외국인전형<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">기타<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">국가<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">지방자치단체<br>
-                    <input type="checkbox" name="" id="" checked="checked" onclick="">사설 및 기타<br>
+                    <input type="checkbox" name="sch_type" checked="checked" onclick="check()" value="성적우수">성적우수장학금<br>
+                    <input type="checkbox" name="sch_type" checked="checked" onclick="check()" value="저소득층">저소득층장학금<br>
+                    <input type="checkbox" name="sch_type" checked="checked" onclick="check()" value="근로">근로장학금<br>
+                    <input type="checkbox" name="sch_type" checked="checked" onclick="check()" value="교직원">교직원장학금<br>
+                    <!-- <input type="checkbox" name="" id="" checked="checked" onclick="">외국인전형<br> -->
+                    <input type="checkbox" name="sch_type" checked="checked" onclick="check()" value="기타">기타<br>
+                    <input type="checkbox" name="sch_type" checked="checked" onclick="check()" value="국가">국가<br>
+                    <input type="checkbox" name="sch_type" checked="checked" onclick="check()" value="지방자치단체">지방자치단체<br>
+                    <input type="checkbox" name="sch_type" checked="checked" onclick="check()" value="사설 및 기타">사설 및 기타<br>
                 </div>
             </div>
 
@@ -224,7 +227,7 @@
         </div>
         <div id="unitBox">
         </div>
-        <div class="chartdiv" id="chartdiv"></div>
+        <div class="chartdiv" id="chartdiv2" style="width: 80%; height:1500px;"></div>
 
         <!--------------------------------------------->
 
@@ -234,7 +237,7 @@
         <div id="unitBox">
             (단위 : 천 원)
         </div>
-        <div class="chartdiv" id="chartdiv"></div>
+        <div class="chartdiv" id="chartdiv1"></div>
 
         <br>
 
@@ -271,6 +274,29 @@
     </div>
 
     <script>
+        var rad_sem = document.getElementById("sem")
+        var target = document.getElementById("affiliation")
+        var cb_type = document.getElementsByName("sch_type")
+
+        function check() {
+            var semester_selected = rad_sem.options[rad_sem.selectedIndex].value.split(' ')
+            var year = semester_selected[0]
+            var sem = semester_selected[1]
+
+            var affiliation_selected = target.options[target.selectedIndex].text
+
+            var type_selected = []
+            for (var i = 0; i < cb_type.length; i++) {
+                if (cb_type[i].checked) {
+                    type_selected.push(cb_type[i].value)
+                }
+            }
+
+            draw_graph(year,sem, affiliation_selected, type_selected)
+            draw_graph2(sem, affiliation_selected, type_selected)
+        }
+
+        check()
     </script>
 
 </body>

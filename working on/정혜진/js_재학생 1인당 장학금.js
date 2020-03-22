@@ -1,10 +1,10 @@
 function parse(callback) {
-    $.getJSON("professor4.json", json => {
+    $.getJSON("../../../json/student1.json", json => {
         callback(json);
     });
 }
 
-function drawChart() {
+function drawChart2(value) {
     parse(json => {
 
     am4core.ready(function() {
@@ -14,20 +14,20 @@ function drawChart() {
         // Themes end
         
         // Create chart instance
-        var chart = am4core.create("chartdiv", am4charts.XYChart);
+        var chart = am4core.create("chartdiv2", am4charts.XYChart);
         
-        // Add data
         var data=[]
-            for (var i = 0; i < json.length; i++) {
-                if(json[i].분류=="world"){
-                    var temp = {}
-                    temp["year"] = json[i].year.toString()
-                    temp["Rworld"] = json[i].Rworld
-                    data.push(temp)
-                }
+        for (var i = 0; i < json.length; i++) {
+            if(json[i].기준==value){
+                var temp = {}
+                temp["year"] = json[i].year.toString()
+                temp["확보율"] = json[i].확보율
+                data.push(temp)
             }
-                
-            chart.data = data
+        }
+
+        // Add data
+        chart.data = data;
         
         // Create category axis
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
@@ -39,21 +39,19 @@ function drawChart() {
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         //valueAxis.title.text = "Place taken";
         //valueAxis.renderer.minLabelPosition = 0.01;
-        valueAxis.min = 0;
+        valueAxis.extraMin = 0.15;
+        valueAxis.extraMax = 0.15
         
 
         function P1CurvedcreateSeries(value, clr) {
+            var value_kr;
 
             var P1Cseries = chart.series.push(new am4charts.LineSeries());
             P1Cseries.dataFields.valueY = value;
-            P1Cseries.strokeDasharray = ["dotted"];
+            //P1Cseries.strokeDasharray = ["dotted"];
             P1Cseries.strokeOpacity = 1;
             P1Cseries.strokeWidth = 2;
             P1Cseries.dataFields.categoryX = "year";
-            if (value != "all") {
-                P1Cseries.strokeWidth = 1;
-                P1Cseries.strokeDasharray = "2, 2";
-            }
             P1Cseries.stroke = am4core.color(clr);
             P1Cseries.strokeWidth = 3;
 
@@ -66,13 +64,12 @@ function drawChart() {
             circle.strokeWidth = 3;
         }
 
-        P1CurvedcreateSeries("Rworld", "#FE4459"); // 전체
+        P1CurvedcreateSeries("확보율", "#FE4459"); // 전체
         
-
-
-        
-        // Add legend
-        chart.legend = new am4charts.Legend();
+        // var axisBreak = valueAxis.axisBreaks.create();
+        //     axisBreak.startValue = 10;
+        //     axisBreak.endValue = 65;
+        //     axisBreak.breakSize = 0.01;
         
         }); // end am4core.ready()
 

@@ -1,4 +1,4 @@
-﻿var jdata = []
+﻿﻿var jdata = []
 
 function parse1(callback) {
     $.getJSON("../../../json/전공분류.json", json1 => {
