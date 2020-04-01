@@ -244,7 +244,7 @@ function draw_graph(_year, _type, isupdate, isfirst) {
               d3.select(this)
                 .transition()
                 .duration("50")
-                .attr("opacity", d.data.Name != _type ? ".4" : "1");
+                .attr("opacity", d.data.Name != _type ? ".7" : "1");
               div
                 .transition()
                 .duration("50")
