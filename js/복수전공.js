@@ -290,7 +290,7 @@ function d3_drawChart() {
         function mouseover_row(p) {
             var activeCells = d3.selectAll("rect.cell").filter(function (d) {
                 return d.z && d.y == p[0].y && d.x != d.y;
-            }).style('stroke-width', 3).style('stroke', 'yellow');
+            }).style('stroke-width', 3).style('stroke', 'grey');
         }
 
         function mouseout_row(p) {
@@ -302,7 +302,7 @@ function d3_drawChart() {
         function mouseover_col(p) {
             var activeCells = d3.selectAll("rect.cell").filter(function (d) {
                 return d.z && d.x == p[0].y && d.x != d.y;
-            }).style('stroke-width', 3).style('stroke', 'yellow');
+            }).style('stroke-width', 3).style('stroke', 'grey');
         }
 
         function mouseout_col(p) {
