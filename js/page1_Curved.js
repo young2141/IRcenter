@@ -22,25 +22,9 @@ function drawP1Curved(
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
-        if (_divName == "divchart2") {
-            valueAxis.min = 0;
-            valueAxis.max = 100.5;
-            valueAxis.strictMinMax = true;
-
-            var axisBreak = valueAxis.axisBreaks.create();
-            axisBreak.startValue = 0.2;
-            axisBreak.endValue = 97.8;
-            axisBreak.breakSize = 0.001;
-        } else {
-            valueAxis.strictMinMax = true;
-            valueAxis.min = 0;
-            valueAxis.max = 16;
-
-            var axisBreak = valueAxis.axisBreaks.create();
-            axisBreak.startValue = 0.3;
-            axisBreak.endValue = 5;
-            axisBreak.breakSize = 0.08;
-        }
+        // valueAxis.strictMinMax = true;
+        valueAxis.extraMax = 0.15
+        valueAxis.extraMin = 0.15;
 
         function P1CurvedcreateSeries(value, clr) {
             var value_kr;
