@@ -220,7 +220,7 @@ function drawLegendComparingCircle(legendid, numdata, sz) {
     var td2 = document.createElement("td");
     var label = document.createTextNode(data[i]["value"].toString());
     td2.appendChild(label);
-    td2.style.width = "40px";
+    td2.style.width = "30px";
     td2.style.fontSize = "20px";
     td2.style.fontWeight = "bold";
     tr.appendChild(td2);
