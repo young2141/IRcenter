@@ -207,17 +207,16 @@ function drawPyramid1(_data, flag) {
         for (var i = 0; i < typename.length; i++) {
             if (i == typename.length - 1)
                 flag = false;
-            createMale1([_data[typename[i]]], "#dc67ce", flag);
+            createMale1([_data[typename[i]]], "#04B431", flag);
             createLabel1(typename_kr[i]);
-            createFemale1([_data[typename[i]]], "#c767dc", flag);
-            createPie1([{ "type": "male", "value": _data[typename[i]]["male"], "color": "#dc67ce" }, { "type": "female", "value": _data[typename[i]]["female"], "color": "#c767dc" }]);
+            createFemale1([_data[typename[i]]], "#FFBF00", flag);
         }
     }
     else {
-        createMale1([_data["assistant"]], "#dc67ce", false);
+        createMale1([_data["assistant"]], "#04B431", false);
         createLabel1("조교");
-        createFemale1([_data["assistant"]], "#c767dc", false);
-        createPie1([{ "type": "male", "value": _data["assistant"]["male"], "color": "#dc67ce" }, { "type": "female", "value": _data["assistant"]["female"], "color": "#c767dc" }]);
+        createFemale1([_data["assistant"]], "#FFBF00", false);
+        createPie1([{ "type": "male", "value": _data["assistant"]["male"], "color": "#04B431" }, { "type": "female", "value": _data["assistant"]["female"], "color": "#FFBF00" }]);
     }
     createBottom1();
 }
