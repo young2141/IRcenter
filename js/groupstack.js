@@ -67,7 +67,7 @@ function lineGraph() {
                     series.stroke = am4core.color(span_legend[6].style.color);
                 }
                 series.tooltip.label.textAlign = "middle";
-                series.columns.template.tooltipText = "[#fff font-size: 15px]{categoryX}년\n{name}:[/][#fff font-size: 15px bold] {valueY}명[/]";
+                series.columns.template.tooltipText = "[#000 font-size: 15px]{categoryX}년\n{name}:[/][#000 font-size: 15px bold] {valueY}명[/]";
 
                 return series;
             }
@@ -169,7 +169,7 @@ function stackGraph() {
                     series.stroke = am4core.color(span_legend[6].style.color);
                 }
                 series.tooltip.label.textAlign = "middle";
-                series.columns.template.tooltipText = "[#fff font-size: 15px]{categoryX}년\n{name}:[/][#fff font-size: 15px bold] {valueY}개[/]";
+                series.columns.template.tooltipText = "[#000 font-size: 15px]{categoryX}년\n{name}:[/][#000 font-size: 15px bold] {valueY}개[/]";
 
                 return series;
             }
