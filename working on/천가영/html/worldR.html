@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Rankings</title>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="../js/worldR.js"></script>
+    <style>
+        .chartdiv {
+            float: left;
+            height: 500px;
+        }
+
+        #chartdiv1 {
+            width: 80%;
+        }
+
+        #chartdiv {
+            width: 20%;
+        }
+
+        .chartdiv1,
+        .chartdiv2 {
+            float: left;
+        }
+
+        #chartdiv2,
+        #chartdiv3 {
+            width: 50%;
+            height: 400px;
+        }
+
+        .selecty {
+            position: relative;
+        }
+
+        #chartdiv4,
+        #chartdiv5 {
+            width: 50%;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>1. World Rankings</h3>
+    <div class="chartdiv" id="chartdiv" style="position: relative;">
+        <h1 id="word" style="width:200px; position: absolute; top:45%; left: 17%;"></h1>
+        <div id="picture">
+            <img src="../down-arrow.svg" style="width:50px; position: absolute; top:25%; left: 30%;">
+        </div>
+    </div>
+    <div class="chartdiv" id="chartdiv1"></div>
+    <h3>2. 지표별 점수</h3>
+    <p>상세검색</p>
+    <div class="selecty">
+        <p>비교연도1</p>
+        <select id="year_selectbar1" onchange="radargraph1()">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+        </select>
+        <p>비교연도2</p>
+        <select id="year_selectbar2" onchange="call()">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+        </select>
+    </div>
+    <!-- radar graph -->
+    <div class="chartdiv1" id="chartdiv2"></div>
+    <div class="chartdiv1" id="chartdiv3"></div>
+    <!-- bar garph -->
+    <div class="chartdiv2" id="chartdiv4"></div>
+    <div class="chartdiv2" id="chartdiv5"></div>
+    <script>
+        radargraph1();
+    </script>
+</body>
+
+
+</html>

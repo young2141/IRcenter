@@ -1,0 +1,192 @@
+{
+	"2016": {
+		"Academic Reputation": {
+			"name": "Academic Reputation",
+			"part": "40%",
+			"score": 21.1,
+			"avg": ""
+		},
+		"Employer Reputation": {
+			"name": "Employer Reputation",
+			"part": "10%",
+			"score": 23.8,
+			"avg": ""
+		},
+		"Faculty Student": {
+			"name": "Faculty Student",
+			"part": "20%",
+			"score": 32.0,
+			"avg": ""
+		},
+		"Citations per Faculty": {
+			"name": "Citations per Faculty",
+			"part": "20%",
+			"score": 27.7,
+			"avg": ""
+		},
+		"International Faculty": {
+			"name": "International Faculty",
+			"part": "5%",
+			"score": 10.6,
+			"avg": ""
+		},
+		"Internaional Students": {
+			"name": "Internaional Students",
+			"part": "5%",
+			"score": 7.6,
+			"avg": ""
+		}
+	},
+	"2017": {
+		"Academic Reputation": {
+			"name": "Academic Reputation",
+			"part": "40%",
+			"score": 15.7,
+			"avg": ""
+		},
+		"Employer Reputation": {
+			"name": "Employer Reputation",
+			"part": "10%",
+			"score": 18.4,
+			"avg": ""
+		},
+		"Faculty Student": {
+			"name": "Faculty Student",
+			"part": "20%",
+			"score": 24.2,
+			"avg": ""
+		},
+		"Citations per Faculty": {
+			"name": "Citations per Faculty",
+			"part": "20%",
+			"score": 21.5,
+			"avg": ""
+		},
+		"International Faculty": {
+			"name": "International Faculty",
+			"part": "5%",
+			"score": 9.5,
+			"avg": ""
+		},
+		"Internaional Students": {
+			"name": "Internaional Students",
+			"part": "5%",
+			"score": 5.5,
+			"avg": ""
+		}
+	},
+	"2018": {
+		"Academic Reputation": {
+			"name": "Academic Reputation",
+			"part": "40%",
+			"score": 16.9,
+			"avg": 28.5
+		},
+		"Employer Reputation": {
+			"name": "Employer Reputation",
+			"part": "10%",
+			"score": 21.0,
+			"avg": 34.2
+		},
+		"Faculty Student": {
+			"name": "Faculty Student",
+			"part": "20%",
+			"score": 22.0,
+			"avg": 59.5
+		},
+		"Citations per Faculty": {
+			"name": "Citations per Faculty",
+			"part": "20%",
+			"score": 19.8,
+			"avg": 27.7
+		},
+		"International Faculty": {
+			"name": "International Faculty",
+			"part": "5%",
+			"score": 6.9,
+			"avg": 14.2
+		},
+		"Internaional Students": {
+			"name": "Internaional Students",
+			"part": "5%",
+			"score": 4.9,
+			"avg": 16.1
+		}
+	},
+	"2019": {
+		"Academic Reputation": {
+			"name": "Academic Reputation",
+			"part": "40%",
+			"score": 13.0,
+			"avg": 22.8
+		},
+		"Employer Reputation": {
+			"name": "Employer Reputation",
+			"part": "10%",
+			"score": 14.5,
+			"avg": 27.3
+		},
+		"Faculty Student": {
+			"name": "Faculty Student",
+			"part": "20%",
+			"score": 33.7,
+			"avg": 64.8
+		},
+		"Citations per Faculty": {
+			"name": "Citations per Faculty",
+			"part": "20%",
+			"score": 15.6,
+			"avg": 28.2
+		},
+		"International Faculty": {
+			"name": "International Faculty",
+			"part": "5%",
+			"score": 8.1,
+			"avg": 15.7
+		},
+		"Internaional Students": {
+			"name": "Internaional Students",
+			"part": "5%",
+			"score": 5.5,
+			"avg": 17.3
+		}
+	},
+	"2020":{
+		"Academic Reputation": {
+			"name": "Academic Reputation",
+			"part": "40%",
+			"score": 13.5,
+			"avg": ""
+		},
+		"Employer Reputation": {
+			"name": "Employer Reputation",
+			"part": "10%",
+			"score": 11.4,
+			"avg": ""
+		},
+		"Faculty Student": {
+			"name": "Faculty Student",
+			"part": "20%",
+			"score": 41.5,
+			"avg": ""
+		},
+		"Citations per Faculty": {
+			"name": "Citations per Faculty",
+			"part": "20%",
+			"score": 16.2,
+			"avg": ""
+		},
+		"International Faculty": {
+			"name": "International Faculty",
+			"part": "5%",
+			"score": 6.8,
+			"avg": ""
+		},
+		"Internaional Students": {
+			"name": "Internaional Students",
+			"part": "5%",
+			"score": 5.2,
+			"avg": ""
+		}
+	}
+}
