@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Rankings</title>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="worldARWU.js"></script>
+    <script src="nationalARWU.js"></script>
+    <script src="indexARWU.js"></script>
+    <style>
+        .chartdiv {
+            float: left;
+            height: 250px;
+        }
+
+        #chartdiv1-1,
+        #chartdiv1-2 {
+            width: 80%;
+        }
+
+        #chartdiv {
+            width: 20%;
+        }
+
+        .chartdiv1-1,
+        .chartdiv1-2,
+        .chartdiv2 {
+            float: left;
+        }
+
+        #chartdiv2,
+        #chartdiv3 {
+            width: 40%;
+            height: 400px;
+        }
+
+        .selecty {
+            position: relative;
+        }
+
+        #chartdiv4,
+        #chartdiv5 {
+            width: 40%;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>1. World Rankings</h3>
+    <div style = "width: 1000px;">
+    <div class="chartdiv" id="chartdiv" style="position: relative;">
+        <h1 id="word1" style="width:200px; position: absolute; top:45%; left: 13%;"></h1>
+        <div id="picture1">
+            <img src="arrow-141-64.png" style="width:60px; position: absolute; top:25%; left: 30%;">
+        </div>
+    </div>
+    <div class="chartdiv" id="chartdiv1-1"></div>
+    <h4 align="center">2015년 500위, 2016년 500위, 2017년 800위, 2018년부터는 1000위까지 순위 발표</h4>
+    </div>
+
+    <div style = "width: 1000px;">
+    <h3>2. National Rankings</h3>
+    <div class="chartdiv" id="chartdiv" style="position: relative;">
+        <h1 id="word2" style="width:200px; position: absolute; top:45%; left: 37%;"></h1>
+        <div id="picture2">
+            <img src="arrow-141-64.png" style="width:50px; position: absolute; top:25%; left: 30%;">
+        </div>
+    </div>
+    <div class="chartdiv" id="chartdiv1-2"></div>
+    <h4 align="center">2016년은 순위에 없음</h4>
+    </div>
+    <h3>2. 지표별 점수</h3>
+    <p>상세검색</p>
+    <div class="selecty" style="display: inline-block">
+        <p style="display: inline-block">비교연도1</p>
+        <select id="year_selectbar1" onchange="radargraph1()" style="display: inline-block">
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+        </select>
+    </div>
+    <div class="selecty" style="display: inline-block">
+        <p style="display: inline-block">비교연도2</p>
+        <select id="year_selectbar2" onchange="call()" style="display: inline-block">
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+        </select>
+    </div>
+    <!-- radar graph -->
+    <div>
+    <div class="chartdiv1" id="chartdiv2" style="display: inline-block"></div>
+    <div class="chartdiv1" id="chartdiv3" style="display: inline-block"></div>
+    </div>
+    <!-- bar garph -->
+    <div class="chartdiv2" id="chartdiv4"></div>
+    <div class="chartdiv2" id="chartdiv5"></div>
+    <script>
+        radargraph1();
+    </script>
+</body>
+
+
+</html>

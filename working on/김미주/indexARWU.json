@@ -1,0 +1,162 @@
+{
+	"2015":{
+		"Alumni": {
+			"name": "Alumni",
+			"part": "10%",
+			"score": 0
+		},
+		"Award": {
+			"name": "Award",
+			"part": "20%",
+			"score": 0
+		},
+		"HiCi": {
+			"name": "HiCi",
+			"part": "20%",
+			"score": 0
+		},
+		"N&S": {
+			"name": "N&S",
+			"part": "20%",
+			"score": 3.3
+		},
+		"PUB": {
+			"name": "PUB",
+			"part": "20%",
+			"score": 35
+		},
+		"PCP": {
+			"name": "PCP",
+			"part": "10%",
+			"score": 17
+		}
+	},
+	"2016": {
+		"Alumni": {
+			"name": "Alumni",
+			"part": "10%",
+            "score": null
+		},
+		"Award": {
+			"name": "Award",
+			"part": "20%",
+			"score": null
+		},
+		"HiCi": {
+			"name": "HiCi",
+			"part": "20%",
+			"score": null
+		},
+		"N&S": {
+			"name": "N&S",
+			"part": "20%",
+			"score": null
+		},
+		"PUB": {
+			"name": "PUB",
+			"part": "20%",
+			"score": null
+		},
+		"PCP": {
+			"name": "PCP",
+			"part": "10%",
+			"score": null
+		}
+	},
+	"2017": {
+		"Alumni": {
+			"name": "Alumni",
+			"part": "10%",
+			"score": 0
+		},
+		"Award": {
+			"name": "Award",
+			"part": "20%",
+			"score": 0
+		},
+		"HiCi": {
+			"name": "HiCi",
+			"part": "20%",
+			"score": 10.9
+		},
+		"N&S": {
+			"name": "N&S",
+			"part": "20%",
+			"score": 2.9
+		},
+		"PUB": {
+			"name": "PUB",
+			"part": "20%",
+			"score": 35.9
+		},
+		"PCP": {
+			"name": "PCP",
+			"part": "10%",
+			"score": 16.2
+		}
+	},
+	"2018": {
+		"Alumni": {
+			"name": "Alumni",
+			"part": "10%",
+			"score": 0
+		},
+		"Award": {
+			"name": "Award",
+			"part": "20%",
+			"score": 0
+		},
+		"HiCi": {
+			"name": "HiCi",
+			"part": "20%",
+			"score": 0
+		},
+		"N&S": {
+			"name": "N&S",
+			"part": "20%",
+			"score": 3
+		},
+		"PUB": {
+			"name": "PUB",
+			"part": "20%",
+			"score": 37.6
+		},
+		"PCP": {
+			"name": "PCP",
+			"part": "10%",
+			"score": 16.2
+		}
+	},
+	"2019": {
+		"Alumni": {
+			"name": "Alumni",
+			"part": "10%",
+			"score": 0
+		},
+		"Award": {
+			"name": "Award",
+			"part": "20%",
+			"score": 0
+		},
+		"HiCi": {
+			"name": "HiCi",
+			"part": "20%",
+			"score": 10.4
+		},
+		"N&S": {
+			"name": "N&S",
+			"part": "20%",
+			"score": 3.6
+		},
+		"PUB": {
+			"name": "PUB",
+			"part": "20%",
+			"score": 38.6
+		},
+		"PCP": {
+			"name": "PCP",
+			"part": "10%",
+			"score": 16.8
+		}
+	}
+}
