@@ -185,40 +185,32 @@
         </script>
 
         <a href="../등록.html"><span id="black">이전 메뉴로 이동</a></span>
-        <div id="summaryBox">
-            <h2>장학금 지급 구성 비율</h2>
-        </div>
-        <div id="unitBox">
-            (단위 : %)
-        </div>
-        <div class="chartdiv" id="chartdiv1"></div>
-
 
         <table cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
                     <td>
-                        <div id="summaryBox" style = "width: 450px">
+                        <div id="summaryBox" style="width: 450px">
                             <h2>교내장학금 지급 구성 비율 </h2>
                         </div>
-                        <div id="unitBox" style = "width: 470px">
+                        <div id="unitBox" style="width: 470px">
                             (단위 : %)
                         </div>
                     </td>
                     <td>
-                        <div id="summaryBox" style = "width: 450px">
+                        <div id="summaryBox" style="width: 450px">
                             <h2>교외장학금 지급 구성 비율 </h2>
                         </div>
-                        <div id="unitBox" style = "width: 470px">
+                        <div id="unitBox" style="width: 470px">
                             (단위 : %)
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td style = "height: 500px; width: 450px">
+                    <td style="height: 500px; width: 450px">
                         <div class="chartdiv11" id="chartdiv2"></div>
                     </td>
-                    <td style = "height: 500px; width: 450px">
+                    <td style="height: 500px; width: 450px">
                         <div class="chartdiv11" id="chartdiv3"></div>
                     </td>
                 </tr>
@@ -271,7 +263,6 @@
 
             var affiliation_selected = target_aff.options[target_aff.selectedIndex].text
 
-            draw_graph(1, year_selected, semester_selected, affiliation_selected)
             draw_graph(2, year_selected, semester_selected, affiliation_selected)
             draw_graph(3, year_selected, semester_selected, affiliation_selected)
         }

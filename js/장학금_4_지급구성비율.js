@@ -1,6 +1,6 @@
 ﻿var jdata = []
-var type = [["성적우수", "저소득층", "근로", "교직원", "기타", "국가", "지방자치단체", "사설 및 기타"],
-    ["성적우수", "저소득층", "근로", "교직원", "기타"],
+var type = [["성적우수장학금", "저소득층장학금", "근로장학금", "교직원장학금", "기타", "국가", "지방자치단체", "사설 및 기타"],
+    ["성적우수장학금", "저소득층장학금", "근로장학금", "교직원장학금", "기타"],
     ["국가", "지방자치단체", "사설 및 기타"]]
 var scholarship = ["전체 장학금", "교내 장학금", "교외 장학금"]
 
@@ -92,7 +92,7 @@ function draw_graph(_sort1, _year, _sem, _aff) {
                 pieSeries.slices.template.stroke = am4core.color("#ffffff");
                 pieSeries.tooltip.getFillFromObject = false;
                 pieSeries.slices.template.tooltipText =
-                  "[#000]" + _year  + "학년도 " + _sem[0] + "학기 " + scholarship[_sort1 - 1] + " 중 {category} 장학금은 [bold]{value.percent.formatNumber('#.#')}%[] 입니다.";
+                  "[#000]" + _year  + "학년도 " + _sem[0] + "학기 " + scholarship[_sort1 - 1] + " 중 {category} : [bold]{value.percent.formatNumber('#.#')}%[]";
                 // 툴팁에 실제 value값도 필요하다면 ({value}명) 추가하기
                 pieSeries.tooltip.label.fill = am4core.color("#000000");
                 // This creates initial animation
