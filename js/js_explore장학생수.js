@@ -185,6 +185,7 @@ function draw_graph(_year, _sem, _aff, _type) {
                     json.push(data)
                     var femaleChart = container.createChild(am4charts.XYChart);
                     femaleChart.width = am4core.percent(30);
+                    femaleChart.marginRight = 50
                     if (flag == false)
                         femaleChart.height = 110;
                     else
@@ -233,7 +234,8 @@ function draw_graph(_year, _sem, _aff, _type) {
                         femaleSerieslabel.label.fontSize = 20;
                         femaleSerieslabel.label.fontWeight = "bold";
                     }
-                    femaleSerieslabel.label.dx = 25;
+                    femaleSerieslabel.label.dx = 60;
+                    femaleSerieslabel.label.textAlign = "left"
                     //return chart2;
                 }
 
@@ -306,7 +308,7 @@ function draw_graph(_year, _sem, _aff, _type) {
 
                 var flag = true;
                 
-                
+                createBottom2();
 
                 for (var i = 0; i < mj.length; i++) {
                     var data={}
@@ -319,25 +321,25 @@ function draw_graph(_year, _sem, _aff, _type) {
                     if (i == mj.length - 1)
                         flag = false;
                     if (cond == "전체") {
-                        createMale2(data, "#dc67ce", flag, "#000000");
+                        createMale2(data, "#fcd12a", flag, "#000000");
                         createLabel2(mj[i], mj[i], "#000000");
-                        createFemale2(data, "#c767dc", flag, "#000000");            
+                        createFemale2(data, "#6794dc", flag, "#000000");            
                     }
                     else {
                         if (mj[i] == cond) {
-                            createMale2(data, "#dc67ce", flag, "#ff0000");
+                            createMale2(data, "#fcd12a", flag, "#ff0000");
                             createLabel2(mj[i],mj[i], "#ff0000");
-                            createFemale2(data, "#c767dc", flag, "#ff0000");
+                            createFemale2(data, "#6794dc", flag, "#ff0000");
                         }
                         else {
-                            createMale2(data, "#dc67ce", flag, "#000000");
+                            createMale2(data, "#fcd12a", flag, "#000000");
                             createLabel2(mj[i],mj[i], "#000000");
-                            createFemale2(data, "#c767dc", flag, "#000000");
+                            createFemale2(data, "#6794dc", flag, "#000000");
                         }
                     }
-                    createPie2([{ "type": "수혜율", "value": data.수혜율, "color": "#dc67ce" }, { "type": "비수혜율", "value": 100-data.수혜율, "color": "#c767dc" }]);
+                    createPie2([{ "type": "수혜율", "value": data.수혜율, "color": "#fcd12a" }, { "type": "비수혜율", "value": 100-data.수혜율, "color": "#6794dc" }]);
                 }
-                createBottom2();
+                
 
             }); // end am4core.ready()
         }, "scholarship_" + _sem + ".json")

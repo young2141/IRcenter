@@ -94,7 +94,7 @@ function drawChart2(_sem) {
 
                 var P1Cseries = chart.series.push(new am4charts.LineSeries());
                 P1Cseries.dataFields.valueY = value;
-                P1Cseries.strokeDasharray = 4
+                if (value != "전체") P1Cseries.strokeDasharray = "2, 2"
                 P1Cseries.strokeOpacity = 1;
                 P1Cseries.strokeWidth = 2;
                 P1Cseries.dataFields.categoryX = "year";

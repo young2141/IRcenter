@@ -76,15 +76,15 @@ function drawChart(_sem) {
             var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
             //valueAxis.title.text = "Place taken";
             //valueAxis.renderer.minLabelPosition = 0.01;
-            valueAxis.min = 0;
-            valueAxis.max = 100
+            valueAxis.extraMin = 0.15
+            valueAxis.extraMax = 0.15
             
 
             function P1CurvedcreateSeries(value, clr) {
 
                 var P1Cseries = chart.series.push(new am4charts.LineSeries());
                 P1Cseries.dataFields.valueY = value;
-                P1Cseries.strokeDasharray = 4
+                if (value != "전체") P1Cseries.strokeDasharray = "2, 2"
                 P1Cseries.strokeOpacity = 1;
                 P1Cseries.strokeWidth = 2;
                 P1Cseries.dataFields.categoryX = "year";
