@@ -94,7 +94,7 @@ function draw_graph2(_sem, _aff, _type) {
 
                 var P1Cseries = chart.series.push(new am4charts.LineSeries());
                 P1Cseries.dataFields.valueY = value;
-                P1Cseries.strokeDasharray = "2, 2"
+                // P1Cseries.strokeDasharray = "2, 2"
                 P1Cseries.strokeOpacity = 1;
                 P1Cseries.strokeWidth = 2;
                 P1Cseries.dataFields.categoryX = "year";
