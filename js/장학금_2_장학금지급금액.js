@@ -82,9 +82,8 @@ function draw_graph(_sort1, _sem, _aff, _type) {
                 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
                 // valueAxis.renderer.inside = true;
                 // valueAxis.renderer.labels.template.disabled = true;
-                valueAxis.min = 0;
                 valueAxis.extraMax = 0.15;
-                // valueAxis.extraMin = 0.15;
+                valueAxis.extraMin = 0.15;
 
                 if (_sort1 == 1) { // 장학금 지급 현황
                     // Set up series
