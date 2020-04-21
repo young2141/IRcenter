@@ -1,4 +1,4 @@
-﻿<html>
+﻿﻿<html>
 
 <head>
     <meta charset="utf-8">
@@ -185,6 +185,14 @@
         </script>
 
         <a href="../등록.html"><span id="black">이전 메뉴로 이동</a></span>
+        <div id="summaryBox">
+            <h2>장학금 지급 구성 비율</h2>
+        </div>
+        <div id="unitBox">
+            (단위 : %)
+        </div>
+        <div class="chartdiv" id="chartdiv1"></div>
+
 
         <table cellspacing="0" cellpadding="0">
             <tbody>
@@ -263,6 +271,7 @@
 
             var affiliation_selected = target_aff.options[target_aff.selectedIndex].text
 
+            draw_graph(1, year_selected, semester_selected, affiliation_selected)
             draw_graph(2, year_selected, semester_selected, affiliation_selected)
             draw_graph(3, year_selected, semester_selected, affiliation_selected)
         }

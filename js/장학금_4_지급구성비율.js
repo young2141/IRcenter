@@ -1,5 +1,5 @@
 ﻿var jdata = []
-var type = [["성적우수장학금", "저소득층장학금", "근로장학금", "교직원장학금", "기타", "국가", "지방자치단체", "사설 및 기타"],
+var type = [["교내 장학금", "교외 장학금"],
     ["성적우수장학금", "저소득층장학금", "근로장학금", "교직원장학금", "기타"],
     ["국가", "지방자치단체", "사설 및 기타"]]
 var scholarship = ["전체 장학금", "교내 장학금", "교외 장학금"]
@@ -36,10 +36,20 @@ function check_data(json, major_dict, sort, year, affiliation) {
             if (keys[j] == "year" || (major_dict[keys[j]] != affiliation + "계열" && affiliation != "(전체)")) continue
 
             keys2 = Object.keys(json[i][keys[j]])
-            for (var k = 0; k < keys2.length; k++) {
+            for (var k = 0; k < keys2.length; k++) { // 각 장학금 종류 별 for문
                 if (keys2[k] != "재학생" && keys2[k] != "수혜인원") {
-                    if ($.inArray(keys2[k], type[sort]) != -1)
-                        result_temp[keys2[k]] += json[i][keys[j]][keys2[k]]
+                    if (sort == 0) {
+                        if ($.inArray(keys2[k], type[1]) != -1){
+                            result_temp["교내 장학금"] += json[i][keys[j]][keys2[k]]
+                        }
+                        else {
+                            result_temp["교외 장학금"] += json[i][keys[j]][keys2[k]]
+                        }
+                    }
+                    else {
+                        if ($.inArray(keys2[k], type[sort]) != -1)
+                            result_temp[keys2[k]] += json[i][keys[j]][keys2[k]]
+                    }
                 }
             }
         }
