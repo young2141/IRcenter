@@ -1,0 +1,282 @@
+[
+  {
+    "year": "2015",
+    "maxrank": 1000.0,
+    "world": {
+      "rank": 307.0,
+      "score": 45.92
+    },
+    "national": {
+      "rank": 8.0,
+      "score": 45.92
+    },
+    "Quality of Education": {
+      "rank": "367+",
+      "ratio": 25.0
+    },
+    "Alumni Employment": {
+      "rank": 412.0,
+      "ratio": 25.0
+    },
+    "Quality of Faculty": {
+      "rank": "218+",
+      "ratio": 25.0
+    },
+    "Publications": {
+      "rank": 355.0,
+      "ratio": 5.0
+    },
+    "Influence": {
+      "rank": 625.0,
+      "ratio": 5.0
+    },
+    "Citations": {
+      "rank": 321.0,
+      "ratio": 5.0
+    },
+    "Broad Impact": {
+      "rank": 413.0,
+      "ratio": 5.0
+    },
+    "Patents": {
+      "rank": 66.0,
+      "ratio": 5.0
+    },
+    "Research Output": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Quality Publications": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Research Performance": {
+      "rank": "",
+      "ratio": 0.0
+    }
+  },
+  {
+    "year": "2016",
+    "maxrank": 1000.0,
+    "world": {
+      "rank": 337.0,
+      "score": 45.71
+    },
+    "national": {
+      "rank": 8.0,
+      "score": 45.71
+    },
+    "Quality of Education": {
+      "rank": "378+",
+      "ratio": 25.0
+    },
+    "Alumni Employment": {
+      "rank": 410.0,
+      "ratio": 25.0
+    },
+    "Quality of Faculty": {
+      "rank": "235+",
+      "ratio": 25.0
+    },
+    "Publications": {
+      "rank": 366.0,
+      "ratio": 5.0
+    },
+    "Influence": {
+      "rank": 613.0,
+      "ratio": 5.0
+    },
+    "Citations": {
+      "rank": 295.0,
+      "ratio": 5.0
+    },
+    "Broad Impact": {
+      "rank": 403.0,
+      "ratio": 5.0
+    },
+    "Patents": {
+      "rank": 88.0,
+      "ratio": 5.0
+    },
+    "Research Output": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Quality Publications": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Research Performance": {
+      "rank": "",
+      "ratio": 0.0
+    }
+  },
+  {
+    "year": "2017",
+    "maxrank": 1000.0,
+    "world": {
+      "rank": 320.0,
+      "score": 44.13
+    },
+    "national": {
+      "rank": 8.0,
+      "score": 44.13
+    },
+    "Quality of Education": {
+      "rank": "383+",
+      "ratio": 25.0
+    },
+    "Alumni Employment": {
+      "rank": 376.0,
+      "ratio": 25.0
+    },
+    "Quality of Faculty": {
+      "rank": "240+",
+      "ratio": 25.0
+    },
+    "Publications": {
+      "rank": 378.0,
+      "ratio": 5.0
+    },
+    "Influence": {
+      "rank": 652.0,
+      "ratio": 5.0
+    },
+    "Citations": {
+      "rank": 319.0,
+      "ratio": 5.0
+    },
+    "Broad Impact": {
+      "rank": 385.0,
+      "ratio": 5.0
+    },
+    "Patents": {
+      "rank": 76.0,
+      "ratio": 5.0
+    },
+    "Research Output": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Quality Publications": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Research Performance": {
+      "rank": "",
+      "ratio": 0.0
+    }
+  },
+  {
+    "year": "2018",
+    "maxrank": 1000.0,
+    "world": {
+      "rank": 408.0,
+      "score": 74.8
+    },
+    "national": {
+      "rank": 11.0,
+      "score": 74.8
+    },
+    "Quality of Education": {
+      "rank": "?",
+      "ratio": 15.0
+    },
+    "Alumni Employment": {
+      "rank": 793.0,
+      "ratio": 15.0
+    },
+    "Quality of Faculty": {
+      "rank": "?",
+      "ratio": 15.0
+    },
+    "Publications": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Influence": {
+      "rank": 682.0,
+      "ratio": 15.0
+    },
+    "Citations": {
+      "rank": 363.0,
+      "ratio": 10.0
+    },
+    "Broad Impact": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Patents": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Research Output": {
+      "rank": 280.0,
+      "ratio": 15.0
+    },
+    "Quality Publications": {
+      "rank": 373.0,
+      "ratio": 15.0
+    },
+    "Research Performance": {
+      "rank": "",
+      "ratio": 0.0
+    }
+  },
+  {
+    "year": "2019",
+    "maxrank": 2000.0,
+    "world": {
+      "rank": 429.0,
+      "score": 75.0
+    },
+    "national": {
+      "rank": 10.0,
+      "score": 75.0
+    },
+    "Quality of Education": {
+      "rank": "?",
+      "ratio": 25.0
+    },
+    "Alumni Employment": {
+      "rank": 837.0,
+      "ratio": 25.0
+    },
+    "Quality of Faculty": {
+      "rank": "?",
+      "ratio": 10.0
+    },
+    "Publications": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Influence": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Citations": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Broad Impact": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Patents": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Research Output": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Quality Publications": {
+      "rank": "",
+      "ratio": 0.0
+    },
+    "Research Performance": {
+      "rank": 402.0,
+      "ratio": 40.0
+    }
+  }
+]
