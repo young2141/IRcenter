@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종합순위</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <style>
+        .chartdiv {
+            float: left;
+            height: 500px;
+        }
+
+        #chartdiv1-1, #chartdiv1-2 {
+            width: 80%;
+        }
+
+        #chartdiv {
+            width: 20%;
+        }
+
+        .chartdiv1,
+        .chartdiv2 {
+            float: left;
+        }
+
+        #chartdiv2,
+        #chartdiv3 {
+            width: 50%;
+            height: 400px;
+        }
+
+        .selecty {
+            position: relative;
+        }
+
+        #chartdiv4,
+        #chartdiv5 {
+            width: 50%;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>종합순위</h1>
+    <h3>1. World Rankings</h3>
+    <div class="chartdiv" id="chartdiv" style="position: relative;">
+        <h1 id="word1" style="width:200px; position: absolute; top:45%; left: 17%;"></h1>
+        <div id="picture1">
+            <img src="../equal.svg" style="width:50px; position: absolute; top:25%; left: 30%;">
+        </div>
+    </div>
+    <div class="chartdiv" id="chartdiv1-1"></div>
+
+    <h3>2. National Rankings</h3>
+    <div class="chartdiv" id="chartdiv" style="position: relative;">
+        <h1 id="word2" style="width:200px; position: absolute; top:45%; left: 33%;"></h1>
+        <div id="picture2">
+            <img src="../equal.svg" style="width:50px; position: absolute; top:25%; left: 30%;">
+        </div>
+    </div>
+    <div class="chartdiv" id="chartdiv1-2"></div>
+    
+    <script src="../js/worldR.js"></script>
+    <script src="../js/nationalR.js"></script>
+</body>
+
+
+</html>

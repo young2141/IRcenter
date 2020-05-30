@@ -1,11 +1,11 @@
-jQuery.getJSON("../json/worldR.json", json => {
+jQuery.getJSON("../json/national.json", json => {
     am4core.ready(function () {
         // Themes begin
         am4core.useTheme(am4themes_animated);
         // Themes end
 
         // Create chart instance
-        var chart = am4core.create("chartdiv1-1", am4charts.XYChart);
+        var chart = am4core.create("chartdiv1-2", am4charts.XYChart);
 
         // Data for both series
         var data = json;
@@ -13,27 +13,27 @@ jQuery.getJSON("../json/worldR.json", json => {
         /* Create axes */
         var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
         categoryAxis.dataFields.category = "year";
-        categoryAxis.renderer.minGridDistance = 10;
+        // categoryAxis.renderer.minGridDistance = 20;
         categoryAxis.renderer.grid.template.disabled = true;
         categoryAxis.renderer.labels.template.fontSize = 20;
         categoryAxis.renderer.labels.template.fontWeight = "bold";
-        categoryAxis.renderer.grid.template.location = 0.5;
+        // categoryAxis.renderer.grid.template.location = 0.5;
         categoryAxis.startLocation = 0.3;
         categoryAxis.endLocation = 0.8;
         categoryAxis.renderer.labels.template.location = 0.5;
-        categoryAxis.renderer.minLabelPosition = 0;
+        categoryAxis.renderer.minLabelPosition = -0.5;
 
         var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
         valueAxis.renderer.grid.template.disabled = true;
         // valueAxis.renderer.labels.template.disabled = true;
-        valueAxis.renderer.minGridDistance = 100;
+        valueAxis.renderer.minGridDistance = 40;
         valueAxis.min=1;
-        valueAxis.max=800;
+        valueAxis.max=100;
         valueAxis.renderer.inversed = true;
 
         /* Create series */
         var lineSeries = chart.series.push(new am4charts.LineSeries());
-        lineSeries.name = "rrank";
+        // lineSeries.name = "rrank";
         lineSeries.dataFields.valueY = "rank";
         lineSeries.dataFields.categoryX = "year";
 
@@ -44,7 +44,7 @@ jQuery.getJSON("../json/worldR.json", json => {
 
         var bullet = lineSeries.bullets.push(new am4charts.Bullet());
         bullet.fill = am4core.color("#fdd400"); // tooltips grab fill from parent by default
-        bullet.tooltipText = "[font-size: 15px]{year}\nRank: [bold]#{rrank} [/]";
+        bullet.tooltipText = "[font-size: 15px]{year}\nRank: [bold]#{rank} [/]";
 
         // var slabel = lineSeries.bullets.push(new am4charts.LabelBullet());
         // slabel.label.text = "rank: {rrank}";
@@ -59,17 +59,20 @@ jQuery.getJSON("../json/worldR.json", json => {
 
     $(document).ready(function () {
 
-        $.getJSON("../json/worldR.json", function (data) {
+        $.getJSON("../json/national.json", function (data) {
             var lastObj = data.reverse();
-            $("#word1").html(lastObj[0]["rrank"]);
+            $("#word2").html(lastObj[1]["rank"]);
         });
     });
-    var picture1 = document.getElementById("picture1");
-    if (json[4]["rank"] > json[3]["rank"]) {
-        picture1.innerHTML = '<img src="../down-arrow.svg" style="width:50px; position: absolute; top:25%; left: 30%;">';
-    } else if (json[4]["rank"] < json[3]["rank"]) {
-        picture1.innerHTML = '<img src="../up-arrow.svg" style="width:50px; position: absolute; top:25%; left: 30%;">';
-    } else if (json[4]["rank"] == json[3]["rank"]) {
-        picture1.innerHTML = '<img src="../equal.svg" style="width:50px; position: absolute; top:25%; left: 30%;">';
+
+
+    var picture = document.getElementById("picture2");
+    if (json[3]["rank"] > json[2]["rank"]) {
+        picture.innerHTML = '<img src="../down-arrow.svg" style="width:50px; position: absolute; top:25%; left: 30%;">';
+    } else if (json[3]["rank"] < json[2]["rank"]) {
+        console.log(picture);
+        picture.innerHTML = '<img src="../up-arrow.svg" style="width:50px; position: absolute; top:25%; left: 30%;">';
+    } else if (json[3]["rank"] == json[2]["rank"]) {
+        picture.innerHTML = '<img src="../equal.svg" style="width:50px; position: absolute; top:25%; left: 30%;">';
     }
 });
